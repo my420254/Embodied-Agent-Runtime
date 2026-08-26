@@ -1,0 +1,253 @@
+{
+  "dataset": "behavior",
+  "case_id": "putting_up_Christmas_decorations_inside_0_Ihlen_1_int_0_2021-06-03_14-27-09",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "putting_up_Christmas_decorations_inside",
+    "task_id": 0,
+    "scene_id": "Ihlen_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "putting up Christmas decorations inside",
+    "task": "putting_up_Christmas_decorations_inside",
+    "task_id": 0,
+    "scene_id": "Ihlen_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 16,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bow_114",
+      "bow_115",
+      "bow_116",
+      "breakfast_table_19",
+      "candle_117",
+      "candle_118",
+      "carton_122",
+      "christmas_tree_decorated_112",
+      "room_floor_living_room_0",
+      "sofa_25",
+      "wrapped_gift_119",
+      "wrapped_gift_120",
+      "wrapped_gift_121",
+      "wreath_113"
+    ],
+    "name_mapping": {
+      "christmas_tree.n.05_1": {
+        "name": "christmas_tree_decorated_112",
+        "category": "christmas_tree.n.05"
+      },
+      "wreath.n.01_1": {
+        "name": "wreath_113",
+        "category": "wreath.n.01"
+      },
+      "bow.n.08_1": {
+        "name": "bow_114",
+        "category": "bow.n.08"
+      },
+      "bow.n.08_2": {
+        "name": "bow_115",
+        "category": "bow.n.08"
+      },
+      "bow.n.08_3": {
+        "name": "bow_116",
+        "category": "bow.n.08"
+      },
+      "candle.n.01_1": {
+        "name": "candle_117",
+        "category": "candle.n.01"
+      },
+      "candle.n.01_2": {
+        "name": "candle_118",
+        "category": "candle.n.01"
+      },
+      "wrapping.n.01_1": {
+        "name": "wrapped_gift_119",
+        "category": "wrapping.n.01"
+      },
+      "wrapping.n.01_2": {
+        "name": "wrapped_gift_120",
+        "category": "wrapping.n.01"
+      },
+      "wrapping.n.01_3": {
+        "name": "wrapped_gift_121",
+        "category": "wrapping.n.01"
+      },
+      "carton.n.02_1": {
+        "name": "carton_122",
+        "category": "carton.n.02"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "table.n.02_1": {
+        "name": "breakfast_table_19",
+        "category": "table.n.02"
+      },
+      "sofa.n.01_1": {
+        "name": "sofa_25",
+        "category": "sofa.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "breakfast_table_19": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "room_floor_living_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "carton_122": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {
+                        "bow_114": {
+                          "states": {},
+                          "direct_relation": "inside"
+                        },
+                        "bow_115": {
+                          "states": {},
+                          "direct_relation": "inside"
+                        },
+                        "bow_116": {
+                          "states": {},
+                          "direct_relation": "inside"
+                        },
+                        "candle_117": {
+                          "states": {},
+                          "direct_relation": "inside"
+                        },
+                        "candle_118": {
+                          "states": {},
+                          "direct_relation": "inside"
+                        },
+                        "wreath_113": {
+                          "states": {},
+                          "direct_relation": "inside"
+                        }
+                      },
+                      "direct_relation": "onfloor"
+                    },
+                    "christmas_tree_decorated_112": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "wrapped_gift_119": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "wrapped_gift_120": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "wrapped_gift_121": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "sofa_25": {
+                  "states": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_living_room_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_living_room_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bow_114": {
+        "name": "bow_114",
+        "category": "bow.n.08"
+      },
+      "bow_115": {
+        "name": "bow_115",
+        "category": "bow.n.08"
+      },
+      "bow_116": {
+        "name": "bow_116",
+        "category": "bow.n.08"
+      },
+      "breakfast_table_19": {
+        "name": "breakfast_table_19",
+        "category": "table.n.02"
+      },
+      "candle_117": {
+        "name": "candle_117",
+        "category": "candle.n.01"
+      },
+      "candle_118": {
+        "name": "candle_118",
+        "category": "candle.n.01"
+      },
+      "carton_122": {
+        "name": "carton_122",
+        "category": "carton.n.02"
+      },
+      "christmas_tree_decorated_112": {
+        "name": "christmas_tree_decorated_112",
+        "category": "christmas_tree.n.05"
+      },
+      "room_floor_living_room_0": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "sofa_25": {
+        "name": "sofa_25",
+        "category": "sofa.n.01"
+      },
+      "wrapped_gift_119": {
+        "name": "wrapped_gift_119",
+        "category": "wrapping.n.01"
+      },
+      "wrapped_gift_120": {
+        "name": "wrapped_gift_120",
+        "category": "wrapping.n.01"
+      },
+      "wrapped_gift_121": {
+        "name": "wrapped_gift_121",
+        "category": "wrapping.n.01"
+      },
+      "wreath_113": {
+        "name": "wreath_113",
+        "category": "wreath.n.01"
+      }
+    }
+  }
+}

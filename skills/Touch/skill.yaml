@@ -1,0 +1,5 @@
+name: Touch
+description: 与目标对象发生接触，不要求抓取或状态切换。
+prompt: prompt.md
+handler: skills.Touch.handler:TouchSkill
+execution_domain: 感知/信息交互

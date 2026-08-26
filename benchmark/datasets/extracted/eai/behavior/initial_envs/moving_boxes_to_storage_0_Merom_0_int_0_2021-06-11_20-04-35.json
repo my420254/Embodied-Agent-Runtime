@@ -1,0 +1,139 @@
+{
+  "dataset": "behavior",
+  "case_id": "moving_boxes_to_storage_0_Merom_0_int_0_2021-06-11_20-04-35",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "moving_boxes_to_storage",
+    "task_id": 0,
+    "scene_id": "Merom_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "moving boxes to storage",
+    "task": "moving_boxes_to_storage",
+    "task_id": 0,
+    "scene_id": "Merom_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 7,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "carton_70",
+      "carton_71",
+      "room_floor_living_room_0",
+      "room_floor_storage_room_0",
+      "shelf_7"
+    ],
+    "name_mapping": {
+      "carton.n.02_1": {
+        "name": "carton_70",
+        "category": "carton.n.02"
+      },
+      "carton.n.02_2": {
+        "name": "carton_71",
+        "category": "carton.n.02"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "floor.n.01_2": {
+        "name": "room_floor_storage_room_0",
+        "category": "floor.n.01"
+      },
+      "shelf.n.01_1": {
+        "name": "shelf_7",
+        "category": "shelf.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "room_floor_living_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "carton_70": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "carton_71": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "room_floor_storage_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "shelf_7": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_storage_room_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_storage_room_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "carton_70": {
+        "name": "carton_70",
+        "category": "carton.n.02"
+      },
+      "carton_71": {
+        "name": "carton_71",
+        "category": "carton.n.02"
+      },
+      "room_floor_living_room_0": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "room_floor_storage_room_0": {
+        "name": "room_floor_storage_room_0",
+        "category": "floor.n.01"
+      },
+      "shelf_7": {
+        "name": "shelf_7",
+        "category": "shelf.n.01"
+      }
+    }
+  }
+}

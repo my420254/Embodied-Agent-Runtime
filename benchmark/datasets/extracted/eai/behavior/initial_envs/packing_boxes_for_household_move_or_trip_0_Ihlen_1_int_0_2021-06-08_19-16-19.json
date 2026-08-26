@@ -1,0 +1,264 @@
+{
+  "dataset": "behavior",
+  "case_id": "packing_boxes_for_household_move_or_trip_0_Ihlen_1_int_0_2021-06-08_19-16-19",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "packing_boxes_for_household_move_or_trip",
+    "task_id": 0,
+    "scene_id": "Ihlen_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "packing boxes for household move or trip",
+    "task": "packing_boxes_for_household_move_or_trip",
+    "task_id": 0,
+    "scene_id": "Ihlen_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 16,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "carton_0",
+      "carton_1",
+      "coffee_table_26",
+      "dishtowel_0",
+      "hardback_0",
+      "notebook_0",
+      "plate_0",
+      "plate_1",
+      "plate_2",
+      "plate_3",
+      "room_floor_living_room_0",
+      "sweater_0",
+      "t-shirt_0",
+      "t-shirt_1"
+    ],
+    "name_mapping": {
+      "carton.n.02_1": {
+        "name": "carton_0",
+        "category": "carton.n.02"
+      },
+      "carton.n.02_2": {
+        "name": "carton_1",
+        "category": "carton.n.02"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "book.n.02_1": {
+        "name": "notebook_0",
+        "category": "book.n.02"
+      },
+      "book.n.02_2": {
+        "name": "hardback_0",
+        "category": "book.n.02"
+      },
+      "table.n.02_1": {
+        "name": "coffee_table_26",
+        "category": "table.n.02"
+      },
+      "sweater.n.01_1": {
+        "name": "sweater_0",
+        "category": "sweater.n.01"
+      },
+      "shirt.n.01_1": {
+        "name": "t-shirt_0",
+        "category": "shirt.n.01"
+      },
+      "shirt.n.01_2": {
+        "name": "t-shirt_1",
+        "category": "shirt.n.01"
+      },
+      "plate.n.04_1": {
+        "name": "plate_0",
+        "category": "plate.n.04"
+      },
+      "plate.n.04_2": {
+        "name": "plate_1",
+        "category": "plate.n.04"
+      },
+      "plate.n.04_3": {
+        "name": "plate_2",
+        "category": "plate.n.04"
+      },
+      "plate.n.04_4": {
+        "name": "plate_3",
+        "category": "plate.n.04"
+      },
+      "dishtowel.n.01_1": {
+        "name": "dishtowel_0",
+        "category": "dishtowel.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "coffee_table_26": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "hardback_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "notebook_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "plate_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "room_floor_living_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "carton_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "carton_1": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "dishtowel_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "plate_1": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "plate_2": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "plate_3": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "sweater_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "t-shirt_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "t-shirt_1": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_living_room_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_living_room_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "carton_0": {
+        "name": "carton_0",
+        "category": "carton.n.02"
+      },
+      "carton_1": {
+        "name": "carton_1",
+        "category": "carton.n.02"
+      },
+      "coffee_table_26": {
+        "name": "coffee_table_26",
+        "category": "table.n.02"
+      },
+      "dishtowel_0": {
+        "name": "dishtowel_0",
+        "category": "dishtowel.n.01"
+      },
+      "hardback_0": {
+        "name": "hardback_0",
+        "category": "book.n.02"
+      },
+      "notebook_0": {
+        "name": "notebook_0",
+        "category": "book.n.02"
+      },
+      "plate_0": {
+        "name": "plate_0",
+        "category": "plate.n.04"
+      },
+      "plate_1": {
+        "name": "plate_1",
+        "category": "plate.n.04"
+      },
+      "plate_2": {
+        "name": "plate_2",
+        "category": "plate.n.04"
+      },
+      "plate_3": {
+        "name": "plate_3",
+        "category": "plate.n.04"
+      },
+      "room_floor_living_room_0": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "sweater_0": {
+        "name": "sweater_0",
+        "category": "sweater.n.01"
+      },
+      "t-shirt_0": {
+        "name": "t-shirt_0",
+        "category": "shirt.n.01"
+      },
+      "t-shirt_1": {
+        "name": "t-shirt_1",
+        "category": "shirt.n.01"
+      }
+    }
+  }
+}

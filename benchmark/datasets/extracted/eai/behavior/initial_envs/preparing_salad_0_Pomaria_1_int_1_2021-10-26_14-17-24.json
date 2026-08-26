@@ -1,0 +1,300 @@
+{
+  "dataset": "behavior",
+  "case_id": "preparing_salad_0_Pomaria_1_int_1_2021-10-26_14-17-24",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "preparing_salad",
+    "task_id": 0,
+    "scene_id": "Pomaria_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "preparing salad",
+    "task": "preparing_salad",
+    "task_id": 0,
+    "scene_id": "Pomaria_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 18,
+    "room_count": 1,
+    "entity_catalog": [
+      "apple_80",
+      "apple_81",
+      "behavior_room",
+      "behavior_room_anchor",
+      "carving_knife_86",
+      "countertop_31",
+      "fridge_20",
+      "lettuce_78",
+      "lettuce_79",
+      "plate_87",
+      "plate_88",
+      "radish_84",
+      "radish_85",
+      "room_floor_kitchen_0",
+      "sink_37",
+      "tomato_82",
+      "tomato_83",
+      "top_cabinet_27"
+    ],
+    "name_mapping": {
+      "electric_refrigerator.n.01_1": {
+        "name": "fridge_20",
+        "category": "electric_refrigerator.n.01"
+      },
+      "lettuce.n.03_1": {
+        "name": "lettuce_78",
+        "category": "lettuce.n.03"
+      },
+      "lettuce.n.03_2": {
+        "name": "lettuce_79",
+        "category": "lettuce.n.03"
+      },
+      "countertop.n.01_1": {
+        "name": "countertop_31",
+        "category": "countertop.n.01"
+      },
+      "apple.n.01_1": {
+        "name": "apple_80",
+        "category": "apple.n.01"
+      },
+      "apple.n.01_2": {
+        "name": "apple_81",
+        "category": "apple.n.01"
+      },
+      "tomato.n.01_1": {
+        "name": "tomato_82",
+        "category": "tomato.n.01"
+      },
+      "tomato.n.01_2": {
+        "name": "tomato_83",
+        "category": "tomato.n.01"
+      },
+      "radish.n.01_1": {
+        "name": "radish_84",
+        "category": "radish.n.01"
+      },
+      "radish.n.01_2": {
+        "name": "radish_85",
+        "category": "radish.n.01"
+      },
+      "carving_knife.n.01_1": {
+        "name": "carving_knife_86",
+        "category": "carving_knife.n.01"
+      },
+      "plate.n.04_1": {
+        "name": "plate_87",
+        "category": "plate.n.04"
+      },
+      "plate.n.04_2": {
+        "name": "plate_88",
+        "category": "plate.n.04"
+      },
+      "cabinet.n.01_1": {
+        "name": "top_cabinet_27",
+        "category": "cabinet.n.01"
+      },
+      "sink.n.01_1": {
+        "name": "sink_37",
+        "category": "sink.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "countertop_31": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "apple_80": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "apple_81": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "lettuce_78": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "lettuce_79": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "radish_84": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "radish_85": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "fridge_20": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "tomato_82": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "tomato_83": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "sink_37": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "top_cabinet_27": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "carving_knife_86": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "plate_87": {
+                      "states": {
+                        "isDirty": false,
+                        "isClean": true,
+                        "isDusty": false
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "inside"
+                    },
+                    "plate_88": {
+                      "states": {
+                        "isDirty": false,
+                        "isClean": true,
+                        "isDusty": false
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "apple_80": {
+        "name": "apple_80",
+        "category": "apple.n.01"
+      },
+      "apple_81": {
+        "name": "apple_81",
+        "category": "apple.n.01"
+      },
+      "carving_knife_86": {
+        "name": "carving_knife_86",
+        "category": "carving_knife.n.01"
+      },
+      "countertop_31": {
+        "name": "countertop_31",
+        "category": "countertop.n.01"
+      },
+      "fridge_20": {
+        "name": "fridge_20",
+        "category": "electric_refrigerator.n.01"
+      },
+      "lettuce_78": {
+        "name": "lettuce_78",
+        "category": "lettuce.n.03"
+      },
+      "lettuce_79": {
+        "name": "lettuce_79",
+        "category": "lettuce.n.03"
+      },
+      "plate_87": {
+        "name": "plate_87",
+        "category": "plate.n.04"
+      },
+      "plate_88": {
+        "name": "plate_88",
+        "category": "plate.n.04"
+      },
+      "radish_84": {
+        "name": "radish_84",
+        "category": "radish.n.01"
+      },
+      "radish_85": {
+        "name": "radish_85",
+        "category": "radish.n.01"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "sink_37": {
+        "name": "sink_37",
+        "category": "sink.n.01"
+      },
+      "tomato_82": {
+        "name": "tomato_82",
+        "category": "tomato.n.01"
+      },
+      "tomato_83": {
+        "name": "tomato_83",
+        "category": "tomato.n.01"
+      },
+      "top_cabinet_27": {
+        "name": "top_cabinet_27",
+        "category": "cabinet.n.01"
+      }
+    }
+  }
+}

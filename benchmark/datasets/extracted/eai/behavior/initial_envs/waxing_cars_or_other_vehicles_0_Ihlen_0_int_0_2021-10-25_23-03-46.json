@@ -1,0 +1,139 @@
+{
+  "dataset": "behavior",
+  "case_id": "waxing_cars_or_other_vehicles_0_Ihlen_0_int_0_2021-10-25_23-03-46",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "waxing_cars_or_other_vehicles",
+    "task_id": 0,
+    "scene_id": "Ihlen_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "waxing cars or other vehicles",
+    "task": "waxing_cars_or_other_vehicles",
+    "task_id": 0,
+    "scene_id": "Ihlen_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 7,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "car_50",
+      "cruet_51",
+      "rag_52",
+      "room_floor_garage_0",
+      "shelf_16"
+    ],
+    "name_mapping": {
+      "vehicle.n.01_1": {
+        "name": "car_50",
+        "category": "vehicle.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_garage_0",
+        "category": "floor.n.01"
+      },
+      "vessel.n.03_1": {
+        "name": "cruet_51",
+        "category": "vessel.n.03"
+      },
+      "shelf.n.01_1": {
+        "name": "shelf_16",
+        "category": "shelf.n.01"
+      },
+      "rag.n.01_1": {
+        "name": "rag_52",
+        "category": "rag.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "room_floor_garage_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "car_50": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isDusty": true
+                      },
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "shelf_16": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "cruet_51": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "rag_52": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_garage_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_garage_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "car_50": {
+        "name": "car_50",
+        "category": "vehicle.n.01"
+      },
+      "cruet_51": {
+        "name": "cruet_51",
+        "category": "vessel.n.03"
+      },
+      "rag_52": {
+        "name": "rag_52",
+        "category": "rag.n.01"
+      },
+      "room_floor_garage_0": {
+        "name": "room_floor_garage_0",
+        "category": "floor.n.01"
+      },
+      "shelf_16": {
+        "name": "shelf_16",
+        "category": "shelf.n.01"
+      }
+    }
+  }
+}

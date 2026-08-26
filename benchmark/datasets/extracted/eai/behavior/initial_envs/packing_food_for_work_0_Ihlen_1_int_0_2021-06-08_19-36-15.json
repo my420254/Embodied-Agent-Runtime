@@ -1,0 +1,209 @@
+{
+  "dataset": "behavior",
+  "case_id": "packing_food_for_work_0_Ihlen_1_int_0_2021-06-08_19-36-15",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "packing_food_for_work",
+    "task_id": 0,
+    "scene_id": "Ihlen_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "packing food for work",
+    "task": "packing_food_for_work",
+    "task_id": 0,
+    "scene_id": "Ihlen_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 12,
+    "room_count": 1,
+    "entity_catalog": [
+      "apple_0",
+      "behavior_room",
+      "behavior_room_anchor",
+      "carton_0",
+      "countertop_81",
+      "door_91",
+      "fridge_61",
+      "hamburger_0",
+      "hamburger_1",
+      "juice_0",
+      "room_floor_kitchen_0",
+      "top_cabinet_62"
+    ],
+    "name_mapping": {
+      "carton.n.02_1": {
+        "name": "carton_0",
+        "category": "carton.n.02"
+      },
+      "countertop.n.01_1": {
+        "name": "countertop_81",
+        "category": "countertop.n.01"
+      },
+      "sandwich.n.01_1": {
+        "name": "hamburger_0",
+        "category": "sandwich.n.01"
+      },
+      "electric_refrigerator.n.01_1": {
+        "name": "fridge_61",
+        "category": "electric_refrigerator.n.01"
+      },
+      "apple.n.01_1": {
+        "name": "apple_0",
+        "category": "apple.n.01"
+      },
+      "snack_food.n.01_1": {
+        "name": "hamburger_1",
+        "category": "snack_food.n.01"
+      },
+      "cabinet.n.01_1": {
+        "name": "top_cabinet_62",
+        "category": "cabinet.n.01"
+      },
+      "juice.n.01_1": {
+        "name": "juice_0",
+        "category": "juice.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "door.n.01_1": {
+        "name": "door_91",
+        "category": "door.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "countertop_81": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "apple_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "juice_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "door_91": {
+                  "states": {}
+                },
+                "fridge_61": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "hamburger_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "carton_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "top_cabinet_62": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "hamburger_1": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "apple_0": {
+        "name": "apple_0",
+        "category": "apple.n.01"
+      },
+      "carton_0": {
+        "name": "carton_0",
+        "category": "carton.n.02"
+      },
+      "countertop_81": {
+        "name": "countertop_81",
+        "category": "countertop.n.01"
+      },
+      "door_91": {
+        "name": "door_91",
+        "category": "door.n.01"
+      },
+      "fridge_61": {
+        "name": "fridge_61",
+        "category": "electric_refrigerator.n.01"
+      },
+      "hamburger_0": {
+        "name": "hamburger_0",
+        "category": "sandwich.n.01"
+      },
+      "hamburger_1": {
+        "name": "hamburger_1",
+        "category": "snack_food.n.01"
+      },
+      "juice_0": {
+        "name": "juice_0",
+        "category": "juice.n.01"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "top_cabinet_62": {
+        "name": "top_cabinet_62",
+        "category": "cabinet.n.01"
+      }
+    }
+  }
+}

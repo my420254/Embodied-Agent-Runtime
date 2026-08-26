@@ -1,0 +1,178 @@
+{
+  "dataset": "behavior",
+  "case_id": "rearranging_furniture_0_Pomaria_2_int_1_2021-06-22_16-39-21",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "rearranging_furniture",
+    "task_id": 0,
+    "scene_id": "Pomaria_2_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "rearranging furniture",
+    "task": "rearranging_furniture",
+    "task_id": 0,
+    "scene_id": "Pomaria_2_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 10,
+    "room_count": 1,
+    "entity_catalog": [
+      "bed_11",
+      "behavior_room",
+      "behavior_room_anchor",
+      "chaise_longue_0",
+      "chaise_longue_1",
+      "door_29",
+      "floor_lamp_1",
+      "room_floor_bedroom_0",
+      "table_lamp_0",
+      "window_27"
+    ],
+    "name_mapping": {
+      "lamp.n.02_1": {
+        "name": "table_lamp_0",
+        "category": "lamp.n.02"
+      },
+      "lamp.n.02_2": {
+        "name": "floor_lamp_1",
+        "category": "lamp.n.02"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_bedroom_0",
+        "category": "floor.n.01"
+      },
+      "seat.n.03_1": {
+        "name": "chaise_longue_0",
+        "category": "seat.n.03"
+      },
+      "seat.n.03_2": {
+        "name": "chaise_longue_1",
+        "category": "seat.n.03"
+      },
+      "bed.n.01_1": {
+        "name": "bed_11",
+        "category": "bed.n.01"
+      },
+      "window.n.01_1": {
+        "name": "window_27",
+        "category": "window.n.01"
+      },
+      "door.n.01_1": {
+        "name": "door_29",
+        "category": "door.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bed_11": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "chaise_longue_1": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "door_29": {
+                  "states": {}
+                },
+                "room_floor_bedroom_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "chaise_longue_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "floor_lamp_1": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "table_lamp_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "window_27": {
+                  "states": {
+                    "isOpen": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_bedroom_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_bedroom_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bed_11": {
+        "name": "bed_11",
+        "category": "bed.n.01"
+      },
+      "chaise_longue_0": {
+        "name": "chaise_longue_0",
+        "category": "seat.n.03"
+      },
+      "chaise_longue_1": {
+        "name": "chaise_longue_1",
+        "category": "seat.n.03"
+      },
+      "door_29": {
+        "name": "door_29",
+        "category": "door.n.01"
+      },
+      "floor_lamp_1": {
+        "name": "floor_lamp_1",
+        "category": "lamp.n.02"
+      },
+      "room_floor_bedroom_0": {
+        "name": "room_floor_bedroom_0",
+        "category": "floor.n.01"
+      },
+      "table_lamp_0": {
+        "name": "table_lamp_0",
+        "category": "lamp.n.02"
+      },
+      "window_27": {
+        "name": "window_27",
+        "category": "window.n.01"
+      }
+    }
+  }
+}

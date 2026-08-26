@@ -1,0 +1,4482 @@
+{
+  "dataset": "reactree_wah",
+  "task_id": 79,
+  "env_id": 6,
+  "init_room": "livingroom",
+  "source": {
+    "kind": "reactree_case_runtime_scene",
+    "testset_path": "/data/zmy/OurAgent-he1/benchmark/datasets/native/reactree/wah/wah_nl_test_rev.json",
+    "extraction": "clean runtime scene from ReAcTree WAH native init_graph"
+  },
+  "flat_initial_environment": {
+    "entity_count": 360,
+    "room_count": 4,
+    "entity_catalog": [
+      "alcohol 1",
+      "alcohol 2",
+      "amplifier 1",
+      "apple 1",
+      "apple 2",
+      "balance ball 1",
+      "bananas 1",
+      "bar soap 1",
+      "bathroom 1",
+      "bathroom cabinet 1",
+      "bathroom counter 1",
+      "bed 1",
+      "bedroom 1",
+      "bench 1",
+      "bench 2",
+      "board game 1",
+      "book 1",
+      "book 2",
+      "book 3",
+      "book 4",
+      "book 5",
+      "book 6",
+      "book 7",
+      "bookshelf 1",
+      "bookshelf 2",
+      "bookshelf 3",
+      "bookshelf 4",
+      "bottled water 1",
+      "bowl 1",
+      "bowl 2",
+      "bowl 3",
+      "bowl 4",
+      "bowl 5",
+      "bowl 6",
+      "bowl 7",
+      "box 1",
+      "box 2",
+      "box 3",
+      "box 4",
+      "box 5",
+      "box 6",
+      "box 7",
+      "cabinet 1",
+      "candle 1",
+      "candle 2",
+      "candy bar 1",
+      "ceiling 1",
+      "ceiling 10",
+      "ceiling 11",
+      "ceiling 12",
+      "ceiling 13",
+      "ceiling 14",
+      "ceiling 15",
+      "ceiling 16",
+      "ceiling 17",
+      "ceiling 18",
+      "ceiling 19",
+      "ceiling 2",
+      "ceiling 20",
+      "ceiling 21",
+      "ceiling 22",
+      "ceiling 23",
+      "ceiling 24",
+      "ceiling 25",
+      "ceiling 26",
+      "ceiling 27",
+      "ceiling 28",
+      "ceiling 3",
+      "ceiling 4",
+      "ceiling 5",
+      "ceiling 6",
+      "ceiling 7",
+      "ceiling 8",
+      "ceiling 9",
+      "ceiling fan 1",
+      "ceiling fan 2",
+      "ceiling lamp 1",
+      "ceiling lamp 2",
+      "ceiling lamp 3",
+      "ceiling lamp 4",
+      "ceiling lamp 5",
+      "ceiling lamp 6",
+      "ceiling lamp 7",
+      "ceiling lamp 8",
+      "cell phone 1",
+      "cell phone 2",
+      "cereal 1",
+      "chair 1",
+      "chair 2",
+      "chair 3",
+      "chair 4",
+      "chicken 1",
+      "chips 1",
+      "chips 2",
+      "chocolate syrup 1",
+      "closet 1",
+      "closet 2",
+      "coffee maker 1",
+      "coffee pot 1",
+      "coffee table 1",
+      "coffee table 2",
+      "computer 1",
+      "computer 2",
+      "condiment shaker 1",
+      "condiment shaker 2",
+      "cooking pot 1",
+      "cpu screen 1",
+      "cpu screen 2",
+      "cpu screen 3",
+      "cpu screen 4",
+      "crackers 1",
+      "crayons 1",
+      "creamy buns 1",
+      "creamy buns 2",
+      "cupcake 1",
+      "cupcake 2",
+      "cupcake 3",
+      "curtains 1",
+      "curtains 2",
+      "curtains 3",
+      "curtains 4",
+      "curtains 5",
+      "curtains 6",
+      "curtains 7",
+      "cutlery knife 1",
+      "cutlery knife 2",
+      "cutlets 1",
+      "deodorant 1",
+      "desk 1",
+      "desk 2",
+      "desk 3",
+      "dishwasher 1",
+      "dishwashing liquid 1",
+      "door 1",
+      "door jamb 1",
+      "door jamb 2",
+      "door jamb 3",
+      "door jamb 4",
+      "face cream 1",
+      "face cream 2",
+      "faucet 1",
+      "faucet 2",
+      "floor 1",
+      "floor 10",
+      "floor 11",
+      "floor 12",
+      "floor 13",
+      "floor 14",
+      "floor 15",
+      "floor 16",
+      "floor 17",
+      "floor 18",
+      "floor 19",
+      "floor 2",
+      "floor 20",
+      "floor 21",
+      "floor 22",
+      "floor 23",
+      "floor 24",
+      "floor 25",
+      "floor 26",
+      "floor 27",
+      "floor 28",
+      "floor 3",
+      "floor 4",
+      "floor 5",
+      "floor 6",
+      "floor 7",
+      "floor 8",
+      "floor 9",
+      "folder 1",
+      "folder 2",
+      "folder 3",
+      "folder 4",
+      "fridge 1",
+      "fridge 2",
+      "frying pan 1",
+      "game 1",
+      "garbage can 1",
+      "garbage can 2",
+      "garbage can 3",
+      "glasses 1",
+      "guitar 1",
+      "hair product 1",
+      "hair product 2",
+      "hair product 3",
+      "hair product 4",
+      "hanger 1",
+      "hanger 2",
+      "hanger 3",
+      "hanger 4",
+      "hanger 5",
+      "hanger 6",
+      "juice 1",
+      "juice 2",
+      "keyboard 1",
+      "keyboard 2",
+      "kitchen 1",
+      "kitchen cabinet 1",
+      "kitchen cabinet 2",
+      "kitchen cabinet 3",
+      "kitchen cabinet 4",
+      "kitchen cabinet 5",
+      "kitchen cabinet 6",
+      "kitchen cabinet 7",
+      "kitchen cabinet 8",
+      "kitchen counter 1",
+      "kitchen counter 2",
+      "kitchen counter drawer 1",
+      "kitchen counter drawer 2",
+      "kitchen counter drawer 3",
+      "kitchen counter drawer 4",
+      "kitchen counter drawer 5",
+      "kitchen counter drawer 6",
+      "kitchen counter drawer 7",
+      "kitchen table 1",
+      "knife block 1",
+      "light switch 1",
+      "light switch 2",
+      "light switch 3",
+      "light switch 4",
+      "lime 1",
+      "living room 1",
+      "longboard 1",
+      "magazine 1",
+      "microwave oven 1",
+      "milk 1",
+      "mouse 1",
+      "mouse 2",
+      "mouse mat 1",
+      "mouse mat 2",
+      "mug 1",
+      "nightstand 1",
+      "notes 1",
+      "orchid 1",
+      "oven tray 1",
+      "pancake 1",
+      "pants 1",
+      "pants 2",
+      "paper 1",
+      "peach 1",
+      "peach 2",
+      "perfume 1",
+      "photo frame 1",
+      "photo frame 2",
+      "pile of clothes 1",
+      "pile of clothes 2",
+      "pile of clothes 3",
+      "pile of clothes 4",
+      "pillow 1",
+      "pillow 2",
+      "pillow 3",
+      "plate 1",
+      "plate 2",
+      "plate 3",
+      "plate 4",
+      "plate 5",
+      "plate 6",
+      "plate 7",
+      "plate 8",
+      "plum 1",
+      "plum 2",
+      "pound cake 1",
+      "pound cake 2",
+      "power socket 1",
+      "power socket 2",
+      "power socket 3",
+      "pudding 1",
+      "radio 1",
+      "rug 1",
+      "rug 2",
+      "shirt 1",
+      "shirt 2",
+      "shirt 3",
+      "shirt 4",
+      "sink 1",
+      "sink 2",
+      "slice of bread 1",
+      "slice of bread 2",
+      "slippers 1",
+      "slippers 2",
+      "slippers 3",
+      "slippers 4",
+      "sofa 1",
+      "speaker 1",
+      "speaker 2",
+      "speaker 3",
+      "speaker 4",
+      "speaker 5",
+      "speaker 6",
+      "sports ball 1",
+      "stall 1",
+      "stove 1",
+      "stove fan 1",
+      "sundae 1",
+      "table lamp 1",
+      "toaster 1",
+      "toilet 1",
+      "toilet paper 1",
+      "toothbrush 1",
+      "toothpaste 1",
+      "towel 1",
+      "towel 2",
+      "towel 3",
+      "towel 4",
+      "towel 5",
+      "towel rack 1",
+      "toy 1",
+      "tv 1",
+      "tv stand 1",
+      "tv stand 2",
+      "vase 1",
+      "wall 1",
+      "wall 10",
+      "wall 11",
+      "wall 12",
+      "wall 13",
+      "wall 14",
+      "wall 15",
+      "wall 16",
+      "wall 17",
+      "wall 18",
+      "wall 19",
+      "wall 2",
+      "wall 20",
+      "wall 21",
+      "wall 22",
+      "wall 23",
+      "wall 24",
+      "wall 25",
+      "wall 26",
+      "wall 3",
+      "wall 4",
+      "wall 5",
+      "wall 6",
+      "wall 7",
+      "wall 8",
+      "wall 9",
+      "wall lamp 1",
+      "wall lamp 2",
+      "wall lamp 3",
+      "wall lamp 4",
+      "wall phone 1",
+      "wall picture frame 1",
+      "wall picture frame 2",
+      "wall picture frame 3",
+      "wall picture frame 4",
+      "wall picture frame 5",
+      "wall picture frame 6",
+      "wall picture frame 7",
+      "wall picture frame 8",
+      "wall picture frame 9",
+      "washing machine 1",
+      "washing sponge 1",
+      "water glass 1",
+      "water glass 2",
+      "window 1",
+      "window 2",
+      "window 3",
+      "wine 1"
+    ]
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "living room 1": {
+          "contains": {
+            "floor 14": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 201,
+              "direct_relation": "inside"
+            },
+            "floor 15": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 202,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "speaker 2": {
+                  "states": {},
+                  "properties": [],
+                  "sim_class_name": "speaker",
+                  "sim_id": 293,
+                  "direct_relation": "on"
+                }
+              }
+            },
+            "floor 16": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 203,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "coffee table 1": {
+                  "states": {},
+                  "properties": [
+                    "SURFACES",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "coffeetable",
+                  "sim_id": 249,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {
+                    "alcohol 2": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "DRINKABLE",
+                        "POURABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "alcohol",
+                      "sim_id": 251,
+                      "direct_relation": "on"
+                    },
+                    "bananas 1": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "bananas",
+                      "sim_id": 254,
+                      "direct_relation": "on"
+                    },
+                    "lime 1": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "lime",
+                      "sim_id": 255,
+                      "direct_relation": "on"
+                    },
+                    "peach 1": {
+                      "states": {},
+                      "properties": [],
+                      "sim_class_name": "peach",
+                      "sim_id": 256,
+                      "direct_relation": "on"
+                    },
+                    "peach 2": {
+                      "states": {},
+                      "properties": [],
+                      "sim_class_name": "peach",
+                      "sim_id": 257,
+                      "direct_relation": "on"
+                    },
+                    "plum 1": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "plum",
+                      "sim_id": 258,
+                      "direct_relation": "on"
+                    },
+                    "plum 2": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "plum",
+                      "sim_id": 259,
+                      "direct_relation": "on"
+                    },
+                    "bowl 7": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "RECIPIENT",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "dishbowl",
+                      "sim_id": 260,
+                      "direct_relation": "on",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "mug 1": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "RECIPIENT",
+                        "POURABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "mug",
+                      "sim_id": 263,
+                      "direct_relation": "on",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "book 3": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "properties": [
+                        "GRABBABLE",
+                        "CUTTABLE",
+                        "CAN_OPEN",
+                        "READABLE",
+                        "HAS_PAPER",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "book",
+                      "sim_id": 264,
+                      "direct_relation": "on",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "cell phone 1": {
+                      "states": {
+                        "isToggled": false
+                      },
+                      "properties": [
+                        "GRABBABLE",
+                        "HAS_SWITCH",
+                        "HAS_PLUG",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "cellphone",
+                      "sim_id": 271,
+                      "direct_relation": "on"
+                    },
+                    "pound cake 2": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "EATABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "poundcake",
+                      "sim_id": 390,
+                      "direct_relation": "on"
+                    }
+                  }
+                }
+              }
+            },
+            "floor 17": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 204,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "garbage can 2": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "properties": [
+                    "CAN_OPEN",
+                    "CONTAINERS",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "garbagecan",
+                  "sim_id": 273,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            },
+            "floor 18": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 205,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "speaker 1": {
+                  "states": {},
+                  "properties": [],
+                  "sim_class_name": "speaker",
+                  "sim_id": 292,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {
+                    "cell phone 2": {
+                      "states": {
+                        "isToggled": false
+                      },
+                      "properties": [
+                        "GRABBABLE",
+                        "HAS_SWITCH",
+                        "HAS_PLUG",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "cellphone",
+                      "sim_id": 274,
+                      "direct_relation": "on"
+                    }
+                  }
+                }
+              }
+            },
+            "floor 19": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 206,
+              "direct_relation": "inside"
+            },
+            "floor 20": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 207,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "desk 1": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "properties": [
+                    "SURFACES",
+                    "CAN_OPEN",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "desk",
+                  "sim_id": 246,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {
+                    "water glass 2": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "RECIPIENT",
+                        "POURABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "waterglass",
+                      "sim_id": 261,
+                      "direct_relation": "on",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "computer 1": {
+                      "states": {
+                        "isToggled": false
+                      },
+                      "properties": [
+                        "HAS_SWITCH",
+                        "LOOKABLE"
+                      ],
+                      "sim_class_name": "computer",
+                      "sim_id": 284,
+                      "direct_relation": "on",
+                      "type": "receptacle",
+                      "contains": {
+                        "book 7": {
+                          "states": {
+                            "isOpen": false
+                          },
+                          "properties": [
+                            "GRABBABLE",
+                            "CUTTABLE",
+                            "CAN_OPEN",
+                            "READABLE",
+                            "HAS_PAPER",
+                            "MOVABLE"
+                          ],
+                          "sim_class_name": "book",
+                          "sim_id": 270,
+                          "direct_relation": "on",
+                          "type": "receptacle",
+                          "contains": {}
+                        }
+                      }
+                    },
+                    "cpu screen 1": {
+                      "states": {},
+                      "properties": [],
+                      "sim_class_name": "cpuscreen",
+                      "sim_id": 285,
+                      "direct_relation": "on"
+                    },
+                    "keyboard 1": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "HAS_PLUG",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "keyboard",
+                      "sim_id": 286,
+                      "direct_relation": "on"
+                    },
+                    "mouse mat 1": {
+                      "states": {},
+                      "properties": [
+                        "SURFACES",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "mousemat",
+                      "sim_id": 289,
+                      "direct_relation": "on",
+                      "type": "receptacle",
+                      "contains": {
+                        "mouse 1": {
+                          "states": {},
+                          "properties": [
+                            "GRABBABLE",
+                            "HAS_PLUG",
+                            "MOVABLE"
+                          ],
+                          "sim_class_name": "mouse",
+                          "sim_id": 288,
+                          "direct_relation": "on"
+                        }
+                      }
+                    }
+                  }
+                },
+                "bookshelf 3": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "properties": [
+                    "SURFACES",
+                    "CAN_OPEN",
+                    "CONTAINERS"
+                  ],
+                  "sim_class_name": "bookshelf",
+                  "sim_id": 248,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {
+                    "folder 1": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "properties": [
+                        "GRABBABLE",
+                        "CAN_OPEN",
+                        "READABLE",
+                        "CONTAINERS",
+                        "HAS_PAPER",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "folder",
+                      "sim_id": 117,
+                      "direct_relation": "inside",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "folder 2": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "properties": [
+                        "GRABBABLE",
+                        "CAN_OPEN",
+                        "READABLE",
+                        "CONTAINERS",
+                        "HAS_PAPER",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "folder",
+                      "sim_id": 118,
+                      "direct_relation": "inside",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "folder 3": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "properties": [
+                        "GRABBABLE",
+                        "CAN_OPEN",
+                        "READABLE",
+                        "CONTAINERS",
+                        "HAS_PAPER",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "folder",
+                      "sim_id": 119,
+                      "direct_relation": "inside",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "folder 4": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "properties": [
+                        "GRABBABLE",
+                        "CAN_OPEN",
+                        "READABLE",
+                        "CONTAINERS",
+                        "HAS_PAPER",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "folder",
+                      "sim_id": 120,
+                      "direct_relation": "inside",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "crayons 1": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "crayons",
+                      "sim_id": 121,
+                      "direct_relation": "inside"
+                    },
+                    "notes 1": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "READABLE",
+                        "HAS_PAPER",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "notes",
+                      "sim_id": 122,
+                      "direct_relation": "inside"
+                    },
+                    "book 4": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "properties": [
+                        "GRABBABLE",
+                        "CUTTABLE",
+                        "CAN_OPEN",
+                        "READABLE",
+                        "HAS_PAPER",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "book",
+                      "sim_id": 265,
+                      "direct_relation": "inside",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "book 5": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "properties": [
+                        "GRABBABLE",
+                        "CUTTABLE",
+                        "CAN_OPEN",
+                        "READABLE",
+                        "HAS_PAPER",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "book",
+                      "sim_id": 266,
+                      "direct_relation": "inside",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "photo frame 2": {
+                      "states": {},
+                      "properties": [],
+                      "sim_class_name": "photoframe",
+                      "sim_id": 267,
+                      "direct_relation": "inside"
+                    },
+                    "box 1": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "properties": [
+                        "GRABBABLE",
+                        "RECIPIENT",
+                        "CAN_OPEN",
+                        "CONTAINERS",
+                        "COVER_OBJECT",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "box",
+                      "sim_id": 268,
+                      "direct_relation": "inside",
+                      "type": "receptacle",
+                      "contains": {}
+                    }
+                  }
+                }
+              }
+            },
+            "floor 21": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 208,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "nightstand 1": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "properties": [
+                    "SURFACES",
+                    "CAN_OPEN",
+                    "CONTAINERS"
+                  ],
+                  "sim_class_name": "nightstand",
+                  "sim_id": 245,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            },
+            "floor 22": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 209,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "balance ball 1": {
+                  "states": {},
+                  "properties": [],
+                  "sim_class_name": "balanceball",
+                  "sim_id": 281,
+                  "direct_relation": "on"
+                }
+              }
+            },
+            "door jamb 2": {
+              "states": {
+                "isOpen": true
+              },
+              "properties": [],
+              "sim_class_name": "doorjamb",
+              "sim_id": 211,
+              "direct_relation": "inside"
+            },
+            "ceiling 14": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 212,
+              "direct_relation": "inside"
+            },
+            "ceiling 15": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 213,
+              "direct_relation": "inside"
+            },
+            "ceiling 16": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 214,
+              "direct_relation": "inside"
+            },
+            "ceiling 17": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 215,
+              "direct_relation": "inside"
+            },
+            "ceiling 18": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 216,
+              "direct_relation": "inside"
+            },
+            "ceiling 19": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 217,
+              "direct_relation": "inside"
+            },
+            "ceiling 20": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 218,
+              "direct_relation": "inside"
+            },
+            "ceiling 21": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 219,
+              "direct_relation": "inside"
+            },
+            "ceiling 22": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 220,
+              "direct_relation": "inside"
+            },
+            "ceiling lamp 4": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceilinglamp",
+              "sim_id": 221,
+              "direct_relation": "inside"
+            },
+            "ceiling lamp 5": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceilinglamp",
+              "sim_id": 222,
+              "direct_relation": "inside"
+            },
+            "table lamp 1": {
+              "states": {
+                "isToggled": true
+              },
+              "properties": [],
+              "sim_class_name": "tablelamp",
+              "sim_id": 223,
+              "direct_relation": "inside"
+            },
+            "wall 13": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 224,
+              "direct_relation": "inside"
+            },
+            "wall 14": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 225,
+              "direct_relation": "inside"
+            },
+            "wall 15": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 226,
+              "direct_relation": "inside"
+            },
+            "wall 16": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 227,
+              "direct_relation": "inside"
+            },
+            "wall 17": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 228,
+              "direct_relation": "inside"
+            },
+            "wall 18": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 229,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "wall phone 1": {
+                  "states": {
+                    "isToggled": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "HAS_SWITCH",
+                    "HAS_PLUG",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "wallphone",
+                  "sim_id": 85,
+                  "direct_relation": "on"
+                }
+              }
+            },
+            "wall 19": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 230,
+              "direct_relation": "inside"
+            },
+            "wall 20": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 231,
+              "direct_relation": "inside"
+            },
+            "wall picture frame 5": {
+              "states": {},
+              "properties": [
+                "GRABBABLE",
+                "HANGABLE",
+                "HAS_PAPER",
+                "MOVABLE"
+              ],
+              "sim_class_name": "wallpictureframe",
+              "sim_id": 232,
+              "direct_relation": "inside"
+            },
+            "wall picture frame 6": {
+              "states": {},
+              "properties": [
+                "GRABBABLE",
+                "HANGABLE",
+                "HAS_PAPER",
+                "MOVABLE"
+              ],
+              "sim_class_name": "wallpictureframe",
+              "sim_id": 233,
+              "direct_relation": "inside"
+            },
+            "curtains 2": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "CAN_OPEN",
+                "COVER_OBJECT",
+                "MOVABLE"
+              ],
+              "sim_class_name": "curtains",
+              "sim_id": 234,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {}
+            },
+            "curtains 3": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "CAN_OPEN",
+                "COVER_OBJECT",
+                "MOVABLE"
+              ],
+              "sim_class_name": "curtains",
+              "sim_id": 235,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {}
+            },
+            "curtains 4": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "CAN_OPEN",
+                "COVER_OBJECT",
+                "MOVABLE"
+              ],
+              "sim_class_name": "curtains",
+              "sim_id": 236,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {}
+            },
+            "tv stand 2": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "tvstand",
+              "sim_id": 237,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "face cream 2": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "POURABLE",
+                    "MOVABLE",
+                    "CREAM"
+                  ],
+                  "sim_class_name": "facecream",
+                  "sim_id": 262,
+                  "direct_relation": "on"
+                },
+                "crackers 1": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "crackers",
+                  "sim_id": 272,
+                  "direct_relation": "on"
+                },
+                "tv 1": {
+                  "states": {
+                    "isToggled": false
+                  },
+                  "properties": [
+                    "HAS_SWITCH",
+                    "LOOKABLE",
+                    "HAS_PLUG"
+                  ],
+                  "sim_class_name": "tv",
+                  "sim_id": 290,
+                  "direct_relation": "on"
+                }
+              }
+            },
+            "closet 1": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "CAN_OPEN",
+                "CONTAINERS"
+              ],
+              "sim_class_name": "closet",
+              "sim_id": 238,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "shirt 1": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "HANGABLE",
+                    "CLOTHES",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "clothesshirt",
+                  "sim_id": 240,
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "hanger 1": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "HANGABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "hanger",
+                      "sim_id": 239,
+                      "direct_relation": "on"
+                    }
+                  }
+                },
+                "hanger 2": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "HANGABLE",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "hanger",
+                  "sim_id": 241,
+                  "direct_relation": "inside"
+                },
+                "pants 1": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "HANGABLE",
+                    "CLOTHES",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "clothespants",
+                  "sim_id": 242,
+                  "direct_relation": "inside"
+                },
+                "shirt 2": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "HANGABLE",
+                    "CLOTHES",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "clothesshirt",
+                  "sim_id": 244,
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "hanger 3": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "HANGABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "hanger",
+                      "sim_id": 243,
+                      "direct_relation": "on"
+                    }
+                  }
+                }
+              }
+            },
+            "chair 3": {
+              "states": {},
+              "properties": [
+                "SURFACES",
+                "GRABBABLE",
+                "SITTABLE",
+                "MOVABLE"
+              ],
+              "sim_class_name": "chair",
+              "sim_id": 247,
+              "direct_relation": "inside"
+            },
+            "sofa 1": {
+              "states": {},
+              "properties": [
+                "SURFACES",
+                "SITTABLE",
+                "LIEABLE",
+                "MOVABLE"
+              ],
+              "sim_class_name": "sofa",
+              "sim_id": 250,
+              "direct_relation": "inside"
+            },
+            "book 6": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "GRABBABLE",
+                "CUTTABLE",
+                "CAN_OPEN",
+                "READABLE",
+                "HAS_PAPER",
+                "MOVABLE"
+              ],
+              "sim_class_name": "book",
+              "sim_id": 269,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {}
+            },
+            "box 6": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "GRABBABLE",
+                "RECIPIENT",
+                "CAN_OPEN",
+                "CONTAINERS",
+                "COVER_OBJECT",
+                "MOVABLE"
+              ],
+              "sim_class_name": "box",
+              "sim_id": 279,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "box 4": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "RECIPIENT",
+                    "CAN_OPEN",
+                    "CONTAINERS",
+                    "COVER_OBJECT",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "box",
+                  "sim_id": 277,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {
+                    "box 3": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "properties": [
+                        "GRABBABLE",
+                        "RECIPIENT",
+                        "CAN_OPEN",
+                        "CONTAINERS",
+                        "COVER_OBJECT",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "box",
+                      "sim_id": 276,
+                      "direct_relation": "on",
+                      "type": "receptacle",
+                      "contains": {}
+                    }
+                  }
+                }
+              }
+            },
+            "box 7": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "GRABBABLE",
+                "RECIPIENT",
+                "CAN_OPEN",
+                "CONTAINERS",
+                "COVER_OBJECT",
+                "MOVABLE"
+              ],
+              "sim_class_name": "box",
+              "sim_id": 280,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "box 5": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "RECIPIENT",
+                    "CAN_OPEN",
+                    "CONTAINERS",
+                    "COVER_OBJECT",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "box",
+                  "sim_id": 278,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {
+                    "box 2": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "properties": [
+                        "GRABBABLE",
+                        "RECIPIENT",
+                        "CAN_OPEN",
+                        "CONTAINERS",
+                        "COVER_OBJECT",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "box",
+                      "sim_id": 275,
+                      "direct_relation": "on",
+                      "type": "receptacle",
+                      "contains": {}
+                    }
+                  }
+                }
+              }
+            },
+            "window 1": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "CAN_OPEN"
+              ],
+              "sim_class_name": "window",
+              "sim_id": 282,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {}
+            },
+            "window 2": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "CAN_OPEN"
+              ],
+              "sim_class_name": "window",
+              "sim_id": 283,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {}
+            },
+            "light switch 3": {
+              "states": {
+                "isToggled": true
+              },
+              "properties": [
+                "HAS_SWITCH",
+                "HAS_PLUG"
+              ],
+              "sim_class_name": "lightswitch",
+              "sim_id": 287,
+              "direct_relation": "inside"
+            },
+            "ceiling fan 2": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceilingfan",
+              "sim_id": 291,
+              "direct_relation": "inside"
+            },
+            "speaker 3": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "speaker",
+              "sim_id": 294,
+              "direct_relation": "inside"
+            },
+            "speaker 4": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "speaker",
+              "sim_id": 295,
+              "direct_relation": "inside"
+            }
+          }
+        },
+        "bedroom 1": {
+          "contains": {
+            "door jamb 3": {
+              "states": {
+                "isOpen": true
+              },
+              "properties": [],
+              "sim_class_name": "doorjamb",
+              "sim_id": 297,
+              "direct_relation": "inside"
+            },
+            "door jamb 4": {
+              "states": {
+                "isOpen": true
+              },
+              "properties": [],
+              "sim_class_name": "doorjamb",
+              "sim_id": 299,
+              "direct_relation": "inside"
+            },
+            "wall 21": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 300,
+              "direct_relation": "inside"
+            },
+            "wall 22": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 301,
+              "direct_relation": "inside"
+            },
+            "wall 23": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 302,
+              "direct_relation": "inside"
+            },
+            "wall 24": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 303,
+              "direct_relation": "inside"
+            },
+            "wall 25": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 304,
+              "direct_relation": "inside"
+            },
+            "wall 26": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 305,
+              "direct_relation": "inside"
+            },
+            "ceiling 23": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 306,
+              "direct_relation": "inside"
+            },
+            "ceiling 24": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 307,
+              "direct_relation": "inside"
+            },
+            "ceiling 25": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 308,
+              "direct_relation": "inside"
+            },
+            "ceiling 26": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 309,
+              "direct_relation": "inside"
+            },
+            "ceiling 27": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 310,
+              "direct_relation": "inside"
+            },
+            "ceiling 28": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 311,
+              "direct_relation": "inside"
+            },
+            "floor 23": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 312,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "desk 2": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "properties": [
+                    "SURFACES",
+                    "CAN_OPEN",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "desk",
+                  "sim_id": 327,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {
+                    "cpu screen 3": {
+                      "states": {},
+                      "properties": [],
+                      "sim_class_name": "cpuscreen",
+                      "sim_id": 340,
+                      "direct_relation": "on"
+                    },
+                    "cpu screen 4": {
+                      "states": {},
+                      "properties": [],
+                      "sim_class_name": "cpuscreen",
+                      "sim_id": 341,
+                      "direct_relation": "on"
+                    },
+                    "keyboard 2": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "HAS_PLUG",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "keyboard",
+                      "sim_id": 342,
+                      "direct_relation": "on"
+                    },
+                    "mouse mat 2": {
+                      "states": {},
+                      "properties": [
+                        "SURFACES",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "mousemat",
+                      "sim_id": 343,
+                      "direct_relation": "on",
+                      "type": "receptacle",
+                      "contains": {
+                        "mouse 2": {
+                          "states": {},
+                          "properties": [
+                            "GRABBABLE",
+                            "HAS_PLUG",
+                            "MOVABLE"
+                          ],
+                          "sim_class_name": "mouse",
+                          "sim_id": 344,
+                          "direct_relation": "on"
+                        }
+                      }
+                    }
+                  }
+                },
+                "garbage can 3": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "properties": [
+                    "CAN_OPEN",
+                    "CONTAINERS",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "garbagecan",
+                  "sim_id": 362,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            },
+            "floor 24": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 313,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "cabinet 1": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "properties": [
+                    "SURFACES",
+                    "CAN_OPEN",
+                    "CONTAINERS"
+                  ],
+                  "sim_class_name": "cabinet",
+                  "sim_id": 330,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {
+                    "game 1": {
+                      "states": {},
+                      "properties": [],
+                      "sim_class_name": "game",
+                      "sim_id": 372,
+                      "direct_relation": "on"
+                    },
+                    "pudding 1": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "EATABLE",
+                        "CUTTABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "pudding",
+                      "sim_id": 393,
+                      "direct_relation": "inside"
+                    }
+                  }
+                }
+              }
+            },
+            "floor 25": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 314,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "amplifier 1": {
+                  "states": {},
+                  "properties": [],
+                  "sim_class_name": "amplifier",
+                  "sim_id": 349,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {
+                    "magazine 1": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "properties": [
+                        "GRABBABLE",
+                        "CAN_OPEN",
+                        "READABLE",
+                        "COVER_OBJECT",
+                        "HAS_PAPER",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "magazine",
+                      "sim_id": 376,
+                      "direct_relation": "on",
+                      "type": "receptacle",
+                      "contains": {}
+                    }
+                  }
+                },
+                "guitar 1": {
+                  "states": {},
+                  "properties": [],
+                  "sim_class_name": "guitar",
+                  "sim_id": 361,
+                  "direct_relation": "on"
+                },
+                "longboard 1": {
+                  "states": {},
+                  "properties": [],
+                  "sim_class_name": "longboard",
+                  "sim_id": 370,
+                  "direct_relation": "on"
+                }
+              }
+            },
+            "floor 26": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 315,
+              "direct_relation": "inside"
+            },
+            "floor 27": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 316,
+              "direct_relation": "inside"
+            },
+            "floor 28": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 317,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "bookshelf 4": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "properties": [
+                    "SURFACES",
+                    "CAN_OPEN",
+                    "CONTAINERS"
+                  ],
+                  "sim_class_name": "bookshelf",
+                  "sim_id": 318,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {
+                    "speaker 5": {
+                      "states": {},
+                      "properties": [],
+                      "sim_class_name": "speaker",
+                      "sim_id": 348,
+                      "direct_relation": "inside"
+                    },
+                    "speaker 6": {
+                      "states": {},
+                      "properties": [],
+                      "sim_class_name": "speaker",
+                      "sim_id": 350,
+                      "direct_relation": "inside"
+                    },
+                    "radio 1": {
+                      "states": {
+                        "isToggled": false
+                      },
+                      "properties": [
+                        "SURFACES",
+                        "GRABBABLE",
+                        "CAN_OPEN",
+                        "HAS_SWITCH",
+                        "HAS_PLUG",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "radio",
+                      "sim_id": 351,
+                      "direct_relation": "inside",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "slippers 1": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "HANGABLE",
+                        "CLOTHES",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "slippers",
+                      "sim_id": 364,
+                      "direct_relation": "inside"
+                    },
+                    "slippers 2": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "HANGABLE",
+                        "CLOTHES",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "slippers",
+                      "sim_id": 365,
+                      "direct_relation": "inside"
+                    },
+                    "glasses 1": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "CLOTHES",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "glasses",
+                      "sim_id": 366,
+                      "direct_relation": "inside"
+                    },
+                    "slippers 3": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "HANGABLE",
+                        "CLOTHES",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "slippers",
+                      "sim_id": 367,
+                      "direct_relation": "inside"
+                    },
+                    "slippers 4": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "HANGABLE",
+                        "CLOTHES",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "slippers",
+                      "sim_id": 368,
+                      "direct_relation": "inside"
+                    },
+                    "sports ball 1": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "sportsball",
+                      "sim_id": 373,
+                      "direct_relation": "inside"
+                    },
+                    "toy 1": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "toy",
+                      "sim_id": 377,
+                      "direct_relation": "inside"
+                    }
+                  }
+                }
+              }
+            },
+            "closet 2": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "CAN_OPEN",
+                "CONTAINERS"
+              ],
+              "sim_class_name": "closet",
+              "sim_id": 320,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "hanger 4": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "HANGABLE",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "hanger",
+                  "sim_id": 321,
+                  "direct_relation": "inside"
+                },
+                "shirt 3": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "HANGABLE",
+                    "CLOTHES",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "clothesshirt",
+                  "sim_id": 322,
+                  "direct_relation": "inside"
+                },
+                "hanger 5": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "HANGABLE",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "hanger",
+                  "sim_id": 323,
+                  "direct_relation": "inside"
+                },
+                "shirt 4": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "HANGABLE",
+                    "CLOTHES",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "clothesshirt",
+                  "sim_id": 324,
+                  "direct_relation": "inside"
+                },
+                "hanger 6": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "HANGABLE",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "hanger",
+                  "sim_id": 325,
+                  "direct_relation": "inside"
+                },
+                "pants 2": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "HANGABLE",
+                    "CLOTHES",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "clothespants",
+                  "sim_id": 326,
+                  "direct_relation": "inside"
+                }
+              }
+            },
+            "desk 3": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "SURFACES",
+                "CAN_OPEN",
+                "MOVABLE"
+              ],
+              "sim_class_name": "desk",
+              "sim_id": 328,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "cpu screen 2": {
+                  "states": {},
+                  "properties": [],
+                  "sim_class_name": "cpuscreen",
+                  "sim_id": 339,
+                  "direct_relation": "on"
+                },
+                "orchid 1": {
+                  "states": {},
+                  "properties": [],
+                  "sim_class_name": "orchid",
+                  "sim_id": 354,
+                  "direct_relation": "on"
+                },
+                "perfume 1": {
+                  "states": {},
+                  "properties": [],
+                  "sim_class_name": "perfume",
+                  "sim_id": 363,
+                  "direct_relation": "on"
+                }
+              }
+            },
+            "coffee table 2": {
+              "states": {},
+              "properties": [
+                "SURFACES",
+                "MOVABLE"
+              ],
+              "sim_class_name": "coffeetable",
+              "sim_id": 329,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "candy bar 1": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "EATABLE",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "candybar",
+                  "sim_id": 336,
+                  "direct_relation": "on"
+                },
+                "board game 1": {
+                  "states": {},
+                  "properties": [
+                    "SURFACES",
+                    "GRABBABLE",
+                    "LOOKABLE",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "boardgame",
+                  "sim_id": 371,
+                  "direct_relation": "on"
+                },
+                "cupcake 3": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "EATABLE",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "cupcake",
+                  "sim_id": 391,
+                  "direct_relation": "on"
+                },
+                "pancake 1": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "EATABLE",
+                    "CUTTABLE",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "pancake",
+                  "sim_id": 392,
+                  "direct_relation": "on"
+                }
+              }
+            },
+            "bed 1": {
+              "states": {},
+              "properties": [
+                "SURFACES",
+                "SITTABLE",
+                "LIEABLE"
+              ],
+              "sim_class_name": "bed",
+              "sim_id": 331,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "pillow 3": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "pillow",
+                  "sim_id": 355,
+                  "direct_relation": "on"
+                }
+              }
+            },
+            "power socket 2": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "powersocket",
+              "sim_id": 345,
+              "direct_relation": "inside"
+            },
+            "light switch 4": {
+              "states": {
+                "isToggled": true
+              },
+              "properties": [
+                "HAS_SWITCH",
+                "HAS_PLUG"
+              ],
+              "sim_class_name": "lightswitch",
+              "sim_id": 346,
+              "direct_relation": "inside"
+            },
+            "rug 2": {
+              "states": {},
+              "properties": [
+                "SURFACES",
+                "GRABBABLE",
+                "SITTABLE",
+                "LIEABLE",
+                "MOVABLE"
+              ],
+              "sim_class_name": "rug",
+              "sim_id": 352,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "chair 4": {
+                  "states": {},
+                  "properties": [
+                    "SURFACES",
+                    "GRABBABLE",
+                    "SITTABLE",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "chair",
+                  "sim_id": 319,
+                  "direct_relation": "on"
+                },
+                "computer 2": {
+                  "states": {
+                    "isToggled": false
+                  },
+                  "properties": [
+                    "HAS_SWITCH",
+                    "LOOKABLE"
+                  ],
+                  "sim_class_name": "computer",
+                  "sim_id": 338,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {
+                    "sundae 1": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "EATABLE",
+                        "CUTTABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "sundae",
+                      "sim_id": 332,
+                      "direct_relation": "on"
+                    }
+                  }
+                },
+                "power socket 3": {
+                  "states": {},
+                  "properties": [],
+                  "sim_class_name": "powersocket",
+                  "sim_id": 347,
+                  "direct_relation": "on"
+                }
+              }
+            },
+            "wall picture frame 7": {
+              "states": {},
+              "properties": [
+                "GRABBABLE",
+                "HANGABLE",
+                "HAS_PAPER",
+                "MOVABLE"
+              ],
+              "sim_class_name": "wallpictureframe",
+              "sim_id": 353,
+              "direct_relation": "inside"
+            },
+            "wall picture frame 8": {
+              "states": {},
+              "properties": [
+                "GRABBABLE",
+                "HANGABLE",
+                "HAS_PAPER",
+                "MOVABLE"
+              ],
+              "sim_class_name": "wallpictureframe",
+              "sim_id": 356,
+              "direct_relation": "inside"
+            },
+            "wall picture frame 9": {
+              "states": {},
+              "properties": [
+                "GRABBABLE",
+                "HANGABLE",
+                "HAS_PAPER",
+                "MOVABLE"
+              ],
+              "sim_class_name": "wallpictureframe",
+              "sim_id": 357,
+              "direct_relation": "inside"
+            },
+            "curtains 5": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "CAN_OPEN",
+                "COVER_OBJECT",
+                "MOVABLE"
+              ],
+              "sim_class_name": "curtains",
+              "sim_id": 358,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {}
+            },
+            "curtains 6": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "CAN_OPEN",
+                "COVER_OBJECT",
+                "MOVABLE"
+              ],
+              "sim_class_name": "curtains",
+              "sim_id": 359,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {}
+            },
+            "curtains 7": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "CAN_OPEN",
+                "COVER_OBJECT",
+                "MOVABLE"
+              ],
+              "sim_class_name": "curtains",
+              "sim_id": 360,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {}
+            },
+            "ceiling lamp 6": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceilinglamp",
+              "sim_id": 378,
+              "direct_relation": "inside"
+            },
+            "ceiling lamp 7": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceilinglamp",
+              "sim_id": 379,
+              "direct_relation": "inside"
+            },
+            "ceiling lamp 8": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceilinglamp",
+              "sim_id": 380,
+              "direct_relation": "inside"
+            },
+            "window 3": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "CAN_OPEN"
+              ],
+              "sim_class_name": "window",
+              "sim_id": 381,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {}
+            }
+          }
+        },
+        "kitchen 1": {
+          "contains": {
+            "floor 5": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 59,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "bookshelf 1": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "properties": [
+                    "SURFACES",
+                    "CAN_OPEN",
+                    "CONTAINERS"
+                  ],
+                  "sim_class_name": "bookshelf",
+                  "sim_id": 154,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {
+                    "plate 5": {
+                      "states": {},
+                      "properties": [
+                        "SURFACES",
+                        "GRABBABLE",
+                        "RECIPIENT",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "plate",
+                      "sim_id": 108,
+                      "direct_relation": "on",
+                      "type": "receptacle",
+                      "contains": {
+                        "candle 2": {
+                          "states": {
+                            "isToggled": false
+                          },
+                          "properties": [
+                            "GRABBABLE",
+                            "HAS_SWITCH",
+                            "MOVABLE"
+                          ],
+                          "sim_class_name": "candle",
+                          "sim_id": 129,
+                          "direct_relation": "on"
+                        }
+                      }
+                    },
+                    "pile of clothes 1": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "properties": [
+                        "GRABBABLE",
+                        "CAN_OPEN",
+                        "CONTAINERS",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "clothespile",
+                      "sim_id": 110,
+                      "direct_relation": "inside",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "pile of clothes 2": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "properties": [
+                        "GRABBABLE",
+                        "CAN_OPEN",
+                        "CONTAINERS",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "clothespile",
+                      "sim_id": 111,
+                      "direct_relation": "inside",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "pile of clothes 3": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "properties": [
+                        "GRABBABLE",
+                        "CAN_OPEN",
+                        "CONTAINERS",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "clothespile",
+                      "sim_id": 112,
+                      "direct_relation": "inside",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "pile of clothes 4": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "properties": [
+                        "GRABBABLE",
+                        "CAN_OPEN",
+                        "CONTAINERS",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "clothespile",
+                      "sim_id": 113,
+                      "direct_relation": "inside",
+                      "type": "receptacle",
+                      "contains": {
+                        "alcohol 1": {
+                          "states": {},
+                          "properties": [
+                            "GRABBABLE",
+                            "DRINKABLE",
+                            "POURABLE",
+                            "MOVABLE"
+                          ],
+                          "sim_class_name": "alcohol",
+                          "sim_id": 199,
+                          "direct_relation": "on"
+                        }
+                      }
+                    },
+                    "wall picture frame 3": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "HANGABLE",
+                        "HAS_PAPER",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "wallpictureframe",
+                      "sim_id": 127,
+                      "direct_relation": "on"
+                    },
+                    "creamy buns 1": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "EATABLE",
+                        "CUTTABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "creamybuns",
+                      "sim_id": 191,
+                      "direct_relation": "inside"
+                    },
+                    "creamy buns 2": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "EATABLE",
+                        "CUTTABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "creamybuns",
+                      "sim_id": 192,
+                      "direct_relation": "inside"
+                    },
+                    "chips 1": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "chips",
+                      "sim_id": 193,
+                      "direct_relation": "inside"
+                    },
+                    "chips 2": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "chips",
+                      "sim_id": 194,
+                      "direct_relation": "inside",
+                      "type": "receptacle",
+                      "contains": {
+                        "vase 1": {
+                          "states": {},
+                          "properties": [],
+                          "sim_class_name": "vase",
+                          "sim_id": 130,
+                          "direct_relation": "on"
+                        }
+                      }
+                    },
+                    "chocolate syrup 1": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "EATABLE",
+                        "CUTTABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "chocolatesyrup",
+                      "sim_id": 195,
+                      "direct_relation": "inside"
+                    }
+                  }
+                }
+              }
+            },
+            "floor 6": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 60,
+              "direct_relation": "inside"
+            },
+            "floor 7": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 61,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "kitchen counter 2": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "sim_class_name": "kitchencounter",
+                  "sim_id": 153,
+                  "direct_relation": "on"
+                }
+              }
+            },
+            "floor 8": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 62,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "garbage can 1": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "properties": [
+                    "CAN_OPEN",
+                    "CONTAINERS",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "garbagecan",
+                  "sim_id": 114,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            },
+            "floor 9": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 63,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "kitchen table 1": {
+                  "states": {},
+                  "properties": [
+                    "SURFACES",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "kitchentable",
+                  "sim_id": 132,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {
+                    "condiment shaker 1": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "EATABLE",
+                        "POURABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "condimentshaker",
+                      "sim_id": 106,
+                      "direct_relation": "on"
+                    },
+                    "condiment shaker 2": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "EATABLE",
+                        "POURABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "condimentshaker",
+                      "sim_id": 107,
+                      "direct_relation": "on"
+                    },
+                    "plate 8": {
+                      "states": {},
+                      "properties": [
+                        "SURFACES",
+                        "GRABBABLE",
+                        "RECIPIENT",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "plate",
+                      "sim_id": 177,
+                      "direct_relation": "on",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "bowl 6": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "RECIPIENT",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "dishbowl",
+                      "sim_id": 190,
+                      "direct_relation": "on",
+                      "type": "receptacle",
+                      "contains": {
+                        "juice 1": {
+                          "states": {},
+                          "properties": [
+                            "GRABBABLE",
+                            "DRINKABLE",
+                            "POURABLE",
+                            "MOVABLE"
+                          ],
+                          "sim_class_name": "juice",
+                          "sim_id": 384,
+                          "direct_relation": "on"
+                        }
+                      }
+                    },
+                    "bottled water 1": {
+                      "states": {},
+                      "properties": [
+                        "DRINKABLE",
+                        "POURABLE"
+                      ],
+                      "sim_class_name": "bottlewater",
+                      "sim_id": 196,
+                      "direct_relation": "on"
+                    },
+                    "milk 1": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "properties": [
+                        "GRABBABLE",
+                        "DRINKABLE",
+                        "POURABLE",
+                        "CAN_OPEN",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "milk",
+                      "sim_id": 197,
+                      "direct_relation": "on",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "cereal 1": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "EATABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "cereal",
+                      "sim_id": 198,
+                      "direct_relation": "on"
+                    },
+                    "pound cake 1": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "EATABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "poundcake",
+                      "sim_id": 386,
+                      "direct_relation": "on"
+                    }
+                  }
+                }
+              }
+            },
+            "floor 10": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 64,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "tv stand 1": {
+                  "states": {},
+                  "properties": [],
+                  "sim_class_name": "tvstand",
+                  "sim_id": 134,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {
+                    "book 1": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "properties": [
+                        "GRABBABLE",
+                        "CUTTABLE",
+                        "CAN_OPEN",
+                        "READABLE",
+                        "HAS_PAPER",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "book",
+                      "sim_id": 94,
+                      "direct_relation": "on",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "book 2": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "properties": [
+                        "GRABBABLE",
+                        "CUTTABLE",
+                        "CAN_OPEN",
+                        "READABLE",
+                        "HAS_PAPER",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "book",
+                      "sim_id": 95,
+                      "direct_relation": "on",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "plate 6": {
+                      "states": {},
+                      "properties": [
+                        "SURFACES",
+                        "GRABBABLE",
+                        "RECIPIENT",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "plate",
+                      "sim_id": 109,
+                      "direct_relation": "on",
+                      "type": "receptacle",
+                      "contains": {
+                        "candle 1": {
+                          "states": {
+                            "isToggled": false
+                          },
+                          "properties": [
+                            "GRABBABLE",
+                            "HAS_SWITCH",
+                            "MOVABLE"
+                          ],
+                          "sim_class_name": "candle",
+                          "sim_id": 126,
+                          "direct_relation": "on"
+                        }
+                      }
+                    },
+                    "pillow 2": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "pillow",
+                      "sim_id": 125,
+                      "direct_relation": "on"
+                    }
+                  }
+                }
+              }
+            },
+            "floor 11": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 65,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "bookshelf 2": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "properties": [
+                    "SURFACES",
+                    "CAN_OPEN",
+                    "CONTAINERS"
+                  ],
+                  "sim_class_name": "bookshelf",
+                  "sim_id": 157,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            },
+            "floor 12": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 66,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "fridge 1": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "properties": [
+                    "CAN_OPEN",
+                    "HAS_SWITCH",
+                    "CONTAINERS",
+                    "HAS_PLUG"
+                  ],
+                  "sim_class_name": "fridge",
+                  "sim_id": 167,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "fridge 2": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "properties": [
+                    "CAN_OPEN",
+                    "HAS_SWITCH",
+                    "CONTAINERS",
+                    "HAS_PLUG"
+                  ],
+                  "sim_class_name": "fridge",
+                  "sim_id": 168,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {
+                    "cupcake 2": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "EATABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "cupcake",
+                      "sim_id": 383,
+                      "direct_relation": "inside"
+                    },
+                    "apple 1": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "apple",
+                      "sim_id": 388,
+                      "direct_relation": "inside"
+                    }
+                  }
+                }
+              }
+            },
+            "floor 13": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 67,
+              "direct_relation": "inside"
+            },
+            "ceiling 5": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 68,
+              "direct_relation": "inside"
+            },
+            "ceiling 6": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 69,
+              "direct_relation": "inside"
+            },
+            "ceiling 7": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 70,
+              "direct_relation": "inside"
+            },
+            "ceiling 8": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 71,
+              "direct_relation": "inside"
+            },
+            "ceiling 9": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 72,
+              "direct_relation": "inside"
+            },
+            "ceiling 10": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 73,
+              "direct_relation": "inside"
+            },
+            "ceiling 11": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 74,
+              "direct_relation": "inside"
+            },
+            "ceiling 12": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 75,
+              "direct_relation": "inside"
+            },
+            "ceiling 13": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 76,
+              "direct_relation": "inside"
+            },
+            "wall 5": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 77,
+              "direct_relation": "inside"
+            },
+            "wall 6": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 78,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "knife block 1": {
+                  "states": {},
+                  "properties": [],
+                  "sim_class_name": "knifeblock",
+                  "sim_id": 91,
+                  "direct_relation": "on"
+                }
+              }
+            },
+            "wall 7": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 79,
+              "direct_relation": "inside"
+            },
+            "wall 8": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 80,
+              "direct_relation": "inside"
+            },
+            "wall 9": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 81,
+              "direct_relation": "inside"
+            },
+            "wall 10": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 82,
+              "direct_relation": "inside"
+            },
+            "wall 11": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 83,
+              "direct_relation": "inside"
+            },
+            "wall 12": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 84,
+              "direct_relation": "inside"
+            },
+            "power socket 1": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "powersocket",
+              "sim_id": 86,
+              "direct_relation": "inside"
+            },
+            "light switch 2": {
+              "states": {
+                "isToggled": true
+              },
+              "properties": [
+                "HAS_SWITCH",
+                "HAS_PLUG"
+              ],
+              "sim_class_name": "lightswitch",
+              "sim_id": 87,
+              "direct_relation": "inside"
+            },
+            "ceiling fan 1": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceilingfan",
+              "sim_id": 88,
+              "direct_relation": "inside"
+            },
+            "wall picture frame 2": {
+              "states": {},
+              "properties": [
+                "GRABBABLE",
+                "HANGABLE",
+                "HAS_PAPER",
+                "MOVABLE"
+              ],
+              "sim_class_name": "wallpictureframe",
+              "sim_id": 123,
+              "direct_relation": "inside"
+            },
+            "pillow 1": {
+              "states": {},
+              "properties": [
+                "GRABBABLE",
+                "MOVABLE"
+              ],
+              "sim_class_name": "pillow",
+              "sim_id": 124,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "microwave oven 1": {
+                  "states": {
+                    "isOpen": false,
+                    "isToggled": false
+                  },
+                  "properties": [
+                    "CAN_OPEN",
+                    "HAS_SWITCH",
+                    "CONTAINERS",
+                    "HAS_PLUG"
+                  ],
+                  "sim_class_name": "microwave",
+                  "sim_id": 169,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {
+                    "plate 7": {
+                      "states": {},
+                      "properties": [
+                        "SURFACES",
+                        "GRABBABLE",
+                        "RECIPIENT",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "plate",
+                      "sim_id": 170,
+                      "direct_relation": "inside",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "cupcake 1": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "EATABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "cupcake",
+                      "sim_id": 382,
+                      "direct_relation": "inside"
+                    }
+                  }
+                }
+              }
+            },
+            "wall picture frame 4": {
+              "states": {},
+              "properties": [
+                "GRABBABLE",
+                "HANGABLE",
+                "HAS_PAPER",
+                "MOVABLE"
+              ],
+              "sim_class_name": "wallpictureframe",
+              "sim_id": 128,
+              "direct_relation": "inside"
+            },
+            "bench 1": {
+              "states": {},
+              "properties": [
+                "SURFACES",
+                "SITTABLE",
+                "LIEABLE",
+                "MOVABLE"
+              ],
+              "sim_class_name": "bench",
+              "sim_id": 131,
+              "direct_relation": "inside"
+            },
+            "bench 2": {
+              "states": {},
+              "properties": [
+                "SURFACES",
+                "SITTABLE",
+                "LIEABLE",
+                "MOVABLE"
+              ],
+              "sim_class_name": "bench",
+              "sim_id": 133,
+              "direct_relation": "inside"
+            },
+            "kitchen counter 1": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "kitchencounter",
+              "sim_id": 143,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "cutlery knife 1": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "cutleryknife",
+                  "sim_id": 89,
+                  "direct_relation": "on"
+                },
+                "cutlery knife 2": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "cutleryknife",
+                  "sim_id": 90,
+                  "direct_relation": "on"
+                },
+                "bowl 1": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "RECIPIENT",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "dishbowl",
+                  "sim_id": 96,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "bowl 2": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "RECIPIENT",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "dishbowl",
+                  "sim_id": 97,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "dishwashing liquid 1": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "POURABLE",
+                    "MOVABLE",
+                    "CREAM"
+                  ],
+                  "sim_class_name": "dishwashingliquid",
+                  "sim_id": 105,
+                  "direct_relation": "on"
+                },
+                "paper 1": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "READABLE",
+                    "HAS_PAPER",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "paper",
+                  "sim_id": 115,
+                  "direct_relation": "on"
+                },
+                "washing sponge 1": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "washingsponge",
+                  "sim_id": 116,
+                  "direct_relation": "on"
+                },
+                "kitchen counter drawer 5": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "properties": [],
+                  "sim_class_name": "kitchencounterdrawer",
+                  "sim_id": 148,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {
+                    "bowl 3": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "RECIPIENT",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "dishbowl",
+                      "sim_id": 98,
+                      "direct_relation": "on",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "bowl 4": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "RECIPIENT",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "dishbowl",
+                      "sim_id": 99,
+                      "direct_relation": "on",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "bowl 5": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "RECIPIENT",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "dishbowl",
+                      "sim_id": 100,
+                      "direct_relation": "on",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "plate 1": {
+                      "states": {},
+                      "properties": [
+                        "SURFACES",
+                        "GRABBABLE",
+                        "RECIPIENT",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "plate",
+                      "sim_id": 101,
+                      "direct_relation": "on",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "plate 2": {
+                      "states": {},
+                      "properties": [
+                        "SURFACES",
+                        "GRABBABLE",
+                        "RECIPIENT",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "plate",
+                      "sim_id": 102,
+                      "direct_relation": "on",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "plate 3": {
+                      "states": {},
+                      "properties": [
+                        "SURFACES",
+                        "GRABBABLE",
+                        "RECIPIENT",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "plate",
+                      "sim_id": 103,
+                      "direct_relation": "on",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "plate 4": {
+                      "states": {},
+                      "properties": [
+                        "SURFACES",
+                        "GRABBABLE",
+                        "RECIPIENT",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "plate",
+                      "sim_id": 104,
+                      "direct_relation": "on",
+                      "type": "receptacle",
+                      "contains": {}
+                    }
+                  }
+                },
+                "faucet 2": {
+                  "states": {
+                    "isToggled": false
+                  },
+                  "properties": [
+                    "HAS_SWITCH"
+                  ],
+                  "sim_class_name": "faucet",
+                  "sim_id": 152,
+                  "direct_relation": "on"
+                },
+                "chicken 1": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "chicken",
+                  "sim_id": 175,
+                  "direct_relation": "on"
+                },
+                "cutlets 1": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "cutlets",
+                  "sim_id": 176,
+                  "direct_relation": "on"
+                }
+              }
+            },
+            "kitchen counter drawer 1": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [],
+              "sim_class_name": "kitchencounterdrawer",
+              "sim_id": 144,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "kitchen counter drawer 2": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "properties": [],
+                  "sim_class_name": "kitchencounterdrawer",
+                  "sim_id": 145,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {
+                    "sink 2": {
+                      "states": {},
+                      "properties": [
+                        "RECIPIENT",
+                        "CONTAINERS"
+                      ],
+                      "sim_class_name": "sink",
+                      "sim_id": 151,
+                      "direct_relation": "on",
+                      "type": "receptacle",
+                      "contains": {}
+                    }
+                  }
+                }
+              }
+            },
+            "kitchen counter drawer 4": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [],
+              "sim_class_name": "kitchencounterdrawer",
+              "sim_id": 147,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "kitchen counter drawer 3": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "properties": [],
+                  "sim_class_name": "kitchencounterdrawer",
+                  "sim_id": 146,
+                  "direct_relation": "on"
+                }
+              }
+            },
+            "kitchen counter drawer 6": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [],
+              "sim_class_name": "kitchencounterdrawer",
+              "sim_id": 149,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "kitchen counter drawer 7": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "properties": [],
+                  "sim_class_name": "kitchencounterdrawer",
+                  "sim_id": 150,
+                  "direct_relation": "on"
+                }
+              }
+            },
+            "chair 1": {
+              "states": {},
+              "properties": [
+                "SURFACES",
+                "GRABBABLE",
+                "SITTABLE",
+                "MOVABLE"
+              ],
+              "sim_class_name": "chair",
+              "sim_id": 155,
+              "direct_relation": "inside"
+            },
+            "chair 2": {
+              "states": {},
+              "properties": [
+                "SURFACES",
+                "GRABBABLE",
+                "SITTABLE",
+                "MOVABLE"
+              ],
+              "sim_class_name": "chair",
+              "sim_id": 156,
+              "direct_relation": "inside"
+            },
+            "stove fan 1": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "stovefan",
+              "sim_id": 158,
+              "direct_relation": "inside"
+            },
+            "stove 1": {
+              "states": {
+                "isOpen": false,
+                "isToggled": false
+              },
+              "properties": [
+                "SURFACES",
+                "CAN_OPEN",
+                "HAS_SWITCH",
+                "CONTAINERS"
+              ],
+              "sim_class_name": "stove",
+              "sim_id": 159,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "frying pan 1": {
+                  "states": {},
+                  "properties": [
+                    "SURFACES",
+                    "GRABBABLE",
+                    "RECIPIENT",
+                    "CONTAINERS",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "fryingpan",
+                  "sim_id": 92,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "cooking pot 1": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "RECIPIENT",
+                    "CAN_OPEN",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "cookingpot",
+                  "sim_id": 93,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "oven tray 1": {
+                  "states": {},
+                  "properties": [
+                    "SURFACES",
+                    "GRABBABLE",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "oventray",
+                  "sim_id": 160,
+                  "direct_relation": "inside"
+                }
+              }
+            },
+            "dishwasher 1": {
+              "states": {
+                "isOpen": false,
+                "isToggled": false
+              },
+              "properties": [
+                "CAN_OPEN",
+                "HAS_SWITCH",
+                "CONTAINERS"
+              ],
+              "sim_class_name": "dishwasher",
+              "sim_id": 161,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "coffee maker 1": {
+                  "states": {
+                    "isToggled": false
+                  },
+                  "properties": [
+                    "RECIPIENT",
+                    "CAN_OPEN",
+                    "HAS_SWITCH",
+                    "CONTAINERS",
+                    "HAS_PLUG",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "coffeemaker",
+                  "sim_id": 162,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "coffee pot 1": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "RECIPIENT",
+                    "CAN_OPEN",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "coffeepot",
+                  "sim_id": 163,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "toaster 1": {
+                  "states": {
+                    "isToggled": false
+                  },
+                  "properties": [
+                    "HAS_SWITCH",
+                    "CONTAINERS",
+                    "HAS_PLUG",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "toaster",
+                  "sim_id": 164,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {
+                    "slice of bread 1": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "EATABLE",
+                        "CUTTABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "breadslice",
+                      "sim_id": 165,
+                      "direct_relation": "inside"
+                    },
+                    "slice of bread 2": {
+                      "states": {},
+                      "properties": [
+                        "GRABBABLE",
+                        "EATABLE",
+                        "CUTTABLE",
+                        "MOVABLE"
+                      ],
+                      "sim_class_name": "breadslice",
+                      "sim_id": 166,
+                      "direct_relation": "inside"
+                    }
+                  }
+                }
+              }
+            },
+            "ceiling lamp 2": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceilinglamp",
+              "sim_id": 171,
+              "direct_relation": "inside"
+            },
+            "ceiling lamp 3": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceilinglamp",
+              "sim_id": 172,
+              "direct_relation": "inside"
+            },
+            "wall lamp 3": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "walllamp",
+              "sim_id": 173,
+              "direct_relation": "inside"
+            },
+            "wall lamp 4": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "walllamp",
+              "sim_id": 174,
+              "direct_relation": "inside"
+            },
+            "kitchen cabinet 1": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "SURFACES",
+                "CAN_OPEN",
+                "CONTAINERS"
+              ],
+              "sim_class_name": "kitchencabinet",
+              "sim_id": 135,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "juice 2": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "DRINKABLE",
+                    "POURABLE",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "juice",
+                  "sim_id": 385,
+                  "direct_relation": "inside"
+                }
+              }
+            },
+            "kitchen cabinet 2": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "SURFACES",
+                "CAN_OPEN",
+                "CONTAINERS"
+              ],
+              "sim_class_name": "kitchencabinet",
+              "sim_id": 136,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {}
+            },
+            "kitchen cabinet 3": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "SURFACES",
+                "CAN_OPEN",
+                "CONTAINERS"
+              ],
+              "sim_class_name": "kitchencabinet",
+              "sim_id": 137,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "wine 1": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "DRINKABLE",
+                    "POURABLE",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "wine",
+                  "sim_id": 387,
+                  "direct_relation": "inside"
+                }
+              }
+            },
+            "kitchen cabinet 4": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "SURFACES",
+                "CAN_OPEN",
+                "CONTAINERS"
+              ],
+              "sim_class_name": "kitchencabinet",
+              "sim_id": 138,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {}
+            },
+            "kitchen cabinet 5": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "SURFACES",
+                "CAN_OPEN",
+                "CONTAINERS"
+              ],
+              "sim_class_name": "kitchencabinet",
+              "sim_id": 139,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {}
+            },
+            "kitchen cabinet 6": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "SURFACES",
+                "CAN_OPEN",
+                "CONTAINERS"
+              ],
+              "sim_class_name": "kitchencabinet",
+              "sim_id": 140,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {}
+            },
+            "kitchen cabinet 7": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "SURFACES",
+                "CAN_OPEN",
+                "CONTAINERS"
+              ],
+              "sim_class_name": "kitchencabinet",
+              "sim_id": 141,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {}
+            },
+            "kitchen cabinet 8": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "SURFACES",
+                "CAN_OPEN",
+                "CONTAINERS"
+              ],
+              "sim_class_name": "kitchencabinet",
+              "sim_id": 142,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "apple 2": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "apple",
+                  "sim_id": 389,
+                  "direct_relation": "inside"
+                }
+              }
+            }
+          }
+        },
+        "bathroom 1": {
+          "contains": {
+            "wall 1": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 12,
+              "direct_relation": "inside"
+            },
+            "wall 2": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 13,
+              "direct_relation": "inside"
+            },
+            "wall 3": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 14,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "bathroom cabinet 1": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "properties": [
+                    "SURFACES",
+                    "CAN_OPEN",
+                    "CONTAINERS"
+                  ],
+                  "sim_class_name": "bathroomcabinet",
+                  "sim_id": 25,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {
+                    "toothpaste 1": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "properties": [
+                        "GRABBABLE",
+                        "POURABLE",
+                        "CAN_OPEN",
+                        "MOVABLE",
+                        "CREAM"
+                      ],
+                      "sim_class_name": "toothpaste",
+                      "sim_id": 39,
+                      "direct_relation": "inside",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "towel 1": {
+                      "states": {},
+                      "properties": [],
+                      "sim_class_name": "towel",
+                      "sim_id": 41,
+                      "direct_relation": "inside"
+                    }
+                  }
+                }
+              }
+            },
+            "wall 4": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "wall",
+              "sim_id": 15,
+              "direct_relation": "inside"
+            },
+            "ceiling 1": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 16,
+              "direct_relation": "inside"
+            },
+            "ceiling 2": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 17,
+              "direct_relation": "inside"
+            },
+            "ceiling 3": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 18,
+              "direct_relation": "inside"
+            },
+            "ceiling 4": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceiling",
+              "sim_id": 19,
+              "direct_relation": "inside"
+            },
+            "floor 1": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 20,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "stall 1": {
+                  "states": {},
+                  "properties": [],
+                  "sim_class_name": "stall",
+                  "sim_id": 29,
+                  "direct_relation": "on"
+                },
+                "rug 1": {
+                  "states": {},
+                  "properties": [
+                    "SURFACES",
+                    "GRABBABLE",
+                    "SITTABLE",
+                    "LIEABLE",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "rug",
+                  "sim_id": 49,
+                  "direct_relation": "on"
+                }
+              }
+            },
+            "floor 2": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 21,
+              "direct_relation": "inside"
+            },
+            "floor 3": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 22,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "washing machine 1": {
+                  "states": {
+                    "isOpen": false,
+                    "isToggled": false
+                  },
+                  "properties": [
+                    "RECIPIENT",
+                    "CAN_OPEN",
+                    "HAS_SWITCH",
+                    "CONTAINERS",
+                    "HAS_PLUG"
+                  ],
+                  "sim_class_name": "washingmachine",
+                  "sim_id": 57,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            },
+            "floor 4": {
+              "states": {},
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "floor",
+              "sim_id": 23,
+              "direct_relation": "inside"
+            },
+            "toilet 1": {
+              "states": {
+                "isOpen": false,
+                "isToggled": false
+              },
+              "properties": [
+                "SITTABLE",
+                "CAN_OPEN",
+                "CONTAINERS"
+              ],
+              "sim_class_name": "toilet",
+              "sim_id": 24,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {}
+            },
+            "bathroom counter 1": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "SURFACES"
+              ],
+              "sim_class_name": "bathroomcounter",
+              "sim_id": 26,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {
+                "sink 1": {
+                  "states": {},
+                  "properties": [
+                    "RECIPIENT",
+                    "CONTAINERS"
+                  ],
+                  "sim_class_name": "sink",
+                  "sim_id": 27,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "faucet 1": {
+                  "states": {
+                    "isToggled": false
+                  },
+                  "properties": [
+                    "HAS_SWITCH"
+                  ],
+                  "sim_class_name": "faucet",
+                  "sim_id": 28,
+                  "direct_relation": "on"
+                },
+                "toothbrush 1": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "RECIPIENT",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "toothbrush",
+                  "sim_id": 32,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "water glass 1": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "RECIPIENT",
+                    "POURABLE",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "waterglass",
+                  "sim_id": 33,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "bar soap 1": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "MOVABLE",
+                    "CREAM"
+                  ],
+                  "sim_class_name": "barsoap",
+                  "sim_id": 34,
+                  "direct_relation": "on"
+                },
+                "deodorant 1": {
+                  "states": {},
+                  "properties": [],
+                  "sim_class_name": "deodorant",
+                  "sim_id": 35,
+                  "direct_relation": "on"
+                },
+                "face cream 1": {
+                  "states": {},
+                  "properties": [
+                    "GRABBABLE",
+                    "POURABLE",
+                    "MOVABLE",
+                    "CREAM"
+                  ],
+                  "sim_class_name": "facecream",
+                  "sim_id": 36,
+                  "direct_relation": "on"
+                },
+                "hair product 1": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "POURABLE",
+                    "CAN_OPEN",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "hairproduct",
+                  "sim_id": 37,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "hair product 2": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "POURABLE",
+                    "CAN_OPEN",
+                    "MOVABLE"
+                  ],
+                  "sim_class_name": "hairproduct",
+                  "sim_id": 38,
+                  "direct_relation": "on",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "towel 2": {
+                  "states": {},
+                  "properties": [],
+                  "sim_class_name": "towel",
+                  "sim_id": 42,
+                  "direct_relation": "on"
+                },
+                "towel 3": {
+                  "states": {},
+                  "properties": [],
+                  "sim_class_name": "towel",
+                  "sim_id": 43,
+                  "direct_relation": "on"
+                },
+                "photo frame 1": {
+                  "states": {},
+                  "properties": [],
+                  "sim_class_name": "photoframe",
+                  "sim_id": 46,
+                  "direct_relation": "on"
+                }
+              }
+            },
+            "curtains 1": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "CAN_OPEN",
+                "COVER_OBJECT",
+                "MOVABLE"
+              ],
+              "sim_class_name": "curtains",
+              "sim_id": 30,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {}
+            },
+            "towel rack 1": {
+              "states": {},
+              "properties": [
+                "SURFACES",
+                "GRABBABLE",
+                "MOVABLE"
+              ],
+              "sim_class_name": "towelrack",
+              "sim_id": 31,
+              "direct_relation": "inside"
+            },
+            "toilet paper 1": {
+              "states": {},
+              "properties": [
+                "GRABBABLE",
+                "HANGABLE",
+                "CUTTABLE",
+                "COVER_OBJECT",
+                "HAS_PAPER",
+                "MOVABLE"
+              ],
+              "sim_class_name": "toiletpaper",
+              "sim_id": 40,
+              "direct_relation": "inside"
+            },
+            "towel 4": {
+              "states": {},
+              "properties": [
+                "GRABBABLE",
+                "COVER_OBJECT",
+                "MOVABLE"
+              ],
+              "sim_class_name": "towel",
+              "sim_id": 44,
+              "direct_relation": "inside"
+            },
+            "towel 5": {
+              "states": {},
+              "properties": [
+                "GRABBABLE",
+                "COVER_OBJECT",
+                "MOVABLE"
+              ],
+              "sim_class_name": "towel",
+              "sim_id": 45,
+              "direct_relation": "inside"
+            },
+            "hair product 3": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "GRABBABLE",
+                "POURABLE",
+                "CAN_OPEN",
+                "MOVABLE"
+              ],
+              "sim_class_name": "hairproduct",
+              "sim_id": 47,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {}
+            },
+            "hair product 4": {
+              "states": {
+                "isOpen": false
+              },
+              "properties": [
+                "GRABBABLE",
+                "POURABLE",
+                "CAN_OPEN",
+                "MOVABLE"
+              ],
+              "sim_class_name": "hairproduct",
+              "sim_id": 48,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {}
+            },
+            "wall picture frame 1": {
+              "states": {},
+              "properties": [
+                "GRABBABLE",
+                "HANGABLE",
+                "HAS_PAPER",
+                "MOVABLE"
+              ],
+              "sim_class_name": "wallpictureframe",
+              "sim_id": 50,
+              "direct_relation": "inside"
+            },
+            "ceiling lamp 1": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "ceilinglamp",
+              "sim_id": 51,
+              "direct_relation": "inside"
+            },
+            "wall lamp 1": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "walllamp",
+              "sim_id": 52,
+              "direct_relation": "inside"
+            },
+            "wall lamp 2": {
+              "states": {},
+              "properties": [],
+              "sim_class_name": "walllamp",
+              "sim_id": 53,
+              "direct_relation": "inside"
+            },
+            "door jamb 1": {
+              "states": {
+                "isOpen": true
+              },
+              "properties": [],
+              "sim_class_name": "doorjamb",
+              "sim_id": 54,
+              "direct_relation": "inside"
+            },
+            "door 1": {
+              "states": {
+                "isOpen": true
+              },
+              "properties": [
+                "CAN_OPEN"
+              ],
+              "sim_class_name": "door",
+              "sim_id": 55,
+              "direct_relation": "inside",
+              "type": "receptacle",
+              "contains": {}
+            },
+            "light switch 1": {
+              "states": {
+                "isToggled": true
+              },
+              "properties": [
+                "HAS_SWITCH",
+                "HAS_PLUG"
+              ],
+              "sim_class_name": "lightswitch",
+              "sim_id": 56,
+              "direct_relation": "inside"
+            }
+          }
+        }
+      },
+      "robot_location": "living room 1",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "living room 1",
+      "robot_holding": "空"
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "dataset": "behavior",
+  "case_id": "picking_up_take-out_food_0_Ihlen_1_int_0_2021-06-10_22-09-43",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "picking_up_take-out_food",
+    "task_id": 0,
+    "scene_id": "Ihlen_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "picking up take-out food",
+    "task": "picking_up_take-out_food",
+    "task_id": 0,
+    "scene_id": "Ihlen_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 7,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "breakfast_table_19",
+      "carton_0",
+      "hamburger_0",
+      "room_floor_living_room_0",
+      "sushi_0"
+    ],
+    "name_mapping": {
+      "floor.n.01_1": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "carton.n.02_1": {
+        "name": "carton_0",
+        "category": "carton.n.02"
+      },
+      "table.n.02_1": {
+        "name": "breakfast_table_19",
+        "category": "table.n.02"
+      },
+      "sushi.n.01_1": {
+        "name": "sushi_0",
+        "category": "sushi.n.01"
+      },
+      "hamburger.n.01_1": {
+        "name": "hamburger_0",
+        "category": "hamburger.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "breakfast_table_19": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "room_floor_living_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "carton_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {
+                        "hamburger_0": {
+                          "states": {},
+                          "direct_relation": "inside"
+                        },
+                        "sushi_0": {
+                          "states": {},
+                          "direct_relation": "inside"
+                        }
+                      },
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_living_room_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_living_room_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "breakfast_table_19": {
+        "name": "breakfast_table_19",
+        "category": "table.n.02"
+      },
+      "carton_0": {
+        "name": "carton_0",
+        "category": "carton.n.02"
+      },
+      "hamburger_0": {
+        "name": "hamburger_0",
+        "category": "hamburger.n.01"
+      },
+      "room_floor_living_room_0": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "sushi_0": {
+        "name": "sushi_0",
+        "category": "sushi.n.01"
+      }
+    }
+  }
+}

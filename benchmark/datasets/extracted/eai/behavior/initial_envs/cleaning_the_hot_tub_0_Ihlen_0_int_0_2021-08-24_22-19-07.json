@@ -1,0 +1,127 @@
+{
+  "dataset": "behavior",
+  "case_id": "cleaning_the_hot_tub_0_Ihlen_0_int_0_2021-08-24_22-19-07",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "cleaning_the_hot_tub",
+    "task_id": 0,
+    "scene_id": "Ihlen_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "cleaning the hot tub",
+    "task": "cleaning_the_hot_tub",
+    "task_id": 0,
+    "scene_id": "Ihlen_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 6,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "pool_50",
+      "room_floor_garage_0",
+      "scrub_brush_51",
+      "sink_38"
+    ],
+    "name_mapping": {
+      "pool.n.01_1": {
+        "name": "pool_50",
+        "category": "pool.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_garage_0",
+        "category": "floor.n.01"
+      },
+      "scrub_brush.n.01_1": {
+        "name": "scrub_brush_51",
+        "category": "scrub_brush.n.01"
+      },
+      "sink.n.01_1": {
+        "name": "sink_38",
+        "category": "sink.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "room_floor_garage_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "pool_50": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "direct_relation": "onfloor"
+                    },
+                    "scrub_brush_51": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "sink_38": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_garage_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_garage_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "pool_50": {
+        "name": "pool_50",
+        "category": "pool.n.01"
+      },
+      "room_floor_garage_0": {
+        "name": "room_floor_garage_0",
+        "category": "floor.n.01"
+      },
+      "scrub_brush_51": {
+        "name": "scrub_brush_51",
+        "category": "scrub_brush.n.01"
+      },
+      "sink_38": {
+        "name": "sink_38",
+        "category": "sink.n.01"
+      }
+    }
+  }
+}

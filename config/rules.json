@@ -1,0 +1,8 @@
+{
+    "static_constraints": [
+        {
+            "trigger_condition": "涉及处理生鲜食材（如切苹果、处理肉类、烹饪等）",
+            "enforcement_rule": "在进行任何破坏性物理加工前，必须前往最近的水源设施（如水槽_1）执行 Clean 清洗动作，确保食品卫生。"
+        }
+    ]
+}

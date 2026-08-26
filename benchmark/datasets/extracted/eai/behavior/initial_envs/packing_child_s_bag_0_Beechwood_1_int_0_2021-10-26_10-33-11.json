@@ -1,0 +1,178 @@
+{
+  "dataset": "behavior",
+  "case_id": "packing_child_s_bag_0_Beechwood_1_int_0_2021-10-26_10-33-11",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "packing_child_s_bag",
+    "task_id": 0,
+    "scene_id": "Beechwood_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "packing child s bag",
+    "task": "packing_child_s_bag",
+    "task_id": 0,
+    "scene_id": "Beechwood_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 10,
+    "room_count": 1,
+    "entity_catalog": [
+      "apple_103",
+      "backpack_100",
+      "bed_43",
+      "behavior_room",
+      "behavior_room_anchor",
+      "bracelet_102",
+      "headset_104",
+      "notebook_101",
+      "room_floor_bedroom_0",
+      "sunglass_105"
+    ],
+    "name_mapping": {
+      "backpack.n.01_1": {
+        "name": "backpack_100",
+        "category": "backpack.n.01"
+      },
+      "notebook.n.01_1": {
+        "name": "notebook_101",
+        "category": "notebook.n.01"
+      },
+      "bracelet.n.02_1": {
+        "name": "bracelet_102",
+        "category": "bracelet.n.02"
+      },
+      "apple.n.01_1": {
+        "name": "apple_103",
+        "category": "apple.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_bedroom_0",
+        "category": "floor.n.01"
+      },
+      "bed.n.01_1": {
+        "name": "bed_43",
+        "category": "bed.n.01"
+      },
+      "earphone.n.01_1": {
+        "name": "headset_104",
+        "category": "earphone.n.01"
+      },
+      "sunglass.n.01_1": {
+        "name": "sunglass_105",
+        "category": "sunglass.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bed_43": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "apple_103": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "bracelet_102": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "headset_104": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "sunglass_105": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "room_floor_bedroom_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "backpack_100": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "notebook_101": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_bedroom_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_bedroom_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "apple_103": {
+        "name": "apple_103",
+        "category": "apple.n.01"
+      },
+      "backpack_100": {
+        "name": "backpack_100",
+        "category": "backpack.n.01"
+      },
+      "bed_43": {
+        "name": "bed_43",
+        "category": "bed.n.01"
+      },
+      "bracelet_102": {
+        "name": "bracelet_102",
+        "category": "bracelet.n.02"
+      },
+      "headset_104": {
+        "name": "headset_104",
+        "category": "earphone.n.01"
+      },
+      "notebook_101": {
+        "name": "notebook_101",
+        "category": "notebook.n.01"
+      },
+      "room_floor_bedroom_0": {
+        "name": "room_floor_bedroom_0",
+        "category": "floor.n.01"
+      },
+      "sunglass_105": {
+        "name": "sunglass_105",
+        "category": "sunglass.n.01"
+      }
+    }
+  }
+}

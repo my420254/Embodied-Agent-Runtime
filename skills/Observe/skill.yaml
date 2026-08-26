@@ -1,0 +1,5 @@
+name: Observe
+description: 在目标对象前进行观察或注视，不改变环境物理状态。
+prompt: prompt.md
+handler: skills.Observe.handler:ObserveSkill
+execution_domain: 感知/信息交互

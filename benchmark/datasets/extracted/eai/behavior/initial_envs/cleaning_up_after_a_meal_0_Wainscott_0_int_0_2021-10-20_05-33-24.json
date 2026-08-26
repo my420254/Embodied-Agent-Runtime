@@ -1,0 +1,383 @@
+{
+  "dataset": "behavior",
+  "case_id": "cleaning_up_after_a_meal_0_Wainscott_0_int_0_2021-10-20_05-33-24",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "cleaning_up_after_a_meal",
+    "task_id": 0,
+    "scene_id": "Wainscott_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "cleaning up after a meal",
+    "task": "cleaning_up_after_a_meal",
+    "task_id": 0,
+    "scene_id": "Wainscott_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 21,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bowl_143",
+      "bowl_144",
+      "breakfast_table_1",
+      "cup_150",
+      "cup_151",
+      "detergent_154",
+      "dishwasher_83",
+      "hamburger_152",
+      "hamburger_153",
+      "paper_bag_145",
+      "plate_146",
+      "plate_147",
+      "plate_148",
+      "plate_149",
+      "room_floor_dining_room_0",
+      "room_floor_kitchen_0",
+      "sink_82",
+      "straight_chair_2",
+      "straight_chair_3"
+    ],
+    "name_mapping": {
+      "bowl.n.01_1": {
+        "name": "bowl_143",
+        "category": "bowl.n.01"
+      },
+      "bowl.n.01_2": {
+        "name": "bowl_144",
+        "category": "bowl.n.01"
+      },
+      "table.n.02_1": {
+        "name": "breakfast_table_1",
+        "category": "table.n.02"
+      },
+      "sack.n.01_1": {
+        "name": "paper_bag_145",
+        "category": "sack.n.01"
+      },
+      "chair.n.01_1": {
+        "name": "straight_chair_2",
+        "category": "chair.n.01"
+      },
+      "chair.n.01_2": {
+        "name": "straight_chair_3",
+        "category": "chair.n.01"
+      },
+      "plate.n.04_1": {
+        "name": "plate_146",
+        "category": "plate.n.04"
+      },
+      "plate.n.04_2": {
+        "name": "plate_147",
+        "category": "plate.n.04"
+      },
+      "plate.n.04_3": {
+        "name": "plate_148",
+        "category": "plate.n.04"
+      },
+      "plate.n.04_4": {
+        "name": "plate_149",
+        "category": "plate.n.04"
+      },
+      "cup.n.01_1": {
+        "name": "cup_150",
+        "category": "cup.n.01"
+      },
+      "cup.n.01_2": {
+        "name": "cup_151",
+        "category": "cup.n.01"
+      },
+      "hamburger.n.01_1": {
+        "name": "hamburger_152",
+        "category": "hamburger.n.01"
+      },
+      "hamburger.n.01_2": {
+        "name": "hamburger_153",
+        "category": "hamburger.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_dining_room_0",
+        "category": "floor.n.01"
+      },
+      "floor.n.01_2": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "detergent.n.02_1": {
+        "name": "detergent_154",
+        "category": "detergent.n.02"
+      },
+      "dishwasher.n.01_1": {
+        "name": "dishwasher_83",
+        "category": "dishwasher.n.01"
+      },
+      "sink.n.01_1": {
+        "name": "sink_82",
+        "category": "sink.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "breakfast_table_1": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isStained": true
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "bowl_143": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "bowl_144": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "cup_150": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "direct_relation": "ontop"
+                    },
+                    "cup_151": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "direct_relation": "ontop"
+                    },
+                    "paper_bag_145": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "plate_146": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "plate_147": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "plate_148": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "plate_149": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "dishwasher_83": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "room_floor_dining_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "detergent_154": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "hamburger_153": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "sink_82": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "straight_chair_2": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isStained": true
+                  }
+                },
+                "straight_chair_3": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isStained": true
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "hamburger_152": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bowl_143": {
+        "name": "bowl_143",
+        "category": "bowl.n.01"
+      },
+      "bowl_144": {
+        "name": "bowl_144",
+        "category": "bowl.n.01"
+      },
+      "breakfast_table_1": {
+        "name": "breakfast_table_1",
+        "category": "table.n.02"
+      },
+      "cup_150": {
+        "name": "cup_150",
+        "category": "cup.n.01"
+      },
+      "cup_151": {
+        "name": "cup_151",
+        "category": "cup.n.01"
+      },
+      "detergent_154": {
+        "name": "detergent_154",
+        "category": "detergent.n.02"
+      },
+      "dishwasher_83": {
+        "name": "dishwasher_83",
+        "category": "dishwasher.n.01"
+      },
+      "hamburger_152": {
+        "name": "hamburger_152",
+        "category": "hamburger.n.01"
+      },
+      "hamburger_153": {
+        "name": "hamburger_153",
+        "category": "hamburger.n.01"
+      },
+      "paper_bag_145": {
+        "name": "paper_bag_145",
+        "category": "sack.n.01"
+      },
+      "plate_146": {
+        "name": "plate_146",
+        "category": "plate.n.04"
+      },
+      "plate_147": {
+        "name": "plate_147",
+        "category": "plate.n.04"
+      },
+      "plate_148": {
+        "name": "plate_148",
+        "category": "plate.n.04"
+      },
+      "plate_149": {
+        "name": "plate_149",
+        "category": "plate.n.04"
+      },
+      "room_floor_dining_room_0": {
+        "name": "room_floor_dining_room_0",
+        "category": "floor.n.01"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "sink_82": {
+        "name": "sink_82",
+        "category": "sink.n.01"
+      },
+      "straight_chair_2": {
+        "name": "straight_chair_2",
+        "category": "chair.n.01"
+      },
+      "straight_chair_3": {
+        "name": "straight_chair_3",
+        "category": "chair.n.01"
+      }
+    }
+  }
+}

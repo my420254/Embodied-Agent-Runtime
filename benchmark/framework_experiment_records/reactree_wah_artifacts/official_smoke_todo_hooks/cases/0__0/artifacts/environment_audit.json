@@ -1,0 +1,216 @@
+{
+  "schema_version": "framework_trace_v3",
+  "process_name": "environment_audit",
+  "payload_role": "summary",
+  "prepared_scene": {
+    "entity_count": 343,
+    "type_counts": {
+      "room": 4,
+      "unknown": 206,
+      "receptacle": 133
+    },
+    "nesting": {
+      "available": true,
+      "contains_node_count": 67,
+      "max_depth": 5
+    },
+    "flat_schema": {
+      "available": true,
+      "entity_count": 343,
+      "standard_field_counts": {
+        "direct_parent": 343,
+        "direct_relation": 343,
+        "type": 343,
+        "states": 343,
+        "properties": 343,
+        "is_container": 343,
+        "full_path": 343
+      },
+      "relation_entity_count": 339,
+      "state_entity_count": 91,
+      "property_entity_count": 229,
+      "container_count": 133,
+      "full_path_entity_count": 339,
+      "parent_missing_count": 0,
+      "parent_missing_sample": [],
+      "parent_reference_missing_count": 0,
+      "parent_reference_missing_sample": []
+    }
+  },
+  "planning_input_environment": {
+    "source": {
+      "builder": "build_sandbox_environment",
+      "benchmark": "benchmark.reactree.wah"
+    },
+    "summary": {
+      "available": true,
+      "entity_count": 17,
+      "type_counts": {
+        "unknown": 7,
+        "room": 3,
+        "receptacle": 7
+      },
+      "entities": {
+        "count": 17,
+        "sample": [
+          "apple 1",
+          "apple 2",
+          "apple 3",
+          "bedroom 1",
+          "cabinet 1",
+          "coffee table 1",
+          "cupcake 1",
+          "cupcake 2",
+          "cupcake 3",
+          "floor 16",
+          "floor 2",
+          "floor 25",
+          "floor 4",
+          "fridge 1",
+          "kitchen 1",
+          "kitchen table 1",
+          "living room 1"
+        ],
+        "truncated": false
+      },
+      "states_sample": {
+        "cabinet 1": {
+          "isOpen": false
+        },
+        "fridge 1": {
+          "isOpen": false
+        }
+      },
+      "schema": {
+        "available": true,
+        "entity_count": 17,
+        "standard_field_counts": {
+          "direct_parent": 17,
+          "direct_relation": 17,
+          "type": 17,
+          "states": 17,
+          "properties": 17,
+          "is_container": 17,
+          "full_path": 17
+        },
+        "relation_entity_count": 14,
+        "state_entity_count": 2,
+        "property_entity_count": 14,
+        "container_count": 7,
+        "full_path_entity_count": 14,
+        "parent_missing_count": 0,
+        "parent_missing_sample": [],
+        "parent_reference_missing_count": 0,
+        "parent_reference_missing_sample": []
+      }
+    },
+    "schema": {
+      "available": true,
+      "entity_count": 17,
+      "standard_field_counts": {
+        "direct_parent": 17,
+        "direct_relation": 17,
+        "type": 17,
+        "states": 17,
+        "properties": 17,
+        "is_container": 17,
+        "full_path": 17
+      },
+      "relation_entity_count": 14,
+      "state_entity_count": 2,
+      "property_entity_count": 14,
+      "container_count": 7,
+      "full_path_entity_count": 14,
+      "parent_missing_count": 0,
+      "parent_missing_sample": [],
+      "parent_reference_missing_count": 0,
+      "parent_reference_missing_sample": []
+    }
+  },
+  "planning_output_environment": {
+    "summary": {
+      "available": true,
+      "entity_count": 17,
+      "type_counts": {
+        "unknown": 7,
+        "room": 3,
+        "receptacle": 7
+      },
+      "entities": {
+        "count": 17,
+        "sample": [
+          "apple 1",
+          "apple 2",
+          "apple 3",
+          "bedroom 1",
+          "cabinet 1",
+          "coffee table 1",
+          "cupcake 1",
+          "cupcake 2",
+          "cupcake 3",
+          "floor 16",
+          "floor 2",
+          "floor 25",
+          "floor 4",
+          "fridge 1",
+          "kitchen 1",
+          "kitchen table 1",
+          "living room 1"
+        ],
+        "truncated": false
+      },
+      "states_sample": {
+        "cabinet 1": {
+          "isOpen": false
+        },
+        "fridge 1": {
+          "isOpen": false
+        }
+      },
+      "schema": {
+        "available": true,
+        "entity_count": 17,
+        "standard_field_counts": {
+          "direct_parent": 17,
+          "direct_relation": 17,
+          "type": 17,
+          "states": 17,
+          "properties": 17,
+          "is_container": 17,
+          "full_path": 17
+        },
+        "relation_entity_count": 14,
+        "state_entity_count": 2,
+        "property_entity_count": 14,
+        "container_count": 7,
+        "full_path_entity_count": 14,
+        "parent_missing_count": 0,
+        "parent_missing_sample": [],
+        "parent_reference_missing_count": 0,
+        "parent_reference_missing_sample": []
+      }
+    },
+    "schema": {
+      "available": true,
+      "entity_count": 17,
+      "standard_field_counts": {
+        "direct_parent": 17,
+        "direct_relation": 17,
+        "type": 17,
+        "states": 17,
+        "properties": 17,
+        "is_container": 17,
+        "full_path": 17
+      },
+      "relation_entity_count": 14,
+      "state_entity_count": 2,
+      "property_entity_count": 14,
+      "container_count": 7,
+      "full_path_entity_count": 14,
+      "parent_missing_count": 0,
+      "parent_missing_sample": [],
+      "parent_reference_missing_count": 0,
+      "parent_reference_missing_sample": []
+    }
+  }
+}

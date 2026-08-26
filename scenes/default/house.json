@@ -1,0 +1,806 @@
+{
+  "scene_name": "温馨中式三居室_01",
+  "robot_inventory": null,
+  "robot_location": "客厅",
+  "environment": {
+    "厨房": {
+      "type": "room",
+      "states": {},
+      "contains": {
+        "厨房操作台_1": {
+          "type": "receptacle",
+          "states": {
+            "isClean": true
+          },
+          "contains": {
+            "菜刀_1": {
+              "states": {
+                "isBroken": true,
+                "isClean": true,
+                "isDirty": false
+              }
+            },
+            "水果刀_1": {
+              "states": {
+                "isBroken": false,
+                "isSharp": false,
+                "isClean": true
+              }
+            },
+            "砧板_1": {
+              "states": {
+                "isClean": true,
+                "isDirty": false
+              }
+            },
+            "土豆_1": {
+              "states": {
+                "isSliced": false,
+                "isCooked": false,
+                "isCold": false
+              }
+            },
+            "西红柿_1": {
+              "states": {
+                "isSliced": false,
+                "isRotten": false
+              }
+            },
+            "调料架_1": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "盐罐_1": {
+                  "states": {
+                    "isOpen": false
+                  }
+                },
+                "酱油瓶_1": {
+                  "states": {
+                    "isOpen": false
+                  }
+                },
+                "醋瓶_1": {
+                  "states": {
+                    "isOpen": false
+                  }
+                },
+                "胡椒粉_1": {
+                  "states": {
+                    "isOpen": false
+                  }
+                },
+                "鸡精罐_1": {
+                  "states": {
+                    "isOpen": false
+                  }
+                }
+              }
+            }
+          }
+        },
+        "顶层橱柜_1": {
+          "type": "receptacle",
+          "states": {
+            "isOpen": false
+          },
+          "contains": {
+            "厨师刀_1": {
+              "states": {
+                "isBroken": false,
+                "isSharp": true,
+                "isClean": true
+              }
+            },
+            "厨师刀_2": {
+              "states": {
+                "isBroken": false,
+                "isSharp": true,
+                "isClean": true
+              }
+            },
+            "大汤碗_1": {
+              "states": {
+                "isClean": true
+              }
+            },
+            "大汤碗_2": {
+              "states": {
+                "isClean": true
+              }
+            },
+            "陶瓷盘_1": {
+              "states": {
+                "isClean": true
+              }
+            },
+            "陶瓷盘_2": {
+              "states": {
+                "isClean": true
+              }
+            }
+          }
+        },
+        "水槽_1": {
+          "type": "receptacle",
+          "states": {
+            "isFilledWithLiquid": false
+          },
+          "contains": {
+            "脏筷子_1": {
+              "states": {
+                "isClean": false,
+                "isDirty": true
+              }
+            },
+            "脏盘子_1": {
+              "states": {
+                "isClean": false,
+                "isDirty": true
+              }
+            },
+            "洗洁精_1": {
+              "states": {
+                "isEmpty": false
+              }
+            },
+            "海绵擦_1": {
+              "states": {
+                "isWet": true,
+                "isClean": true
+              }
+            },
+            "钢丝球_1": {
+              "states": {
+                "isClean": true,
+                "isDirty": false
+              }
+            }
+          }
+        },
+        "冰箱_1": {
+          "type": "receptacle",
+          "states": {
+            "isOpen": false,
+            "isToggled": true
+          },
+          "contains": {
+            "冷藏室_1": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "鸡蛋_1": {
+                  "states": {
+                    "isBroken": false
+                  }
+                },
+                "鸡蛋_2": {
+                  "states": {
+                    "isBroken": false
+                  }
+                },
+                "牛奶_1": {
+                  "states": {
+                    "isOpen": false,
+                    "isCold": true
+                  }
+                },
+                "可乐_1": {
+                  "states": {
+                    "isOpen": false,
+                    "isCold": true
+                  }
+                },
+                "生菜_1": {
+                  "states": {
+                    "isWashed": false,
+                    "isCold": true
+                  }
+                }
+              }
+            },
+            "冷冻室_1": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "冷冻猪肉_1": {
+                  "states": {
+                    "isFrozen": true
+                  }
+                },
+                "冰淇淋_1": {
+                  "states": {
+                    "isFrozen": true
+                  }
+                },
+                "速冻水饺_1": {
+                  "states": {
+                    "isOpen": false,
+                    "isFrozen": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "微波炉_1": {
+          "type": "receptacle",
+          "states": {
+            "isOpen": false,
+            "isToggled": false
+          },
+          "contains": {}
+        },
+        "烤箱_1": {
+          "type": "receptacle",
+          "states": {
+            "isOpen": false,
+            "isToggled": false
+          },
+          "contains": {}
+        }
+      }
+    },
+    "客厅": {
+      "type": "room",
+      "states": {},
+      "contains": {
+        "主沙发_1": {
+          "type": "receptacle",
+          "states": {},
+          "contains": {
+            "抱枕_1": {
+              "states": {
+                "isClean": true,
+                "isDirty": false
+              }
+            },
+            "抱枕_2": {
+              "states": {
+                "isClean": true,
+                "isDirty": false
+              }
+            },
+            "毛毯_1": {
+              "states": {
+                "isFolded": false,
+                "isClean": true
+              }
+            },
+            "电视遥控_1": {
+              "states": {
+                "hasBattery": true,
+                "isClean": true
+              }
+            }
+          }
+        },
+        "大茶几_1": {
+          "type": "receptacle",
+          "states": {
+            "isClean": true
+          },
+          "contains": {
+            "空调遥控器_1": {
+              "states": {
+                "hasBattery": false,
+                "isClean": true
+              }
+            },
+            "抽纸盒_1": {
+              "states": {
+                "isEmpty": false
+              }
+            },
+            "烟灰缸_1": {
+              "states": {
+                "isClean": false,
+                "isDirty": true
+              }
+            },
+            "玻璃水杯_1": {
+              "states": {
+                "isClean": true
+              }
+            },
+            "玻璃水杯_2": {
+              "states": {
+                "isClean": true
+              }
+            },
+            "茶具套装_1": {
+              "states": {
+                "isClean": true
+              }
+            },
+            "杂志_1": {
+              "states": {
+                "isOpen": false
+              }
+            },
+            "钥匙串_1": {
+              "states": {}
+            },
+            "指甲剪_1": {
+              "states": {
+                "isBroken": false,
+                "isClean": true
+              }
+            }
+          }
+        },
+        "电视柜_1": {
+          "type": "receptacle",
+          "states": {
+            "isOpen": false
+          },
+          "contains": {
+            "大屏幕电视_1": {
+              "states": {
+                "isToggled": false
+              }
+            },
+            "无线路由器_1": {
+              "states": {
+                "isToggled": true
+              }
+            },
+            "游戏机_1": {
+              "states": {
+                "isToggled": false
+              }
+            },
+            "游戏手柄_1": {
+              "states": {
+                "hasBattery": true,
+                "isClean": true
+              }
+            },
+            "游戏手柄_2": {
+              "states": {
+                "hasBattery": true,
+                "isClean": true
+              }
+            },
+            "抽屉_1": {
+              "type": "receptacle",
+              "states": {
+                "isOpen": false
+              },
+              "contains": {
+                "备用电池_1": {
+                  "states": {}
+                },
+                "备用电池_2": {
+                  "states": {}
+                },
+                "手电筒_1": {
+                  "states": {
+                    "hasBattery": false,
+                    "isToggled": false
+                  }
+                },
+                "剪刀_1": {
+                  "states": {
+                    "isBroken": false,
+                    "isClean": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "书架_1": {
+          "type": "receptacle",
+          "states": {},
+          "contains": {
+            "科幻小说_1": {
+              "states": {}
+            },
+            "历史书籍_1": {
+              "states": {}
+            },
+            "相框_1": {
+              "states": {
+                "isBroken": false,
+                "isClean": true
+              }
+            },
+            "多肉盆栽_1": {
+              "states": {
+                "isWatered": true
+              }
+            }
+          }
+        },
+        "客厅地板_1": {
+          "type": "receptacle",
+          "states": {
+            "isClean": false
+          },
+          "contains": {
+            "扫地机器人_1": {
+              "states": {
+                "isToggled": false
+              }
+            },
+            "废纸团_1": {
+              "states": {}
+            },
+            "拖鞋_左_1": {
+              "states": {}
+            },
+            "拖鞋_右_1": {
+              "states": {}
+            }
+          }
+        }
+      }
+    },
+    "卧室": {
+      "type": "room",
+      "states": {},
+      "contains": {
+        "双人床_1": {
+          "type": "receptacle",
+          "states": {
+            "isMade": false
+          },
+          "contains": {
+            "羽绒枕头_1": {
+              "states": {}
+            },
+            "羽绒枕头_2": {
+              "states": {}
+            },
+            "厚被子_1": {
+              "states": {}
+            },
+            "泰迪熊毛绒玩具_1": {
+              "states": {
+                "isClean": true
+              }
+            },
+            "睡衣_1": {
+              "states": {
+                "isFolded": false,
+                "isClean": true
+              }
+            }
+          }
+        },
+        "左侧床头柜_1": {
+          "type": "receptacle",
+          "states": {},
+          "contains": {
+            "台灯_1": {
+              "states": {
+                "isToggled": false
+              }
+            },
+            "手机充电线_1": {
+              "states": {
+                "isPlugged": true
+              }
+            },
+            "电子闹钟_1": {
+              "states": {
+                "isToggled": true
+              }
+            },
+            "近视眼镜_1": {
+              "states": {
+                "isBroken": false,
+                "isClean": true
+              }
+            },
+            "眼罩_1": {
+              "states": {
+                "isClean": true
+              }
+            }
+          }
+        },
+        "右侧床头柜_1": {
+          "type": "receptacle",
+          "states": {},
+          "contains": {
+            "保温杯_1": {
+              "states": {
+                "isOpen": false,
+                "isClean": true
+              }
+            },
+            "安眠药_1": {
+              "states": {
+                "isOpen": false
+              }
+            },
+            "睡前读物_1": {
+              "states": {}
+            }
+          }
+        },
+        "电脑办公桌_1": {
+          "type": "receptacle",
+          "states": {
+            "isClean": true
+          },
+          "contains": {
+            "笔记本电脑_1": {
+              "states": {
+                "isOpen": false,
+                "isToggled": false
+              }
+            },
+            "无线鼠标_1": {
+              "states": {
+                "hasBattery": true
+              }
+            },
+            "机械键盘_1": {
+              "states": {
+                "isClean": true
+              }
+            },
+            "马克杯_1": {
+              "states": {
+                "isClean": false
+              }
+            },
+            "笔筒_1": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "黑色中性笔_1": {
+                  "states": {}
+                },
+                "红色中性笔_1": {
+                  "states": {}
+                },
+                "铅笔_1": {
+                  "states": {}
+                },
+                "橡皮擦_1": {
+                  "states": {}
+                }
+              }
+            },
+            "工作笔记本_1": {
+              "states": {
+                "isOpen": false
+              }
+            }
+          }
+        },
+        "大衣柜_1": {
+          "type": "receptacle",
+          "states": {
+            "isOpen": false
+          },
+          "contains": {
+            "冬季外套_1": {
+              "states": {
+                "isClean": true
+              }
+            },
+            "白衬衫_1": {
+              "states": {
+                "isFolded": false,
+                "isClean": true
+              }
+            },
+            "牛仔裤_1": {
+              "states": {
+                "isFolded": true,
+                "isClean": true
+              }
+            },
+            "运动裤_1": {
+              "states": {
+                "isFolded": true,
+                "isClean": true
+              }
+            },
+            "内衣收纳盒_1": {
+              "type": "receptacle",
+              "states": {
+                "isOpen": false
+              },
+              "contains": {
+                "袜子_左_1": {
+                  "states": {
+                    "isClean": true
+                  }
+                },
+                "袜子_右_1": {
+                  "states": {
+                    "isClean": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "卫生间": {
+      "type": "room",
+      "states": {},
+      "contains": {
+        "大理石洗手台_1": {
+          "type": "receptacle",
+          "states": {
+            "isClean": true
+          },
+          "contains": {
+            "洗手液_1": {
+              "states": {
+                "isEmpty": false
+              }
+            },
+            "漱口杯_1": {
+              "states": {
+                "isClean": true
+              }
+            },
+            "电动牙刷_1": {
+              "states": {
+                "hasBattery": false,
+                "isClean": true
+              }
+            },
+            "牙膏_1": {
+              "states": {
+                "isEmpty": false
+              }
+            },
+            "木梳_1": {
+              "states": {
+                "isBroken": false,
+                "isClean": true
+              }
+            },
+            "香皂_1": {
+              "states": {}
+            }
+          }
+        },
+        "壁挂镜柜_1": {
+          "type": "receptacle",
+          "states": {
+            "isOpen": false
+          },
+          "contains": {
+            "洗面奶_1": {
+              "states": {
+                "isOpen": false
+              }
+            },
+            "爽肤水_1": {
+              "states": {
+                "isOpen": false
+              }
+            },
+            "保湿面霜_1": {
+              "states": {
+                "isOpen": false
+              }
+            },
+            "手动剃须刀_1": {
+              "states": {
+                "isSharp": true,
+                "isClean": true
+              }
+            },
+            "棉签盒_1": {
+              "states": {
+                "isOpen": false
+              }
+            }
+          }
+        },
+        "玻璃淋浴房_1": {
+          "type": "receptacle",
+          "states": {
+            "isOpen": false
+          },
+          "contains": {
+            "花洒_1": {
+              "states": {
+                "isToggled": false
+              }
+            },
+            "沐浴露_1": {
+              "states": {
+                "isEmpty": false
+              }
+            },
+            "洗发水_1": {
+              "states": {
+                "isEmpty": false
+              }
+            },
+            "护发素_1": {
+              "states": {
+                "isEmpty": false
+              }
+            },
+            "沐浴球_1": {
+              "states": {
+                "isWet": false,
+                "isClean": true
+              }
+            }
+          }
+        },
+        "智能马桶_1": {
+          "type": "receptacle",
+          "states": {
+            "isOpen": false
+          },
+          "contains": {
+            "卫生纸卷_1": {
+              "states": {
+                "isEmpty": false
+              }
+            },
+            "马桶刷_1": {
+              "states": {
+                "isClean": false,
+                "isDirty": true
+              }
+            },
+            "洁厕灵_1": {
+              "states": {
+                "isOpen": false
+              }
+            }
+          }
+        },
+        "毛巾架_1": {
+          "type": "receptacle",
+          "states": {},
+          "contains": {
+            "大浴巾_1": {
+              "states": {
+                "isWet": false,
+                "isClean": true
+              }
+            },
+            "洗脸毛巾_1": {
+              "states": {
+                "isWet": false,
+                "isClean": true
+              }
+            }
+          }
+        },
+        "脏衣篓_1": {
+          "type": "receptacle",
+          "states": {},
+          "contains": {
+            "脏衬衫_1": {
+              "states": {
+                "isClean": false,
+                "isDirty": true
+              }
+            },
+            "脏袜子_1": {
+              "states": {
+                "isClean": false,
+                "isDirty": true
+              }
+            },
+            "脏裤子_1": {
+              "states": {
+                "isClean": false,
+                "isDirty": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

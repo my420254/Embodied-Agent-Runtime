@@ -1,0 +1,260 @@
+{
+  "schema_version": "framework_trace_v3",
+  "process_name": "environment_preparation",
+  "payload_role": "output",
+  "instruction": "assembling gift baskets",
+  "env_state": {
+    "robot_location": "room_floor_living_room_0",
+    "robot_holding": "空",
+    "robot_hands": {
+      "left": "空",
+      "right": "空"
+    },
+    "manipulator_mode": "dual_arm"
+  },
+  "entity_catalog": [
+    "basket_0",
+    "basket_1",
+    "basket_2",
+    "basket_3",
+    "behavior_room",
+    "behavior_room_anchor",
+    "bow_0",
+    "bow_1",
+    "bow_2",
+    "bow_3",
+    "breakfast_table_13",
+    "candle_0",
+    "candle_1",
+    "candle_2",
+    "candle_3",
+    "cheese_0",
+    "cheese_1",
+    "cheese_2",
+    "cheese_3",
+    "coffee_table_12",
+    "cookie_0",
+    "cookie_1",
+    "cookie_2",
+    "cookie_3",
+    "room_floor_living_room_0"
+  ],
+  "scene": {
+    "environment": {
+      "behavior_room": {
+        "contains": {
+          "behavior_room_anchor": {
+            "type": "receptacle",
+            "states": {},
+            "contains": {
+              "breakfast_table_13": {
+                "states": {},
+                "type": "receptacle",
+                "contains": {
+                  "candle_0": {
+                    "states": {},
+                    "direct_relation": "ontop"
+                  },
+                  "candle_1": {
+                    "states": {},
+                    "direct_relation": "ontop"
+                  },
+                  "candle_2": {
+                    "states": {},
+                    "direct_relation": "ontop"
+                  },
+                  "candle_3": {
+                    "states": {},
+                    "direct_relation": "ontop"
+                  },
+                  "cookie_0": {
+                    "states": {},
+                    "direct_relation": "ontop"
+                  },
+                  "cookie_1": {
+                    "states": {},
+                    "direct_relation": "ontop"
+                  },
+                  "cookie_2": {
+                    "states": {},
+                    "direct_relation": "ontop"
+                  },
+                  "cookie_3": {
+                    "states": {},
+                    "direct_relation": "ontop"
+                  }
+                }
+              },
+              "coffee_table_12": {
+                "states": {},
+                "type": "receptacle",
+                "contains": {
+                  "bow_0": {
+                    "states": {},
+                    "direct_relation": "ontop"
+                  },
+                  "bow_1": {
+                    "states": {},
+                    "direct_relation": "ontop"
+                  },
+                  "bow_2": {
+                    "states": {},
+                    "direct_relation": "ontop"
+                  },
+                  "bow_3": {
+                    "states": {},
+                    "direct_relation": "ontop"
+                  },
+                  "cheese_0": {
+                    "states": {},
+                    "direct_relation": "ontop"
+                  },
+                  "cheese_1": {
+                    "states": {},
+                    "direct_relation": "ontop"
+                  },
+                  "cheese_2": {
+                    "states": {},
+                    "direct_relation": "ontop"
+                  },
+                  "cheese_3": {
+                    "states": {},
+                    "direct_relation": "ontop"
+                  }
+                }
+              },
+              "room_floor_living_room_0": {
+                "states": {},
+                "type": "receptacle",
+                "contains": {
+                  "basket_0": {
+                    "states": {},
+                    "type": "receptacle",
+                    "contains": {},
+                    "direct_relation": "onfloor"
+                  },
+                  "basket_1": {
+                    "states": {},
+                    "type": "receptacle",
+                    "contains": {},
+                    "direct_relation": "onfloor"
+                  },
+                  "basket_2": {
+                    "states": {},
+                    "type": "receptacle",
+                    "contains": {},
+                    "direct_relation": "onfloor"
+                  },
+                  "basket_3": {
+                    "states": {},
+                    "type": "receptacle",
+                    "contains": {},
+                    "direct_relation": "onfloor"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "robot_location": "room_floor_living_room_0",
+    "robot_inventory": null,
+    "robot_holding_items": {}
+  },
+  "context": {
+    "dataset": "behavior",
+    "task_context": {
+      "dataset": "behavior",
+      "instruction": "assembling gift baskets",
+      "identifier": "assembling_gift_baskets_0_Beechwood_0_int_0_2021-10-26_12-46-37",
+      "raw_source": "behavior_initial_env_cache",
+      "initial_environment_cache_path": "/data/zmy/OurAgent-he1/benchmark/datasets/extracted/eai/behavior/initial_envs/assembling_gift_baskets_0_Beechwood_0_int_0_2021-10-26_12-46-37.json",
+      "initial_environment_source": "igibson_behavior_native_loader",
+      "environment_source": "igibson_behavior_native_loader",
+      "raw_goal_condition": [
+        [
+          "forpairs",
+          "basket.n.01",
+          "-",
+          "basket.n.01",
+          "candle.n.01",
+          "-",
+          "candle.n.01",
+          "inside",
+          "candle.n.01",
+          "basket.n.01"
+        ],
+        [
+          "forpairs",
+          "basket.n.01",
+          "-",
+          "basket.n.01",
+          "cheese.n.01",
+          "-",
+          "cheese.n.01",
+          "inside",
+          "cheese.n.01",
+          "basket.n.01"
+        ],
+        [
+          "forpairs",
+          "basket.n.01",
+          "-",
+          "basket.n.01",
+          "cookie.n.01",
+          "-",
+          "cookie.n.01",
+          "inside",
+          "cookie.n.01",
+          "basket.n.01"
+        ],
+        [
+          "forpairs",
+          "basket.n.01",
+          "-",
+          "basket.n.01",
+          "bow.n.08",
+          "-",
+          "bow.n.08",
+          "inside",
+          "bow.n.08",
+          "basket.n.01"
+        ]
+      ],
+      "raw_goal_clauses": [
+        "forpairs basket.n.01 - basket.n.01 candle.n.01 - candle.n.01 inside candle.n.01 basket.n.01",
+        "forpairs basket.n.01 - basket.n.01 cheese.n.01 - cheese.n.01 inside cheese.n.01 basket.n.01",
+        "forpairs basket.n.01 - basket.n.01 cookie.n.01 - cookie.n.01 inside cookie.n.01 basket.n.01",
+        "forpairs basket.n.01 - basket.n.01 bow.n.08 - bow.n.08 inside bow.n.08 basket.n.01"
+      ],
+      "raw_goal_condition_count": 4,
+      "name_category": {
+        "basket_0": "basket.n.01",
+        "basket_1": "basket.n.01",
+        "basket_2": "basket.n.01",
+        "basket_3": "basket.n.01",
+        "room_floor_living_room_0": "floor.n.01",
+        "candle_0": "candle.n.01",
+        "candle_1": "candle.n.01",
+        "candle_2": "candle.n.01",
+        "candle_3": "candle.n.01",
+        "cookie_0": "cookie.n.01",
+        "cookie_1": "cookie.n.01",
+        "cookie_2": "cookie.n.01",
+        "cookie_3": "cookie.n.01",
+        "cheese_0": "cheese.n.01",
+        "cheese_1": "cheese.n.01",
+        "cheese_2": "cheese.n.01",
+        "cheese_3": "cheese.n.01",
+        "bow_0": "bow.n.08",
+        "bow_1": "bow.n.08",
+        "bow_2": "bow.n.08",
+        "bow_3": "bow.n.08",
+        "breakfast_table_13": "table.n.02",
+        "coffee_table_12": "table.n.02",
+        "agent.n.01_1": "agent.n.01"
+      }
+    }
+  }
+}

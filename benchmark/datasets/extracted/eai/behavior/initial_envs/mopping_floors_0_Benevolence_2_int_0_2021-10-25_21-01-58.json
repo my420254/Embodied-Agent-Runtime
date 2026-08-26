@@ -1,0 +1,170 @@
+{
+  "dataset": "behavior",
+  "case_id": "mopping_floors_0_Benevolence_2_int_0_2021-10-25_21-01-58",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "mopping_floors",
+    "task_id": 0,
+    "scene_id": "Benevolence_2_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "mopping floors",
+    "task": "mopping_floors",
+    "task_id": 0,
+    "scene_id": "Benevolence_2_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 9,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "broom_0",
+      "bucket_0",
+      "dishtowel_0",
+      "room_floor_bathroom_0",
+      "room_floor_corridor_0",
+      "sink_28",
+      "soap_0"
+    ],
+    "name_mapping": {
+      "broom.n.01_1": {
+        "name": "broom_0",
+        "category": "broom.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_bathroom_0",
+        "category": "floor.n.01"
+      },
+      "floor.n.01_2": {
+        "name": "room_floor_corridor_0",
+        "category": "floor.n.01"
+      },
+      "soap.n.01_1": {
+        "name": "soap_0",
+        "category": "soap.n.01"
+      },
+      "bucket.n.01_1": {
+        "name": "bucket_0",
+        "category": "bucket.n.01"
+      },
+      "piece_of_cloth.n.01_1": {
+        "name": "dishtowel_0",
+        "category": "piece_of_cloth.n.01"
+      },
+      "sink.n.01_1": {
+        "name": "sink_28",
+        "category": "sink.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "room_floor_bathroom_0": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isStained": true
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "bucket_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "dishtowel_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "soap_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "room_floor_corridor_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "broom_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "sink_28": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_bathroom_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_bathroom_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "broom_0": {
+        "name": "broom_0",
+        "category": "broom.n.01"
+      },
+      "bucket_0": {
+        "name": "bucket_0",
+        "category": "bucket.n.01"
+      },
+      "dishtowel_0": {
+        "name": "dishtowel_0",
+        "category": "piece_of_cloth.n.01"
+      },
+      "room_floor_bathroom_0": {
+        "name": "room_floor_bathroom_0",
+        "category": "floor.n.01"
+      },
+      "room_floor_corridor_0": {
+        "name": "room_floor_corridor_0",
+        "category": "floor.n.01"
+      },
+      "sink_28": {
+        "name": "sink_28",
+        "category": "sink.n.01"
+      },
+      "soap_0": {
+        "name": "soap_0",
+        "category": "soap.n.01"
+      }
+    }
+  }
+}

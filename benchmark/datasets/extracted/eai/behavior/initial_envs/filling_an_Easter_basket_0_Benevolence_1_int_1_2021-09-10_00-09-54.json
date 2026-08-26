@@ -1,0 +1,310 @@
+{
+  "dataset": "behavior",
+  "case_id": "filling_an_Easter_basket_0_Benevolence_1_int_1_2021-09-10_00-09-54",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "filling_an_Easter_basket",
+    "task_id": 0,
+    "scene_id": "Benevolence_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "filling an Easter basket",
+    "task": "filling_an_Easter_basket",
+    "task_id": 0,
+    "scene_id": "Benevolence_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 19,
+    "room_count": 1,
+    "entity_catalog": [
+      "ball_0",
+      "basket_0",
+      "basket_1",
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_no_top_15",
+      "bottom_cabinet_no_top_16",
+      "bow_0",
+      "bow_1",
+      "bracelet_0",
+      "countertop_18",
+      "egg_0",
+      "egg_1",
+      "fridge_27",
+      "lollipop_0",
+      "lollipop_1",
+      "notebook_0",
+      "notebook_1",
+      "room_floor_kitchen_0"
+    ],
+    "name_mapping": {
+      "basket.n.01_1": {
+        "name": "basket_0",
+        "category": "basket.n.01"
+      },
+      "basket.n.01_2": {
+        "name": "basket_1",
+        "category": "basket.n.01"
+      },
+      "countertop.n.01_1": {
+        "name": "countertop_18",
+        "category": "countertop.n.01"
+      },
+      "ball.n.01_1": {
+        "name": "ball_0",
+        "category": "ball.n.01"
+      },
+      "jewelry.n.01_1": {
+        "name": "bracelet_0",
+        "category": "jewelry.n.01"
+      },
+      "book.n.02_1": {
+        "name": "notebook_0",
+        "category": "book.n.02"
+      },
+      "book.n.02_2": {
+        "name": "notebook_1",
+        "category": "book.n.02"
+      },
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_no_top_15",
+        "category": "cabinet.n.01"
+      },
+      "cabinet.n.01_2": {
+        "name": "bottom_cabinet_no_top_16",
+        "category": "cabinet.n.01"
+      },
+      "bow.n.08_1": {
+        "name": "bow_0",
+        "category": "bow.n.08"
+      },
+      "bow.n.08_2": {
+        "name": "bow_1",
+        "category": "bow.n.08"
+      },
+      "egg.n.02_1": {
+        "name": "egg_0",
+        "category": "egg.n.02"
+      },
+      "egg.n.02_2": {
+        "name": "egg_1",
+        "category": "egg.n.02"
+      },
+      "electric_refrigerator.n.01_1": {
+        "name": "fridge_27",
+        "category": "electric_refrigerator.n.01"
+      },
+      "candy.n.01_1": {
+        "name": "lollipop_0",
+        "category": "candy.n.01"
+      },
+      "candy.n.01_2": {
+        "name": "lollipop_1",
+        "category": "candy.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bottom_cabinet_no_top_15": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "notebook_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "notebook_1": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "bottom_cabinet_no_top_16": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "bow_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "bow_1": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "countertop_18": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "ball_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "basket_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "basket_1": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "bracelet_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "fridge_27": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "egg_0": {
+                      "states": {
+                        "isCooked": true
+                      },
+                      "direct_relation": "inside"
+                    },
+                    "egg_1": {
+                      "states": {
+                        "isCooked": true
+                      },
+                      "direct_relation": "inside"
+                    },
+                    "lollipop_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "lollipop_1": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "ball_0": {
+        "name": "ball_0",
+        "category": "ball.n.01"
+      },
+      "basket_0": {
+        "name": "basket_0",
+        "category": "basket.n.01"
+      },
+      "basket_1": {
+        "name": "basket_1",
+        "category": "basket.n.01"
+      },
+      "bottom_cabinet_no_top_15": {
+        "name": "bottom_cabinet_no_top_15",
+        "category": "cabinet.n.01"
+      },
+      "bottom_cabinet_no_top_16": {
+        "name": "bottom_cabinet_no_top_16",
+        "category": "cabinet.n.01"
+      },
+      "bow_0": {
+        "name": "bow_0",
+        "category": "bow.n.08"
+      },
+      "bow_1": {
+        "name": "bow_1",
+        "category": "bow.n.08"
+      },
+      "bracelet_0": {
+        "name": "bracelet_0",
+        "category": "jewelry.n.01"
+      },
+      "countertop_18": {
+        "name": "countertop_18",
+        "category": "countertop.n.01"
+      },
+      "egg_0": {
+        "name": "egg_0",
+        "category": "egg.n.02"
+      },
+      "egg_1": {
+        "name": "egg_1",
+        "category": "egg.n.02"
+      },
+      "fridge_27": {
+        "name": "fridge_27",
+        "category": "electric_refrigerator.n.01"
+      },
+      "lollipop_0": {
+        "name": "lollipop_0",
+        "category": "candy.n.01"
+      },
+      "lollipop_1": {
+        "name": "lollipop_1",
+        "category": "candy.n.01"
+      },
+      "notebook_0": {
+        "name": "notebook_0",
+        "category": "book.n.02"
+      },
+      "notebook_1": {
+        "name": "notebook_1",
+        "category": "book.n.02"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      }
+    }
+  }
+}

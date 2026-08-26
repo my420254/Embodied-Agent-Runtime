@@ -1,0 +1,223 @@
+{
+  "dataset": "behavior",
+  "case_id": "loading_the_dishwasher_0_Benevolence_1_int_0_2021-10-20_06-10-42",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "loading_the_dishwasher",
+    "task_id": 0,
+    "scene_id": "Benevolence_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "loading the dishwasher",
+    "task": "loading_the_dishwasher",
+    "task_id": 0,
+    "scene_id": "Benevolence_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 11,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bowl_63",
+      "bowl_64",
+      "countertop_18",
+      "dishwasher_20",
+      "mug_62",
+      "plate_59",
+      "plate_60",
+      "plate_61",
+      "room_floor_kitchen_0"
+    ],
+    "name_mapping": {
+      "plate.n.04_1": {
+        "name": "plate_59",
+        "category": "plate.n.04"
+      },
+      "plate.n.04_2": {
+        "name": "plate_60",
+        "category": "plate.n.04"
+      },
+      "plate.n.04_3": {
+        "name": "plate_61",
+        "category": "plate.n.04"
+      },
+      "countertop.n.01_1": {
+        "name": "countertop_18",
+        "category": "countertop.n.01"
+      },
+      "mug.n.04_1": {
+        "name": "mug_62",
+        "category": "mug.n.04"
+      },
+      "bowl.n.01_1": {
+        "name": "bowl_63",
+        "category": "bowl.n.01"
+      },
+      "bowl.n.01_2": {
+        "name": "bowl_64",
+        "category": "bowl.n.01"
+      },
+      "dishwasher.n.01_1": {
+        "name": "dishwasher_20",
+        "category": "dishwasher.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "countertop_18": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "bowl_63": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "bowl_64": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "mug_62": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "direct_relation": "ontop"
+                    },
+                    "plate_59": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "plate_60": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "plate_61": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "dishwasher_20": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bowl_63": {
+        "name": "bowl_63",
+        "category": "bowl.n.01"
+      },
+      "bowl_64": {
+        "name": "bowl_64",
+        "category": "bowl.n.01"
+      },
+      "countertop_18": {
+        "name": "countertop_18",
+        "category": "countertop.n.01"
+      },
+      "dishwasher_20": {
+        "name": "dishwasher_20",
+        "category": "dishwasher.n.01"
+      },
+      "mug_62": {
+        "name": "mug_62",
+        "category": "mug.n.04"
+      },
+      "plate_59": {
+        "name": "plate_59",
+        "category": "plate.n.04"
+      },
+      "plate_60": {
+        "name": "plate_60",
+        "category": "plate.n.04"
+      },
+      "plate_61": {
+        "name": "plate_61",
+        "category": "plate.n.04"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "dataset": "delta",
+  "benchmark_module": "benchmark.delta",
+  "task_id": "dining:allensville:episode-01",
+  "base_task_id": "dining:allensville",
+  "instruction": "Set up the dining table for dinner, place the tableware/cutleries and glass on the dining table. Also bring something romantic to the dining table.",
+  "domain": "dining",
+  "scene_name": "allensville",
+  "scene_graph_cache_path": "/data/zmy/OurAgent-he1/benchmark/datasets/extracted/delta/initial_envs/allensville.json",
+  "task_source": "delta_data_example_py",
+  "environment_source": "delta_data_scene_graph_py",
+  "delta_env_state": [
+    "item_on(<item_1>, <item_2>): <item_1> is on <item_2>.",
+    "item_is_dining_table(<item>): <item> is dining_table."
+  ],
+  "add_obj": null,
+  "add_act": [
+    "place_on(<agent>, <item_1>, <item_2>, <room>): For placing <item_1> on <item_2>, <agent> and <item_2> must be in <room>, <item_1> must be pickable and accessible, <item_2> must be dining_table, <agent> is loaded and has <item_1>. As result, <item_1> is on <item_2> in <room>, <agent> is not loaded and does not has <item_1> anymore."
+  ],
+  "episode": 1,
+  "benchmark_settings_file": "/data/zmy/OurAgent-he1/benchmark/delta/framework/code/config/settings.json"
+}

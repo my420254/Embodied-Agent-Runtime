@@ -1,0 +1,217 @@
+{
+  "dataset": "behavior",
+  "case_id": "cleaning_oven_0_Benevolence_1_int_0_2021-09-11_12-20-40",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "cleaning_oven",
+    "task_id": 0,
+    "scene_id": "Benevolence_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "cleaning oven",
+    "task": "cleaning_oven",
+    "task_id": 0,
+    "scene_id": "Benevolence_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 12,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_no_top_15",
+      "dustpan_0",
+      "newspaper_0",
+      "oven_24",
+      "rag_0",
+      "rag_1",
+      "room_floor_kitchen_0",
+      "scrub_brush_0",
+      "sink_19",
+      "soap_0"
+    ],
+    "name_mapping": {
+      "receptacle.n.01_1": {
+        "name": "dustpan_0",
+        "category": "receptacle.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "soap.n.01_1": {
+        "name": "soap_0",
+        "category": "soap.n.01"
+      },
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_no_top_15",
+        "category": "cabinet.n.01"
+      },
+      "rag.n.01_1": {
+        "name": "rag_0",
+        "category": "rag.n.01"
+      },
+      "rag.n.01_2": {
+        "name": "rag_1",
+        "category": "rag.n.01"
+      },
+      "newspaper.n.03_1": {
+        "name": "newspaper_0",
+        "category": "newspaper.n.03"
+      },
+      "sink.n.01_1": {
+        "name": "sink_19",
+        "category": "sink.n.01"
+      },
+      "scrub_brush.n.01_1": {
+        "name": "scrub_brush_0",
+        "category": "scrub_brush.n.01"
+      },
+      "oven.n.01_1": {
+        "name": "oven_24",
+        "category": "oven.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bottom_cabinet_no_top_15": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "rag_0": {
+                      "states": {
+                        "isSoaked": false
+                      },
+                      "direct_relation": "inside"
+                    },
+                    "rag_1": {
+                      "states": {
+                        "isSoaked": false
+                      },
+                      "direct_relation": "inside"
+                    },
+                    "scrub_brush_0": {
+                      "states": {
+                        "isSoaked": false
+                      },
+                      "direct_relation": "inside"
+                    },
+                    "soap_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "oven_24": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isStained": true,
+                    "isOpen": false
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "dustpan_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "newspaper_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "sink_19": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bottom_cabinet_no_top_15": {
+        "name": "bottom_cabinet_no_top_15",
+        "category": "cabinet.n.01"
+      },
+      "dustpan_0": {
+        "name": "dustpan_0",
+        "category": "receptacle.n.01"
+      },
+      "newspaper_0": {
+        "name": "newspaper_0",
+        "category": "newspaper.n.03"
+      },
+      "oven_24": {
+        "name": "oven_24",
+        "category": "oven.n.01"
+      },
+      "rag_0": {
+        "name": "rag_0",
+        "category": "rag.n.01"
+      },
+      "rag_1": {
+        "name": "rag_1",
+        "category": "rag.n.01"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "scrub_brush_0": {
+        "name": "scrub_brush_0",
+        "category": "scrub_brush.n.01"
+      },
+      "sink_19": {
+        "name": "sink_19",
+        "category": "sink.n.01"
+      },
+      "soap_0": {
+        "name": "soap_0",
+        "category": "soap.n.01"
+      }
+    }
+  }
+}

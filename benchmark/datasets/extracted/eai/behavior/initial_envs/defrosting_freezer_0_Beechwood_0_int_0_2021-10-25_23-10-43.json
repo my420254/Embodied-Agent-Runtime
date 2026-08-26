@@ -1,0 +1,246 @@
+{
+  "dataset": "behavior",
+  "case_id": "defrosting_freezer_0_Beechwood_0_int_0_2021-10-25_23-10-43",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "defrosting_freezer",
+    "task_id": 0,
+    "scene_id": "Beechwood_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "defrosting freezer",
+    "task": "defrosting_freezer",
+    "task_id": 0,
+    "scene_id": "Beechwood_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 14,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bucket_0",
+      "countertop_56",
+      "dustpan_0",
+      "fridge_57",
+      "paper_towel_0",
+      "pea_0",
+      "pear_0",
+      "pomelo_0",
+      "rag_0",
+      "room_floor_kitchen_0",
+      "scraper_0",
+      "sink_64"
+    ],
+    "name_mapping": {
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "electric_refrigerator.n.01_1": {
+        "name": "fridge_57",
+        "category": "electric_refrigerator.n.01"
+      },
+      "sink.n.01_1": {
+        "name": "sink_64",
+        "category": "sink.n.01"
+      },
+      "countertop.n.01_1": {
+        "name": "countertop_56",
+        "category": "countertop.n.01"
+      },
+      "receptacle.n.01_1": {
+        "name": "dustpan_0",
+        "category": "receptacle.n.01"
+      },
+      "bucket.n.01_1": {
+        "name": "bucket_0",
+        "category": "bucket.n.01"
+      },
+      "scraper.n.01_1": {
+        "name": "scraper_0",
+        "category": "scraper.n.01"
+      },
+      "towel.n.01_1": {
+        "name": "paper_towel_0",
+        "category": "towel.n.01"
+      },
+      "rag.n.01_1": {
+        "name": "rag_0",
+        "category": "rag.n.01"
+      },
+      "food.n.02_1": {
+        "name": "pomelo_0",
+        "category": "food.n.02"
+      },
+      "food.n.02_2": {
+        "name": "pear_0",
+        "category": "food.n.02"
+      },
+      "food.n.02_3": {
+        "name": "pea_0",
+        "category": "food.n.02"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "countertop_56": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "paper_towel_0": {
+                      "states": {
+                        "isDirty": false,
+                        "isClean": true,
+                        "isStained": false
+                      },
+                      "direct_relation": "ontop"
+                    },
+                    "rag_0": {
+                      "states": {
+                        "isSoaked": false
+                      },
+                      "direct_relation": "ontop"
+                    },
+                    "scraper_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "fridge_57": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "pea_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "pear_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "pomelo_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "bucket_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "dustpan_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "sink_64": {
+                  "states": {
+                    "isDirty": false,
+                    "isClean": true,
+                    "isStained": false,
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bucket_0": {
+        "name": "bucket_0",
+        "category": "bucket.n.01"
+      },
+      "countertop_56": {
+        "name": "countertop_56",
+        "category": "countertop.n.01"
+      },
+      "dustpan_0": {
+        "name": "dustpan_0",
+        "category": "receptacle.n.01"
+      },
+      "fridge_57": {
+        "name": "fridge_57",
+        "category": "electric_refrigerator.n.01"
+      },
+      "paper_towel_0": {
+        "name": "paper_towel_0",
+        "category": "towel.n.01"
+      },
+      "pea_0": {
+        "name": "pea_0",
+        "category": "food.n.02"
+      },
+      "pear_0": {
+        "name": "pear_0",
+        "category": "food.n.02"
+      },
+      "pomelo_0": {
+        "name": "pomelo_0",
+        "category": "food.n.02"
+      },
+      "rag_0": {
+        "name": "rag_0",
+        "category": "rag.n.01"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "scraper_0": {
+        "name": "scraper_0",
+        "category": "scraper.n.01"
+      },
+      "sink_64": {
+        "name": "sink_64",
+        "category": "sink.n.01"
+      }
+    }
+  }
+}

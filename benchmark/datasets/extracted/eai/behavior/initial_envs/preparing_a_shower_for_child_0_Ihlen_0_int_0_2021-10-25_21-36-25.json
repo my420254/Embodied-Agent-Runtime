@@ -1,0 +1,148 @@
+{
+  "dataset": "behavior",
+  "case_id": "preparing_a_shower_for_child_0_Ihlen_0_int_0_2021-10-25_21-36-25",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "preparing_a_shower_for_child",
+    "task_id": 0,
+    "scene_id": "Ihlen_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "preparing a shower for child",
+    "task": "preparing_a_shower_for_child",
+    "task_id": 0,
+    "scene_id": "Ihlen_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 8,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "dishtowel_0",
+      "room_floor_bathroom_0",
+      "shampoo_0",
+      "shower_35",
+      "sink_38",
+      "soap_0"
+    ],
+    "name_mapping": {
+      "shampoo.n.01_1": {
+        "name": "shampoo_0",
+        "category": "shampoo.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_bathroom_0",
+        "category": "floor.n.01"
+      },
+      "soap.n.01_1": {
+        "name": "soap_0",
+        "category": "soap.n.01"
+      },
+      "towel.n.01_1": {
+        "name": "dishtowel_0",
+        "category": "towel.n.01"
+      },
+      "shower.n.01_1": {
+        "name": "shower_35",
+        "category": "shower.n.01"
+      },
+      "sink.n.01_1": {
+        "name": "sink_38",
+        "category": "sink.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "room_floor_bathroom_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "dishtowel_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "shampoo_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "soap_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "shower_35": {
+                  "states": {}
+                },
+                "sink_38": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_bathroom_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_bathroom_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "dishtowel_0": {
+        "name": "dishtowel_0",
+        "category": "towel.n.01"
+      },
+      "room_floor_bathroom_0": {
+        "name": "room_floor_bathroom_0",
+        "category": "floor.n.01"
+      },
+      "shampoo_0": {
+        "name": "shampoo_0",
+        "category": "shampoo.n.01"
+      },
+      "shower_35": {
+        "name": "shower_35",
+        "category": "shower.n.01"
+      },
+      "sink_38": {
+        "name": "sink_38",
+        "category": "sink.n.01"
+      },
+      "soap_0": {
+        "name": "soap_0",
+        "category": "soap.n.01"
+      }
+    }
+  }
+}

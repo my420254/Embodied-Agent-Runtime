@@ -1,0 +1,178 @@
+{
+  "dataset": "behavior",
+  "case_id": "polishing_silver_0_Merom_1_int_0_2021-10-26_11-43-15",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "polishing_silver",
+    "task_id": 0,
+    "scene_id": "Merom_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "polishing silver",
+    "task": "polishing_silver",
+    "task_id": 0,
+    "scene_id": "Merom_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 9,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_49",
+      "rag_101",
+      "room_floor_kitchen_0",
+      "spoon_100",
+      "spoon_97",
+      "spoon_98",
+      "spoon_99"
+    ],
+    "name_mapping": {
+      "spoon.n.01_1": {
+        "name": "spoon_97",
+        "category": "spoon.n.01"
+      },
+      "spoon.n.01_2": {
+        "name": "spoon_98",
+        "category": "spoon.n.01"
+      },
+      "spoon.n.01_3": {
+        "name": "spoon_99",
+        "category": "spoon.n.01"
+      },
+      "spoon.n.01_4": {
+        "name": "spoon_100",
+        "category": "spoon.n.01"
+      },
+      "rag.n.01_1": {
+        "name": "rag_101",
+        "category": "rag.n.01"
+      },
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_49",
+        "category": "cabinet.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bottom_cabinet_49": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "rag_101": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "spoon_100": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isDusty": true
+                      },
+                      "direct_relation": "inside"
+                    },
+                    "spoon_97": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isDusty": true
+                      },
+                      "direct_relation": "inside"
+                    },
+                    "spoon_98": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isDusty": true
+                      },
+                      "direct_relation": "inside"
+                    },
+                    "spoon_99": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isDusty": true
+                      },
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bottom_cabinet_49": {
+        "name": "bottom_cabinet_49",
+        "category": "cabinet.n.01"
+      },
+      "rag_101": {
+        "name": "rag_101",
+        "category": "rag.n.01"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "spoon_100": {
+        "name": "spoon_100",
+        "category": "spoon.n.01"
+      },
+      "spoon_97": {
+        "name": "spoon_97",
+        "category": "spoon.n.01"
+      },
+      "spoon_98": {
+        "name": "spoon_98",
+        "category": "spoon.n.01"
+      },
+      "spoon_99": {
+        "name": "spoon_99",
+        "category": "spoon.n.01"
+      }
+    }
+  }
+}

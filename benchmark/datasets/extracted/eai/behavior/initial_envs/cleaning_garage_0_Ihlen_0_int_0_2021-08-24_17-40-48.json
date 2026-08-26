@@ -1,0 +1,270 @@
+{
+  "dataset": "behavior",
+  "case_id": "cleaning_garage_0_Ihlen_0_int_0_2021-08-24_17-40-48",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "cleaning_garage",
+    "task_id": 0,
+    "scene_id": "Ihlen_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "cleaning garage",
+    "task": "cleaning_garage",
+    "task_id": 0,
+    "scene_id": "Ihlen_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 16,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_15",
+      "breakfast_table_14",
+      "broom_0",
+      "carton_0",
+      "cruet_0",
+      "cruet_1",
+      "newspaper_0",
+      "newspaper_1",
+      "rag_0",
+      "room_floor_garage_0",
+      "room_floor_storage_room_0",
+      "shelf_23",
+      "sink_32",
+      "trash_can_0"
+    ],
+    "name_mapping": {
+      "box.n.01_1": {
+        "name": "carton_0",
+        "category": "box.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_garage_0",
+        "category": "floor.n.01"
+      },
+      "floor.n.01_2": {
+        "name": "room_floor_storage_room_0",
+        "category": "floor.n.01"
+      },
+      "newspaper.n.03_1": {
+        "name": "newspaper_0",
+        "category": "newspaper.n.03"
+      },
+      "newspaper.n.03_2": {
+        "name": "newspaper_1",
+        "category": "newspaper.n.03"
+      },
+      "bottle.n.01_1": {
+        "name": "cruet_0",
+        "category": "bottle.n.01"
+      },
+      "bottle.n.01_2": {
+        "name": "cruet_1",
+        "category": "bottle.n.01"
+      },
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_15",
+        "category": "cabinet.n.01"
+      },
+      "broom.n.01_1": {
+        "name": "broom_0",
+        "category": "broom.n.01"
+      },
+      "rag.n.01_1": {
+        "name": "rag_0",
+        "category": "rag.n.01"
+      },
+      "table.n.02_1": {
+        "name": "breakfast_table_14",
+        "category": "table.n.02"
+      },
+      "bin.n.01_1": {
+        "name": "trash_can_0",
+        "category": "bin.n.01"
+      },
+      "sink.n.01_1": {
+        "name": "sink_32",
+        "category": "sink.n.01"
+      },
+      "shelf.n.01_1": {
+        "name": "shelf_23",
+        "category": "shelf.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bottom_cabinet_15": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isDusty": true,
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "breakfast_table_14": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "rag_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "room_floor_garage_0": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isDusty": true,
+                    "isStained": true
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "broom_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "carton_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "cruet_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "cruet_1": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "newspaper_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "newspaper_1": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "trash_can_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "room_floor_storage_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "shelf_23": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "sink_32": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_storage_room_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_storage_room_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bottom_cabinet_15": {
+        "name": "bottom_cabinet_15",
+        "category": "cabinet.n.01"
+      },
+      "breakfast_table_14": {
+        "name": "breakfast_table_14",
+        "category": "table.n.02"
+      },
+      "broom_0": {
+        "name": "broom_0",
+        "category": "broom.n.01"
+      },
+      "carton_0": {
+        "name": "carton_0",
+        "category": "box.n.01"
+      },
+      "cruet_0": {
+        "name": "cruet_0",
+        "category": "bottle.n.01"
+      },
+      "cruet_1": {
+        "name": "cruet_1",
+        "category": "bottle.n.01"
+      },
+      "newspaper_0": {
+        "name": "newspaper_0",
+        "category": "newspaper.n.03"
+      },
+      "newspaper_1": {
+        "name": "newspaper_1",
+        "category": "newspaper.n.03"
+      },
+      "rag_0": {
+        "name": "rag_0",
+        "category": "rag.n.01"
+      },
+      "room_floor_garage_0": {
+        "name": "room_floor_garage_0",
+        "category": "floor.n.01"
+      },
+      "room_floor_storage_room_0": {
+        "name": "room_floor_storage_room_0",
+        "category": "floor.n.01"
+      },
+      "shelf_23": {
+        "name": "shelf_23",
+        "category": "shelf.n.01"
+      },
+      "sink_32": {
+        "name": "sink_32",
+        "category": "sink.n.01"
+      },
+      "trash_can_0": {
+        "name": "trash_can_0",
+        "category": "bin.n.01"
+      }
+    }
+  }
+}

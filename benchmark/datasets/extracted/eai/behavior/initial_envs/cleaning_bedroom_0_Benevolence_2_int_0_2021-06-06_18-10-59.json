@@ -1,0 +1,242 @@
+{
+  "dataset": "behavior",
+  "case_id": "cleaning_bedroom_0_Benevolence_2_int_0_2021-06-06_18-10-59",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "cleaning_bedroom",
+    "task_id": 0,
+    "scene_id": "Benevolence_2_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "cleaning bedroom",
+    "task": "cleaning_bedroom",
+    "task_id": 0,
+    "scene_id": "Benevolence_2_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 14,
+    "room_count": 1,
+    "entity_catalog": [
+      "bed_10",
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_0",
+      "bottom_cabinet_2",
+      "cologne_49",
+      "hand_towel_52",
+      "jeans_46",
+      "jeans_47",
+      "necklace_48",
+      "painting_50",
+      "room_floor_bedroom_1",
+      "sheet_53",
+      "vacuum_51"
+    ],
+    "name_mapping": {
+      "floor.n.01_1": {
+        "name": "room_floor_bedroom_1",
+        "category": "floor.n.01"
+      },
+      "apparel.n.01_1": {
+        "name": "jeans_46",
+        "category": "apparel.n.01"
+      },
+      "apparel.n.01_2": {
+        "name": "jeans_47",
+        "category": "apparel.n.01"
+      },
+      "bed.n.01_1": {
+        "name": "bed_10",
+        "category": "bed.n.01"
+      },
+      "jewelry.n.01_1": {
+        "name": "necklace_48",
+        "category": "jewelry.n.01"
+      },
+      "perfume.n.02_1": {
+        "name": "cologne_49",
+        "category": "perfume.n.02"
+      },
+      "painting.n.01_1": {
+        "name": "painting_50",
+        "category": "painting.n.01"
+      },
+      "vacuum.n.04_1": {
+        "name": "vacuum_51",
+        "category": "vacuum.n.04"
+      },
+      "hand_towel.n.01_1": {
+        "name": "hand_towel_52",
+        "category": "hand_towel.n.01"
+      },
+      "sheet.n.03_1": {
+        "name": "sheet_53",
+        "category": "sheet.n.03"
+      },
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_2",
+        "category": "cabinet.n.01"
+      },
+      "cabinet.n.01_2": {
+        "name": "bottom_cabinet_0",
+        "category": "cabinet.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bed_10": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "jeans_46": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "jeans_47": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "painting_50": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "bottom_cabinet_0": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isDusty": true,
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "bottom_cabinet_2": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isDusty": true,
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "room_floor_bedroom_1": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "cologne_49": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "hand_towel_52": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "necklace_48": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "sheet_53": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "vacuum_51": {
+                      "states": {
+                        "isDirty": false,
+                        "isClean": true,
+                        "isDusty": false
+                      },
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_bedroom_1",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_bedroom_1",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bed_10": {
+        "name": "bed_10",
+        "category": "bed.n.01"
+      },
+      "bottom_cabinet_0": {
+        "name": "bottom_cabinet_0",
+        "category": "cabinet.n.01"
+      },
+      "bottom_cabinet_2": {
+        "name": "bottom_cabinet_2",
+        "category": "cabinet.n.01"
+      },
+      "cologne_49": {
+        "name": "cologne_49",
+        "category": "perfume.n.02"
+      },
+      "hand_towel_52": {
+        "name": "hand_towel_52",
+        "category": "hand_towel.n.01"
+      },
+      "jeans_46": {
+        "name": "jeans_46",
+        "category": "apparel.n.01"
+      },
+      "jeans_47": {
+        "name": "jeans_47",
+        "category": "apparel.n.01"
+      },
+      "necklace_48": {
+        "name": "necklace_48",
+        "category": "jewelry.n.01"
+      },
+      "painting_50": {
+        "name": "painting_50",
+        "category": "painting.n.01"
+      },
+      "room_floor_bedroom_1": {
+        "name": "room_floor_bedroom_1",
+        "category": "floor.n.01"
+      },
+      "sheet_53": {
+        "name": "sheet_53",
+        "category": "sheet.n.03"
+      },
+      "vacuum_51": {
+        "name": "vacuum_51",
+        "category": "vacuum.n.04"
+      }
+    }
+  }
+}

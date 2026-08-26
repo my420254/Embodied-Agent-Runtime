@@ -1,0 +1,12 @@
+name: Close
+description: 关闭指定的容器。
+prompt: prompt.md
+handler: skills.Close.handler:CloseSkill
+execution_domain: IoT 硬件交互
+planner_target_param: target_container
+planner_location_param: target_container
+planner_requires_empty_hand: true
+planner_state_key: isOpen
+planner_state_value: false
+planner_access_state: true
+planner_reversible_state: true

@@ -1,0 +1,91 @@
+{
+  "eai_virtualhome": {
+    "native_entry": "benchmark/datasets/native/eai/virtualhome",
+    "task_sources": [
+      "id2task.json",
+      "problem_pddl"
+    ],
+    "environment_sources": [
+      "init_graphs",
+      "executable_programs"
+    ],
+    "extracted_entry": "benchmark/datasets/extracted/eai/virtualhome",
+    "forbidden_environment_sources": [
+      "paper prompt caches",
+      "final_graph",
+      "gold action sequence",
+      "evaluator result"
+    ]
+  },
+  "eai_behavior": {
+    "native_entry": "benchmark/datasets/native/eai/behavior",
+    "task_sources": [
+      "id2task.json",
+      "problem_pddl",
+      "behavior_bddl_info",
+      "demo_stats.json"
+    ],
+    "environment_sources": [
+      "igibson_env",
+      "behavior_1k_assets"
+    ],
+    "extracted_entry": "benchmark/datasets/extracted/eai/behavior",
+    "forbidden_environment_sources": [
+      "paper prompt caches",
+      "target state as initial environment",
+      "gold action sequence",
+      "evaluator result"
+    ]
+  },
+  "delta": {
+    "native_entry": "benchmark/datasets/native/delta",
+    "task_sources": [
+      "example.py"
+    ],
+    "environment_sources": [
+      "scene_graph.py"
+    ],
+    "extracted_entry": "benchmark/datasets/extracted/delta"
+  },
+  "reactree_wah": {
+    "native_entry": "benchmark/datasets/native/reactree/wah",
+    "task_sources": [
+      "wah_nl_test_rev.json"
+    ],
+    "environment_sources": [
+      "wah_nl_test_rev.json:init_graph",
+      "wah_nl_test_rev.json:init_room"
+    ],
+    "extracted_entry": "benchmark/datasets/extracted/reactree/wah",
+    "note": "Official Unity reset graph is evaluator-only, not the framework input source."
+  },
+  "reactree_alfred": {
+    "native_entry": "benchmark/datasets/native/reactree/alfred",
+    "task_sources": [
+      "oct21.json",
+      "json_2.1.0/<task>/pp/ann_<repeat_idx>.json"
+    ],
+    "environment_sources": [
+      "AI2-THOR reset/restore_scene/init_reset from native ALFRED trajectory JSON"
+    ],
+    "extracted_entry": "benchmark/datasets/extracted/reactree/alfred",
+    "extracted_environment_keeps": [
+      "object names",
+      "direct parent/receptacle relations",
+      "object states",
+      "interactive properties",
+      "visible object groups",
+      "robot inventory and initial room anchor"
+    ],
+    "extracted_environment_drops": [
+      "coordinates",
+      "poses",
+      "simulator-only metadata not used by skills"
+    ],
+    "forbidden_environment_sources": [
+      "paper prompt caches",
+      "gold action sequence",
+      "evaluator result"
+    ]
+  }
+}

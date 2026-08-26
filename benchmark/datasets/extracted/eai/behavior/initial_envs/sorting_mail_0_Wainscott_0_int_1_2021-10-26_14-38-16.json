@@ -1,0 +1,197 @@
+{
+  "dataset": "behavior",
+  "case_id": "sorting_mail_0_Wainscott_0_int_1_2021-10-26_14-38-16",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "sorting_mail",
+    "task_id": 0,
+    "scene_id": "Wainscott_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "sorting mail",
+    "task": "sorting_mail",
+    "task_id": 0,
+    "scene_id": "Wainscott_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 12,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "envelope_143",
+      "envelope_144",
+      "envelope_145",
+      "envelope_146",
+      "newspaper_147",
+      "newspaper_148",
+      "newspaper_149",
+      "newspaper_150",
+      "room_floor_living_room_0",
+      "sofa_39"
+    ],
+    "name_mapping": {
+      "envelope.n.01_1": {
+        "name": "envelope_143",
+        "category": "envelope.n.01"
+      },
+      "envelope.n.01_2": {
+        "name": "envelope_144",
+        "category": "envelope.n.01"
+      },
+      "envelope.n.01_3": {
+        "name": "envelope_145",
+        "category": "envelope.n.01"
+      },
+      "envelope.n.01_4": {
+        "name": "envelope_146",
+        "category": "envelope.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "sofa.n.01_1": {
+        "name": "sofa_39",
+        "category": "sofa.n.01"
+      },
+      "newspaper.n.03_1": {
+        "name": "newspaper_147",
+        "category": "newspaper.n.03"
+      },
+      "newspaper.n.03_2": {
+        "name": "newspaper_148",
+        "category": "newspaper.n.03"
+      },
+      "newspaper.n.03_3": {
+        "name": "newspaper_149",
+        "category": "newspaper.n.03"
+      },
+      "newspaper.n.03_4": {
+        "name": "newspaper_150",
+        "category": "newspaper.n.03"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "room_floor_living_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "envelope_143": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "envelope_144": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "envelope_145": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "envelope_146": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "newspaper_147": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "newspaper_148": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "newspaper_149": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "newspaper_150": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "sofa_39": {
+                  "states": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_living_room_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_living_room_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "envelope_143": {
+        "name": "envelope_143",
+        "category": "envelope.n.01"
+      },
+      "envelope_144": {
+        "name": "envelope_144",
+        "category": "envelope.n.01"
+      },
+      "envelope_145": {
+        "name": "envelope_145",
+        "category": "envelope.n.01"
+      },
+      "envelope_146": {
+        "name": "envelope_146",
+        "category": "envelope.n.01"
+      },
+      "newspaper_147": {
+        "name": "newspaper_147",
+        "category": "newspaper.n.03"
+      },
+      "newspaper_148": {
+        "name": "newspaper_148",
+        "category": "newspaper.n.03"
+      },
+      "newspaper_149": {
+        "name": "newspaper_149",
+        "category": "newspaper.n.03"
+      },
+      "newspaper_150": {
+        "name": "newspaper_150",
+        "category": "newspaper.n.03"
+      },
+      "room_floor_living_room_0": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "sofa_39": {
+        "name": "sofa_39",
+        "category": "sofa.n.01"
+      }
+    }
+  }
+}

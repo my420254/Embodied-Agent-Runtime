@@ -1,0 +1,818 @@
+{
+  "dataset": "reactree_alfred",
+  "case_id": "pick_clean_then_place_in_recep-SoapBar-None-Toilet-410__trial_T20190906_201148_878110__ann_1",
+  "task": "pick_clean_then_place_in_recep-SoapBar-None-Toilet-410/trial_T20190906_201148_878110",
+  "repeat_idx": 1,
+  "source": {
+    "kind": "alfred_official_scene_prepare",
+    "split_json": "/data/zmy/OurAgent-he1/benchmark/datasets/native/reactree/alfred/oct21.json",
+    "annotation_path": "/data/zmy/OurAgent-he1/benchmark/datasets/native/reactree/alfred/json_2.1.0/pick_clean_then_place_in_recep-SoapBar-None-Toilet-410/trial_T20190906_201148_878110/pp/ann_1.json"
+  },
+  "object_count": 43,
+  "visible_group_count": 9,
+  "initial_scene": {
+    "text": "You are in the house, and you arrive at the bathroom, Looking quickly around the room, you see TowelHolder (1, 2), Toilet (1), ToiletPaperHanger (1), SinkBasin (1, 2), HandTowelHolder (1, 2), GarbageCan (1), Drawer (1, 2, 3, 4, 5, 6), CounterTop (1), BathtubBasin (1).",
+    "visible_groups": [
+      "TowelHolder (1, 2)",
+      "Toilet (1)",
+      "ToiletPaperHanger (1)",
+      "SinkBasin (1, 2)",
+      "HandTowelHolder (1, 2)",
+      "GarbageCan (1)",
+      "Drawer (1, 2, 3, 4, 5, 6)",
+      "CounterTop (1)",
+      "BathtubBasin (1)"
+    ],
+    "put_obj": null,
+    "all_objects": [
+      {
+        "name": "SprayBottle (2)",
+        "direct_parent": "CounterTop (1)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "SprayBottle"
+      },
+      {
+        "name": "SoapBottle (1)",
+        "direct_parent": "CounterTop (1)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "SoapBottle"
+      },
+      {
+        "name": "Towel (1)",
+        "direct_parent": "TowelHolder (1)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "Towel"
+      },
+      {
+        "name": "Cloth (1)",
+        "direct_parent": "Drawer (2)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "Cloth"
+      },
+      {
+        "name": "SprayBottle (1)",
+        "direct_parent": "Toilet (1)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "SprayBottle"
+      },
+      {
+        "name": "CounterTop (1)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "receptacle"
+        ],
+        "object_type": "CounterTop"
+      },
+      {
+        "name": "Drawer (1)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isOpen": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "openable",
+          "receptacle"
+        ],
+        "object_type": "Drawer"
+      },
+      {
+        "name": "Drawer (4)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isOpen": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "openable",
+          "receptacle"
+        ],
+        "object_type": "Drawer"
+      },
+      {
+        "name": "Faucet (2)",
+        "direct_parent": "",
+        "is_receptacle": false,
+        "states": {
+          "isToggled": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "toggleable"
+        ],
+        "object_type": "Faucet"
+      },
+      {
+        "name": "ShowerDoor (1)",
+        "direct_parent": "",
+        "is_receptacle": false,
+        "states": {
+          "isOpen": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "openable"
+        ],
+        "object_type": "ShowerDoor"
+      },
+      {
+        "name": "Drawer (5)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isOpen": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "openable",
+          "receptacle"
+        ],
+        "object_type": "Drawer"
+      },
+      {
+        "name": "Drawer (3)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isOpen": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "openable",
+          "receptacle"
+        ],
+        "object_type": "Drawer"
+      },
+      {
+        "name": "Drawer (6)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isOpen": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "openable",
+          "receptacle"
+        ],
+        "object_type": "Drawer"
+      },
+      {
+        "name": "Bathtub (1)",
+        "direct_parent": "",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [],
+        "object_type": "Bathtub"
+      },
+      {
+        "name": "Drawer (2)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isOpen": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "openable",
+          "receptacle"
+        ],
+        "object_type": "Drawer"
+      },
+      {
+        "name": "Mirror (1)",
+        "direct_parent": "",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": true,
+          "isClean": false,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [],
+        "object_type": "Mirror"
+      },
+      {
+        "name": "Sink (1)",
+        "direct_parent": "",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [],
+        "object_type": "Sink"
+      },
+      {
+        "name": "Sink (2)",
+        "direct_parent": "",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [],
+        "object_type": "Sink"
+      },
+      {
+        "name": "Candle (1)",
+        "direct_parent": "Drawer (1)",
+        "is_receptacle": false,
+        "states": {
+          "isToggled": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable",
+          "toggleable"
+        ],
+        "object_type": "Candle"
+      },
+      {
+        "name": "HandTowel (1)",
+        "direct_parent": "HandTowelHolder (2)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "HandTowel"
+      },
+      {
+        "name": "Plunger (1)",
+        "direct_parent": "",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "Plunger"
+      },
+      {
+        "name": "TowelHolder (2)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "receptacle"
+        ],
+        "object_type": "TowelHolder"
+      },
+      {
+        "name": "TowelHolder (1)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "receptacle"
+        ],
+        "object_type": "TowelHolder"
+      },
+      {
+        "name": "LightSwitch (1)",
+        "direct_parent": "",
+        "is_receptacle": false,
+        "states": {
+          "isToggled": true,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "toggleable"
+        ],
+        "object_type": "LightSwitch"
+      },
+      {
+        "name": "GarbageCan (1)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "receptacle"
+        ],
+        "object_type": "GarbageCan"
+      },
+      {
+        "name": "SoapBar (1)",
+        "direct_parent": "BathtubBasin (1)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "SoapBar"
+      },
+      {
+        "name": "ToiletPaper (1)",
+        "direct_parent": "ToiletPaperHanger (1)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "ToiletPaper"
+      },
+      {
+        "name": "BathtubBasin (1)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "receptacle"
+        ],
+        "object_type": "BathtubBasin"
+      },
+      {
+        "name": "SinkBasin (1)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "receptacle"
+        ],
+        "object_type": "SinkBasin"
+      },
+      {
+        "name": "SinkBasin (2)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "receptacle"
+        ],
+        "object_type": "SinkBasin"
+      },
+      {
+        "name": "HandTowelHolder (1)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "receptacle"
+        ],
+        "object_type": "HandTowelHolder"
+      },
+      {
+        "name": "HandTowelHolder (2)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "receptacle"
+        ],
+        "object_type": "HandTowelHolder"
+      },
+      {
+        "name": "Cloth (2)",
+        "direct_parent": "Drawer (4)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "Cloth"
+      },
+      {
+        "name": "ToiletPaper (2)",
+        "direct_parent": "CounterTop (1)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "ToiletPaper"
+      },
+      {
+        "name": "Towel (2)",
+        "direct_parent": "TowelHolder (2)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "Towel"
+      },
+      {
+        "name": "ScrubBrush (1)",
+        "direct_parent": "",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "ScrubBrush"
+      },
+      {
+        "name": "SoapBottle (2)",
+        "direct_parent": "Toilet (1)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "SoapBottle"
+      },
+      {
+        "name": "Toilet (1)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isOpen": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "openable",
+          "receptacle"
+        ],
+        "object_type": "Toilet"
+      },
+      {
+        "name": "SprayBottle (3)",
+        "direct_parent": "GarbageCan (1)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "SprayBottle"
+      },
+      {
+        "name": "ToiletPaperHanger (1)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "receptacle"
+        ],
+        "object_type": "ToiletPaperHanger"
+      },
+      {
+        "name": "Faucet (1)",
+        "direct_parent": "",
+        "is_receptacle": false,
+        "states": {
+          "isToggled": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "toggleable"
+        ],
+        "object_type": "Faucet"
+      },
+      {
+        "name": "ShowerHead (1)",
+        "direct_parent": "",
+        "is_receptacle": false,
+        "states": {
+          "isToggled": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "toggleable"
+        ],
+        "object_type": "ShowerHead"
+      },
+      {
+        "name": "Faucet (3)",
+        "direct_parent": "",
+        "is_receptacle": false,
+        "states": {
+          "isToggled": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "toggleable"
+        ],
+        "object_type": "Faucet"
+      }
+    ]
+  }
+}

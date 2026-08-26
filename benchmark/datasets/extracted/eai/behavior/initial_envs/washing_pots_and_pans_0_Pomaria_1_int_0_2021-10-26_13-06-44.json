@@ -1,0 +1,280 @@
+{
+  "dataset": "behavior",
+  "case_id": "washing_pots_and_pans_0_Pomaria_1_int_0_2021-10-26_13-06-44",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "washing_pots_and_pans",
+    "task_id": 0,
+    "scene_id": "Pomaria_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "washing pots and pans",
+    "task": "washing_pots_and_pans",
+    "task_id": 0,
+    "scene_id": "Pomaria_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 15,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_no_top_32",
+      "countertop_31",
+      "countertop_33",
+      "frying_pan_82",
+      "kettle_79",
+      "room_floor_kitchen_0",
+      "saucepan_80",
+      "saucepan_81",
+      "scrub_brush_83",
+      "sink_37",
+      "soap_84",
+      "teapot_78",
+      "top_cabinet_27"
+    ],
+    "name_mapping": {
+      "teapot.n.01_1": {
+        "name": "teapot_78",
+        "category": "teapot.n.01"
+      },
+      "kettle.n.01_1": {
+        "name": "kettle_79",
+        "category": "kettle.n.01"
+      },
+      "pan.n.01_1": {
+        "name": "saucepan_80",
+        "category": "pan.n.01"
+      },
+      "pan.n.01_2": {
+        "name": "saucepan_81",
+        "category": "pan.n.01"
+      },
+      "pan.n.01_3": {
+        "name": "frying_pan_82",
+        "category": "pan.n.01"
+      },
+      "countertop.n.01_1": {
+        "name": "countertop_31",
+        "category": "countertop.n.01"
+      },
+      "countertop.n.01_2": {
+        "name": "countertop_33",
+        "category": "countertop.n.01"
+      },
+      "sink.n.01_1": {
+        "name": "sink_37",
+        "category": "sink.n.01"
+      },
+      "scrub_brush.n.01_1": {
+        "name": "scrub_brush_83",
+        "category": "scrub_brush.n.01"
+      },
+      "soap.n.01_1": {
+        "name": "soap_84",
+        "category": "soap.n.01"
+      },
+      "cabinet.n.01_1": {
+        "name": "top_cabinet_27",
+        "category": "cabinet.n.01"
+      },
+      "cabinet.n.01_2": {
+        "name": "bottom_cabinet_no_top_32",
+        "category": "cabinet.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bottom_cabinet_no_top_32": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "countertop_31": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "saucepan_80": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "saucepan_81": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "teapot_78": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "countertop_33": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "frying_pan_82": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "kettle_79": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "direct_relation": "ontop"
+                    },
+                    "scrub_brush_83": {
+                      "states": {
+                        "isSoaked": true
+                      },
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "sink_37": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "soap_84": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "top_cabinet_27": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bottom_cabinet_no_top_32": {
+        "name": "bottom_cabinet_no_top_32",
+        "category": "cabinet.n.01"
+      },
+      "countertop_31": {
+        "name": "countertop_31",
+        "category": "countertop.n.01"
+      },
+      "countertop_33": {
+        "name": "countertop_33",
+        "category": "countertop.n.01"
+      },
+      "frying_pan_82": {
+        "name": "frying_pan_82",
+        "category": "pan.n.01"
+      },
+      "kettle_79": {
+        "name": "kettle_79",
+        "category": "kettle.n.01"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "saucepan_80": {
+        "name": "saucepan_80",
+        "category": "pan.n.01"
+      },
+      "saucepan_81": {
+        "name": "saucepan_81",
+        "category": "pan.n.01"
+      },
+      "scrub_brush_83": {
+        "name": "scrub_brush_83",
+        "category": "scrub_brush.n.01"
+      },
+      "sink_37": {
+        "name": "sink_37",
+        "category": "sink.n.01"
+      },
+      "soap_84": {
+        "name": "soap_84",
+        "category": "soap.n.01"
+      },
+      "teapot_78": {
+        "name": "teapot_78",
+        "category": "teapot.n.01"
+      },
+      "top_cabinet_27": {
+        "name": "top_cabinet_27",
+        "category": "cabinet.n.01"
+      }
+    }
+  }
+}

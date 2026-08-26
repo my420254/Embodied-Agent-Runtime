@@ -1,0 +1,80 @@
+{
+  "llm_round_count": 4,
+  "intercept_count": 0,
+  "interceptions_file": "/data/zmy/OurAgent-he1/benchmark/reactree/wah/framework/results/reactree_wah_official_smoke_20260806_todo_hooks/cases/0__0/artifacts/rounds/interceptions.md",
+  "initial_round": {
+    "round": 3,
+    "module": "planning",
+    "process_name": "planning",
+    "prompt_name": "planning.main_system",
+    "call_stage": "planning_initial",
+    "attempt": null,
+    "planning_iteration": 1,
+    "resume_from_step": null,
+    "input_file": "/data/zmy/OurAgent-he1/benchmark/reactree/wah/framework/results/reactree_wah_official_smoke_20260806_todo_hooks/cases/0__0/artifacts/rounds/round_03_planning.main_system_input.md",
+    "output_file": "/data/zmy/OurAgent-he1/benchmark/reactree/wah/framework/results/reactree_wah_official_smoke_20260806_todo_hooks/cases/0__0/artifacts/rounds/round_03_planning.main_system_output.txt"
+  },
+  "feature_summary": {
+    "repair_strategy": "retrac",
+    "todo_contract_status": "passed",
+    "todo_contract_event_count": 1,
+    "sandbox_intercepted": false,
+    "sandbox_intercept_count": 0,
+    "sda_triggered": false,
+    "retrac_triggered": false,
+    "state_diff_audit_triggered": false
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "module": "understanding",
+      "process_name": "understanding",
+      "prompt_name": "understanding.system",
+      "call_stage": "llm_extract",
+      "attempt": null,
+      "planning_iteration": null,
+      "resume_from_step": null,
+      "input_file": "/data/zmy/OurAgent-he1/benchmark/reactree/wah/framework/results/reactree_wah_official_smoke_20260806_todo_hooks/cases/0__0/artifacts/rounds/round_01_understanding.system_input.md",
+      "output_file": "/data/zmy/OurAgent-he1/benchmark/reactree/wah/framework/results/reactree_wah_official_smoke_20260806_todo_hooks/cases/0__0/artifacts/rounds/round_01_understanding.system_output.txt"
+    },
+    {
+      "round": 2,
+      "module": "understanding",
+      "process_name": "understanding",
+      "prompt_name": "understanding.final_state",
+      "call_stage": "goal_state_extract",
+      "attempt": 1,
+      "planning_iteration": null,
+      "resume_from_step": null,
+      "input_file": "/data/zmy/OurAgent-he1/benchmark/reactree/wah/framework/results/reactree_wah_official_smoke_20260806_todo_hooks/cases/0__0/artifacts/rounds/round_02_understanding.final_state_input.md",
+      "output_file": "/data/zmy/OurAgent-he1/benchmark/reactree/wah/framework/results/reactree_wah_official_smoke_20260806_todo_hooks/cases/0__0/artifacts/rounds/round_02_understanding.final_state_output.txt"
+    },
+    {
+      "round": 3,
+      "module": "planning",
+      "process_name": "planning",
+      "prompt_name": "planning.main_system",
+      "call_stage": "planning_initial",
+      "attempt": null,
+      "planning_iteration": 1,
+      "resume_from_step": null,
+      "input_file": "/data/zmy/OurAgent-he1/benchmark/reactree/wah/framework/results/reactree_wah_official_smoke_20260806_todo_hooks/cases/0__0/artifacts/rounds/round_03_planning.main_system_input.md",
+      "output_file": "/data/zmy/OurAgent-he1/benchmark/reactree/wah/framework/results/reactree_wah_official_smoke_20260806_todo_hooks/cases/0__0/artifacts/rounds/round_03_planning.main_system_output.txt"
+    },
+    {
+      "round": 4,
+      "module": "planning",
+      "process_name": "final_state_audit",
+      "prompt_name": "planning.state_diff_audit",
+      "call_stage": "state_diff_audit",
+      "attempt": null,
+      "planning_iteration": null,
+      "resume_from_step": null,
+      "input_file": "/data/zmy/OurAgent-he1/benchmark/reactree/wah/framework/results/reactree_wah_official_smoke_20260806_todo_hooks/cases/0__0/artifacts/rounds/round_04_planning.state_diff_audit_input.md",
+      "output_file": "/data/zmy/OurAgent-he1/benchmark/reactree/wah/framework/results/reactree_wah_official_smoke_20260806_todo_hooks/cases/0__0/artifacts/rounds/round_04_planning.state_diff_audit_output.txt"
+    }
+  ],
+  "intercepts": [],
+  "repairs": [],
+  "terminal_failure": ""
+}

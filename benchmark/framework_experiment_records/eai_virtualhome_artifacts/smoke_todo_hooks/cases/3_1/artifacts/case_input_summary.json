@@ -1,0 +1,26 @@
+{
+  "schema_version": "framework_trace_v3",
+  "process_name": "case_input",
+  "payload_role": "output",
+  "keys": [
+    "benchmark_module",
+    "benchmark_settings_file",
+    "dataset",
+    "environment_source",
+    "eval_type",
+    "identifier",
+    "initial_environment_cache_path",
+    "initial_environment_source",
+    "instruction",
+    "pddl_goal",
+    "pddl_objects",
+    "scene_id",
+    "task_id"
+  ],
+  "dataset": "virtualhome",
+  "task_id": "3_1",
+  "identifier": "3_1",
+  "benchmark_settings_file": "/data/zmy/OurAgent-he1/benchmark/eai/virtualhome/framework/code/config/settings.json",
+  "environment_source": "virtualhome_original_init_graph",
+  "instruction": "Relax on sofa"
+}

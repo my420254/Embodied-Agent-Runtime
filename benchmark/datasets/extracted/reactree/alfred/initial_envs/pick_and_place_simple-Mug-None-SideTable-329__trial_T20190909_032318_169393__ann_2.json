@@ -1,0 +1,748 @@
+{
+  "dataset": "reactree_alfred",
+  "case_id": "pick_and_place_simple-Mug-None-SideTable-329__trial_T20190909_032318_169393__ann_2",
+  "task": "pick_and_place_simple-Mug-None-SideTable-329/trial_T20190909_032318_169393",
+  "repeat_idx": 2,
+  "source": {
+    "kind": "alfred_official_scene_prepare",
+    "split_json": "/data/zmy/OurAgent-he1/benchmark/datasets/native/reactree/alfred/oct21.json",
+    "annotation_path": "/data/zmy/OurAgent-he1/benchmark/datasets/native/reactree/alfred/json_2.1.0/pick_and_place_simple-Mug-None-SideTable-329/trial_T20190909_032318_169393/pp/ann_2.json"
+  },
+  "object_count": 39,
+  "visible_group_count": 5,
+  "initial_scene": {
+    "text": "You are in the house, and you arrive at the bedroom, Looking quickly around the room, you see SideTable (1, 2), GarbageCan (1), Drawer (1, 2, 3, 4), DiningTable (1), Bed (1).",
+    "visible_groups": [
+      "SideTable (1, 2)",
+      "GarbageCan (1)",
+      "Drawer (1, 2, 3, 4)",
+      "DiningTable (1)",
+      "Bed (1)"
+    ],
+    "put_obj": null,
+    "all_objects": [
+      {
+        "name": "CD (1)",
+        "direct_parent": "Drawer (2)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "CD"
+      },
+      {
+        "name": "Pen (1)",
+        "direct_parent": "DiningTable (1)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "Pen"
+      },
+      {
+        "name": "CellPhone (2)",
+        "direct_parent": "DiningTable (1)",
+        "is_receptacle": false,
+        "states": {
+          "isToggled": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable",
+          "toggleable"
+        ],
+        "object_type": "CellPhone"
+      },
+      {
+        "name": "Pencil (2)",
+        "direct_parent": "DiningTable (1)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "Pencil"
+      },
+      {
+        "name": "Pillow (1)",
+        "direct_parent": "Bed (1)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": true,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "Pillow"
+      },
+      {
+        "name": "KeyChain (2)",
+        "direct_parent": "Drawer (4)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "KeyChain"
+      },
+      {
+        "name": "KeyChain (1)",
+        "direct_parent": "DiningTable (1)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "KeyChain"
+      },
+      {
+        "name": "Pencil (1)",
+        "direct_parent": "SideTable (1)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "Pencil"
+      },
+      {
+        "name": "CellPhone (1)",
+        "direct_parent": "SideTable (1)",
+        "is_receptacle": false,
+        "states": {
+          "isToggled": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable",
+          "toggleable"
+        ],
+        "object_type": "CellPhone"
+      },
+      {
+        "name": "Bed (1)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isDirty": true,
+          "isClean": false,
+          "visible": true,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "receptacle"
+        ],
+        "object_type": "Bed"
+      },
+      {
+        "name": "Drawer (4)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isOpen": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "openable",
+          "receptacle"
+        ],
+        "object_type": "Drawer"
+      },
+      {
+        "name": "DiningTable (1)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "receptacle"
+        ],
+        "object_type": "DiningTable"
+      },
+      {
+        "name": "Drawer (3)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isOpen": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "openable",
+          "receptacle"
+        ],
+        "object_type": "Drawer"
+      },
+      {
+        "name": "SideTable (1)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "receptacle"
+        ],
+        "object_type": "SideTable"
+      },
+      {
+        "name": "Mirror (1)",
+        "direct_parent": "",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [],
+        "object_type": "Mirror"
+      },
+      {
+        "name": "Drawer (1)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isOpen": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "openable",
+          "receptacle"
+        ],
+        "object_type": "Drawer"
+      },
+      {
+        "name": "SideTable (2)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "receptacle"
+        ],
+        "object_type": "SideTable"
+      },
+      {
+        "name": "Drawer (2)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isOpen": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "openable",
+          "receptacle"
+        ],
+        "object_type": "Drawer"
+      },
+      {
+        "name": "Box (1)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isOpen": true,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable",
+          "openable",
+          "receptacle"
+        ],
+        "object_type": "Box"
+      },
+      {
+        "name": "Book (1)",
+        "direct_parent": "Bed (1)",
+        "is_receptacle": false,
+        "states": {
+          "isOpen": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable",
+          "openable"
+        ],
+        "object_type": "Book"
+      },
+      {
+        "name": "KeyChain (3)",
+        "direct_parent": "SideTable (2)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "KeyChain"
+      },
+      {
+        "name": "Pillow (2)",
+        "direct_parent": "Bed (1)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": true,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "Pillow"
+      },
+      {
+        "name": "BaseballBat (1)",
+        "direct_parent": "",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "BaseballBat"
+      },
+      {
+        "name": "GarbageCan (1)",
+        "direct_parent": "",
+        "is_receptacle": true,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "receptacle"
+        ],
+        "object_type": "GarbageCan"
+      },
+      {
+        "name": "Pencil (3)",
+        "direct_parent": "DiningTable (1)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "Pencil"
+      },
+      {
+        "name": "CellPhone (3)",
+        "direct_parent": "DiningTable (1)",
+        "is_receptacle": false,
+        "states": {
+          "isToggled": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable",
+          "toggleable"
+        ],
+        "object_type": "CellPhone"
+      },
+      {
+        "name": "CreditCard (1)",
+        "direct_parent": "SideTable (2)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "CreditCard"
+      },
+      {
+        "name": "LightSwitch (1)",
+        "direct_parent": "",
+        "is_receptacle": false,
+        "states": {
+          "isToggled": true,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "toggleable"
+        ],
+        "object_type": "LightSwitch"
+      },
+      {
+        "name": "Pen (2)",
+        "direct_parent": "SideTable (2)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "Pen"
+      },
+      {
+        "name": "Lamp (1)",
+        "direct_parent": "SideTable (2)",
+        "is_receptacle": false,
+        "states": {
+          "isToggled": true,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "toggleable"
+        ],
+        "object_type": "Lamp"
+      },
+      {
+        "name": "Laptop (1)",
+        "direct_parent": "Bed (1)",
+        "is_receptacle": false,
+        "states": {
+          "isOpen": true,
+          "isToggled": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": true,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable",
+          "openable",
+          "toggleable"
+        ],
+        "object_type": "Laptop"
+      },
+      {
+        "name": "Painting (1)",
+        "direct_parent": "",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": true,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [],
+        "object_type": "Painting"
+      },
+      {
+        "name": "AlarmClock (1)",
+        "direct_parent": "SideTable (1)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "AlarmClock"
+      },
+      {
+        "name": "CD (2)",
+        "direct_parent": "DiningTable (1)",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable"
+        ],
+        "object_type": "CD"
+      },
+      {
+        "name": "Window (2)",
+        "direct_parent": "",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [],
+        "object_type": "Window"
+      },
+      {
+        "name": "Window (1)",
+        "direct_parent": "",
+        "is_receptacle": false,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [],
+        "object_type": "Window"
+      },
+      {
+        "name": "Mug (1)",
+        "direct_parent": "DiningTable (1)",
+        "is_receptacle": true,
+        "states": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "pickupable",
+          "receptacle"
+        ],
+        "object_type": "Mug"
+      },
+      {
+        "name": "Blinds (1)",
+        "direct_parent": "",
+        "is_receptacle": false,
+        "states": {
+          "isOpen": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "openable"
+        ],
+        "object_type": "Blinds"
+      },
+      {
+        "name": "Blinds (2)",
+        "direct_parent": "",
+        "is_receptacle": false,
+        "states": {
+          "isOpen": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "properties": [
+          "openable"
+        ],
+        "object_type": "Blinds"
+      }
+    ]
+  }
+}

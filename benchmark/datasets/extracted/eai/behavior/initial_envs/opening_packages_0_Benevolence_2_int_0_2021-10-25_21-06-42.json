@@ -1,0 +1,111 @@
+{
+  "dataset": "behavior",
+  "case_id": "opening_packages_0_Benevolence_2_int_0_2021-10-25_21-06-42",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "opening_packages",
+    "task_id": 0,
+    "scene_id": "Benevolence_2_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "opening packages",
+    "task": "opening_packages",
+    "task_id": 0,
+    "scene_id": "Benevolence_2_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 5,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "package_0",
+      "package_1",
+      "room_floor_bedroom_1"
+    ],
+    "name_mapping": {
+      "package.n.02_1": {
+        "name": "package_0",
+        "category": "package.n.02"
+      },
+      "package.n.02_2": {
+        "name": "package_1",
+        "category": "package.n.02"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_bedroom_1",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "room_floor_bedroom_1": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "package_0": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "direct_relation": "onfloor"
+                    },
+                    "package_1": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_bedroom_1",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_bedroom_1",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "package_0": {
+        "name": "package_0",
+        "category": "package.n.02"
+      },
+      "package_1": {
+        "name": "package_1",
+        "category": "package.n.02"
+      },
+      "room_floor_bedroom_1": {
+        "name": "room_floor_bedroom_1",
+        "category": "floor.n.01"
+      }
+    }
+  }
+}

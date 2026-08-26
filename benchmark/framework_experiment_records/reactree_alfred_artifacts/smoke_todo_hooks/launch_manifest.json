@@ -1,0 +1,45 @@
+{
+  "benchmark_name": "reactree_alfred",
+  "run_name": "reactree_alfred_seen_smoke_20260806_todo_hooks_fix2",
+  "run_root": "/data/zmy/OurAgent-he1/benchmark/reactree/alfred/framework/results/reactree_alfred_seen_smoke_20260806_todo_hooks_fix2",
+  "worker_module": "benchmark.reactree.alfred.framework.code._case_worker",
+  "status": "completed",
+  "dry_run": false,
+  "resume": false,
+  "selected_case_count": 1,
+  "resumed_case_count": 0,
+  "scheduled_command_count": 1,
+  "unit_count": 1,
+  "worker_timeout_s": 1800,
+  "endpoint_slots": [
+    {
+      "index": 0,
+      "port": 18003,
+      "api_base": "http://192.168.27.250:18003/v1",
+      "api_model": "Qwen3.6-27B"
+    }
+  ],
+  "resumed_cases": [],
+  "commands": [
+    {
+      "case_id": "pick_heat_then_place_in_recep-PotatoSliced-None-SinkBasin-13__trial_T20190909_115736_122556__ann_0",
+      "unit_index": 0,
+      "endpoint_index": 0,
+      "port": 18003,
+      "worker_input": "/data/zmy/OurAgent-he1/benchmark/reactree/alfred/framework/results/reactree_alfred_seen_smoke_20260806_todo_hooks_fix2/cases/pick_heat_then_place_in_recep-PotatoSliced-None-SinkBasin-13__trial_T20190909_115736_122556__ann_0/artifacts/worker_input.json",
+      "log": "/data/zmy/OurAgent-he1/benchmark/reactree/alfred/framework/results/reactree_alfred_seen_smoke_20260806_todo_hooks_fix2/cases/pick_heat_then_place_in_recep-PotatoSliced-None-SinkBasin-13__trial_T20190909_115736_122556__ann_0/run.log",
+      "command": [
+        "/data/zmy/envs/ouragent/bin/python",
+        "-m",
+        "benchmark.reactree.alfred.framework.code._case_worker",
+        "--worker-input",
+        "/data/zmy/OurAgent-he1/benchmark/reactree/alfred/framework/results/reactree_alfred_seen_smoke_20260806_todo_hooks_fix2/cases/pick_heat_then_place_in_recep-PotatoSliced-None-SinkBasin-13__trial_T20190909_115736_122556__ann_0/artifacts/worker_input.json"
+      ]
+    }
+  ],
+  "completed_at": "2026-08-06 18:43:24 +0000",
+  "result_count": 1,
+  "result_status_counts": {
+    "done": 1
+  }
+}

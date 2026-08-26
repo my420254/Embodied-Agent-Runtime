@@ -1,0 +1,11 @@
+{
+  "is_passed": true,
+  "issue": "",
+  "fix_advice": "",
+  "repair_mode": "continue_from_current",
+  "accepted_diffs": [
+    "cupcake 1 moved to coffee table 1",
+    "apple 2 moved to coffee table 1"
+  ],
+  "unexpected_diffs": []
+}

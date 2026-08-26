@@ -1,0 +1,189 @@
+{
+  "dataset": "behavior",
+  "case_id": "setting_mousetraps_0_Beechwood_1_int_0_2021-10-26_13-53-26",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "setting_mousetraps",
+    "task_id": 0,
+    "scene_id": "Beechwood_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "setting mousetraps",
+    "task": "setting_mousetraps",
+    "task_id": 0,
+    "scene_id": "Beechwood_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 11,
+    "room_count": 1,
+    "entity_catalog": [
+      "bed_43",
+      "behavior_room",
+      "behavior_room_anchor",
+      "mousetrap_100",
+      "mousetrap_101",
+      "mousetrap_102",
+      "mousetrap_103",
+      "room_floor_bathroom_0",
+      "room_floor_corridor_0",
+      "sink_73",
+      "toilet_64"
+    ],
+    "name_mapping": {
+      "mousetrap.n.01_1": {
+        "name": "mousetrap_100",
+        "category": "mousetrap.n.01"
+      },
+      "mousetrap.n.01_2": {
+        "name": "mousetrap_101",
+        "category": "mousetrap.n.01"
+      },
+      "mousetrap.n.01_3": {
+        "name": "mousetrap_102",
+        "category": "mousetrap.n.01"
+      },
+      "mousetrap.n.01_4": {
+        "name": "mousetrap_103",
+        "category": "mousetrap.n.01"
+      },
+      "sink.n.01_1": {
+        "name": "sink_73",
+        "category": "sink.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_corridor_0",
+        "category": "floor.n.01"
+      },
+      "floor.n.01_2": {
+        "name": "room_floor_bathroom_0",
+        "category": "floor.n.01"
+      },
+      "toilet.n.02_1": {
+        "name": "toilet_64",
+        "category": "toilet.n.02"
+      },
+      "bed.n.01_1": {
+        "name": "bed_43",
+        "category": "bed.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bed_43": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "mousetrap_100": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "mousetrap_101": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "mousetrap_102": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "mousetrap_103": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "room_floor_bathroom_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "room_floor_corridor_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "sink_73": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "toilet_64": {
+                  "states": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_bathroom_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_bathroom_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bed_43": {
+        "name": "bed_43",
+        "category": "bed.n.01"
+      },
+      "mousetrap_100": {
+        "name": "mousetrap_100",
+        "category": "mousetrap.n.01"
+      },
+      "mousetrap_101": {
+        "name": "mousetrap_101",
+        "category": "mousetrap.n.01"
+      },
+      "mousetrap_102": {
+        "name": "mousetrap_102",
+        "category": "mousetrap.n.01"
+      },
+      "mousetrap_103": {
+        "name": "mousetrap_103",
+        "category": "mousetrap.n.01"
+      },
+      "room_floor_bathroom_0": {
+        "name": "room_floor_bathroom_0",
+        "category": "floor.n.01"
+      },
+      "room_floor_corridor_0": {
+        "name": "room_floor_corridor_0",
+        "category": "floor.n.01"
+      },
+      "sink_73": {
+        "name": "sink_73",
+        "category": "sink.n.01"
+      },
+      "toilet_64": {
+        "name": "toilet_64",
+        "category": "toilet.n.02"
+      }
+    }
+  }
+}

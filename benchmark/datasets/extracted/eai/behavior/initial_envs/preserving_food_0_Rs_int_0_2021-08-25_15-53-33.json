@@ -1,0 +1,211 @@
+{
+  "dataset": "behavior",
+  "case_id": "preserving_food_0_Rs_int_0_2021-08-25_15-53-33",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "preserving_food",
+    "task_id": 0,
+    "scene_id": "Rs_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "preserving food",
+    "task": "preserving_food",
+    "task_id": 0,
+    "scene_id": "Rs_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 12,
+    "room_count": 1,
+    "entity_catalog": [
+      "beef_63",
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_41",
+      "carving_knife_66",
+      "countertop_26",
+      "fridge_40",
+      "jar_64",
+      "room_floor_kitchen_0",
+      "saucepan_65",
+      "strawberry_61",
+      "strawberry_62"
+    ],
+    "name_mapping": {
+      "strawberry.n.01_1": {
+        "name": "strawberry_61",
+        "category": "strawberry.n.01"
+      },
+      "strawberry.n.01_2": {
+        "name": "strawberry_62",
+        "category": "strawberry.n.01"
+      },
+      "beef.n.02_1": {
+        "name": "beef_63",
+        "category": "beef.n.02"
+      },
+      "jar.n.01_1": {
+        "name": "jar_64",
+        "category": "jar.n.01"
+      },
+      "pan.n.01_1": {
+        "name": "saucepan_65",
+        "category": "pan.n.01"
+      },
+      "electric_refrigerator.n.01_1": {
+        "name": "fridge_40",
+        "category": "electric_refrigerator.n.01"
+      },
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_41",
+        "category": "cabinet.n.01"
+      },
+      "countertop.n.01_1": {
+        "name": "countertop_26",
+        "category": "countertop.n.01"
+      },
+      "carving_knife.n.01_1": {
+        "name": "carving_knife_66",
+        "category": "carving_knife.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bottom_cabinet_41": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "countertop_26": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "beef_63": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "carving_knife_66": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "jar_64": {
+                      "states": {
+                        "isOpen": true
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "saucepan_65": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "strawberry_61": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "strawberry_62": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "fridge_40": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "beef_63": {
+        "name": "beef_63",
+        "category": "beef.n.02"
+      },
+      "bottom_cabinet_41": {
+        "name": "bottom_cabinet_41",
+        "category": "cabinet.n.01"
+      },
+      "carving_knife_66": {
+        "name": "carving_knife_66",
+        "category": "carving_knife.n.01"
+      },
+      "countertop_26": {
+        "name": "countertop_26",
+        "category": "countertop.n.01"
+      },
+      "fridge_40": {
+        "name": "fridge_40",
+        "category": "electric_refrigerator.n.01"
+      },
+      "jar_64": {
+        "name": "jar_64",
+        "category": "jar.n.01"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "saucepan_65": {
+        "name": "saucepan_65",
+        "category": "pan.n.01"
+      },
+      "strawberry_61": {
+        "name": "strawberry_61",
+        "category": "strawberry.n.01"
+      },
+      "strawberry_62": {
+        "name": "strawberry_62",
+        "category": "strawberry.n.01"
+      }
+    }
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "dataset": "behavior",
+  "case_id": "bringing_in_wood_0_Benevolence_1_int_0_2021-09-15_18-42-25",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "bringing_in_wood",
+    "task_id": 0,
+    "scene_id": "Benevolence_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "bringing in wood",
+    "task": "bringing_in_wood",
+    "task_id": 0,
+    "scene_id": "Benevolence_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 7,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "plywood_0",
+      "plywood_1",
+      "plywood_2",
+      "room_floor_kitchen_0",
+      "room_floor_living_room_0"
+    ],
+    "name_mapping": {
+      "plywood.n.01_1": {
+        "name": "plywood_0",
+        "category": "plywood.n.01"
+      },
+      "plywood.n.01_2": {
+        "name": "plywood_1",
+        "category": "plywood.n.01"
+      },
+      "plywood.n.01_3": {
+        "name": "plywood_2",
+        "category": "plywood.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "floor.n.01_2": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "room_floor_living_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "plywood_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "plywood_1": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "plywood_2": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_living_room_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_living_room_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "plywood_0": {
+        "name": "plywood_0",
+        "category": "plywood.n.01"
+      },
+      "plywood_1": {
+        "name": "plywood_1",
+        "category": "plywood.n.01"
+      },
+      "plywood_2": {
+        "name": "plywood_2",
+        "category": "plywood.n.01"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "room_floor_living_room_0": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      }
+    }
+  }
+}

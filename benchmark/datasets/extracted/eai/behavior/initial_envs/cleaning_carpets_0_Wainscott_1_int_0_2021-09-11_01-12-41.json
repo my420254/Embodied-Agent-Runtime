@@ -1,0 +1,196 @@
+{
+  "dataset": "behavior",
+  "case_id": "cleaning_carpets_0_Wainscott_1_int_0_2021-09-11_01-12-41",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "cleaning_carpets",
+    "task_id": 0,
+    "scene_id": "Wainscott_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "cleaning carpets",
+    "task": "cleaning_carpets",
+    "task_id": 0,
+    "scene_id": "Wainscott_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 11,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "door_80",
+      "dryer_48",
+      "hand_towel_102",
+      "room_floor_corridor_0",
+      "room_floor_utility_room_0",
+      "shampoo_103",
+      "sink_51",
+      "top_cabinet_50",
+      "washer_49"
+    ],
+    "name_mapping": {
+      "floor.n.01_1": {
+        "name": "room_floor_corridor_0",
+        "category": "floor.n.01"
+      },
+      "floor.n.01_2": {
+        "name": "room_floor_utility_room_0",
+        "category": "floor.n.01"
+      },
+      "hand_towel.n.01_1": {
+        "name": "hand_towel_102",
+        "category": "hand_towel.n.01"
+      },
+      "shampoo.n.01_1": {
+        "name": "shampoo_103",
+        "category": "shampoo.n.01"
+      },
+      "cabinet.n.01_1": {
+        "name": "top_cabinet_50",
+        "category": "cabinet.n.01"
+      },
+      "washer.n.03_1": {
+        "name": "washer_49",
+        "category": "washer.n.03"
+      },
+      "dryer.n.01_1": {
+        "name": "dryer_48",
+        "category": "dryer.n.01"
+      },
+      "door.n.01_1": {
+        "name": "door_80",
+        "category": "door.n.01"
+      },
+      "sink.n.01_1": {
+        "name": "sink_51",
+        "category": "sink.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "door_80": {
+                  "states": {}
+                },
+                "dryer_48": {
+                  "states": {}
+                },
+                "room_floor_corridor_0": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isStained": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "room_floor_utility_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "hand_towel_102": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "sink_51": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "top_cabinet_50": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "shampoo_103": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "washer_49": {
+                  "states": {
+                    "isOpen": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_corridor_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_corridor_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "door_80": {
+        "name": "door_80",
+        "category": "door.n.01"
+      },
+      "dryer_48": {
+        "name": "dryer_48",
+        "category": "dryer.n.01"
+      },
+      "hand_towel_102": {
+        "name": "hand_towel_102",
+        "category": "hand_towel.n.01"
+      },
+      "room_floor_corridor_0": {
+        "name": "room_floor_corridor_0",
+        "category": "floor.n.01"
+      },
+      "room_floor_utility_room_0": {
+        "name": "room_floor_utility_room_0",
+        "category": "floor.n.01"
+      },
+      "shampoo_103": {
+        "name": "shampoo_103",
+        "category": "shampoo.n.01"
+      },
+      "sink_51": {
+        "name": "sink_51",
+        "category": "sink.n.01"
+      },
+      "top_cabinet_50": {
+        "name": "top_cabinet_50",
+        "category": "cabinet.n.01"
+      },
+      "washer_49": {
+        "name": "washer_49",
+        "category": "washer.n.03"
+      }
+    }
+  }
+}

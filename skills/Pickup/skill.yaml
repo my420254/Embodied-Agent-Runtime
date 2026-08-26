@@ -1,0 +1,7 @@
+name: Pickup
+description: 用机械臂抓取目标物品。
+prompt: prompt.md
+handler: skills.Pickup.handler:PickupSkill
+execution_domain: 机械臂控制
+planner_requires_empty_hand: true
+planner_item_param: target_item

@@ -1,0 +1,5 @@
+name: Drink
+description: 饮用一个可饮用对象。
+prompt: prompt.md
+handler: skills.Drink.handler:DrinkSkill
+execution_domain: 感知/信息交互

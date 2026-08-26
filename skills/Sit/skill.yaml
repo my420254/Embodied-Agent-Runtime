@@ -1,0 +1,5 @@
+name: Sit
+description: 在指定座位或可坐对象处坐下。
+prompt: prompt.md
+handler: skills.Sit.handler:SitSkill
+execution_domain: 感知/信息交互

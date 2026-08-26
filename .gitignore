@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+*.log
+.pytest_cache/
+.ruff_cache/
+.vscode/
+.trash_*/
+.graphify-out/
+graphify-out/
+logs/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm

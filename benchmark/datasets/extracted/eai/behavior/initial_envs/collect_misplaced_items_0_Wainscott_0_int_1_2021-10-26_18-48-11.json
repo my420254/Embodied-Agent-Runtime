@@ -1,0 +1,222 @@
+{
+  "dataset": "behavior",
+  "case_id": "collect_misplaced_items_0_Wainscott_0_int_1_2021-10-26_18-48-11",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "collect_misplaced_items",
+    "task_id": 0,
+    "scene_id": "Wainscott_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "collect misplaced items",
+    "task": "collect_misplaced_items",
+    "task_id": 0,
+    "scene_id": "Wainscott_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 13,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_79",
+      "breakfast_table_1",
+      "coffee_table_33",
+      "gym_shoe_0",
+      "necklace_0",
+      "notebook_0",
+      "room_floor_dining_room_0",
+      "room_floor_living_room_0",
+      "sock_0",
+      "sock_1",
+      "sofa_39"
+    ],
+    "name_mapping": {
+      "gym_shoe.n.01_1": {
+        "name": "gym_shoe_0",
+        "category": "gym_shoe.n.01"
+      },
+      "necklace.n.01_1": {
+        "name": "necklace_0",
+        "category": "necklace.n.01"
+      },
+      "notebook.n.01_1": {
+        "name": "notebook_0",
+        "category": "notebook.n.01"
+      },
+      "sock.n.01_1": {
+        "name": "sock_0",
+        "category": "sock.n.01"
+      },
+      "sock.n.01_2": {
+        "name": "sock_1",
+        "category": "sock.n.01"
+      },
+      "table.n.02_1": {
+        "name": "coffee_table_33",
+        "category": "table.n.02"
+      },
+      "table.n.02_2": {
+        "name": "breakfast_table_1",
+        "category": "table.n.02"
+      },
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_79",
+        "category": "cabinet.n.01"
+      },
+      "sofa.n.01_1": {
+        "name": "sofa_39",
+        "category": "sofa.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "floor.n.01_2": {
+        "name": "room_floor_dining_room_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bottom_cabinet_79": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "necklace_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "breakfast_table_1": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "notebook_0": {
+                      "states": {},
+                      "direct_relation": "under"
+                    }
+                  }
+                },
+                "coffee_table_33": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "room_floor_dining_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "gym_shoe_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "room_floor_living_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "sock_1": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "sofa_39": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "sock_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_living_room_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_living_room_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bottom_cabinet_79": {
+        "name": "bottom_cabinet_79",
+        "category": "cabinet.n.01"
+      },
+      "breakfast_table_1": {
+        "name": "breakfast_table_1",
+        "category": "table.n.02"
+      },
+      "coffee_table_33": {
+        "name": "coffee_table_33",
+        "category": "table.n.02"
+      },
+      "gym_shoe_0": {
+        "name": "gym_shoe_0",
+        "category": "gym_shoe.n.01"
+      },
+      "necklace_0": {
+        "name": "necklace_0",
+        "category": "necklace.n.01"
+      },
+      "notebook_0": {
+        "name": "notebook_0",
+        "category": "notebook.n.01"
+      },
+      "room_floor_dining_room_0": {
+        "name": "room_floor_dining_room_0",
+        "category": "floor.n.01"
+      },
+      "room_floor_living_room_0": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "sock_0": {
+        "name": "sock_0",
+        "category": "sock.n.01"
+      },
+      "sock_1": {
+        "name": "sock_1",
+        "category": "sock.n.01"
+      },
+      "sofa_39": {
+        "name": "sofa_39",
+        "category": "sofa.n.01"
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "final_state": {
+    "character": {
+      "sitting": true,
+      "ontop": "couch"
+    }
+  }
+}

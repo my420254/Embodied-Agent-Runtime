@@ -1,0 +1,531 @@
+{
+  "dataset": "behavior",
+  "case_id": "packing_picnics_0_Wainscott_0_int_0_2021-10-26_11-07-29",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "packing_picnics",
+    "task_id": 0,
+    "scene_id": "Wainscott_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "packing picnics",
+    "task": "packing_picnics",
+    "task_id": 0,
+    "scene_id": "Wainscott_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 36,
+    "room_count": 1,
+    "entity_catalog": [
+      "beer_0",
+      "beer_1",
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_no_top_80",
+      "cantaloup_0",
+      "carton_0",
+      "carton_1",
+      "carton_2",
+      "chip_0",
+      "chip_1",
+      "countertop_84",
+      "fridge_97",
+      "grape_0",
+      "grape_1",
+      "grape_2",
+      "grape_3",
+      "hamburger_0",
+      "hamburger_1",
+      "hamburger_2",
+      "hamburger_3",
+      "peach_0",
+      "peach_1",
+      "pop_0",
+      "pop_1",
+      "room_floor_kitchen_0",
+      "room_floor_living_room_0",
+      "sink_82",
+      "strawberry_0",
+      "strawberry_1",
+      "strawberry_2",
+      "strawberry_3",
+      "water_0",
+      "water_1",
+      "water_2",
+      "water_3"
+    ],
+    "name_mapping": {
+      "carton.n.02_1": {
+        "name": "carton_0",
+        "category": "carton.n.02"
+      },
+      "carton.n.02_2": {
+        "name": "carton_1",
+        "category": "carton.n.02"
+      },
+      "carton.n.02_3": {
+        "name": "carton_2",
+        "category": "carton.n.02"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "floor.n.01_2": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "chip.n.04_1": {
+        "name": "chip_0",
+        "category": "chip.n.04"
+      },
+      "chip.n.04_2": {
+        "name": "chip_1",
+        "category": "chip.n.04"
+      },
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_no_top_80",
+        "category": "cabinet.n.01"
+      },
+      "sandwich.n.01_1": {
+        "name": "hamburger_0",
+        "category": "sandwich.n.01"
+      },
+      "sandwich.n.01_2": {
+        "name": "hamburger_1",
+        "category": "sandwich.n.01"
+      },
+      "sandwich.n.01_3": {
+        "name": "hamburger_2",
+        "category": "sandwich.n.01"
+      },
+      "sandwich.n.01_4": {
+        "name": "hamburger_3",
+        "category": "sandwich.n.01"
+      },
+      "countertop.n.01_1": {
+        "name": "countertop_84",
+        "category": "countertop.n.01"
+      },
+      "melon.n.01_1": {
+        "name": "cantaloup_0",
+        "category": "melon.n.01"
+      },
+      "strawberry.n.01_1": {
+        "name": "strawberry_0",
+        "category": "strawberry.n.01"
+      },
+      "strawberry.n.01_2": {
+        "name": "strawberry_1",
+        "category": "strawberry.n.01"
+      },
+      "strawberry.n.01_3": {
+        "name": "strawberry_2",
+        "category": "strawberry.n.01"
+      },
+      "strawberry.n.01_4": {
+        "name": "strawberry_3",
+        "category": "strawberry.n.01"
+      },
+      "electric_refrigerator.n.01_1": {
+        "name": "fridge_97",
+        "category": "electric_refrigerator.n.01"
+      },
+      "grape.n.01_1": {
+        "name": "grape_0",
+        "category": "grape.n.01"
+      },
+      "grape.n.01_2": {
+        "name": "grape_1",
+        "category": "grape.n.01"
+      },
+      "grape.n.01_3": {
+        "name": "grape_2",
+        "category": "grape.n.01"
+      },
+      "grape.n.01_4": {
+        "name": "grape_3",
+        "category": "grape.n.01"
+      },
+      "peach.n.03_1": {
+        "name": "peach_0",
+        "category": "peach.n.03"
+      },
+      "peach.n.03_2": {
+        "name": "peach_1",
+        "category": "peach.n.03"
+      },
+      "pop.n.02_1": {
+        "name": "pop_0",
+        "category": "pop.n.02"
+      },
+      "pop.n.02_2": {
+        "name": "pop_1",
+        "category": "pop.n.02"
+      },
+      "beer.n.01_1": {
+        "name": "beer_0",
+        "category": "beer.n.01"
+      },
+      "beer.n.01_2": {
+        "name": "beer_1",
+        "category": "beer.n.01"
+      },
+      "water.n.06_1": {
+        "name": "water_0",
+        "category": "water.n.06"
+      },
+      "water.n.06_2": {
+        "name": "water_1",
+        "category": "water.n.06"
+      },
+      "water.n.06_3": {
+        "name": "water_2",
+        "category": "water.n.06"
+      },
+      "water.n.06_4": {
+        "name": "water_3",
+        "category": "water.n.06"
+      },
+      "sink.n.01_1": {
+        "name": "sink_82",
+        "category": "sink.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bottom_cabinet_no_top_80": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "chip_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "chip_1": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "water_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "water_1": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "water_2": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "water_3": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "countertop_84": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "cantaloup_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "hamburger_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "hamburger_1": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "hamburger_2": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "hamburger_3": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "fridge_97": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "beer_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "beer_1": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "grape_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "grape_1": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "grape_2": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "grape_3": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "peach_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "peach_1": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "pop_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "pop_1": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "strawberry_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "strawberry_1": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "strawberry_2": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "strawberry_3": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "carton_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "room_floor_living_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "carton_1": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "carton_2": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "sink_82": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "beer_0": {
+        "name": "beer_0",
+        "category": "beer.n.01"
+      },
+      "beer_1": {
+        "name": "beer_1",
+        "category": "beer.n.01"
+      },
+      "bottom_cabinet_no_top_80": {
+        "name": "bottom_cabinet_no_top_80",
+        "category": "cabinet.n.01"
+      },
+      "cantaloup_0": {
+        "name": "cantaloup_0",
+        "category": "melon.n.01"
+      },
+      "carton_0": {
+        "name": "carton_0",
+        "category": "carton.n.02"
+      },
+      "carton_1": {
+        "name": "carton_1",
+        "category": "carton.n.02"
+      },
+      "carton_2": {
+        "name": "carton_2",
+        "category": "carton.n.02"
+      },
+      "chip_0": {
+        "name": "chip_0",
+        "category": "chip.n.04"
+      },
+      "chip_1": {
+        "name": "chip_1",
+        "category": "chip.n.04"
+      },
+      "countertop_84": {
+        "name": "countertop_84",
+        "category": "countertop.n.01"
+      },
+      "fridge_97": {
+        "name": "fridge_97",
+        "category": "electric_refrigerator.n.01"
+      },
+      "grape_0": {
+        "name": "grape_0",
+        "category": "grape.n.01"
+      },
+      "grape_1": {
+        "name": "grape_1",
+        "category": "grape.n.01"
+      },
+      "grape_2": {
+        "name": "grape_2",
+        "category": "grape.n.01"
+      },
+      "grape_3": {
+        "name": "grape_3",
+        "category": "grape.n.01"
+      },
+      "hamburger_0": {
+        "name": "hamburger_0",
+        "category": "sandwich.n.01"
+      },
+      "hamburger_1": {
+        "name": "hamburger_1",
+        "category": "sandwich.n.01"
+      },
+      "hamburger_2": {
+        "name": "hamburger_2",
+        "category": "sandwich.n.01"
+      },
+      "hamburger_3": {
+        "name": "hamburger_3",
+        "category": "sandwich.n.01"
+      },
+      "peach_0": {
+        "name": "peach_0",
+        "category": "peach.n.03"
+      },
+      "peach_1": {
+        "name": "peach_1",
+        "category": "peach.n.03"
+      },
+      "pop_0": {
+        "name": "pop_0",
+        "category": "pop.n.02"
+      },
+      "pop_1": {
+        "name": "pop_1",
+        "category": "pop.n.02"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "room_floor_living_room_0": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "sink_82": {
+        "name": "sink_82",
+        "category": "sink.n.01"
+      },
+      "strawberry_0": {
+        "name": "strawberry_0",
+        "category": "strawberry.n.01"
+      },
+      "strawberry_1": {
+        "name": "strawberry_1",
+        "category": "strawberry.n.01"
+      },
+      "strawberry_2": {
+        "name": "strawberry_2",
+        "category": "strawberry.n.01"
+      },
+      "strawberry_3": {
+        "name": "strawberry_3",
+        "category": "strawberry.n.01"
+      },
+      "water_0": {
+        "name": "water_0",
+        "category": "water.n.06"
+      },
+      "water_1": {
+        "name": "water_1",
+        "category": "water.n.06"
+      },
+      "water_2": {
+        "name": "water_2",
+        "category": "water.n.06"
+      },
+      "water_3": {
+        "name": "water_3",
+        "category": "water.n.06"
+      }
+    }
+  }
+}

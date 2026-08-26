@@ -1,0 +1,5 @@
+name: Sleep
+description: 在指定床或可躺对象处进入睡眠状态。
+prompt: prompt.md
+handler: skills.Sleep.handler:SleepSkill
+execution_domain: 感知/信息交互

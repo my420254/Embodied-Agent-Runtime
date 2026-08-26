@@ -1,0 +1,219 @@
+{
+  "dataset": "behavior",
+  "case_id": "organizing_file_cabinet_0_Pomaria_0_int_0_2021-06-08_15-27-20",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "organizing_file_cabinet",
+    "task_id": 0,
+    "scene_id": "Pomaria_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "organizing file cabinet",
+    "task": "organizing_file_cabinet",
+    "task_id": 0,
+    "scene_id": "Pomaria_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 13,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_no_top_21",
+      "breakfast_table_3",
+      "document_0",
+      "document_1",
+      "document_2",
+      "document_3",
+      "folder_0",
+      "folder_1",
+      "highlighter_0",
+      "room_floor_home_office_0",
+      "swivel_chair_5"
+    ],
+    "name_mapping": {
+      "floor.n.01_1": {
+        "name": "room_floor_home_office_0",
+        "category": "floor.n.01"
+      },
+      "marker.n.03_1": {
+        "name": "highlighter_0",
+        "category": "marker.n.03"
+      },
+      "chair.n.01_1": {
+        "name": "swivel_chair_5",
+        "category": "chair.n.01"
+      },
+      "document.n.01_1": {
+        "name": "document_0",
+        "category": "document.n.01"
+      },
+      "document.n.01_2": {
+        "name": "document_1",
+        "category": "document.n.01"
+      },
+      "document.n.01_3": {
+        "name": "document_2",
+        "category": "document.n.01"
+      },
+      "document.n.01_4": {
+        "name": "document_3",
+        "category": "document.n.01"
+      },
+      "table.n.02_1": {
+        "name": "breakfast_table_3",
+        "category": "table.n.02"
+      },
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_no_top_21",
+        "category": "cabinet.n.01"
+      },
+      "folder.n.02_1": {
+        "name": "folder_0",
+        "category": "folder.n.02"
+      },
+      "folder.n.02_2": {
+        "name": "folder_1",
+        "category": "folder.n.02"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bottom_cabinet_no_top_21": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "document_1": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "document_3": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "breakfast_table_3": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "document_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "document_2": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "folder_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "room_floor_home_office_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "folder_1": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "swivel_chair_5": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "highlighter_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_home_office_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_home_office_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bottom_cabinet_no_top_21": {
+        "name": "bottom_cabinet_no_top_21",
+        "category": "cabinet.n.01"
+      },
+      "breakfast_table_3": {
+        "name": "breakfast_table_3",
+        "category": "table.n.02"
+      },
+      "document_0": {
+        "name": "document_0",
+        "category": "document.n.01"
+      },
+      "document_1": {
+        "name": "document_1",
+        "category": "document.n.01"
+      },
+      "document_2": {
+        "name": "document_2",
+        "category": "document.n.01"
+      },
+      "document_3": {
+        "name": "document_3",
+        "category": "document.n.01"
+      },
+      "folder_0": {
+        "name": "folder_0",
+        "category": "folder.n.02"
+      },
+      "folder_1": {
+        "name": "folder_1",
+        "category": "folder.n.02"
+      },
+      "highlighter_0": {
+        "name": "highlighter_0",
+        "category": "marker.n.03"
+      },
+      "room_floor_home_office_0": {
+        "name": "room_floor_home_office_0",
+        "category": "floor.n.01"
+      },
+      "swivel_chair_5": {
+        "name": "swivel_chair_5",
+        "category": "chair.n.01"
+      }
+    }
+  }
+}

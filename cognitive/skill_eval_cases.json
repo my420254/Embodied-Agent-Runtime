@@ -1,0 +1,208 @@
+{
+  "cases": [
+    {
+      "skill_id": "cooking.cut_ingredient",
+      "case_id": "cut_beef_sandbox",
+      "suite": "sandbox",
+      "passed": true
+    },
+    {
+      "skill_id": "cooking.cut_ingredient",
+      "case_id": "cut_beef_regression",
+      "suite": "regression",
+      "passed": true
+    },
+    {
+      "skill_id": "cooking.make_tea",
+      "case_id": "make_tea_sandbox",
+      "suite": "sandbox",
+      "passed": true
+    },
+    {
+      "skill_id": "cooking.make_tea",
+      "case_id": "make_tea_regression",
+      "suite": "regression",
+      "passed": true
+    },
+    {
+      "skill_id": "laundry.do_laundry",
+      "case_id": "laundry_sandbox",
+      "suite": "sandbox",
+      "passed": true
+    },
+    {
+      "skill_id": "laundry.do_laundry",
+      "case_id": "laundry_regression",
+      "suite": "regression",
+      "passed": true
+    },
+    {
+      "skill_id": "device.turn_on",
+      "case_id": "turn_on_light_sandbox",
+      "suite": "sandbox",
+      "passed": true
+    },
+    {
+      "skill_id": "device.turn_on",
+      "case_id": "turn_on_light_regression",
+      "suite": "regression",
+      "passed": true
+    },
+    {
+      "skill_id": "device.turn_off",
+      "case_id": "turn_off_light_sandbox",
+      "suite": "sandbox",
+      "passed": true
+    },
+    {
+      "skill_id": "device.turn_off",
+      "case_id": "turn_off_light_regression",
+      "suite": "regression",
+      "passed": true
+    },
+    {
+      "skill_id": "container.open",
+      "case_id": "open_freezer_sandbox",
+      "suite": "sandbox",
+      "passed": true
+    },
+    {
+      "skill_id": "container.open",
+      "case_id": "open_freezer_regression",
+      "suite": "regression",
+      "passed": true
+    },
+    {
+      "skill_id": "container.close",
+      "case_id": "close_freezer_sandbox",
+      "suite": "sandbox",
+      "passed": true
+    },
+    {
+      "skill_id": "container.close",
+      "case_id": "close_freezer_regression",
+      "suite": "regression",
+      "passed": true
+    },
+    {
+      "skill_id": "object.put_into_container",
+      "case_id": "put_groceries_sandbox",
+      "suite": "sandbox",
+      "passed": true
+    },
+    {
+      "skill_id": "object.put_into_container",
+      "case_id": "put_groceries_regression",
+      "suite": "regression",
+      "passed": true
+    },
+    {
+      "skill_id": "object.clean",
+      "case_id": "wash_hands_sandbox",
+      "suite": "sandbox",
+      "passed": true
+    },
+    {
+      "skill_id": "object.clean",
+      "case_id": "wash_hands_regression",
+      "suite": "regression",
+      "passed": true
+    },
+    {
+      "skill_id": "object.pickup",
+      "case_id": "pickup_book_sandbox",
+      "suite": "sandbox",
+      "passed": true
+    },
+    {
+      "skill_id": "object.pickup",
+      "case_id": "pickup_book_regression",
+      "suite": "regression",
+      "passed": true
+    },
+    {
+      "skill_id": "object.read",
+      "case_id": "read_book_sandbox",
+      "suite": "sandbox",
+      "passed": true
+    },
+    {
+      "skill_id": "object.read",
+      "case_id": "read_book_regression",
+      "suite": "regression",
+      "passed": true
+    },
+    {
+      "skill_id": "object.observe",
+      "case_id": "observe_tv_sandbox",
+      "suite": "sandbox",
+      "passed": true
+    },
+    {
+      "skill_id": "object.observe",
+      "case_id": "observe_tv_regression",
+      "suite": "regression",
+      "passed": true
+    },
+    {
+      "skill_id": "device.type_on",
+      "case_id": "type_computer_sandbox",
+      "suite": "sandbox",
+      "passed": true
+    },
+    {
+      "skill_id": "device.type_on",
+      "case_id": "type_computer_regression",
+      "suite": "regression",
+      "passed": true
+    },
+    {
+      "skill_id": "object.sleep_on",
+      "case_id": "sleep_bed_sandbox",
+      "suite": "sandbox",
+      "passed": true
+    },
+    {
+      "skill_id": "object.sleep_on",
+      "case_id": "sleep_bed_regression",
+      "suite": "regression",
+      "passed": true
+    },
+    {
+      "skill_id": "object.touch",
+      "case_id": "touch_cat_sandbox",
+      "suite": "sandbox",
+      "passed": true
+    },
+    {
+      "skill_id": "object.touch",
+      "case_id": "touch_cat_regression",
+      "suite": "regression",
+      "passed": true
+    },
+    {
+      "skill_id": "object.drink",
+      "case_id": "drink_cup_sandbox",
+      "suite": "sandbox",
+      "passed": true
+    },
+    {
+      "skill_id": "object.drink",
+      "case_id": "drink_cup_regression",
+      "suite": "regression",
+      "passed": true
+    },
+    {
+      "skill_id": "object.sit_on",
+      "case_id": "sit_chair_sandbox",
+      "suite": "sandbox",
+      "passed": true
+    },
+    {
+      "skill_id": "object.sit_on",
+      "case_id": "sit_chair_regression",
+      "suite": "regression",
+      "passed": true
+    }
+  ]
+}

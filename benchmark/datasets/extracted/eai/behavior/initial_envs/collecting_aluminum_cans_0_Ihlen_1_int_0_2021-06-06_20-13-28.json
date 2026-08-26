@@ -1,0 +1,189 @@
+{
+  "dataset": "behavior",
+  "case_id": "collecting_aluminum_cans_0_Ihlen_1_int_0_2021-06-06_20-13-28",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "collecting_aluminum_cans",
+    "task_id": 0,
+    "scene_id": "Ihlen_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "collecting aluminum cans",
+    "task": "collecting_aluminum_cans",
+    "task_id": 0,
+    "scene_id": "Ihlen_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 11,
+    "room_count": 1,
+    "entity_catalog": [
+      "bed_33",
+      "behavior_room",
+      "behavior_room_anchor",
+      "bucket_118",
+      "pop_112",
+      "pop_113",
+      "pop_114",
+      "pop_115",
+      "pop_116",
+      "pop_117",
+      "room_floor_bedroom_0"
+    ],
+    "name_mapping": {
+      "pop.n.02_1": {
+        "name": "pop_112",
+        "category": "pop.n.02"
+      },
+      "pop.n.02_2": {
+        "name": "pop_113",
+        "category": "pop.n.02"
+      },
+      "pop.n.02_3": {
+        "name": "pop_114",
+        "category": "pop.n.02"
+      },
+      "pop.n.02_4": {
+        "name": "pop_115",
+        "category": "pop.n.02"
+      },
+      "pop.n.02_5": {
+        "name": "pop_116",
+        "category": "pop.n.02"
+      },
+      "pop.n.02_6": {
+        "name": "pop_117",
+        "category": "pop.n.02"
+      },
+      "bed.n.01_1": {
+        "name": "bed_33",
+        "category": "bed.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_bedroom_0",
+        "category": "floor.n.01"
+      },
+      "bucket.n.01_1": {
+        "name": "bucket_118",
+        "category": "bucket.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bed_33": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "bucket_118": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "pop_112": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "pop_113": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "pop_114": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "room_floor_bedroom_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "pop_115": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "pop_116": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "pop_117": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_bedroom_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_bedroom_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bed_33": {
+        "name": "bed_33",
+        "category": "bed.n.01"
+      },
+      "bucket_118": {
+        "name": "bucket_118",
+        "category": "bucket.n.01"
+      },
+      "pop_112": {
+        "name": "pop_112",
+        "category": "pop.n.02"
+      },
+      "pop_113": {
+        "name": "pop_113",
+        "category": "pop.n.02"
+      },
+      "pop_114": {
+        "name": "pop_114",
+        "category": "pop.n.02"
+      },
+      "pop_115": {
+        "name": "pop_115",
+        "category": "pop.n.02"
+      },
+      "pop_116": {
+        "name": "pop_116",
+        "category": "pop.n.02"
+      },
+      "pop_117": {
+        "name": "pop_117",
+        "category": "pop.n.02"
+      },
+      "room_floor_bedroom_0": {
+        "name": "room_floor_bedroom_0",
+        "category": "floor.n.01"
+      }
+    }
+  }
+}

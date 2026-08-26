@@ -1,0 +1,186 @@
+{
+  "dataset": "behavior",
+  "case_id": "packing_car_for_trip_0_Ihlen_0_int_0_2021-10-26_10-27-23",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "packing_car_for_trip",
+    "task_id": 0,
+    "scene_id": "Ihlen_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "packing car for trip",
+    "task": "packing_car_for_trip",
+    "task_id": 0,
+    "scene_id": "Ihlen_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 10,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "breakfast_table_14",
+      "briefcase_51",
+      "car_50",
+      "duffel_bag_54",
+      "headset_53",
+      "pencil_box_52",
+      "room_floor_garage_0",
+      "room_floor_storage_room_0"
+    ],
+    "name_mapping": {
+      "car.n.01_1": {
+        "name": "car_50",
+        "category": "car.n.01"
+      },
+      "briefcase.n.01_1": {
+        "name": "briefcase_51",
+        "category": "briefcase.n.01"
+      },
+      "pencil_box.n.01_1": {
+        "name": "pencil_box_52",
+        "category": "pencil_box.n.01"
+      },
+      "headset.n.01_1": {
+        "name": "headset_53",
+        "category": "headset.n.01"
+      },
+      "duffel_bag.n.01_1": {
+        "name": "duffel_bag_54",
+        "category": "duffel_bag.n.01"
+      },
+      "table.n.02_1": {
+        "name": "breakfast_table_14",
+        "category": "table.n.02"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_garage_0",
+        "category": "floor.n.01"
+      },
+      "floor.n.01_2": {
+        "name": "room_floor_storage_room_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "breakfast_table_14": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "headset_53": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "pencil_box_52": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "room_floor_garage_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "car_50": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "room_floor_storage_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "briefcase_51": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "duffel_bag_54": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_garage_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_garage_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "breakfast_table_14": {
+        "name": "breakfast_table_14",
+        "category": "table.n.02"
+      },
+      "briefcase_51": {
+        "name": "briefcase_51",
+        "category": "briefcase.n.01"
+      },
+      "car_50": {
+        "name": "car_50",
+        "category": "car.n.01"
+      },
+      "duffel_bag_54": {
+        "name": "duffel_bag_54",
+        "category": "duffel_bag.n.01"
+      },
+      "headset_53": {
+        "name": "headset_53",
+        "category": "headset.n.01"
+      },
+      "pencil_box_52": {
+        "name": "pencil_box_52",
+        "category": "pencil_box.n.01"
+      },
+      "room_floor_garage_0": {
+        "name": "room_floor_garage_0",
+        "category": "floor.n.01"
+      },
+      "room_floor_storage_room_0": {
+        "name": "room_floor_storage_room_0",
+        "category": "floor.n.01"
+      }
+    }
+  }
+}

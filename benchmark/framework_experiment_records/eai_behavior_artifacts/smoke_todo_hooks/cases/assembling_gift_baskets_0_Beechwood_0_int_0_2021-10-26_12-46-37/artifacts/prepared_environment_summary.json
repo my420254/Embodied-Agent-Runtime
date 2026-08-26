@@ -1,0 +1,230 @@
+{
+  "schema_version": "framework_trace_v3",
+  "process_name": "environment_preparation",
+  "payload_role": "output",
+  "instruction": "assembling gift baskets",
+  "env_state": {
+    "robot_location": "room_floor_living_room_0",
+    "robot_holding": "空",
+    "robot_hands": {
+      "left": "空",
+      "right": "空"
+    },
+    "manipulator_mode": "dual_arm"
+  },
+  "entity_catalog": {
+    "count": 25,
+    "sample": [
+      "basket_0",
+      "basket_1",
+      "basket_2",
+      "basket_3",
+      "behavior_room",
+      "behavior_room_anchor",
+      "bow_0",
+      "bow_1",
+      "bow_2",
+      "bow_3",
+      "breakfast_table_13",
+      "candle_0",
+      "candle_1",
+      "candle_2",
+      "candle_3",
+      "cheese_0",
+      "cheese_1",
+      "cheese_2",
+      "cheese_3",
+      "coffee_table_12",
+      "cookie_0",
+      "cookie_1",
+      "cookie_2",
+      "cookie_3",
+      "room_floor_living_room_0"
+    ],
+    "truncated": false
+  },
+  "scene": {
+    "available": true,
+    "entity_count": 25,
+    "type_counts": {
+      "room": 1,
+      "receptacle": 8,
+      "unknown": 16
+    },
+    "rooms": {
+      "count": 1,
+      "sample": [
+        "behavior_room"
+      ],
+      "truncated": false
+    },
+    "receptacles": {
+      "count": 8,
+      "sample": [
+        "basket_0",
+        "basket_1",
+        "basket_2",
+        "basket_3",
+        "behavior_room_anchor",
+        "breakfast_table_13",
+        "coffee_table_12",
+        "room_floor_living_room_0"
+      ],
+      "truncated": false
+    },
+    "entities": {
+      "count": 25,
+      "sample": [
+        "basket_0",
+        "basket_1",
+        "basket_2",
+        "basket_3",
+        "behavior_room",
+        "behavior_room_anchor",
+        "bow_0",
+        "bow_1",
+        "bow_2",
+        "bow_3",
+        "breakfast_table_13",
+        "candle_0",
+        "candle_1",
+        "candle_2",
+        "candle_3",
+        "cheese_0",
+        "cheese_1",
+        "cheese_2",
+        "cheese_3",
+        "coffee_table_12",
+        "cookie_0",
+        "cookie_1",
+        "cookie_2",
+        "cookie_3",
+        "room_floor_living_room_0"
+      ],
+      "truncated": false
+    },
+    "states_sample": {},
+    "nesting": {
+      "available": true,
+      "contains_node_count": 5,
+      "max_depth": 3
+    },
+    "flat_schema": {
+      "available": true,
+      "entity_count": 25,
+      "standard_field_counts": {
+        "direct_parent": 25,
+        "direct_relation": 25,
+        "type": 25,
+        "states": 25,
+        "properties": 25,
+        "is_container": 25,
+        "full_path": 25
+      },
+      "relation_entity_count": 24,
+      "state_entity_count": 0,
+      "property_entity_count": 0,
+      "container_count": 8,
+      "full_path_entity_count": 24,
+      "parent_missing_count": 0,
+      "parent_missing_sample": [],
+      "parent_reference_missing_count": 0,
+      "parent_reference_missing_sample": []
+    }
+  },
+  "context": {
+    "dataset": "behavior",
+    "task_context": {
+      "dataset": "behavior",
+      "instruction": "assembling gift baskets",
+      "identifier": "assembling_gift_baskets_0_Beechwood_0_int_0_2021-10-26_12-46-37",
+      "raw_source": "behavior_initial_env_cache",
+      "initial_environment_cache_path": "/data/zmy/OurAgent-he1/benchmark/datasets/extracted/eai/behavior/initial_envs/assembling_gift_baskets_0_Beechwood_0_int_0_2021-10-26_12-46-37.json",
+      "initial_environment_source": "igibson_behavior_native_loader",
+      "environment_source": "igibson_behavior_native_loader",
+      "raw_goal_condition": [
+        [
+          "forpairs",
+          "basket.n.01",
+          "-",
+          "basket.n.01",
+          "candle.n.01",
+          "-",
+          "candle.n.01",
+          "inside",
+          "candle.n.01",
+          "basket.n.01"
+        ],
+        [
+          "forpairs",
+          "basket.n.01",
+          "-",
+          "basket.n.01",
+          "cheese.n.01",
+          "-",
+          "cheese.n.01",
+          "inside",
+          "cheese.n.01",
+          "basket.n.01"
+        ],
+        [
+          "forpairs",
+          "basket.n.01",
+          "-",
+          "basket.n.01",
+          "cookie.n.01",
+          "-",
+          "cookie.n.01",
+          "inside",
+          "cookie.n.01",
+          "basket.n.01"
+        ],
+        [
+          "forpairs",
+          "basket.n.01",
+          "-",
+          "basket.n.01",
+          "bow.n.08",
+          "-",
+          "bow.n.08",
+          "inside",
+          "bow.n.08",
+          "basket.n.01"
+        ]
+      ],
+      "raw_goal_clauses": [
+        "forpairs basket.n.01 - basket.n.01 candle.n.01 - candle.n.01 inside candle.n.01 basket.n.01",
+        "forpairs basket.n.01 - basket.n.01 cheese.n.01 - cheese.n.01 inside cheese.n.01 basket.n.01",
+        "forpairs basket.n.01 - basket.n.01 cookie.n.01 - cookie.n.01 inside cookie.n.01 basket.n.01",
+        "forpairs basket.n.01 - basket.n.01 bow.n.08 - bow.n.08 inside bow.n.08 basket.n.01"
+      ],
+      "raw_goal_condition_count": 4,
+      "name_category": {
+        "basket_0": "basket.n.01",
+        "basket_1": "basket.n.01",
+        "basket_2": "basket.n.01",
+        "basket_3": "basket.n.01",
+        "room_floor_living_room_0": "floor.n.01",
+        "candle_0": "candle.n.01",
+        "candle_1": "candle.n.01",
+        "candle_2": "candle.n.01",
+        "candle_3": "candle.n.01",
+        "cookie_0": "cookie.n.01",
+        "cookie_1": "cookie.n.01",
+        "cookie_2": "cookie.n.01",
+        "cookie_3": "cookie.n.01",
+        "cheese_0": "cheese.n.01",
+        "cheese_1": "cheese.n.01",
+        "cheese_2": "cheese.n.01",
+        "cheese_3": "cheese.n.01",
+        "bow_0": "bow.n.08",
+        "bow_1": "bow.n.08",
+        "bow_2": "bow.n.08",
+        "bow_3": "bow.n.08",
+        "breakfast_table_13": "table.n.02",
+        "coffee_table_12": "table.n.02",
+        "agent.n.01_1": "agent.n.01"
+      }
+    }
+  }
+}

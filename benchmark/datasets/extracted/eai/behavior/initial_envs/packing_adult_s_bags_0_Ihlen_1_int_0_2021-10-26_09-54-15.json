@@ -1,0 +1,232 @@
+{
+  "dataset": "behavior",
+  "case_id": "packing_adult_s_bags_0_Ihlen_1_int_0_2021-10-26_09-54-15",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "packing_adult_s_bags",
+    "task_id": 0,
+    "scene_id": "Ihlen_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "packing adult s bags",
+    "task": "packing_adult_s_bags",
+    "task_id": 0,
+    "scene_id": "Ihlen_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 14,
+    "room_count": 1,
+    "entity_catalog": [
+      "backpack_112",
+      "bed_33",
+      "behavior_room",
+      "behavior_room_anchor",
+      "bracelet_116",
+      "door_99",
+      "hanger_113",
+      "lipstick_114",
+      "lipstick_115",
+      "mouse_119",
+      "necklace_117",
+      "room_floor_bedroom_0",
+      "room_floor_corridor_0",
+      "toothbrush_118"
+    ],
+    "name_mapping": {
+      "backpack.n.01_1": {
+        "name": "backpack_112",
+        "category": "backpack.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_bedroom_0",
+        "category": "floor.n.01"
+      },
+      "floor.n.01_2": {
+        "name": "room_floor_corridor_0",
+        "category": "floor.n.01"
+      },
+      "hanger.n.02_1": {
+        "name": "hanger_113",
+        "category": "hanger.n.02"
+      },
+      "bed.n.01_1": {
+        "name": "bed_33",
+        "category": "bed.n.01"
+      },
+      "makeup.n.01_1": {
+        "name": "lipstick_114",
+        "category": "makeup.n.01"
+      },
+      "makeup.n.01_2": {
+        "name": "lipstick_115",
+        "category": "makeup.n.01"
+      },
+      "jewelry.n.01_1": {
+        "name": "bracelet_116",
+        "category": "jewelry.n.01"
+      },
+      "jewelry.n.01_2": {
+        "name": "necklace_117",
+        "category": "jewelry.n.01"
+      },
+      "toothbrush.n.01_1": {
+        "name": "toothbrush_118",
+        "category": "toothbrush.n.01"
+      },
+      "mouse.n.04_1": {
+        "name": "mouse_119",
+        "category": "mouse.n.04"
+      },
+      "door.n.01_1": {
+        "name": "door_99",
+        "category": "door.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bed_33": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "hanger_113": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "lipstick_114": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "lipstick_115": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "mouse_119": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "toothbrush_118": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "door_99": {
+                  "states": {
+                    "isOpen": true
+                  }
+                },
+                "room_floor_bedroom_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "backpack_112": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "bracelet_116": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "necklace_117": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "room_floor_corridor_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_bedroom_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_bedroom_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "backpack_112": {
+        "name": "backpack_112",
+        "category": "backpack.n.01"
+      },
+      "bed_33": {
+        "name": "bed_33",
+        "category": "bed.n.01"
+      },
+      "bracelet_116": {
+        "name": "bracelet_116",
+        "category": "jewelry.n.01"
+      },
+      "door_99": {
+        "name": "door_99",
+        "category": "door.n.01"
+      },
+      "hanger_113": {
+        "name": "hanger_113",
+        "category": "hanger.n.02"
+      },
+      "lipstick_114": {
+        "name": "lipstick_114",
+        "category": "makeup.n.01"
+      },
+      "lipstick_115": {
+        "name": "lipstick_115",
+        "category": "makeup.n.01"
+      },
+      "mouse_119": {
+        "name": "mouse_119",
+        "category": "mouse.n.04"
+      },
+      "necklace_117": {
+        "name": "necklace_117",
+        "category": "jewelry.n.01"
+      },
+      "room_floor_bedroom_0": {
+        "name": "room_floor_bedroom_0",
+        "category": "floor.n.01"
+      },
+      "room_floor_corridor_0": {
+        "name": "room_floor_corridor_0",
+        "category": "floor.n.01"
+      },
+      "toothbrush_118": {
+        "name": "toothbrush_118",
+        "category": "toothbrush.n.01"
+      }
+    }
+  }
+}

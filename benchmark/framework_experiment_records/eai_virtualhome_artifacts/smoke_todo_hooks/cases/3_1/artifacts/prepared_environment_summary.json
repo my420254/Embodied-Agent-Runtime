@@ -1,0 +1,324 @@
+{
+  "schema_version": "framework_trace_v3",
+  "process_name": "environment_preparation",
+  "payload_role": "output",
+  "instruction": "Relax on sofa",
+  "env_state": {
+    "robot_location": "bedroom_anchor",
+    "robot_holding": "空",
+    "robot_hands": {
+      "left": "空",
+      "right": "空"
+    },
+    "manipulator_mode": "dual_arm"
+  },
+  "entity_catalog": {
+    "count": 293,
+    "sample": [
+      "bathroom",
+      "bathroom_anchor",
+      "bathroom_cabinet",
+      "bathroom_counter",
+      "bathtub",
+      "bed",
+      "bedroom",
+      "bedroom_anchor",
+      "bench_227",
+      "bench_228",
+      "bookshelf_101",
+      "bookshelf_233",
+      "bookshelf_354",
+      "ceiling_16",
+      "ceiling_17",
+      "ceiling_18",
+      "ceiling_19",
+      "ceiling_20",
+      "ceiling_21",
+      "ceiling_216",
+      "ceiling_217",
+      "ceiling_218",
+      "ceiling_219",
+      "ceiling_220",
+      "ceiling_221",
+      "ceiling_337",
+      "ceiling_338",
+      "ceiling_339",
+      "ceiling_340",
+      "ceiling_341",
+      "ceiling_342",
+      "ceiling_343",
+      "ceiling_344",
+      "ceiling_345",
+      "ceiling_87",
+      "ceiling_88",
+      "ceiling_89",
+      "ceiling_90",
+      "ceiling_91",
+      "ceiling_92",
+      "ceiling_93",
+      "ceiling_94",
+      "ceiling_95",
+      "ceilinglamp_223",
+      "ceilinglamp_224",
+      "ceilinglamp_26",
+      "ceilinglamp_349",
+      "ceilinglamp_96",
+      "chair_103",
+      "chair_106"
+    ],
+    "truncated": true
+  },
+  "scene": {
+    "available": true,
+    "entity_count": 293,
+    "type_counts": {
+      "room": 4,
+      "receptacle": 121,
+      "unknown": 168
+    },
+    "rooms": {
+      "count": 4,
+      "sample": [
+        "bathroom",
+        "bedroom",
+        "dining_room",
+        "home_office"
+      ],
+      "truncated": false
+    },
+    "receptacles": {
+      "count": 121,
+      "sample": [
+        "bathroom_anchor",
+        "bathroom_cabinet",
+        "bathroom_counter",
+        "bathtub",
+        "bed",
+        "bedroom_anchor",
+        "bench_227",
+        "bench_228",
+        "bookshelf_101",
+        "bookshelf_233",
+        "bookshelf_354",
+        "chair_103",
+        "chair_106",
+        "chair_2013",
+        "chair_356",
+        "closetdrawer_118",
+        "closetdrawer_119",
+        "closetdrawer_120",
+        "closetdrawer_121",
+        "closetdrawer_122",
+        "closetdrawer_150",
+        "closetdrawer_160",
+        "closetdrawer_384",
+        "coffe_maker",
+        "colander",
+        "couch",
+        "cup_2002",
+        "cup_2012",
+        "cupboard",
+        "curtain_181"
+      ],
+      "truncated": true
+    },
+    "entities": {
+      "count": 293,
+      "sample": [
+        "bathroom",
+        "bathroom_anchor",
+        "bathroom_cabinet",
+        "bathroom_counter",
+        "bathtub",
+        "bed",
+        "bedroom",
+        "bedroom_anchor",
+        "bench_227",
+        "bench_228",
+        "bookshelf_101",
+        "bookshelf_233",
+        "bookshelf_354",
+        "ceiling_16",
+        "ceiling_17",
+        "ceiling_18",
+        "ceiling_19",
+        "ceiling_20",
+        "ceiling_21",
+        "ceiling_216",
+        "ceiling_217",
+        "ceiling_218",
+        "ceiling_219",
+        "ceiling_220",
+        "ceiling_221",
+        "ceiling_337",
+        "ceiling_338",
+        "ceiling_339",
+        "ceiling_340",
+        "ceiling_341",
+        "ceiling_342",
+        "ceiling_343",
+        "ceiling_344",
+        "ceiling_345",
+        "ceiling_87",
+        "ceiling_88",
+        "ceiling_89",
+        "ceiling_90",
+        "ceiling_91",
+        "ceiling_92"
+      ],
+      "truncated": true
+    },
+    "states_sample": {
+      "floor_2": {
+        "isDirty": true,
+        "isClean": false
+      },
+      "floor_3": {
+        "isClean": true,
+        "isDirty": false
+      },
+      "floor_4": {
+        "isDirty": true,
+        "isClean": false
+      },
+      "mop": {
+        "isDirty": true,
+        "isClean": false
+      },
+      "floor_5": {
+        "isDirty": true,
+        "isClean": false
+      },
+      "curtain_409": {
+        "isOpen": true,
+        "isClean": true,
+        "isDirty": false
+      },
+      "floor_6": {
+        "isClean": true,
+        "isDirty": false
+      },
+      "floor_7": {
+        "isDirty": true,
+        "isClean": false
+      },
+      "floor_8": {
+        "isClean": true,
+        "isDirty": false
+      },
+      "dustpan": {
+        "isClean": true,
+        "isDirty": false
+      },
+      "wall_9": {
+        "isClean": true,
+        "isDirty": false
+      },
+      "ceiling_21": {
+        "isDirty": true,
+        "isClean": false
+      },
+      "wall_10": {
+        "isDirty": true,
+        "isClean": false
+      },
+      "ceiling_19": {
+        "isClean": true,
+        "isDirty": false
+      },
+      "wall_11": {
+        "isClean": true,
+        "isDirty": false
+      },
+      "ceiling_18": {
+        "isClean": true,
+        "isDirty": false
+      },
+      "wall_12": {
+        "isClean": true,
+        "isDirty": false
+      },
+      "bathroom_cabinet": {
+        "isOpen": true,
+        "isClean": true,
+        "isDirty": false
+      },
+      "wall_13": {
+        "isDirty": true,
+        "isClean": false
+      },
+      "wall_14": {
+        "isDirty": true,
+        "isClean": false
+      }
+    },
+    "nesting": {
+      "available": true,
+      "contains_node_count": 56,
+      "max_depth": 6
+    },
+    "flat_schema": {
+      "available": true,
+      "entity_count": 293,
+      "standard_field_counts": {
+        "direct_parent": 293,
+        "direct_relation": 293,
+        "type": 293,
+        "states": 293,
+        "properties": 293,
+        "is_container": 293,
+        "full_path": 293
+      },
+      "relation_entity_count": 289,
+      "state_entity_count": 285,
+      "property_entity_count": 172,
+      "container_count": 121,
+      "full_path_entity_count": 289,
+      "parent_missing_count": 0,
+      "parent_missing_sample": [],
+      "parent_reference_missing_count": 0,
+      "parent_reference_missing_sample": []
+    }
+  },
+  "context": {
+    "dataset": "virtualhome",
+    "task_context": {
+      "dataset": "virtualhome",
+      "instruction": "Relax on sofa",
+      "identifier": "3_1",
+      "raw_source": "virtualhome_initial_env_cache",
+      "initial_environment_cache_path": "/data/zmy/OurAgent-he1/benchmark/datasets/extracted/eai/virtualhome/initial_envs/3_1.json",
+      "initial_environment_source": "virtualhome_original_init_graph",
+      "environment_source": "virtualhome_original_init_graph",
+      "pddl_objects": [
+        "character",
+        "couch",
+        "bedroom",
+        "home_office",
+        "television"
+      ],
+      "pddl_goal": [
+        [
+          "sitting",
+          "character"
+        ],
+        [
+          "ontop",
+          "character",
+          "couch"
+        ]
+      ],
+      "pddl_goal_clauses": [
+        "sitting character",
+        "ontop character couch"
+      ],
+      "pddl_goal_hints": [
+        "sitting character",
+        "ontop character couch"
+      ],
+      "external_goal_text": "sitting character; ontop character couch",
+      "goal_hand_targets": {},
+      "pddl_goal_count": 2
+    }
+  }
+}

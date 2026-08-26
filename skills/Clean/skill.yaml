@@ -1,0 +1,9 @@
+name: Clean
+description: 在指定的水源设施处清洗物品。
+prompt: prompt.md
+handler: skills.Clean.handler:CleanSkill
+execution_domain: 机械臂控制
+planner_item_param: target_item
+planner_location_param: water_source
+planner_effect_state_key: isClean
+planner_effect_state_value: true

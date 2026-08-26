@@ -1,0 +1,59 @@
+[
+  {
+    "identifier": "3_1",
+    "official_available": true,
+    "execution_success": true,
+    "task_success": true,
+    "task_success_rate": 1.0,
+    "llm_call_count": 4,
+    "sandbox_reject_count": 0,
+    "total_sandbox_checks": 0,
+    "total_planning_audit_failures": 0,
+    "planning_result": {
+      "execution_status": "completed",
+      "is_feasible": true,
+      "feedback": "规划合法，验证环节闭环。",
+      "repair_strategy": "retrac",
+      "todo_parse_error": "",
+      "evaluator_findings": []
+    },
+    "input_provenance": {
+      "instruction_source": "virtualhome_task_name",
+      "task_name_fallback": false,
+      "dataset": "virtualhome",
+      "llm_output_field_role": "official_eai_action_sequence_submission_not_raw_model_text",
+      "official_export_mapping": "final_evaluator_output_only",
+      "official_object_table_size": 287
+    },
+    "llm_output_summary": {
+      "length": 57,
+      "preview": "{\n  \"WALK\": [\"couch\", \"352\"],\n  \"SIT\": [\"couch\", \"352\"]\n}",
+      "truncated": false
+    },
+    "benchmark_trace_present": true,
+    "benchmark_trace_counters": {
+      "llm_call_count": 4,
+      "sandbox_reject_count": 0,
+      "total_sandbox_checks": 0,
+      "total_planning_audit_failures": 0,
+      "todo_contract_pass_count": 0,
+      "todo_contract_reject_count": 0
+    },
+    "benchmark_trace_sections": [
+      "case_input",
+      "case_input_full",
+      "llm_io",
+      "planning_input",
+      "planning_input_full",
+      "planning_output",
+      "planning_output_full",
+      "prepared_environment",
+      "prepared_environment_full",
+      "stage_config",
+      "understanding_input",
+      "understanding_input_full",
+      "understanding_output",
+      "understanding_output_full"
+    ]
+  }
+]

@@ -1,0 +1,12 @@
+name: Open
+description: 打开指定的闭合容器。
+prompt: prompt.md
+handler: skills.Open.handler:OpenSkill
+execution_domain: IoT 硬件交互
+planner_target_param: target_container
+planner_location_param: target_container
+planner_requires_empty_hand: true
+planner_state_key: isOpen
+planner_state_value: true
+planner_access_state: true
+planner_reversible_state: true

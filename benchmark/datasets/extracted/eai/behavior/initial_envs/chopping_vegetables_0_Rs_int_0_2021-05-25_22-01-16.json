@@ -1,0 +1,288 @@
+{
+  "dataset": "behavior",
+  "case_id": "chopping_vegetables_0_Rs_int_0_2021-05-25_22-01-16",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "chopping_vegetables",
+    "task_id": 0,
+    "scene_id": "Rs_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "chopping vegetables",
+    "task": "chopping_vegetables",
+    "task_id": 0,
+    "scene_id": "Rs_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 18,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "carving_knife_69",
+      "casserole_70",
+      "casserole_71",
+      "chestnut_65",
+      "chestnut_66",
+      "countertop_26",
+      "fridge_40",
+      "mushroom_63",
+      "mushroom_64",
+      "room_floor_kitchen_0",
+      "sink_42",
+      "tomato_61",
+      "tomato_62",
+      "top_cabinet_50",
+      "vidalia_onion_67",
+      "vidalia_onion_68"
+    ],
+    "name_mapping": {
+      "tomato.n.01_1": {
+        "name": "tomato_61",
+        "category": "tomato.n.01"
+      },
+      "tomato.n.01_2": {
+        "name": "tomato_62",
+        "category": "tomato.n.01"
+      },
+      "mushroom.n.05_1": {
+        "name": "mushroom_63",
+        "category": "mushroom.n.05"
+      },
+      "mushroom.n.05_2": {
+        "name": "mushroom_64",
+        "category": "mushroom.n.05"
+      },
+      "chestnut.n.03_1": {
+        "name": "chestnut_65",
+        "category": "chestnut.n.03"
+      },
+      "chestnut.n.03_2": {
+        "name": "chestnut_66",
+        "category": "chestnut.n.03"
+      },
+      "countertop.n.01_1": {
+        "name": "countertop_26",
+        "category": "countertop.n.01"
+      },
+      "vidalia_onion.n.01_1": {
+        "name": "vidalia_onion_67",
+        "category": "vidalia_onion.n.01"
+      },
+      "vidalia_onion.n.01_2": {
+        "name": "vidalia_onion_68",
+        "category": "vidalia_onion.n.01"
+      },
+      "electric_refrigerator.n.01_1": {
+        "name": "fridge_40",
+        "category": "electric_refrigerator.n.01"
+      },
+      "knife.n.01_1": {
+        "name": "carving_knife_69",
+        "category": "knife.n.01"
+      },
+      "dish.n.01_1": {
+        "name": "casserole_70",
+        "category": "dish.n.01"
+      },
+      "dish.n.01_2": {
+        "name": "casserole_71",
+        "category": "dish.n.01"
+      },
+      "cabinet.n.01_1": {
+        "name": "top_cabinet_50",
+        "category": "cabinet.n.01"
+      },
+      "sink.n.01_1": {
+        "name": "sink_42",
+        "category": "sink.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "countertop_26": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "carving_knife_69": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "chestnut_65": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "chestnut_66": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "mushroom_63": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "mushroom_64": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "tomato_61": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "tomato_62": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "fridge_40": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "vidalia_onion_67": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "vidalia_onion_68": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "sink_42": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "top_cabinet_50": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "casserole_70": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "casserole_71": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "carving_knife_69": {
+        "name": "carving_knife_69",
+        "category": "knife.n.01"
+      },
+      "casserole_70": {
+        "name": "casserole_70",
+        "category": "dish.n.01"
+      },
+      "casserole_71": {
+        "name": "casserole_71",
+        "category": "dish.n.01"
+      },
+      "chestnut_65": {
+        "name": "chestnut_65",
+        "category": "chestnut.n.03"
+      },
+      "chestnut_66": {
+        "name": "chestnut_66",
+        "category": "chestnut.n.03"
+      },
+      "countertop_26": {
+        "name": "countertop_26",
+        "category": "countertop.n.01"
+      },
+      "fridge_40": {
+        "name": "fridge_40",
+        "category": "electric_refrigerator.n.01"
+      },
+      "mushroom_63": {
+        "name": "mushroom_63",
+        "category": "mushroom.n.05"
+      },
+      "mushroom_64": {
+        "name": "mushroom_64",
+        "category": "mushroom.n.05"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "sink_42": {
+        "name": "sink_42",
+        "category": "sink.n.01"
+      },
+      "tomato_61": {
+        "name": "tomato_61",
+        "category": "tomato.n.01"
+      },
+      "tomato_62": {
+        "name": "tomato_62",
+        "category": "tomato.n.01"
+      },
+      "top_cabinet_50": {
+        "name": "top_cabinet_50",
+        "category": "cabinet.n.01"
+      },
+      "vidalia_onion_67": {
+        "name": "vidalia_onion_67",
+        "category": "vidalia_onion.n.01"
+      },
+      "vidalia_onion_68": {
+        "name": "vidalia_onion_68",
+        "category": "vidalia_onion.n.01"
+      }
+    }
+  }
+}

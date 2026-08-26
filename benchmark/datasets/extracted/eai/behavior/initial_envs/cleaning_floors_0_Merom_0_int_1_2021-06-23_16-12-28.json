@@ -1,0 +1,168 @@
+{
+  "dataset": "behavior",
+  "case_id": "cleaning_floors_0_Merom_0_int_1_2021-06-23_16-12-28",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "cleaning_floors",
+    "task_id": 0,
+    "scene_id": "Merom_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "cleaning floors",
+    "task": "cleaning_floors",
+    "task_id": 0,
+    "scene_id": "Merom_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 9,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "broom_0",
+      "door_65",
+      "dustpan_0",
+      "room_floor_bathroom_0",
+      "scrub_brush_0",
+      "sink_48",
+      "toothpaste_0"
+    ],
+    "name_mapping": {
+      "floor.n.01_1": {
+        "name": "room_floor_bathroom_0",
+        "category": "floor.n.01"
+      },
+      "broom.n.01_1": {
+        "name": "broom_0",
+        "category": "broom.n.01"
+      },
+      "dustpan.n.02_1": {
+        "name": "dustpan_0",
+        "category": "dustpan.n.02"
+      },
+      "cleansing_agent.n.01_1": {
+        "name": "toothpaste_0",
+        "category": "cleansing_agent.n.01"
+      },
+      "scrub_brush.n.01_1": {
+        "name": "scrub_brush_0",
+        "category": "scrub_brush.n.01"
+      },
+      "door.n.01_1": {
+        "name": "door_65",
+        "category": "door.n.01"
+      },
+      "sink.n.01_1": {
+        "name": "sink_48",
+        "category": "sink.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "door_65": {
+                  "states": {}
+                },
+                "room_floor_bathroom_0": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isDusty": true,
+                    "isStained": true
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "broom_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "dustpan_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "scrub_brush_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "toothpaste_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "sink_48": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_bathroom_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_bathroom_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "broom_0": {
+        "name": "broom_0",
+        "category": "broom.n.01"
+      },
+      "door_65": {
+        "name": "door_65",
+        "category": "door.n.01"
+      },
+      "dustpan_0": {
+        "name": "dustpan_0",
+        "category": "dustpan.n.02"
+      },
+      "room_floor_bathroom_0": {
+        "name": "room_floor_bathroom_0",
+        "category": "floor.n.01"
+      },
+      "scrub_brush_0": {
+        "name": "scrub_brush_0",
+        "category": "scrub_brush.n.01"
+      },
+      "sink_48": {
+        "name": "sink_48",
+        "category": "sink.n.01"
+      },
+      "toothpaste_0": {
+        "name": "toothpaste_0",
+        "category": "cleansing_agent.n.01"
+      }
+    }
+  }
+}

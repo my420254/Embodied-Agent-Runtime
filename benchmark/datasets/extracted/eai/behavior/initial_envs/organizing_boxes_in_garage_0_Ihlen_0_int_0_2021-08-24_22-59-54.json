@@ -1,0 +1,228 @@
+{
+  "dataset": "behavior",
+  "case_id": "organizing_boxes_in_garage_0_Ihlen_0_int_0_2021-08-24_22-59-54",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "organizing_boxes_in_garage",
+    "task_id": 0,
+    "scene_id": "Ihlen_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "organizing boxes in garage",
+    "task": "organizing_boxes_in_garage",
+    "task_id": 0,
+    "scene_id": "Ihlen_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 13,
+    "room_count": 1,
+    "entity_catalog": [
+      "ball_0",
+      "ball_1",
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_15",
+      "carton_0",
+      "carton_1",
+      "plate_0",
+      "plate_1",
+      "plate_2",
+      "room_floor_garage_0",
+      "saucepan_0",
+      "shelf_16"
+    ],
+    "name_mapping": {
+      "carton.n.02_1": {
+        "name": "carton_0",
+        "category": "carton.n.02"
+      },
+      "carton.n.02_2": {
+        "name": "carton_1",
+        "category": "carton.n.02"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_garage_0",
+        "category": "floor.n.01"
+      },
+      "ball.n.01_1": {
+        "name": "ball_0",
+        "category": "ball.n.01"
+      },
+      "ball.n.01_2": {
+        "name": "ball_1",
+        "category": "ball.n.01"
+      },
+      "plate.n.04_1": {
+        "name": "plate_0",
+        "category": "plate.n.04"
+      },
+      "plate.n.04_2": {
+        "name": "plate_1",
+        "category": "plate.n.04"
+      },
+      "plate.n.04_3": {
+        "name": "plate_2",
+        "category": "plate.n.04"
+      },
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_15",
+        "category": "cabinet.n.01"
+      },
+      "saucepan.n.01_1": {
+        "name": "saucepan_0",
+        "category": "saucepan.n.01"
+      },
+      "shelf.n.01_1": {
+        "name": "shelf_16",
+        "category": "shelf.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bottom_cabinet_15": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "room_floor_garage_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "ball_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "ball_1": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "carton_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "carton_1": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "shelf_16": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "plate_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "inside"
+                    },
+                    "plate_1": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "inside"
+                    },
+                    "plate_2": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "inside"
+                    },
+                    "saucepan_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_garage_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_garage_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "ball_0": {
+        "name": "ball_0",
+        "category": "ball.n.01"
+      },
+      "ball_1": {
+        "name": "ball_1",
+        "category": "ball.n.01"
+      },
+      "bottom_cabinet_15": {
+        "name": "bottom_cabinet_15",
+        "category": "cabinet.n.01"
+      },
+      "carton_0": {
+        "name": "carton_0",
+        "category": "carton.n.02"
+      },
+      "carton_1": {
+        "name": "carton_1",
+        "category": "carton.n.02"
+      },
+      "plate_0": {
+        "name": "plate_0",
+        "category": "plate.n.04"
+      },
+      "plate_1": {
+        "name": "plate_1",
+        "category": "plate.n.04"
+      },
+      "plate_2": {
+        "name": "plate_2",
+        "category": "plate.n.04"
+      },
+      "room_floor_garage_0": {
+        "name": "room_floor_garage_0",
+        "category": "floor.n.01"
+      },
+      "saucepan_0": {
+        "name": "saucepan_0",
+        "category": "saucepan.n.01"
+      },
+      "shelf_16": {
+        "name": "shelf_16",
+        "category": "shelf.n.01"
+      }
+    }
+  }
+}

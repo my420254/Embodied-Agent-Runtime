@@ -1,0 +1,157 @@
+{
+  "dataset": "behavior",
+  "case_id": "cleaning_table_after_clearing_0_Merom_1_int_0_2021-06-06_19-48-44",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "cleaning_table_after_clearing",
+    "task_id": 0,
+    "scene_id": "Merom_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "cleaning table after clearing",
+    "task": "cleaning_table_after_clearing",
+    "task_id": 0,
+    "scene_id": "Merom_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 8,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_49",
+      "breakfast_table_20",
+      "dishtowel_0",
+      "room_floor_dining_room_0",
+      "sink_53",
+      "soap_0"
+    ],
+    "name_mapping": {
+      "table.n.02_1": {
+        "name": "breakfast_table_20",
+        "category": "table.n.02"
+      },
+      "soap.n.01_1": {
+        "name": "soap_0",
+        "category": "soap.n.01"
+      },
+      "sink.n.01_1": {
+        "name": "sink_53",
+        "category": "sink.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_dining_room_0",
+        "category": "floor.n.01"
+      },
+      "dishtowel.n.01_1": {
+        "name": "dishtowel_0",
+        "category": "dishtowel.n.01"
+      },
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_49",
+        "category": "cabinet.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bottom_cabinet_49": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "dishtowel_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "soap_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "breakfast_table_20": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isStained": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "room_floor_dining_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "sink_53": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_dining_room_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_dining_room_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bottom_cabinet_49": {
+        "name": "bottom_cabinet_49",
+        "category": "cabinet.n.01"
+      },
+      "breakfast_table_20": {
+        "name": "breakfast_table_20",
+        "category": "table.n.02"
+      },
+      "dishtowel_0": {
+        "name": "dishtowel_0",
+        "category": "dishtowel.n.01"
+      },
+      "room_floor_dining_room_0": {
+        "name": "room_floor_dining_room_0",
+        "category": "floor.n.01"
+      },
+      "sink_53": {
+        "name": "sink_53",
+        "category": "sink.n.01"
+      },
+      "soap_0": {
+        "name": "soap_0",
+        "category": "soap.n.01"
+      }
+    }
+  }
+}

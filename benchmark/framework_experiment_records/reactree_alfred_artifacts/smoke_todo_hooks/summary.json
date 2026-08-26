@@ -1,0 +1,36 @@
+{
+  "count": 1,
+  "task_success_count": 1,
+  "task_success_rate": 1.0,
+  "goal_success_rate": 1.0,
+  "subgoal_success_rate": 1.0,
+  "official_available_count": 1,
+  "official_task_success_count": 1,
+  "official_task_success_rate": 1.0,
+  "official_goal_success_rate": 1.0,
+  "official_subgoal_success_rate": 1.0,
+  "execution_success_count": 1,
+  "evaluation_modes": {
+    "alfred_framework_official_ai2thor": 1
+  },
+  "reference_text_available_count": 1,
+  "reference_text_metrics": {
+    "count": 1,
+    "avg_reference_steps": 12.0,
+    "avg_generated_steps": 18.0,
+    "step_count_mae": 6.0,
+    "step_count_rmse": 6.0,
+    "step_count_exact_rate": 0.0,
+    "step_count_diff_1_rate": 0.0,
+    "step_count_diff_2_rate": 0.0,
+    "step_count_diff_ge_3_rate": 1.0,
+    "avg_step_rouge1_f1": 0.020322370865849128,
+    "step_match_rate_f1_gt_0_2": 0.0,
+    "step_match_rate_f1_gt_0_5": 0.0,
+    "reference_step_coverage_f1_gt_0_5": 0.0,
+    "overall_rouge1_f1": 0.22535211267605634,
+    "overall_rouge2_f1": 0.02836879432624113,
+    "overall_rougeL_f1": 0.17605633802816903
+  },
+  "_run_root": "/data/zmy/OurAgent-he1/benchmark/reactree/alfred/framework/results/reactree_alfred_seen_smoke_20260806_todo_hooks_fix2"
+}

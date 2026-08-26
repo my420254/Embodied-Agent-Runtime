@@ -1,0 +1,227 @@
+{
+  "dataset": "behavior",
+  "case_id": "storing_food_0_Rs_int_0_2021-10-25_21-27-36",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "storing_food",
+    "task_id": 0,
+    "scene_id": "Rs_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "storing food",
+    "task": "storing_food",
+    "task_id": 0,
+    "scene_id": "Rs_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 13,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_41",
+      "chip_0",
+      "chip_1",
+      "countertop_26",
+      "oatmeal_0",
+      "oatmeal_1",
+      "olive_oil_0",
+      "olive_oil_1",
+      "room_floor_kitchen_0",
+      "sugar_jar_0",
+      "sugar_jar_1"
+    ],
+    "name_mapping": {
+      "oatmeal.n.01_1": {
+        "name": "oatmeal_0",
+        "category": "oatmeal.n.01"
+      },
+      "oatmeal.n.01_2": {
+        "name": "oatmeal_1",
+        "category": "oatmeal.n.01"
+      },
+      "countertop.n.01_1": {
+        "name": "countertop_26",
+        "category": "countertop.n.01"
+      },
+      "chip.n.04_1": {
+        "name": "chip_0",
+        "category": "chip.n.04"
+      },
+      "chip.n.04_2": {
+        "name": "chip_1",
+        "category": "chip.n.04"
+      },
+      "vegetable_oil.n.01_1": {
+        "name": "olive_oil_0",
+        "category": "vegetable_oil.n.01"
+      },
+      "vegetable_oil.n.01_2": {
+        "name": "olive_oil_1",
+        "category": "vegetable_oil.n.01"
+      },
+      "sugar.n.01_1": {
+        "name": "sugar_jar_0",
+        "category": "sugar.n.01"
+      },
+      "sugar.n.01_2": {
+        "name": "sugar_jar_1",
+        "category": "sugar.n.01"
+      },
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_41",
+        "category": "cabinet.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bottom_cabinet_41": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "countertop_26": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "chip_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "chip_1": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "oatmeal_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "oatmeal_1": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "olive_oil_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "olive_oil_1": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "sugar_jar_0": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "sugar_jar_1": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bottom_cabinet_41": {
+        "name": "bottom_cabinet_41",
+        "category": "cabinet.n.01"
+      },
+      "chip_0": {
+        "name": "chip_0",
+        "category": "chip.n.04"
+      },
+      "chip_1": {
+        "name": "chip_1",
+        "category": "chip.n.04"
+      },
+      "countertop_26": {
+        "name": "countertop_26",
+        "category": "countertop.n.01"
+      },
+      "oatmeal_0": {
+        "name": "oatmeal_0",
+        "category": "oatmeal.n.01"
+      },
+      "oatmeal_1": {
+        "name": "oatmeal_1",
+        "category": "oatmeal.n.01"
+      },
+      "olive_oil_0": {
+        "name": "olive_oil_0",
+        "category": "vegetable_oil.n.01"
+      },
+      "olive_oil_1": {
+        "name": "olive_oil_1",
+        "category": "vegetable_oil.n.01"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "sugar_jar_0": {
+        "name": "sugar_jar_0",
+        "category": "sugar.n.01"
+      },
+      "sugar_jar_1": {
+        "name": "sugar_jar_1",
+        "category": "sugar.n.01"
+      }
+    }
+  }
+}

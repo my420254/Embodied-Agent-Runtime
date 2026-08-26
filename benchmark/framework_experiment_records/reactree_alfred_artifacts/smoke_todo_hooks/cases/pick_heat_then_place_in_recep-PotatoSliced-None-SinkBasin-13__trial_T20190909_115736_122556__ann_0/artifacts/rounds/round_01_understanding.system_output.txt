@@ -1,0 +1,60 @@
+{
+  "is_complete": true,
+  "is_cancel_all": false,
+  "clarification_question": "",
+  "entity_relevance": {
+    "directly_related": [
+      "Potato (1)",
+      "SinkBasin (1)"
+    ],
+    "indirectly_related": [
+      "Pan (1)",
+      "Pan (2)",
+      "StoveBurner (1)",
+      "StoveBurner (2)",
+      "StoveBurner (3)",
+      "StoveBurner (4)",
+      "StoveKnob (1)",
+      "StoveKnob (2)",
+      "StoveKnob (3)",
+      "StoveKnob (4)"
+    ],
+    "possibly_related": []
+  },
+  "skill_closure": [
+    "go to",
+    "pick up",
+    "put down",
+    "open",
+    "close",
+    "turn on",
+    "turn off",
+    "slice"
+  ],
+  "structured_task": {
+    "intent": "Place a cooked potato slice in the sink",
+    "required_item_names": {
+      "targets": {
+        "primary": [
+          "Potato (1)"
+        ],
+        "alternatives": []
+      },
+      "tools": {
+        "primary": [
+          "Pan (1)"
+        ],
+        "alternatives": [
+          "Pan (2)"
+        ]
+      },
+      "receptacles": {
+        "primary": [
+          "SinkBasin (1)"
+        ],
+        "alternatives": []
+      }
+    },
+    "quantity_constraints": []
+  }
+}

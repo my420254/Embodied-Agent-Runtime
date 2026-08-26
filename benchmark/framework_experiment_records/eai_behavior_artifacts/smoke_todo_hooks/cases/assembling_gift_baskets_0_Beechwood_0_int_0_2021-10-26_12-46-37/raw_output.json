@@ -1,0 +1,59 @@
+[
+  {
+    "identifier": "assembling_gift_baskets_0_Beechwood_0_int_0_2021-10-26_12-46-37",
+    "official_available": true,
+    "execution_success": true,
+    "task_success": true,
+    "task_success_rate": 1.0,
+    "llm_call_count": 4,
+    "sandbox_reject_count": 0,
+    "total_sandbox_checks": 0,
+    "total_planning_audit_failures": 0,
+    "planning_result": {
+      "execution_status": "completed",
+      "is_feasible": true,
+      "feedback": "规划合法，验证环节闭环。",
+      "repair_strategy": "retrac",
+      "todo_parse_error": "",
+      "evaluator_findings": []
+    },
+    "input_provenance": {
+      "instruction_source": "behavior_identifier_task_name",
+      "task_name_fallback": false,
+      "dataset": "behavior",
+      "llm_output_field_role": "official_eai_action_sequence_submission_not_raw_model_text",
+      "official_export_mapping": "final_evaluator_output_only",
+      "official_export_mapped_object_count": 23
+    },
+    "llm_output_summary": {
+      "length": 2102,
+      "preview": "[\n  {\n    \"action\": \"LEFT_GRASP\",\n    \"object\": \"candle_0\"\n  },\n  {\n    \"action\": \"LEFT_PLACE_INSIDE\",\n    \"object\": \"basket_0\"\n  },\n  {\n    \"action\": \"RIGHT_GRASP\",\n    \"object\": \"cheese_0\"\n  },\n  {\n    \"action\": \"RIGHT_PLACE_INSIDE\",\n    \"object\": \"basket_0\"\n  },\n  {\n    \"action\": \"LEFT_GRASP\",\n    \"object\": \"cookie_0\"\n  },\n  {\n    \"action\": \"LEFT_PLACE_INSIDE\",\n    \"object\": \"basket_0\"\n  },\n  {\n    \"action\": \"RIGHT_GRASP\",\n    \"object\": \"bow_0\"\n  },\n  {\n    \"action\": \"RIGHT_PLACE_INSIDE\",\n    \"object\": \"basket_0\"\n  },\n  {\n    \"action\": \"LEFT_GRASP\",\n    \"object\": \"candle_1\"\n  },\n  {\n    \"action\": \"LEFT_PLACE_INSIDE\",\n    \"object\": \"basket_1\"\n  },\n  {\n    \"action\": \"RIGHT_GRASP\",\n    \"object\": \"cheese_1\"\n  },\n  {\n    \"action\": \"RIGHT_PLACE_INSIDE\",\n    \"object\": \"basket_1\"\n  },\n  {\n    \"action\": \"LEFT_GRASP\",\n    \"object\": \"cookie_1\"\n  },\n  {\n    \"action\": \"LEFT_PLACE_INSIDE\",\n    \"object\": \"basket_1\"\n  },\n  {\n    \"action\": \"RIGHT_GRASP\",\n    \"object\": \"bow_1\"\n  },\n  {\n    \"action\": \"RIGHT_PLACE_INSIDE\",\n    \"object\": \"basket_1\"\n  },\n  {\n    \"action\": \"LEFT_GRASP\",\n    \"object\": \"candle_2\"\n  },\n  {\n    \"action\": \"LEFT_PLACE_INSIDE\",\n    \"object\": \"basket_2\"\n  },\n  {\n    \"action\":... <truncated 902 chars>",
+      "truncated": true
+    },
+    "benchmark_trace_present": true,
+    "benchmark_trace_counters": {
+      "llm_call_count": 4,
+      "sandbox_reject_count": 0,
+      "total_sandbox_checks": 0,
+      "total_planning_audit_failures": 0,
+      "todo_contract_pass_count": 0,
+      "todo_contract_reject_count": 0
+    },
+    "benchmark_trace_sections": [
+      "case_input",
+      "case_input_full",
+      "llm_io",
+      "planning_input",
+      "planning_input_full",
+      "planning_output",
+      "planning_output_full",
+      "prepared_environment",
+      "prepared_environment_full",
+      "stage_config",
+      "understanding_input",
+      "understanding_input_full",
+      "understanding_output",
+      "understanding_output_full"
+    ]
+  }
+]

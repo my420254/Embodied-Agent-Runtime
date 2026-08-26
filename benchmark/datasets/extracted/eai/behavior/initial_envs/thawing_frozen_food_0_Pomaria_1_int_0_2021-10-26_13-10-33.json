@@ -1,0 +1,203 @@
+{
+  "dataset": "behavior",
+  "case_id": "thawing_frozen_food_0_Pomaria_1_int_0_2021-10-26_13-10-33",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "thawing_frozen_food",
+    "task_id": 0,
+    "scene_id": "Pomaria_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "thawing frozen food",
+    "task": "thawing_frozen_food",
+    "task_id": 0,
+    "scene_id": "Pomaria_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 11,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "container_date_0",
+      "fish_0",
+      "fish_1",
+      "fish_2",
+      "fish_3",
+      "fridge_20",
+      "olive_0",
+      "room_floor_kitchen_0",
+      "sink_37"
+    ],
+    "name_mapping": {
+      "date.n.08_1": {
+        "name": "container_date_0",
+        "category": "date.n.08"
+      },
+      "electric_refrigerator.n.01_1": {
+        "name": "fridge_20",
+        "category": "electric_refrigerator.n.01"
+      },
+      "olive.n.04_1": {
+        "name": "olive_0",
+        "category": "olive.n.04"
+      },
+      "fish.n.02_1": {
+        "name": "fish_0",
+        "category": "fish.n.02"
+      },
+      "fish.n.02_2": {
+        "name": "fish_1",
+        "category": "fish.n.02"
+      },
+      "fish.n.02_3": {
+        "name": "fish_2",
+        "category": "fish.n.02"
+      },
+      "fish.n.02_4": {
+        "name": "fish_3",
+        "category": "fish.n.02"
+      },
+      "sink.n.01_1": {
+        "name": "sink_37",
+        "category": "sink.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "fridge_20": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "container_date_0": {
+                      "states": {
+                        "isFrozen": true
+                      },
+                      "direct_relation": "inside"
+                    },
+                    "fish_0": {
+                      "states": {
+                        "isFrozen": true
+                      },
+                      "direct_relation": "inside"
+                    },
+                    "fish_1": {
+                      "states": {
+                        "isFrozen": true
+                      },
+                      "direct_relation": "inside"
+                    },
+                    "fish_2": {
+                      "states": {
+                        "isFrozen": true
+                      },
+                      "direct_relation": "inside"
+                    },
+                    "fish_3": {
+                      "states": {
+                        "isFrozen": true
+                      },
+                      "direct_relation": "inside"
+                    },
+                    "olive_0": {
+                      "states": {
+                        "isFrozen": true
+                      },
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "sink_37": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "container_date_0": {
+        "name": "container_date_0",
+        "category": "date.n.08"
+      },
+      "fish_0": {
+        "name": "fish_0",
+        "category": "fish.n.02"
+      },
+      "fish_1": {
+        "name": "fish_1",
+        "category": "fish.n.02"
+      },
+      "fish_2": {
+        "name": "fish_2",
+        "category": "fish.n.02"
+      },
+      "fish_3": {
+        "name": "fish_3",
+        "category": "fish.n.02"
+      },
+      "fridge_20": {
+        "name": "fridge_20",
+        "category": "electric_refrigerator.n.01"
+      },
+      "olive_0": {
+        "name": "olive_0",
+        "category": "olive.n.04"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "sink_37": {
+        "name": "sink_37",
+        "category": "sink.n.01"
+      }
+    }
+  }
+}

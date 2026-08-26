@@ -1,0 +1,487 @@
+[
+  {
+    "case_id": "dining:allensville:episode-01",
+    "dataset": "delta",
+    "metadata": {
+      "domain": "dining",
+      "scene": "allensville",
+      "base_case_id": "dining:allensville",
+      "episode": 1,
+      "trial_kind": "paper_main_episode"
+    },
+    "source_path": "dining:allensville",
+    "error": "",
+    "input_summary": {
+      "available": true,
+      "keys": [
+        "add_act",
+        "add_obj",
+        "base_task_id",
+        "benchmark_module",
+        "dataset",
+        "delta_env_state",
+        "domain",
+        "environment_source",
+        "episode",
+        "instruction",
+        "scene_graph_cache_path",
+        "scene_name",
+        "task_id",
+        "task_source"
+      ],
+      "task_id": "dining:allensville:episode-01",
+      "dataset": "delta",
+      "instruction": "Set up the dining table for dinner, place the tableware/cutleries and glass on the dining table. Also bring something romantic to the dining table.",
+      "domain": "dining",
+      "scene_name": "allensville",
+      "environment_source": "delta_data_scene_graph_py",
+      "task_source": "delta_data_example_py"
+    },
+    "reference_summary": {
+      "available": false
+    },
+    "prediction": {
+      "evaluation_route": "val",
+      "val_success": true,
+      "val_available": true,
+      "symbolic_success": true,
+      "execution_status": "completed",
+      "is_feasible": true,
+      "feedback": "规划合法，验证环节闭环。",
+      "sandbox_failure_reason": "",
+      "sandbox_repair_hint": "",
+      "goal_success_rate": 1.0,
+      "evaluation_mode": "delta_val_pddl_plan",
+      "official_available": true,
+      "official_failure_reason": "",
+      "todo_parse_error": "",
+      "execution_success": true,
+      "task_success": true,
+      "task_success_rate": 1.0,
+      "official_actions_len": 25,
+      "evaluator_execution_calls_len": 25,
+      "pddl_validation": {
+        "available": true,
+        "success": true,
+        "validator": "/data/zmy/VAL/build/linux64/Release/install/bin/Validate",
+        "returncode": 0,
+        "stdout": "Type-checking goto\n...action passes type checking.\nType-checking pick\n...action passes type checking.\nType-checking drop\n...action passes type checking.\nType-checking place_on\n...action passes type checking.\nChecking plan: /data/zmy/OurAgent-he1/benchmark/delta/framework/results/delta_audit_smoke_20260806_todo_hooks/cases/dining__allensville__episode-01/plans/dining_allensville_episode-01.plan\nPlan to validate:\n\nPlan size: 41\n1:\n(goto robot living_room dining_room)\n \n2:\n(goto robot dining_room kitchen)\n \n3:\n(pick robot fork kitchen)\n \n4:\n(goto robot kitchen dining_room)\n \n5:\n(place_on robot fork dining_table dining_room)\n \n6:\n(goto robot dining_room kitchen)\n \n7:\n(pick robot knife kitchen)\n \n8:\n(goto robot kitchen dining_room)\n \n9:\n(place_on robot knife dining_table dining_room)\n \n10:\n(goto robot dining_room kitchen)\n \n11:\n(pick robot spoon kitchen)\n \n12:\n(goto robot kitchen dining_room)\n \n13:\n(place_on robot spoon dining_table dining_room)\n \n14:\n(goto robot dining_room kitchen)\n \n15:\n(goto robot kitchen corridor_3)\n \n16:\n(goto robot corridor_3 corridor_2)\n \n17:\n(goto robot corridor_2 bedroom_1)\n \n18:\n(pick robot glass bedroom_1)\n \n19:\n(goto robot bedroom_1 corridor_2)\n \n20:\n(goto robot corridor_2 corridor_3)\n \n21:\n(goto robot corridor_3 kitchen)\n \n22:\n(goto robot kitchen dining_room)\n \n23:\n(place_on robot glass dining_table dining_room)\n \n24:\n(goto robot dining_room kitchen)\n \n25:\n(goto robot kitchen corridor_3)\n \n26:\n(goto robot corridor_3 bedroom_2)\n \n27:\n(pick robot plate bedroom_2)\n \n28:\n(goto robot bedroom_2 corridor_3)\n \n29:\n(goto robot corridor_3 kitchen)\n \n30:\n(got... <truncated 5671 chars>",
+        "stderr": "",
+        "error": ""
+      },
+      "symbolic_official_alignment": {
+        "status": "aligned_success",
+        "symbolic_goal_success_rate": 1.0,
+        "task_success": true,
+        "official_available": true
+      },
+      "official_actions_summary": {
+        "count": 25,
+        "sample": [
+          {
+            "step": 1,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "living_room",
+            "room_2": "dining_room"
+          },
+          {
+            "step": 2,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "dining_room",
+            "room_2": "kitchen"
+          },
+          {
+            "step": 3,
+            "action": "pick",
+            "agent": "robot",
+            "item": "fork",
+            "room": "kitchen"
+          },
+          {
+            "step": 4,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "kitchen",
+            "room_2": "dining_room"
+          },
+          {
+            "step": 5,
+            "action": "place_on",
+            "agent": "robot",
+            "item_1": "fork",
+            "item_2": "dining_table",
+            "room": "dining_room"
+          },
+          {
+            "step": 6,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "dining_room",
+            "room_2": "kitchen"
+          },
+          {
+            "step": 7,
+            "action": "pick",
+            "agent": "robot",
+            "item": "knife",
+            "room": "kitchen"
+          },
+          {
+            "step": 8,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "kitchen",
+            "room_2": "dining_room"
+          },
+          {
+            "step": 9,
+            "action": "place_on",
+            "agent": "robot",
+            "item_1": "knife",
+            "item_2": "dining_table",
+            "room": "dining_room"
+          },
+          {
+            "step": 10,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "dining_room",
+            "room_2": "kitchen"
+          },
+          {
+            "step": 11,
+            "action": "pick",
+            "agent": "robot",
+            "item": "spoon",
+            "room": "kitchen"
+          },
+          {
+            "step": 12,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "kitchen",
+            "room_2": "dining_room"
+          },
+          {
+            "step": 13,
+            "action": "place_on",
+            "agent": "robot",
+            "item_1": "spoon",
+            "item_2": "dining_table",
+            "room": "dining_room"
+          },
+          {
+            "step": 14,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "dining_room",
+            "room_2": "bedroom_1"
+          },
+          {
+            "step": 15,
+            "action": "pick",
+            "agent": "robot",
+            "item": "glass",
+            "room": "bedroom_1"
+          },
+          {
+            "step": 16,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "bedroom_1",
+            "room_2": "dining_room"
+          },
+          {
+            "step": 17,
+            "action": "place_on",
+            "agent": "robot",
+            "item_1": "glass",
+            "item_2": "dining_table",
+            "room": "dining_room"
+          },
+          {
+            "step": 18,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "dining_room",
+            "room_2": "bedroom_2"
+          },
+          {
+            "step": 19,
+            "action": "pick",
+            "agent": "robot",
+            "item": "plate",
+            "room": "bedroom_2"
+          },
+          {
+            "step": 20,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "bedroom_2",
+            "room_2": "dining_room"
+          }
+        ],
+        "truncated": true
+      },
+      "evaluator_execution_calls_summary": {
+        "count": 25,
+        "sample": [
+          {
+            "step": 1,
+            "execution": {
+              "skill": "goto",
+              "parameters": {
+                "from": "living_room",
+                "to": "dining_room"
+              }
+            }
+          },
+          {
+            "step": 2,
+            "execution": {
+              "skill": "goto",
+              "parameters": {
+                "from": "dining_room",
+                "to": "kitchen"
+              }
+            }
+          },
+          {
+            "step": 3,
+            "execution": {
+              "skill": "pick",
+              "parameters": {
+                "item": "fork",
+                "room": "kitchen"
+              }
+            }
+          },
+          {
+            "step": 4,
+            "execution": {
+              "skill": "goto",
+              "parameters": {
+                "from": "kitchen",
+                "to": "dining_room"
+              }
+            }
+          },
+          {
+            "step": 5,
+            "execution": {
+              "skill": "place_on",
+              "parameters": {
+                "item": "fork",
+                "surface": "dining_table",
+                "room": "dining_room"
+              }
+            }
+          },
+          {
+            "step": 6,
+            "execution": {
+              "skill": "goto",
+              "parameters": {
+                "from": "dining_room",
+                "to": "kitchen"
+              }
+            }
+          },
+          {
+            "step": 7,
+            "execution": {
+              "skill": "pick",
+              "parameters": {
+                "item": "knife",
+                "room": "kitchen"
+              }
+            }
+          },
+          {
+            "step": 8,
+            "execution": {
+              "skill": "goto",
+              "parameters": {
+                "from": "kitchen",
+                "to": "dining_room"
+              }
+            }
+          },
+          {
+            "step": 9,
+            "execution": {
+              "skill": "place_on",
+              "parameters": {
+                "item": "knife",
+                "surface": "dining_table",
+                "room": "dining_room"
+              }
+            }
+          },
+          {
+            "step": 10,
+            "execution": {
+              "skill": "goto",
+              "parameters": {
+                "from": "dining_room",
+                "to": "kitchen"
+              }
+            }
+          },
+          {
+            "step": 11,
+            "execution": {
+              "skill": "pick",
+              "parameters": {
+                "item": "spoon",
+                "room": "kitchen"
+              }
+            }
+          },
+          {
+            "step": 12,
+            "execution": {
+              "skill": "goto",
+              "parameters": {
+                "from": "kitchen",
+                "to": "dining_room"
+              }
+            }
+          },
+          {
+            "step": 13,
+            "execution": {
+              "skill": "place_on",
+              "parameters": {
+                "item": "spoon",
+                "surface": "dining_table",
+                "room": "dining_room"
+              }
+            }
+          },
+          {
+            "step": 14,
+            "execution": {
+              "skill": "goto",
+              "parameters": {
+                "from": "dining_room",
+                "to": "bedroom_1"
+              }
+            }
+          },
+          {
+            "step": 15,
+            "execution": {
+              "skill": "pick",
+              "parameters": {
+                "item": "glass",
+                "room": "bedroom_1"
+              }
+            }
+          },
+          {
+            "step": 16,
+            "execution": {
+              "skill": "goto",
+              "parameters": {
+                "from": "bedroom_1",
+                "to": "dining_room"
+              }
+            }
+          },
+          {
+            "step": 17,
+            "execution": {
+              "skill": "place_on",
+              "parameters": {
+                "item": "glass",
+                "surface": "dining_table",
+                "room": "dining_room"
+              }
+            }
+          },
+          {
+            "step": 18,
+            "execution": {
+              "skill": "goto",
+              "parameters": {
+                "from": "dining_room",
+                "to": "bedroom_2"
+              }
+            }
+          },
+          {
+            "step": 19,
+            "execution": {
+              "skill": "pick",
+              "parameters": {
+                "item": "plate",
+                "room": "bedroom_2"
+              }
+            }
+          },
+          {
+            "step": 20,
+            "execution": {
+              "skill": "goto",
+              "parameters": {
+                "from": "bedroom_2",
+                "to": "dining_room"
+              }
+            }
+          }
+        ],
+        "truncated": true
+      },
+      "satisfied_goals_summary": {
+        "count": 6,
+        "sample": [
+          "(item_on plate dining_table)",
+          "(item_on fork dining_table)",
+          "(item_on knife dining_table)",
+          "(item_on spoon dining_table)",
+          "(item_on glass dining_table)",
+          "(item_on flower dining_table)"
+        ],
+        "truncated": false
+      },
+      "unsatisfied_goals_summary": {
+        "count": 0,
+        "sample": [],
+        "truncated": false
+      },
+      "todo_llm_output_summary": {
+        "length": 2782,
+        "preview": "[\n  {\n    \"action\": \"goto\",\n    \"agent\": \"robot\",\n    \"room_1\": \"living_room\",\n    \"room_2\": \"dining_room\"\n  },\n  {\n    \"action\": \"goto\",\n    \"agent\": \"robot\",\n    \"room_1\": \"dining_room\",\n    \"room_2\": \"kitchen\"\n  },\n  {\n    \"action\": \"pick\",\n    \"agent\": \"robot\",\n    \"item\": \"fork\",\n    \"room\": \"kitchen\"\n  },\n  {\n    \"action\": \"goto\",\n    \"agent\": \"robot\",\n    \"room_1\": \"kitchen\",\n    \"room_2\": \"dining_room\"\n  },\n  {\n    \"action\": \"place_on\",\n    \"agent\": \"robot\",\n    \"item_1\": \"fork\",\n    \"item_2\": \"dining_table\",\n    \"room\": \"dining_room\"\n  },\n  {\n    \"action\": \"goto\",\n    \"agent\": \"robot\",\n    \"room_1\": \"dining_room\",\n    \"room_2\": \"kitchen\"\n  },\n  {\n    \"action\": \"pick\",\n    \"agent\": \"robot\",\n    \"item\": \"knife\",\n    \"room\": \"kitchen\"\n  },\n  {\n    \"action\": \"goto\",\n    \"agent\": \"robot\",\n    \"room_1\": \"kitchen\",\n    \"room_2\": \"dining_room\"\n  },\n  {\n    \"action\": \"place_on\",\n    \"agent\": \"robot\",\n    \"item_1\": \"knife\",\n    \"item_2\": \"dining_table\",\n    \"room\": \"dining_room\"\n  },\n  {\n    \"action\": \"goto\",\n    \"agent\": \"robot\",\n    \"room_1\": \"dining_room\",\n    \"room_2\": \"kitchen\"\n  },\n  {\n    \"action\": \"pick\",\n    \"agent\": \"robot\",\n    \"item\": \"spoon\",\n    \"room\": \"kitchen\"\n  },\n... <truncated 1582 chars>",
+        "truncated": true
+      },
+      "benchmark_trace_present": true,
+      "benchmark_trace_counters": {
+        "llm_call_count": 4,
+        "sandbox_reject_count": 0,
+        "total_sandbox_checks": 0,
+        "total_planning_audit_failures": 0,
+        "todo_contract_pass_count": 0,
+        "todo_contract_reject_count": 0
+      },
+      "benchmark_trace_sections": [
+        "case_input",
+        "case_input_full",
+        "llm_io",
+        "planning_input",
+        "planning_input_full",
+        "planning_output",
+        "planning_output_full",
+        "prepared_environment",
+        "prepared_environment_full",
+        "stage_config",
+        "understanding_input",
+        "understanding_input_full",
+        "understanding_output",
+        "understanding_output_full"
+      ]
+    }
+  }
+]

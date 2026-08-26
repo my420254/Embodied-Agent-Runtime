@@ -1,0 +1,120 @@
+{
+  "dataset": "behavior",
+  "case_id": "locking_every_door_0_Merom_1_int_0_2021-10-20_05-53-14",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "locking_every_door",
+    "task_id": 0,
+    "scene_id": "Merom_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "locking every door",
+    "task": "locking_every_door",
+    "task_id": 0,
+    "scene_id": "Merom_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 6,
+    "room_count": 1,
+    "entity_catalog": [
+      "bed_7",
+      "behavior_room",
+      "behavior_room_anchor",
+      "door_85",
+      "door_89",
+      "room_floor_bedroom_0"
+    ],
+    "name_mapping": {
+      "door.n.01_1": {
+        "name": "door_85",
+        "category": "door.n.01"
+      },
+      "door.n.01_2": {
+        "name": "door_89",
+        "category": "door.n.01"
+      },
+      "bed.n.01_1": {
+        "name": "bed_7",
+        "category": "bed.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_bedroom_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bed_7": {
+                  "states": {}
+                },
+                "door_85": {
+                  "states": {
+                    "isOpen": true
+                  }
+                },
+                "door_89": {
+                  "states": {
+                    "isOpen": true
+                  }
+                },
+                "room_floor_bedroom_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_bedroom_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_bedroom_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bed_7": {
+        "name": "bed_7",
+        "category": "bed.n.01"
+      },
+      "door_85": {
+        "name": "door_85",
+        "category": "door.n.01"
+      },
+      "door_89": {
+        "name": "door_89",
+        "category": "door.n.01"
+      },
+      "room_floor_bedroom_0": {
+        "name": "room_floor_bedroom_0",
+        "category": "floor.n.01"
+      }
+    }
+  }
+}

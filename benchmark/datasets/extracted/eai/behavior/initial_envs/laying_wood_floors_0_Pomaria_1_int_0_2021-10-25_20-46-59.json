@@ -1,0 +1,173 @@
+{
+  "dataset": "behavior",
+  "case_id": "laying_wood_floors_0_Pomaria_1_int_0_2021-10-25_20-46-59",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "laying_wood_floors",
+    "task_id": 0,
+    "scene_id": "Pomaria_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "laying wood floors",
+    "task": "laying_wood_floors",
+    "task_id": 0,
+    "scene_id": "Pomaria_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 10,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "hammer_82",
+      "plywood_78",
+      "plywood_79",
+      "plywood_80",
+      "plywood_81",
+      "room_floor_kitchen_0",
+      "room_floor_living_room_0",
+      "saw_83"
+    ],
+    "name_mapping": {
+      "plywood.n.01_1": {
+        "name": "plywood_78",
+        "category": "plywood.n.01"
+      },
+      "plywood.n.01_2": {
+        "name": "plywood_79",
+        "category": "plywood.n.01"
+      },
+      "plywood.n.01_3": {
+        "name": "plywood_80",
+        "category": "plywood.n.01"
+      },
+      "plywood.n.01_4": {
+        "name": "plywood_81",
+        "category": "plywood.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "floor.n.01_2": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "hammer.n.02_1": {
+        "name": "hammer_82",
+        "category": "hammer.n.02"
+      },
+      "saw.n.02_1": {
+        "name": "saw_83",
+        "category": "saw.n.02"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "hammer_82": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "plywood_78": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "plywood_79": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "plywood_80": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "plywood_81": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "saw_83": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "room_floor_living_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "hammer_82": {
+        "name": "hammer_82",
+        "category": "hammer.n.02"
+      },
+      "plywood_78": {
+        "name": "plywood_78",
+        "category": "plywood.n.01"
+      },
+      "plywood_79": {
+        "name": "plywood_79",
+        "category": "plywood.n.01"
+      },
+      "plywood_80": {
+        "name": "plywood_80",
+        "category": "plywood.n.01"
+      },
+      "plywood_81": {
+        "name": "plywood_81",
+        "category": "plywood.n.01"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "room_floor_living_room_0": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "saw_83": {
+        "name": "saw_83",
+        "category": "saw.n.02"
+      }
+    }
+  }
+}

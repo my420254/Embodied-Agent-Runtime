@@ -1,0 +1,205 @@
+{
+  "dataset": "behavior",
+  "case_id": "organizing_school_stuff_0_Wainscott_1_int_0_2021-08-24_22-56-24",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "organizing_school_stuff",
+    "task_id": 0,
+    "scene_id": "Wainscott_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "organizing school stuff",
+    "task": "organizing_school_stuff",
+    "task_id": 0,
+    "scene_id": "Wainscott_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 12,
+    "room_count": 1,
+    "entity_catalog": [
+      "backpack_108",
+      "bed_58",
+      "behavior_room",
+      "behavior_room_anchor",
+      "breakfast_table_21",
+      "calculator_105",
+      "folder_107",
+      "hardback_106",
+      "highlighter_102",
+      "pen_104",
+      "pencil_103",
+      "room_floor_bedroom_0"
+    ],
+    "name_mapping": {
+      "highlighter.n.02_1": {
+        "name": "highlighter_102",
+        "category": "highlighter.n.02"
+      },
+      "bed.n.01_1": {
+        "name": "bed_58",
+        "category": "bed.n.01"
+      },
+      "pencil.n.01_1": {
+        "name": "pencil_103",
+        "category": "pencil.n.01"
+      },
+      "pen.n.01_1": {
+        "name": "pen_104",
+        "category": "pen.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_bedroom_0",
+        "category": "floor.n.01"
+      },
+      "calculator.n.02_1": {
+        "name": "calculator_105",
+        "category": "calculator.n.02"
+      },
+      "book.n.02_1": {
+        "name": "hardback_106",
+        "category": "book.n.02"
+      },
+      "folder.n.02_1": {
+        "name": "folder_107",
+        "category": "folder.n.02"
+      },
+      "table.n.02_1": {
+        "name": "breakfast_table_21",
+        "category": "table.n.02"
+      },
+      "backpack.n.01_1": {
+        "name": "backpack_108",
+        "category": "backpack.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bed_58": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "folder_107": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "hardback_106": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "highlighter_102": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "pencil_103": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "breakfast_table_21": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "room_floor_bedroom_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "backpack_108": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "calculator_105": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "pen_104": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_bedroom_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_bedroom_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "backpack_108": {
+        "name": "backpack_108",
+        "category": "backpack.n.01"
+      },
+      "bed_58": {
+        "name": "bed_58",
+        "category": "bed.n.01"
+      },
+      "breakfast_table_21": {
+        "name": "breakfast_table_21",
+        "category": "table.n.02"
+      },
+      "calculator_105": {
+        "name": "calculator_105",
+        "category": "calculator.n.02"
+      },
+      "folder_107": {
+        "name": "folder_107",
+        "category": "folder.n.02"
+      },
+      "hardback_106": {
+        "name": "hardback_106",
+        "category": "book.n.02"
+      },
+      "highlighter_102": {
+        "name": "highlighter_102",
+        "category": "highlighter.n.02"
+      },
+      "pen_104": {
+        "name": "pen_104",
+        "category": "pen.n.01"
+      },
+      "pencil_103": {
+        "name": "pencil_103",
+        "category": "pencil.n.01"
+      },
+      "room_floor_bedroom_0": {
+        "name": "room_floor_bedroom_0",
+        "category": "floor.n.01"
+      }
+    }
+  }
+}

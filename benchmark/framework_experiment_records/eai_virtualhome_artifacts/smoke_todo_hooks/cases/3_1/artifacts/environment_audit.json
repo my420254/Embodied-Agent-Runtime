@@ -1,0 +1,200 @@
+{
+  "schema_version": "framework_trace_v3",
+  "process_name": "environment_audit",
+  "payload_role": "summary",
+  "prepared_scene": {
+    "entity_count": 293,
+    "type_counts": {
+      "room": 4,
+      "receptacle": 121,
+      "unknown": 168
+    },
+    "nesting": {
+      "available": true,
+      "contains_node_count": 56,
+      "max_depth": 6
+    },
+    "flat_schema": {
+      "available": true,
+      "entity_count": 293,
+      "standard_field_counts": {
+        "direct_parent": 293,
+        "direct_relation": 293,
+        "type": 293,
+        "states": 293,
+        "properties": 293,
+        "is_container": 293,
+        "full_path": 293
+      },
+      "relation_entity_count": 289,
+      "state_entity_count": 285,
+      "property_entity_count": 172,
+      "container_count": 121,
+      "full_path_entity_count": 289,
+      "parent_missing_count": 0,
+      "parent_missing_sample": [],
+      "parent_reference_missing_count": 0,
+      "parent_reference_missing_sample": []
+    }
+  },
+  "planning_input_environment": {
+    "source": {
+      "builder": "build_sandbox_environment",
+      "benchmark": "benchmark.eai.virtualhome"
+    },
+    "summary": {
+      "available": true,
+      "entity_count": 8,
+      "type_counts": {
+        "receptacle": 4,
+        "room": 4
+      },
+      "entities": {
+        "count": 8,
+        "sample": [
+          "bathroom",
+          "bedroom",
+          "bedroom_anchor",
+          "couch",
+          "dining_room",
+          "home_office",
+          "home_office_anchor",
+          "mat_401"
+        ],
+        "truncated": false
+      },
+      "states_sample": {
+        "couch": {
+          "isClean": true,
+          "isDirty": false
+        },
+        "mat_401": {
+          "isDirty": true,
+          "isClean": false
+        }
+      },
+      "schema": {
+        "available": true,
+        "entity_count": 8,
+        "standard_field_counts": {
+          "direct_parent": 8,
+          "direct_relation": 8,
+          "type": 8,
+          "states": 8,
+          "properties": 8,
+          "is_container": 8,
+          "full_path": 8
+        },
+        "relation_entity_count": 4,
+        "state_entity_count": 2,
+        "property_entity_count": 2,
+        "container_count": 4,
+        "full_path_entity_count": 4,
+        "parent_missing_count": 0,
+        "parent_missing_sample": [],
+        "parent_reference_missing_count": 0,
+        "parent_reference_missing_sample": []
+      }
+    },
+    "schema": {
+      "available": true,
+      "entity_count": 8,
+      "standard_field_counts": {
+        "direct_parent": 8,
+        "direct_relation": 8,
+        "type": 8,
+        "states": 8,
+        "properties": 8,
+        "is_container": 8,
+        "full_path": 8
+      },
+      "relation_entity_count": 4,
+      "state_entity_count": 2,
+      "property_entity_count": 2,
+      "container_count": 4,
+      "full_path_entity_count": 4,
+      "parent_missing_count": 0,
+      "parent_missing_sample": [],
+      "parent_reference_missing_count": 0,
+      "parent_reference_missing_sample": []
+    }
+  },
+  "planning_output_environment": {
+    "summary": {
+      "available": true,
+      "entity_count": 8,
+      "type_counts": {
+        "receptacle": 4,
+        "room": 4
+      },
+      "entities": {
+        "count": 8,
+        "sample": [
+          "bathroom",
+          "bedroom",
+          "bedroom_anchor",
+          "couch",
+          "dining_room",
+          "home_office",
+          "home_office_anchor",
+          "mat_401"
+        ],
+        "truncated": false
+      },
+      "states_sample": {
+        "couch": {
+          "isClean": true,
+          "isDirty": false
+        },
+        "mat_401": {
+          "isDirty": true,
+          "isClean": false
+        }
+      },
+      "schema": {
+        "available": true,
+        "entity_count": 8,
+        "standard_field_counts": {
+          "direct_parent": 8,
+          "direct_relation": 8,
+          "type": 8,
+          "states": 8,
+          "properties": 8,
+          "is_container": 8,
+          "full_path": 8
+        },
+        "relation_entity_count": 4,
+        "state_entity_count": 2,
+        "property_entity_count": 2,
+        "container_count": 4,
+        "full_path_entity_count": 4,
+        "parent_missing_count": 0,
+        "parent_missing_sample": [],
+        "parent_reference_missing_count": 0,
+        "parent_reference_missing_sample": []
+      }
+    },
+    "schema": {
+      "available": true,
+      "entity_count": 8,
+      "standard_field_counts": {
+        "direct_parent": 8,
+        "direct_relation": 8,
+        "type": 8,
+        "states": 8,
+        "properties": 8,
+        "is_container": 8,
+        "full_path": 8
+      },
+      "relation_entity_count": 4,
+      "state_entity_count": 2,
+      "property_entity_count": 2,
+      "container_count": 4,
+      "full_path_entity_count": 4,
+      "parent_missing_count": 0,
+      "parent_missing_sample": [],
+      "parent_reference_missing_count": 0,
+      "parent_reference_missing_sample": []
+    }
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "dataset": "behavior",
+  "case_id": "putting_leftovers_away_0_Ihlen_1_int_0_2021-06-08_13-42-57",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "putting_leftovers_away",
+    "task_id": 0,
+    "scene_id": "Ihlen_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "putting leftovers away",
+    "task": "putting_leftovers_away",
+    "task_id": 0,
+    "scene_id": "Ihlen_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 13,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "countertop_79",
+      "fridge_61",
+      "mayonnaise_0",
+      "pasta_0",
+      "pasta_1",
+      "pasta_2",
+      "pasta_3",
+      "room_floor_kitchen_0",
+      "spaghetti_sauce_0",
+      "spaghetti_sauce_1",
+      "spaghetti_sauce_2"
+    ],
+    "name_mapping": {
+      "pasta.n.02_1": {
+        "name": "pasta_0",
+        "category": "pasta.n.02"
+      },
+      "pasta.n.02_2": {
+        "name": "pasta_1",
+        "category": "pasta.n.02"
+      },
+      "pasta.n.02_3": {
+        "name": "pasta_2",
+        "category": "pasta.n.02"
+      },
+      "pasta.n.02_4": {
+        "name": "pasta_3",
+        "category": "pasta.n.02"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "sauce.n.01_1": {
+        "name": "spaghetti_sauce_0",
+        "category": "sauce.n.01"
+      },
+      "sauce.n.01_2": {
+        "name": "mayonnaise_0",
+        "category": "sauce.n.01"
+      },
+      "sauce.n.01_3": {
+        "name": "spaghetti_sauce_1",
+        "category": "sauce.n.01"
+      },
+      "sauce.n.01_4": {
+        "name": "spaghetti_sauce_2",
+        "category": "sauce.n.01"
+      },
+      "electric_refrigerator.n.01_1": {
+        "name": "fridge_61",
+        "category": "electric_refrigerator.n.01"
+      },
+      "countertop.n.01_1": {
+        "name": "countertop_79",
+        "category": "countertop.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "countertop_79": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "mayonnaise_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "pasta_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "pasta_1": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "pasta_2": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "pasta_3": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "spaghetti_sauce_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "spaghetti_sauce_1": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "spaghetti_sauce_2": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "fridge_61": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "countertop_79": {
+        "name": "countertop_79",
+        "category": "countertop.n.01"
+      },
+      "fridge_61": {
+        "name": "fridge_61",
+        "category": "electric_refrigerator.n.01"
+      },
+      "mayonnaise_0": {
+        "name": "mayonnaise_0",
+        "category": "sauce.n.01"
+      },
+      "pasta_0": {
+        "name": "pasta_0",
+        "category": "pasta.n.02"
+      },
+      "pasta_1": {
+        "name": "pasta_1",
+        "category": "pasta.n.02"
+      },
+      "pasta_2": {
+        "name": "pasta_2",
+        "category": "pasta.n.02"
+      },
+      "pasta_3": {
+        "name": "pasta_3",
+        "category": "pasta.n.02"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "spaghetti_sauce_0": {
+        "name": "spaghetti_sauce_0",
+        "category": "sauce.n.01"
+      },
+      "spaghetti_sauce_1": {
+        "name": "spaghetti_sauce_1",
+        "category": "sauce.n.01"
+      },
+      "spaghetti_sauce_2": {
+        "name": "spaghetti_sauce_2",
+        "category": "sauce.n.01"
+      }
+    }
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "dataset": "behavior",
+  "case_id": "cleaning_shoes_0_Pomaria_2_int_0_2021-09-11_13-59-22",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "cleaning_shoes",
+    "task_id": 0,
+    "scene_id": "Pomaria_2_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "cleaning shoes",
+    "task": "cleaning_shoes",
+    "task_id": 0,
+    "scene_id": "Pomaria_2_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 12,
+    "room_count": 1,
+    "entity_catalog": [
+      "bed_11",
+      "behavior_room",
+      "behavior_room_anchor",
+      "paper_towel_38",
+      "rag_37",
+      "room_floor_bedroom_0",
+      "sandal_39",
+      "sandal_40",
+      "sandal_41",
+      "sink_18",
+      "soap_36",
+      "walker_42"
+    ],
+    "name_mapping": {
+      "soap.n.01_1": {
+        "name": "soap_36",
+        "category": "soap.n.01"
+      },
+      "bed.n.01_1": {
+        "name": "bed_11",
+        "category": "bed.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_bedroom_0",
+        "category": "floor.n.01"
+      },
+      "rag.n.01_1": {
+        "name": "rag_37",
+        "category": "rag.n.01"
+      },
+      "towel.n.01_1": {
+        "name": "paper_towel_38",
+        "category": "towel.n.01"
+      },
+      "shoe.n.01_1": {
+        "name": "sandal_39",
+        "category": "shoe.n.01"
+      },
+      "shoe.n.01_2": {
+        "name": "sandal_40",
+        "category": "shoe.n.01"
+      },
+      "shoe.n.01_3": {
+        "name": "sandal_41",
+        "category": "shoe.n.01"
+      },
+      "shoe.n.01_4": {
+        "name": "walker_42",
+        "category": "shoe.n.01"
+      },
+      "sink.n.01_1": {
+        "name": "sink_18",
+        "category": "sink.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bed_11": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "rag_37": {
+                      "states": {
+                        "isSoaked": false
+                      },
+                      "direct_relation": "ontop"
+                    },
+                    "sandal_39": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "direct_relation": "ontop"
+                    },
+                    "sandal_40": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "direct_relation": "ontop"
+                    },
+                    "sandal_41": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isDusty": true
+                      },
+                      "direct_relation": "ontop"
+                    },
+                    "soap_36": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "walker_42": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isDusty": true
+                      },
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "room_floor_bedroom_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "paper_towel_38": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "sink_18": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_bedroom_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_bedroom_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bed_11": {
+        "name": "bed_11",
+        "category": "bed.n.01"
+      },
+      "paper_towel_38": {
+        "name": "paper_towel_38",
+        "category": "towel.n.01"
+      },
+      "rag_37": {
+        "name": "rag_37",
+        "category": "rag.n.01"
+      },
+      "room_floor_bedroom_0": {
+        "name": "room_floor_bedroom_0",
+        "category": "floor.n.01"
+      },
+      "sandal_39": {
+        "name": "sandal_39",
+        "category": "shoe.n.01"
+      },
+      "sandal_40": {
+        "name": "sandal_40",
+        "category": "shoe.n.01"
+      },
+      "sandal_41": {
+        "name": "sandal_41",
+        "category": "shoe.n.01"
+      },
+      "sink_18": {
+        "name": "sink_18",
+        "category": "sink.n.01"
+      },
+      "soap_36": {
+        "name": "soap_36",
+        "category": "soap.n.01"
+      },
+      "walker_42": {
+        "name": "walker_42",
+        "category": "shoe.n.01"
+      }
+    }
+  }
+}

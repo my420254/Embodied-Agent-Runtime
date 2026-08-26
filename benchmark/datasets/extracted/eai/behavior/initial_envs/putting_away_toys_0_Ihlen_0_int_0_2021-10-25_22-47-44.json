@@ -1,0 +1,245 @@
+{
+  "dataset": "behavior",
+  "case_id": "putting_away_toys_0_Ihlen_0_int_0_2021-10-25_22-47-44",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "putting_away_toys",
+    "task_id": 0,
+    "scene_id": "Ihlen_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "putting away toys",
+    "task": "putting_away_toys",
+    "task_id": 0,
+    "scene_id": "Ihlen_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 15,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "breakfast_table_2",
+      "carton_0",
+      "carton_1",
+      "room_floor_dining_room_0",
+      "room_floor_living_room_0",
+      "toy_0",
+      "toy_1",
+      "toy_2",
+      "toy_3",
+      "toy_4",
+      "toy_5",
+      "toy_6",
+      "toy_7"
+    ],
+    "name_mapping": {
+      "plaything.n.01_1": {
+        "name": "toy_0",
+        "category": "plaything.n.01"
+      },
+      "plaything.n.01_2": {
+        "name": "toy_1",
+        "category": "plaything.n.01"
+      },
+      "plaything.n.01_3": {
+        "name": "toy_2",
+        "category": "plaything.n.01"
+      },
+      "plaything.n.01_4": {
+        "name": "toy_3",
+        "category": "plaything.n.01"
+      },
+      "plaything.n.01_5": {
+        "name": "toy_4",
+        "category": "plaything.n.01"
+      },
+      "plaything.n.01_6": {
+        "name": "toy_5",
+        "category": "plaything.n.01"
+      },
+      "plaything.n.01_7": {
+        "name": "toy_6",
+        "category": "plaything.n.01"
+      },
+      "plaything.n.01_8": {
+        "name": "toy_7",
+        "category": "plaything.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "floor.n.01_2": {
+        "name": "room_floor_dining_room_0",
+        "category": "floor.n.01"
+      },
+      "carton.n.02_1": {
+        "name": "carton_0",
+        "category": "carton.n.02"
+      },
+      "carton.n.02_2": {
+        "name": "carton_1",
+        "category": "carton.n.02"
+      },
+      "table.n.02_1": {
+        "name": "breakfast_table_2",
+        "category": "table.n.02"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "breakfast_table_2": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "carton_1": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "room_floor_dining_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "toy_4": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "toy_5": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "toy_6": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "toy_7": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "room_floor_living_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "carton_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "toy_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "toy_1": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "toy_2": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "toy_3": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_living_room_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_living_room_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "breakfast_table_2": {
+        "name": "breakfast_table_2",
+        "category": "table.n.02"
+      },
+      "carton_0": {
+        "name": "carton_0",
+        "category": "carton.n.02"
+      },
+      "carton_1": {
+        "name": "carton_1",
+        "category": "carton.n.02"
+      },
+      "room_floor_dining_room_0": {
+        "name": "room_floor_dining_room_0",
+        "category": "floor.n.01"
+      },
+      "room_floor_living_room_0": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "toy_0": {
+        "name": "toy_0",
+        "category": "plaything.n.01"
+      },
+      "toy_1": {
+        "name": "toy_1",
+        "category": "plaything.n.01"
+      },
+      "toy_2": {
+        "name": "toy_2",
+        "category": "plaything.n.01"
+      },
+      "toy_3": {
+        "name": "toy_3",
+        "category": "plaything.n.01"
+      },
+      "toy_4": {
+        "name": "toy_4",
+        "category": "plaything.n.01"
+      },
+      "toy_5": {
+        "name": "toy_5",
+        "category": "plaything.n.01"
+      },
+      "toy_6": {
+        "name": "toy_6",
+        "category": "plaything.n.01"
+      },
+      "toy_7": {
+        "name": "toy_7",
+        "category": "plaything.n.01"
+      }
+    }
+  }
+}

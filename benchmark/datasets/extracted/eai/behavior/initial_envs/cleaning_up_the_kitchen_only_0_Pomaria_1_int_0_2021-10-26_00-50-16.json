@@ -1,0 +1,339 @@
+{
+  "dataset": "behavior",
+  "case_id": "cleaning_up_the_kitchen_only_0_Pomaria_1_int_0_2021-10-26_00-50-16",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "cleaning_up_the_kitchen_only",
+    "task_id": 0,
+    "scene_id": "Pomaria_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "cleaning up the kitchen only",
+    "task": "cleaning_up_the_kitchen_only",
+    "task_id": 0,
+    "scene_id": "Pomaria_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 19,
+    "room_count": 1,
+    "entity_catalog": [
+      "apple_87",
+      "behavior_room",
+      "behavior_room_anchor",
+      "blender_83",
+      "broom_82",
+      "casserole_84",
+      "countertop_31",
+      "dustpan_81",
+      "fridge_20",
+      "olive_oil_86",
+      "plate_85",
+      "rag_80",
+      "room_floor_kitchen_0",
+      "sink_37",
+      "soap_79",
+      "top_cabinet_24",
+      "top_cabinet_27",
+      "trash_can_78",
+      "window_68"
+    ],
+    "name_mapping": {
+      "bin.n.01_1": {
+        "name": "trash_can_78",
+        "category": "bin.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "soap.n.01_1": {
+        "name": "soap_79",
+        "category": "soap.n.01"
+      },
+      "cabinet.n.01_1": {
+        "name": "top_cabinet_27",
+        "category": "cabinet.n.01"
+      },
+      "cabinet.n.01_2": {
+        "name": "top_cabinet_24",
+        "category": "cabinet.n.01"
+      },
+      "electric_refrigerator.n.01_1": {
+        "name": "fridge_20",
+        "category": "electric_refrigerator.n.01"
+      },
+      "rag.n.01_1": {
+        "name": "rag_80",
+        "category": "rag.n.01"
+      },
+      "dustpan.n.02_1": {
+        "name": "dustpan_81",
+        "category": "dustpan.n.02"
+      },
+      "broom.n.01_1": {
+        "name": "broom_82",
+        "category": "broom.n.01"
+      },
+      "blender.n.01_1": {
+        "name": "blender_83",
+        "category": "blender.n.01"
+      },
+      "sink.n.01_1": {
+        "name": "sink_37",
+        "category": "sink.n.01"
+      },
+      "casserole.n.02_1": {
+        "name": "casserole_84",
+        "category": "casserole.n.02"
+      },
+      "plate.n.04_1": {
+        "name": "plate_85",
+        "category": "plate.n.04"
+      },
+      "vegetable_oil.n.01_1": {
+        "name": "olive_oil_86",
+        "category": "vegetable_oil.n.01"
+      },
+      "apple.n.01_1": {
+        "name": "apple_87",
+        "category": "apple.n.01"
+      },
+      "window.n.01_1": {
+        "name": "window_68",
+        "category": "window.n.01"
+      },
+      "countertop.n.01_1": {
+        "name": "countertop_31",
+        "category": "countertop.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "countertop_31": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "fridge_20": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "apple_87": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "casserole_84": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "olive_oil_86": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "inside"
+                    },
+                    "plate_85": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isDusty": true
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "blender_83": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "direct_relation": "onfloor"
+                    },
+                    "broom_82": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isDusty": true
+                      },
+                      "direct_relation": "onfloor"
+                    },
+                    "trash_can_78": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "sink_37": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "top_cabinet_24": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isDusty": true,
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "top_cabinet_27": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isDusty": true,
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "dustpan_81": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isDusty": true
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "inside"
+                    },
+                    "rag_80": {
+                      "states": {
+                        "isSoaked": false
+                      },
+                      "direct_relation": "inside"
+                    },
+                    "soap_79": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "window_68": {
+                  "states": {
+                    "isOpen": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "apple_87": {
+        "name": "apple_87",
+        "category": "apple.n.01"
+      },
+      "blender_83": {
+        "name": "blender_83",
+        "category": "blender.n.01"
+      },
+      "broom_82": {
+        "name": "broom_82",
+        "category": "broom.n.01"
+      },
+      "casserole_84": {
+        "name": "casserole_84",
+        "category": "casserole.n.02"
+      },
+      "countertop_31": {
+        "name": "countertop_31",
+        "category": "countertop.n.01"
+      },
+      "dustpan_81": {
+        "name": "dustpan_81",
+        "category": "dustpan.n.02"
+      },
+      "fridge_20": {
+        "name": "fridge_20",
+        "category": "electric_refrigerator.n.01"
+      },
+      "olive_oil_86": {
+        "name": "olive_oil_86",
+        "category": "vegetable_oil.n.01"
+      },
+      "plate_85": {
+        "name": "plate_85",
+        "category": "plate.n.04"
+      },
+      "rag_80": {
+        "name": "rag_80",
+        "category": "rag.n.01"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "sink_37": {
+        "name": "sink_37",
+        "category": "sink.n.01"
+      },
+      "soap_79": {
+        "name": "soap_79",
+        "category": "soap.n.01"
+      },
+      "top_cabinet_24": {
+        "name": "top_cabinet_24",
+        "category": "cabinet.n.01"
+      },
+      "top_cabinet_27": {
+        "name": "top_cabinet_27",
+        "category": "cabinet.n.01"
+      },
+      "trash_can_78": {
+        "name": "trash_can_78",
+        "category": "bin.n.01"
+      },
+      "window_68": {
+        "name": "window_68",
+        "category": "window.n.01"
+      }
+    }
+  }
+}

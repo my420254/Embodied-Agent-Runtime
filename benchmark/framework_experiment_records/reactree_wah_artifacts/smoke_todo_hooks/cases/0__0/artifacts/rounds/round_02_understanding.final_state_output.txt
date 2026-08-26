@@ -1,0 +1,6 @@
+{
+  "final_state": {
+    "on_cupcake_coffeetable": 1,
+    "on_apple_coffeetable": 1
+  }
+}

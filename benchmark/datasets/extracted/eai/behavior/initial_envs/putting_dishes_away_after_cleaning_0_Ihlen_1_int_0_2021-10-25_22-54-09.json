@@ -1,0 +1,246 @@
+{
+  "dataset": "behavior",
+  "case_id": "putting_dishes_away_after_cleaning_0_Ihlen_1_int_0_2021-10-25_22-54-09",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "putting_dishes_away_after_cleaning",
+    "task_id": 0,
+    "scene_id": "Ihlen_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "putting dishes away after cleaning",
+    "task": "putting_dishes_away_after_cleaning",
+    "task_id": 0,
+    "scene_id": "Ihlen_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 14,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "countertop_79",
+      "countertop_81",
+      "plate_0",
+      "plate_1",
+      "plate_2",
+      "plate_3",
+      "plate_4",
+      "plate_5",
+      "plate_6",
+      "plate_7",
+      "room_floor_kitchen_0",
+      "top_cabinet_62"
+    ],
+    "name_mapping": {
+      "plate.n.04_1": {
+        "name": "plate_0",
+        "category": "plate.n.04"
+      },
+      "plate.n.04_2": {
+        "name": "plate_1",
+        "category": "plate.n.04"
+      },
+      "plate.n.04_3": {
+        "name": "plate_2",
+        "category": "plate.n.04"
+      },
+      "plate.n.04_4": {
+        "name": "plate_3",
+        "category": "plate.n.04"
+      },
+      "plate.n.04_5": {
+        "name": "plate_4",
+        "category": "plate.n.04"
+      },
+      "plate.n.04_6": {
+        "name": "plate_5",
+        "category": "plate.n.04"
+      },
+      "plate.n.04_7": {
+        "name": "plate_6",
+        "category": "plate.n.04"
+      },
+      "plate.n.04_8": {
+        "name": "plate_7",
+        "category": "plate.n.04"
+      },
+      "countertop.n.01_1": {
+        "name": "countertop_81",
+        "category": "countertop.n.01"
+      },
+      "countertop.n.01_2": {
+        "name": "countertop_79",
+        "category": "countertop.n.01"
+      },
+      "cabinet.n.01_1": {
+        "name": "top_cabinet_62",
+        "category": "cabinet.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "countertop_79": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "plate_4": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "plate_5": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "plate_6": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "plate_7": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "countertop_81": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "plate_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "plate_1": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "plate_2": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "plate_3": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "top_cabinet_62": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "countertop_79": {
+        "name": "countertop_79",
+        "category": "countertop.n.01"
+      },
+      "countertop_81": {
+        "name": "countertop_81",
+        "category": "countertop.n.01"
+      },
+      "plate_0": {
+        "name": "plate_0",
+        "category": "plate.n.04"
+      },
+      "plate_1": {
+        "name": "plate_1",
+        "category": "plate.n.04"
+      },
+      "plate_2": {
+        "name": "plate_2",
+        "category": "plate.n.04"
+      },
+      "plate_3": {
+        "name": "plate_3",
+        "category": "plate.n.04"
+      },
+      "plate_4": {
+        "name": "plate_4",
+        "category": "plate.n.04"
+      },
+      "plate_5": {
+        "name": "plate_5",
+        "category": "plate.n.04"
+      },
+      "plate_6": {
+        "name": "plate_6",
+        "category": "plate.n.04"
+      },
+      "plate_7": {
+        "name": "plate_7",
+        "category": "plate.n.04"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "top_cabinet_62": {
+        "name": "top_cabinet_62",
+        "category": "cabinet.n.01"
+      }
+    }
+  }
+}

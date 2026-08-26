@@ -1,0 +1,350 @@
+{
+  "dataset": "behavior",
+  "case_id": "serving_hors_d_oeuvres_0_Wainscott_0_int_0_2021-10-26_14-00-22",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "serving_hors_d_oeuvres",
+    "task_id": 0,
+    "scene_id": "Wainscott_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "serving hors d oeuvres",
+    "task": "serving_hors_d_oeuvres",
+    "task_id": 0,
+    "scene_id": "Wainscott_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 23,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_no_top_80",
+      "breakfast_table_1",
+      "cheese_156",
+      "cheese_157",
+      "cheese_158",
+      "cheese_159",
+      "fridge_97",
+      "parsley_148",
+      "parsley_149",
+      "parsley_150",
+      "parsley_151",
+      "pretzel_152",
+      "pretzel_153",
+      "pretzel_154",
+      "pretzel_155",
+      "room_floor_dining_room_0",
+      "salad_143",
+      "salad_144",
+      "salad_145",
+      "salad_146",
+      "tray_147"
+    ],
+    "name_mapping": {
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_no_top_80",
+        "category": "cabinet.n.01"
+      },
+      "salad.n.01_1": {
+        "name": "salad_143",
+        "category": "salad.n.01"
+      },
+      "salad.n.01_2": {
+        "name": "salad_144",
+        "category": "salad.n.01"
+      },
+      "salad.n.01_3": {
+        "name": "salad_145",
+        "category": "salad.n.01"
+      },
+      "salad.n.01_4": {
+        "name": "salad_146",
+        "category": "salad.n.01"
+      },
+      "electric_refrigerator.n.01_1": {
+        "name": "fridge_97",
+        "category": "electric_refrigerator.n.01"
+      },
+      "tray.n.01_1": {
+        "name": "tray_147",
+        "category": "tray.n.01"
+      },
+      "parsley.n.02_1": {
+        "name": "parsley_148",
+        "category": "parsley.n.02"
+      },
+      "parsley.n.02_2": {
+        "name": "parsley_149",
+        "category": "parsley.n.02"
+      },
+      "parsley.n.02_3": {
+        "name": "parsley_150",
+        "category": "parsley.n.02"
+      },
+      "parsley.n.02_4": {
+        "name": "parsley_151",
+        "category": "parsley.n.02"
+      },
+      "cracker.n.01_1": {
+        "name": "pretzel_152",
+        "category": "cracker.n.01"
+      },
+      "cracker.n.01_2": {
+        "name": "pretzel_153",
+        "category": "cracker.n.01"
+      },
+      "cracker.n.01_3": {
+        "name": "pretzel_154",
+        "category": "cracker.n.01"
+      },
+      "cracker.n.01_4": {
+        "name": "pretzel_155",
+        "category": "cracker.n.01"
+      },
+      "table.n.02_1": {
+        "name": "breakfast_table_1",
+        "category": "table.n.02"
+      },
+      "cheese.n.01_1": {
+        "name": "cheese_156",
+        "category": "cheese.n.01"
+      },
+      "cheese.n.01_2": {
+        "name": "cheese_157",
+        "category": "cheese.n.01"
+      },
+      "cheese.n.01_3": {
+        "name": "cheese_158",
+        "category": "cheese.n.01"
+      },
+      "cheese.n.01_4": {
+        "name": "cheese_159",
+        "category": "cheese.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_dining_room_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bottom_cabinet_no_top_80": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "breakfast_table_1": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "pretzel_152": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "pretzel_153": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "pretzel_154": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "pretzel_155": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "fridge_97": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "cheese_156": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "cheese_157": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "cheese_158": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "cheese_159": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "parsley_148": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "parsley_149": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "parsley_150": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "parsley_151": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "salad_143": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "salad_144": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "salad_145": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "salad_146": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "room_floor_dining_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "tray_147": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_dining_room_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_dining_room_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bottom_cabinet_no_top_80": {
+        "name": "bottom_cabinet_no_top_80",
+        "category": "cabinet.n.01"
+      },
+      "breakfast_table_1": {
+        "name": "breakfast_table_1",
+        "category": "table.n.02"
+      },
+      "cheese_156": {
+        "name": "cheese_156",
+        "category": "cheese.n.01"
+      },
+      "cheese_157": {
+        "name": "cheese_157",
+        "category": "cheese.n.01"
+      },
+      "cheese_158": {
+        "name": "cheese_158",
+        "category": "cheese.n.01"
+      },
+      "cheese_159": {
+        "name": "cheese_159",
+        "category": "cheese.n.01"
+      },
+      "fridge_97": {
+        "name": "fridge_97",
+        "category": "electric_refrigerator.n.01"
+      },
+      "parsley_148": {
+        "name": "parsley_148",
+        "category": "parsley.n.02"
+      },
+      "parsley_149": {
+        "name": "parsley_149",
+        "category": "parsley.n.02"
+      },
+      "parsley_150": {
+        "name": "parsley_150",
+        "category": "parsley.n.02"
+      },
+      "parsley_151": {
+        "name": "parsley_151",
+        "category": "parsley.n.02"
+      },
+      "pretzel_152": {
+        "name": "pretzel_152",
+        "category": "cracker.n.01"
+      },
+      "pretzel_153": {
+        "name": "pretzel_153",
+        "category": "cracker.n.01"
+      },
+      "pretzel_154": {
+        "name": "pretzel_154",
+        "category": "cracker.n.01"
+      },
+      "pretzel_155": {
+        "name": "pretzel_155",
+        "category": "cracker.n.01"
+      },
+      "room_floor_dining_room_0": {
+        "name": "room_floor_dining_room_0",
+        "category": "floor.n.01"
+      },
+      "salad_143": {
+        "name": "salad_143",
+        "category": "salad.n.01"
+      },
+      "salad_144": {
+        "name": "salad_144",
+        "category": "salad.n.01"
+      },
+      "salad_145": {
+        "name": "salad_145",
+        "category": "salad.n.01"
+      },
+      "salad_146": {
+        "name": "salad_146",
+        "category": "salad.n.01"
+      },
+      "tray_147": {
+        "name": "tray_147",
+        "category": "tray.n.01"
+      }
+    }
+  }
+}

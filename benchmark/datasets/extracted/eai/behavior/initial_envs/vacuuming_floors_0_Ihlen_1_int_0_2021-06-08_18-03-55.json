@@ -1,0 +1,111 @@
+{
+  "dataset": "behavior",
+  "case_id": "vacuuming_floors_0_Ihlen_1_int_0_2021-06-08_18-03-55",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "vacuuming_floors",
+    "task_id": 0,
+    "scene_id": "Ihlen_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "vacuuming floors",
+    "task": "vacuuming_floors",
+    "task_id": 0,
+    "scene_id": "Ihlen_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 5,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "room_floor_bedroom_0",
+      "trash_can_0",
+      "vacuum_0"
+    ],
+    "name_mapping": {
+      "floor.n.01_1": {
+        "name": "room_floor_bedroom_0",
+        "category": "floor.n.01"
+      },
+      "vacuum.n.04_1": {
+        "name": "vacuum_0",
+        "category": "vacuum.n.04"
+      },
+      "ashcan.n.01_1": {
+        "name": "trash_can_0",
+        "category": "ashcan.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "room_floor_bedroom_0": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isDusty": true
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "trash_can_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "vacuum_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_bedroom_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_bedroom_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "room_floor_bedroom_0": {
+        "name": "room_floor_bedroom_0",
+        "category": "floor.n.01"
+      },
+      "trash_can_0": {
+        "name": "trash_can_0",
+        "category": "ashcan.n.01"
+      },
+      "vacuum_0": {
+        "name": "vacuum_0",
+        "category": "vacuum.n.04"
+      }
+    }
+  }
+}

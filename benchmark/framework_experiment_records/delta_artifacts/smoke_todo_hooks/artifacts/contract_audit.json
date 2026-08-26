@@ -1,0 +1,1069 @@
+{
+  "schema_version": "framework_trace_v3",
+  "process_name": "todo_contract",
+  "payload_role": "audit",
+  "status": "passed",
+  "skill_profile": null,
+  "todo_output_parser_path": "benchmark.delta.framework.code.native_actions.parse_delta_native_actions",
+  "todo_step_adapter_path": "benchmark.delta.framework.code.native_actions.delta_native_step_to_skill_call",
+  "todo_list_validator_path": "",
+  "planning_contract": {
+    "available": true,
+    "profile": "",
+    "config_file": "/data/zmy/OurAgent-he1/benchmark/delta/framework/code/config/settings.json",
+    "skills_root": "benchmark/delta/framework/code/skills",
+    "enabled_contract_skill_count": 13,
+    "raw_contract_count": 13,
+    "framework_contract_skills": [
+      "goto",
+      "pick",
+      "drop",
+      "place_on",
+      "dispose",
+      "mop_floor",
+      "clean_mop",
+      "charge",
+      "assemble",
+      "pick_loadable",
+      "drop_loadable",
+      "load",
+      "unload"
+    ],
+    "raw_action_names": [
+      "goto",
+      "pick",
+      "drop",
+      "place_on",
+      "dispose",
+      "mop_floor",
+      "clean_mop",
+      "charge",
+      "assemble",
+      "pick_loadable",
+      "drop_loadable",
+      "load",
+      "unload"
+    ],
+    "raw_actions": [
+      {
+        "skill": "goto",
+        "action_name": "goto",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "agent",
+          "room_1",
+          "room_2"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "goto"
+          },
+          {
+            "field": "agent",
+            "value": "robot"
+          }
+        ],
+        "entity_fields": [],
+        "room_fields": [
+          "room_1",
+          "room_2"
+        ],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "domain",
+        "context_values": [
+          "clean",
+          "dining",
+          "office",
+          "pc"
+        ]
+      },
+      {
+        "skill": "pick",
+        "action_name": "pick",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "agent",
+          "item",
+          "room"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "pick"
+          },
+          {
+            "field": "agent",
+            "value": "robot"
+          }
+        ],
+        "entity_fields": [
+          "item"
+        ],
+        "room_fields": [
+          "room"
+        ],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "domain",
+        "context_values": [
+          "clean",
+          "dining",
+          "office",
+          "pc"
+        ]
+      },
+      {
+        "skill": "drop",
+        "action_name": "drop",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "agent",
+          "item",
+          "room"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "drop"
+          },
+          {
+            "field": "agent",
+            "value": "robot"
+          }
+        ],
+        "entity_fields": [
+          "item"
+        ],
+        "room_fields": [
+          "room"
+        ],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "domain",
+        "context_values": [
+          "clean",
+          "dining",
+          "office",
+          "pc"
+        ]
+      },
+      {
+        "skill": "place_on",
+        "action_name": "place_on",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "agent",
+          "item_1",
+          "item_2",
+          "room"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "place_on"
+          },
+          {
+            "field": "agent",
+            "value": "robot"
+          }
+        ],
+        "entity_fields": [
+          "item_1",
+          "item_2"
+        ],
+        "room_fields": [
+          "room"
+        ],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "domain",
+        "context_values": [
+          "dining"
+        ]
+      },
+      {
+        "skill": "dispose",
+        "action_name": "dispose",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "agent",
+          "item_1",
+          "item_2",
+          "room"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "dispose"
+          },
+          {
+            "field": "agent",
+            "value": "robot"
+          }
+        ],
+        "entity_fields": [
+          "item_1",
+          "item_2"
+        ],
+        "room_fields": [
+          "room"
+        ],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "domain",
+        "context_values": [
+          "clean"
+        ]
+      },
+      {
+        "skill": "mop_floor",
+        "action_name": "mop_floor",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "agent",
+          "item",
+          "room"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "mop_floor"
+          },
+          {
+            "field": "agent",
+            "value": "robot"
+          }
+        ],
+        "entity_fields": [
+          "item"
+        ],
+        "room_fields": [
+          "room"
+        ],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "domain",
+        "context_values": [
+          "clean"
+        ]
+      },
+      {
+        "skill": "clean_mop",
+        "action_name": "clean_mop",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "agent",
+          "item_1",
+          "item_2",
+          "room"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "clean_mop"
+          },
+          {
+            "field": "agent",
+            "value": "robot"
+          }
+        ],
+        "entity_fields": [
+          "item_1",
+          "item_2"
+        ],
+        "room_fields": [
+          "room"
+        ],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "domain",
+        "context_values": [
+          "clean"
+        ]
+      },
+      {
+        "skill": "charge",
+        "action_name": "charge",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "agent",
+          "item",
+          "room"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "charge"
+          },
+          {
+            "field": "agent",
+            "value": "robot"
+          }
+        ],
+        "entity_fields": [
+          "item"
+        ],
+        "room_fields": [
+          "room"
+        ],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "domain",
+        "context_values": [
+          "clean"
+        ]
+      },
+      {
+        "skill": "assemble",
+        "action_name": "assemble",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "agent",
+          "room",
+          "item_1",
+          "item_2",
+          "item_3",
+          "item_4",
+          "item_5",
+          "item_6",
+          "pc"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "assemble"
+          },
+          {
+            "field": "agent",
+            "value": "robot"
+          }
+        ],
+        "entity_fields": [
+          "item_1",
+          "item_2",
+          "item_3",
+          "item_4",
+          "item_5",
+          "item_6"
+        ],
+        "room_fields": [
+          "room"
+        ],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [
+          "pc"
+        ],
+        "context_field": "domain",
+        "context_values": [
+          "pc"
+        ]
+      },
+      {
+        "skill": "pick_loadable",
+        "action_name": "pick_loadable",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "agent",
+          "item",
+          "room"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "pick_loadable"
+          },
+          {
+            "field": "agent",
+            "value": "robot"
+          }
+        ],
+        "entity_fields": [
+          "item"
+        ],
+        "room_fields": [
+          "room"
+        ],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "domain",
+        "context_values": [
+          "office"
+        ]
+      },
+      {
+        "skill": "drop_loadable",
+        "action_name": "drop_loadable",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "agent",
+          "item",
+          "room"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "drop_loadable"
+          },
+          {
+            "field": "agent",
+            "value": "robot"
+          }
+        ],
+        "entity_fields": [
+          "item"
+        ],
+        "room_fields": [
+          "room"
+        ],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "domain",
+        "context_values": [
+          "office"
+        ]
+      },
+      {
+        "skill": "load",
+        "action_name": "load",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "agent",
+          "item_1",
+          "item_2",
+          "room"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "load"
+          },
+          {
+            "field": "agent",
+            "value": "robot"
+          }
+        ],
+        "entity_fields": [
+          "item_1",
+          "item_2"
+        ],
+        "room_fields": [
+          "room"
+        ],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "domain",
+        "context_values": [
+          "office"
+        ]
+      },
+      {
+        "skill": "unload",
+        "action_name": "unload",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "agent",
+          "item_1",
+          "item_2",
+          "room"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "unload"
+          },
+          {
+            "field": "agent",
+            "value": "robot"
+          }
+        ],
+        "entity_fields": [
+          "item_1",
+          "item_2"
+        ],
+        "room_fields": [
+          "room"
+        ],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "domain",
+        "context_values": [
+          "office"
+        ]
+      }
+    ]
+  },
+  "todo_list_shape": {
+    "count": 25,
+    "top_level_key_counts": {
+      "step": 25,
+      "action": 25,
+      "agent": 25,
+      "room_1": 13,
+      "room_2": 13,
+      "item": 6,
+      "room": 12,
+      "item_1": 6,
+      "item_2": 6
+    },
+    "action_counts": {
+      "goto": 13,
+      "pick": 6,
+      "place_on": 6
+    },
+    "execution_wrapper_count": 0,
+    "sample": [
+      {
+        "index": 1,
+        "action": "goto",
+        "keys": [
+          "action",
+          "agent",
+          "room_1",
+          "room_2",
+          "step"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 1,
+          "action": "goto",
+          "agent": "robot",
+          "room_1": "living_room",
+          "room_2": "dining_room"
+        }
+      },
+      {
+        "index": 2,
+        "action": "goto",
+        "keys": [
+          "action",
+          "agent",
+          "room_1",
+          "room_2",
+          "step"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 2,
+          "action": "goto",
+          "agent": "robot",
+          "room_1": "dining_room",
+          "room_2": "kitchen"
+        }
+      },
+      {
+        "index": 3,
+        "action": "pick",
+        "keys": [
+          "action",
+          "agent",
+          "item",
+          "room",
+          "step"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 3,
+          "action": "pick",
+          "agent": "robot",
+          "item": "fork",
+          "room": "kitchen"
+        }
+      },
+      {
+        "index": 4,
+        "action": "goto",
+        "keys": [
+          "action",
+          "agent",
+          "room_1",
+          "room_2",
+          "step"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 4,
+          "action": "goto",
+          "agent": "robot",
+          "room_1": "kitchen",
+          "room_2": "dining_room"
+        }
+      },
+      {
+        "index": 5,
+        "action": "place_on",
+        "keys": [
+          "action",
+          "agent",
+          "item_1",
+          "item_2",
+          "room",
+          "step"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 5,
+          "action": "place_on",
+          "agent": "robot",
+          "item_1": "fork",
+          "item_2": "dining_table",
+          "room": "dining_room"
+        }
+      },
+      {
+        "index": 6,
+        "action": "goto",
+        "keys": [
+          "action",
+          "agent",
+          "room_1",
+          "room_2",
+          "step"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 6,
+          "action": "goto",
+          "agent": "robot",
+          "room_1": "dining_room",
+          "room_2": "kitchen"
+        }
+      },
+      {
+        "index": 7,
+        "action": "pick",
+        "keys": [
+          "action",
+          "agent",
+          "item",
+          "room",
+          "step"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 7,
+          "action": "pick",
+          "agent": "robot",
+          "item": "knife",
+          "room": "kitchen"
+        }
+      },
+      {
+        "index": 8,
+        "action": "goto",
+        "keys": [
+          "action",
+          "agent",
+          "room_1",
+          "room_2",
+          "step"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 8,
+          "action": "goto",
+          "agent": "robot",
+          "room_1": "kitchen",
+          "room_2": "dining_room"
+        }
+      },
+      {
+        "index": 9,
+        "action": "place_on",
+        "keys": [
+          "action",
+          "agent",
+          "item_1",
+          "item_2",
+          "room",
+          "step"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 9,
+          "action": "place_on",
+          "agent": "robot",
+          "item_1": "knife",
+          "item_2": "dining_table",
+          "room": "dining_room"
+        }
+      },
+      {
+        "index": 10,
+        "action": "goto",
+        "keys": [
+          "action",
+          "agent",
+          "room_1",
+          "room_2",
+          "step"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 10,
+          "action": "goto",
+          "agent": "robot",
+          "room_1": "dining_room",
+          "room_2": "kitchen"
+        }
+      },
+      {
+        "index": 11,
+        "action": "pick",
+        "keys": [
+          "action",
+          "agent",
+          "item",
+          "room",
+          "step"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 11,
+          "action": "pick",
+          "agent": "robot",
+          "item": "spoon",
+          "room": "kitchen"
+        }
+      },
+      {
+        "index": 12,
+        "action": "goto",
+        "keys": [
+          "action",
+          "agent",
+          "room_1",
+          "room_2",
+          "step"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 12,
+          "action": "goto",
+          "agent": "robot",
+          "room_1": "kitchen",
+          "room_2": "dining_room"
+        }
+      },
+      {
+        "index": 13,
+        "action": "place_on",
+        "keys": [
+          "action",
+          "agent",
+          "item_1",
+          "item_2",
+          "room",
+          "step"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 13,
+          "action": "place_on",
+          "agent": "robot",
+          "item_1": "spoon",
+          "item_2": "dining_table",
+          "room": "dining_room"
+        }
+      },
+      {
+        "index": 14,
+        "action": "goto",
+        "keys": [
+          "action",
+          "agent",
+          "room_1",
+          "room_2",
+          "step"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 14,
+          "action": "goto",
+          "agent": "robot",
+          "room_1": "dining_room",
+          "room_2": "bedroom_1"
+        }
+      },
+      {
+        "index": 15,
+        "action": "pick",
+        "keys": [
+          "action",
+          "agent",
+          "item",
+          "room",
+          "step"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 15,
+          "action": "pick",
+          "agent": "robot",
+          "item": "glass",
+          "room": "bedroom_1"
+        }
+      },
+      {
+        "index": 16,
+        "action": "goto",
+        "keys": [
+          "action",
+          "agent",
+          "room_1",
+          "room_2",
+          "step"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 16,
+          "action": "goto",
+          "agent": "robot",
+          "room_1": "bedroom_1",
+          "room_2": "dining_room"
+        }
+      },
+      {
+        "index": 17,
+        "action": "place_on",
+        "keys": [
+          "action",
+          "agent",
+          "item_1",
+          "item_2",
+          "room",
+          "step"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 17,
+          "action": "place_on",
+          "agent": "robot",
+          "item_1": "glass",
+          "item_2": "dining_table",
+          "room": "dining_room"
+        }
+      },
+      {
+        "index": 18,
+        "action": "goto",
+        "keys": [
+          "action",
+          "agent",
+          "room_1",
+          "room_2",
+          "step"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 18,
+          "action": "goto",
+          "agent": "robot",
+          "room_1": "dining_room",
+          "room_2": "bedroom_2"
+        }
+      },
+      {
+        "index": 19,
+        "action": "pick",
+        "keys": [
+          "action",
+          "agent",
+          "item",
+          "room",
+          "step"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 19,
+          "action": "pick",
+          "agent": "robot",
+          "item": "plate",
+          "room": "bedroom_2"
+        }
+      },
+      {
+        "index": 20,
+        "action": "goto",
+        "keys": [
+          "action",
+          "agent",
+          "room_1",
+          "room_2",
+          "step"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 20,
+          "action": "goto",
+          "agent": "robot",
+          "room_1": "bedroom_2",
+          "room_2": "dining_room"
+        }
+      }
+    ],
+    "truncated": true
+  },
+  "action_coverage": {
+    "configured_raw_action_count": 13,
+    "configured_raw_actions": [
+      "assemble",
+      "charge",
+      "clean_mop",
+      "dispose",
+      "drop",
+      "drop_loadable",
+      "goto",
+      "load",
+      "mop_floor",
+      "pick",
+      "pick_loadable",
+      "place_on",
+      "unload"
+    ],
+    "observed_action_count": 25,
+    "observed_actions": [
+      "goto",
+      "goto",
+      "pick",
+      "goto",
+      "place_on",
+      "goto",
+      "pick",
+      "goto",
+      "place_on",
+      "goto",
+      "pick",
+      "goto",
+      "place_on",
+      "goto",
+      "pick",
+      "goto",
+      "place_on",
+      "goto",
+      "pick",
+      "goto",
+      "place_on",
+      "goto",
+      "pick",
+      "goto",
+      "place_on"
+    ],
+    "unknown_observed_actions": []
+  },
+  "contract_events": [
+    {
+      "layer": "todo_contract",
+      "type": "passed",
+      "todo_count": 25
+    }
+  ],
+  "planning_status": {
+    "is_feasible": true,
+    "execution_status": "completed",
+    "planner_status": "planned",
+    "iteration_count": 1,
+    "failure_layer": "",
+    "failure_category": "",
+    "failed_action": {},
+    "feedback": "规划合法，验证环节闭环。",
+    "error_feedback": ""
+  },
+  "validated_outputs": {
+    "todo_list_count": 25,
+    "validated_todo_actions_count": 25,
+    "validated_steps_count": 0
+  }
+}

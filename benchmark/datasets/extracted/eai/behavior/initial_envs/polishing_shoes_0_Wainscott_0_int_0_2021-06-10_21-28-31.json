@@ -1,0 +1,146 @@
+{
+  "dataset": "behavior",
+  "case_id": "polishing_shoes_0_Wainscott_0_int_0_2021-06-10_21-28-31",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "polishing_shoes",
+    "task_id": 0,
+    "scene_id": "Wainscott_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "polishing shoes",
+    "task": "polishing_shoes",
+    "task_id": 0,
+    "scene_id": "Wainscott_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 7,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "rag_145",
+      "room_floor_bathroom_0",
+      "sandal_143",
+      "sink_67",
+      "walker_144"
+    ],
+    "name_mapping": {
+      "shoe.n.01_1": {
+        "name": "sandal_143",
+        "category": "shoe.n.01"
+      },
+      "shoe.n.01_2": {
+        "name": "walker_144",
+        "category": "shoe.n.01"
+      },
+      "rag.n.01_1": {
+        "name": "rag_145",
+        "category": "rag.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_bathroom_0",
+        "category": "floor.n.01"
+      },
+      "sink.n.01_1": {
+        "name": "sink_67",
+        "category": "sink.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "room_floor_bathroom_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "rag_145": {
+                      "states": {
+                        "isSoaked": false
+                      },
+                      "direct_relation": "onfloor"
+                    },
+                    "sandal_143": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "direct_relation": "onfloor"
+                    },
+                    "walker_144": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "sink_67": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_bathroom_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_bathroom_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "rag_145": {
+        "name": "rag_145",
+        "category": "rag.n.01"
+      },
+      "room_floor_bathroom_0": {
+        "name": "room_floor_bathroom_0",
+        "category": "floor.n.01"
+      },
+      "sandal_143": {
+        "name": "sandal_143",
+        "category": "shoe.n.01"
+      },
+      "sink_67": {
+        "name": "sink_67",
+        "category": "sink.n.01"
+      },
+      "walker_144": {
+        "name": "walker_144",
+        "category": "shoe.n.01"
+      }
+    }
+  }
+}

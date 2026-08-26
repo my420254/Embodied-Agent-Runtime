@@ -1,0 +1,257 @@
+{
+  "dataset": "behavior",
+  "case_id": "storing_the_groceries_0_Beechwood_0_int_0_2021-10-26_13-13-47",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "storing_the_groceries",
+    "task_id": 0,
+    "scene_id": "Beechwood_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "storing the groceries",
+    "task": "storing_the_groceries",
+    "task_id": 0,
+    "scene_id": "Beechwood_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 16,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_no_top_54",
+      "broccoli_0",
+      "broccoli_1",
+      "cereal_0",
+      "cereal_1",
+      "countertop_56",
+      "fridge_57",
+      "lettuce_0",
+      "lettuce_1",
+      "pork_0",
+      "pork_1",
+      "raspberry_0",
+      "raspberry_1",
+      "room_floor_kitchen_0"
+    ],
+    "name_mapping": {
+      "cereal.n.03_1": {
+        "name": "cereal_0",
+        "category": "cereal.n.03"
+      },
+      "cereal.n.03_2": {
+        "name": "cereal_1",
+        "category": "cereal.n.03"
+      },
+      "countertop.n.01_1": {
+        "name": "countertop_56",
+        "category": "countertop.n.01"
+      },
+      "lettuce.n.03_1": {
+        "name": "lettuce_0",
+        "category": "lettuce.n.03"
+      },
+      "lettuce.n.03_2": {
+        "name": "lettuce_1",
+        "category": "lettuce.n.03"
+      },
+      "broccoli.n.02_1": {
+        "name": "broccoli_0",
+        "category": "broccoli.n.02"
+      },
+      "broccoli.n.02_2": {
+        "name": "broccoli_1",
+        "category": "broccoli.n.02"
+      },
+      "raspberry.n.02_1": {
+        "name": "raspberry_0",
+        "category": "raspberry.n.02"
+      },
+      "raspberry.n.02_2": {
+        "name": "raspberry_1",
+        "category": "raspberry.n.02"
+      },
+      "pork.n.01_1": {
+        "name": "pork_0",
+        "category": "pork.n.01"
+      },
+      "pork.n.01_2": {
+        "name": "pork_1",
+        "category": "pork.n.01"
+      },
+      "electric_refrigerator.n.01_1": {
+        "name": "fridge_57",
+        "category": "electric_refrigerator.n.01"
+      },
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_no_top_54",
+        "category": "cabinet.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bottom_cabinet_no_top_54": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "countertop_56": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "broccoli_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "broccoli_1": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "cereal_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "cereal_1": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "lettuce_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "lettuce_1": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "pork_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "pork_1": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "raspberry_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "raspberry_1": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "fridge_57": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bottom_cabinet_no_top_54": {
+        "name": "bottom_cabinet_no_top_54",
+        "category": "cabinet.n.01"
+      },
+      "broccoli_0": {
+        "name": "broccoli_0",
+        "category": "broccoli.n.02"
+      },
+      "broccoli_1": {
+        "name": "broccoli_1",
+        "category": "broccoli.n.02"
+      },
+      "cereal_0": {
+        "name": "cereal_0",
+        "category": "cereal.n.03"
+      },
+      "cereal_1": {
+        "name": "cereal_1",
+        "category": "cereal.n.03"
+      },
+      "countertop_56": {
+        "name": "countertop_56",
+        "category": "countertop.n.01"
+      },
+      "fridge_57": {
+        "name": "fridge_57",
+        "category": "electric_refrigerator.n.01"
+      },
+      "lettuce_0": {
+        "name": "lettuce_0",
+        "category": "lettuce.n.03"
+      },
+      "lettuce_1": {
+        "name": "lettuce_1",
+        "category": "lettuce.n.03"
+      },
+      "pork_0": {
+        "name": "pork_0",
+        "category": "pork.n.01"
+      },
+      "pork_1": {
+        "name": "pork_1",
+        "category": "pork.n.01"
+      },
+      "raspberry_0": {
+        "name": "raspberry_0",
+        "category": "raspberry.n.02"
+      },
+      "raspberry_1": {
+        "name": "raspberry_1",
+        "category": "raspberry.n.02"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      }
+    }
+  }
+}

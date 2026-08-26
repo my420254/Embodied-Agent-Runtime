@@ -1,0 +1,638 @@
+[
+  {
+    "process_name": "sandbox_validation",
+    "enabled": true,
+    "status": "passed",
+    "config": {
+      "todo_step_adapter_path": "benchmark.eai.virtualhome.framework.code.native_actions.virtualhome_native_step_to_skill_call",
+      "validator": "todo_schema"
+    },
+    "inputs": {
+      "todo_list": {
+        "count": 2,
+        "sample": [
+          {
+            "step": 1,
+            "action": "WALK",
+            "args": [
+              "couch"
+            ]
+          },
+          {
+            "step": 2,
+            "action": "SIT",
+            "args": [
+              "couch"
+            ]
+          }
+        ],
+        "truncated": false
+      },
+      "initial_environment": {
+        "available": true,
+        "entity_count": 8,
+        "type_counts": {
+          "receptacle": 4,
+          "room": 4
+        },
+        "entities_sample": [
+          "bathroom",
+          "bedroom",
+          "bedroom_anchor",
+          "couch",
+          "dining_room",
+          "home_office",
+          "home_office_anchor",
+          "mat_401"
+        ],
+        "entities_truncated": false,
+        "states_sample": {
+          "couch": {
+            "isClean": true,
+            "isDirty": false
+          },
+          "mat_401": {
+            "isDirty": true,
+            "isClean": false
+          }
+        }
+      },
+      "initial_robot": {
+        "robot_location": "bedroom_anchor",
+        "robot_holding": "空",
+        "robot_hands": {
+          "left": "空",
+          "right": "空"
+        },
+        "manipulator_mode": "dual_arm"
+      }
+    },
+    "outputs": {
+      "validated_steps": {
+        "count": 0,
+        "sample": [],
+        "truncated": false
+      },
+      "validated_todo_actions": {
+        "count": 2,
+        "sample": [
+          {
+            "step": 1,
+            "action": "WALK",
+            "args": [
+              "couch"
+            ]
+          },
+          {
+            "step": 2,
+            "action": "SIT",
+            "args": [
+              "couch"
+            ]
+          }
+        ],
+        "truncated": false
+      },
+      "validated_audit_steps": {
+        "count": 2,
+        "sample": [
+          {
+            "step": 1,
+            "action": "WALK",
+            "args": [
+              "couch"
+            ],
+            "execution": {
+              "skill": "WALK",
+              "parameters": {
+                "args": [
+                  "couch"
+                ]
+              }
+            }
+          },
+          {
+            "step": 2,
+            "action": "SIT",
+            "args": [
+              "couch"
+            ],
+            "execution": {
+              "skill": "SIT",
+              "parameters": {
+                "args": [
+                  "couch"
+                ]
+              }
+            }
+          }
+        ],
+        "truncated": false
+      },
+      "final_environment": {
+        "available": true,
+        "entity_count": 8,
+        "type_counts": {
+          "receptacle": 4,
+          "room": 4
+        },
+        "entities_sample": [
+          "bathroom",
+          "bedroom",
+          "bedroom_anchor",
+          "couch",
+          "dining_room",
+          "home_office",
+          "home_office_anchor",
+          "mat_401"
+        ],
+        "entities_truncated": false,
+        "states_sample": {
+          "couch": {
+            "isClean": true,
+            "isDirty": false
+          },
+          "mat_401": {
+            "isDirty": true,
+            "isClean": false
+          }
+        }
+      },
+      "final_robot": {
+        "robot_location": "couch",
+        "robot_holding": "空",
+        "robot_hands": {
+          "left": "空",
+          "right": "空"
+        },
+        "manipulator_mode": "dual_arm",
+        "posture": "sitting",
+        "isSleeping": false,
+        "last_seat": "couch"
+      },
+      "debug_event_counts": {
+        "step_check": 2
+      },
+      "sandbox_rejections": [],
+      "planning_evaluator_failures": [],
+      "failed_action": {},
+      "failure_layer": "",
+      "failure_category": "",
+      "error_feedback": ""
+    }
+  },
+  {
+    "process_name": "dependency_repair",
+    "enabled": false,
+    "status": "disabled",
+    "config": {
+      "repair_strategy": "retrac",
+      "max_backtrack_depth": 3,
+      "max_subtree_actions": 80
+    },
+    "inputs": {
+      "sandbox_failure_present": false,
+      "debug_event_counts": {}
+    },
+    "outputs": {
+      "sda_state": {},
+      "validated_steps": {
+        "count": 0,
+        "sample": [],
+        "truncated": false
+      },
+      "validated_todo_actions": {
+        "count": 2,
+        "sample": [
+          {
+            "step": 1,
+            "action": "WALK",
+            "args": [
+              "couch"
+            ]
+          },
+          {
+            "step": 2,
+            "action": "SIT",
+            "args": [
+              "couch"
+            ]
+          }
+        ],
+        "truncated": false
+      }
+    }
+  },
+  {
+    "process_name": "final_state_audit",
+    "enabled": true,
+    "status": "passed",
+    "config": {
+      "state_diff_audit": true,
+      "auditor": "framework.planning.state_diff_audit_llm",
+      "benchmark_comparer": "benchmark.eai.virtualhome.framework.code.final_state"
+    },
+    "inputs": {
+      "understanding_goal": {
+        "intent": "Relax on sofa",
+        "required_item_names": {
+          "targets": {
+            "primary": [
+              "couch"
+            ],
+            "alternatives": []
+          },
+          "tools": {
+            "primary": [],
+            "alternatives": []
+          },
+          "receptacles": {
+            "primary": [],
+            "alternatives": []
+          }
+        },
+        "quantity_constraints": [
+          "character must be sitting on couch"
+        ],
+        "goal_state": {},
+        "desired_state": {},
+        "target_state": {},
+        "final_state": {
+          "character": {
+            "sitting": true,
+            "ontop": "couch"
+          }
+        }
+      },
+      "has_external_goal": true,
+      "external_goal_state": {},
+      "simulated_steps": {
+        "count": 2,
+        "sample": [
+          {
+            "step": 1,
+            "action": "WALK",
+            "args": [
+              "couch"
+            ]
+          },
+          {
+            "step": 2,
+            "action": "SIT",
+            "args": [
+              "couch"
+            ]
+          }
+        ],
+        "truncated": false
+      },
+      "initial_environment": {
+        "available": true,
+        "entity_count": 8,
+        "type_counts": {
+          "receptacle": 4,
+          "room": 4
+        },
+        "entities_sample": [
+          "bathroom",
+          "bedroom",
+          "bedroom_anchor",
+          "couch",
+          "dining_room",
+          "home_office",
+          "home_office_anchor",
+          "mat_401"
+        ],
+        "entities_truncated": false,
+        "states_sample": {
+          "couch": {
+            "isClean": true,
+            "isDirty": false
+          },
+          "mat_401": {
+            "isDirty": true,
+            "isClean": false
+          }
+        }
+      },
+      "initial_robot": {
+        "robot_location": "bedroom_anchor",
+        "robot_holding": "空",
+        "robot_hands": {
+          "left": "空",
+          "right": "空"
+        },
+        "manipulator_mode": "dual_arm"
+      },
+      "final_environment": {
+        "available": true,
+        "entity_count": 8,
+        "type_counts": {
+          "receptacle": 4,
+          "room": 4
+        },
+        "entities_sample": [
+          "bathroom",
+          "bedroom",
+          "bedroom_anchor",
+          "couch",
+          "dining_room",
+          "home_office",
+          "home_office_anchor",
+          "mat_401"
+        ],
+        "entities_truncated": false,
+        "states_sample": {
+          "couch": {
+            "isClean": true,
+            "isDirty": false
+          },
+          "mat_401": {
+            "isDirty": true,
+            "isClean": false
+          }
+        }
+      },
+      "final_robot": {
+        "robot_location": "couch",
+        "robot_holding": "空",
+        "robot_hands": {
+          "left": "空",
+          "right": "空"
+        },
+        "manipulator_mode": "dual_arm",
+        "posture": "sitting",
+        "isSleeping": false,
+        "last_seat": "couch"
+      }
+    },
+    "outputs": {
+      "state_diff": {
+        "available": true,
+        "entity_count_compared": 8,
+        "changed_entity_count": 0,
+        "changed_entities_sample": [],
+        "changed_entities_truncated": false,
+        "robot_changed": true
+      },
+      "audit_passed": true,
+      "issue": "",
+      "repair_mode": "continue_from_current",
+      "benchmark_compare": {
+        "benchmark": "EAI-VirtualHome",
+        "status": "prepared_for_framework_llm_judge",
+        "environment_format": "VirtualHome initial_env_cache graph 转成 benchmark 本地房间/对象状态图",
+        "action_format": "VirtualHome 官方 action sequencing 原生动作 JSON 对象：{action, args}",
+        "official_evaluator": "EAI VirtualHome action_sequencing evaluator，执行符号图状态模拟",
+        "used_fields": {
+          "task_context": [
+            "dataset",
+            "environment_source",
+            "external_goal_text",
+            "identifier",
+            "initial_environment_cache_path",
+            "initial_environment_source",
+            "instruction",
+            "pddl_goal",
+            "pddl_goal_clauses",
+            "pddl_goal_count",
+            "pddl_goal_hints",
+            "pddl_objects",
+            "raw_source"
+          ],
+          "evaluation_context": [],
+          "external_goal": [
+            "external_goal_text",
+            "has_external_goal",
+            "structured_final_state"
+          ],
+          "state_diff": [
+            "entities",
+            "robot"
+          ]
+        },
+        "benchmark_goal": {
+          "task_context": {
+            "dataset": "virtualhome",
+            "instruction": "Relax on sofa",
+            "identifier": "3_1",
+            "raw_source": "virtualhome_initial_env_cache",
+            "initial_environment_cache_path": "/data/zmy/OurAgent-he1/benchmark/datasets/extracted/eai/virtualhome/initial_envs/3_1.json",
+            "initial_environment_source": "virtualhome_original_init_graph",
+            "environment_source": "virtualhome_original_init_graph",
+            "pddl_objects": [
+              "character",
+              "couch",
+              "bedroom",
+              "home_office",
+              "television"
+            ],
+            "pddl_goal": [
+              [
+                "sitting",
+                "character"
+              ],
+              [
+                "ontop",
+                "character",
+                "couch"
+              ]
+            ],
+            "pddl_goal_clauses": [
+              "sitting character",
+              "ontop character couch"
+            ],
+            "pddl_goal_hints": [
+              "sitting character",
+              "ontop character couch"
+            ],
+            "external_goal_text": "sitting character; ontop character couch",
+            "pddl_goal_count": 2
+          },
+          "evaluation_context": {},
+          "goal_projection": {},
+          "external_goal": {
+            "has_external_goal": true,
+            "external_goal_state": {},
+            "external_goal_text": "sitting character; ontop character couch",
+            "structured_goal_state": {},
+            "structured_final_state": {
+              "character": {
+                "sitting": true,
+                "ontop": "couch"
+              }
+            }
+          }
+        },
+        "understanding_final_state": {
+          "character": {
+            "sitting": true,
+            "ontop": "couch"
+          }
+        },
+        "state_diff_summary": {
+          "entity_count_compared": 8,
+          "changed_entity_count": 0,
+          "changed_entities": [],
+          "changed_entities_truncated": false,
+          "robot_changed": true,
+          "robot_change": {
+            "changed": true,
+            "before": {
+              "robot_location": "bedroom_anchor",
+              "robot_holding": "空",
+              "robot_hands": {
+                "left": "空",
+                "right": "空"
+              },
+              "manipulator_mode": "dual_arm"
+            },
+            "after": {
+              "robot_location": "couch",
+              "robot_holding": "空",
+              "robot_hands": {
+                "left": "空",
+                "right": "空"
+              },
+              "manipulator_mode": "dual_arm",
+              "posture": "sitting",
+              "isSleeping": false,
+              "last_seat": "couch"
+            }
+          }
+        },
+        "initial_environment_summary": {
+          "available": true,
+          "entity_count": 8,
+          "type_counts": {
+            "receptacle": 4,
+            "room": 4
+          },
+          "states_sample": {
+            "couch": {
+              "isClean": true,
+              "isDirty": false
+            },
+            "mat_401": {
+              "isDirty": true,
+              "isClean": false
+            }
+          },
+          "relations_sample": {
+            "couch": {
+              "direct_relation": "ontop",
+              "direct_parent": "mat_401"
+            },
+            "home_office": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "home_office_anchor": {
+              "direct_relation": "inside",
+              "direct_parent": "home_office"
+            },
+            "mat_401": {
+              "direct_relation": "inside",
+              "direct_parent": "home_office_anchor"
+            },
+            "bedroom_anchor": {
+              "direct_relation": "inside",
+              "direct_parent": "bedroom"
+            },
+            "bedroom": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "bathroom": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "dining_room": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            }
+          }
+        },
+        "final_environment_summary": {
+          "available": true,
+          "entity_count": 8,
+          "type_counts": {
+            "receptacle": 4,
+            "room": 4
+          },
+          "states_sample": {
+            "couch": {
+              "isClean": true,
+              "isDirty": false
+            },
+            "mat_401": {
+              "isDirty": true,
+              "isClean": false
+            }
+          },
+          "relations_sample": {
+            "couch": {
+              "direct_relation": "ontop",
+              "direct_parent": "mat_401"
+            },
+            "home_office": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "home_office_anchor": {
+              "direct_relation": "inside",
+              "direct_parent": "home_office"
+            },
+            "mat_401": {
+              "direct_relation": "inside",
+              "direct_parent": "home_office_anchor"
+            },
+            "bedroom_anchor": {
+              "direct_relation": "inside",
+              "direct_parent": "bedroom"
+            },
+            "bedroom": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "bathroom": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "dining_room": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            }
+          }
+        },
+        "initial_robot": {
+          "robot_location": "bedroom_anchor",
+          "robot_holding": "空",
+          "robot_hands": {
+            "left": "空",
+            "right": "空"
+          },
+          "manipulator_mode": "dual_arm"
+        },
+        "final_robot": {
+          "robot_location": "couch",
+          "robot_holding": "空",
+          "robot_hands": {
+            "left": "空",
+            "right": "空"
+          },
+          "manipulator_mode": "dual_arm",
+          "posture": "sitting",
+          "isSleeping": false,
+          "last_seat": "couch"
+        },
+        "fairness_notes": [
+          "pddl_goal 是 EAI case 输入中的公开目标约束；最终态审计按该目标和 sandbox diff 判断，不对比文字答案。"
+        ],
+        "judge_contract": "公共 final-state audit 只能依据本 benchmark-local goal packet、understanding_final_state、sandbox 前后环境差异和任务原文判断完成度；不得转换到其他 benchmark 的动作或环境格式。",
+        "enabled": true,
+        "comparer_module": "benchmark.eai.virtualhome.framework.code.final_state"
+      }
+    }
+  }
+]

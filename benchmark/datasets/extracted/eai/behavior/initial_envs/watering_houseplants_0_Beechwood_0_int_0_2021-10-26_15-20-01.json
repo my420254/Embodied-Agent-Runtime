@@ -1,0 +1,191 @@
+{
+  "dataset": "behavior",
+  "case_id": "watering_houseplants_0_Beechwood_0_int_0_2021-10-26_15-20-01",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "watering_houseplants",
+    "task_id": 0,
+    "scene_id": "Beechwood_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "watering houseplants",
+    "task": "watering_houseplants",
+    "task_id": 0,
+    "scene_id": "Beechwood_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 10,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "breakfast_table_16",
+      "countertop_56",
+      "pot_plant_0",
+      "pot_plant_1",
+      "pot_plant_2",
+      "room_floor_dining_room_0",
+      "room_floor_kitchen_0",
+      "sink_64"
+    ],
+    "name_mapping": {
+      "pot_plant.n.01_1": {
+        "name": "pot_plant_0",
+        "category": "pot_plant.n.01"
+      },
+      "pot_plant.n.01_2": {
+        "name": "pot_plant_1",
+        "category": "pot_plant.n.01"
+      },
+      "pot_plant.n.01_3": {
+        "name": "pot_plant_2",
+        "category": "pot_plant.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_dining_room_0",
+        "category": "floor.n.01"
+      },
+      "floor.n.01_2": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "sink.n.01_1": {
+        "name": "sink_64",
+        "category": "sink.n.01"
+      },
+      "table.n.02_1": {
+        "name": "breakfast_table_16",
+        "category": "table.n.02"
+      },
+      "countertop.n.01_1": {
+        "name": "countertop_56",
+        "category": "countertop.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "breakfast_table_16": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "countertop_56": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "room_floor_dining_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "pot_plant_0": {
+                      "states": {
+                        "isSoaked": false
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "pot_plant_1": {
+                      "states": {
+                        "isSoaked": false
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "pot_plant_2": {
+                      "states": {
+                        "isSoaked": false
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "sink_64": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "breakfast_table_16": {
+        "name": "breakfast_table_16",
+        "category": "table.n.02"
+      },
+      "countertop_56": {
+        "name": "countertop_56",
+        "category": "countertop.n.01"
+      },
+      "pot_plant_0": {
+        "name": "pot_plant_0",
+        "category": "pot_plant.n.01"
+      },
+      "pot_plant_1": {
+        "name": "pot_plant_1",
+        "category": "pot_plant.n.01"
+      },
+      "pot_plant_2": {
+        "name": "pot_plant_2",
+        "category": "pot_plant.n.01"
+      },
+      "room_floor_dining_room_0": {
+        "name": "room_floor_dining_room_0",
+        "category": "floor.n.01"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "sink_64": {
+        "name": "sink_64",
+        "category": "sink.n.01"
+      }
+    }
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "dataset": "behavior",
+  "case_id": "installing_alarms_0_Merom_1_int_0_2021-05-23_23-02-24",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "installing_alarms",
+    "task_id": 0,
+    "scene_id": "Merom_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "installing alarms",
+    "task": "installing_alarms",
+    "task_id": 0,
+    "scene_id": "Merom_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 7,
+    "room_count": 1,
+    "entity_catalog": [
+      "alarm_0",
+      "alarm_1",
+      "behavior_room",
+      "behavior_room_anchor",
+      "breakfast_table_20",
+      "coffee_table_27",
+      "room_floor_living_room_0"
+    ],
+    "name_mapping": {
+      "alarm.n.02_1": {
+        "name": "alarm_0",
+        "category": "alarm.n.02"
+      },
+      "alarm.n.02_2": {
+        "name": "alarm_1",
+        "category": "alarm.n.02"
+      },
+      "table.n.02_1": {
+        "name": "breakfast_table_20",
+        "category": "table.n.02"
+      },
+      "table.n.02_2": {
+        "name": "coffee_table_27",
+        "category": "table.n.02"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "breakfast_table_20": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "coffee_table_27": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "alarm_0": {
+                      "states": {
+                        "isToggled": false
+                      },
+                      "direct_relation": "ontop"
+                    },
+                    "alarm_1": {
+                      "states": {
+                        "isToggled": false
+                      },
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "room_floor_living_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_living_room_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_living_room_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "alarm_0": {
+        "name": "alarm_0",
+        "category": "alarm.n.02"
+      },
+      "alarm_1": {
+        "name": "alarm_1",
+        "category": "alarm.n.02"
+      },
+      "breakfast_table_20": {
+        "name": "breakfast_table_20",
+        "category": "table.n.02"
+      },
+      "coffee_table_27": {
+        "name": "coffee_table_27",
+        "category": "table.n.02"
+      },
+      "room_floor_living_room_0": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      }
+    }
+  }
+}

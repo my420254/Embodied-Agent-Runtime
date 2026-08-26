@@ -1,0 +1,15 @@
+{
+  "is_passed": true,
+  "issue": "",
+  "fix_advice": "",
+  "repair_mode": "continue_from_current",
+  "accepted_diffs": [
+    "Potato (1) removed (sliced)",
+    "Potato (2) added (sliced, cooked, placed in SinkBasin)",
+    "Potato (3-10) added (sliced, on CounterTop)",
+    "Fridge (1) opened",
+    "Microwave (1) used for cooking",
+    "Robot moved to SinkBasin (1)"
+  ],
+  "unexpected_diffs": []
+}

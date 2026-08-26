@@ -1,0 +1,174 @@
+{
+  "dataset": "behavior",
+  "case_id": "picking_up_trash_0_Beechwood_0_int_1_2021-10-26_14-06-49",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "picking_up_trash",
+    "task_id": 0,
+    "scene_id": "Beechwood_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "picking up trash",
+    "task": "picking_up_trash",
+    "task_id": 0,
+    "scene_id": "Beechwood_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 10,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "pop_120",
+      "pop_121",
+      "room_floor_kitchen_0",
+      "room_floor_living_room_0",
+      "sticky_note_117",
+      "sticky_note_118",
+      "sticky_note_119",
+      "trash_can_116"
+    ],
+    "name_mapping": {
+      "ashcan.n.01_1": {
+        "name": "trash_can_116",
+        "category": "ashcan.n.01"
+      },
+      "pad.n.01_1": {
+        "name": "sticky_note_117",
+        "category": "pad.n.01"
+      },
+      "pad.n.01_2": {
+        "name": "sticky_note_118",
+        "category": "pad.n.01"
+      },
+      "pad.n.01_3": {
+        "name": "sticky_note_119",
+        "category": "pad.n.01"
+      },
+      "pop.n.02_1": {
+        "name": "pop_120",
+        "category": "pop.n.02"
+      },
+      "pop.n.02_2": {
+        "name": "pop_121",
+        "category": "pop.n.02"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "floor.n.01_2": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "sticky_note_117": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "sticky_note_118": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "trash_can_116": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "room_floor_living_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "pop_120": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "pop_121": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "sticky_note_119": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "pop_120": {
+        "name": "pop_120",
+        "category": "pop.n.02"
+      },
+      "pop_121": {
+        "name": "pop_121",
+        "category": "pop.n.02"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "room_floor_living_room_0": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "sticky_note_117": {
+        "name": "sticky_note_117",
+        "category": "pad.n.01"
+      },
+      "sticky_note_118": {
+        "name": "sticky_note_118",
+        "category": "pad.n.01"
+      },
+      "sticky_note_119": {
+        "name": "sticky_note_119",
+        "category": "pad.n.01"
+      },
+      "trash_can_116": {
+        "name": "trash_can_116",
+        "category": "ashcan.n.01"
+      }
+    }
+  }
+}

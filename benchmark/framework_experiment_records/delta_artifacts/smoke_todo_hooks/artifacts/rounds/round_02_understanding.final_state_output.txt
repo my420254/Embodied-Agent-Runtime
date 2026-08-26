@@ -1,0 +1,13 @@
+{
+  "final_state": {
+    "predicates": [
+      "item_on(plate, dining_table)",
+      "item_on(fork, dining_table)",
+      "item_on(knife, dining_table)",
+      "item_on(spoon, dining_table)",
+      "item_on(glass, dining_table)",
+      "item_on(flower, dining_table)"
+    ],
+    "notes": "Dining table is set up with all required tableware (plate, fork, knife, spoon, glass) and a romantic item (flower)."
+  }
+}

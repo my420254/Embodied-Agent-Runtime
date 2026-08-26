@@ -1,0 +1,204 @@
+{
+  "schema_version": "framework_trace_v3",
+  "process_name": "environment_audit",
+  "payload_role": "summary",
+  "prepared_scene": {
+    "entity_count": 58,
+    "type_counts": {
+      "room": 11,
+      "unknown": 35,
+      "receptacle": 12
+    },
+    "nesting": {
+      "available": true,
+      "contains_node_count": 11,
+      "max_depth": 2
+    },
+    "flat_schema": {
+      "available": true,
+      "entity_count": 58,
+      "standard_field_counts": {
+        "direct_parent": 58,
+        "direct_relation": 58,
+        "type": 58,
+        "states": 58,
+        "properties": 58,
+        "is_container": 58,
+        "full_path": 58
+      },
+      "relation_entity_count": 47,
+      "state_entity_count": 7,
+      "property_entity_count": 47,
+      "container_count": 12,
+      "full_path_entity_count": 47,
+      "parent_missing_count": 0,
+      "parent_missing_sample": [],
+      "parent_reference_missing_count": 0,
+      "parent_reference_missing_sample": []
+    }
+  },
+  "planning_input_environment": {
+    "source": {
+      "builder": "build_sandbox_environment",
+      "benchmark": "benchmark.delta"
+    },
+    "summary": {
+      "available": true,
+      "entity_count": 18,
+      "type_counts": {
+        "receptacle": 1,
+        "room": 11,
+        "unknown": 6
+      },
+      "entities": {
+        "count": 18,
+        "sample": [
+          "bathroom_1",
+          "bathroom_2",
+          "bedroom_1",
+          "bedroom_2",
+          "corridor_1",
+          "corridor_2",
+          "corridor_3",
+          "dining_room",
+          "dining_table",
+          "flower",
+          "fork",
+          "glass",
+          "kitchen",
+          "knife",
+          "living_room",
+          "lobby",
+          "plate",
+          "spoon"
+        ],
+        "truncated": false
+      },
+      "states_sample": {},
+      "schema": {
+        "available": true,
+        "entity_count": 18,
+        "standard_field_counts": {
+          "direct_parent": 18,
+          "direct_relation": 18,
+          "type": 18,
+          "states": 18,
+          "properties": 18,
+          "is_container": 18,
+          "full_path": 18
+        },
+        "relation_entity_count": 7,
+        "state_entity_count": 0,
+        "property_entity_count": 7,
+        "container_count": 1,
+        "full_path_entity_count": 7,
+        "parent_missing_count": 0,
+        "parent_missing_sample": [],
+        "parent_reference_missing_count": 0,
+        "parent_reference_missing_sample": []
+      }
+    },
+    "schema": {
+      "available": true,
+      "entity_count": 18,
+      "standard_field_counts": {
+        "direct_parent": 18,
+        "direct_relation": 18,
+        "type": 18,
+        "states": 18,
+        "properties": 18,
+        "is_container": 18,
+        "full_path": 18
+      },
+      "relation_entity_count": 7,
+      "state_entity_count": 0,
+      "property_entity_count": 7,
+      "container_count": 1,
+      "full_path_entity_count": 7,
+      "parent_missing_count": 0,
+      "parent_missing_sample": [],
+      "parent_reference_missing_count": 0,
+      "parent_reference_missing_sample": []
+    }
+  },
+  "planning_output_environment": {
+    "summary": {
+      "available": true,
+      "entity_count": 18,
+      "type_counts": {
+        "receptacle": 1,
+        "room": 11,
+        "unknown": 6
+      },
+      "entities": {
+        "count": 18,
+        "sample": [
+          "bathroom_1",
+          "bathroom_2",
+          "bedroom_1",
+          "bedroom_2",
+          "corridor_1",
+          "corridor_2",
+          "corridor_3",
+          "dining_room",
+          "dining_table",
+          "flower",
+          "fork",
+          "glass",
+          "kitchen",
+          "knife",
+          "living_room",
+          "lobby",
+          "plate",
+          "spoon"
+        ],
+        "truncated": false
+      },
+      "states_sample": {},
+      "schema": {
+        "available": true,
+        "entity_count": 18,
+        "standard_field_counts": {
+          "direct_parent": 18,
+          "direct_relation": 18,
+          "type": 18,
+          "states": 18,
+          "properties": 18,
+          "is_container": 18,
+          "full_path": 18
+        },
+        "relation_entity_count": 7,
+        "state_entity_count": 0,
+        "property_entity_count": 7,
+        "container_count": 1,
+        "full_path_entity_count": 7,
+        "parent_missing_count": 0,
+        "parent_missing_sample": [],
+        "parent_reference_missing_count": 0,
+        "parent_reference_missing_sample": []
+      }
+    },
+    "schema": {
+      "available": true,
+      "entity_count": 18,
+      "standard_field_counts": {
+        "direct_parent": 18,
+        "direct_relation": 18,
+        "type": 18,
+        "states": 18,
+        "properties": 18,
+        "is_container": 18,
+        "full_path": 18
+      },
+      "relation_entity_count": 7,
+      "state_entity_count": 0,
+      "property_entity_count": 7,
+      "container_count": 1,
+      "full_path_entity_count": 7,
+      "parent_missing_count": 0,
+      "parent_missing_sample": [],
+      "parent_reference_missing_count": 0,
+      "parent_reference_missing_sample": []
+    }
+  }
+}

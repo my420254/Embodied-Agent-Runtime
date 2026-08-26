@@ -1,0 +1,1824 @@
+{
+  "schema_version": "framework_trace_v3",
+  "process_name": "planning",
+  "payload_role": "input",
+  "skill_profile": null,
+  "repair_strategy": "retrac",
+  "todo_output_parser_path": "benchmark.eai.behavior.framework.code.native_actions.parse_behavior_native_actions",
+  "todo_step_adapter_path": "benchmark.eai.behavior.framework.code.native_actions.behavior_native_step_to_skill_call",
+  "todo_list_validator_path": "",
+  "planning_contract": {
+    "available": true,
+    "profile": "",
+    "config_file": "/data/zmy/OurAgent-he1/benchmark/eai/behavior/framework/code/config/settings.json",
+    "skills_root": "benchmark/eai/behavior/framework/code/skills",
+    "enabled_contract_skill_count": 29,
+    "raw_contract_count": 29,
+    "framework_contract_skills": [
+      "LEFT_GRASP",
+      "RIGHT_GRASP",
+      "LEFT_PLACE_ONTOP",
+      "RIGHT_PLACE_ONTOP",
+      "LEFT_PLACE_INSIDE",
+      "RIGHT_PLACE_INSIDE",
+      "RIGHT_RELEASE",
+      "LEFT_RELEASE",
+      "OPEN",
+      "CLOSE",
+      "COOK",
+      "CLEAN",
+      "FREEZE",
+      "UNFREEZE",
+      "SLICE",
+      "SOAK",
+      "DRY",
+      "TOGGLE_ON",
+      "TOGGLE_OFF",
+      "LEFT_PLACE_NEXTTO",
+      "RIGHT_PLACE_NEXTTO",
+      "LEFT_TRANSFER_CONTENTS_INSIDE",
+      "RIGHT_TRANSFER_CONTENTS_INSIDE",
+      "LEFT_TRANSFER_CONTENTS_ONTOP",
+      "RIGHT_TRANSFER_CONTENTS_ONTOP",
+      "LEFT_PLACE_NEXTTO_ONTOP",
+      "RIGHT_PLACE_NEXTTO_ONTOP",
+      "LEFT_PLACE_UNDER",
+      "RIGHT_PLACE_UNDER"
+    ],
+    "raw_action_names": [
+      "LEFT_GRASP",
+      "RIGHT_GRASP",
+      "LEFT_PLACE_ONTOP",
+      "RIGHT_PLACE_ONTOP",
+      "LEFT_PLACE_INSIDE",
+      "RIGHT_PLACE_INSIDE",
+      "RIGHT_RELEASE",
+      "LEFT_RELEASE",
+      "OPEN",
+      "CLOSE",
+      "COOK",
+      "CLEAN",
+      "FREEZE",
+      "UNFREEZE",
+      "SLICE",
+      "SOAK",
+      "DRY",
+      "TOGGLE_ON",
+      "TOGGLE_OFF",
+      "LEFT_PLACE_NEXTTO",
+      "RIGHT_PLACE_NEXTTO",
+      "LEFT_TRANSFER_CONTENTS_INSIDE",
+      "RIGHT_TRANSFER_CONTENTS_INSIDE",
+      "LEFT_TRANSFER_CONTENTS_ONTOP",
+      "RIGHT_TRANSFER_CONTENTS_ONTOP",
+      "LEFT_PLACE_NEXTTO_ONTOP",
+      "RIGHT_PLACE_NEXTTO_ONTOP",
+      "LEFT_PLACE_UNDER",
+      "RIGHT_PLACE_UNDER"
+    ],
+    "raw_actions": [
+      {
+        "skill": "LEFT_GRASP",
+        "action_name": "LEFT_GRASP",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "LEFT_GRASP"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "RIGHT_GRASP",
+        "action_name": "RIGHT_GRASP",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "RIGHT_GRASP"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "LEFT_PLACE_ONTOP",
+        "action_name": "LEFT_PLACE_ONTOP",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "LEFT_PLACE_ONTOP"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "RIGHT_PLACE_ONTOP",
+        "action_name": "RIGHT_PLACE_ONTOP",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "RIGHT_PLACE_ONTOP"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "LEFT_PLACE_INSIDE",
+        "action_name": "LEFT_PLACE_INSIDE",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "LEFT_PLACE_INSIDE"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "RIGHT_PLACE_INSIDE",
+        "action_name": "RIGHT_PLACE_INSIDE",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "RIGHT_PLACE_INSIDE"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "RIGHT_RELEASE",
+        "action_name": "RIGHT_RELEASE",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "RIGHT_RELEASE"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "LEFT_RELEASE",
+        "action_name": "LEFT_RELEASE",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "LEFT_RELEASE"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "OPEN",
+        "action_name": "OPEN",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "OPEN"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "CLOSE",
+        "action_name": "CLOSE",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "CLOSE"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "COOK",
+        "action_name": "COOK",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "COOK"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "CLEAN",
+        "action_name": "CLEAN",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "CLEAN"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "FREEZE",
+        "action_name": "FREEZE",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "FREEZE"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "UNFREEZE",
+        "action_name": "UNFREEZE",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "UNFREEZE"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "SLICE",
+        "action_name": "SLICE",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "SLICE"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "slice_parts_from_target",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "SOAK",
+        "action_name": "SOAK",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "SOAK"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "DRY",
+        "action_name": "DRY",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "DRY"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "TOGGLE_ON",
+        "action_name": "TOGGLE_ON",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "TOGGLE_ON"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "TOGGLE_OFF",
+        "action_name": "TOGGLE_OFF",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "TOGGLE_OFF"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "LEFT_PLACE_NEXTTO",
+        "action_name": "LEFT_PLACE_NEXTTO",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "LEFT_PLACE_NEXTTO"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "RIGHT_PLACE_NEXTTO",
+        "action_name": "RIGHT_PLACE_NEXTTO",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "RIGHT_PLACE_NEXTTO"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "LEFT_TRANSFER_CONTENTS_INSIDE",
+        "action_name": "LEFT_TRANSFER_CONTENTS_INSIDE",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "LEFT_TRANSFER_CONTENTS_INSIDE"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "RIGHT_TRANSFER_CONTENTS_INSIDE",
+        "action_name": "RIGHT_TRANSFER_CONTENTS_INSIDE",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "RIGHT_TRANSFER_CONTENTS_INSIDE"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "LEFT_TRANSFER_CONTENTS_ONTOP",
+        "action_name": "LEFT_TRANSFER_CONTENTS_ONTOP",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "LEFT_TRANSFER_CONTENTS_ONTOP"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "RIGHT_TRANSFER_CONTENTS_ONTOP",
+        "action_name": "RIGHT_TRANSFER_CONTENTS_ONTOP",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "RIGHT_TRANSFER_CONTENTS_ONTOP"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "LEFT_PLACE_NEXTTO_ONTOP",
+        "action_name": "LEFT_PLACE_NEXTTO_ONTOP",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "LEFT_PLACE_NEXTTO_ONTOP"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "RIGHT_PLACE_NEXTTO_ONTOP",
+        "action_name": "RIGHT_PLACE_NEXTTO_ONTOP",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "RIGHT_PLACE_NEXTTO_ONTOP"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "LEFT_PLACE_UNDER",
+        "action_name": "LEFT_PLACE_UNDER",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "LEFT_PLACE_UNDER"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "RIGHT_PLACE_UNDER",
+        "action_name": "RIGHT_PLACE_UNDER",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "object"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "RIGHT_PLACE_UNDER"
+          }
+        ],
+        "entity_fields": [
+          "object"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": true,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      }
+    ]
+  },
+  "feature_flags": {
+    "sandbox_evaluator": true,
+    "state_diff_audit": true,
+    "semantic_audit": false,
+    "playbook_retrieval": false,
+    "playbook_write": false,
+    "reflection": false,
+    "candidate_rules": false
+  },
+  "understanding_stage_executed": true,
+  "structured_task": {
+    "intent": "Assemble gift baskets by placing one candle, one cheese, one cookie, and one bow inside each basket.",
+    "required_item_names": {
+      "targets": {
+        "primary": [
+          "candle_0",
+          "candle_1",
+          "candle_2",
+          "candle_3",
+          "cheese_0",
+          "cheese_1",
+          "cheese_2",
+          "cheese_3",
+          "cookie_0",
+          "cookie_1",
+          "cookie_2",
+          "cookie_3",
+          "bow_0",
+          "bow_1",
+          "bow_2",
+          "bow_3"
+        ],
+        "alternatives": []
+      },
+      "tools": {
+        "primary": [],
+        "alternatives": []
+      },
+      "receptacles": {
+        "primary": [
+          "basket_0",
+          "basket_1",
+          "basket_2",
+          "basket_3"
+        ],
+        "alternatives": []
+      }
+    },
+    "quantity_constraints": [
+      "Each basket must contain exactly one candle.",
+      "Each basket must contain exactly one cheese.",
+      "Each basket must contain exactly one cookie.",
+      "Each basket must contain exactly one bow.",
+      "All items must be placed inside the baskets."
+    ],
+    "final_state": {
+      "basket_0": {
+        "contains": [
+          "candle_0",
+          "cheese_0",
+          "cookie_0",
+          "bow_0"
+        ]
+      },
+      "basket_1": {
+        "contains": [
+          "candle_1",
+          "cheese_1",
+          "cookie_1",
+          "bow_1"
+        ]
+      },
+      "basket_2": {
+        "contains": [
+          "candle_2",
+          "cheese_2",
+          "cookie_2",
+          "bow_2"
+        ]
+      },
+      "basket_3": {
+        "contains": [
+          "candle_3",
+          "cheese_3",
+          "cookie_3",
+          "bow_3"
+        ]
+      }
+    }
+  },
+  "env_state": {
+    "robot_location": "room_floor_living_room_0",
+    "robot_holding": "空",
+    "robot_hands": {
+      "left": "空",
+      "right": "空"
+    },
+    "manipulator_mode": "dual_arm"
+  },
+  "task_context": {
+    "dataset": "behavior",
+    "instruction": "assembling gift baskets",
+    "identifier": "assembling_gift_baskets_0_Beechwood_0_int_0_2021-10-26_12-46-37",
+    "raw_source": "behavior_initial_env_cache",
+    "initial_environment_cache_path": "/data/zmy/OurAgent-he1/benchmark/datasets/extracted/eai/behavior/initial_envs/assembling_gift_baskets_0_Beechwood_0_int_0_2021-10-26_12-46-37.json",
+    "initial_environment_source": "igibson_behavior_native_loader",
+    "environment_source": "igibson_behavior_native_loader",
+    "raw_goal_condition": [
+      [
+        "forpairs",
+        "basket.n.01",
+        "-",
+        "basket.n.01",
+        "candle.n.01",
+        "-",
+        "candle.n.01",
+        "inside",
+        "candle.n.01",
+        "basket.n.01"
+      ],
+      [
+        "forpairs",
+        "basket.n.01",
+        "-",
+        "basket.n.01",
+        "cheese.n.01",
+        "-",
+        "cheese.n.01",
+        "inside",
+        "cheese.n.01",
+        "basket.n.01"
+      ],
+      [
+        "forpairs",
+        "basket.n.01",
+        "-",
+        "basket.n.01",
+        "cookie.n.01",
+        "-",
+        "cookie.n.01",
+        "inside",
+        "cookie.n.01",
+        "basket.n.01"
+      ],
+      [
+        "forpairs",
+        "basket.n.01",
+        "-",
+        "basket.n.01",
+        "bow.n.08",
+        "-",
+        "bow.n.08",
+        "inside",
+        "bow.n.08",
+        "basket.n.01"
+      ]
+    ],
+    "raw_goal_clauses": [
+      "forpairs basket.n.01 - basket.n.01 candle.n.01 - candle.n.01 inside candle.n.01 basket.n.01",
+      "forpairs basket.n.01 - basket.n.01 cheese.n.01 - cheese.n.01 inside cheese.n.01 basket.n.01",
+      "forpairs basket.n.01 - basket.n.01 cookie.n.01 - cookie.n.01 inside cookie.n.01 basket.n.01",
+      "forpairs basket.n.01 - basket.n.01 bow.n.08 - bow.n.08 inside bow.n.08 basket.n.01"
+    ],
+    "raw_goal_condition_count": 4,
+    "name_category": {
+      "basket_0": "basket.n.01",
+      "basket_1": "basket.n.01",
+      "basket_2": "basket.n.01",
+      "basket_3": "basket.n.01",
+      "room_floor_living_room_0": "floor.n.01",
+      "candle_0": "candle.n.01",
+      "candle_1": "candle.n.01",
+      "candle_2": "candle.n.01",
+      "candle_3": "candle.n.01",
+      "cookie_0": "cookie.n.01",
+      "cookie_1": "cookie.n.01",
+      "cookie_2": "cookie.n.01",
+      "cookie_3": "cookie.n.01",
+      "cheese_0": "cheese.n.01",
+      "cheese_1": "cheese.n.01",
+      "cheese_2": "cheese.n.01",
+      "cheese_3": "cheese.n.01",
+      "bow_0": "bow.n.08",
+      "bow_1": "bow.n.08",
+      "bow_2": "bow.n.08",
+      "bow_3": "bow.n.08",
+      "breakfast_table_13": "table.n.02",
+      "coffee_table_12": "table.n.02",
+      "agent.n.01_1": "agent.n.01"
+    },
+    "available_entities": [
+      "basket_0",
+      "basket_1",
+      "basket_2",
+      "basket_3",
+      "behavior_room",
+      "behavior_room_anchor",
+      "bow_0",
+      "bow_1",
+      "bow_2",
+      "bow_3",
+      "breakfast_table_13",
+      "candle_0",
+      "candle_1",
+      "candle_2",
+      "candle_3",
+      "cheese_0",
+      "cheese_1",
+      "cheese_2",
+      "cheese_3",
+      "coffee_table_12",
+      "cookie_0",
+      "cookie_1",
+      "cookie_2",
+      "cookie_3",
+      "room_floor_living_room_0"
+    ]
+  },
+  "feedback": "",
+  "environment": {
+    "basket_0": {
+      "direct_parent": "room_floor_living_room_0",
+      "direct_relation": "onfloor",
+      "type": "receptacle",
+      "states": {},
+      "properties": [],
+      "is_container": true,
+      "full_path": [
+        "behavior_room",
+        "behavior_room_anchor",
+        "room_floor_living_room_0"
+      ]
+    },
+    "behavior_room": {
+      "direct_parent": "未知环境",
+      "direct_relation": null,
+      "type": "room",
+      "states": {},
+      "properties": [],
+      "is_container": false,
+      "full_path": []
+    },
+    "behavior_room_anchor": {
+      "direct_parent": "behavior_room",
+      "direct_relation": "inside",
+      "type": "receptacle",
+      "states": {},
+      "properties": [],
+      "is_container": true,
+      "full_path": [
+        "behavior_room"
+      ]
+    },
+    "room_floor_living_room_0": {
+      "direct_parent": "behavior_room_anchor",
+      "direct_relation": "inside",
+      "type": "receptacle",
+      "states": {},
+      "properties": [],
+      "is_container": true,
+      "full_path": [
+        "behavior_room",
+        "behavior_room_anchor"
+      ]
+    },
+    "basket_1": {
+      "direct_parent": "room_floor_living_room_0",
+      "direct_relation": "onfloor",
+      "type": "receptacle",
+      "states": {},
+      "properties": [],
+      "is_container": true,
+      "full_path": [
+        "behavior_room",
+        "behavior_room_anchor",
+        "room_floor_living_room_0"
+      ]
+    },
+    "basket_2": {
+      "direct_parent": "room_floor_living_room_0",
+      "direct_relation": "onfloor",
+      "type": "receptacle",
+      "states": {},
+      "properties": [],
+      "is_container": true,
+      "full_path": [
+        "behavior_room",
+        "behavior_room_anchor",
+        "room_floor_living_room_0"
+      ]
+    },
+    "basket_3": {
+      "direct_parent": "room_floor_living_room_0",
+      "direct_relation": "onfloor",
+      "type": "receptacle",
+      "states": {},
+      "properties": [],
+      "is_container": true,
+      "full_path": [
+        "behavior_room",
+        "behavior_room_anchor",
+        "room_floor_living_room_0"
+      ]
+    },
+    "candle_0": {
+      "direct_parent": "breakfast_table_13",
+      "direct_relation": "ontop",
+      "type": null,
+      "states": {},
+      "properties": [],
+      "is_container": false,
+      "full_path": [
+        "behavior_room",
+        "behavior_room_anchor",
+        "breakfast_table_13"
+      ]
+    },
+    "breakfast_table_13": {
+      "direct_parent": "behavior_room_anchor",
+      "direct_relation": "inside",
+      "type": "receptacle",
+      "states": {},
+      "properties": [],
+      "is_container": true,
+      "full_path": [
+        "behavior_room",
+        "behavior_room_anchor"
+      ]
+    },
+    "candle_1": {
+      "direct_parent": "breakfast_table_13",
+      "direct_relation": "ontop",
+      "type": null,
+      "states": {},
+      "properties": [],
+      "is_container": false,
+      "full_path": [
+        "behavior_room",
+        "behavior_room_anchor",
+        "breakfast_table_13"
+      ]
+    },
+    "candle_2": {
+      "direct_parent": "breakfast_table_13",
+      "direct_relation": "ontop",
+      "type": null,
+      "states": {},
+      "properties": [],
+      "is_container": false,
+      "full_path": [
+        "behavior_room",
+        "behavior_room_anchor",
+        "breakfast_table_13"
+      ]
+    },
+    "candle_3": {
+      "direct_parent": "breakfast_table_13",
+      "direct_relation": "ontop",
+      "type": null,
+      "states": {},
+      "properties": [],
+      "is_container": false,
+      "full_path": [
+        "behavior_room",
+        "behavior_room_anchor",
+        "breakfast_table_13"
+      ]
+    },
+    "cheese_0": {
+      "direct_parent": "coffee_table_12",
+      "direct_relation": "ontop",
+      "type": null,
+      "states": {},
+      "properties": [],
+      "is_container": false,
+      "full_path": [
+        "behavior_room",
+        "behavior_room_anchor",
+        "coffee_table_12"
+      ]
+    },
+    "coffee_table_12": {
+      "direct_parent": "behavior_room_anchor",
+      "direct_relation": "inside",
+      "type": "receptacle",
+      "states": {},
+      "properties": [],
+      "is_container": true,
+      "full_path": [
+        "behavior_room",
+        "behavior_room_anchor"
+      ]
+    },
+    "cheese_1": {
+      "direct_parent": "coffee_table_12",
+      "direct_relation": "ontop",
+      "type": null,
+      "states": {},
+      "properties": [],
+      "is_container": false,
+      "full_path": [
+        "behavior_room",
+        "behavior_room_anchor",
+        "coffee_table_12"
+      ]
+    },
+    "cheese_2": {
+      "direct_parent": "coffee_table_12",
+      "direct_relation": "ontop",
+      "type": null,
+      "states": {},
+      "properties": [],
+      "is_container": false,
+      "full_path": [
+        "behavior_room",
+        "behavior_room_anchor",
+        "coffee_table_12"
+      ]
+    },
+    "cheese_3": {
+      "direct_parent": "coffee_table_12",
+      "direct_relation": "ontop",
+      "type": null,
+      "states": {},
+      "properties": [],
+      "is_container": false,
+      "full_path": [
+        "behavior_room",
+        "behavior_room_anchor",
+        "coffee_table_12"
+      ]
+    },
+    "cookie_0": {
+      "direct_parent": "breakfast_table_13",
+      "direct_relation": "ontop",
+      "type": null,
+      "states": {},
+      "properties": [],
+      "is_container": false,
+      "full_path": [
+        "behavior_room",
+        "behavior_room_anchor",
+        "breakfast_table_13"
+      ]
+    },
+    "cookie_1": {
+      "direct_parent": "breakfast_table_13",
+      "direct_relation": "ontop",
+      "type": null,
+      "states": {},
+      "properties": [],
+      "is_container": false,
+      "full_path": [
+        "behavior_room",
+        "behavior_room_anchor",
+        "breakfast_table_13"
+      ]
+    },
+    "cookie_2": {
+      "direct_parent": "breakfast_table_13",
+      "direct_relation": "ontop",
+      "type": null,
+      "states": {},
+      "properties": [],
+      "is_container": false,
+      "full_path": [
+        "behavior_room",
+        "behavior_room_anchor",
+        "breakfast_table_13"
+      ]
+    },
+    "cookie_3": {
+      "direct_parent": "breakfast_table_13",
+      "direct_relation": "ontop",
+      "type": null,
+      "states": {},
+      "properties": [],
+      "is_container": false,
+      "full_path": [
+        "behavior_room",
+        "behavior_room_anchor",
+        "breakfast_table_13"
+      ]
+    },
+    "bow_0": {
+      "direct_parent": "coffee_table_12",
+      "direct_relation": "ontop",
+      "type": null,
+      "states": {},
+      "properties": [],
+      "is_container": false,
+      "full_path": [
+        "behavior_room",
+        "behavior_room_anchor",
+        "coffee_table_12"
+      ]
+    },
+    "bow_1": {
+      "direct_parent": "coffee_table_12",
+      "direct_relation": "ontop",
+      "type": null,
+      "states": {},
+      "properties": [],
+      "is_container": false,
+      "full_path": [
+        "behavior_room",
+        "behavior_room_anchor",
+        "coffee_table_12"
+      ]
+    },
+    "bow_2": {
+      "direct_parent": "coffee_table_12",
+      "direct_relation": "ontop",
+      "type": null,
+      "states": {},
+      "properties": [],
+      "is_container": false,
+      "full_path": [
+        "behavior_room",
+        "behavior_room_anchor",
+        "coffee_table_12"
+      ]
+    },
+    "bow_3": {
+      "direct_parent": "coffee_table_12",
+      "direct_relation": "ontop",
+      "type": null,
+      "states": {},
+      "properties": [],
+      "is_container": false,
+      "full_path": [
+        "behavior_room",
+        "behavior_room_anchor",
+        "coffee_table_12"
+      ]
+    }
+  },
+  "environment_facts": {
+    "available": true,
+    "entity_count": 25,
+    "facts": [
+      {
+        "name": "basket_0",
+        "direct_parent": "room_floor_living_room_0",
+        "direct_relation": "onfloor",
+        "full_path": [
+          "behavior_room",
+          "behavior_room_anchor",
+          "room_floor_living_room_0"
+        ],
+        "states": {},
+        "properties": [],
+        "type": "receptacle",
+        "is_container": true
+      },
+      {
+        "name": "basket_1",
+        "direct_parent": "room_floor_living_room_0",
+        "direct_relation": "onfloor",
+        "full_path": [
+          "behavior_room",
+          "behavior_room_anchor",
+          "room_floor_living_room_0"
+        ],
+        "states": {},
+        "properties": [],
+        "type": "receptacle",
+        "is_container": true
+      },
+      {
+        "name": "basket_2",
+        "direct_parent": "room_floor_living_room_0",
+        "direct_relation": "onfloor",
+        "full_path": [
+          "behavior_room",
+          "behavior_room_anchor",
+          "room_floor_living_room_0"
+        ],
+        "states": {},
+        "properties": [],
+        "type": "receptacle",
+        "is_container": true
+      },
+      {
+        "name": "basket_3",
+        "direct_parent": "room_floor_living_room_0",
+        "direct_relation": "onfloor",
+        "full_path": [
+          "behavior_room",
+          "behavior_room_anchor",
+          "room_floor_living_room_0"
+        ],
+        "states": {},
+        "properties": [],
+        "type": "receptacle",
+        "is_container": true
+      },
+      {
+        "name": "behavior_room",
+        "direct_parent": "未知环境",
+        "direct_relation": null,
+        "full_path": [],
+        "states": {},
+        "properties": [],
+        "type": "room",
+        "is_container": false
+      },
+      {
+        "name": "behavior_room_anchor",
+        "direct_parent": "behavior_room",
+        "direct_relation": "inside",
+        "full_path": [
+          "behavior_room"
+        ],
+        "states": {},
+        "properties": [],
+        "type": "receptacle",
+        "is_container": true
+      },
+      {
+        "name": "bow_0",
+        "direct_parent": "coffee_table_12",
+        "direct_relation": "ontop",
+        "full_path": [
+          "behavior_room",
+          "behavior_room_anchor",
+          "coffee_table_12"
+        ],
+        "states": {},
+        "properties": [],
+        "type": null,
+        "is_container": false
+      },
+      {
+        "name": "bow_1",
+        "direct_parent": "coffee_table_12",
+        "direct_relation": "ontop",
+        "full_path": [
+          "behavior_room",
+          "behavior_room_anchor",
+          "coffee_table_12"
+        ],
+        "states": {},
+        "properties": [],
+        "type": null,
+        "is_container": false
+      },
+      {
+        "name": "bow_2",
+        "direct_parent": "coffee_table_12",
+        "direct_relation": "ontop",
+        "full_path": [
+          "behavior_room",
+          "behavior_room_anchor",
+          "coffee_table_12"
+        ],
+        "states": {},
+        "properties": [],
+        "type": null,
+        "is_container": false
+      },
+      {
+        "name": "bow_3",
+        "direct_parent": "coffee_table_12",
+        "direct_relation": "ontop",
+        "full_path": [
+          "behavior_room",
+          "behavior_room_anchor",
+          "coffee_table_12"
+        ],
+        "states": {},
+        "properties": [],
+        "type": null,
+        "is_container": false
+      },
+      {
+        "name": "breakfast_table_13",
+        "direct_parent": "behavior_room_anchor",
+        "direct_relation": "inside",
+        "full_path": [
+          "behavior_room",
+          "behavior_room_anchor"
+        ],
+        "states": {},
+        "properties": [],
+        "type": "receptacle",
+        "is_container": true
+      },
+      {
+        "name": "candle_0",
+        "direct_parent": "breakfast_table_13",
+        "direct_relation": "ontop",
+        "full_path": [
+          "behavior_room",
+          "behavior_room_anchor",
+          "breakfast_table_13"
+        ],
+        "states": {},
+        "properties": [],
+        "type": null,
+        "is_container": false
+      },
+      {
+        "name": "candle_1",
+        "direct_parent": "breakfast_table_13",
+        "direct_relation": "ontop",
+        "full_path": [
+          "behavior_room",
+          "behavior_room_anchor",
+          "breakfast_table_13"
+        ],
+        "states": {},
+        "properties": [],
+        "type": null,
+        "is_container": false
+      },
+      {
+        "name": "candle_2",
+        "direct_parent": "breakfast_table_13",
+        "direct_relation": "ontop",
+        "full_path": [
+          "behavior_room",
+          "behavior_room_anchor",
+          "breakfast_table_13"
+        ],
+        "states": {},
+        "properties": [],
+        "type": null,
+        "is_container": false
+      },
+      {
+        "name": "candle_3",
+        "direct_parent": "breakfast_table_13",
+        "direct_relation": "ontop",
+        "full_path": [
+          "behavior_room",
+          "behavior_room_anchor",
+          "breakfast_table_13"
+        ],
+        "states": {},
+        "properties": [],
+        "type": null,
+        "is_container": false
+      },
+      {
+        "name": "cheese_0",
+        "direct_parent": "coffee_table_12",
+        "direct_relation": "ontop",
+        "full_path": [
+          "behavior_room",
+          "behavior_room_anchor",
+          "coffee_table_12"
+        ],
+        "states": {},
+        "properties": [],
+        "type": null,
+        "is_container": false
+      },
+      {
+        "name": "cheese_1",
+        "direct_parent": "coffee_table_12",
+        "direct_relation": "ontop",
+        "full_path": [
+          "behavior_room",
+          "behavior_room_anchor",
+          "coffee_table_12"
+        ],
+        "states": {},
+        "properties": [],
+        "type": null,
+        "is_container": false
+      },
+      {
+        "name": "cheese_2",
+        "direct_parent": "coffee_table_12",
+        "direct_relation": "ontop",
+        "full_path": [
+          "behavior_room",
+          "behavior_room_anchor",
+          "coffee_table_12"
+        ],
+        "states": {},
+        "properties": [],
+        "type": null,
+        "is_container": false
+      },
+      {
+        "name": "cheese_3",
+        "direct_parent": "coffee_table_12",
+        "direct_relation": "ontop",
+        "full_path": [
+          "behavior_room",
+          "behavior_room_anchor",
+          "coffee_table_12"
+        ],
+        "states": {},
+        "properties": [],
+        "type": null,
+        "is_container": false
+      },
+      {
+        "name": "coffee_table_12",
+        "direct_parent": "behavior_room_anchor",
+        "direct_relation": "inside",
+        "full_path": [
+          "behavior_room",
+          "behavior_room_anchor"
+        ],
+        "states": {},
+        "properties": [],
+        "type": "receptacle",
+        "is_container": true
+      },
+      {
+        "name": "cookie_0",
+        "direct_parent": "breakfast_table_13",
+        "direct_relation": "ontop",
+        "full_path": [
+          "behavior_room",
+          "behavior_room_anchor",
+          "breakfast_table_13"
+        ],
+        "states": {},
+        "properties": [],
+        "type": null,
+        "is_container": false
+      },
+      {
+        "name": "cookie_1",
+        "direct_parent": "breakfast_table_13",
+        "direct_relation": "ontop",
+        "full_path": [
+          "behavior_room",
+          "behavior_room_anchor",
+          "breakfast_table_13"
+        ],
+        "states": {},
+        "properties": [],
+        "type": null,
+        "is_container": false
+      },
+      {
+        "name": "cookie_2",
+        "direct_parent": "breakfast_table_13",
+        "direct_relation": "ontop",
+        "full_path": [
+          "behavior_room",
+          "behavior_room_anchor",
+          "breakfast_table_13"
+        ],
+        "states": {},
+        "properties": [],
+        "type": null,
+        "is_container": false
+      },
+      {
+        "name": "cookie_3",
+        "direct_parent": "breakfast_table_13",
+        "direct_relation": "ontop",
+        "full_path": [
+          "behavior_room",
+          "behavior_room_anchor",
+          "breakfast_table_13"
+        ],
+        "states": {},
+        "properties": [],
+        "type": null,
+        "is_container": false
+      },
+      {
+        "name": "room_floor_living_room_0",
+        "direct_parent": "behavior_room_anchor",
+        "direct_relation": "inside",
+        "full_path": [
+          "behavior_room",
+          "behavior_room_anchor"
+        ],
+        "states": {},
+        "properties": [],
+        "type": "receptacle",
+        "is_container": true
+      }
+    ],
+    "truncated": false
+  },
+  "environment_source": {
+    "builder": "build_sandbox_environment",
+    "benchmark": "benchmark.eai.behavior"
+  },
+  "checkpoint_env": {},
+  "checkpoint_robot": {},
+  "re_trac_memory": {
+    "failed_lessons": []
+  },
+  "re_trac_state": {},
+  "sda_state": {},
+  "todo_list_before_planning": [],
+  "validated_steps": [],
+  "validated_todo_actions": [],
+  "todo_checkpoint_env": {},
+  "todo_checkpoint_robot": {}
+}

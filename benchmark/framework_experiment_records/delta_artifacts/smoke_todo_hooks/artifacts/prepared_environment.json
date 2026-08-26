@@ -1,0 +1,1176 @@
+{
+  "schema_version": "framework_trace_v3",
+  "process_name": "environment_preparation",
+  "payload_role": "output",
+  "instruction": "Set up the dining table for dinner, place the tableware/cutleries and glass on the dining table. Also bring something romantic to the dining table.",
+  "env_state": {
+    "robot_location": "living_room",
+    "robot_holding": "空",
+    "delta_room_neighbors": {
+      "bathroom_1": [
+        "corridor_2"
+      ],
+      "bathroom_2": [
+        "corridor_3"
+      ],
+      "bedroom_1": [
+        "corridor_2"
+      ],
+      "bedroom_2": [
+        "corridor_3"
+      ],
+      "corridor_1": [
+        "lobby",
+        "corridor_3"
+      ],
+      "corridor_2": [
+        "bathroom_1",
+        "bedroom_1",
+        "corridor_3"
+      ],
+      "corridor_3": [
+        "corridor_1",
+        "corridor_2",
+        "bathroom_2",
+        "bedroom_2",
+        "kitchen",
+        "living_room"
+      ],
+      "dining_room": [
+        "kitchen",
+        "living_room"
+      ],
+      "kitchen": [
+        "corridor_3",
+        "dining_room"
+      ],
+      "living_room": [
+        "corridor_3",
+        "dining_room"
+      ],
+      "lobby": [
+        "corridor_1"
+      ]
+    },
+    "domain": "dining",
+    "delta_initial_predicates": [
+      "item_is_dining_table dining_table",
+      "item_pickable plate",
+      "item_accessible plate",
+      "item_pickable fork",
+      "item_accessible fork",
+      "item_pickable knife",
+      "item_accessible knife",
+      "item_pickable spoon",
+      "item_accessible spoon",
+      "item_pickable glass",
+      "item_accessible glass",
+      "item_pickable flower",
+      "item_accessible flower"
+    ]
+  },
+  "entity_catalog": [
+    "banana_peel",
+    "bathroom_1",
+    "bathroom_2",
+    "bed_1",
+    "bed_2",
+    "bedroom_1",
+    "bedroom_2",
+    "book",
+    "bowl_2",
+    "bowl_3",
+    "chair_1",
+    "chair_2",
+    "chair_3",
+    "chair_4",
+    "chair_5",
+    "clock",
+    "cola_can",
+    "corridor_1",
+    "corridor_2",
+    "corridor_3",
+    "couch",
+    "cpu",
+    "desk",
+    "dining_room",
+    "dining_table",
+    "flower",
+    "fork",
+    "fridge_1",
+    "fridge_2",
+    "fridge_3",
+    "glass",
+    "gpu",
+    "kitchen",
+    "knife",
+    "lamp",
+    "living_room",
+    "lobby",
+    "locker",
+    "mainboard",
+    "microwave",
+    "mop",
+    "oven",
+    "paper",
+    "plant_1",
+    "plant_2",
+    "plate",
+    "psu",
+    "ram",
+    "robot_hub",
+    "rotting_apple",
+    "rubbish_bin",
+    "shelf",
+    "sink_1",
+    "sink_2",
+    "spoon",
+    "ssd",
+    "toilet_1",
+    "toilet_2"
+  ],
+  "scene": {
+    "environment": {
+      "bathroom_1": {
+        "contains": {
+          "psu": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:drop",
+              "delta_affordance:pick"
+            ],
+            "states": {}
+          },
+          "sink_1": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:clean_mop"
+            ],
+            "states": {}
+          },
+          "toilet_1": {
+            "properties": [
+              "delta_accessible:false"
+            ],
+            "states": {}
+          },
+          "plant_1": {
+            "properties": [
+              "delta_accessible:false"
+            ],
+            "states": {}
+          },
+          "mop": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:clean_mop",
+              "delta_affordance:drop",
+              "delta_affordance:mop_floor",
+              "delta_affordance:pick"
+            ],
+            "states": {
+              "isClean": true,
+              "isDirty": false
+            }
+          }
+        }
+      },
+      "bathroom_2": {
+        "contains": {
+          "gpu": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:drop",
+              "delta_affordance:pick"
+            ],
+            "states": {}
+          },
+          "sink_2": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:clean_mop"
+            ],
+            "states": {}
+          },
+          "toilet_2": {
+            "properties": [
+              "delta_accessible:false"
+            ],
+            "states": {}
+          },
+          "plant_2": {
+            "properties": [
+              "delta_accessible:false"
+            ],
+            "states": {}
+          }
+        }
+      },
+      "bedroom_1": {
+        "contains": {
+          "mainboard": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:drop",
+              "delta_affordance:pick"
+            ],
+            "states": {}
+          },
+          "glass": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:drop",
+              "delta_affordance:pick",
+              "delta_affordance:place_on",
+              "delta_predicate:item_pickable",
+              "delta_predicate:item_accessible"
+            ],
+            "states": {}
+          },
+          "bed_1": {
+            "properties": [
+              "delta_accessible:false"
+            ],
+            "states": {}
+          },
+          "shelf": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:drop",
+              "delta_affordance:load",
+              "delta_affordance:pick",
+              "delta_affordance:unload"
+            ],
+            "states": {
+              "isLoaded": true
+            },
+            "type": "receptacle",
+            "contains": {
+              "book": {
+                "properties": [
+                  "delta_accessible:true",
+                  "delta_affordance:drop",
+                  "delta_affordance:pick"
+                ],
+                "states": {}
+              }
+            }
+          }
+        }
+      },
+      "bedroom_2": {
+        "contains": {
+          "cpu": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:drop",
+              "delta_affordance:pick"
+            ],
+            "states": {}
+          },
+          "rotting_apple": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:dispose",
+              "delta_affordance:drop",
+              "delta_affordance:pick"
+            ],
+            "states": {},
+            "type": "receptacle"
+          },
+          "plate": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:drop",
+              "delta_affordance:pick",
+              "delta_affordance:place_on",
+              "delta_predicate:item_pickable",
+              "delta_predicate:item_accessible"
+            ],
+            "states": {}
+          },
+          "bed_2": {
+            "properties": [
+              "delta_accessible:false"
+            ],
+            "states": {}
+          },
+          "lamp": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:drop",
+              "delta_affordance:pick"
+            ],
+            "states": {}
+          }
+        }
+      },
+      "corridor_1": {
+        "contains": {}
+      },
+      "corridor_2": {
+        "contains": {
+          "fridge_1": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:close",
+              "delta_affordance:open"
+            ],
+            "states": {
+              "isOpen": false,
+              "isToggled": false
+            },
+            "type": "receptacle"
+          },
+          "fridge_2": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:close",
+              "delta_affordance:open"
+            ],
+            "states": {
+              "isOpen": false,
+              "isToggled": false
+            },
+            "type": "receptacle"
+          }
+        }
+      },
+      "corridor_3": {
+        "contains": {}
+      },
+      "dining_room": {
+        "contains": {
+          "ssd": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:drop",
+              "delta_affordance:pick"
+            ],
+            "states": {}
+          },
+          "clock": {
+            "properties": [
+              "delta_accessible:false"
+            ],
+            "states": {}
+          },
+          "cola_can": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:dispose",
+              "delta_affordance:drop",
+              "delta_affordance:pick"
+            ],
+            "states": {},
+            "type": "receptacle"
+          },
+          "chair_1": {
+            "properties": [
+              "delta_accessible:false"
+            ],
+            "states": {}
+          },
+          "chair_2": {
+            "properties": [
+              "delta_accessible:false"
+            ],
+            "states": {}
+          },
+          "dining_table": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_predicate:item_is_dining_table"
+            ],
+            "states": {},
+            "type": "receptacle"
+          }
+        }
+      },
+      "kitchen": {
+        "contains": {
+          "knife": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:drop",
+              "delta_affordance:pick",
+              "delta_affordance:place_on",
+              "delta_predicate:item_pickable",
+              "delta_predicate:item_accessible"
+            ],
+            "states": {}
+          },
+          "fork": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:drop",
+              "delta_affordance:pick",
+              "delta_affordance:place_on",
+              "delta_predicate:item_pickable",
+              "delta_predicate:item_accessible"
+            ],
+            "states": {}
+          },
+          "spoon": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:drop",
+              "delta_affordance:pick",
+              "delta_affordance:place_on",
+              "delta_predicate:item_pickable",
+              "delta_predicate:item_accessible"
+            ],
+            "states": {}
+          },
+          "microwave": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:close",
+              "delta_affordance:open",
+              "delta_affordance:turnoff",
+              "delta_affordance:turnon"
+            ],
+            "states": {
+              "isOpen": false,
+              "isToggled": false
+            },
+            "type": "receptacle"
+          },
+          "oven": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:turnoff",
+              "delta_affordance:turnon"
+            ],
+            "states": {
+              "isOpen": false,
+              "isToggled": false
+            }
+          },
+          "rubbish_bin": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:dispose"
+            ],
+            "states": {},
+            "type": "receptacle"
+          },
+          "fridge_3": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:close",
+              "delta_affordance:open"
+            ],
+            "states": {},
+            "type": "receptacle"
+          },
+          "chair_3": {
+            "properties": [
+              "delta_accessible:false"
+            ],
+            "states": {}
+          }
+        }
+      },
+      "living_room": {
+        "contains": {
+          "desk": {
+            "properties": [
+              "delta_accessible:true"
+            ],
+            "states": {}
+          },
+          "bowl_2": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:drop",
+              "delta_affordance:pick"
+            ],
+            "states": {}
+          },
+          "bowl_3": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:drop",
+              "delta_affordance:pick"
+            ],
+            "states": {}
+          },
+          "robot_hub": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:charge"
+            ],
+            "states": {},
+            "type": "receptacle"
+          },
+          "chair_4": {
+            "properties": [
+              "delta_accessible:false"
+            ],
+            "states": {}
+          },
+          "chair_5": {
+            "properties": [
+              "delta_accessible:false"
+            ],
+            "states": {}
+          },
+          "couch": {
+            "properties": [
+              "delta_accessible:false"
+            ],
+            "states": {}
+          }
+        }
+      },
+      "lobby": {
+        "contains": {
+          "ram": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:drop",
+              "delta_affordance:pick"
+            ],
+            "states": {}
+          },
+          "banana_peel": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:dispose",
+              "delta_affordance:drop",
+              "delta_affordance:pick"
+            ],
+            "states": {},
+            "type": "receptacle"
+          },
+          "flower": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:drop",
+              "delta_affordance:pick",
+              "delta_affordance:place_on",
+              "delta_predicate:item_pickable",
+              "delta_predicate:item_accessible"
+            ],
+            "states": {}
+          },
+          "locker": {
+            "properties": [
+              "delta_accessible:true",
+              "delta_affordance:drop",
+              "delta_affordance:load",
+              "delta_affordance:pick",
+              "delta_affordance:unload"
+            ],
+            "states": {
+              "isLoaded": true
+            },
+            "type": "receptacle",
+            "contains": {
+              "paper": {
+                "properties": [
+                  "delta_accessible:true",
+                  "delta_affordance:drop",
+                  "delta_affordance:pick"
+                ],
+                "states": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "robot_location": "living_room",
+    "robot_inventory": null,
+    "robot_holding_items": {},
+    "scene_name": "Set up the dining table for dinner, place the tableware/cutleries and glass on the dining table. Also bring something romantic to the dining table."
+  },
+  "context": {
+    "selected_graph": {
+      "name": "allensville",
+      "rooms": {
+        "bathroom_1": {
+          "items": {
+            "psu": {
+              "accessible": true,
+              "affordance": [
+                "pick",
+                "drop"
+              ],
+              "state": "free"
+            },
+            "sink_1": {
+              "accessible": true,
+              "affordance": [
+                "clean_mop"
+              ],
+              "state": "free"
+            },
+            "toilet_1": {
+              "accessible": false,
+              "affordance": [],
+              "state": "free"
+            },
+            "plant_1": {
+              "accessible": false,
+              "affordance": [],
+              "state": "free"
+            },
+            "mop": {
+              "accessible": true,
+              "affordance": [
+                "pick",
+                "drop",
+                "clean_mop",
+                "mop_floor"
+              ],
+              "state": "clean"
+            }
+          },
+          "neighbor": [
+            "corridor_2"
+          ]
+        },
+        "bathroom_2": {
+          "items": {
+            "gpu": {
+              "accessible": true,
+              "affordance": [
+                "pick",
+                "drop"
+              ],
+              "state": "free"
+            },
+            "sink_2": {
+              "accessible": true,
+              "affordance": [
+                "clean_mop"
+              ],
+              "state": "free"
+            },
+            "toilet_2": {
+              "accessible": false,
+              "affordance": [],
+              "state": "free"
+            },
+            "plant_2": {
+              "accessible": false,
+              "affordance": [],
+              "state": "free"
+            }
+          },
+          "neighbor": [
+            "corridor_3"
+          ]
+        },
+        "bedroom_1": {
+          "items": {
+            "mainboard": {
+              "accessible": true,
+              "affordance": [
+                "pick",
+                "drop"
+              ],
+              "state": "free"
+            },
+            "glass": {
+              "accessible": true,
+              "affordance": [
+                "pick",
+                "drop",
+                "place_on"
+              ],
+              "state": "free"
+            },
+            "bed_1": {
+              "accessible": false,
+              "affordance": [],
+              "state": "free"
+            },
+            "shelf": {
+              "accessible": true,
+              "affordance": [
+                "pick",
+                "drop",
+                "load",
+                "unload"
+              ],
+              "state": "loaded",
+              "content": {
+                "book": {
+                  "accessible": true,
+                  "affordance": [
+                    "pick",
+                    "drop"
+                  ],
+                  "state": "free"
+                }
+              }
+            }
+          },
+          "neighbor": [
+            "corridor_2"
+          ]
+        },
+        "bedroom_2": {
+          "items": {
+            "cpu": {
+              "accessible": true,
+              "affordance": [
+                "pick",
+                "drop"
+              ],
+              "state": "free"
+            },
+            "rotting_apple": {
+              "accessible": true,
+              "affordance": [
+                "pick",
+                "drop",
+                "dispose"
+              ],
+              "state": "free"
+            },
+            "plate": {
+              "accessible": true,
+              "affordance": [
+                "pick",
+                "drop",
+                "place_on"
+              ],
+              "state": "free"
+            },
+            "bed_2": {
+              "accessible": false,
+              "affordance": [],
+              "state": "free"
+            },
+            "lamp": {
+              "accessible": true,
+              "affordance": [
+                "pick",
+                "drop"
+              ],
+              "state": "free"
+            }
+          },
+          "neighbor": [
+            "corridor_3"
+          ]
+        },
+        "corridor_1": {
+          "items": {},
+          "neighbor": [
+            "lobby",
+            "corridor_3"
+          ]
+        },
+        "corridor_2": {
+          "items": {
+            "fridge_1": {
+              "accessible": true,
+              "affordance": [
+                "open",
+                "close"
+              ],
+              "state": "closed, off"
+            },
+            "fridge_2": {
+              "accessible": true,
+              "affordance": [
+                "open",
+                "close"
+              ],
+              "state": "closed, off"
+            }
+          },
+          "neighbor": [
+            "bathroom_1",
+            "bedroom_1",
+            "corridor_3"
+          ]
+        },
+        "corridor_3": {
+          "items": {},
+          "neighbor": [
+            "corridor_1",
+            "corridor_2",
+            "bathroom_2",
+            "bedroom_2",
+            "kitchen",
+            "living_room"
+          ]
+        },
+        "dining_room": {
+          "items": {
+            "ssd": {
+              "accessible": true,
+              "affordance": [
+                "pick",
+                "drop"
+              ],
+              "state": "free"
+            },
+            "clock": {
+              "accessible": false,
+              "affordance": [],
+              "state": "free"
+            },
+            "cola_can": {
+              "accessible": true,
+              "affordance": [
+                "pick",
+                "drop",
+                "dispose"
+              ],
+              "state": "free"
+            },
+            "chair_1": {
+              "accessible": false,
+              "affordance": [],
+              "state": "free"
+            },
+            "chair_2": {
+              "accessible": false,
+              "affordance": [],
+              "state": "free"
+            },
+            "dining_table": {
+              "accessible": true,
+              "affordance": [],
+              "state": "free"
+            }
+          },
+          "neighbor": [
+            "kitchen",
+            "living_room"
+          ]
+        },
+        "kitchen": {
+          "items": {
+            "knife": {
+              "accessible": true,
+              "affordance": [
+                "pick",
+                "drop",
+                "place_on"
+              ],
+              "state": "free"
+            },
+            "fork": {
+              "accessible": true,
+              "affordance": [
+                "pick",
+                "drop",
+                "place_on"
+              ],
+              "state": "free"
+            },
+            "spoon": {
+              "accessible": true,
+              "affordance": [
+                "pick",
+                "drop",
+                "place_on"
+              ],
+              "state": "free"
+            },
+            "microwave": {
+              "accessible": true,
+              "affordance": [
+                "open",
+                "close",
+                "turnon",
+                "turnoff"
+              ],
+              "state": "closed, off"
+            },
+            "oven": {
+              "accessible": true,
+              "affordance": [
+                "turnon",
+                "turnoff"
+              ],
+              "state": "closed, off"
+            },
+            "rubbish_bin": {
+              "accessible": true,
+              "affordance": [
+                "dispose"
+              ],
+              "state": "free"
+            },
+            "fridge_3": {
+              "accessible": true,
+              "affordance": [
+                "open",
+                "close"
+              ],
+              "state": "free"
+            },
+            "chair_3": {
+              "accessible": false,
+              "affordance": [],
+              "state": "free"
+            }
+          },
+          "neighbor": [
+            "corridor_3",
+            "dining_room"
+          ]
+        },
+        "living_room": {
+          "items": {
+            "desk": {
+              "accessible": true,
+              "affordance": [],
+              "state": "free"
+            },
+            "bowl_2": {
+              "accessible": true,
+              "affordance": [
+                "pick",
+                "drop"
+              ],
+              "state": "free"
+            },
+            "bowl_3": {
+              "accessible": true,
+              "affordance": [
+                "pick",
+                "drop"
+              ],
+              "state": "free"
+            },
+            "robot_hub": {
+              "accessible": true,
+              "affordance": [
+                "charge"
+              ],
+              "state": "free"
+            },
+            "chair_4": {
+              "accessible": false,
+              "affordance": [],
+              "state": "free"
+            },
+            "chair_5": {
+              "accessible": false,
+              "affordance": [],
+              "state": "free"
+            },
+            "couch": {
+              "accessible": false,
+              "affordance": [],
+              "state": "free"
+            }
+          },
+          "neighbor": [
+            "corridor_3",
+            "dining_room"
+          ]
+        },
+        "lobby": {
+          "items": {
+            "ram": {
+              "accessible": true,
+              "affordance": [
+                "pick",
+                "drop"
+              ],
+              "state": "free"
+            },
+            "banana_peel": {
+              "accessible": true,
+              "affordance": [
+                "pick",
+                "drop",
+                "dispose"
+              ],
+              "state": "free"
+            },
+            "flower": {
+              "accessible": true,
+              "affordance": [
+                "pick",
+                "drop",
+                "place_on"
+              ],
+              "state": "free"
+            },
+            "locker": {
+              "accessible": true,
+              "affordance": [
+                "pick",
+                "drop",
+                "load",
+                "unload"
+              ],
+              "state": "loaded",
+              "content": {
+                "paper": {
+                  "accessible": true,
+                  "affordance": [
+                    "pick",
+                    "drop"
+                  ],
+                  "state": "free"
+                }
+              }
+            }
+          },
+          "neighbor": [
+            "corridor_1"
+          ]
+        }
+      },
+      "agent": {
+        "position": "living_room",
+        "state": "hand-free"
+      }
+    },
+    "task_context": {
+      "dataset": "delta",
+      "task_name": "dining:allensville:episode-01",
+      "domain": "dining",
+      "instruction": "Set up the dining table for dinner, place the tableware/cutleries and glass on the dining table. Also bring something romantic to the dining table.",
+      "task_source": "delta_data_example_py",
+      "environment_source": "delta_data_scene_graph_py",
+      "scene_graph_cache_path": "/data/zmy/OurAgent-he1/benchmark/datasets/extracted/delta/initial_envs/allensville.json",
+      "delta_add_obj_types": [],
+      "delta_env_state_predicates": [
+        "item_on(<item_1>, <item_2>): <item_1> is on <item_2>.",
+        "item_is_dining_table(<item>): <item> is dining_table."
+      ],
+      "delta_initial_predicates": [
+        "item_is_dining_table dining_table",
+        "item_pickable plate",
+        "item_accessible plate",
+        "item_pickable fork",
+        "item_accessible fork",
+        "item_pickable knife",
+        "item_accessible knife",
+        "item_pickable spoon",
+        "item_accessible spoon",
+        "item_pickable glass",
+        "item_accessible glass",
+        "item_pickable flower",
+        "item_accessible flower"
+      ],
+      "delta_room_neighbors": {
+        "bathroom_1": [
+          "corridor_2"
+        ],
+        "bathroom_2": [
+          "corridor_3"
+        ],
+        "bedroom_1": [
+          "corridor_2"
+        ],
+        "bedroom_2": [
+          "corridor_3"
+        ],
+        "corridor_1": [
+          "lobby",
+          "corridor_3"
+        ],
+        "corridor_2": [
+          "bathroom_1",
+          "bedroom_1",
+          "corridor_3"
+        ],
+        "corridor_3": [
+          "corridor_1",
+          "corridor_2",
+          "bathroom_2",
+          "bedroom_2",
+          "kitchen",
+          "living_room"
+        ],
+        "dining_room": [
+          "kitchen",
+          "living_room"
+        ],
+        "kitchen": [
+          "corridor_3",
+          "dining_room"
+        ],
+        "living_room": [
+          "corridor_3",
+          "dining_room"
+        ],
+        "lobby": [
+          "corridor_1"
+        ]
+      },
+      "delta_accessible_items": [
+        "psu",
+        "sink_1",
+        "mop",
+        "gpu",
+        "sink_2",
+        "mainboard",
+        "glass",
+        "shelf",
+        "book",
+        "cpu",
+        "rotting_apple",
+        "plate",
+        "lamp",
+        "fridge_1",
+        "fridge_2",
+        "ssd",
+        "cola_can",
+        "dining_table",
+        "knife",
+        "fork",
+        "spoon",
+        "microwave",
+        "oven",
+        "rubbish_bin",
+        "fridge_3",
+        "desk",
+        "bowl_2",
+        "bowl_3",
+        "robot_hub",
+        "ram",
+        "banana_peel",
+        "flower",
+        "locker",
+        "paper"
+      ],
+      "loadable_containers": [
+        {
+          "name": "shelf",
+          "room": "bedroom_1",
+          "is_loaded": true,
+          "contents": [
+            "book"
+          ],
+          "affordances": [
+            "drop",
+            "load",
+            "pick",
+            "unload"
+          ]
+        },
+        {
+          "name": "locker",
+          "room": "lobby",
+          "is_loaded": true,
+          "contents": [
+            "paper"
+          ],
+          "affordances": [
+            "drop",
+            "load",
+            "pick",
+            "unload"
+          ]
+        }
+      ],
+      "task_environment_mode": "understanding_pruned"
+    }
+  }
+}

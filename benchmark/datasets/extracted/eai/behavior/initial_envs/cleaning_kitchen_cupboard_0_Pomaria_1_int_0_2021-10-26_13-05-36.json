@@ -1,0 +1,233 @@
+{
+  "dataset": "behavior",
+  "case_id": "cleaning_kitchen_cupboard_0_Pomaria_1_int_0_2021-10-26_13-05-36",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "cleaning_kitchen_cupboard",
+    "task_id": 0,
+    "scene_id": "Pomaria_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "cleaning kitchen cupboard",
+    "task": "cleaning_kitchen_cupboard",
+    "task_id": 0,
+    "scene_id": "Pomaria_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 13,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bowl_0",
+      "bowl_1",
+      "countertop_31",
+      "cup_0",
+      "cup_1",
+      "paper_towel_0",
+      "room_floor_kitchen_0",
+      "sink_37",
+      "soap_0",
+      "top_cabinet_24",
+      "top_cabinet_25"
+    ],
+    "name_mapping": {
+      "cabinet.n.01_1": {
+        "name": "top_cabinet_25",
+        "category": "cabinet.n.01"
+      },
+      "cabinet.n.01_2": {
+        "name": "top_cabinet_24",
+        "category": "cabinet.n.01"
+      },
+      "countertop.n.01_1": {
+        "name": "countertop_31",
+        "category": "countertop.n.01"
+      },
+      "piece_of_cloth.n.01_1": {
+        "name": "paper_towel_0",
+        "category": "piece_of_cloth.n.01"
+      },
+      "cleansing_agent.n.01_1": {
+        "name": "soap_0",
+        "category": "cleansing_agent.n.01"
+      },
+      "bowl.n.01_1": {
+        "name": "bowl_0",
+        "category": "bowl.n.01"
+      },
+      "bowl.n.01_2": {
+        "name": "bowl_1",
+        "category": "bowl.n.01"
+      },
+      "cup.n.01_1": {
+        "name": "cup_0",
+        "category": "cup.n.01"
+      },
+      "cup.n.01_2": {
+        "name": "cup_1",
+        "category": "cup.n.01"
+      },
+      "sink.n.01_1": {
+        "name": "sink_37",
+        "category": "sink.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "countertop_31": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "bowl_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "paper_towel_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "soap_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "sink_37": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "top_cabinet_24": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isDusty": true,
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "bowl_1": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "inside"
+                    },
+                    "cup_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "top_cabinet_25": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isDusty": true,
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "cup_1": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bowl_0": {
+        "name": "bowl_0",
+        "category": "bowl.n.01"
+      },
+      "bowl_1": {
+        "name": "bowl_1",
+        "category": "bowl.n.01"
+      },
+      "countertop_31": {
+        "name": "countertop_31",
+        "category": "countertop.n.01"
+      },
+      "cup_0": {
+        "name": "cup_0",
+        "category": "cup.n.01"
+      },
+      "cup_1": {
+        "name": "cup_1",
+        "category": "cup.n.01"
+      },
+      "paper_towel_0": {
+        "name": "paper_towel_0",
+        "category": "piece_of_cloth.n.01"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "sink_37": {
+        "name": "sink_37",
+        "category": "sink.n.01"
+      },
+      "soap_0": {
+        "name": "soap_0",
+        "category": "cleansing_agent.n.01"
+      },
+      "top_cabinet_24": {
+        "name": "top_cabinet_24",
+        "category": "cabinet.n.01"
+      },
+      "top_cabinet_25": {
+        "name": "top_cabinet_25",
+        "category": "cabinet.n.01"
+      }
+    }
+  }
+}

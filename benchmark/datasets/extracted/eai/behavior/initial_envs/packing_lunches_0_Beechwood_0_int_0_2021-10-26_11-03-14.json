@@ -1,0 +1,319 @@
+{
+  "dataset": "behavior",
+  "case_id": "packing_lunches_0_Beechwood_0_int_0_2021-10-26_11-03-14",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "packing_lunches",
+    "task_id": 0,
+    "scene_id": "Beechwood_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "packing lunches",
+    "task": "packing_lunches",
+    "task_id": 0,
+    "scene_id": "Beechwood_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 20,
+    "room_count": 1,
+    "entity_catalog": [
+      "apple_0",
+      "banana_0",
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_no_top_54",
+      "breakfast_table_7",
+      "carton_0",
+      "carton_1",
+      "chip_0",
+      "chip_1",
+      "cookie_0",
+      "cookie_1",
+      "countertop_56",
+      "fridge_57",
+      "hamburger_0",
+      "juice_0",
+      "pop_0",
+      "room_floor_kitchen_0",
+      "room_floor_living_room_0",
+      "salad_0"
+    ],
+    "name_mapping": {
+      "salad.n.01_1": {
+        "name": "salad_0",
+        "category": "salad.n.01"
+      },
+      "electric_refrigerator.n.01_1": {
+        "name": "fridge_57",
+        "category": "electric_refrigerator.n.01"
+      },
+      "sandwich.n.01_1": {
+        "name": "hamburger_0",
+        "category": "sandwich.n.01"
+      },
+      "chip.n.04_1": {
+        "name": "chip_0",
+        "category": "chip.n.04"
+      },
+      "chip.n.04_2": {
+        "name": "chip_1",
+        "category": "chip.n.04"
+      },
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_no_top_54",
+        "category": "cabinet.n.01"
+      },
+      "juice.n.01_1": {
+        "name": "juice_0",
+        "category": "juice.n.01"
+      },
+      "table.n.02_1": {
+        "name": "breakfast_table_7",
+        "category": "table.n.02"
+      },
+      "pop.n.02_1": {
+        "name": "pop_0",
+        "category": "pop.n.02"
+      },
+      "apple.n.01_1": {
+        "name": "apple_0",
+        "category": "apple.n.01"
+      },
+      "countertop.n.01_1": {
+        "name": "countertop_56",
+        "category": "countertop.n.01"
+      },
+      "banana.n.02_1": {
+        "name": "banana_0",
+        "category": "banana.n.02"
+      },
+      "carton.n.02_1": {
+        "name": "carton_0",
+        "category": "carton.n.02"
+      },
+      "carton.n.02_2": {
+        "name": "carton_1",
+        "category": "carton.n.02"
+      },
+      "cookie.n.01_1": {
+        "name": "cookie_0",
+        "category": "cookie.n.01"
+      },
+      "cookie.n.01_2": {
+        "name": "cookie_1",
+        "category": "cookie.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "floor.n.01_2": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bottom_cabinet_no_top_54": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "chip_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "chip_1": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "breakfast_table_7": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "juice_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "pop_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "countertop_56": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "apple_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "banana_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "cookie_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "cookie_1": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "fridge_57": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "hamburger_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "salad_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "room_floor_living_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "carton_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "carton_1": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "apple_0": {
+        "name": "apple_0",
+        "category": "apple.n.01"
+      },
+      "banana_0": {
+        "name": "banana_0",
+        "category": "banana.n.02"
+      },
+      "bottom_cabinet_no_top_54": {
+        "name": "bottom_cabinet_no_top_54",
+        "category": "cabinet.n.01"
+      },
+      "breakfast_table_7": {
+        "name": "breakfast_table_7",
+        "category": "table.n.02"
+      },
+      "carton_0": {
+        "name": "carton_0",
+        "category": "carton.n.02"
+      },
+      "carton_1": {
+        "name": "carton_1",
+        "category": "carton.n.02"
+      },
+      "chip_0": {
+        "name": "chip_0",
+        "category": "chip.n.04"
+      },
+      "chip_1": {
+        "name": "chip_1",
+        "category": "chip.n.04"
+      },
+      "cookie_0": {
+        "name": "cookie_0",
+        "category": "cookie.n.01"
+      },
+      "cookie_1": {
+        "name": "cookie_1",
+        "category": "cookie.n.01"
+      },
+      "countertop_56": {
+        "name": "countertop_56",
+        "category": "countertop.n.01"
+      },
+      "fridge_57": {
+        "name": "fridge_57",
+        "category": "electric_refrigerator.n.01"
+      },
+      "hamburger_0": {
+        "name": "hamburger_0",
+        "category": "sandwich.n.01"
+      },
+      "juice_0": {
+        "name": "juice_0",
+        "category": "juice.n.01"
+      },
+      "pop_0": {
+        "name": "pop_0",
+        "category": "pop.n.02"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "room_floor_living_room_0": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "salad_0": {
+        "name": "salad_0",
+        "category": "salad.n.01"
+      }
+    }
+  }
+}

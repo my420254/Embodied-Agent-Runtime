@@ -1,0 +1,172 @@
+{
+  "dataset": "behavior",
+  "case_id": "cleaning_a_car_0_Ihlen_0_int_0_2021-09-11_16-37-11",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "cleaning_a_car",
+    "task_id": 0,
+    "scene_id": "Ihlen_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "cleaning a car",
+    "task": "cleaning_a_car",
+    "task_id": 0,
+    "scene_id": "Ihlen_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 9,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bucket_0",
+      "car_0",
+      "rag_0",
+      "room_floor_garage_0",
+      "shelf_16",
+      "sink_38",
+      "soap_0"
+    ],
+    "name_mapping": {
+      "car.n.01_1": {
+        "name": "car_0",
+        "category": "car.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_garage_0",
+        "category": "floor.n.01"
+      },
+      "rag.n.01_1": {
+        "name": "rag_0",
+        "category": "rag.n.01"
+      },
+      "shelf.n.01_1": {
+        "name": "shelf_16",
+        "category": "shelf.n.01"
+      },
+      "soap.n.01_1": {
+        "name": "soap_0",
+        "category": "soap.n.01"
+      },
+      "bucket.n.01_1": {
+        "name": "bucket_0",
+        "category": "bucket.n.01"
+      },
+      "sink.n.01_1": {
+        "name": "sink_38",
+        "category": "sink.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "room_floor_garage_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "bucket_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "car_0": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isDusty": true
+                      },
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "shelf_16": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "rag_0": {
+                      "states": {
+                        "isSoaked": false
+                      },
+                      "direct_relation": "ontop"
+                    },
+                    "soap_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "sink_38": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_garage_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_garage_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bucket_0": {
+        "name": "bucket_0",
+        "category": "bucket.n.01"
+      },
+      "car_0": {
+        "name": "car_0",
+        "category": "car.n.01"
+      },
+      "rag_0": {
+        "name": "rag_0",
+        "category": "rag.n.01"
+      },
+      "room_floor_garage_0": {
+        "name": "room_floor_garage_0",
+        "category": "floor.n.01"
+      },
+      "shelf_16": {
+        "name": "shelf_16",
+        "category": "shelf.n.01"
+      },
+      "sink_38": {
+        "name": "sink_38",
+        "category": "sink.n.01"
+      },
+      "soap_0": {
+        "name": "soap_0",
+        "category": "soap.n.01"
+      }
+    }
+  }
+}

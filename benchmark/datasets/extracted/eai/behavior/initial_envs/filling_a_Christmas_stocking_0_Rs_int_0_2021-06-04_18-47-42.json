@@ -1,0 +1,322 @@
+{
+  "dataset": "behavior",
+  "case_id": "filling_a_Christmas_stocking_0_Rs_int_0_2021-06-04_18-47-42",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "filling_a_Christmas_stocking",
+    "task_id": 0,
+    "scene_id": "Rs_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "filling a Christmas stocking",
+    "task": "filling_a_Christmas_stocking",
+    "task_id": 0,
+    "scene_id": "Rs_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 21,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_41",
+      "bottom_cabinet_46",
+      "candy_cane_0",
+      "ice_cube_0",
+      "ice_cube_1",
+      "ice_cube_2",
+      "ice_cube_3",
+      "lollipop_0",
+      "lollipop_1",
+      "lollipop_2",
+      "pen_0",
+      "pen_1",
+      "pen_2",
+      "pen_3",
+      "room_floor_living_room_0",
+      "stocking_0",
+      "stocking_1",
+      "stocking_2",
+      "stocking_3"
+    ],
+    "name_mapping": {
+      "cube.n.05_1": {
+        "name": "ice_cube_0",
+        "category": "cube.n.05"
+      },
+      "cube.n.05_2": {
+        "name": "ice_cube_1",
+        "category": "cube.n.05"
+      },
+      "cube.n.05_3": {
+        "name": "ice_cube_2",
+        "category": "cube.n.05"
+      },
+      "cube.n.05_4": {
+        "name": "ice_cube_3",
+        "category": "cube.n.05"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "candy.n.01_1": {
+        "name": "lollipop_0",
+        "category": "candy.n.01"
+      },
+      "candy.n.01_2": {
+        "name": "candy_cane_0",
+        "category": "candy.n.01"
+      },
+      "candy.n.01_3": {
+        "name": "lollipop_1",
+        "category": "candy.n.01"
+      },
+      "candy.n.01_4": {
+        "name": "lollipop_2",
+        "category": "candy.n.01"
+      },
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_41",
+        "category": "cabinet.n.01"
+      },
+      "cabinet.n.01_2": {
+        "name": "bottom_cabinet_46",
+        "category": "cabinet.n.01"
+      },
+      "pen.n.01_1": {
+        "name": "pen_0",
+        "category": "pen.n.01"
+      },
+      "pen.n.01_2": {
+        "name": "pen_1",
+        "category": "pen.n.01"
+      },
+      "pen.n.01_3": {
+        "name": "pen_2",
+        "category": "pen.n.01"
+      },
+      "pen.n.01_4": {
+        "name": "pen_3",
+        "category": "pen.n.01"
+      },
+      "stocking.n.01_1": {
+        "name": "stocking_0",
+        "category": "stocking.n.01"
+      },
+      "stocking.n.01_2": {
+        "name": "stocking_1",
+        "category": "stocking.n.01"
+      },
+      "stocking.n.01_3": {
+        "name": "stocking_2",
+        "category": "stocking.n.01"
+      },
+      "stocking.n.01_4": {
+        "name": "stocking_3",
+        "category": "stocking.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bottom_cabinet_41": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "candy_cane_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "lollipop_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "lollipop_1": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "lollipop_2": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "pen_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "pen_1": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "pen_2": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "pen_3": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "bottom_cabinet_46": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "room_floor_living_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "ice_cube_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "ice_cube_1": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "ice_cube_2": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "ice_cube_3": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "stocking_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "stocking_1": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "stocking_2": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "stocking_3": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_living_room_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_living_room_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bottom_cabinet_41": {
+        "name": "bottom_cabinet_41",
+        "category": "cabinet.n.01"
+      },
+      "bottom_cabinet_46": {
+        "name": "bottom_cabinet_46",
+        "category": "cabinet.n.01"
+      },
+      "candy_cane_0": {
+        "name": "candy_cane_0",
+        "category": "candy.n.01"
+      },
+      "ice_cube_0": {
+        "name": "ice_cube_0",
+        "category": "cube.n.05"
+      },
+      "ice_cube_1": {
+        "name": "ice_cube_1",
+        "category": "cube.n.05"
+      },
+      "ice_cube_2": {
+        "name": "ice_cube_2",
+        "category": "cube.n.05"
+      },
+      "ice_cube_3": {
+        "name": "ice_cube_3",
+        "category": "cube.n.05"
+      },
+      "lollipop_0": {
+        "name": "lollipop_0",
+        "category": "candy.n.01"
+      },
+      "lollipop_1": {
+        "name": "lollipop_1",
+        "category": "candy.n.01"
+      },
+      "lollipop_2": {
+        "name": "lollipop_2",
+        "category": "candy.n.01"
+      },
+      "pen_0": {
+        "name": "pen_0",
+        "category": "pen.n.01"
+      },
+      "pen_1": {
+        "name": "pen_1",
+        "category": "pen.n.01"
+      },
+      "pen_2": {
+        "name": "pen_2",
+        "category": "pen.n.01"
+      },
+      "pen_3": {
+        "name": "pen_3",
+        "category": "pen.n.01"
+      },
+      "room_floor_living_room_0": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "stocking_0": {
+        "name": "stocking_0",
+        "category": "stocking.n.01"
+      },
+      "stocking_1": {
+        "name": "stocking_1",
+        "category": "stocking.n.01"
+      },
+      "stocking_2": {
+        "name": "stocking_2",
+        "category": "stocking.n.01"
+      },
+      "stocking_3": {
+        "name": "stocking_3",
+        "category": "stocking.n.01"
+      }
+    }
+  }
+}

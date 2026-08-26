@@ -1,0 +1,205 @@
+{
+  "dataset": "behavior",
+  "case_id": "bottling_fruit_0_Wainscott_0_int_0_2021-05-24_19-46-46",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "bottling_fruit",
+    "task_id": 0,
+    "scene_id": "Wainscott_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "bottling fruit",
+    "task": "bottling_fruit",
+    "task_id": 0,
+    "scene_id": "Wainscott_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 11,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_no_top_80",
+      "carving_knife_0",
+      "countertop_84",
+      "fridge_97",
+      "jar_0",
+      "jar_1",
+      "peach_0",
+      "room_floor_kitchen_0",
+      "strawberry_0"
+    ],
+    "name_mapping": {
+      "strawberry.n.01_1": {
+        "name": "strawberry_0",
+        "category": "strawberry.n.01"
+      },
+      "electric_refrigerator.n.01_1": {
+        "name": "fridge_97",
+        "category": "electric_refrigerator.n.01"
+      },
+      "peach.n.03_1": {
+        "name": "peach_0",
+        "category": "peach.n.03"
+      },
+      "countertop.n.01_1": {
+        "name": "countertop_84",
+        "category": "countertop.n.01"
+      },
+      "jar.n.01_1": {
+        "name": "jar_0",
+        "category": "jar.n.01"
+      },
+      "jar.n.01_2": {
+        "name": "jar_1",
+        "category": "jar.n.01"
+      },
+      "carving_knife.n.01_1": {
+        "name": "carving_knife_0",
+        "category": "carving_knife.n.01"
+      },
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_no_top_80",
+        "category": "cabinet.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bottom_cabinet_no_top_80": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "countertop_84": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "carving_knife_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "jar_0": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "jar_1": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "fridge_97": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "peach_0": {
+                      "states": {
+                        "isSliced": false
+                      },
+                      "direct_relation": "inside"
+                    },
+                    "strawberry_0": {
+                      "states": {
+                        "isSliced": false
+                      },
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bottom_cabinet_no_top_80": {
+        "name": "bottom_cabinet_no_top_80",
+        "category": "cabinet.n.01"
+      },
+      "carving_knife_0": {
+        "name": "carving_knife_0",
+        "category": "carving_knife.n.01"
+      },
+      "countertop_84": {
+        "name": "countertop_84",
+        "category": "countertop.n.01"
+      },
+      "fridge_97": {
+        "name": "fridge_97",
+        "category": "electric_refrigerator.n.01"
+      },
+      "jar_0": {
+        "name": "jar_0",
+        "category": "jar.n.01"
+      },
+      "jar_1": {
+        "name": "jar_1",
+        "category": "jar.n.01"
+      },
+      "peach_0": {
+        "name": "peach_0",
+        "category": "peach.n.03"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "strawberry_0": {
+        "name": "strawberry_0",
+        "category": "strawberry.n.01"
+      }
+    }
+  }
+}

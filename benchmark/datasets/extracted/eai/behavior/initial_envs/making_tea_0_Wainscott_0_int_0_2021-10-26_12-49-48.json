@@ -1,0 +1,182 @@
+{
+  "dataset": "behavior",
+  "case_id": "making_tea_0_Wainscott_0_int_0_2021-10-26_12-49-48",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "making_tea",
+    "task_id": 0,
+    "scene_id": "Wainscott_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "making tea",
+    "task": "making_tea",
+    "task_id": 0,
+    "scene_id": "Wainscott_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 10,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_no_top_80",
+      "carving_knife_0",
+      "fridge_97",
+      "lemon_0",
+      "room_floor_kitchen_0",
+      "stove_88",
+      "tea_bag_0",
+      "teapot_0"
+    ],
+    "name_mapping": {
+      "teapot.n.01_1": {
+        "name": "teapot_0",
+        "category": "teapot.n.01"
+      },
+      "tea_bag.n.01_1": {
+        "name": "tea_bag_0",
+        "category": "tea_bag.n.01"
+      },
+      "lemon.n.01_1": {
+        "name": "lemon_0",
+        "category": "lemon.n.01"
+      },
+      "knife.n.01_1": {
+        "name": "carving_knife_0",
+        "category": "knife.n.01"
+      },
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_no_top_80",
+        "category": "cabinet.n.01"
+      },
+      "electric_refrigerator.n.01_1": {
+        "name": "fridge_97",
+        "category": "electric_refrigerator.n.01"
+      },
+      "stove.n.01_1": {
+        "name": "stove_88",
+        "category": "stove.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bottom_cabinet_no_top_80": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "carving_knife_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "tea_bag_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "inside"
+                    },
+                    "teapot_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "fridge_97": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "lemon_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "stove_88": {
+                  "states": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bottom_cabinet_no_top_80": {
+        "name": "bottom_cabinet_no_top_80",
+        "category": "cabinet.n.01"
+      },
+      "carving_knife_0": {
+        "name": "carving_knife_0",
+        "category": "knife.n.01"
+      },
+      "fridge_97": {
+        "name": "fridge_97",
+        "category": "electric_refrigerator.n.01"
+      },
+      "lemon_0": {
+        "name": "lemon_0",
+        "category": "lemon.n.01"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "stove_88": {
+        "name": "stove_88",
+        "category": "stove.n.01"
+      },
+      "tea_bag_0": {
+        "name": "tea_bag_0",
+        "category": "tea_bag.n.01"
+      },
+      "teapot_0": {
+        "name": "teapot_0",
+        "category": "teapot.n.01"
+      }
+    }
+  }
+}

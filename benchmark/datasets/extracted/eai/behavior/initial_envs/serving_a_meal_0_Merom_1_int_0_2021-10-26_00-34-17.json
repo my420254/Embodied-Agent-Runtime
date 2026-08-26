@@ -1,0 +1,432 @@
+{
+  "dataset": "behavior",
+  "case_id": "serving_a_meal_0_Merom_1_int_0_2021-10-26_00-34-17",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "serving_a_meal",
+    "task_id": 0,
+    "scene_id": "Merom_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "serving a meal",
+    "task": "serving_a_meal",
+    "task_id": 0,
+    "scene_id": "Merom_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 28,
+    "room_count": 1,
+    "entity_catalog": [
+      "bagel_0",
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_49",
+      "bottom_cabinet_50",
+      "breakfast_table_20",
+      "carving_knife_0",
+      "chicken_0",
+      "chicken_1",
+      "cookie_0",
+      "cupcake_0",
+      "fridge_57",
+      "muffin_0",
+      "plate_0",
+      "plate_1",
+      "room_floor_kitchen_0",
+      "salad_0",
+      "salad_1",
+      "soup_0",
+      "soup_1",
+      "spoon_0",
+      "spoon_1",
+      "stove_59",
+      "table_knife_0",
+      "tablefork_0",
+      "toasting_fork_0",
+      "water_0",
+      "water_1"
+    ],
+    "name_mapping": {
+      "chicken.n.01_1": {
+        "name": "chicken_0",
+        "category": "chicken.n.01"
+      },
+      "chicken.n.01_2": {
+        "name": "chicken_1",
+        "category": "chicken.n.01"
+      },
+      "knife.n.01_1": {
+        "name": "table_knife_0",
+        "category": "knife.n.01"
+      },
+      "knife.n.01_2": {
+        "name": "carving_knife_0",
+        "category": "knife.n.01"
+      },
+      "fork.n.01_1": {
+        "name": "toasting_fork_0",
+        "category": "fork.n.01"
+      },
+      "fork.n.01_2": {
+        "name": "tablefork_0",
+        "category": "fork.n.01"
+      },
+      "spoon.n.01_1": {
+        "name": "spoon_0",
+        "category": "spoon.n.01"
+      },
+      "spoon.n.01_2": {
+        "name": "spoon_1",
+        "category": "spoon.n.01"
+      },
+      "plate.n.04_1": {
+        "name": "plate_0",
+        "category": "plate.n.04"
+      },
+      "plate.n.04_2": {
+        "name": "plate_1",
+        "category": "plate.n.04"
+      },
+      "soup.n.01_1": {
+        "name": "soup_0",
+        "category": "soup.n.01"
+      },
+      "soup.n.01_2": {
+        "name": "soup_1",
+        "category": "soup.n.01"
+      },
+      "table.n.02_1": {
+        "name": "breakfast_table_20",
+        "category": "table.n.02"
+      },
+      "bread.n.01_1": {
+        "name": "muffin_0",
+        "category": "bread.n.01"
+      },
+      "bread.n.01_2": {
+        "name": "bagel_0",
+        "category": "bread.n.01"
+      },
+      "electric_refrigerator.n.01_1": {
+        "name": "fridge_57",
+        "category": "electric_refrigerator.n.01"
+      },
+      "salad.n.01_1": {
+        "name": "salad_0",
+        "category": "salad.n.01"
+      },
+      "salad.n.01_2": {
+        "name": "salad_1",
+        "category": "salad.n.01"
+      },
+      "water.n.06_1": {
+        "name": "water_0",
+        "category": "water.n.06"
+      },
+      "water.n.06_2": {
+        "name": "water_1",
+        "category": "water.n.06"
+      },
+      "cake.n.03_1": {
+        "name": "cookie_0",
+        "category": "cake.n.03"
+      },
+      "cake.n.03_2": {
+        "name": "cupcake_0",
+        "category": "cake.n.03"
+      },
+      "stove.n.01_1": {
+        "name": "stove_59",
+        "category": "stove.n.01"
+      },
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_49",
+        "category": "cabinet.n.01"
+      },
+      "cabinet.n.01_2": {
+        "name": "bottom_cabinet_50",
+        "category": "cabinet.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bottom_cabinet_49": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "carving_knife_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "plate_1": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "inside"
+                    },
+                    "spoon_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "spoon_1": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "table_knife_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "inside"
+                    },
+                    "tablefork_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "inside"
+                    },
+                    "toasting_fork_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "bottom_cabinet_50": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "plate_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "breakfast_table_20": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "soup_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "soup_1": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "fridge_57": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "bagel_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "inside"
+                    },
+                    "chicken_0": {
+                      "states": {
+                        "isCooked": true
+                      },
+                      "direct_relation": "inside"
+                    },
+                    "chicken_1": {
+                      "states": {
+                        "isCooked": true
+                      },
+                      "direct_relation": "inside"
+                    },
+                    "cookie_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "cupcake_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "muffin_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "salad_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "salad_1": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "water_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "water_1": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "stove_59": {
+                  "states": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bagel_0": {
+        "name": "bagel_0",
+        "category": "bread.n.01"
+      },
+      "bottom_cabinet_49": {
+        "name": "bottom_cabinet_49",
+        "category": "cabinet.n.01"
+      },
+      "bottom_cabinet_50": {
+        "name": "bottom_cabinet_50",
+        "category": "cabinet.n.01"
+      },
+      "breakfast_table_20": {
+        "name": "breakfast_table_20",
+        "category": "table.n.02"
+      },
+      "carving_knife_0": {
+        "name": "carving_knife_0",
+        "category": "knife.n.01"
+      },
+      "chicken_0": {
+        "name": "chicken_0",
+        "category": "chicken.n.01"
+      },
+      "chicken_1": {
+        "name": "chicken_1",
+        "category": "chicken.n.01"
+      },
+      "cookie_0": {
+        "name": "cookie_0",
+        "category": "cake.n.03"
+      },
+      "cupcake_0": {
+        "name": "cupcake_0",
+        "category": "cake.n.03"
+      },
+      "fridge_57": {
+        "name": "fridge_57",
+        "category": "electric_refrigerator.n.01"
+      },
+      "muffin_0": {
+        "name": "muffin_0",
+        "category": "bread.n.01"
+      },
+      "plate_0": {
+        "name": "plate_0",
+        "category": "plate.n.04"
+      },
+      "plate_1": {
+        "name": "plate_1",
+        "category": "plate.n.04"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "salad_0": {
+        "name": "salad_0",
+        "category": "salad.n.01"
+      },
+      "salad_1": {
+        "name": "salad_1",
+        "category": "salad.n.01"
+      },
+      "soup_0": {
+        "name": "soup_0",
+        "category": "soup.n.01"
+      },
+      "soup_1": {
+        "name": "soup_1",
+        "category": "soup.n.01"
+      },
+      "spoon_0": {
+        "name": "spoon_0",
+        "category": "spoon.n.01"
+      },
+      "spoon_1": {
+        "name": "spoon_1",
+        "category": "spoon.n.01"
+      },
+      "stove_59": {
+        "name": "stove_59",
+        "category": "stove.n.01"
+      },
+      "table_knife_0": {
+        "name": "table_knife_0",
+        "category": "knife.n.01"
+      },
+      "tablefork_0": {
+        "name": "tablefork_0",
+        "category": "fork.n.01"
+      },
+      "toasting_fork_0": {
+        "name": "toasting_fork_0",
+        "category": "fork.n.01"
+      },
+      "water_0": {
+        "name": "water_0",
+        "category": "water.n.06"
+      },
+      "water_1": {
+        "name": "water_1",
+        "category": "water.n.06"
+      }
+    }
+  }
+}

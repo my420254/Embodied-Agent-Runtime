@@ -1,0 +1,627 @@
+{
+  "schema_version": "framework_trace_v3",
+  "process_name": "environment_audit",
+  "payload_role": "summary",
+  "prepared_scene": {
+    "entity_count": 107,
+    "type_counts": {
+      "unknown": 43,
+      "receptacle": 64
+    },
+    "nesting": {
+      "available": true,
+      "contains_node_count": 18,
+      "max_depth": 3
+    },
+    "flat_schema": {
+      "available": true,
+      "entity_count": 107,
+      "standard_field_counts": {
+        "direct_parent": 107,
+        "direct_relation": 107,
+        "type": 107,
+        "states": 107,
+        "properties": 107,
+        "is_container": 107,
+        "full_path": 107
+      },
+      "relation_entity_count": 106,
+      "state_entity_count": 105,
+      "property_entity_count": 102,
+      "container_count": 65,
+      "full_path_entity_count": 106,
+      "parent_missing_count": 0,
+      "parent_missing_sample": [],
+      "parent_reference_missing_count": 0,
+      "parent_reference_missing_sample": []
+    }
+  },
+  "planning_input_environment": {
+    "source": {
+      "builder": "build_sandbox_environment",
+      "benchmark": "benchmark.reactree.alfred"
+    },
+    "summary": {
+      "available": true,
+      "entity_count": 107,
+      "type_counts": {
+        "unknown": 43,
+        "receptacle": 64
+      },
+      "entities": {
+        "count": 107,
+        "sample": [
+          "Apple (1)",
+          "Apple (2)",
+          "Apple (3)",
+          "Bowl (1)",
+          "Bowl (2)",
+          "Bowl (3)",
+          "Bread (1)",
+          "Bread (2)",
+          "ButterKnife (1)",
+          "ButterKnife (2)",
+          "ButterKnife (3)",
+          "Cabinet (1)",
+          "Cabinet (10)",
+          "Cabinet (11)",
+          "Cabinet (12)",
+          "Cabinet (13)",
+          "Cabinet (14)",
+          "Cabinet (15)",
+          "Cabinet (16)",
+          "Cabinet (17)",
+          "Cabinet (18)",
+          "Cabinet (19)",
+          "Cabinet (2)",
+          "Cabinet (20)",
+          "Cabinet (21)",
+          "Cabinet (22)",
+          "Cabinet (23)",
+          "Cabinet (24)",
+          "Cabinet (25)",
+          "Cabinet (26)",
+          "Cabinet (3)",
+          "Cabinet (4)",
+          "Cabinet (5)",
+          "Cabinet (6)",
+          "Cabinet (7)",
+          "Cabinet (8)",
+          "Cabinet (9)",
+          "CoffeeMachine (1)",
+          "CounterTop (1)",
+          "CounterTop (2)"
+        ],
+        "truncated": true
+      },
+      "states_sample": {
+        "Apple (1)": {
+          "isSliced": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "SinkBasin (1)": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "Apple (2)": {
+          "isSliced": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "CounterTop (1)": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "Apple (3)": {
+          "isSliced": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "Bowl (1)": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "Cold",
+          "isHot": false,
+          "isCool": true,
+          "isCooked": false
+        },
+        "Fridge (1)": {
+          "isOpen": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "Bowl (2)": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "Cabinet (22)": {
+          "isOpen": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": true,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "Bowl (3)": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "Cabinet (17)": {
+          "isOpen": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "Bread (1)": {
+          "isSliced": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "CounterTop (3)": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "Bread (2)": {
+          "isSliced": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "ButterKnife (1)": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "CounterTop (2)": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": true,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "ButterKnife (2)": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "ButterKnife (3)": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "Cabinet (1)": {
+          "isOpen": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "Cabinet (10)": {
+          "isOpen": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        }
+      },
+      "schema": {
+        "available": true,
+        "entity_count": 107,
+        "standard_field_counts": {
+          "direct_parent": 107,
+          "direct_relation": 107,
+          "type": 107,
+          "states": 107,
+          "properties": 107,
+          "is_container": 107,
+          "full_path": 107
+        },
+        "relation_entity_count": 106,
+        "state_entity_count": 105,
+        "property_entity_count": 102,
+        "container_count": 65,
+        "full_path_entity_count": 106,
+        "parent_missing_count": 0,
+        "parent_missing_sample": [],
+        "parent_reference_missing_count": 0,
+        "parent_reference_missing_sample": []
+      }
+    },
+    "schema": {
+      "available": true,
+      "entity_count": 107,
+      "standard_field_counts": {
+        "direct_parent": 107,
+        "direct_relation": 107,
+        "type": 107,
+        "states": 107,
+        "properties": 107,
+        "is_container": 107,
+        "full_path": 107
+      },
+      "relation_entity_count": 106,
+      "state_entity_count": 105,
+      "property_entity_count": 102,
+      "container_count": 65,
+      "full_path_entity_count": 106,
+      "parent_missing_count": 0,
+      "parent_missing_sample": [],
+      "parent_reference_missing_count": 0,
+      "parent_reference_missing_sample": []
+    }
+  },
+  "planning_output_environment": {
+    "summary": {
+      "available": true,
+      "entity_count": 115,
+      "type_counts": {
+        "unknown": 51,
+        "receptacle": 64
+      },
+      "entities": {
+        "count": 115,
+        "sample": [
+          "Apple (1)",
+          "Apple (2)",
+          "Apple (3)",
+          "Bowl (1)",
+          "Bowl (2)",
+          "Bowl (3)",
+          "Bread (1)",
+          "Bread (2)",
+          "ButterKnife (1)",
+          "ButterKnife (2)",
+          "ButterKnife (3)",
+          "Cabinet (1)",
+          "Cabinet (10)",
+          "Cabinet (11)",
+          "Cabinet (12)",
+          "Cabinet (13)",
+          "Cabinet (14)",
+          "Cabinet (15)",
+          "Cabinet (16)",
+          "Cabinet (17)",
+          "Cabinet (18)",
+          "Cabinet (19)",
+          "Cabinet (2)",
+          "Cabinet (20)",
+          "Cabinet (21)",
+          "Cabinet (22)",
+          "Cabinet (23)",
+          "Cabinet (24)",
+          "Cabinet (25)",
+          "Cabinet (26)",
+          "Cabinet (3)",
+          "Cabinet (4)",
+          "Cabinet (5)",
+          "Cabinet (6)",
+          "Cabinet (7)",
+          "Cabinet (8)",
+          "Cabinet (9)",
+          "CoffeeMachine (1)",
+          "CounterTop (1)",
+          "CounterTop (2)"
+        ],
+        "truncated": true
+      },
+      "states_sample": {
+        "Apple (1)": {
+          "isSliced": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "SinkBasin (1)": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "Apple (2)": {
+          "isSliced": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "CounterTop (1)": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "Apple (3)": {
+          "isSliced": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "Bowl (1)": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "Cold",
+          "isHot": false,
+          "isCool": true,
+          "isCooked": false
+        },
+        "Fridge (1)": {
+          "isOpen": true,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "Bowl (2)": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "Cabinet (22)": {
+          "isOpen": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": true,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "Bowl (3)": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "Cabinet (17)": {
+          "isOpen": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "Bread (1)": {
+          "isSliced": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "CounterTop (3)": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "Bread (2)": {
+          "isSliced": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "ButterKnife (1)": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "CounterTop (2)": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": true,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "ButterKnife (2)": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "ButterKnife (3)": {
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "Cabinet (1)": {
+          "isOpen": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        },
+        "Cabinet (10)": {
+          "isOpen": false,
+          "isDirty": false,
+          "isClean": true,
+          "visible": false,
+          "temperature": "RoomTemp",
+          "isHot": false,
+          "isCool": false,
+          "isCooked": false
+        }
+      },
+      "schema": {
+        "available": true,
+        "entity_count": 115,
+        "standard_field_counts": {
+          "direct_parent": 115,
+          "direct_relation": 115,
+          "type": 115,
+          "states": 115,
+          "properties": 115,
+          "is_container": 115,
+          "full_path": 115
+        },
+        "relation_entity_count": 114,
+        "state_entity_count": 113,
+        "property_entity_count": 110,
+        "container_count": 65,
+        "full_path_entity_count": 114,
+        "parent_missing_count": 0,
+        "parent_missing_sample": [],
+        "parent_reference_missing_count": 0,
+        "parent_reference_missing_sample": []
+      }
+    },
+    "schema": {
+      "available": true,
+      "entity_count": 115,
+      "standard_field_counts": {
+        "direct_parent": 115,
+        "direct_relation": 115,
+        "type": 115,
+        "states": 115,
+        "properties": 115,
+        "is_container": 115,
+        "full_path": 115
+      },
+      "relation_entity_count": 114,
+      "state_entity_count": 113,
+      "property_entity_count": 110,
+      "container_count": 65,
+      "full_path_entity_count": 114,
+      "parent_missing_count": 0,
+      "parent_missing_sample": [],
+      "parent_reference_missing_count": 0,
+      "parent_reference_missing_sample": []
+    }
+  }
+}

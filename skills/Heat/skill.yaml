@@ -1,0 +1,15 @@
+name: Heat
+description: 在指定的加热设备中加热物品。
+prompt: prompt.md
+handler: skills.Heat.handler:HeatSkill
+execution_domain: 机械臂控制
+planner_item_param: target_item
+planner_device_param: heating_device
+planner_location_param: heating_device
+planner_requires_empty_hand: true
+planner_container_state_key: isOpen
+planner_container_state_value: false
+planner_device_state_key: isToggled
+planner_device_state_value: true
+planner_effect_state_key: isCooked
+planner_effect_state_value: true

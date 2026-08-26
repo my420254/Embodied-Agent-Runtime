@@ -1,0 +1,457 @@
+{
+  "schema_version": "framework_trace_v3",
+  "process_name": "todo_contract",
+  "payload_role": "audit",
+  "status": "passed",
+  "skill_profile": null,
+  "todo_output_parser_path": "benchmark.reactree.wah.framework.code.native_actions.parse_wah_native_actions",
+  "todo_step_adapter_path": "benchmark.reactree.wah.framework.code.native_actions.wah_native_step_to_skill_call",
+  "todo_list_validator_path": "",
+  "planning_contract": {
+    "available": true,
+    "profile": "",
+    "config_file": "/data/zmy/OurAgent-he1/benchmark/reactree/wah/framework/code/config/settings.json",
+    "skills_root": "benchmark/reactree/wah/framework/code/skills",
+    "enabled_contract_skill_count": 8,
+    "raw_contract_count": 8,
+    "framework_contract_skills": [
+      "go to",
+      "pick up",
+      "put down",
+      "open",
+      "close",
+      "turn on",
+      "turn off",
+      "clean"
+    ],
+    "raw_action_names": [
+      "go to",
+      "pick up",
+      "put down",
+      "open",
+      "close",
+      "turn on",
+      "turn off",
+      "clean"
+    ],
+    "raw_actions": [
+      {
+        "skill": "go to",
+        "action_name": "go to",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "target"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "go to"
+          }
+        ],
+        "entity_fields": [
+          "target"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "pick up",
+        "action_name": "pick up",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "target"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "pick up"
+          }
+        ],
+        "entity_fields": [
+          "target"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "put down",
+        "action_name": "put down",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "target"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "put down"
+          }
+        ],
+        "entity_fields": [
+          "target"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "open",
+        "action_name": "open",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "target"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "open"
+          }
+        ],
+        "entity_fields": [
+          "target"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "close",
+        "action_name": "close",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "target"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "close"
+          }
+        ],
+        "entity_fields": [
+          "target"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "turn on",
+        "action_name": "turn on",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "target"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "turn on"
+          }
+        ],
+        "entity_fields": [
+          "target"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "turn off",
+        "action_name": "turn off",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "target"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "turn off"
+          }
+        ],
+        "entity_fields": [
+          "target"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "clean",
+        "action_name": "clean",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "target"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "clean"
+          }
+        ],
+        "entity_fields": [
+          "target"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      }
+    ]
+  },
+  "todo_list_shape": {
+    "count": 8,
+    "top_level_key_counts": {
+      "step": 8,
+      "action": 8,
+      "target": 8
+    },
+    "action_counts": {
+      "go to": 4,
+      "pick up": 2,
+      "put down": 2
+    },
+    "execution_wrapper_count": 0,
+    "sample": [
+      {
+        "index": 1,
+        "action": "go to",
+        "keys": [
+          "action",
+          "step",
+          "target"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 1,
+          "action": "go to",
+          "target": "kitchen table 1"
+        }
+      },
+      {
+        "index": 2,
+        "action": "pick up",
+        "keys": [
+          "action",
+          "step",
+          "target"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 2,
+          "action": "pick up",
+          "target": "cupcake 1"
+        }
+      },
+      {
+        "index": 3,
+        "action": "go to",
+        "keys": [
+          "action",
+          "step",
+          "target"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 3,
+          "action": "go to",
+          "target": "coffee table 1"
+        }
+      },
+      {
+        "index": 4,
+        "action": "put down",
+        "keys": [
+          "action",
+          "step",
+          "target"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 4,
+          "action": "put down",
+          "target": "cupcake 1"
+        }
+      },
+      {
+        "index": 5,
+        "action": "go to",
+        "keys": [
+          "action",
+          "step",
+          "target"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 5,
+          "action": "go to",
+          "target": "kitchen table 1"
+        }
+      },
+      {
+        "index": 6,
+        "action": "pick up",
+        "keys": [
+          "action",
+          "step",
+          "target"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 6,
+          "action": "pick up",
+          "target": "apple 2"
+        }
+      },
+      {
+        "index": 7,
+        "action": "go to",
+        "keys": [
+          "action",
+          "step",
+          "target"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 7,
+          "action": "go to",
+          "target": "coffee table 1"
+        }
+      },
+      {
+        "index": 8,
+        "action": "put down",
+        "keys": [
+          "action",
+          "step",
+          "target"
+        ],
+        "has_execution_wrapper": false,
+        "raw_step": {
+          "step": 8,
+          "action": "put down",
+          "target": "apple 2"
+        }
+      }
+    ],
+    "truncated": false
+  },
+  "action_coverage": {
+    "configured_raw_action_count": 8,
+    "configured_raw_actions": [
+      "clean",
+      "close",
+      "go to",
+      "open",
+      "pick up",
+      "put down",
+      "turn off",
+      "turn on"
+    ],
+    "observed_action_count": 8,
+    "observed_actions": [
+      "go to",
+      "pick up",
+      "go to",
+      "put down",
+      "go to",
+      "pick up",
+      "go to",
+      "put down"
+    ],
+    "unknown_observed_actions": []
+  },
+  "contract_events": [
+    {
+      "layer": "todo_contract",
+      "type": "passed",
+      "todo_count": 8
+    }
+  ],
+  "planning_status": {
+    "is_feasible": true,
+    "execution_status": "completed",
+    "planner_status": "planned",
+    "iteration_count": 1,
+    "failure_layer": "",
+    "failure_category": "",
+    "failed_action": {},
+    "feedback": "规划合法，验证环节闭环。",
+    "error_feedback": ""
+  },
+  "validated_outputs": {
+    "todo_list_count": 8,
+    "validated_todo_actions_count": 8,
+    "validated_steps_count": 0
+  }
+}

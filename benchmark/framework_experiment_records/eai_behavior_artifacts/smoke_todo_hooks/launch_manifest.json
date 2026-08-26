@@ -1,0 +1,45 @@
+{
+  "benchmark_name": "eai_behavior",
+  "run_name": "eai_behavior_smoke_20260806_todo_hooks",
+  "run_root": "/data/zmy/OurAgent-he1/benchmark/eai/behavior/framework/results/eai_behavior_smoke_20260806_todo_hooks",
+  "worker_module": "benchmark.eai.behavior.framework.code._case_worker",
+  "status": "completed",
+  "dry_run": false,
+  "resume": false,
+  "selected_case_count": 1,
+  "resumed_case_count": 0,
+  "scheduled_command_count": 1,
+  "unit_count": 1,
+  "worker_timeout_s": 1800,
+  "endpoint_slots": [
+    {
+      "index": 0,
+      "port": 18003,
+      "api_base": "http://192.168.27.250:18003/v1",
+      "api_model": "Qwen3.6-27B"
+    }
+  ],
+  "resumed_cases": [],
+  "commands": [
+    {
+      "case_id": "assembling_gift_baskets_0_Beechwood_0_int_0_2021-10-26_12-46-37",
+      "unit_index": 0,
+      "endpoint_index": 0,
+      "port": 18003,
+      "worker_input": "/data/zmy/OurAgent-he1/benchmark/eai/behavior/framework/results/eai_behavior_smoke_20260806_todo_hooks/cases/assembling_gift_baskets_0_Beechwood_0_int_0_2021-10-26_12-46-37/artifacts/worker_input.json",
+      "log": "/data/zmy/OurAgent-he1/benchmark/eai/behavior/framework/results/eai_behavior_smoke_20260806_todo_hooks/cases/assembling_gift_baskets_0_Beechwood_0_int_0_2021-10-26_12-46-37/run.log",
+      "command": [
+        "/data/zmy/envs/ouragent/bin/python",
+        "-m",
+        "benchmark.eai.behavior.framework.code._case_worker",
+        "--worker-input",
+        "/data/zmy/OurAgent-he1/benchmark/eai/behavior/framework/results/eai_behavior_smoke_20260806_todo_hooks/cases/assembling_gift_baskets_0_Beechwood_0_int_0_2021-10-26_12-46-37/artifacts/worker_input.json"
+      ]
+    }
+  ],
+  "completed_at": "2026-08-06 18:17:38 +0000",
+  "result_count": 1,
+  "result_status_counts": {
+    "done": 1
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "is_passed": true,
+  "issue": "",
+  "fix_advice": "",
+  "repair_mode": "continue_from_current",
+  "accepted_diffs": [
+    "candle_0 inside basket_0",
+    "cheese_0 inside basket_0",
+    "cookie_0 inside basket_0",
+    "bow_0 inside basket_0",
+    "candle_1 inside basket_1",
+    "cheese_1 inside basket_1",
+    "cookie_1 inside basket_1",
+    "bow_1 inside basket_1",
+    "candle_2 inside basket_2",
+    "cheese_2 inside basket_2",
+    "cookie_2 inside basket_2",
+    "bow_2 inside basket_2",
+    "candle_3 inside basket_3",
+    "cheese_3 inside basket_3",
+    "cookie_3 inside basket_3",
+    "bow_3 inside basket_3"
+  ],
+  "unexpected_diffs": []
+}

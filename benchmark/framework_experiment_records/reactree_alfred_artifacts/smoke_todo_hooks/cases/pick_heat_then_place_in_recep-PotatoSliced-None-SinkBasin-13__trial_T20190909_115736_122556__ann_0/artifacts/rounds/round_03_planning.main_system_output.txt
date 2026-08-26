@@ -1,0 +1,17 @@
+[
+  {"action": "go to", "target": "Fridge (1)"},
+  {"action": "open", "target": "Fridge (1)"},
+  {"action": "pick up", "target": "Potato (1)"},
+  {"action": "go to", "target": "CounterTop (1)"},
+  {"action": "put down", "target": "Potato (1)"},
+  {"action": "slice", "target": "Potato (1)"},
+  {"action": "pick up", "target": "Potato (1)"},
+  {"action": "go to", "target": "Pan (1)"},
+  {"action": "put down", "target": "Potato (1)"},
+  {"action": "go to", "target": "StoveBurner (1)"},
+  {"action": "turn on", "target": "StoveBurner (1)"},
+  {"action": "go to", "target": "Pan (1)"},
+  {"action": "pick up", "target": "Potato (1)"},
+  {"action": "go to", "target": "SinkBasin (1)"},
+  {"action": "put down", "target": "Potato (1)"}
+]

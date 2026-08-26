@@ -1,0 +1,1208 @@
+{
+  "schema_version": "framework_trace_v3",
+  "process_name": "planning",
+  "payload_role": "input",
+  "skill_profile": null,
+  "repair_strategy": "retrac",
+  "todo_output_parser_path": "benchmark.reactree.wah.framework.code.native_actions.parse_wah_native_actions",
+  "todo_step_adapter_path": "benchmark.reactree.wah.framework.code.native_actions.wah_native_step_to_skill_call",
+  "todo_list_validator_path": "",
+  "planning_contract": {
+    "available": true,
+    "profile": "",
+    "config_file": "/data/zmy/OurAgent-he1/benchmark/reactree/wah/framework/code/config/settings.json",
+    "skills_root": "benchmark/reactree/wah/framework/code/skills",
+    "enabled_contract_skill_count": 8,
+    "raw_contract_count": 8,
+    "framework_contract_skills": [
+      "go to",
+      "pick up",
+      "put down",
+      "open",
+      "close",
+      "turn on",
+      "turn off",
+      "clean"
+    ],
+    "raw_action_names": [
+      "go to",
+      "pick up",
+      "put down",
+      "open",
+      "close",
+      "turn on",
+      "turn off",
+      "clean"
+    ],
+    "raw_actions": [
+      {
+        "skill": "go to",
+        "action_name": "go to",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "target"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "go to"
+          }
+        ],
+        "entity_fields": [
+          "target"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "pick up",
+        "action_name": "pick up",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "target"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "pick up"
+          }
+        ],
+        "entity_fields": [
+          "target"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "put down",
+        "action_name": "put down",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "target"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "put down"
+          }
+        ],
+        "entity_fields": [
+          "target"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "open",
+        "action_name": "open",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "target"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "open"
+          }
+        ],
+        "entity_fields": [
+          "target"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "close",
+        "action_name": "close",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "target"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "close"
+          }
+        ],
+        "entity_fields": [
+          "target"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "turn on",
+        "action_name": "turn on",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "target"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "turn on"
+          }
+        ],
+        "entity_fields": [
+          "target"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "turn off",
+        "action_name": "turn off",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "target"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "turn off"
+          }
+        ],
+        "entity_fields": [
+          "target"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      },
+      {
+        "skill": "clean",
+        "action_name": "clean",
+        "action_field": "action",
+        "required_fields": [
+          "action",
+          "target"
+        ],
+        "fixed_fields": [
+          {
+            "field": "action",
+            "value": "clean"
+          }
+        ],
+        "entity_fields": [
+          "target"
+        ],
+        "room_fields": [],
+        "args_field": "args",
+        "args_arity": null,
+        "entity_args": [],
+        "allow_extra_fields": false,
+        "allow_comma_separated_entities": false,
+        "entity_pattern": "",
+        "dynamic_entity_rule": "",
+        "unchecked_fields": [],
+        "context_field": "",
+        "context_values": []
+      }
+    ]
+  },
+  "feature_flags": {
+    "sandbox_evaluator": true,
+    "state_diff_audit": true,
+    "semantic_audit": false,
+    "playbook_retrieval": false,
+    "playbook_write": false,
+    "reflection": false,
+    "candidate_rules": false
+  },
+  "understanding_stage_executed": true,
+  "structured_task": {
+    "intent": "Put one cupcake and one apple on the coffee table",
+    "required_item_names": {
+      "targets": {
+        "primary": [
+          "cupcake 1",
+          "apple 1"
+        ],
+        "alternatives": []
+      },
+      "tools": {
+        "primary": [],
+        "alternatives": []
+      },
+      "receptacles": {
+        "primary": [
+          "coffee table 1"
+        ],
+        "alternatives": []
+      }
+    },
+    "quantity_constraints": [
+      "1 cupcake",
+      "1 apple"
+    ],
+    "final_state": {
+      "on_cupcake_coffeetable": 1,
+      "on_apple_coffeetable": 1
+    }
+  },
+  "env_state": {
+    "robot_location": "bedroom 1",
+    "robot_holding": "空"
+  },
+  "task_context": {
+    "dataset": "reactree",
+    "env_id": 3,
+    "task_name": "prepare_snack",
+    "instruction": "Put one cupcake and one apple on the coffee table",
+    "init_room": "bedroom",
+    "task_source": "reactree_wah_testset",
+    "environment_source": "reactree_case_runtime_scene",
+    "init_graph_cache_path": "/data/zmy/OurAgent-he1/benchmark/datasets/extracted/reactree/wah/initial_envs/0.json",
+    "task_goal": {
+      "on_cupcake_coffeetable": 1,
+      "on_apple_coffeetable": 1
+    },
+    "available_entities": [
+      "apple 1",
+      "apple 2",
+      "apple 3",
+      "bananas 1",
+      "bar soap 1",
+      "bathroom 1",
+      "bathroom cabinet 1",
+      "bathroom counter 1",
+      "bed 1",
+      "bedroom 1",
+      "book 1",
+      "book 2",
+      "bookshelf 1",
+      "bookshelf 2",
+      "bookshelf 3",
+      "bowl 1",
+      "bowl 2",
+      "bowl 3",
+      "bowl 4",
+      "bowl 5",
+      "bowl 6",
+      "bowl 7",
+      "bowl 8",
+      "bowl 9",
+      "box 1",
+      "box 2",
+      "box 3",
+      "box 4",
+      "box 5",
+      "bucket 1",
+      "cabinet 1",
+      "candle 1",
+      "candy bar 1",
+      "ceiling 1",
+      "ceiling 10",
+      "ceiling 11",
+      "ceiling 12",
+      "ceiling 13",
+      "ceiling 14",
+      "ceiling 15",
+      "ceiling 16",
+      "ceiling 17",
+      "ceiling 18",
+      "ceiling 19",
+      "ceiling 2",
+      "ceiling 20",
+      "ceiling 21",
+      "ceiling 22",
+      "ceiling 23",
+      "ceiling 24",
+      "ceiling 25",
+      "ceiling 26",
+      "ceiling 3",
+      "ceiling 4",
+      "ceiling 5",
+      "ceiling 6",
+      "ceiling 7",
+      "ceiling 8",
+      "ceiling 9",
+      "ceiling lamp 1",
+      "ceiling lamp 2",
+      "ceiling lamp 3",
+      "ceiling lamp 4",
+      "ceiling lamp 5",
+      "cell phone 1",
+      "cell phone 2",
+      "cereal 1",
+      "chair 1",
+      "chair 2",
+      "chair 3",
+      "chair 4",
+      "chair 5",
+      "chair 6",
+      "chips 1",
+      "chips 2",
+      "chocolate syrup 1",
+      "closet 1",
+      "closet drawer 1",
+      "closet drawer 2",
+      "closet drawer 3",
+      "closet drawer 4",
+      "closet drawer 5",
+      "closet drawer 6",
+      "closet drawer 7",
+      "coffee maker 1",
+      "coffee pot 1",
+      "coffee table 1",
+      "computer 1",
+      "condiment bottle 1",
+      "condiment bottle 2",
+      "condiment bottle 3",
+      "condiment bottle 4",
+      "condiment shaker 1",
+      "condiment shaker 2",
+      "condiment shaker 3",
+      "condiment shaker 4",
+      "cooking pot 1",
+      "cooking pot 2",
+      "cpu screen 1",
+      "crackers 1",
+      "crackers 2",
+      "creamy buns 1",
+      "cupcake 1",
+      "cupcake 2",
+      "cupcake 3",
+      "curtains 1",
+      "curtains 2",
+      "curtains 3",
+      "curtains 4",
+      "curtains 5",
+      "curtains 6",
+      "curtains 7",
+      "cutlery fork 1",
+      "cutlery fork 2",
+      "cutlery fork 3",
+      "cutlery fork 4",
+      "cutlery knife 1",
+      "cutlery knife 2",
+      "cutlery knife 3",
+      "cutlery knife 4",
+      "cutlery knife 5",
+      "cutlery knife 6",
+      "cutlets 1",
+      "deodorant 1",
+      "deodorant 2",
+      "deodorant 3",
+      "desk 1",
+      "desk 2",
+      "dishwasher 1",
+      "dishwashing liquid 1",
+      "door 1",
+      "door 2",
+      "door 3",
+      "door jamb 1",
+      "door jamb 2",
+      "door jamb 3",
+      "door jamb 4",
+      "face cream 1",
+      "face cream 2",
+      "face cream 3",
+      "faucet 1",
+      "faucet 2",
+      "floor 1",
+      "floor 10",
+      "floor 11",
+      "floor 12",
+      "floor 13",
+      "floor 14",
+      "floor 15",
+      "floor 16",
+      "floor 17",
+      "floor 18",
+      "floor 19",
+      "floor 2",
+      "floor 20",
+      "floor 21",
+      "floor 22",
+      "floor 23",
+      "floor 24",
+      "floor 25",
+      "floor 26",
+      "floor 3",
+      "floor 4",
+      "floor 5",
+      "floor 6",
+      "floor 7",
+      "floor 8",
+      "floor 9",
+      "folder 1",
+      "folder 2",
+      "folder 3",
+      "folder 4",
+      "fridge 1",
+      "frying pan 1",
+      "hair product 1",
+      "hair product 2",
+      "hair product 3",
+      "hair product 4",
+      "hanger 1",
+      "hanger 2",
+      "hanger 3",
+      "hanger 4",
+      "hanger 5",
+      "hanger 6",
+      "hanger 7",
+      "juice 1",
+      "juice 2",
+      "keyboard 1",
+      "kitchen 1",
+      "kitchen cabinet 1",
+      "kitchen cabinet 2",
+      "kitchen cabinet 3",
+      "kitchen cabinet 4",
+      "kitchen cabinet 5",
+      "kitchen cabinet 6",
+      "kitchen cabinet 7",
+      "kitchen cabinet 8",
+      "kitchen counter 1",
+      "kitchen counter 2",
+      "kitchen counter 3",
+      "kitchen counter drawer 1",
+      "kitchen counter drawer 2",
+      "kitchen counter drawer 3",
+      "kitchen counter drawer 4",
+      "kitchen counter drawer 5",
+      "kitchen counter drawer 6",
+      "kitchen counter drawer 7",
+      "kitchen counter drawer 8",
+      "kitchen table 1",
+      "knife block 1",
+      "light switch 1",
+      "light switch 2",
+      "light switch 3",
+      "light switch 4",
+      "lime 1",
+      "living room 1",
+      "microwave oven 1",
+      "milk 1",
+      "mouse 1",
+      "mouse mat 1",
+      "mug 1",
+      "mug 2",
+      "mug 3",
+      "nightstand 1",
+      "nightstand 2",
+      "nightstand 3",
+      "nightstand 4",
+      "notes 1",
+      "orchid 1",
+      "oven tray 1",
+      "painkillers 1",
+      "pancake 1",
+      "peach 1",
+      "peach 2",
+      "peach 3",
+      "pear 1",
+      "perfume 1",
+      "perfume 2",
+      "photo frame 1",
+      "photo frame 2",
+      "photo frame 3",
+      "pile of clothes 1",
+      "pile of clothes 2",
+      "pillow 1",
+      "pillow 2",
+      "pillow 3",
+      "pillow 4",
+      "pillow 5",
+      "pillow 6",
+      "plate 1",
+      "plate 2",
+      "plate 3",
+      "plate 4",
+      "plate 5",
+      "plate 6",
+      "plate 7",
+      "plum 1",
+      "plum 2",
+      "power socket 1",
+      "power socket 2",
+      "power socket 3",
+      "pudding 1",
+      "pudding 2",
+      "radio 1",
+      "rug 1",
+      "rug 2",
+      "rug 3",
+      "rug 4",
+      "sink 1",
+      "sink 2",
+      "slice of bread 1",
+      "slice of bread 2",
+      "sofa 1",
+      "sofa 2",
+      "sofa 3",
+      "stall 1",
+      "stall 2",
+      "stove 1",
+      "stove fan 1",
+      "table lamp 1",
+      "toaster 1",
+      "toilet 1",
+      "toilet paper 1",
+      "toothbrush 1",
+      "toothpaste 1",
+      "tv 1",
+      "tv stand 1",
+      "wall 1",
+      "wall 10",
+      "wall 11",
+      "wall 12",
+      "wall 13",
+      "wall 14",
+      "wall 15",
+      "wall 16",
+      "wall 17",
+      "wall 18",
+      "wall 19",
+      "wall 2",
+      "wall 20",
+      "wall 21",
+      "wall 22",
+      "wall 23",
+      "wall 24",
+      "wall 25",
+      "wall 26",
+      "wall 3",
+      "wall 4",
+      "wall 5",
+      "wall 6",
+      "wall 7",
+      "wall 8",
+      "wall 9",
+      "wall lamp 1",
+      "wall lamp 2",
+      "wall lamp 3",
+      "wall lamp 4",
+      "wall lamp 5",
+      "wall lamp 6",
+      "wall lamp 7",
+      "wall lamp 8",
+      "wall lamp 9",
+      "wall phone 1",
+      "wall picture frame 1",
+      "wall picture frame 2",
+      "wall picture frame 3",
+      "wall picture frame 4",
+      "wall picture frame 5",
+      "wall picture frame 6",
+      "wall picture frame 7",
+      "wall picture frame 8",
+      "wall shelf 1",
+      "wall shelf 2",
+      "washing machine 1",
+      "washing sponge 1",
+      "water glass 1",
+      "water glass 2",
+      "water glass 3",
+      "water glass 4",
+      "water glass 5",
+      "window 1",
+      "window 2",
+      "wine 1"
+    ]
+  },
+  "feedback": "",
+  "environment": {
+    "cupcake 1": {
+      "direct_parent": "kitchen table 1",
+      "direct_relation": "on",
+      "type": null,
+      "states": {},
+      "properties": [
+        "GRABBABLE",
+        "EATABLE",
+        "MOVABLE"
+      ],
+      "is_container": false,
+      "full_path": [
+        "kitchen 1",
+        "floor 2",
+        "kitchen table 1"
+      ]
+    },
+    "kitchen 1": {
+      "direct_parent": "未知环境",
+      "direct_relation": null,
+      "type": "room",
+      "states": {},
+      "properties": [],
+      "is_container": false,
+      "full_path": []
+    },
+    "floor 2": {
+      "direct_parent": "kitchen 1",
+      "direct_relation": "inside",
+      "type": "receptacle",
+      "states": {},
+      "properties": [
+        "SURFACES"
+      ],
+      "is_container": true,
+      "full_path": [
+        "kitchen 1"
+      ]
+    },
+    "kitchen table 1": {
+      "direct_parent": "floor 2",
+      "direct_relation": "on",
+      "type": "receptacle",
+      "states": {},
+      "properties": [
+        "SURFACES",
+        "MOVABLE"
+      ],
+      "is_container": true,
+      "full_path": [
+        "kitchen 1",
+        "floor 2"
+      ]
+    },
+    "cupcake 2": {
+      "direct_parent": "kitchen table 1",
+      "direct_relation": "on",
+      "type": null,
+      "states": {},
+      "properties": [
+        "GRABBABLE",
+        "EATABLE",
+        "MOVABLE"
+      ],
+      "is_container": false,
+      "full_path": [
+        "kitchen 1",
+        "floor 2",
+        "kitchen table 1"
+      ]
+    },
+    "cupcake 3": {
+      "direct_parent": "cabinet 1",
+      "direct_relation": "inside",
+      "type": null,
+      "states": {},
+      "properties": [
+        "GRABBABLE",
+        "EATABLE",
+        "MOVABLE"
+      ],
+      "is_container": false,
+      "full_path": [
+        "bedroom 1",
+        "floor 16",
+        "cabinet 1"
+      ]
+    },
+    "bedroom 1": {
+      "direct_parent": "未知环境",
+      "direct_relation": null,
+      "type": "room",
+      "states": {},
+      "properties": [],
+      "is_container": false,
+      "full_path": []
+    },
+    "floor 16": {
+      "direct_parent": "bedroom 1",
+      "direct_relation": "inside",
+      "type": "receptacle",
+      "states": {},
+      "properties": [
+        "SURFACES"
+      ],
+      "is_container": true,
+      "full_path": [
+        "bedroom 1"
+      ]
+    },
+    "cabinet 1": {
+      "direct_parent": "floor 16",
+      "direct_relation": "on",
+      "type": "receptacle",
+      "states": {
+        "isOpen": false
+      },
+      "properties": [
+        "SURFACES",
+        "CAN_OPEN",
+        "CONTAINERS"
+      ],
+      "is_container": true,
+      "full_path": [
+        "bedroom 1",
+        "floor 16"
+      ]
+    },
+    "apple 1": {
+      "direct_parent": "fridge 1",
+      "direct_relation": "inside",
+      "type": null,
+      "states": {},
+      "properties": [
+        "GRABBABLE",
+        "MOVABLE"
+      ],
+      "is_container": false,
+      "full_path": [
+        "kitchen 1",
+        "floor 4",
+        "fridge 1"
+      ]
+    },
+    "floor 4": {
+      "direct_parent": "kitchen 1",
+      "direct_relation": "inside",
+      "type": "receptacle",
+      "states": {},
+      "properties": [
+        "SURFACES"
+      ],
+      "is_container": true,
+      "full_path": [
+        "kitchen 1"
+      ]
+    },
+    "fridge 1": {
+      "direct_parent": "floor 4",
+      "direct_relation": "on",
+      "type": "receptacle",
+      "states": {
+        "isOpen": false
+      },
+      "properties": [
+        "CAN_OPEN",
+        "HAS_SWITCH",
+        "CONTAINERS",
+        "HAS_PLUG"
+      ],
+      "is_container": true,
+      "full_path": [
+        "kitchen 1",
+        "floor 4"
+      ]
+    },
+    "apple 2": {
+      "direct_parent": "kitchen table 1",
+      "direct_relation": "on",
+      "type": null,
+      "states": {},
+      "properties": [
+        "GRABBABLE",
+        "MOVABLE"
+      ],
+      "is_container": false,
+      "full_path": [
+        "kitchen 1",
+        "floor 2",
+        "kitchen table 1"
+      ]
+    },
+    "apple 3": {
+      "direct_parent": "cabinet 1",
+      "direct_relation": "inside",
+      "type": null,
+      "states": {},
+      "properties": [
+        "GRABBABLE",
+        "MOVABLE"
+      ],
+      "is_container": false,
+      "full_path": [
+        "bedroom 1",
+        "floor 16",
+        "cabinet 1"
+      ]
+    },
+    "coffee table 1": {
+      "direct_parent": "floor 25",
+      "direct_relation": "on",
+      "type": null,
+      "states": {},
+      "properties": [
+        "SURFACES",
+        "MOVABLE"
+      ],
+      "is_container": false,
+      "full_path": [
+        "living room 1",
+        "floor 25"
+      ]
+    },
+    "living room 1": {
+      "direct_parent": "未知环境",
+      "direct_relation": null,
+      "type": "room",
+      "states": {},
+      "properties": [],
+      "is_container": false,
+      "full_path": []
+    },
+    "floor 25": {
+      "direct_parent": "living room 1",
+      "direct_relation": "inside",
+      "type": "receptacle",
+      "states": {},
+      "properties": [
+        "SURFACES"
+      ],
+      "is_container": true,
+      "full_path": [
+        "living room 1"
+      ]
+    }
+  },
+  "environment_facts": {
+    "available": true,
+    "entity_count": 17,
+    "facts": [
+      {
+        "name": "apple 1",
+        "direct_parent": "fridge 1",
+        "direct_relation": "inside",
+        "full_path": [
+          "kitchen 1",
+          "floor 4",
+          "fridge 1"
+        ],
+        "states": {},
+        "properties": [
+          "GRABBABLE",
+          "MOVABLE"
+        ],
+        "type": null,
+        "is_container": false
+      },
+      {
+        "name": "apple 2",
+        "direct_parent": "kitchen table 1",
+        "direct_relation": "on",
+        "full_path": [
+          "kitchen 1",
+          "floor 2",
+          "kitchen table 1"
+        ],
+        "states": {},
+        "properties": [
+          "GRABBABLE",
+          "MOVABLE"
+        ],
+        "type": null,
+        "is_container": false
+      },
+      {
+        "name": "apple 3",
+        "direct_parent": "cabinet 1",
+        "direct_relation": "inside",
+        "full_path": [
+          "bedroom 1",
+          "floor 16",
+          "cabinet 1"
+        ],
+        "states": {},
+        "properties": [
+          "GRABBABLE",
+          "MOVABLE"
+        ],
+        "type": null,
+        "is_container": false
+      },
+      {
+        "name": "bedroom 1",
+        "direct_parent": "未知环境",
+        "direct_relation": null,
+        "full_path": [],
+        "states": {},
+        "properties": [],
+        "type": "room",
+        "is_container": false
+      },
+      {
+        "name": "cabinet 1",
+        "direct_parent": "floor 16",
+        "direct_relation": "on",
+        "full_path": [
+          "bedroom 1",
+          "floor 16"
+        ],
+        "states": {
+          "isOpen": false
+        },
+        "properties": [
+          "SURFACES",
+          "CAN_OPEN",
+          "CONTAINERS"
+        ],
+        "type": "receptacle",
+        "is_container": true
+      },
+      {
+        "name": "coffee table 1",
+        "direct_parent": "floor 25",
+        "direct_relation": "on",
+        "full_path": [
+          "living room 1",
+          "floor 25"
+        ],
+        "states": {},
+        "properties": [
+          "SURFACES",
+          "MOVABLE"
+        ],
+        "type": null,
+        "is_container": false
+      },
+      {
+        "name": "cupcake 1",
+        "direct_parent": "kitchen table 1",
+        "direct_relation": "on",
+        "full_path": [
+          "kitchen 1",
+          "floor 2",
+          "kitchen table 1"
+        ],
+        "states": {},
+        "properties": [
+          "GRABBABLE",
+          "EATABLE",
+          "MOVABLE"
+        ],
+        "type": null,
+        "is_container": false
+      },
+      {
+        "name": "cupcake 2",
+        "direct_parent": "kitchen table 1",
+        "direct_relation": "on",
+        "full_path": [
+          "kitchen 1",
+          "floor 2",
+          "kitchen table 1"
+        ],
+        "states": {},
+        "properties": [
+          "GRABBABLE",
+          "EATABLE",
+          "MOVABLE"
+        ],
+        "type": null,
+        "is_container": false
+      },
+      {
+        "name": "cupcake 3",
+        "direct_parent": "cabinet 1",
+        "direct_relation": "inside",
+        "full_path": [
+          "bedroom 1",
+          "floor 16",
+          "cabinet 1"
+        ],
+        "states": {},
+        "properties": [
+          "GRABBABLE",
+          "EATABLE",
+          "MOVABLE"
+        ],
+        "type": null,
+        "is_container": false
+      },
+      {
+        "name": "floor 16",
+        "direct_parent": "bedroom 1",
+        "direct_relation": "inside",
+        "full_path": [
+          "bedroom 1"
+        ],
+        "states": {},
+        "properties": [
+          "SURFACES"
+        ],
+        "type": "receptacle",
+        "is_container": true
+      },
+      {
+        "name": "floor 2",
+        "direct_parent": "kitchen 1",
+        "direct_relation": "inside",
+        "full_path": [
+          "kitchen 1"
+        ],
+        "states": {},
+        "properties": [
+          "SURFACES"
+        ],
+        "type": "receptacle",
+        "is_container": true
+      },
+      {
+        "name": "floor 25",
+        "direct_parent": "living room 1",
+        "direct_relation": "inside",
+        "full_path": [
+          "living room 1"
+        ],
+        "states": {},
+        "properties": [
+          "SURFACES"
+        ],
+        "type": "receptacle",
+        "is_container": true
+      },
+      {
+        "name": "floor 4",
+        "direct_parent": "kitchen 1",
+        "direct_relation": "inside",
+        "full_path": [
+          "kitchen 1"
+        ],
+        "states": {},
+        "properties": [
+          "SURFACES"
+        ],
+        "type": "receptacle",
+        "is_container": true
+      },
+      {
+        "name": "fridge 1",
+        "direct_parent": "floor 4",
+        "direct_relation": "on",
+        "full_path": [
+          "kitchen 1",
+          "floor 4"
+        ],
+        "states": {
+          "isOpen": false
+        },
+        "properties": [
+          "CAN_OPEN",
+          "HAS_SWITCH",
+          "CONTAINERS",
+          "HAS_PLUG"
+        ],
+        "type": "receptacle",
+        "is_container": true
+      },
+      {
+        "name": "kitchen 1",
+        "direct_parent": "未知环境",
+        "direct_relation": null,
+        "full_path": [],
+        "states": {},
+        "properties": [],
+        "type": "room",
+        "is_container": false
+      },
+      {
+        "name": "kitchen table 1",
+        "direct_parent": "floor 2",
+        "direct_relation": "on",
+        "full_path": [
+          "kitchen 1",
+          "floor 2"
+        ],
+        "states": {},
+        "properties": [
+          "SURFACES",
+          "MOVABLE"
+        ],
+        "type": "receptacle",
+        "is_container": true
+      },
+      {
+        "name": "living room 1",
+        "direct_parent": "未知环境",
+        "direct_relation": null,
+        "full_path": [],
+        "states": {},
+        "properties": [],
+        "type": "room",
+        "is_container": false
+      }
+    ],
+    "truncated": false
+  },
+  "environment_source": {
+    "builder": "build_sandbox_environment",
+    "benchmark": "benchmark.reactree.wah"
+  },
+  "checkpoint_env": {},
+  "checkpoint_robot": {},
+  "re_trac_memory": {
+    "failed_lessons": []
+  },
+  "re_trac_state": {},
+  "sda_state": {},
+  "todo_list_before_planning": [],
+  "validated_steps": [],
+  "validated_todo_actions": [],
+  "todo_checkpoint_env": {},
+  "todo_checkpoint_robot": {}
+}

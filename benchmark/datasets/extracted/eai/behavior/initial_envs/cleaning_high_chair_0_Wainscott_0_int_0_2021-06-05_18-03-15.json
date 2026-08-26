@@ -1,0 +1,158 @@
+{
+  "dataset": "behavior",
+  "case_id": "cleaning_high_chair_0_Wainscott_0_int_0_2021-06-05_18-03-15",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "cleaning_high_chair",
+    "task_id": 0,
+    "scene_id": "Wainscott_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "cleaning high chair",
+    "task": "cleaning_high_chair",
+    "task_id": 0,
+    "scene_id": "Wainscott_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 8,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_no_top_80",
+      "highchair_0",
+      "paper_towel_0",
+      "room_floor_dining_room_0",
+      "room_floor_kitchen_0",
+      "sink_82"
+    ],
+    "name_mapping": {
+      "highchair.n.01_1": {
+        "name": "highchair_0",
+        "category": "highchair.n.01"
+      },
+      "piece_of_cloth.n.01_1": {
+        "name": "paper_towel_0",
+        "category": "piece_of_cloth.n.01"
+      },
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_no_top_80",
+        "category": "cabinet.n.01"
+      },
+      "sink.n.01_1": {
+        "name": "sink_82",
+        "category": "sink.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "floor.n.01_2": {
+        "name": "room_floor_dining_room_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bottom_cabinet_no_top_80": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "paper_towel_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "room_floor_dining_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "highchair_0": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isDusty": true
+                      },
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "sink_82": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bottom_cabinet_no_top_80": {
+        "name": "bottom_cabinet_no_top_80",
+        "category": "cabinet.n.01"
+      },
+      "highchair_0": {
+        "name": "highchair_0",
+        "category": "highchair.n.01"
+      },
+      "paper_towel_0": {
+        "name": "paper_towel_0",
+        "category": "piece_of_cloth.n.01"
+      },
+      "room_floor_dining_room_0": {
+        "name": "room_floor_dining_room_0",
+        "category": "floor.n.01"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "sink_82": {
+        "name": "sink_82",
+        "category": "sink.n.01"
+      }
+    }
+  }
+}

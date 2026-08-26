@@ -1,0 +1,29 @@
+{
+  "case_id": "dining:allensville:episode-01",
+  "dataset": "delta",
+  "status": "done",
+  "raw_output": "/data/zmy/OurAgent-he1/benchmark/delta/framework/results/delta_audit_smoke_20260806_todo_hooks/cases/dining__allensville__episode-01/raw_output.json",
+  "log": "/data/zmy/OurAgent-he1/benchmark/delta/framework/results/delta_audit_smoke_20260806_todo_hooks/cases/dining__allensville__episode-01/run.log",
+  "report": "/data/zmy/OurAgent-he1/benchmark/delta/framework/results/delta_audit_smoke_20260806_todo_hooks/cases/dining__allensville__episode-01/trace_report.md",
+  "source_path": "dining:allensville",
+  "metadata": {
+    "domain": "dining",
+    "scene": "allensville",
+    "base_case_id": "dining:allensville",
+    "episode": 1,
+    "trial_kind": "paper_main_episode"
+  },
+  "prediction_summary": {
+    "execution_status": "completed",
+    "is_feasible": true,
+    "feedback": "规划合法，验证环节闭环。",
+    "task_success": true,
+    "task_success_rate": 1.0,
+    "goal_success_rate": 1.0,
+    "subgoal_success_rate": null,
+    "evaluation_mode": "delta_val_pddl_plan",
+    "official_available": true,
+    "execution_success": true
+  },
+  "updated_at": "2026-08-06 18:08:26 +0000"
+}

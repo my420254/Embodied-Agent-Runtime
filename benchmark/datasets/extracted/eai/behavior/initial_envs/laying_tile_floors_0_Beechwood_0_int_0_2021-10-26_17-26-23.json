@@ -1,0 +1,147 @@
+{
+  "dataset": "behavior",
+  "case_id": "laying_tile_floors_0_Beechwood_0_int_0_2021-10-26_17-26-23",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "laying_tile_floors",
+    "task_id": 0,
+    "scene_id": "Beechwood_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "laying tile floors",
+    "task": "laying_tile_floors",
+    "task_id": 0,
+    "scene_id": "Beechwood_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 8,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "room_floor_bathroom_0",
+      "room_floor_corridor_0",
+      "tile_0",
+      "tile_1",
+      "tile_2",
+      "tile_3"
+    ],
+    "name_mapping": {
+      "tile.n.01_1": {
+        "name": "tile_0",
+        "category": "tile.n.01"
+      },
+      "tile.n.01_2": {
+        "name": "tile_1",
+        "category": "tile.n.01"
+      },
+      "tile.n.01_3": {
+        "name": "tile_2",
+        "category": "tile.n.01"
+      },
+      "tile.n.01_4": {
+        "name": "tile_3",
+        "category": "tile.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_corridor_0",
+        "category": "floor.n.01"
+      },
+      "floor.n.01_2": {
+        "name": "room_floor_bathroom_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "room_floor_bathroom_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "room_floor_corridor_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "tile_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "tile_1": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "tile_2": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "tile_3": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_corridor_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_corridor_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "room_floor_bathroom_0": {
+        "name": "room_floor_bathroom_0",
+        "category": "floor.n.01"
+      },
+      "room_floor_corridor_0": {
+        "name": "room_floor_corridor_0",
+        "category": "floor.n.01"
+      },
+      "tile_0": {
+        "name": "tile_0",
+        "category": "tile.n.01"
+      },
+      "tile_1": {
+        "name": "tile_1",
+        "category": "tile.n.01"
+      },
+      "tile_2": {
+        "name": "tile_2",
+        "category": "tile.n.01"
+      },
+      "tile_3": {
+        "name": "tile_3",
+        "category": "tile.n.01"
+      }
+    }
+  }
+}

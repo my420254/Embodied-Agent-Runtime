@@ -1,0 +1,366 @@
+{
+  "dataset": "behavior",
+  "case_id": "sorting_groceries_0_Wainscott_0_int_0_2021-10-26_13-36-01",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "sorting_groceries",
+    "task_id": 0,
+    "scene_id": "Wainscott_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "sorting groceries",
+    "task": "sorting_groceries",
+    "task_id": 0,
+    "scene_id": "Wainscott_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 24,
+    "room_count": 1,
+    "entity_catalog": [
+      "apple_0",
+      "apple_1",
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_no_top_80",
+      "breakfast_table_44",
+      "broccoli_0",
+      "carrot_0",
+      "carrot_1",
+      "carrot_2",
+      "cheese_0",
+      "countertop_84",
+      "flour_0",
+      "fridge_97",
+      "milk_0",
+      "orange_0",
+      "orange_1",
+      "orange_2",
+      "pretzel_0",
+      "prosciutto_0",
+      "room_floor_kitchen_0",
+      "soup_0",
+      "straight_chair_45",
+      "yogurt_0"
+    ],
+    "name_mapping": {
+      "bread.n.01_1": {
+        "name": "pretzel_0",
+        "category": "bread.n.01"
+      },
+      "countertop.n.01_1": {
+        "name": "countertop_84",
+        "category": "countertop.n.01"
+      },
+      "flour.n.01_1": {
+        "name": "flour_0",
+        "category": "flour.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "milk.n.01_1": {
+        "name": "milk_0",
+        "category": "milk.n.01"
+      },
+      "chair.n.01_1": {
+        "name": "straight_chair_45",
+        "category": "chair.n.01"
+      },
+      "meat.n.01_1": {
+        "name": "prosciutto_0",
+        "category": "meat.n.01"
+      },
+      "table.n.02_1": {
+        "name": "breakfast_table_44",
+        "category": "table.n.02"
+      },
+      "cheese.n.01_1": {
+        "name": "cheese_0",
+        "category": "cheese.n.01"
+      },
+      "yogurt.n.01_1": {
+        "name": "yogurt_0",
+        "category": "yogurt.n.01"
+      },
+      "soup.n.01_1": {
+        "name": "soup_0",
+        "category": "soup.n.01"
+      },
+      "carrot.n.03_1": {
+        "name": "carrot_0",
+        "category": "carrot.n.03"
+      },
+      "carrot.n.03_2": {
+        "name": "carrot_1",
+        "category": "carrot.n.03"
+      },
+      "carrot.n.03_3": {
+        "name": "carrot_2",
+        "category": "carrot.n.03"
+      },
+      "broccoli.n.02_1": {
+        "name": "broccoli_0",
+        "category": "broccoli.n.02"
+      },
+      "apple.n.01_1": {
+        "name": "apple_0",
+        "category": "apple.n.01"
+      },
+      "apple.n.01_2": {
+        "name": "apple_1",
+        "category": "apple.n.01"
+      },
+      "orange.n.01_1": {
+        "name": "orange_0",
+        "category": "orange.n.01"
+      },
+      "orange.n.01_2": {
+        "name": "orange_1",
+        "category": "orange.n.01"
+      },
+      "orange.n.01_3": {
+        "name": "orange_2",
+        "category": "orange.n.01"
+      },
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_no_top_80",
+        "category": "cabinet.n.01"
+      },
+      "electric_refrigerator.n.01_1": {
+        "name": "fridge_97",
+        "category": "electric_refrigerator.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bottom_cabinet_no_top_80": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "breakfast_table_44": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "cheese_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "orange_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "orange_1": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "orange_2": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "prosciutto_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "soup_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "yogurt_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "countertop_84": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "apple_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "apple_1": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "broccoli_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "carrot_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "carrot_1": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "carrot_2": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "pretzel_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "fridge_97": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "flour_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "straight_chair_45": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "milk_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "apple_0": {
+        "name": "apple_0",
+        "category": "apple.n.01"
+      },
+      "apple_1": {
+        "name": "apple_1",
+        "category": "apple.n.01"
+      },
+      "bottom_cabinet_no_top_80": {
+        "name": "bottom_cabinet_no_top_80",
+        "category": "cabinet.n.01"
+      },
+      "breakfast_table_44": {
+        "name": "breakfast_table_44",
+        "category": "table.n.02"
+      },
+      "broccoli_0": {
+        "name": "broccoli_0",
+        "category": "broccoli.n.02"
+      },
+      "carrot_0": {
+        "name": "carrot_0",
+        "category": "carrot.n.03"
+      },
+      "carrot_1": {
+        "name": "carrot_1",
+        "category": "carrot.n.03"
+      },
+      "carrot_2": {
+        "name": "carrot_2",
+        "category": "carrot.n.03"
+      },
+      "cheese_0": {
+        "name": "cheese_0",
+        "category": "cheese.n.01"
+      },
+      "countertop_84": {
+        "name": "countertop_84",
+        "category": "countertop.n.01"
+      },
+      "flour_0": {
+        "name": "flour_0",
+        "category": "flour.n.01"
+      },
+      "fridge_97": {
+        "name": "fridge_97",
+        "category": "electric_refrigerator.n.01"
+      },
+      "milk_0": {
+        "name": "milk_0",
+        "category": "milk.n.01"
+      },
+      "orange_0": {
+        "name": "orange_0",
+        "category": "orange.n.01"
+      },
+      "orange_1": {
+        "name": "orange_1",
+        "category": "orange.n.01"
+      },
+      "orange_2": {
+        "name": "orange_2",
+        "category": "orange.n.01"
+      },
+      "pretzel_0": {
+        "name": "pretzel_0",
+        "category": "bread.n.01"
+      },
+      "prosciutto_0": {
+        "name": "prosciutto_0",
+        "category": "meat.n.01"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "soup_0": {
+        "name": "soup_0",
+        "category": "soup.n.01"
+      },
+      "straight_chair_45": {
+        "name": "straight_chair_45",
+        "category": "chair.n.01"
+      },
+      "yogurt_0": {
+        "name": "yogurt_0",
+        "category": "yogurt.n.01"
+      }
+    }
+  }
+}

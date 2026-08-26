@@ -1,0 +1,172 @@
+{
+  "dataset": "behavior",
+  "case_id": "cleaning_microwave_oven_0_Benevolence_1_int_0_2021-09-11_01-27-10",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "cleaning_microwave_oven",
+    "task_id": 0,
+    "scene_id": "Benevolence_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "cleaning microwave oven",
+    "task": "cleaning_microwave_oven",
+    "task_id": 0,
+    "scene_id": "Benevolence_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 9,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_no_top_15",
+      "countertop_18",
+      "microwave_36",
+      "rag_0",
+      "room_floor_kitchen_0",
+      "sink_19",
+      "trash_can_0"
+    ],
+    "name_mapping": {
+      "microwave.n.02_1": {
+        "name": "microwave_36",
+        "category": "microwave.n.02"
+      },
+      "rag.n.01_1": {
+        "name": "rag_0",
+        "category": "rag.n.01"
+      },
+      "countertop.n.01_1": {
+        "name": "countertop_18",
+        "category": "countertop.n.01"
+      },
+      "ashcan.n.01_1": {
+        "name": "trash_can_0",
+        "category": "ashcan.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_no_top_15",
+        "category": "cabinet.n.01"
+      },
+      "sink.n.01_1": {
+        "name": "sink_19",
+        "category": "sink.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bottom_cabinet_no_top_15": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "countertop_18": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "rag_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "microwave_36": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isDusty": true,
+                    "isStained": true,
+                    "isOpen": false
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "trash_can_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "sink_19": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bottom_cabinet_no_top_15": {
+        "name": "bottom_cabinet_no_top_15",
+        "category": "cabinet.n.01"
+      },
+      "countertop_18": {
+        "name": "countertop_18",
+        "category": "countertop.n.01"
+      },
+      "microwave_36": {
+        "name": "microwave_36",
+        "category": "microwave.n.02"
+      },
+      "rag_0": {
+        "name": "rag_0",
+        "category": "rag.n.01"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "sink_19": {
+        "name": "sink_19",
+        "category": "sink.n.01"
+      },
+      "trash_can_0": {
+        "name": "trash_can_0",
+        "category": "ashcan.n.01"
+      }
+    }
+  }
+}

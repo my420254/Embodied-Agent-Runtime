@@ -1,0 +1,211 @@
+{
+  "dataset": "behavior",
+  "case_id": "throwing_away_leftovers_0_Ihlen_1_int_0_2021-06-04_19-52-40",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "throwing_away_leftovers",
+    "task_id": 0,
+    "scene_id": "Ihlen_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "throwing away leftovers",
+    "task": "throwing_away_leftovers",
+    "task_id": 0,
+    "scene_id": "Ihlen_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 12,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "countertop_79",
+      "hamburger_116",
+      "hamburger_117",
+      "hamburger_118",
+      "plate_112",
+      "plate_113",
+      "plate_114",
+      "plate_115",
+      "room_floor_kitchen_0",
+      "trash_can_119"
+    ],
+    "name_mapping": {
+      "plate.n.04_1": {
+        "name": "plate_112",
+        "category": "plate.n.04"
+      },
+      "plate.n.04_2": {
+        "name": "plate_113",
+        "category": "plate.n.04"
+      },
+      "plate.n.04_3": {
+        "name": "plate_114",
+        "category": "plate.n.04"
+      },
+      "plate.n.04_4": {
+        "name": "plate_115",
+        "category": "plate.n.04"
+      },
+      "hamburger.n.01_1": {
+        "name": "hamburger_116",
+        "category": "hamburger.n.01"
+      },
+      "hamburger.n.01_2": {
+        "name": "hamburger_117",
+        "category": "hamburger.n.01"
+      },
+      "hamburger.n.01_3": {
+        "name": "hamburger_118",
+        "category": "hamburger.n.01"
+      },
+      "countertop.n.01_1": {
+        "name": "countertop_79",
+        "category": "countertop.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "ashcan.n.01_1": {
+        "name": "trash_can_119",
+        "category": "ashcan.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "countertop_79": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "plate_112": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {
+                        "hamburger_116": {
+                          "states": {},
+                          "direct_relation": "ontop"
+                        }
+                      },
+                      "direct_relation": "ontop"
+                    },
+                    "plate_113": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {
+                        "hamburger_118": {
+                          "states": {},
+                          "direct_relation": "ontop"
+                        }
+                      },
+                      "direct_relation": "ontop"
+                    },
+                    "plate_114": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {
+                        "hamburger_117": {
+                          "states": {},
+                          "direct_relation": "ontop"
+                        }
+                      },
+                      "direct_relation": "ontop"
+                    },
+                    "plate_115": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "trash_can_119": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "countertop_79": {
+        "name": "countertop_79",
+        "category": "countertop.n.01"
+      },
+      "hamburger_116": {
+        "name": "hamburger_116",
+        "category": "hamburger.n.01"
+      },
+      "hamburger_117": {
+        "name": "hamburger_117",
+        "category": "hamburger.n.01"
+      },
+      "hamburger_118": {
+        "name": "hamburger_118",
+        "category": "hamburger.n.01"
+      },
+      "plate_112": {
+        "name": "plate_112",
+        "category": "plate.n.04"
+      },
+      "plate_113": {
+        "name": "plate_113",
+        "category": "plate.n.04"
+      },
+      "plate_114": {
+        "name": "plate_114",
+        "category": "plate.n.04"
+      },
+      "plate_115": {
+        "name": "plate_115",
+        "category": "plate.n.04"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "trash_can_119": {
+        "name": "trash_can_119",
+        "category": "ashcan.n.01"
+      }
+    }
+  }
+}

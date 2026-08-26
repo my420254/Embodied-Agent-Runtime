@@ -1,0 +1,7 @@
+name: Put
+description: 将当前持有的物品放置到指定的物理表面或容器内。
+prompt: prompt.md
+handler: skills.Put.handler:PutSkill
+execution_domain: 机械臂控制
+planner_item_param: target_item
+planner_destination_param: destination

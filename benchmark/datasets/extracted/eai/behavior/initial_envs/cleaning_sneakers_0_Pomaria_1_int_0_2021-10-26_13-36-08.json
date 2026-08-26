@@ -1,0 +1,272 @@
+{
+  "dataset": "behavior",
+  "case_id": "cleaning_sneakers_0_Pomaria_1_int_0_2021-10-26_13-36-08",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "cleaning_sneakers",
+    "task_id": 0,
+    "scene_id": "Pomaria_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "cleaning sneakers",
+    "task": "cleaning_sneakers",
+    "task_id": 0,
+    "scene_id": "Pomaria_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 15,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "coffee_table_4",
+      "countertop_31",
+      "gym_shoe_78",
+      "gym_shoe_79",
+      "gym_shoe_80",
+      "gym_shoe_81",
+      "hand_towel_83",
+      "room_floor_kitchen_0",
+      "room_floor_living_room_0",
+      "scrub_brush_84",
+      "sink_37",
+      "soap_82",
+      "top_cabinet_24"
+    ],
+    "name_mapping": {
+      "gym_shoe.n.01_1": {
+        "name": "gym_shoe_78",
+        "category": "gym_shoe.n.01"
+      },
+      "gym_shoe.n.01_2": {
+        "name": "gym_shoe_79",
+        "category": "gym_shoe.n.01"
+      },
+      "gym_shoe.n.01_3": {
+        "name": "gym_shoe_80",
+        "category": "gym_shoe.n.01"
+      },
+      "gym_shoe.n.01_4": {
+        "name": "gym_shoe_81",
+        "category": "gym_shoe.n.01"
+      },
+      "countertop.n.01_1": {
+        "name": "countertop_31",
+        "category": "countertop.n.01"
+      },
+      "soap.n.01_1": {
+        "name": "soap_82",
+        "category": "soap.n.01"
+      },
+      "cabinet.n.01_1": {
+        "name": "top_cabinet_24",
+        "category": "cabinet.n.01"
+      },
+      "towel.n.01_1": {
+        "name": "hand_towel_83",
+        "category": "towel.n.01"
+      },
+      "brush.n.02_1": {
+        "name": "scrub_brush_84",
+        "category": "brush.n.02"
+      },
+      "sink.n.01_1": {
+        "name": "sink_37",
+        "category": "sink.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "floor.n.01_2": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "table.n.02_1": {
+        "name": "coffee_table_4",
+        "category": "table.n.02"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "coffee_table_4": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "countertop_31": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "hand_towel_83": {
+                      "states": {
+                        "isDirty": false,
+                        "isClean": true,
+                        "isStained": false
+                      },
+                      "direct_relation": "ontop"
+                    },
+                    "scrub_brush_84": {
+                      "states": {
+                        "isDirty": false,
+                        "isClean": true,
+                        "isStained": false
+                      },
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "gym_shoe_78": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "direct_relation": "onfloor"
+                    },
+                    "gym_shoe_79": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "direct_relation": "onfloor"
+                    },
+                    "gym_shoe_80": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isDusty": true
+                      },
+                      "direct_relation": "onfloor"
+                    },
+                    "gym_shoe_81": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isDusty": true
+                      },
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "room_floor_living_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "sink_37": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "top_cabinet_24": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "soap_82": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "coffee_table_4": {
+        "name": "coffee_table_4",
+        "category": "table.n.02"
+      },
+      "countertop_31": {
+        "name": "countertop_31",
+        "category": "countertop.n.01"
+      },
+      "gym_shoe_78": {
+        "name": "gym_shoe_78",
+        "category": "gym_shoe.n.01"
+      },
+      "gym_shoe_79": {
+        "name": "gym_shoe_79",
+        "category": "gym_shoe.n.01"
+      },
+      "gym_shoe_80": {
+        "name": "gym_shoe_80",
+        "category": "gym_shoe.n.01"
+      },
+      "gym_shoe_81": {
+        "name": "gym_shoe_81",
+        "category": "gym_shoe.n.01"
+      },
+      "hand_towel_83": {
+        "name": "hand_towel_83",
+        "category": "towel.n.01"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "room_floor_living_room_0": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "scrub_brush_84": {
+        "name": "scrub_brush_84",
+        "category": "brush.n.02"
+      },
+      "sink_37": {
+        "name": "sink_37",
+        "category": "sink.n.01"
+      },
+      "soap_82": {
+        "name": "soap_82",
+        "category": "soap.n.01"
+      },
+      "top_cabinet_24": {
+        "name": "top_cabinet_24",
+        "category": "cabinet.n.01"
+      }
+    }
+  }
+}

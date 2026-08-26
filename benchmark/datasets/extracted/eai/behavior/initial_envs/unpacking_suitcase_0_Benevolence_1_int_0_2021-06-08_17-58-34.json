@@ -1,0 +1,174 @@
+{
+  "dataset": "behavior",
+  "case_id": "unpacking_suitcase_0_Benevolence_1_int_0_2021-06-08_17-58-34",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "unpacking_suitcase",
+    "task_id": 0,
+    "scene_id": "Benevolence_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "unpacking suitcase",
+    "task": "unpacking_suitcase",
+    "task_id": 0,
+    "scene_id": "Benevolence_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 10,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "carton_0",
+      "cologne_0",
+      "notebook_0",
+      "room_floor_living_room_0",
+      "sock_0",
+      "sock_1",
+      "sofa_10",
+      "toothbrush_0"
+    ],
+    "name_mapping": {
+      "sock.n.01_1": {
+        "name": "sock_0",
+        "category": "sock.n.01"
+      },
+      "sock.n.01_2": {
+        "name": "sock_1",
+        "category": "sock.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "carton.n.02_1": {
+        "name": "carton_0",
+        "category": "carton.n.02"
+      },
+      "perfume.n.02_1": {
+        "name": "cologne_0",
+        "category": "perfume.n.02"
+      },
+      "toothbrush.n.01_1": {
+        "name": "toothbrush_0",
+        "category": "toothbrush.n.01"
+      },
+      "notebook.n.01_1": {
+        "name": "notebook_0",
+        "category": "notebook.n.01"
+      },
+      "sofa.n.01_1": {
+        "name": "sofa_10",
+        "category": "sofa.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "room_floor_living_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "carton_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {
+                        "cologne_0": {
+                          "states": {},
+                          "direct_relation": "inside"
+                        },
+                        "notebook_0": {
+                          "states": {},
+                          "direct_relation": "inside"
+                        },
+                        "sock_0": {
+                          "states": {},
+                          "direct_relation": "inside"
+                        },
+                        "sock_1": {
+                          "states": {},
+                          "direct_relation": "inside"
+                        },
+                        "toothbrush_0": {
+                          "states": {},
+                          "direct_relation": "inside"
+                        }
+                      },
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "sofa_10": {
+                  "states": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_living_room_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_living_room_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "carton_0": {
+        "name": "carton_0",
+        "category": "carton.n.02"
+      },
+      "cologne_0": {
+        "name": "cologne_0",
+        "category": "perfume.n.02"
+      },
+      "notebook_0": {
+        "name": "notebook_0",
+        "category": "notebook.n.01"
+      },
+      "room_floor_living_room_0": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "sock_0": {
+        "name": "sock_0",
+        "category": "sock.n.01"
+      },
+      "sock_1": {
+        "name": "sock_1",
+        "category": "sock.n.01"
+      },
+      "sofa_10": {
+        "name": "sofa_10",
+        "category": "sofa.n.01"
+      },
+      "toothbrush_0": {
+        "name": "toothbrush_0",
+        "category": "toothbrush.n.01"
+      }
+    }
+  }
+}

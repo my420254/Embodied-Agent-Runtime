@@ -1,0 +1,11 @@
+{
+  "dataset": "reactree_alfred",
+  "benchmark_module": "benchmark.reactree.alfred",
+  "task": "pick_heat_then_place_in_recep-PotatoSliced-None-SinkBasin-13/trial_T20190909_115736_122556",
+  "repeat_idx": 0,
+  "instruction": "Place a cooked potato slice in the sink",
+  "task_source": "alfred_pp_annotation_json",
+  "environment_source": "alfred_official_scene_prepare_cache",
+  "initial_scene_cache_path": "/data/zmy/OurAgent-he1/benchmark/datasets/extracted/reactree/alfred/initial_envs/pick_heat_then_place_in_recep-PotatoSliced-None-SinkBasin-13__trial_T20190909_115736_122556__ann_0.json",
+  "benchmark_settings_file": "/data/zmy/OurAgent-he1/benchmark/reactree/alfred/framework/code/config/settings.json"
+}

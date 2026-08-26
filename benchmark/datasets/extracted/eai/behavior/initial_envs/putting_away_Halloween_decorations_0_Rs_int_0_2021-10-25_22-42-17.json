@@ -1,0 +1,215 @@
+{
+  "dataset": "behavior",
+  "case_id": "putting_away_Halloween_decorations_0_Rs_int_0_2021-10-25_22-42-17",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "putting_away_Halloween_decorations",
+    "task_id": 0,
+    "scene_id": "Rs_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "putting away Halloween decorations",
+    "task": "putting_away_Halloween_decorations",
+    "task_id": 0,
+    "scene_id": "Rs_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 13,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_13",
+      "candle_0",
+      "candle_1",
+      "candle_2",
+      "cauldron_0",
+      "coffee_table_5",
+      "pumpkin_0",
+      "pumpkin_1",
+      "room_floor_living_room_0",
+      "sheet_0",
+      "sofa_2"
+    ],
+    "name_mapping": {
+      "pumpkin.n.02_1": {
+        "name": "pumpkin_0",
+        "category": "pumpkin.n.02"
+      },
+      "pumpkin.n.02_2": {
+        "name": "pumpkin_1",
+        "category": "pumpkin.n.02"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "caldron.n.01_1": {
+        "name": "cauldron_0",
+        "category": "caldron.n.01"
+      },
+      "sheet.n.03_1": {
+        "name": "sheet_0",
+        "category": "sheet.n.03"
+      },
+      "table.n.02_1": {
+        "name": "coffee_table_5",
+        "category": "table.n.02"
+      },
+      "candle.n.01_1": {
+        "name": "candle_0",
+        "category": "candle.n.01"
+      },
+      "candle.n.01_2": {
+        "name": "candle_1",
+        "category": "candle.n.01"
+      },
+      "candle.n.01_3": {
+        "name": "candle_2",
+        "category": "candle.n.01"
+      },
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_13",
+        "category": "cabinet.n.01"
+      },
+      "sofa.n.01_1": {
+        "name": "sofa_2",
+        "category": "sofa.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bottom_cabinet_13": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "coffee_table_5": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "sheet_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "room_floor_living_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "candle_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "candle_1": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "candle_2": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "cauldron_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "pumpkin_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "pumpkin_1": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "sofa_2": {
+                  "states": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_living_room_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_living_room_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bottom_cabinet_13": {
+        "name": "bottom_cabinet_13",
+        "category": "cabinet.n.01"
+      },
+      "candle_0": {
+        "name": "candle_0",
+        "category": "candle.n.01"
+      },
+      "candle_1": {
+        "name": "candle_1",
+        "category": "candle.n.01"
+      },
+      "candle_2": {
+        "name": "candle_2",
+        "category": "candle.n.01"
+      },
+      "cauldron_0": {
+        "name": "cauldron_0",
+        "category": "caldron.n.01"
+      },
+      "coffee_table_5": {
+        "name": "coffee_table_5",
+        "category": "table.n.02"
+      },
+      "pumpkin_0": {
+        "name": "pumpkin_0",
+        "category": "pumpkin.n.02"
+      },
+      "pumpkin_1": {
+        "name": "pumpkin_1",
+        "category": "pumpkin.n.02"
+      },
+      "room_floor_living_room_0": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "sheet_0": {
+        "name": "sheet_0",
+        "category": "sheet.n.03"
+      },
+      "sofa_2": {
+        "name": "sofa_2",
+        "category": "sofa.n.01"
+      }
+    }
+  }
+}

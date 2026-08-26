@@ -1,0 +1,110 @@
+{
+  "dataset": "behavior",
+  "case_id": "installing_a_printer_0_Pomaria_0_int_0_2021-06-08_18-33-07",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "installing_a_printer",
+    "task_id": 0,
+    "scene_id": "Pomaria_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "installing a printer",
+    "task": "installing_a_printer",
+    "task_id": 0,
+    "scene_id": "Pomaria_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 5,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "breakfast_table_3",
+      "printer_0",
+      "room_floor_home_office_0"
+    ],
+    "name_mapping": {
+      "printer.n.03_1": {
+        "name": "printer_0",
+        "category": "printer.n.03"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_home_office_0",
+        "category": "floor.n.01"
+      },
+      "table.n.02_1": {
+        "name": "breakfast_table_3",
+        "category": "table.n.02"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "breakfast_table_3": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "room_floor_home_office_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "printer_0": {
+                      "states": {
+                        "isToggled": false
+                      },
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_home_office_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_home_office_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "breakfast_table_3": {
+        "name": "breakfast_table_3",
+        "category": "table.n.02"
+      },
+      "printer_0": {
+        "name": "printer_0",
+        "category": "printer.n.03"
+      },
+      "room_floor_home_office_0": {
+        "name": "room_floor_home_office_0",
+        "category": "floor.n.01"
+      }
+    }
+  }
+}

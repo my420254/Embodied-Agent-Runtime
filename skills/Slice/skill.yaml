@@ -1,0 +1,9 @@
+name: Slice
+description: 使用手中持有的锋利切割工具切割食材。
+prompt: prompt.md
+handler: skills.Slice.handler:SliceSkill
+execution_domain: 机械臂控制
+planner_item_param: target_item
+planner_location_param: surface
+planner_effect_state_key: isSliced
+planner_effect_state_value: true

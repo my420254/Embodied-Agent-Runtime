@@ -1,0 +1,24 @@
+{
+  "rules": [
+    {
+      "id": "execution-bc09b97b8a66",
+      "source": "reflection_layer4",
+      "intent_context": "把土豆切成片",
+      "rule": "执行涉及水源的清洁任务（Clean）时，必须确保机器人已导航至水槽（Sink）或相关水设施的操作范围内，且目标物品需被携带至该位置或在该位置进行交互。",
+      "tags": [
+        "navigation",
+        "food_cleaning"
+      ],
+      "status": "promoted",
+      "source_split": "unknown",
+      "source_case_id": "",
+      "counterexamples": [],
+      "neutral_count": 0,
+      "created_at": "2026-08-19T02:55:24+00:00",
+      "updated_at": "2026-08-19T02:55:24+00:00",
+      "helpful_count": 0,
+      "harmful_count": 0,
+      "deprecated": false
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "is_complete": true,
+  "is_cancel_all": false,
+  "clarification_question": "",
+  "entity_relevance": {
+    "directly_related": [
+      "basket_0",
+      "basket_1",
+      "basket_2",
+      "basket_3",
+      "candle_0",
+      "candle_1",
+      "candle_2",
+      "candle_3",
+      "cheese_0",
+      "cheese_1",
+      "cheese_2",
+      "cheese_3",
+      "cookie_0",
+      "cookie_1",
+      "cookie_2",
+      "cookie_3",
+      "bow_0",
+      "bow_1",
+      "bow_2",
+      "bow_3"
+    ],
+    "indirectly_related": [],
+    "possibly_related": [
+      "breakfast_table_13",
+      "coffee_table_12",
+      "room_floor_living_room_0"
+    ]
+  },
+  "skill_closure": [
+    "LEFT_GRASP",
+    "RIGHT_GRASP",
+    "LEFT_PLACE_INSIDE",
+    "RIGHT_PLACE_INSIDE",
+    "LEFT_RELEASE",
+    "RIGHT_RELEASE"
+  ],
+  "structured_task": {
+    "intent": "Assemble gift baskets by placing one candle, one cheese, one cookie, and one bow inside each basket.",
+    "required_item_names": {
+      "targets": {
+        "primary": [
+          "candle_0",
+          "candle_1",
+          "candle_2",
+          "candle_3",
+          "cheese_0",
+          "cheese_1",
+          "cheese_2",
+          "cheese_3",
+          "cookie_0",
+          "cookie_1",
+          "cookie_2",
+          "cookie_3",
+          "bow_0",
+          "bow_1",
+          "bow_2",
+          "bow_3"
+        ],
+        "alternatives": []
+      },
+      "tools": {
+        "primary": [],
+        "alternatives": []
+      },
+      "receptacles": {
+        "primary": [
+          "basket_0",
+          "basket_1",
+          "basket_2",
+          "basket_3"
+        ],
+        "alternatives": []
+      }
+    },
+    "quantity_constraints": [
+      "Each basket must contain exactly one candle.",
+      "Each basket must contain exactly one cheese.",
+      "Each basket must contain exactly one cookie.",
+      "Each basket must contain exactly one bow.",
+      "All items must be placed inside the baskets."
+    ]
+  }
+}

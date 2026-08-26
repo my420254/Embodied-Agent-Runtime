@@ -1,0 +1,311 @@
+{
+  "dataset": "behavior",
+  "case_id": "cleaning_cupboards_0_Wainscott_1_int_1_2021-08-25_16-40-44",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "cleaning_cupboards",
+    "task_id": 0,
+    "scene_id": "Wainscott_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "cleaning cupboards",
+    "task": "cleaning_cupboards",
+    "task_id": 0,
+    "scene_id": "Wainscott_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 19,
+    "room_count": 1,
+    "entity_catalog": [
+      "bed_58",
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_24",
+      "bottom_cabinet_25",
+      "bottom_cabinet_28",
+      "bucket_113",
+      "detergent_111",
+      "hardback_103",
+      "hardback_104",
+      "highlighter_106",
+      "highlighter_107",
+      "notebook_102",
+      "pen_105",
+      "rag_110",
+      "room_floor_bedroom_0",
+      "screwdriver_108",
+      "scrub_brush_109",
+      "trash_can_112"
+    ],
+    "name_mapping": {
+      "book.n.02_1": {
+        "name": "notebook_102",
+        "category": "book.n.02"
+      },
+      "book.n.02_2": {
+        "name": "hardback_103",
+        "category": "book.n.02"
+      },
+      "book.n.02_3": {
+        "name": "hardback_104",
+        "category": "book.n.02"
+      },
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_28",
+        "category": "cabinet.n.01"
+      },
+      "cabinet.n.01_2": {
+        "name": "bottom_cabinet_25",
+        "category": "cabinet.n.01"
+      },
+      "cabinet.n.01_3": {
+        "name": "bottom_cabinet_24",
+        "category": "cabinet.n.01"
+      },
+      "pen.n.01_1": {
+        "name": "pen_105",
+        "category": "pen.n.01"
+      },
+      "marker.n.03_1": {
+        "name": "highlighter_106",
+        "category": "marker.n.03"
+      },
+      "marker.n.03_2": {
+        "name": "highlighter_107",
+        "category": "marker.n.03"
+      },
+      "screwdriver.n.01_1": {
+        "name": "screwdriver_108",
+        "category": "screwdriver.n.01"
+      },
+      "scrub_brush.n.01_1": {
+        "name": "scrub_brush_109",
+        "category": "scrub_brush.n.01"
+      },
+      "rag.n.01_1": {
+        "name": "rag_110",
+        "category": "rag.n.01"
+      },
+      "cleansing_agent.n.01_1": {
+        "name": "detergent_111",
+        "category": "cleansing_agent.n.01"
+      },
+      "bin.n.01_1": {
+        "name": "trash_can_112",
+        "category": "bin.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_bedroom_0",
+        "category": "floor.n.01"
+      },
+      "bucket.n.01_1": {
+        "name": "bucket_113",
+        "category": "bucket.n.01"
+      },
+      "bed.n.01_1": {
+        "name": "bed_58",
+        "category": "bed.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bed_58": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "bucket_113": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "detergent_111": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "bottom_cabinet_24": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "screwdriver_108": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "bottom_cabinet_25": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isDusty": true,
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "hardback_103": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "hardback_104": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "highlighter_106": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "highlighter_107": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "bottom_cabinet_28": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isDusty": true,
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "notebook_102": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "pen_105": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "rag_110": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "scrub_brush_109": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "room_floor_bedroom_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "trash_can_112": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_bedroom_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_bedroom_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bed_58": {
+        "name": "bed_58",
+        "category": "bed.n.01"
+      },
+      "bottom_cabinet_24": {
+        "name": "bottom_cabinet_24",
+        "category": "cabinet.n.01"
+      },
+      "bottom_cabinet_25": {
+        "name": "bottom_cabinet_25",
+        "category": "cabinet.n.01"
+      },
+      "bottom_cabinet_28": {
+        "name": "bottom_cabinet_28",
+        "category": "cabinet.n.01"
+      },
+      "bucket_113": {
+        "name": "bucket_113",
+        "category": "bucket.n.01"
+      },
+      "detergent_111": {
+        "name": "detergent_111",
+        "category": "cleansing_agent.n.01"
+      },
+      "hardback_103": {
+        "name": "hardback_103",
+        "category": "book.n.02"
+      },
+      "hardback_104": {
+        "name": "hardback_104",
+        "category": "book.n.02"
+      },
+      "highlighter_106": {
+        "name": "highlighter_106",
+        "category": "marker.n.03"
+      },
+      "highlighter_107": {
+        "name": "highlighter_107",
+        "category": "marker.n.03"
+      },
+      "notebook_102": {
+        "name": "notebook_102",
+        "category": "book.n.02"
+      },
+      "pen_105": {
+        "name": "pen_105",
+        "category": "pen.n.01"
+      },
+      "rag_110": {
+        "name": "rag_110",
+        "category": "rag.n.01"
+      },
+      "room_floor_bedroom_0": {
+        "name": "room_floor_bedroom_0",
+        "category": "floor.n.01"
+      },
+      "screwdriver_108": {
+        "name": "screwdriver_108",
+        "category": "screwdriver.n.01"
+      },
+      "scrub_brush_109": {
+        "name": "scrub_brush_109",
+        "category": "scrub_brush.n.01"
+      },
+      "trash_can_112": {
+        "name": "trash_can_112",
+        "category": "bin.n.01"
+      }
+    }
+  }
+}

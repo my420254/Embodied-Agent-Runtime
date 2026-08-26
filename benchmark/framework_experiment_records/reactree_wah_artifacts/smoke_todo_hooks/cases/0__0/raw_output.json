@@ -1,0 +1,160 @@
+[
+  {
+    "case_id": "0:0",
+    "dataset": "reactree",
+    "metadata": {
+      "task_id": 0,
+      "task_name": "prepare_snack",
+      "env_id": 3,
+      "init_room": "bedroom",
+      "instruction_idx": 0,
+      "node_count": 343,
+      "edge_count": 595
+    },
+    "source_path": "/data/zmy/OurAgent-he1/benchmark/datasets/native/reactree/wah/wah_nl_test_rev.json",
+    "error": "",
+    "input_summary": {
+      "available": true,
+      "keys": [
+        "benchmark_module",
+        "dataset",
+        "env_id",
+        "environment_source",
+        "init_graph_cache_path",
+        "init_room",
+        "instruction",
+        "instruction_idx",
+        "task_id",
+        "task_name",
+        "task_source"
+      ],
+      "task_id": 0,
+      "dataset": "reactree",
+      "instruction": "Put one cupcake and one apple on the coffee table",
+      "task_name": "prepare_snack",
+      "environment_source": "reactree_case_runtime_scene",
+      "task_source": "reactree_wah_testset"
+    },
+    "reference_summary": {
+      "available": false
+    },
+    "prediction": {
+      "execution_status": "completed",
+      "is_feasible": true,
+      "feedback": "规划合法，验证环节闭环。",
+      "goal_success_rate": 1.0,
+      "subgoal_success_rate": 1.0,
+      "evaluation_mode": "reactree_graph_replay_debug",
+      "official_available": false,
+      "evaluation_error": "",
+      "todo_parse_error": "",
+      "execution_success": null,
+      "task_success": true,
+      "task_success_rate": 1.0,
+      "llm_call_count": 4,
+      "sandbox_reject_count": 0,
+      "total_sandbox_checks": 0,
+      "total_planning_audit_failures": 0,
+      "official_actions_len": 8,
+      "evaluator_execution_calls_len": 8,
+      "official_actions_summary": {
+        "count": 8,
+        "sample": [
+          "go to kitchen table 1",
+          "pick up cupcake 1",
+          "go to coffee table 1",
+          "put down cupcake 1",
+          "go to kitchen table 1",
+          "pick up apple 2",
+          "go to coffee table 1",
+          "put down apple 2"
+        ],
+        "truncated": false
+      },
+      "evaluator_execution_calls_summary": {
+        "count": 8,
+        "sample": [
+          {
+            "skill": "go to",
+            "parameters": {
+              "target": "kitchen table 1"
+            }
+          },
+          {
+            "skill": "pick up",
+            "parameters": {
+              "target": "cupcake 1"
+            }
+          },
+          {
+            "skill": "go to",
+            "parameters": {
+              "target": "coffee table 1"
+            }
+          },
+          {
+            "skill": "put down",
+            "parameters": {
+              "target": "cupcake 1"
+            }
+          },
+          {
+            "skill": "go to",
+            "parameters": {
+              "target": "kitchen table 1"
+            }
+          },
+          {
+            "skill": "pick up",
+            "parameters": {
+              "target": "apple 2"
+            }
+          },
+          {
+            "skill": "go to",
+            "parameters": {
+              "target": "coffee table 1"
+            }
+          },
+          {
+            "skill": "put down",
+            "parameters": {
+              "target": "apple 2"
+            }
+          }
+        ],
+        "truncated": false
+      },
+      "todo_llm_output_summary": {
+        "length": 494,
+        "preview": "[\n  {\n    \"action\": \"go to\",\n    \"target\": \"kitchen table 1\"\n  },\n  {\n    \"action\": \"pick up\",\n    \"target\": \"cupcake 1\"\n  },\n  {\n    \"action\": \"go to\",\n    \"target\": \"coffee table 1\"\n  },\n  {\n    \"action\": \"put down\",\n    \"target\": \"cupcake 1\"\n  },\n  {\n    \"action\": \"go to\",\n    \"target\": \"kitchen table 1\"\n  },\n  {\n    \"action\": \"pick up\",\n    \"target\": \"apple 2\"\n  },\n  {\n    \"action\": \"go to\",\n    \"target\": \"coffee table 1\"\n  },\n  {\n    \"action\": \"put down\",\n    \"target\": \"apple 2\"\n  }\n]",
+        "truncated": false
+      },
+      "benchmark_trace_present": true,
+      "benchmark_trace_counters": {
+        "llm_call_count": 4,
+        "sandbox_reject_count": 0,
+        "total_sandbox_checks": 0,
+        "total_planning_audit_failures": 0,
+        "todo_contract_pass_count": 0,
+        "todo_contract_reject_count": 0
+      },
+      "benchmark_trace_sections": [
+        "case_input",
+        "case_input_full",
+        "llm_io",
+        "planning_input",
+        "planning_input_full",
+        "planning_output",
+        "planning_output_full",
+        "prepared_environment",
+        "prepared_environment_full",
+        "stage_config",
+        "understanding_input",
+        "understanding_input_full",
+        "understanding_output",
+        "understanding_output_full"
+      ]
+    }
+  }
+]

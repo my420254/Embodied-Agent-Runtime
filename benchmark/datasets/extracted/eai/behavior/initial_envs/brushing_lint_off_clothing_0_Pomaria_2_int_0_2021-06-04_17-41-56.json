@@ -1,0 +1,181 @@
+{
+  "dataset": "behavior",
+  "case_id": "brushing_lint_off_clothing_0_Pomaria_2_int_0_2021-06-04_17-41-56",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "brushing_lint_off_clothing",
+    "task_id": 0,
+    "scene_id": "Pomaria_2_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "brushing lint off clothing",
+    "task": "brushing_lint_off_clothing",
+    "task_id": 0,
+    "scene_id": "Pomaria_2_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 9,
+    "room_count": 1,
+    "entity_catalog": [
+      "bed_11",
+      "behavior_room",
+      "behavior_room_anchor",
+      "room_floor_bedroom_0",
+      "scrub_brush_40",
+      "sweater_36",
+      "sweater_37",
+      "sweater_38",
+      "sweater_39"
+    ],
+    "name_mapping": {
+      "sweater.n.01_1": {
+        "name": "sweater_36",
+        "category": "sweater.n.01"
+      },
+      "sweater.n.01_2": {
+        "name": "sweater_37",
+        "category": "sweater.n.01"
+      },
+      "sweater.n.01_3": {
+        "name": "sweater_38",
+        "category": "sweater.n.01"
+      },
+      "sweater.n.01_4": {
+        "name": "sweater_39",
+        "category": "sweater.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_bedroom_0",
+        "category": "floor.n.01"
+      },
+      "bed.n.01_1": {
+        "name": "bed_11",
+        "category": "bed.n.01"
+      },
+      "scrub_brush.n.01_1": {
+        "name": "scrub_brush_40",
+        "category": "scrub_brush.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bed_11": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "sweater_38": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isDusty": true
+                      },
+                      "direct_relation": "ontop"
+                    },
+                    "sweater_39": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isDusty": true
+                      },
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "room_floor_bedroom_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "scrub_brush_40": {
+                      "states": {
+                        "isDirty": false,
+                        "isClean": true,
+                        "isDusty": false
+                      },
+                      "direct_relation": "onfloor"
+                    },
+                    "sweater_36": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isDusty": true
+                      },
+                      "direct_relation": "onfloor"
+                    },
+                    "sweater_37": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isDusty": true
+                      },
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_bedroom_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_bedroom_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bed_11": {
+        "name": "bed_11",
+        "category": "bed.n.01"
+      },
+      "room_floor_bedroom_0": {
+        "name": "room_floor_bedroom_0",
+        "category": "floor.n.01"
+      },
+      "scrub_brush_40": {
+        "name": "scrub_brush_40",
+        "category": "scrub_brush.n.01"
+      },
+      "sweater_36": {
+        "name": "sweater_36",
+        "category": "sweater.n.01"
+      },
+      "sweater_37": {
+        "name": "sweater_37",
+        "category": "sweater.n.01"
+      },
+      "sweater_38": {
+        "name": "sweater_38",
+        "category": "sweater.n.01"
+      },
+      "sweater_39": {
+        "name": "sweater_39",
+        "category": "sweater.n.01"
+      }
+    }
+  }
+}

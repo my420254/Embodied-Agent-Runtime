@@ -1,0 +1,247 @@
+{
+  "dataset": "behavior",
+  "case_id": "cleaning_windows_0_Wainscott_0_int_0_2021-05-23_23-07-05",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "cleaning_windows",
+    "task_id": 0,
+    "scene_id": "Wainscott_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "cleaning windows",
+    "task": "cleaning_windows",
+    "task_id": 0,
+    "scene_id": "Wainscott_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 14,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_no_top_80",
+      "coffee_table_33",
+      "dishtowel_0",
+      "dishtowel_1",
+      "rag_0",
+      "rag_1",
+      "room_floor_kitchen_0",
+      "room_floor_living_room_0",
+      "sink_82",
+      "toothpaste_0",
+      "window_119",
+      "window_133"
+    ],
+    "name_mapping": {
+      "towel.n.01_1": {
+        "name": "dishtowel_0",
+        "category": "towel.n.01"
+      },
+      "towel.n.01_2": {
+        "name": "dishtowel_1",
+        "category": "towel.n.01"
+      },
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_no_top_80",
+        "category": "cabinet.n.01"
+      },
+      "rag.n.01_1": {
+        "name": "rag_0",
+        "category": "rag.n.01"
+      },
+      "rag.n.01_2": {
+        "name": "rag_1",
+        "category": "rag.n.01"
+      },
+      "cleansing_agent.n.01_1": {
+        "name": "toothpaste_0",
+        "category": "cleansing_agent.n.01"
+      },
+      "window.n.01_1": {
+        "name": "window_133",
+        "category": "window.n.01"
+      },
+      "window.n.01_2": {
+        "name": "window_119",
+        "category": "window.n.01"
+      },
+      "sink.n.01_1": {
+        "name": "sink_82",
+        "category": "sink.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "floor.n.01_2": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "table.n.02_1": {
+        "name": "coffee_table_33",
+        "category": "table.n.02"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bottom_cabinet_no_top_80": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "dishtowel_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "dishtowel_1": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "rag_0": {
+                      "states": {
+                        "isSoaked": false
+                      },
+                      "direct_relation": "inside"
+                    },
+                    "rag_1": {
+                      "states": {
+                        "isSoaked": false
+                      },
+                      "direct_relation": "inside"
+                    },
+                    "toothpaste_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "coffee_table_33": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "room_floor_living_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "sink_82": {
+                  "states": {
+                    "isDirty": false,
+                    "isClean": true,
+                    "isDusty": false,
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "window_119": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isDusty": true,
+                    "isOpen": false
+                  }
+                },
+                "window_133": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isDusty": true,
+                    "isOpen": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bottom_cabinet_no_top_80": {
+        "name": "bottom_cabinet_no_top_80",
+        "category": "cabinet.n.01"
+      },
+      "coffee_table_33": {
+        "name": "coffee_table_33",
+        "category": "table.n.02"
+      },
+      "dishtowel_0": {
+        "name": "dishtowel_0",
+        "category": "towel.n.01"
+      },
+      "dishtowel_1": {
+        "name": "dishtowel_1",
+        "category": "towel.n.01"
+      },
+      "rag_0": {
+        "name": "rag_0",
+        "category": "rag.n.01"
+      },
+      "rag_1": {
+        "name": "rag_1",
+        "category": "rag.n.01"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "room_floor_living_room_0": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "sink_82": {
+        "name": "sink_82",
+        "category": "sink.n.01"
+      },
+      "toothpaste_0": {
+        "name": "toothpaste_0",
+        "category": "cleansing_agent.n.01"
+      },
+      "window_119": {
+        "name": "window_119",
+        "category": "window.n.01"
+      },
+      "window_133": {
+        "name": "window_133",
+        "category": "window.n.01"
+      }
+    }
+  }
+}

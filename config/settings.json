@@ -1,0 +1,184 @@
+{
+  "model": {
+    "api_base": "http://192.168.27.250:18003/v1",
+    "api_key": "qwen-local-key",
+    "model_name": "Qwen3.6-27B",
+    "base_host": "192.168.27.250",
+    "base_path_template": "http://{host}:{port}/v1",
+    "base_port_range": [
+      18001,
+      18004
+    ],
+    "endpoints": {
+      "18001": {
+        "enabled": false,
+        "api_key": "qwen-local-key",
+        "model_name": "Qwen3.5-9B"
+      },
+      "18002": {
+        "enabled": false,
+        "api_key": "qwen-local-key",
+        "model_name": "Qwen3.6-27B"
+      },
+      "18003": {
+        "enabled": true,
+        "api_key": "qwen-local-key",
+        "model_name": "Qwen3.6-27B"
+      },
+      "18004": {
+        "enabled": true,
+        "api_key": "qwen-local-key",
+        "model_name": "Qwen3.5-9B"
+      },
+      "8005": {
+        "enabled": true,
+        "api_key": "qwen-local-key",
+        "model_name": "Qwen3.5-9B-alfred"
+      }
+    },
+    "timeout": 180,
+    "extra_body": {
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      }
+    },
+    "modules": {
+      "understanding": {
+        "timeout": 120,
+        "temperature": 0,
+        "max_tokens": 1024
+      },
+      "planning": {
+        "timeout": 300,
+        "temperature": 0,
+        "max_tokens": 4096
+      },
+      "execution": {
+        "timeout": 120,
+        "temperature": 0,
+        "max_tokens": 2048
+      },
+      "reflection": {
+        "timeout": 300,
+        "temperature": 0,
+        "max_tokens": 2048
+      }
+    }
+  },
+  "scenes": {
+    "root_dir": "scenes",
+    "initial_scene": "default/house.json",
+    "runtime_dump_dir": ".scene_sessions",
+    "sandbox_dump_dir": ".scene_sessions",
+    "dump_sessions": false
+  },
+  "files": {
+    "rules": "config/rules.json",
+    "playbook_dir": "ace/playbooks",
+    "playbook": "ace/playbook.json",
+    "prompts": "config/prompts.json",
+    "prompt_inputs_module": "graph.prompt_inputs",
+    "goal_satisfaction_module": "graph.planning.normalizer",
+    "final_state_module": ""
+  },
+  "skills": {
+    "root": "skills",
+    "enabled": [
+      "NavigateTo",
+      "Pickup",
+      "Put",
+      "Open",
+      "Close",
+      "Clean",
+      "Slice",
+      "ToggleOn",
+      "ToggleOff",
+      "Heat",
+      "Cool"
+    ]
+  },
+  "understanding": {
+    "features": {
+      "enabled_features": [
+        "cancel",
+        "llm_extract",
+        "normalize",
+        "entity_repair",
+        "goal_state_extract",
+        "skill_closure",
+        "relevant_items",
+        "clarification"
+      ],
+      "features": {
+        "cancel": "graph.understanding.features.cancel:run",
+        "llm_extract": "graph.understanding.features.llm_extract:run",
+        "normalize": "graph.understanding.features.normalize:run",
+        "entity_repair": "graph.understanding.features.entity_repair:run",
+        "goal_state_extract": "graph.understanding.features.goal_state_extract:run",
+        "skill_closure": "graph.understanding.features.skill_closure:run",
+        "relevant_items": "graph.understanding.features.relevant_items:run",
+        "clarification": "graph.understanding.features.clarification:run"
+      },
+      "settings": {
+        "entity_repair": {
+          "enabled": true,
+          "max_attempts": 2,
+          "alternatives_enabled": true,
+          "max_alternatives_per_bucket": 2,
+          "always_run": false
+        },
+        "goal_state_extract": {
+          "enabled": false,
+          "force": false,
+          "max_attempts": 2
+        }
+      }
+    }
+  },
+  "planning": {
+    "features": {
+      "cognitive_planning": false,
+      "cognitive_lightweight_path": false,
+      "sandbox_evaluator": true,
+      "state_diff_audit": true,
+      "cognitive_bt_compile": false,
+      "cognitive_bt_execute": false,
+      "cognitive_bt_recovery_direct_replan": false,
+      "cognitive_bt_execution_reflection_retry": false,
+      "playbook_retrieval": true,
+      "playbook_write": true,
+      "candidate_rules": false,
+      "cognitive_trace_write": false,
+      "reflection": true
+    },
+    "evaluation": {
+      "repair_strategy": "retrac"
+    },
+    "sda": {
+      "max_backtrack_depth": 3,
+      "max_subtree_actions": 80
+    },
+    "max_iterations": 10
+  },
+  "benchmark": {
+    "trace": false,
+    "feature_flags": {
+      "playbook_retrieval": false,
+      "playbook_write": false,
+      "reflection": false,
+      "candidate_rules": false,
+      "train_only_rules": false,
+      "allow_clarification": false,
+      "raise_feature_exceptions": true,
+      "entity_repair_alternatives": false,
+      "drop_benchmark_alternatives": true
+    }
+  },
+  "execution": {
+    "backend": "simulation",
+    "sync_runtime_scene": true,
+    "ros": {
+      "timeout_sec": 30
+    }
+  }
+}

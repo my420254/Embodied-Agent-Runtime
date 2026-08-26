@@ -1,0 +1,275 @@
+{
+  "dataset": "behavior",
+  "case_id": "clearing_the_table_after_dinner_0_Ihlen_0_int_0_2021-10-25_23-01-51",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "clearing_the_table_after_dinner",
+    "task_id": 0,
+    "scene_id": "Ihlen_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "clearing the table after dinner",
+    "task": "clearing_the_table_after_dinner",
+    "task_id": 0,
+    "scene_id": "Ihlen_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 17,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bowl_0",
+      "bowl_1",
+      "bowl_2",
+      "bowl_3",
+      "breakfast_table_2",
+      "bucket_0",
+      "bucket_1",
+      "catsup_0",
+      "cup_0",
+      "cup_1",
+      "pop_0",
+      "pop_1",
+      "room_floor_dining_room_0",
+      "straight_chair_3",
+      "straight_chair_4"
+    ],
+    "name_mapping": {
+      "floor.n.01_1": {
+        "name": "room_floor_dining_room_0",
+        "category": "floor.n.01"
+      },
+      "chair.n.01_1": {
+        "name": "straight_chair_3",
+        "category": "chair.n.01"
+      },
+      "chair.n.01_2": {
+        "name": "straight_chair_4",
+        "category": "chair.n.01"
+      },
+      "table.n.02_1": {
+        "name": "breakfast_table_2",
+        "category": "table.n.02"
+      },
+      "cup.n.01_1": {
+        "name": "cup_0",
+        "category": "cup.n.01"
+      },
+      "cup.n.01_2": {
+        "name": "cup_1",
+        "category": "cup.n.01"
+      },
+      "bucket.n.01_1": {
+        "name": "bucket_0",
+        "category": "bucket.n.01"
+      },
+      "bucket.n.01_2": {
+        "name": "bucket_1",
+        "category": "bucket.n.01"
+      },
+      "bowl.n.01_1": {
+        "name": "bowl_0",
+        "category": "bowl.n.01"
+      },
+      "bowl.n.01_2": {
+        "name": "bowl_1",
+        "category": "bowl.n.01"
+      },
+      "bowl.n.01_3": {
+        "name": "bowl_2",
+        "category": "bowl.n.01"
+      },
+      "bowl.n.01_4": {
+        "name": "bowl_3",
+        "category": "bowl.n.01"
+      },
+      "catsup.n.01_1": {
+        "name": "catsup_0",
+        "category": "catsup.n.01"
+      },
+      "beverage.n.01_1": {
+        "name": "pop_0",
+        "category": "beverage.n.01"
+      },
+      "beverage.n.01_2": {
+        "name": "pop_1",
+        "category": "beverage.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "breakfast_table_2": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "bowl_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "bowl_1": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "bowl_2": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "bowl_3": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "catsup_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "cup_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "cup_1": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "pop_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "room_floor_dining_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "bucket_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "bucket_1": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "pop_1": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "straight_chair_3": {
+                  "states": {}
+                },
+                "straight_chair_4": {
+                  "states": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_dining_room_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_dining_room_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bowl_0": {
+        "name": "bowl_0",
+        "category": "bowl.n.01"
+      },
+      "bowl_1": {
+        "name": "bowl_1",
+        "category": "bowl.n.01"
+      },
+      "bowl_2": {
+        "name": "bowl_2",
+        "category": "bowl.n.01"
+      },
+      "bowl_3": {
+        "name": "bowl_3",
+        "category": "bowl.n.01"
+      },
+      "breakfast_table_2": {
+        "name": "breakfast_table_2",
+        "category": "table.n.02"
+      },
+      "bucket_0": {
+        "name": "bucket_0",
+        "category": "bucket.n.01"
+      },
+      "bucket_1": {
+        "name": "bucket_1",
+        "category": "bucket.n.01"
+      },
+      "catsup_0": {
+        "name": "catsup_0",
+        "category": "catsup.n.01"
+      },
+      "cup_0": {
+        "name": "cup_0",
+        "category": "cup.n.01"
+      },
+      "cup_1": {
+        "name": "cup_1",
+        "category": "cup.n.01"
+      },
+      "pop_0": {
+        "name": "pop_0",
+        "category": "beverage.n.01"
+      },
+      "pop_1": {
+        "name": "pop_1",
+        "category": "beverage.n.01"
+      },
+      "room_floor_dining_room_0": {
+        "name": "room_floor_dining_room_0",
+        "category": "floor.n.01"
+      },
+      "straight_chair_3": {
+        "name": "straight_chair_3",
+        "category": "chair.n.01"
+      },
+      "straight_chair_4": {
+        "name": "straight_chair_4",
+        "category": "chair.n.01"
+      }
+    }
+  }
+}

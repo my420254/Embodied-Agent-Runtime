@@ -1,0 +1,5 @@
+name: Type
+description: 在键盘、电脑或开关类交互面上执行输入操作。
+prompt: prompt.md
+handler: skills.Type.handler:TypeSkill
+execution_domain: 感知/信息交互

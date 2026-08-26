@@ -1,0 +1,8 @@
+{
+  "final_state": {
+    "Potato (1)": {
+      "location": "SinkBasin (1)",
+      "isCooked": true
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": "framework_trace_v3",
+  "process_name": "understanding",
+  "payload_role": "output",
+  "is_complete": true,
+  "is_cancel_all": false,
+  "clarification_question": "",
+  "clarification_suppressed": false,
+  "relevant_item_names": {
+    "count": 1,
+    "sample": [
+      "couch"
+    ],
+    "truncated": false
+  },
+  "structured_task": {
+    "intent": "Relax on sofa",
+    "required_item_names": {
+      "targets": {
+        "primary": [
+          "couch"
+        ],
+        "alternatives": []
+      },
+      "tools": {
+        "primary": [],
+        "alternatives": []
+      },
+      "receptacles": {
+        "primary": [],
+        "alternatives": []
+      }
+    },
+    "quantity_constraints": [
+      "character must be sitting on couch"
+    ],
+    "final_state": {
+      "character": {
+        "sitting": true,
+        "ontop": "couch"
+      }
+    }
+  },
+  "understanding_final_state": {
+    "character": {
+      "sitting": true,
+      "ontop": "couch"
+    }
+  },
+  "entity_repair": {
+    "needed": false,
+    "invalid_names": [],
+    "valid_names": [
+      "couch"
+    ]
+  },
+  "goal_state_extract": {
+    "enabled": true,
+    "source": "llm",
+    "attempts": 1,
+    "raw": {
+      "final_state": {
+        "character": {
+          "sitting": true,
+          "ontop": "couch"
+        }
+      }
+    }
+  }
+}

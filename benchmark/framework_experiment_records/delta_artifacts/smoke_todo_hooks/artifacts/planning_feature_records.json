@@ -1,0 +1,1508 @@
+[
+  {
+    "process_name": "sandbox_validation",
+    "enabled": true,
+    "status": "passed",
+    "config": {
+      "todo_step_adapter_path": "benchmark.delta.framework.code.native_actions.delta_native_step_to_skill_call",
+      "validator": "todo_schema"
+    },
+    "inputs": {
+      "todo_list": {
+        "count": 25,
+        "sample": [
+          {
+            "step": 1,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "living_room",
+            "room_2": "dining_room"
+          },
+          {
+            "step": 2,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "dining_room",
+            "room_2": "kitchen"
+          },
+          {
+            "step": 3,
+            "action": "pick",
+            "agent": "robot",
+            "item": "fork",
+            "room": "kitchen"
+          },
+          {
+            "step": 4,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "kitchen",
+            "room_2": "dining_room"
+          },
+          {
+            "step": 5,
+            "action": "place_on",
+            "agent": "robot",
+            "item_1": "fork",
+            "item_2": "dining_table",
+            "room": "dining_room"
+          },
+          {
+            "step": 6,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "dining_room",
+            "room_2": "kitchen"
+          },
+          {
+            "step": 7,
+            "action": "pick",
+            "agent": "robot",
+            "item": "knife",
+            "room": "kitchen"
+          },
+          {
+            "step": 8,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "kitchen",
+            "room_2": "dining_room"
+          }
+        ],
+        "truncated": true
+      },
+      "initial_environment": {
+        "available": true,
+        "entity_count": 18,
+        "type_counts": {
+          "receptacle": 1,
+          "room": 11,
+          "unknown": 6
+        },
+        "entities_sample": [
+          "bathroom_1",
+          "bathroom_2",
+          "bedroom_1",
+          "bedroom_2",
+          "corridor_1",
+          "corridor_2",
+          "corridor_3",
+          "dining_room",
+          "dining_table",
+          "flower",
+          "fork",
+          "glass",
+          "kitchen",
+          "knife",
+          "living_room",
+          "lobby",
+          "plate",
+          "spoon"
+        ],
+        "entities_truncated": false,
+        "states_sample": {}
+      },
+      "initial_robot": {
+        "robot_location": "living_room",
+        "robot_holding": "空",
+        "delta_room_neighbors": {
+          "bathroom_1": [
+            "corridor_2"
+          ],
+          "bathroom_2": [
+            "corridor_3"
+          ],
+          "bedroom_1": [
+            "corridor_2"
+          ],
+          "bedroom_2": [
+            "corridor_3"
+          ],
+          "corridor_1": [
+            "lobby",
+            "corridor_3"
+          ],
+          "corridor_2": [
+            "bathroom_1",
+            "bedroom_1",
+            "corridor_3"
+          ],
+          "corridor_3": [
+            "corridor_1",
+            "corridor_2",
+            "bathroom_2",
+            "bedroom_2",
+            "kitchen",
+            "living_room"
+          ],
+          "dining_room": [
+            "kitchen",
+            "living_room"
+          ],
+          "kitchen": [
+            "corridor_3",
+            "dining_room"
+          ],
+          "living_room": [
+            "corridor_3",
+            "dining_room"
+          ],
+          "lobby": [
+            "corridor_1"
+          ]
+        },
+        "domain": "dining",
+        "delta_initial_predicates": [
+          "item_is_dining_table dining_table",
+          "item_pickable plate",
+          "item_accessible plate",
+          "item_pickable fork",
+          "item_accessible fork",
+          "item_pickable knife",
+          "item_accessible knife",
+          "item_pickable spoon",
+          "item_accessible spoon",
+          "item_pickable glass",
+          "item_accessible glass",
+          "item_pickable flower",
+          "item_accessible flower"
+        ]
+      }
+    },
+    "outputs": {
+      "validated_steps": {
+        "count": 0,
+        "sample": [],
+        "truncated": false
+      },
+      "validated_todo_actions": {
+        "count": 25,
+        "sample": [
+          {
+            "step": 1,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "living_room",
+            "room_2": "dining_room"
+          },
+          {
+            "step": 2,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "dining_room",
+            "room_2": "kitchen"
+          },
+          {
+            "step": 3,
+            "action": "pick",
+            "agent": "robot",
+            "item": "fork",
+            "room": "kitchen"
+          },
+          {
+            "step": 4,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "kitchen",
+            "room_2": "dining_room"
+          },
+          {
+            "step": 5,
+            "action": "place_on",
+            "agent": "robot",
+            "item_1": "fork",
+            "item_2": "dining_table",
+            "room": "dining_room"
+          },
+          {
+            "step": 6,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "dining_room",
+            "room_2": "kitchen"
+          },
+          {
+            "step": 7,
+            "action": "pick",
+            "agent": "robot",
+            "item": "knife",
+            "room": "kitchen"
+          },
+          {
+            "step": 8,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "kitchen",
+            "room_2": "dining_room"
+          }
+        ],
+        "truncated": true
+      },
+      "validated_audit_steps": {
+        "count": 25,
+        "sample": [
+          {
+            "step": 1,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "living_room",
+            "room_2": "dining_room",
+            "execution": {
+              "skill": "goto",
+              "parameters": {
+                "from": "living_room",
+                "to": "dining_room"
+              }
+            }
+          },
+          {
+            "step": 2,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "dining_room",
+            "room_2": "kitchen",
+            "execution": {
+              "skill": "goto",
+              "parameters": {
+                "from": "dining_room",
+                "to": "kitchen"
+              }
+            }
+          },
+          {
+            "step": 3,
+            "action": "pick",
+            "agent": "robot",
+            "item": "fork",
+            "room": "kitchen",
+            "execution": {
+              "skill": "pick",
+              "parameters": {
+                "item": "fork",
+                "room": "kitchen"
+              }
+            }
+          },
+          {
+            "step": 4,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "kitchen",
+            "room_2": "dining_room",
+            "execution": {
+              "skill": "goto",
+              "parameters": {
+                "from": "kitchen",
+                "to": "dining_room"
+              }
+            }
+          },
+          {
+            "step": 5,
+            "action": "place_on",
+            "agent": "robot",
+            "item_1": "fork",
+            "item_2": "dining_table",
+            "room": "dining_room",
+            "execution": {
+              "skill": "place_on",
+              "parameters": {
+                "item": "fork",
+                "surface": "dining_table",
+                "room": "dining_room"
+              }
+            }
+          },
+          {
+            "step": 6,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "dining_room",
+            "room_2": "kitchen",
+            "execution": {
+              "skill": "goto",
+              "parameters": {
+                "from": "dining_room",
+                "to": "kitchen"
+              }
+            }
+          },
+          {
+            "step": 7,
+            "action": "pick",
+            "agent": "robot",
+            "item": "knife",
+            "room": "kitchen",
+            "execution": {
+              "skill": "pick",
+              "parameters": {
+                "item": "knife",
+                "room": "kitchen"
+              }
+            }
+          },
+          {
+            "step": 8,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "kitchen",
+            "room_2": "dining_room",
+            "execution": {
+              "skill": "goto",
+              "parameters": {
+                "from": "kitchen",
+                "to": "dining_room"
+              }
+            }
+          }
+        ],
+        "truncated": true
+      },
+      "final_environment": {
+        "available": true,
+        "entity_count": 18,
+        "type_counts": {
+          "receptacle": 1,
+          "room": 11,
+          "unknown": 6
+        },
+        "entities_sample": [
+          "bathroom_1",
+          "bathroom_2",
+          "bedroom_1",
+          "bedroom_2",
+          "corridor_1",
+          "corridor_2",
+          "corridor_3",
+          "dining_room",
+          "dining_table",
+          "flower",
+          "fork",
+          "glass",
+          "kitchen",
+          "knife",
+          "living_room",
+          "lobby",
+          "plate",
+          "spoon"
+        ],
+        "entities_truncated": false,
+        "states_sample": {}
+      },
+      "final_robot": {
+        "robot_location": "dining_room",
+        "robot_holding": "空",
+        "delta_room_neighbors": {
+          "bathroom_1": [
+            "corridor_2"
+          ],
+          "bathroom_2": [
+            "corridor_3"
+          ],
+          "bedroom_1": [
+            "corridor_2"
+          ],
+          "bedroom_2": [
+            "corridor_3"
+          ],
+          "corridor_1": [
+            "lobby",
+            "corridor_3"
+          ],
+          "corridor_2": [
+            "bathroom_1",
+            "bedroom_1",
+            "corridor_3"
+          ],
+          "corridor_3": [
+            "corridor_1",
+            "corridor_2",
+            "bathroom_2",
+            "bedroom_2",
+            "kitchen",
+            "living_room"
+          ],
+          "dining_room": [
+            "kitchen",
+            "living_room"
+          ],
+          "kitchen": [
+            "corridor_3",
+            "dining_room"
+          ],
+          "living_room": [
+            "corridor_3",
+            "dining_room"
+          ],
+          "lobby": [
+            "corridor_1"
+          ]
+        },
+        "domain": "dining",
+        "delta_initial_predicates": [
+          "item_is_dining_table dining_table",
+          "item_pickable plate",
+          "item_accessible plate",
+          "item_pickable fork",
+          "item_accessible fork",
+          "item_pickable knife",
+          "item_accessible knife",
+          "item_pickable spoon",
+          "item_accessible spoon",
+          "item_pickable glass",
+          "item_accessible glass",
+          "item_pickable flower",
+          "item_accessible flower"
+        ]
+      },
+      "debug_event_counts": {
+        "step_check": 25
+      },
+      "sandbox_rejections": [],
+      "planning_evaluator_failures": [],
+      "failed_action": {},
+      "failure_layer": "",
+      "failure_category": "",
+      "error_feedback": ""
+    }
+  },
+  {
+    "process_name": "dependency_repair",
+    "enabled": false,
+    "status": "disabled",
+    "config": {
+      "repair_strategy": "retrac",
+      "max_backtrack_depth": 3,
+      "max_subtree_actions": 80
+    },
+    "inputs": {
+      "sandbox_failure_present": false,
+      "debug_event_counts": {}
+    },
+    "outputs": {
+      "sda_state": {},
+      "validated_steps": {
+        "count": 0,
+        "sample": [],
+        "truncated": false
+      },
+      "validated_todo_actions": {
+        "count": 25,
+        "sample": [
+          {
+            "step": 1,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "living_room",
+            "room_2": "dining_room"
+          },
+          {
+            "step": 2,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "dining_room",
+            "room_2": "kitchen"
+          },
+          {
+            "step": 3,
+            "action": "pick",
+            "agent": "robot",
+            "item": "fork",
+            "room": "kitchen"
+          },
+          {
+            "step": 4,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "kitchen",
+            "room_2": "dining_room"
+          },
+          {
+            "step": 5,
+            "action": "place_on",
+            "agent": "robot",
+            "item_1": "fork",
+            "item_2": "dining_table",
+            "room": "dining_room"
+          },
+          {
+            "step": 6,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "dining_room",
+            "room_2": "kitchen"
+          },
+          {
+            "step": 7,
+            "action": "pick",
+            "agent": "robot",
+            "item": "knife",
+            "room": "kitchen"
+          },
+          {
+            "step": 8,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "kitchen",
+            "room_2": "dining_room"
+          }
+        ],
+        "truncated": true
+      }
+    }
+  },
+  {
+    "process_name": "final_state_audit",
+    "enabled": true,
+    "status": "passed",
+    "config": {
+      "state_diff_audit": true,
+      "auditor": "framework.planning.state_diff_audit_llm",
+      "benchmark_comparer": "benchmark.delta.framework.code.final_state"
+    },
+    "inputs": {
+      "understanding_goal": {
+        "intent": "Set up the dining table for dinner, place the tableware/cutleries and glass on the dining table. Also bring something romantic to the dining table.",
+        "required_item_names": {
+          "targets": {
+            "primary": [
+              "dining_table"
+            ],
+            "alternatives": []
+          },
+          "tools": {
+            "primary": [
+              "plate",
+              "fork",
+              "knife",
+              "spoon",
+              "glass"
+            ],
+            "alternatives": []
+          },
+          "receptacles": {
+            "primary": [
+              "flower"
+            ],
+            "alternatives": []
+          }
+        },
+        "quantity_constraints": [],
+        "goal_state": {},
+        "desired_state": {},
+        "target_state": {},
+        "final_state": {
+          "predicates": [
+            "item_on(plate, dining_table)",
+            "item_on(fork, dining_table)",
+            "item_on(knife, dining_table)",
+            "item_on(spoon, dining_table)",
+            "item_on(glass, dining_table)",
+            "item_on(flower, dining_table)"
+          ],
+          "notes": "Dining table is set up with all required tableware (plate, fork, knife, spoon, glass) and a romantic item (flower)."
+        }
+      },
+      "has_external_goal": false,
+      "external_goal_state": {},
+      "simulated_steps": {
+        "count": 25,
+        "sample": [
+          {
+            "step": 1,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "living_room",
+            "room_2": "dining_room"
+          },
+          {
+            "step": 2,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "dining_room",
+            "room_2": "kitchen"
+          },
+          {
+            "step": 3,
+            "action": "pick",
+            "agent": "robot",
+            "item": "fork",
+            "room": "kitchen"
+          },
+          {
+            "step": 4,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "kitchen",
+            "room_2": "dining_room"
+          },
+          {
+            "step": 5,
+            "action": "place_on",
+            "agent": "robot",
+            "item_1": "fork",
+            "item_2": "dining_table",
+            "room": "dining_room"
+          },
+          {
+            "step": 6,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "dining_room",
+            "room_2": "kitchen"
+          },
+          {
+            "step": 7,
+            "action": "pick",
+            "agent": "robot",
+            "item": "knife",
+            "room": "kitchen"
+          },
+          {
+            "step": 8,
+            "action": "goto",
+            "agent": "robot",
+            "room_1": "kitchen",
+            "room_2": "dining_room"
+          }
+        ],
+        "truncated": true
+      },
+      "initial_environment": {
+        "available": true,
+        "entity_count": 18,
+        "type_counts": {
+          "receptacle": 1,
+          "room": 11,
+          "unknown": 6
+        },
+        "entities_sample": [
+          "bathroom_1",
+          "bathroom_2",
+          "bedroom_1",
+          "bedroom_2",
+          "corridor_1",
+          "corridor_2",
+          "corridor_3",
+          "dining_room",
+          "dining_table",
+          "flower",
+          "fork",
+          "glass",
+          "kitchen",
+          "knife",
+          "living_room",
+          "lobby",
+          "plate",
+          "spoon"
+        ],
+        "entities_truncated": false,
+        "states_sample": {}
+      },
+      "initial_robot": {
+        "robot_location": "living_room",
+        "robot_holding": "空",
+        "delta_room_neighbors": {
+          "bathroom_1": [
+            "corridor_2"
+          ],
+          "bathroom_2": [
+            "corridor_3"
+          ],
+          "bedroom_1": [
+            "corridor_2"
+          ],
+          "bedroom_2": [
+            "corridor_3"
+          ],
+          "corridor_1": [
+            "lobby",
+            "corridor_3"
+          ],
+          "corridor_2": [
+            "bathroom_1",
+            "bedroom_1",
+            "corridor_3"
+          ],
+          "corridor_3": [
+            "corridor_1",
+            "corridor_2",
+            "bathroom_2",
+            "bedroom_2",
+            "kitchen",
+            "living_room"
+          ],
+          "dining_room": [
+            "kitchen",
+            "living_room"
+          ],
+          "kitchen": [
+            "corridor_3",
+            "dining_room"
+          ],
+          "living_room": [
+            "corridor_3",
+            "dining_room"
+          ],
+          "lobby": [
+            "corridor_1"
+          ]
+        },
+        "domain": "dining",
+        "delta_initial_predicates": [
+          "item_is_dining_table dining_table",
+          "item_pickable plate",
+          "item_accessible plate",
+          "item_pickable fork",
+          "item_accessible fork",
+          "item_pickable knife",
+          "item_accessible knife",
+          "item_pickable spoon",
+          "item_accessible spoon",
+          "item_pickable glass",
+          "item_accessible glass",
+          "item_pickable flower",
+          "item_accessible flower"
+        ]
+      },
+      "final_environment": {
+        "available": true,
+        "entity_count": 18,
+        "type_counts": {
+          "receptacle": 1,
+          "room": 11,
+          "unknown": 6
+        },
+        "entities_sample": [
+          "bathroom_1",
+          "bathroom_2",
+          "bedroom_1",
+          "bedroom_2",
+          "corridor_1",
+          "corridor_2",
+          "corridor_3",
+          "dining_room",
+          "dining_table",
+          "flower",
+          "fork",
+          "glass",
+          "kitchen",
+          "knife",
+          "living_room",
+          "lobby",
+          "plate",
+          "spoon"
+        ],
+        "entities_truncated": false,
+        "states_sample": {}
+      },
+      "final_robot": {
+        "robot_location": "dining_room",
+        "robot_holding": "空",
+        "delta_room_neighbors": {
+          "bathroom_1": [
+            "corridor_2"
+          ],
+          "bathroom_2": [
+            "corridor_3"
+          ],
+          "bedroom_1": [
+            "corridor_2"
+          ],
+          "bedroom_2": [
+            "corridor_3"
+          ],
+          "corridor_1": [
+            "lobby",
+            "corridor_3"
+          ],
+          "corridor_2": [
+            "bathroom_1",
+            "bedroom_1",
+            "corridor_3"
+          ],
+          "corridor_3": [
+            "corridor_1",
+            "corridor_2",
+            "bathroom_2",
+            "bedroom_2",
+            "kitchen",
+            "living_room"
+          ],
+          "dining_room": [
+            "kitchen",
+            "living_room"
+          ],
+          "kitchen": [
+            "corridor_3",
+            "dining_room"
+          ],
+          "living_room": [
+            "corridor_3",
+            "dining_room"
+          ],
+          "lobby": [
+            "corridor_1"
+          ]
+        },
+        "domain": "dining",
+        "delta_initial_predicates": [
+          "item_is_dining_table dining_table",
+          "item_pickable plate",
+          "item_accessible plate",
+          "item_pickable fork",
+          "item_accessible fork",
+          "item_pickable knife",
+          "item_accessible knife",
+          "item_pickable spoon",
+          "item_accessible spoon",
+          "item_pickable glass",
+          "item_accessible glass",
+          "item_pickable flower",
+          "item_accessible flower"
+        ]
+      }
+    },
+    "outputs": {
+      "state_diff": {
+        "available": true,
+        "entity_count_compared": 18,
+        "changed_entity_count": 6,
+        "changed_entities_sample": [
+          "flower",
+          "fork",
+          "glass",
+          "knife",
+          "plate",
+          "spoon"
+        ],
+        "changed_entities_truncated": false,
+        "robot_changed": true
+      },
+      "audit_passed": true,
+      "issue": "",
+      "repair_mode": "continue_from_current",
+      "benchmark_compare": {
+        "benchmark": "DELTA",
+        "status": "prepared_for_framework_llm_judge",
+        "environment_format": "DELTA scene_graph 转成 benchmark 本地扁平环境，保留 delta_predicate/delta_affordance 属性",
+        "action_format": "DELTA 官方原生动作 JSON 对象",
+        "official_evaluator": "planning 结束后调用 DELTA PDDL/VAL；评测答案字段不进入 understanding/planning/final_state audit",
+        "used_fields": {
+          "task_context": [
+            "dataset",
+            "delta_accessible_items",
+            "delta_env_state_predicates",
+            "domain",
+            "instruction",
+            "loadable_containers",
+            "scene_graph_cache_path",
+            "task_environment_mode",
+            "task_name"
+          ],
+          "evaluation_context": [],
+          "external_goal": [
+            "has_external_goal",
+            "structured_final_state"
+          ],
+          "state_diff": [
+            "entities",
+            "robot"
+          ]
+        },
+        "benchmark_goal": {
+          "task_context": {
+            "dataset": "delta",
+            "task_name": "dining:allensville:episode-01",
+            "domain": "dining",
+            "instruction": "Set up the dining table for dinner, place the tableware/cutleries and glass on the dining table. Also bring something romantic to the dining table.",
+            "scene_graph_cache_path": "/data/zmy/OurAgent-he1/benchmark/datasets/extracted/delta/initial_envs/allensville.json",
+            "delta_env_state_predicates": [
+              "item_on(<item_1>, <item_2>): <item_1> is on <item_2>.",
+              "item_is_dining_table(<item>): <item> is dining_table."
+            ],
+            "delta_accessible_items": [
+              "psu",
+              "sink_1",
+              "mop",
+              "gpu",
+              "sink_2",
+              "mainboard",
+              "glass",
+              "shelf",
+              "book",
+              "cpu",
+              "rotting_apple",
+              "plate",
+              "lamp",
+              "fridge_1",
+              "fridge_2",
+              "ssd",
+              "cola_can",
+              "dining_table",
+              "knife",
+              "fork",
+              {
+                "_truncated": 14
+              }
+            ],
+            "loadable_containers": [
+              {
+                "name": "shelf",
+                "room": "bedroom_1",
+                "is_loaded": true,
+                "contents": [
+                  "book"
+                ],
+                "affordances": [
+                  "drop",
+                  "load",
+                  "pick",
+                  "unload"
+                ]
+              },
+              {
+                "name": "locker",
+                "room": "lobby",
+                "is_loaded": true,
+                "contents": [
+                  "paper"
+                ],
+                "affordances": [
+                  "drop",
+                  "load",
+                  "pick",
+                  "unload"
+                ]
+              }
+            ],
+            "task_environment_mode": "understanding_pruned"
+          },
+          "evaluation_context": {},
+          "goal_projection": {
+            "instruction": "Set up the dining table for dinner, place the tableware/cutleries and glass on the dining table. Also bring something romantic to the dining table.",
+            "domain": "dining",
+            "visible_delta_predicates": [
+              "item_on(<item_1>, <item_2>): <item_1> is on <item_2>.",
+              "item_is_dining_table(<item>): <item> is dining_table."
+            ],
+            "loadable_containers": [
+              {
+                "name": "shelf",
+                "room": "bedroom_1",
+                "is_loaded": true,
+                "contents": [
+                  "book"
+                ],
+                "affordances": [
+                  "drop",
+                  "load",
+                  "pick",
+                  "unload"
+                ]
+              },
+              {
+                "name": "locker",
+                "room": "lobby",
+                "is_loaded": true,
+                "contents": [
+                  "paper"
+                ],
+                "affordances": [
+                  "drop",
+                  "load",
+                  "pick",
+                  "unload"
+                ]
+              }
+            ]
+          },
+          "external_goal": {
+            "has_external_goal": true,
+            "external_goal_state": {},
+            "external_goal_text": "",
+            "structured_goal_state": {},
+            "structured_final_state": {
+              "predicates": [
+                "item_on(plate, dining_table)",
+                "item_on(fork, dining_table)",
+                "item_on(knife, dining_table)",
+                "item_on(spoon, dining_table)",
+                "item_on(glass, dining_table)",
+                "item_on(flower, dining_table)"
+              ],
+              "notes": "Dining table is set up with all required tableware (plate, fork, knife, spoon, glass) and a romantic item (flower)."
+            }
+          }
+        },
+        "understanding_final_state": {
+          "predicates": [
+            "item_on(plate, dining_table)",
+            "item_on(fork, dining_table)",
+            "item_on(knife, dining_table)",
+            "item_on(spoon, dining_table)",
+            "item_on(glass, dining_table)",
+            "item_on(flower, dining_table)"
+          ],
+          "notes": "Dining table is set up with all required tableware (plate, fork, knife, spoon, glass) and a romantic item (flower)."
+        },
+        "state_diff_summary": {
+          "entity_count_compared": 18,
+          "changed_entity_count": 6,
+          "changed_entities": [
+            "flower",
+            "fork",
+            "glass",
+            "knife",
+            "plate",
+            "spoon"
+          ],
+          "changed_entities_truncated": false,
+          "robot_changed": true,
+          "robot_change": {
+            "changed": true,
+            "before": {
+              "robot_location": "living_room",
+              "robot_holding": "空",
+              "delta_room_neighbors": {
+                "bathroom_1": [
+                  "corridor_2"
+                ],
+                "bathroom_2": [
+                  "corridor_3"
+                ],
+                "bedroom_1": [
+                  "corridor_2"
+                ],
+                "bedroom_2": [
+                  "corridor_3"
+                ],
+                "corridor_1": [
+                  "lobby",
+                  "corridor_3"
+                ],
+                "corridor_2": [
+                  "bathroom_1",
+                  "bedroom_1",
+                  "corridor_3"
+                ],
+                "corridor_3": [
+                  "corridor_1",
+                  "corridor_2",
+                  "bathroom_2",
+                  "bedroom_2",
+                  "kitchen",
+                  "living_room"
+                ],
+                "dining_room": [
+                  "kitchen",
+                  "living_room"
+                ],
+                "kitchen": [
+                  "corridor_3",
+                  "dining_room"
+                ],
+                "living_room": [
+                  "corridor_3",
+                  "dining_room"
+                ],
+                "lobby": [
+                  "corridor_1"
+                ]
+              },
+              "domain": "dining",
+              "delta_initial_predicates": [
+                "item_is_dining_table dining_table",
+                "item_pickable plate",
+                "item_accessible plate",
+                "item_pickable fork",
+                "item_accessible fork",
+                "item_pickable knife",
+                "item_accessible knife",
+                "item_pickable spoon",
+                "item_accessible spoon",
+                "item_pickable glass",
+                "item_accessible glass",
+                "item_pickable flower",
+                "item_accessible flower"
+              ]
+            },
+            "after": {
+              "robot_location": "dining_room",
+              "robot_holding": "空",
+              "delta_room_neighbors": {
+                "bathroom_1": [
+                  "corridor_2"
+                ],
+                "bathroom_2": [
+                  "corridor_3"
+                ],
+                "bedroom_1": [
+                  "corridor_2"
+                ],
+                "bedroom_2": [
+                  "corridor_3"
+                ],
+                "corridor_1": [
+                  "lobby",
+                  "corridor_3"
+                ],
+                "corridor_2": [
+                  "bathroom_1",
+                  "bedroom_1",
+                  "corridor_3"
+                ],
+                "corridor_3": [
+                  "corridor_1",
+                  "corridor_2",
+                  "bathroom_2",
+                  "bedroom_2",
+                  "kitchen",
+                  "living_room"
+                ],
+                "dining_room": [
+                  "kitchen",
+                  "living_room"
+                ],
+                "kitchen": [
+                  "corridor_3",
+                  "dining_room"
+                ],
+                "living_room": [
+                  "corridor_3",
+                  "dining_room"
+                ],
+                "lobby": [
+                  "corridor_1"
+                ]
+              },
+              "domain": "dining",
+              "delta_initial_predicates": [
+                "item_is_dining_table dining_table",
+                "item_pickable plate",
+                "item_accessible plate",
+                "item_pickable fork",
+                "item_accessible fork",
+                "item_pickable knife",
+                "item_accessible knife",
+                "item_pickable spoon",
+                "item_accessible spoon",
+                "item_pickable glass",
+                "item_accessible glass",
+                "item_pickable flower",
+                "item_accessible flower"
+              ]
+            }
+          }
+        },
+        "initial_environment_summary": {
+          "available": true,
+          "entity_count": 18,
+          "type_counts": {
+            "receptacle": 1,
+            "room": 11,
+            "unknown": 6
+          },
+          "states_sample": {},
+          "relations_sample": {
+            "dining_table": {
+              "direct_relation": "inside",
+              "direct_parent": "dining_room"
+            },
+            "dining_room": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "plate": {
+              "direct_relation": "inside",
+              "direct_parent": "bedroom_2"
+            },
+            "bedroom_2": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "fork": {
+              "direct_relation": "inside",
+              "direct_parent": "kitchen"
+            },
+            "kitchen": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "knife": {
+              "direct_relation": "inside",
+              "direct_parent": "kitchen"
+            },
+            "spoon": {
+              "direct_relation": "inside",
+              "direct_parent": "kitchen"
+            },
+            "glass": {
+              "direct_relation": "inside",
+              "direct_parent": "bedroom_1"
+            },
+            "bedroom_1": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "flower": {
+              "direct_relation": "inside",
+              "direct_parent": "lobby"
+            },
+            "lobby": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "living_room": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "bathroom_1": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "bathroom_2": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "corridor_1": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "corridor_2": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "corridor_3": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            }
+          }
+        },
+        "final_environment_summary": {
+          "available": true,
+          "entity_count": 18,
+          "type_counts": {
+            "receptacle": 1,
+            "room": 11,
+            "unknown": 6
+          },
+          "states_sample": {},
+          "relations_sample": {
+            "dining_table": {
+              "direct_relation": "inside",
+              "direct_parent": "dining_room"
+            },
+            "dining_room": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "plate": {
+              "direct_relation": "inside",
+              "direct_parent": "dining_table"
+            },
+            "bedroom_2": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "fork": {
+              "direct_relation": "inside",
+              "direct_parent": "dining_table"
+            },
+            "kitchen": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "knife": {
+              "direct_relation": "inside",
+              "direct_parent": "dining_table"
+            },
+            "spoon": {
+              "direct_relation": "inside",
+              "direct_parent": "dining_table"
+            },
+            "glass": {
+              "direct_relation": "inside",
+              "direct_parent": "dining_table"
+            },
+            "bedroom_1": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "flower": {
+              "direct_relation": "inside",
+              "direct_parent": "dining_table"
+            },
+            "lobby": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "living_room": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "bathroom_1": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "bathroom_2": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "corridor_1": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "corridor_2": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "corridor_3": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            }
+          }
+        },
+        "initial_robot": {
+          "robot_location": "living_room",
+          "robot_holding": "空",
+          "delta_room_neighbors": {
+            "bathroom_1": [
+              "corridor_2"
+            ],
+            "bathroom_2": [
+              "corridor_3"
+            ],
+            "bedroom_1": [
+              "corridor_2"
+            ],
+            "bedroom_2": [
+              "corridor_3"
+            ],
+            "corridor_1": [
+              "lobby",
+              "corridor_3"
+            ],
+            "corridor_2": [
+              "bathroom_1",
+              "bedroom_1",
+              "corridor_3"
+            ],
+            "corridor_3": [
+              "corridor_1",
+              "corridor_2",
+              "bathroom_2",
+              "bedroom_2",
+              "kitchen",
+              "living_room"
+            ],
+            "dining_room": [
+              "kitchen",
+              "living_room"
+            ],
+            "kitchen": [
+              "corridor_3",
+              "dining_room"
+            ],
+            "living_room": [
+              "corridor_3",
+              "dining_room"
+            ],
+            "lobby": [
+              "corridor_1"
+            ]
+          },
+          "domain": "dining",
+          "delta_initial_predicates": [
+            "item_is_dining_table dining_table",
+            "item_pickable plate",
+            "item_accessible plate",
+            "item_pickable fork",
+            "item_accessible fork",
+            "item_pickable knife",
+            "item_accessible knife",
+            "item_pickable spoon",
+            "item_accessible spoon",
+            "item_pickable glass",
+            "item_accessible glass",
+            "item_pickable flower",
+            "item_accessible flower"
+          ]
+        },
+        "final_robot": {
+          "robot_location": "dining_room",
+          "robot_holding": "空",
+          "delta_room_neighbors": {
+            "bathroom_1": [
+              "corridor_2"
+            ],
+            "bathroom_2": [
+              "corridor_3"
+            ],
+            "bedroom_1": [
+              "corridor_2"
+            ],
+            "bedroom_2": [
+              "corridor_3"
+            ],
+            "corridor_1": [
+              "lobby",
+              "corridor_3"
+            ],
+            "corridor_2": [
+              "bathroom_1",
+              "bedroom_1",
+              "corridor_3"
+            ],
+            "corridor_3": [
+              "corridor_1",
+              "corridor_2",
+              "bathroom_2",
+              "bedroom_2",
+              "kitchen",
+              "living_room"
+            ],
+            "dining_room": [
+              "kitchen",
+              "living_room"
+            ],
+            "kitchen": [
+              "corridor_3",
+              "dining_room"
+            ],
+            "living_room": [
+              "corridor_3",
+              "dining_room"
+            ],
+            "lobby": [
+              "corridor_1"
+            ]
+          },
+          "domain": "dining",
+          "delta_initial_predicates": [
+            "item_is_dining_table dining_table",
+            "item_pickable plate",
+            "item_accessible plate",
+            "item_pickable fork",
+            "item_accessible fork",
+            "item_pickable knife",
+            "item_accessible knife",
+            "item_pickable spoon",
+            "item_accessible spoon",
+            "item_pickable glass",
+            "item_accessible glass",
+            "item_pickable flower",
+            "item_accessible flower"
+          ]
+        },
+        "fairness_notes": [
+          "本 comparer 不读取评测答案字段、官方目标字段或参考代价字段。",
+          "DELTA 官方目标只在 planning 结束后的官方评测中使用。"
+        ],
+        "judge_contract": "公共 final-state audit 只能依据本 benchmark-local goal packet、understanding_final_state、sandbox 前后环境差异和任务原文判断完成度；不得转换到其他 benchmark 的动作或环境格式。",
+        "enabled": true,
+        "comparer_module": "benchmark.delta.framework.code.final_state"
+      }
+    }
+  }
+]

@@ -1,0 +1,217 @@
+{
+  "dataset": "behavior",
+  "case_id": "packing_bags_or_suitcase_0_Merom_1_int_0_2021-10-26_10-04-07",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "packing_bags_or_suitcase",
+    "task_id": 0,
+    "scene_id": "Merom_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "packing bags or suitcase",
+    "task": "packing_bags_or_suitcase",
+    "task_id": 0,
+    "scene_id": "Merom_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 13,
+    "room_count": 1,
+    "entity_catalog": [
+      "backpack_97",
+      "bed_7",
+      "behavior_room",
+      "behavior_room_anchor",
+      "door_85",
+      "hardback_100",
+      "room_floor_bedroom_0",
+      "shampoo_99",
+      "toothbrush_98",
+      "toothpaste_103",
+      "underwear_101",
+      "underwear_102",
+      "window_79"
+    ],
+    "name_mapping": {
+      "backpack.n.01_1": {
+        "name": "backpack_97",
+        "category": "backpack.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_bedroom_0",
+        "category": "floor.n.01"
+      },
+      "toothbrush.n.01_1": {
+        "name": "toothbrush_98",
+        "category": "toothbrush.n.01"
+      },
+      "bed.n.01_1": {
+        "name": "bed_7",
+        "category": "bed.n.01"
+      },
+      "shampoo.n.01_1": {
+        "name": "shampoo_99",
+        "category": "shampoo.n.01"
+      },
+      "hardback.n.01_1": {
+        "name": "hardback_100",
+        "category": "hardback.n.01"
+      },
+      "underwear.n.01_1": {
+        "name": "underwear_101",
+        "category": "underwear.n.01"
+      },
+      "underwear.n.01_2": {
+        "name": "underwear_102",
+        "category": "underwear.n.01"
+      },
+      "toothpaste.n.01_1": {
+        "name": "toothpaste_103",
+        "category": "toothpaste.n.01"
+      },
+      "door.n.01_1": {
+        "name": "door_85",
+        "category": "door.n.01"
+      },
+      "window.n.01_1": {
+        "name": "window_79",
+        "category": "window.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bed_7": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "hardback_100": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "shampoo_99": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "toothbrush_98": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "toothpaste_103": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "underwear_101": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "underwear_102": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "door_85": {
+                  "states": {}
+                },
+                "room_floor_bedroom_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "backpack_97": {
+                      "states": {
+                        "isOpen": false
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "window_79": {
+                  "states": {
+                    "isOpen": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_bedroom_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_bedroom_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "backpack_97": {
+        "name": "backpack_97",
+        "category": "backpack.n.01"
+      },
+      "bed_7": {
+        "name": "bed_7",
+        "category": "bed.n.01"
+      },
+      "door_85": {
+        "name": "door_85",
+        "category": "door.n.01"
+      },
+      "hardback_100": {
+        "name": "hardback_100",
+        "category": "hardback.n.01"
+      },
+      "room_floor_bedroom_0": {
+        "name": "room_floor_bedroom_0",
+        "category": "floor.n.01"
+      },
+      "shampoo_99": {
+        "name": "shampoo_99",
+        "category": "shampoo.n.01"
+      },
+      "toothbrush_98": {
+        "name": "toothbrush_98",
+        "category": "toothbrush.n.01"
+      },
+      "toothpaste_103": {
+        "name": "toothpaste_103",
+        "category": "toothpaste.n.01"
+      },
+      "underwear_101": {
+        "name": "underwear_101",
+        "category": "underwear.n.01"
+      },
+      "underwear_102": {
+        "name": "underwear_102",
+        "category": "underwear.n.01"
+      },
+      "window_79": {
+        "name": "window_79",
+        "category": "window.n.01"
+      }
+    }
+  }
+}

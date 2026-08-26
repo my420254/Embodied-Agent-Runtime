@@ -1,0 +1,48 @@
+from skills.base import ValidationResult
+
+
+def _is_inside(target: str, container: str, sim_env: dict) -> bool:
+    current = target
+    seen = set()
+    while current in sim_env and current not in seen:
+        seen.add(current)
+        parent = sim_env[current].get("direct_parent", "")
+        if parent == container:
+            return True
+        if parent in ("", "robot_hand", "未知环境"):
+            return False
+        current = parent
+    return False
+
+
+class _HeatCoolSkill:
+    name = ""
+    device_param = ""
+
+    def validate(self, sim_env: dict, sim_robot: dict, params: dict) -> ValidationResult:
+        robot_loc = sim_robot["robot_location"]
+        robot_hold = sim_robot["robot_holding"]
+        target = params.get("target_item", "")
+        device = params.get(self.device_param, "")
+
+        if robot_loc != device:
+            return False, "前置位置依赖未满足", f"必须先导航至设施 {device}"
+        if robot_hold != "空":
+            return False, "单臂约束违规", "按键操作须保持空手"
+        if not _is_inside(target, device, sim_env):
+            return False, "容器依赖未满足", f"物品需存放于 {device} 内部"
+        if sim_env.get(device, {}).get("states", {}).get("isOpen", True) is True:
+            return False, "安全约束违规", "该设备舱门必须处于关闭状态"
+        if sim_env.get(device, {}).get("states", {}).get("isToggled", False) is False:
+            return False, "电源依赖未满足", "需调用 ToggleOn 开启该设备"
+        return True, "", ""
+
+
+class HeatSkill(_HeatCoolSkill):
+    name = "Heat"
+    device_param = "heating_device"
+
+    def apply(self, sim_env: dict, sim_robot: dict, params: dict) -> None:
+        target = params.get("target_item", "")
+        sim_env[target].setdefault("states", {})["isCooked"] = True
+        sim_env[target].setdefault("states", {})["isCold"] = False

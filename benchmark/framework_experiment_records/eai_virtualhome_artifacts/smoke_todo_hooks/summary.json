@@ -1,0 +1,128 @@
+{
+  "run_name": "eai_virtualhome_smoke_20260806_todo_hooks",
+  "total_cases": 1,
+  "done_cases": 1,
+  "failed_cases": 0,
+  "task_success_count": 1,
+  "task_success_rate": 1.0,
+  "official_available_count": 1,
+  "official_task_success_rate": 1.0,
+  "missing_official_eval_count": 0,
+  "cases": [
+    {
+      "mode": "framework",
+      "dataset": "virtualhome",
+      "case_id": "3_1",
+      "status": "done",
+      "returncode": 0,
+      "input": {
+        "dataset": "virtualhome",
+        "max_tokens": 4096,
+        "temperature": 0.0,
+        "trace": true,
+        "trace_llm_io": true,
+        "valid_only": false,
+        "task_name_fallback": false
+      },
+      "raw_output": "/data/zmy/OurAgent-he1/benchmark/eai/virtualhome/framework/results/eai_virtualhome_smoke_20260806_todo_hooks/cases/3_1/raw_output.json",
+      "log": "/data/zmy/OurAgent-he1/benchmark/eai/virtualhome/framework/results/eai_virtualhome_smoke_20260806_todo_hooks/cases/3_1/run.log",
+      "trace_json": "",
+      "report": "/data/zmy/OurAgent-he1/benchmark/eai/virtualhome/framework/results/eai_virtualhome_smoke_20260806_todo_hooks/cases/3_1/trace_report.md",
+      "artifacts": [
+        "/data/zmy/OurAgent-he1/benchmark/eai/virtualhome/framework/results/eai_virtualhome_smoke_20260806_todo_hooks/cases/3_1/artifacts/evaluated/virtualhome/evaluate_results/action_sequencing/eai_virtualhome_smoke_20260806_todo_hooks__3_1/summary.json",
+        "/data/zmy/OurAgent-he1/benchmark/eai/virtualhome/framework/results/eai_virtualhome_smoke_20260806_todo_hooks/cases/3_1/artifacts/evaluated/virtualhome/evaluate_results/action_sequencing/eai_virtualhome_smoke_20260806_todo_hooks__3_1/error_info.json"
+      ],
+      "command": [
+        "/data/zmy/envs/ouragent/bin/python",
+        "-m",
+        "benchmark.eai.virtualhome.framework.code._case_worker",
+        "--worker-input",
+        "/data/zmy/OurAgent-he1/benchmark/eai/virtualhome/framework/results/eai_virtualhome_smoke_20260806_todo_hooks/cases/3_1/artifacts/worker_input.json"
+      ],
+      "started_at": "2026-08-06 18:21:49 +0000",
+      "api_base": "http://192.168.27.250:18003/v1",
+      "evaluation_summary": {
+        "goal_evaluation": {
+          "task_success_rate": 100.0,
+          "state_goal": 100.0,
+          "relation_goal": 100.0,
+          "action_goal": 0.0,
+          "total_goal": 100.0
+        },
+        "trajectory_evaluation": {
+          "execution_success_rate": 100.0,
+          "grammar_error": {
+            "parsing": 0.0,
+            "hallucination": 0.0,
+            "predicate_argument_number": 0.0
+          },
+          "runtime_error": {
+            "wrong_order": 0.0,
+            "missing_step": 0.0,
+            "affordance_error": 0.0,
+            "additional_step": 0.0
+          }
+        },
+        "metadata": {
+          "evaluator": "virtualhome_action_sequencing_safe_summary",
+          "fallback_reason": "official_evaluator_zero_denominator_in_summary",
+          "scope": "summary_zero_denominators_stable_action_goal_dedupe_and_official_action_table_compat",
+          "safe_patches": [
+            "empty_argument_action_parser",
+            "zero_denominator_summary_rates",
+            "stable_action_goal_deduplication",
+            "plugin_plugout_valid_action_table"
+          ],
+          "official_stdout_excerpt": "Log file for action_sequencing_eval: /data/zmy/OurAgent-he1/logs/action_sequencing_eval_20260806_182147.log",
+          "official_stderr_excerpt": "Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.\nPlease upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.\nUsers of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.\nSee the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.\nTraceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/data/zmy/envs/eai-eval/lib/python3.8/site-packages/virtualhome_eval/agent_eval.py\", line 113, in agent_evaluation\n    all_results = action_output_evaluation(args)\n  File \"/data/zmy/envs/eai-eval/lib/python3.8/site-packages/virtualhome_eval/evaluation/action_sequencing/scripts/evaluate_results.py\", line 384, in evaluate_results\n    f\"Matched action: {all_matched_action}, rate = {100.0 *all_matched_action/all_action_goals:.2f}\"\nZeroDivisionError: float division by zero",
+          "safe_evaluator_stdout_excerpt": "",
+          "safe_evaluator_stderr_excerpt": "Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.\nPlease upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.\nUsers of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.\nSee the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.",
+          "official_log_excerpt": "2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - load llm response from /data/zmy/OurAgent-he1/benchmark/eai/virtualhome/framework/results/eai_virtualhome_smoke_20260806_todo_hooks/cases/3_1/artifacts/generated/virtualhome/action_sequencing\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - Model name is eai_virtualhome_smoke_20260806_todo_hooks__3_1\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - Task is Relax on sofa, file_id is 3_1\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - actions=[{'WALK': ['couch', '352']}, {'SIT': ['couch', '352']}]\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - actions=['[WALK] <couch> (352)', '[SIT] <couch> (352)']\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - Current action='[WALK] <couch> (352)'\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - Current action [WALK] <couch> (352) executable.\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - Current action='[SIT] <couch> (352)'\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - Current action [SIT] <couch> (352) executable.\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - Executable!\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - Predicted: node_match_num=1, edge_match_num=1, action_match_num=0\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - Gold: len(gold_node_goals)=1, len(gold_edge_goals)=1, len(gold_action_goals)=0\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - Goals all satisfied: all_pred_success=True\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - EVERYTHING SUCCEED!\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - Program number: 1\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - Parsing wrong: 0, rate = 0.00%\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - Hallucination: 0, rate = 0.00%\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - Parameter wrong: 0, rate = 0.00%\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - Executable plan: 1, rate = 100.00%\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - Correct plan: 1, rate = 100.00%\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - For not executable plans:\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - Wrong order: 0, rate = 0.00%\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - Missing step: 0, rate = 0.00%\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - Affordance error: 0, rate = 0.00%\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - Additional step: 0, rate = 0.00%\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - For scene metrics:\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - Matched node: 1, rate = 100.00\n2026-08-06 18:21:47 - virtualhome_eval.evaluation.action_sequencing.scripts.evaluate_results - Matched edge: 1, rate = 100.00",
+          "gold_test_skipped_programs": []
+        }
+      },
+      "evaluation_detail": {
+        "3_1": {
+          "executable": true,
+          "actions": [
+            "[WALK] <couch> (352)",
+            "[SIT] <couch> (352)"
+          ],
+          "error_type": null,
+          "error_action": null
+        }
+      },
+      "prediction_summary": {
+        "identifier": "3_1",
+        "error": "",
+        "task_success": true,
+        "task_success_rate": 1.0,
+        "official_available": true,
+        "execution_success": true,
+        "planning_result": {
+          "execution_status": "completed",
+          "is_feasible": true,
+          "feedback": "规划合法，验证环节闭环。",
+          "repair_strategy": "retrac",
+          "todo_parse_error": "",
+          "evaluator_findings": []
+        },
+        "input_provenance": {
+          "instruction_source": "virtualhome_task_name",
+          "task_name_fallback": false,
+          "dataset": "virtualhome",
+          "llm_output_field_role": "official_eai_action_sequence_submission_not_raw_model_text",
+          "official_export_mapping": "final_evaluator_output_only",
+          "official_object_table_size": 287
+        },
+        "llm_output_preview": "{\n  \"WALK\": [\"couch\", \"352\"],\n  \"SIT\": [\"couch\", \"352\"]\n}",
+        "benchmark_trace_present": true
+      },
+      "official_available": true,
+      "task_success": true,
+      "task_success_rate": 1.0,
+      "execution_success": true,
+      "updated_at": "2026-08-06 18:21:49 +0000"
+    }
+  ]
+}

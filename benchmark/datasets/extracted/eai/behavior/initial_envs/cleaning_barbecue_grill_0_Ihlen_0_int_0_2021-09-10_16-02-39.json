@@ -1,0 +1,158 @@
+{
+  "dataset": "behavior",
+  "case_id": "cleaning_barbecue_grill_0_Ihlen_0_int_0_2021-09-10_16-02-39",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "cleaning_barbecue_grill",
+    "task_id": 0,
+    "scene_id": "Ihlen_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "cleaning barbecue grill",
+    "task": "cleaning_barbecue_grill",
+    "task_id": 0,
+    "scene_id": "Ihlen_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 8,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "breakfast_table_14",
+      "bucket_52",
+      "grill_50",
+      "rag_51",
+      "room_floor_garage_0",
+      "sink_32"
+    ],
+    "name_mapping": {
+      "grill.n.02_1": {
+        "name": "grill_50",
+        "category": "grill.n.02"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_garage_0",
+        "category": "floor.n.01"
+      },
+      "rag.n.01_1": {
+        "name": "rag_51",
+        "category": "rag.n.01"
+      },
+      "bucket.n.01_1": {
+        "name": "bucket_52",
+        "category": "bucket.n.01"
+      },
+      "table.n.02_1": {
+        "name": "breakfast_table_14",
+        "category": "table.n.02"
+      },
+      "sink.n.01_1": {
+        "name": "sink_32",
+        "category": "sink.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "breakfast_table_14": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "bucket_52": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "rag_51": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "room_floor_garage_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "grill_50": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true,
+                        "isDusty": true
+                      },
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "sink_32": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_garage_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_garage_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "breakfast_table_14": {
+        "name": "breakfast_table_14",
+        "category": "table.n.02"
+      },
+      "bucket_52": {
+        "name": "bucket_52",
+        "category": "bucket.n.01"
+      },
+      "grill_50": {
+        "name": "grill_50",
+        "category": "grill.n.02"
+      },
+      "rag_51": {
+        "name": "rag_51",
+        "category": "rag.n.01"
+      },
+      "room_floor_garage_0": {
+        "name": "room_floor_garage_0",
+        "category": "floor.n.01"
+      },
+      "sink_32": {
+        "name": "sink_32",
+        "category": "sink.n.01"
+      }
+    }
+  }
+}

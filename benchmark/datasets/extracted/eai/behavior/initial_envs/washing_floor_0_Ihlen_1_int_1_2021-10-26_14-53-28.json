@@ -1,0 +1,183 @@
+{
+  "dataset": "behavior",
+  "case_id": "washing_floor_0_Ihlen_1_int_1_2021-10-26_14-53-28",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "washing_floor",
+    "task_id": 0,
+    "scene_id": "Ihlen_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "washing floor",
+    "task": "washing_floor",
+    "task_id": 0,
+    "scene_id": "Ihlen_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 10,
+    "room_count": 1,
+    "entity_catalog": [
+      "bath_towel_0",
+      "bed_33",
+      "behavior_room",
+      "behavior_room_anchor",
+      "bucket_0",
+      "room_floor_bathroom_0",
+      "shower_32",
+      "sink_49",
+      "soap_0",
+      "toilet_47"
+    ],
+    "name_mapping": {
+      "bucket.n.01_1": {
+        "name": "bucket_0",
+        "category": "bucket.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_bathroom_0",
+        "category": "floor.n.01"
+      },
+      "soap.n.01_1": {
+        "name": "soap_0",
+        "category": "soap.n.01"
+      },
+      "towel.n.01_1": {
+        "name": "bath_towel_0",
+        "category": "towel.n.01"
+      },
+      "shower.n.01_1": {
+        "name": "shower_32",
+        "category": "shower.n.01"
+      },
+      "toilet.n.02_1": {
+        "name": "toilet_47",
+        "category": "toilet.n.02"
+      },
+      "bed.n.01_1": {
+        "name": "bed_33",
+        "category": "bed.n.01"
+      },
+      "sink.n.01_1": {
+        "name": "sink_49",
+        "category": "sink.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bed_33": {
+                  "states": {}
+                },
+                "room_floor_bathroom_0": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isDusty": true,
+                    "isStained": true
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "bath_towel_0": {
+                      "states": {
+                        "isDirty": false,
+                        "isClean": true,
+                        "isStained": false
+                      },
+                      "direct_relation": "onfloor"
+                    },
+                    "bucket_0": {
+                      "states": {},
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "soap_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "shower_32": {
+                  "states": {}
+                },
+                "sink_49": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "toilet_47": {
+                  "states": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_bathroom_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_bathroom_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bath_towel_0": {
+        "name": "bath_towel_0",
+        "category": "towel.n.01"
+      },
+      "bed_33": {
+        "name": "bed_33",
+        "category": "bed.n.01"
+      },
+      "bucket_0": {
+        "name": "bucket_0",
+        "category": "bucket.n.01"
+      },
+      "room_floor_bathroom_0": {
+        "name": "room_floor_bathroom_0",
+        "category": "floor.n.01"
+      },
+      "shower_32": {
+        "name": "shower_32",
+        "category": "shower.n.01"
+      },
+      "sink_49": {
+        "name": "sink_49",
+        "category": "sink.n.01"
+      },
+      "soap_0": {
+        "name": "soap_0",
+        "category": "soap.n.01"
+      },
+      "toilet_47": {
+        "name": "toilet_47",
+        "category": "toilet.n.02"
+      }
+    }
+  }
+}

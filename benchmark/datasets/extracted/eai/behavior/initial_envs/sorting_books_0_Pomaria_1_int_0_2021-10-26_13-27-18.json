@@ -1,0 +1,162 @@
+{
+  "dataset": "behavior",
+  "case_id": "sorting_books_0_Pomaria_1_int_0_2021-10-26_13-27-18",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "sorting_books",
+    "task_id": 0,
+    "scene_id": "Pomaria_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "sorting books",
+    "task": "sorting_books",
+    "task_id": 0,
+    "scene_id": "Pomaria_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 9,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "coffee_table_3",
+      "hardback_78",
+      "hardback_79",
+      "hardback_81",
+      "notebook_80",
+      "room_floor_living_room_0",
+      "shelf_15"
+    ],
+    "name_mapping": {
+      "hardback.n.01_1": {
+        "name": "hardback_78",
+        "category": "hardback.n.01"
+      },
+      "hardback.n.01_2": {
+        "name": "hardback_79",
+        "category": "hardback.n.01"
+      },
+      "table.n.02_1": {
+        "name": "coffee_table_3",
+        "category": "table.n.02"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "shelf.n.01_1": {
+        "name": "shelf_15",
+        "category": "shelf.n.01"
+      },
+      "book.n.02_1": {
+        "name": "notebook_80",
+        "category": "book.n.02"
+      },
+      "book.n.02_2": {
+        "name": "hardback_81",
+        "category": "book.n.02"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "coffee_table_3": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "hardback_78": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "hardback_81": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "room_floor_living_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "hardback_79": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "notebook_80": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                },
+                "shelf_15": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_living_room_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_living_room_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "coffee_table_3": {
+        "name": "coffee_table_3",
+        "category": "table.n.02"
+      },
+      "hardback_78": {
+        "name": "hardback_78",
+        "category": "hardback.n.01"
+      },
+      "hardback_79": {
+        "name": "hardback_79",
+        "category": "hardback.n.01"
+      },
+      "hardback_81": {
+        "name": "hardback_81",
+        "category": "book.n.02"
+      },
+      "notebook_80": {
+        "name": "notebook_80",
+        "category": "book.n.02"
+      },
+      "room_floor_living_room_0": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "shelf_15": {
+        "name": "shelf_15",
+        "category": "shelf.n.01"
+      }
+    }
+  }
+}

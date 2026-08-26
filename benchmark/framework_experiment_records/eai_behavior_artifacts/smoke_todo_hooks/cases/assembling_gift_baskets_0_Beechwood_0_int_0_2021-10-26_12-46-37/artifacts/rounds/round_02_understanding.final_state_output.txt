@@ -1,0 +1,36 @@
+{
+  "final_state": {
+    "basket_0": {
+      "contains": [
+        "candle_0",
+        "cheese_0",
+        "cookie_0",
+        "bow_0"
+      ]
+    },
+    "basket_1": {
+      "contains": [
+        "candle_1",
+        "cheese_1",
+        "cookie_1",
+        "bow_1"
+      ]
+    },
+    "basket_2": {
+      "contains": [
+        "candle_2",
+        "cheese_2",
+        "cookie_2",
+        "bow_2"
+      ]
+    },
+    "basket_3": {
+      "contains": [
+        "candle_3",
+        "cheese_3",
+        "cookie_3",
+        "bow_3"
+      ]
+    }
+  }
+}

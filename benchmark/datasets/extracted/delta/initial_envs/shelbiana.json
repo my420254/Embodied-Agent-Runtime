@@ -1,0 +1,420 @@
+{
+  "dataset": "delta",
+  "scene_name": "shelbiana",
+  "source": {
+    "kind": "delta_data_scene_graph_py",
+    "native_root": "/data/zmy/OurAgent-he1/benchmark/datasets/native/delta",
+    "native_module": "data/scene_graph.py"
+  },
+  "scene_graph": {
+    "name": "shelbiana",
+    "rooms": {
+      "bathroom_1": {
+        "items": {
+          "mainboard": {
+            "accessible": true,
+            "affordance": [
+              "pick",
+              "drop"
+            ],
+            "state": "free"
+          },
+          "sink_1": {
+            "accessible": true,
+            "affordance": [
+              "clean_mop"
+            ],
+            "state": "free"
+          },
+          "toilet_1": {
+            "accessible": false,
+            "affordance": [],
+            "state": "free"
+          },
+          "mop": {
+            "accessible": true,
+            "affordance": [
+              "pick",
+              "drop",
+              "clean_mop",
+              "mop_floor"
+            ],
+            "state": "clean"
+          }
+        },
+        "neighbor": [
+          "lobby"
+        ]
+      },
+      "bathroom_2": {
+        "items": {
+          "psu": {
+            "accessible": true,
+            "affordance": [
+              "pick",
+              "drop"
+            ],
+            "state": "free"
+          },
+          "sink_2": {
+            "accessible": true,
+            "affordance": [
+              "clean_mop"
+            ],
+            "state": "free"
+          },
+          "toilet_2": {
+            "accessible": false,
+            "affordance": [],
+            "state": "free"
+          }
+        },
+        "neighbor": [
+          "corridor_2"
+        ]
+      },
+      "balcony": {
+        "items": {
+          "dining_table": {
+            "accessible": true,
+            "affordance": [],
+            "state": "free"
+          }
+        },
+        "neighbor": [
+          "living_room",
+          "bedroom_3"
+        ]
+      },
+      "closet": {
+        "items": {
+          "gpu": {
+            "accessible": true,
+            "affordance": [
+              "pick",
+              "drop"
+            ],
+            "state": "free"
+          },
+          "chair": {
+            "accessible": false,
+            "affordance": [],
+            "state": "free"
+          },
+          "locker": {
+            "accessible": true,
+            "affordance": [
+              "pick",
+              "drop",
+              "load",
+              "unload"
+            ],
+            "state": "loaded",
+            "content": {
+              "paper": {
+                "accessible": true,
+                "affordance": [
+                  "pick",
+                  "drop"
+                ],
+                "state": "free"
+              }
+            }
+          }
+        },
+        "neighbor": [
+          "corridor_2"
+        ]
+      },
+      "corridor_1": {
+        "items": {},
+        "neighbor": [
+          "corridor_2",
+          "kitchen",
+          "living_room"
+        ]
+      },
+      "corridor_2": {
+        "items": {
+          "glass": {
+            "accessible": true,
+            "affordance": [
+              "pick",
+              "drop",
+              "place_on"
+            ],
+            "state": "free"
+          }
+        },
+        "neighbor": [
+          "bathroom_2",
+          "bedroom_2",
+          "bedroom_3",
+          "closet",
+          "corridor_1"
+        ]
+      },
+      "living_room": {
+        "items": {
+          "cola_can": {
+            "accessible": true,
+            "affordance": [
+              "pick",
+              "drop",
+              "dispose"
+            ],
+            "state": "free"
+          },
+          "banana_peel": {
+            "accessible": true,
+            "affordance": [
+              "pick",
+              "drop",
+              "dispose"
+            ],
+            "state": "free"
+          },
+          "plate": {
+            "accessible": true,
+            "affordance": [
+              "pick",
+              "drop",
+              "place_on"
+            ],
+            "state": "free"
+          },
+          "couch": {
+            "accessible": false,
+            "affordance": [],
+            "state": "free"
+          },
+          "desk": {
+            "accessible": true,
+            "affordance": [],
+            "state": "free"
+          }
+        },
+        "neighbor": [
+          "balcony",
+          "corridor_1",
+          "lobby"
+        ]
+      },
+      "bedroom_1": {
+        "items": {
+          "cpu": {
+            "accessible": true,
+            "affordance": [
+              "pick",
+              "drop"
+            ],
+            "state": "free"
+          },
+          "bed_1": {
+            "accessible": false,
+            "affordance": [],
+            "state": "free"
+          }
+        },
+        "neighbor": [
+          "lobby"
+        ]
+      },
+      "bedroom_2": {
+        "items": {
+          "ssd": {
+            "accessible": true,
+            "affordance": [
+              "pick",
+              "drop"
+            ],
+            "state": "free"
+          },
+          "kite_1": {
+            "accessible": true,
+            "affordance": [
+              "pick",
+              "drop"
+            ],
+            "state": "free"
+          },
+          "rotting_apple": {
+            "accessible": true,
+            "affordance": [
+              "pick",
+              "drop",
+              "dispose"
+            ],
+            "state": "free"
+          },
+          "lamp": {
+            "accessible": true,
+            "affordance": [
+              "pick",
+              "drop"
+            ],
+            "state": "free"
+          }
+        },
+        "neighbor": [
+          "corridor_2"
+        ]
+      },
+      "bedroom_3": {
+        "items": {
+          "bed_2": {
+            "accessible": false,
+            "affordance": [],
+            "state": "free"
+          },
+          "kite_2": {
+            "accessible": true,
+            "affordance": [
+              "pick",
+              "drop"
+            ],
+            "state": "free"
+          },
+          "robot_hub": {
+            "accessible": true,
+            "affordance": [
+              "charge"
+            ],
+            "state": "free"
+          }
+        },
+        "neighbor": [
+          "balcony",
+          "corridor_2"
+        ]
+      },
+      "lobby": {
+        "items": {
+          "flower": {
+            "accessible": true,
+            "affordance": [
+              "pick",
+              "drop",
+              "place_on"
+            ],
+            "state": "free"
+          },
+          "clock": {
+            "accessible": false,
+            "affordance": [],
+            "state": "free"
+          },
+          "shelf": {
+            "accessible": true,
+            "affordance": [
+              "pick",
+              "drop",
+              "load",
+              "unload"
+            ],
+            "state": "loaded",
+            "content": {
+              "book": {
+                "accessible": true,
+                "affordance": [
+                  "pick",
+                  "drop"
+                ],
+                "state": "free"
+              }
+            }
+          }
+        },
+        "neighbor": [
+          "bathroom_1",
+          "bedroom_1",
+          "living_room"
+        ]
+      },
+      "kitchen": {
+        "items": {
+          "ram": {
+            "accessible": true,
+            "affordance": [
+              "pick",
+              "drop"
+            ],
+            "state": "free"
+          },
+          "knife": {
+            "accessible": true,
+            "affordance": [
+              "pick",
+              "drop",
+              "place_on"
+            ],
+            "state": "free"
+          },
+          "fork": {
+            "accessible": true,
+            "affordance": [
+              "pick",
+              "drop",
+              "place_on"
+            ],
+            "state": "free"
+          },
+          "spoon": {
+            "accessible": true,
+            "affordance": [
+              "pick",
+              "drop",
+              "place_on"
+            ],
+            "state": "free"
+          },
+          "microwave": {
+            "accessible": true,
+            "affordance": [
+              "open",
+              "close",
+              "turnon",
+              "turnoff"
+            ],
+            "state": "closed, off"
+          },
+          "oven": {
+            "accessible": true,
+            "affordance": [
+              "turnon",
+              "turnoff"
+            ],
+            "state": "closed, off"
+          },
+          "sink_3": {
+            "accessible": false,
+            "affordance": [],
+            "state": "free"
+          },
+          "fridge": {
+            "accessible": true,
+            "affordance": [
+              "open",
+              "close"
+            ],
+            "state": "closed, off"
+          },
+          "rubbish_bin": {
+            "accessible": true,
+            "affordance": [
+              "dispose"
+            ],
+            "state": "free"
+          }
+        },
+        "neighbor": [
+          "corridor_1"
+        ]
+      }
+    },
+    "agent": {
+      "position": "bedroom_3",
+      "state": "battery-full"
+    }
+  }
+}

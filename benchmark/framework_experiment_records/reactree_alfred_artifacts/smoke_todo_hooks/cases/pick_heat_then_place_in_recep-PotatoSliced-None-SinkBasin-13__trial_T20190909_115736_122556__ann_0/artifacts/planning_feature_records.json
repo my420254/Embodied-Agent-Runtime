@@ -1,0 +1,2749 @@
+[
+  {
+    "process_name": "sandbox_validation",
+    "enabled": true,
+    "status": "failed",
+    "config": {
+      "todo_step_adapter_path": "benchmark.reactree.alfred.framework.code.native_actions.alfred_native_step_to_skill_call",
+      "validator": "todo_schema"
+    },
+    "inputs": {
+      "todo_list": {
+        "count": 15,
+        "sample": [
+          {
+            "step": 1,
+            "action": "go to",
+            "target": "Fridge (1)"
+          },
+          {
+            "step": 2,
+            "action": "open",
+            "target": "Fridge (1)"
+          },
+          {
+            "step": 3,
+            "action": "pick up",
+            "target": "Potato (1)"
+          },
+          {
+            "step": 4,
+            "action": "go to",
+            "target": "CounterTop (1)"
+          },
+          {
+            "step": 5,
+            "action": "put down",
+            "target": "Potato (1)"
+          },
+          {
+            "step": 6,
+            "action": "slice",
+            "target": "Potato (1)"
+          },
+          {
+            "step": 7,
+            "action": "pick up",
+            "target": "Potato (1)"
+          },
+          {
+            "step": 8,
+            "action": "go to",
+            "target": "Pan (1)"
+          }
+        ],
+        "truncated": true
+      },
+      "initial_environment": {
+        "available": true,
+        "entity_count": 107,
+        "type_counts": {
+          "unknown": 43,
+          "receptacle": 64
+        },
+        "entities_sample": [
+          "Apple (1)",
+          "Apple (2)",
+          "Apple (3)",
+          "Bowl (1)",
+          "Bowl (2)",
+          "Bowl (3)",
+          "Bread (1)",
+          "Bread (2)",
+          "ButterKnife (1)",
+          "ButterKnife (2)",
+          "ButterKnife (3)",
+          "Cabinet (1)",
+          "Cabinet (10)",
+          "Cabinet (11)",
+          "Cabinet (12)",
+          "Cabinet (13)",
+          "Cabinet (14)",
+          "Cabinet (15)",
+          "Cabinet (16)",
+          "Cabinet (17)",
+          {
+            "_truncated": 20
+          }
+        ],
+        "entities_truncated": true,
+        "states_sample": {
+          "Apple (1)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "SinkBasin (1)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Apple (2)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "CounterTop (1)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Apple (3)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bowl (1)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "Cold",
+            "isHot": false,
+            "isCool": true,
+            "isCooked": false
+          },
+          "Fridge (1)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bowl (2)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Cabinet (22)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": true,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bowl (3)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Cabinet (17)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bread (1)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "CounterTop (3)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bread (2)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "ButterKnife (1)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "CounterTop (2)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": true,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "ButterKnife (2)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "ButterKnife (3)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Cabinet (1)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Cabinet (10)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          }
+        }
+      },
+      "initial_robot": {
+        "robot_location": "kitchen_anchor",
+        "robot_holding": "空",
+        "x_display": "71"
+      }
+    },
+    "outputs": {
+      "validated_steps": {
+        "count": 0,
+        "sample": [],
+        "truncated": false
+      },
+      "validated_todo_actions": {
+        "count": 6,
+        "sample": [
+          {
+            "step": 1,
+            "action": "go to",
+            "target": "Fridge (1)"
+          },
+          {
+            "step": 2,
+            "action": "open",
+            "target": "Fridge (1)"
+          },
+          {
+            "step": 3,
+            "action": "pick up",
+            "target": "Potato (1)"
+          },
+          {
+            "step": 4,
+            "action": "go to",
+            "target": "CounterTop (1)"
+          },
+          {
+            "step": 5,
+            "action": "put down",
+            "target": "Potato (1)"
+          },
+          {
+            "step": 6,
+            "action": "slice",
+            "target": "Potato (1)"
+          }
+        ],
+        "truncated": false
+      },
+      "validated_audit_steps": {
+        "count": 6,
+        "sample": [
+          {
+            "step": 1,
+            "action": "go to",
+            "target": "Fridge (1)",
+            "execution": {
+              "skill": "go to",
+              "parameters": {
+                "target": "Fridge (1)"
+              }
+            }
+          },
+          {
+            "step": 2,
+            "action": "open",
+            "target": "Fridge (1)",
+            "execution": {
+              "skill": "open",
+              "parameters": {
+                "target": "Fridge (1)"
+              }
+            }
+          },
+          {
+            "step": 3,
+            "action": "pick up",
+            "target": "Potato (1)",
+            "execution": {
+              "skill": "pick up",
+              "parameters": {
+                "target": "Potato (1)"
+              }
+            }
+          },
+          {
+            "step": 4,
+            "action": "go to",
+            "target": "CounterTop (1)",
+            "execution": {
+              "skill": "go to",
+              "parameters": {
+                "target": "CounterTop (1)"
+              }
+            }
+          },
+          {
+            "step": 5,
+            "action": "put down",
+            "target": "Potato (1)",
+            "execution": {
+              "skill": "put down",
+              "parameters": {
+                "target": "Potato (1)"
+              }
+            }
+          },
+          {
+            "step": 6,
+            "action": "slice",
+            "target": "Potato (1)",
+            "execution": {
+              "skill": "slice",
+              "parameters": {
+                "target": "Potato (1)"
+              }
+            }
+          }
+        ],
+        "truncated": false
+      },
+      "final_environment": {
+        "available": true,
+        "entity_count": 115,
+        "type_counts": {
+          "unknown": 51,
+          "receptacle": 64
+        },
+        "entities_sample": [
+          "Apple (1)",
+          "Apple (2)",
+          "Apple (3)",
+          "Bowl (1)",
+          "Bowl (2)",
+          "Bowl (3)",
+          "Bread (1)",
+          "Bread (2)",
+          "ButterKnife (1)",
+          "ButterKnife (2)",
+          "ButterKnife (3)",
+          "Cabinet (1)",
+          "Cabinet (10)",
+          "Cabinet (11)",
+          "Cabinet (12)",
+          "Cabinet (13)",
+          "Cabinet (14)",
+          "Cabinet (15)",
+          "Cabinet (16)",
+          "Cabinet (17)",
+          {
+            "_truncated": 20
+          }
+        ],
+        "entities_truncated": true,
+        "states_sample": {
+          "Apple (1)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "SinkBasin (1)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Apple (2)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "CounterTop (1)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Apple (3)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bowl (1)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "Cold",
+            "isHot": false,
+            "isCool": true,
+            "isCooked": false
+          },
+          "Fridge (1)": {
+            "isOpen": true,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bowl (2)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Cabinet (22)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": true,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bowl (3)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Cabinet (17)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bread (1)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "CounterTop (3)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bread (2)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "ButterKnife (1)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "CounterTop (2)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": true,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "ButterKnife (2)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "ButterKnife (3)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Cabinet (1)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Cabinet (10)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          }
+        }
+      },
+      "final_robot": {
+        "robot_location": "CounterTop (1)",
+        "robot_holding": "",
+        "x_display": "71",
+        "holding": ""
+      },
+      "debug_event_counts": {
+        "step_check": 7
+      },
+      "sandbox_rejections": [
+        {
+          "skill": "pick up",
+          "parameters": {
+            "target": "Potato (1)"
+          },
+          "todo_step": {
+            "step": 7,
+            "action": "pick up",
+            "target": "Potato (1)"
+          },
+          "issue_type": "unknown ALFRED instance 'Potato (1)'",
+          "fix": "use an exact instance from the current ALFRED environment facts"
+        }
+      ],
+      "planning_evaluator_failures": [],
+      "failed_action": {
+        "step": 7,
+        "action": "pick up",
+        "target": "Potato (1)",
+        "execution": {
+          "skill": "pick up",
+          "parameters": {
+            "target": "Potato (1)"
+          }
+        }
+      },
+      "failure_layer": "planning",
+      "failure_category": "sandbox_validation",
+      "error_feedback": "第 7 步物理拦截: unknown ALFRED instance 'Potato (1)'"
+    }
+  },
+  {
+    "process_name": "dependency_repair",
+    "enabled": false,
+    "status": "disabled",
+    "config": {
+      "repair_strategy": "retrac",
+      "max_backtrack_depth": 3,
+      "max_subtree_actions": 80
+    },
+    "inputs": {
+      "sandbox_failure_present": true,
+      "debug_event_counts": {}
+    },
+    "outputs": {
+      "sda_state": {},
+      "validated_steps": {
+        "count": 0,
+        "sample": [],
+        "truncated": false
+      },
+      "validated_todo_actions": {
+        "count": 6,
+        "sample": [
+          {
+            "step": 1,
+            "action": "go to",
+            "target": "Fridge (1)"
+          },
+          {
+            "step": 2,
+            "action": "open",
+            "target": "Fridge (1)"
+          },
+          {
+            "step": 3,
+            "action": "pick up",
+            "target": "Potato (1)"
+          },
+          {
+            "step": 4,
+            "action": "go to",
+            "target": "CounterTop (1)"
+          },
+          {
+            "step": 5,
+            "action": "put down",
+            "target": "Potato (1)"
+          },
+          {
+            "step": 6,
+            "action": "slice",
+            "target": "Potato (1)"
+          }
+        ],
+        "truncated": false
+      }
+    }
+  },
+  {
+    "process_name": "sandbox_validation",
+    "enabled": true,
+    "status": "passed",
+    "config": {
+      "todo_step_adapter_path": "benchmark.reactree.alfred.framework.code.native_actions.alfred_native_step_to_skill_call",
+      "validator": "todo_schema"
+    },
+    "inputs": {
+      "todo_list": {
+        "count": 18,
+        "sample": [
+          {
+            "step": 1,
+            "action": "go to",
+            "target": "Fridge (1)"
+          },
+          {
+            "step": 2,
+            "action": "open",
+            "target": "Fridge (1)"
+          },
+          {
+            "step": 3,
+            "action": "pick up",
+            "target": "Potato (1)"
+          },
+          {
+            "step": 4,
+            "action": "go to",
+            "target": "CounterTop (1)"
+          },
+          {
+            "step": 5,
+            "action": "put down",
+            "target": "Potato (1)"
+          },
+          {
+            "step": 6,
+            "action": "slice",
+            "target": "Potato (1)"
+          },
+          {
+            "step": 7,
+            "action": "pick up",
+            "target": "Potato (2)"
+          },
+          {
+            "step": 8,
+            "action": "go to",
+            "target": "Microwave (1)"
+          }
+        ],
+        "truncated": true
+      },
+      "initial_environment": {
+        "available": true,
+        "entity_count": 107,
+        "type_counts": {
+          "unknown": 43,
+          "receptacle": 64
+        },
+        "entities_sample": [
+          "Apple (1)",
+          "Apple (2)",
+          "Apple (3)",
+          "Bowl (1)",
+          "Bowl (2)",
+          "Bowl (3)",
+          "Bread (1)",
+          "Bread (2)",
+          "ButterKnife (1)",
+          "ButterKnife (2)",
+          "ButterKnife (3)",
+          "Cabinet (1)",
+          "Cabinet (10)",
+          "Cabinet (11)",
+          "Cabinet (12)",
+          "Cabinet (13)",
+          "Cabinet (14)",
+          "Cabinet (15)",
+          "Cabinet (16)",
+          "Cabinet (17)",
+          {
+            "_truncated": 20
+          }
+        ],
+        "entities_truncated": true,
+        "states_sample": {
+          "Apple (1)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "SinkBasin (1)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Apple (2)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "CounterTop (1)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Apple (3)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bowl (1)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "Cold",
+            "isHot": false,
+            "isCool": true,
+            "isCooked": false
+          },
+          "Fridge (1)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bowl (2)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Cabinet (22)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": true,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bowl (3)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Cabinet (17)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bread (1)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "CounterTop (3)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bread (2)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "ButterKnife (1)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "CounterTop (2)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": true,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "ButterKnife (2)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "ButterKnife (3)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Cabinet (1)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Cabinet (10)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          }
+        }
+      },
+      "initial_robot": {
+        "robot_location": "kitchen_anchor",
+        "robot_holding": "空",
+        "x_display": "71"
+      }
+    },
+    "outputs": {
+      "validated_steps": {
+        "count": 0,
+        "sample": [],
+        "truncated": false
+      },
+      "validated_todo_actions": {
+        "count": 18,
+        "sample": [
+          {
+            "step": 1,
+            "action": "go to",
+            "target": "Fridge (1)"
+          },
+          {
+            "step": 2,
+            "action": "open",
+            "target": "Fridge (1)"
+          },
+          {
+            "step": 3,
+            "action": "pick up",
+            "target": "Potato (1)"
+          },
+          {
+            "step": 4,
+            "action": "go to",
+            "target": "CounterTop (1)"
+          },
+          {
+            "step": 5,
+            "action": "put down",
+            "target": "Potato (1)"
+          },
+          {
+            "step": 6,
+            "action": "slice",
+            "target": "Potato (1)"
+          },
+          {
+            "step": 7,
+            "action": "pick up",
+            "target": "Potato (2)"
+          },
+          {
+            "step": 8,
+            "action": "go to",
+            "target": "Microwave (1)"
+          }
+        ],
+        "truncated": true
+      },
+      "validated_audit_steps": {
+        "count": 18,
+        "sample": [
+          {
+            "step": 1,
+            "action": "go to",
+            "target": "Fridge (1)",
+            "execution": {
+              "skill": "go to",
+              "parameters": {
+                "target": "Fridge (1)"
+              }
+            }
+          },
+          {
+            "step": 2,
+            "action": "open",
+            "target": "Fridge (1)",
+            "execution": {
+              "skill": "open",
+              "parameters": {
+                "target": "Fridge (1)"
+              }
+            }
+          },
+          {
+            "step": 3,
+            "action": "pick up",
+            "target": "Potato (1)",
+            "execution": {
+              "skill": "pick up",
+              "parameters": {
+                "target": "Potato (1)"
+              }
+            }
+          },
+          {
+            "step": 4,
+            "action": "go to",
+            "target": "CounterTop (1)",
+            "execution": {
+              "skill": "go to",
+              "parameters": {
+                "target": "CounterTop (1)"
+              }
+            }
+          },
+          {
+            "step": 5,
+            "action": "put down",
+            "target": "Potato (1)",
+            "execution": {
+              "skill": "put down",
+              "parameters": {
+                "target": "Potato (1)"
+              }
+            }
+          },
+          {
+            "step": 6,
+            "action": "slice",
+            "target": "Potato (1)",
+            "execution": {
+              "skill": "slice",
+              "parameters": {
+                "target": "Potato (1)"
+              }
+            }
+          },
+          {
+            "step": 7,
+            "action": "pick up",
+            "target": "Potato (2)",
+            "execution": {
+              "skill": "pick up",
+              "parameters": {
+                "target": "Potato (2)"
+              }
+            }
+          },
+          {
+            "step": 8,
+            "action": "go to",
+            "target": "Microwave (1)",
+            "execution": {
+              "skill": "go to",
+              "parameters": {
+                "target": "Microwave (1)"
+              }
+            }
+          }
+        ],
+        "truncated": true
+      },
+      "final_environment": {
+        "available": true,
+        "entity_count": 115,
+        "type_counts": {
+          "unknown": 51,
+          "receptacle": 64
+        },
+        "entities_sample": [
+          "Apple (1)",
+          "Apple (2)",
+          "Apple (3)",
+          "Bowl (1)",
+          "Bowl (2)",
+          "Bowl (3)",
+          "Bread (1)",
+          "Bread (2)",
+          "ButterKnife (1)",
+          "ButterKnife (2)",
+          "ButterKnife (3)",
+          "Cabinet (1)",
+          "Cabinet (10)",
+          "Cabinet (11)",
+          "Cabinet (12)",
+          "Cabinet (13)",
+          "Cabinet (14)",
+          "Cabinet (15)",
+          "Cabinet (16)",
+          "Cabinet (17)",
+          {
+            "_truncated": 20
+          }
+        ],
+        "entities_truncated": true,
+        "states_sample": {
+          "Apple (1)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "SinkBasin (1)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Apple (2)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "CounterTop (1)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Apple (3)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bowl (1)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "Cold",
+            "isHot": false,
+            "isCool": true,
+            "isCooked": false
+          },
+          "Fridge (1)": {
+            "isOpen": true,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bowl (2)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Cabinet (22)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": true,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bowl (3)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Cabinet (17)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bread (1)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "CounterTop (3)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bread (2)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "ButterKnife (1)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "CounterTop (2)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": true,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "ButterKnife (2)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "ButterKnife (3)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Cabinet (1)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Cabinet (10)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          }
+        }
+      },
+      "final_robot": {
+        "robot_location": "SinkBasin (1)",
+        "robot_holding": "",
+        "x_display": "71",
+        "holding": ""
+      },
+      "debug_event_counts": {
+        "step_check": 18
+      },
+      "sandbox_rejections": [],
+      "planning_evaluator_failures": [],
+      "failed_action": {},
+      "failure_layer": "",
+      "failure_category": "",
+      "error_feedback": ""
+    }
+  },
+  {
+    "process_name": "dependency_repair",
+    "enabled": false,
+    "status": "disabled",
+    "config": {
+      "repair_strategy": "retrac",
+      "max_backtrack_depth": 3,
+      "max_subtree_actions": 80
+    },
+    "inputs": {
+      "sandbox_failure_present": false,
+      "debug_event_counts": {}
+    },
+    "outputs": {
+      "sda_state": {},
+      "validated_steps": {
+        "count": 0,
+        "sample": [],
+        "truncated": false
+      },
+      "validated_todo_actions": {
+        "count": 18,
+        "sample": [
+          {
+            "step": 1,
+            "action": "go to",
+            "target": "Fridge (1)"
+          },
+          {
+            "step": 2,
+            "action": "open",
+            "target": "Fridge (1)"
+          },
+          {
+            "step": 3,
+            "action": "pick up",
+            "target": "Potato (1)"
+          },
+          {
+            "step": 4,
+            "action": "go to",
+            "target": "CounterTop (1)"
+          },
+          {
+            "step": 5,
+            "action": "put down",
+            "target": "Potato (1)"
+          },
+          {
+            "step": 6,
+            "action": "slice",
+            "target": "Potato (1)"
+          },
+          {
+            "step": 7,
+            "action": "pick up",
+            "target": "Potato (2)"
+          },
+          {
+            "step": 8,
+            "action": "go to",
+            "target": "Microwave (1)"
+          }
+        ],
+        "truncated": true
+      }
+    }
+  },
+  {
+    "process_name": "final_state_audit",
+    "enabled": true,
+    "status": "passed",
+    "config": {
+      "state_diff_audit": true,
+      "auditor": "framework.planning.state_diff_audit_llm",
+      "benchmark_comparer": "benchmark.reactree.alfred.framework.code.final_state"
+    },
+    "inputs": {
+      "understanding_goal": {
+        "intent": "Place a cooked potato slice in the sink",
+        "required_item_names": {
+          "targets": {
+            "primary": [
+              "Potato (1)"
+            ],
+            "alternatives": []
+          },
+          "tools": {
+            "primary": [
+              "Pan (1)"
+            ],
+            "alternatives": []
+          },
+          "receptacles": {
+            "primary": [
+              "SinkBasin (1)"
+            ],
+            "alternatives": []
+          }
+        },
+        "quantity_constraints": [],
+        "goal_state": {
+          "entities": {},
+          "robot": {}
+        },
+        "desired_state": {},
+        "target_state": {},
+        "final_state": {
+          "Potato (1)": {
+            "location": "SinkBasin (1)",
+            "isCooked": true
+          }
+        }
+      },
+      "has_external_goal": true,
+      "external_goal_state": {
+        "entities": {},
+        "robot": {}
+      },
+      "simulated_steps": {
+        "count": 18,
+        "sample": [
+          {
+            "step": 1,
+            "action": "go to",
+            "target": "Fridge (1)"
+          },
+          {
+            "step": 2,
+            "action": "open",
+            "target": "Fridge (1)"
+          },
+          {
+            "step": 3,
+            "action": "pick up",
+            "target": "Potato (1)"
+          },
+          {
+            "step": 4,
+            "action": "go to",
+            "target": "CounterTop (1)"
+          },
+          {
+            "step": 5,
+            "action": "put down",
+            "target": "Potato (1)"
+          },
+          {
+            "step": 6,
+            "action": "slice",
+            "target": "Potato (1)"
+          },
+          {
+            "step": 7,
+            "action": "pick up",
+            "target": "Potato (2)"
+          },
+          {
+            "step": 8,
+            "action": "go to",
+            "target": "Microwave (1)"
+          }
+        ],
+        "truncated": true
+      },
+      "initial_environment": {
+        "available": true,
+        "entity_count": 107,
+        "type_counts": {
+          "unknown": 43,
+          "receptacle": 64
+        },
+        "entities_sample": [
+          "Apple (1)",
+          "Apple (2)",
+          "Apple (3)",
+          "Bowl (1)",
+          "Bowl (2)",
+          "Bowl (3)",
+          "Bread (1)",
+          "Bread (2)",
+          "ButterKnife (1)",
+          "ButterKnife (2)",
+          "ButterKnife (3)",
+          "Cabinet (1)",
+          "Cabinet (10)",
+          "Cabinet (11)",
+          "Cabinet (12)",
+          "Cabinet (13)",
+          "Cabinet (14)",
+          "Cabinet (15)",
+          "Cabinet (16)",
+          "Cabinet (17)",
+          {
+            "_truncated": 20
+          }
+        ],
+        "entities_truncated": true,
+        "states_sample": {
+          "Apple (1)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "SinkBasin (1)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Apple (2)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "CounterTop (1)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Apple (3)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bowl (1)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "Cold",
+            "isHot": false,
+            "isCool": true,
+            "isCooked": false
+          },
+          "Fridge (1)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bowl (2)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Cabinet (22)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": true,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bowl (3)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Cabinet (17)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bread (1)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "CounterTop (3)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bread (2)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "ButterKnife (1)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "CounterTop (2)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": true,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "ButterKnife (2)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "ButterKnife (3)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Cabinet (1)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Cabinet (10)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          }
+        }
+      },
+      "initial_robot": {
+        "robot_location": "kitchen_anchor",
+        "robot_holding": "空",
+        "x_display": "71"
+      },
+      "final_environment": {
+        "available": true,
+        "entity_count": 115,
+        "type_counts": {
+          "unknown": 51,
+          "receptacle": 64
+        },
+        "entities_sample": [
+          "Apple (1)",
+          "Apple (2)",
+          "Apple (3)",
+          "Bowl (1)",
+          "Bowl (2)",
+          "Bowl (3)",
+          "Bread (1)",
+          "Bread (2)",
+          "ButterKnife (1)",
+          "ButterKnife (2)",
+          "ButterKnife (3)",
+          "Cabinet (1)",
+          "Cabinet (10)",
+          "Cabinet (11)",
+          "Cabinet (12)",
+          "Cabinet (13)",
+          "Cabinet (14)",
+          "Cabinet (15)",
+          "Cabinet (16)",
+          "Cabinet (17)",
+          {
+            "_truncated": 20
+          }
+        ],
+        "entities_truncated": true,
+        "states_sample": {
+          "Apple (1)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "SinkBasin (1)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Apple (2)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "CounterTop (1)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Apple (3)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bowl (1)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "Cold",
+            "isHot": false,
+            "isCool": true,
+            "isCooked": false
+          },
+          "Fridge (1)": {
+            "isOpen": true,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bowl (2)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Cabinet (22)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": true,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bowl (3)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Cabinet (17)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bread (1)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "CounterTop (3)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Bread (2)": {
+            "isSliced": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "ButterKnife (1)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "CounterTop (2)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": true,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "ButterKnife (2)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "ButterKnife (3)": {
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Cabinet (1)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          },
+          "Cabinet (10)": {
+            "isOpen": false,
+            "isDirty": false,
+            "isClean": true,
+            "visible": false,
+            "temperature": "RoomTemp",
+            "isHot": false,
+            "isCool": false,
+            "isCooked": false
+          }
+        }
+      },
+      "final_robot": {
+        "robot_location": "SinkBasin (1)",
+        "robot_holding": "",
+        "x_display": "71",
+        "holding": ""
+      }
+    },
+    "outputs": {
+      "state_diff": {
+        "available": true,
+        "entity_count_compared": 116,
+        "changed_entity_count": 12,
+        "changed_entities_sample": [
+          "Cup (1)",
+          "Fridge (1)",
+          "Potato (1)",
+          "Potato (10)",
+          "Potato (2)",
+          "Potato (3)",
+          "Potato (4)",
+          "Potato (5)",
+          "Potato (6)",
+          "Potato (7)",
+          "Potato (8)",
+          "Potato (9)"
+        ],
+        "changed_entities_truncated": false,
+        "robot_changed": true
+      },
+      "audit_passed": true,
+      "issue": "",
+      "repair_mode": "continue_from_current",
+      "benchmark_compare": {
+        "benchmark": "ReAcTree-ALFRED",
+        "status": "prepared_for_framework_llm_judge",
+        "environment_format": "ALFRED AI2THOR initial scene cache 转成 benchmark 本地对象实例环境",
+        "action_format": "ALFRED/ReAcTree 原生动作 JSON 对象：{action, target}",
+        "official_evaluator": "ReAcTree ALFRED 官方 AI2THOR evaluator",
+        "used_fields": {
+          "task_context": [
+            "dataset",
+            "environment_source",
+            "initial_scene_cache_path",
+            "instruction",
+            "repeat_idx",
+            "task",
+            "task_source"
+          ],
+          "evaluation_context": [],
+          "external_goal": [
+            "external_goal_state",
+            "has_external_goal",
+            "structured_final_state",
+            "structured_goal_state"
+          ],
+          "state_diff": [
+            "entities",
+            "robot"
+          ]
+        },
+        "benchmark_goal": {
+          "task_context": {
+            "dataset": "reactree_alfred",
+            "task": "pick_heat_then_place_in_recep-PotatoSliced-None-SinkBasin-13/trial_T20190909_115736_122556",
+            "repeat_idx": 0,
+            "instruction": "Place a cooked potato slice in the sink",
+            "task_source": "alfred_pp_annotation_json",
+            "environment_source": "alfred_official_scene_prepare_cache",
+            "initial_scene_cache_path": "/data/zmy/OurAgent-he1/benchmark/datasets/extracted/reactree/alfred/initial_envs/pick_heat_then_place_in_recep-PotatoSliced-None-SinkBasin-13__trial_T20190909_115736_122556__ann_0.json"
+          },
+          "evaluation_context": {},
+          "goal_projection": {
+            "instruction": "Place a cooked potato slice in the sink",
+            "task_signature": {
+              "task_type": "trial_T20190909_115736_122556",
+              "target_label": "",
+              "movable_label": "",
+              "receptacle_label": ""
+            }
+          },
+          "external_goal": {
+            "has_external_goal": true,
+            "external_goal_state": {
+              "entities": {},
+              "robot": {}
+            },
+            "external_goal_text": "",
+            "structured_goal_state": {
+              "entities": {},
+              "robot": {}
+            },
+            "structured_final_state": {
+              "Potato (1)": {
+                "location": "SinkBasin (1)",
+                "isCooked": true
+              }
+            }
+          }
+        },
+        "understanding_final_state": {
+          "Potato (1)": {
+            "location": "SinkBasin (1)",
+            "isCooked": true
+          }
+        },
+        "state_diff_summary": {
+          "entity_count_compared": 116,
+          "changed_entity_count": 12,
+          "changed_entities": [
+            "Cup (1)",
+            "Fridge (1)",
+            "Potato (1)",
+            "Potato (10)",
+            "Potato (2)",
+            "Potato (3)",
+            "Potato (4)",
+            "Potato (5)",
+            "Potato (6)",
+            "Potato (7)",
+            "Potato (8)",
+            "Potato (9)"
+          ],
+          "changed_entities_truncated": false,
+          "robot_changed": true,
+          "robot_change": {
+            "changed": true,
+            "before": {
+              "robot_location": "kitchen_anchor",
+              "robot_holding": "空",
+              "x_display": "71"
+            },
+            "after": {
+              "robot_location": "SinkBasin (1)",
+              "robot_holding": "",
+              "x_display": "71",
+              "holding": ""
+            }
+          }
+        },
+        "initial_environment_summary": {
+          "available": true,
+          "entity_count": 107,
+          "type_counts": {
+            "unknown": 43,
+            "receptacle": 64
+          },
+          "states_sample": {
+            "Apple (1)": {
+              "isSliced": false,
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "SinkBasin (1)": {
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "Apple (2)": {
+              "isSliced": false,
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "CounterTop (1)": {
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "Apple (3)": {
+              "isSliced": false,
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "Bowl (1)": {
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "Cold",
+              "isHot": false,
+              "isCool": true,
+              "isCooked": false
+            },
+            "Fridge (1)": {
+              "isOpen": false,
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "Bowl (2)": {
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "Cabinet (22)": {
+              "isOpen": false,
+              "isDirty": false,
+              "isClean": true,
+              "visible": true,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "Bowl (3)": {
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "Cabinet (17)": {
+              "isOpen": false,
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "Bread (1)": {
+              "isSliced": false,
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "CounterTop (3)": {
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "Bread (2)": {
+              "isSliced": false,
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "ButterKnife (1)": {
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "CounterTop (2)": {
+              "isDirty": false,
+              "isClean": true,
+              "visible": true,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "ButterKnife (2)": {
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "ButterKnife (3)": {
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "Cabinet (1)": {
+              "isOpen": false,
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "Cabinet (10)": {
+              "isOpen": false,
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            }
+          },
+          "relations_sample": {
+            "Apple (1)": {
+              "direct_relation": "inside",
+              "direct_parent": "SinkBasin (1)"
+            },
+            "kitchen": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "kitchen_anchor": {
+              "direct_relation": "inside",
+              "direct_parent": "kitchen"
+            },
+            "SinkBasin (1)": {
+              "direct_relation": "inside",
+              "direct_parent": "kitchen_anchor"
+            },
+            "Apple (2)": {
+              "direct_relation": "inside",
+              "direct_parent": "CounterTop (1)"
+            },
+            "CounterTop (1)": {
+              "direct_relation": "inside",
+              "direct_parent": "kitchen_anchor"
+            },
+            "Apple (3)": {
+              "direct_relation": "inside",
+              "direct_parent": "CounterTop (1)"
+            },
+            "Bowl (1)": {
+              "direct_relation": "inside",
+              "direct_parent": "Fridge (1)"
+            },
+            "Fridge (1)": {
+              "direct_relation": "inside",
+              "direct_parent": "kitchen_anchor"
+            },
+            "Bowl (2)": {
+              "direct_relation": "inside",
+              "direct_parent": "Cabinet (22)"
+            },
+            "Cabinet (22)": {
+              "direct_relation": "inside",
+              "direct_parent": "kitchen_anchor"
+            },
+            "Bowl (3)": {
+              "direct_relation": "inside",
+              "direct_parent": "Cabinet (17)"
+            },
+            "Cabinet (17)": {
+              "direct_relation": "inside",
+              "direct_parent": "kitchen_anchor"
+            },
+            "Bread (1)": {
+              "direct_relation": "inside",
+              "direct_parent": "CounterTop (3)"
+            },
+            "CounterTop (3)": {
+              "direct_relation": "inside",
+              "direct_parent": "kitchen_anchor"
+            },
+            "Bread (2)": {
+              "direct_relation": "inside",
+              "direct_parent": "CounterTop (3)"
+            },
+            "ButterKnife (1)": {
+              "direct_relation": "inside",
+              "direct_parent": "CounterTop (2)"
+            },
+            "CounterTop (2)": {
+              "direct_relation": "inside",
+              "direct_parent": "kitchen_anchor"
+            },
+            "ButterKnife (2)": {
+              "direct_relation": "inside",
+              "direct_parent": "CounterTop (2)"
+            },
+            "ButterKnife (3)": {
+              "direct_relation": "inside",
+              "direct_parent": "CounterTop (1)"
+            }
+          }
+        },
+        "final_environment_summary": {
+          "available": true,
+          "entity_count": 115,
+          "type_counts": {
+            "unknown": 51,
+            "receptacle": 64
+          },
+          "states_sample": {
+            "Apple (1)": {
+              "isSliced": false,
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "SinkBasin (1)": {
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "Apple (2)": {
+              "isSliced": false,
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "CounterTop (1)": {
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "Apple (3)": {
+              "isSliced": false,
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "Bowl (1)": {
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "Cold",
+              "isHot": false,
+              "isCool": true,
+              "isCooked": false
+            },
+            "Fridge (1)": {
+              "isOpen": true,
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "Bowl (2)": {
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "Cabinet (22)": {
+              "isOpen": false,
+              "isDirty": false,
+              "isClean": true,
+              "visible": true,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "Bowl (3)": {
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "Cabinet (17)": {
+              "isOpen": false,
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "Bread (1)": {
+              "isSliced": false,
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "CounterTop (3)": {
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "Bread (2)": {
+              "isSliced": false,
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "ButterKnife (1)": {
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "CounterTop (2)": {
+              "isDirty": false,
+              "isClean": true,
+              "visible": true,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "ButterKnife (2)": {
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "ButterKnife (3)": {
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "Cabinet (1)": {
+              "isOpen": false,
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            },
+            "Cabinet (10)": {
+              "isOpen": false,
+              "isDirty": false,
+              "isClean": true,
+              "visible": false,
+              "temperature": "RoomTemp",
+              "isHot": false,
+              "isCool": false,
+              "isCooked": false
+            }
+          },
+          "relations_sample": {
+            "Apple (1)": {
+              "direct_relation": "inside",
+              "direct_parent": "SinkBasin (1)"
+            },
+            "kitchen": {
+              "direct_relation": "",
+              "direct_parent": "未知环境"
+            },
+            "kitchen_anchor": {
+              "direct_relation": "inside",
+              "direct_parent": "kitchen"
+            },
+            "SinkBasin (1)": {
+              "direct_relation": "inside",
+              "direct_parent": "kitchen_anchor"
+            },
+            "Apple (2)": {
+              "direct_relation": "inside",
+              "direct_parent": "CounterTop (1)"
+            },
+            "CounterTop (1)": {
+              "direct_relation": "inside",
+              "direct_parent": "kitchen_anchor"
+            },
+            "Apple (3)": {
+              "direct_relation": "inside",
+              "direct_parent": "CounterTop (1)"
+            },
+            "Bowl (1)": {
+              "direct_relation": "inside",
+              "direct_parent": "Fridge (1)"
+            },
+            "Fridge (1)": {
+              "direct_relation": "inside",
+              "direct_parent": "kitchen_anchor"
+            },
+            "Bowl (2)": {
+              "direct_relation": "inside",
+              "direct_parent": "Cabinet (22)"
+            },
+            "Cabinet (22)": {
+              "direct_relation": "inside",
+              "direct_parent": "kitchen_anchor"
+            },
+            "Bowl (3)": {
+              "direct_relation": "inside",
+              "direct_parent": "Cabinet (17)"
+            },
+            "Cabinet (17)": {
+              "direct_relation": "inside",
+              "direct_parent": "kitchen_anchor"
+            },
+            "Bread (1)": {
+              "direct_relation": "inside",
+              "direct_parent": "CounterTop (3)"
+            },
+            "CounterTop (3)": {
+              "direct_relation": "inside",
+              "direct_parent": "kitchen_anchor"
+            },
+            "Bread (2)": {
+              "direct_relation": "inside",
+              "direct_parent": "CounterTop (3)"
+            },
+            "ButterKnife (1)": {
+              "direct_relation": "inside",
+              "direct_parent": "CounterTop (2)"
+            },
+            "CounterTop (2)": {
+              "direct_relation": "inside",
+              "direct_parent": "kitchen_anchor"
+            },
+            "ButterKnife (2)": {
+              "direct_relation": "inside",
+              "direct_parent": "CounterTop (2)"
+            },
+            "ButterKnife (3)": {
+              "direct_relation": "inside",
+              "direct_parent": "CounterTop (1)"
+            }
+          }
+        },
+        "initial_robot": {
+          "robot_location": "kitchen_anchor",
+          "robot_holding": "空",
+          "x_display": "71"
+        },
+        "final_robot": {
+          "robot_location": "SinkBasin (1)",
+          "robot_holding": "",
+          "x_display": "71",
+          "holding": ""
+        },
+        "fairness_notes": [
+          "ALFRED comparer 使用 task/instruction 的公开任务签名和 sandbox state，不读取 expert trajectory。"
+        ],
+        "judge_contract": "公共 final-state audit 只能依据本 benchmark-local goal packet、understanding_final_state、sandbox 前后环境差异和任务原文判断完成度；不得转换到其他 benchmark 的动作或环境格式。",
+        "enabled": true,
+        "comparer_module": "benchmark.reactree.alfred.framework.code.final_state"
+      }
+    }
+  }
+]

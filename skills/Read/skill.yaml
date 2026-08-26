@@ -1,0 +1,5 @@
+name: Read
+description: 阅读一个可读对象，例如书、屏幕或文档。
+prompt: prompt.md
+handler: skills.Read.handler:ReadSkill
+execution_domain: 感知/信息交互

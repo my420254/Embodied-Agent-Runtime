@@ -1,0 +1,201 @@
+{
+  "dataset": "behavior",
+  "case_id": "putting_away_Christmas_decorations_0_Wainscott_0_int_0_2021-06-06_17-03-25",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "putting_away_Christmas_decorations",
+    "task_id": 0,
+    "scene_id": "Wainscott_0_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "putting away Christmas decorations",
+    "task": "putting_away_Christmas_decorations",
+    "task_id": 0,
+    "scene_id": "Wainscott_0_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 12,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bottom_cabinet_79",
+      "bow_0",
+      "bow_1",
+      "bow_2",
+      "ribbon_0",
+      "ribbon_1",
+      "ribbon_2",
+      "room_floor_living_room_0",
+      "wreath_0",
+      "wreath_1"
+    ],
+    "name_mapping": {
+      "wreath.n.01_1": {
+        "name": "wreath_0",
+        "category": "wreath.n.01"
+      },
+      "wreath.n.01_2": {
+        "name": "wreath_1",
+        "category": "wreath.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "bow.n.08_1": {
+        "name": "bow_0",
+        "category": "bow.n.08"
+      },
+      "bow.n.08_2": {
+        "name": "bow_1",
+        "category": "bow.n.08"
+      },
+      "bow.n.08_3": {
+        "name": "bow_2",
+        "category": "bow.n.08"
+      },
+      "ribbon.n.01_1": {
+        "name": "ribbon_0",
+        "category": "ribbon.n.01"
+      },
+      "ribbon.n.01_2": {
+        "name": "ribbon_1",
+        "category": "ribbon.n.01"
+      },
+      "ribbon.n.01_3": {
+        "name": "ribbon_2",
+        "category": "ribbon.n.01"
+      },
+      "cabinet.n.01_1": {
+        "name": "bottom_cabinet_79",
+        "category": "cabinet.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bottom_cabinet_79": {
+                  "states": {
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "room_floor_living_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "bow_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "bow_1": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "bow_2": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "ribbon_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "ribbon_1": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "ribbon_2": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "wreath_0": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    },
+                    "wreath_1": {
+                      "states": {},
+                      "direct_relation": "onfloor"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_living_room_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_living_room_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bottom_cabinet_79": {
+        "name": "bottom_cabinet_79",
+        "category": "cabinet.n.01"
+      },
+      "bow_0": {
+        "name": "bow_0",
+        "category": "bow.n.08"
+      },
+      "bow_1": {
+        "name": "bow_1",
+        "category": "bow.n.08"
+      },
+      "bow_2": {
+        "name": "bow_2",
+        "category": "bow.n.08"
+      },
+      "ribbon_0": {
+        "name": "ribbon_0",
+        "category": "ribbon.n.01"
+      },
+      "ribbon_1": {
+        "name": "ribbon_1",
+        "category": "ribbon.n.01"
+      },
+      "ribbon_2": {
+        "name": "ribbon_2",
+        "category": "ribbon.n.01"
+      },
+      "room_floor_living_room_0": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "wreath_0": {
+        "name": "wreath_0",
+        "category": "wreath.n.01"
+      },
+      "wreath_1": {
+        "name": "wreath_1",
+        "category": "wreath.n.01"
+      }
+    }
+  }
+}

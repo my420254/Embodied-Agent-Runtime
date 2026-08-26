@@ -1,0 +1,18 @@
+{
+  "dataset": "reactree",
+  "benchmark_module": "benchmark.reactree.wah",
+  "task_id": 0,
+  "task_name": "prepare_snack",
+  "instruction_idx": 0,
+  "instruction": "Put one cupcake and one apple on the coffee table",
+  "env_id": 3,
+  "init_room": "bedroom",
+  "init_graph_cache_path": "/data/zmy/OurAgent-he1/benchmark/datasets/extracted/reactree/wah/initial_envs/0.json",
+  "task_source": "reactree_wah_testset",
+  "environment_source": "reactree_case_runtime_scene",
+  "benchmark_settings_file": "/data/zmy/OurAgent-he1/benchmark/reactree/wah/framework/code/config/settings.json",
+  "task_goal": {
+    "on_cupcake_coffeetable": 1,
+    "on_apple_coffeetable": 1
+  }
+}

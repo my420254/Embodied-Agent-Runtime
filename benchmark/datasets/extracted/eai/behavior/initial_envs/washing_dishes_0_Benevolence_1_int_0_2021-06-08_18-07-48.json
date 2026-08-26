@@ -1,0 +1,199 @@
+{
+  "dataset": "behavior",
+  "case_id": "washing_dishes_0_Benevolence_1_int_0_2021-06-08_18-07-48",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "washing_dishes",
+    "task_id": 0,
+    "scene_id": "Benevolence_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "washing dishes",
+    "task": "washing_dishes",
+    "task_id": 0,
+    "scene_id": "Benevolence_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 10,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "bowl_62",
+      "countertop_18",
+      "cup_61",
+      "plate_59",
+      "plate_60",
+      "room_floor_kitchen_0",
+      "scrub_brush_63",
+      "sink_19"
+    ],
+    "name_mapping": {
+      "plate.n.04_1": {
+        "name": "plate_59",
+        "category": "plate.n.04"
+      },
+      "plate.n.04_2": {
+        "name": "plate_60",
+        "category": "plate.n.04"
+      },
+      "cup.n.01_1": {
+        "name": "cup_61",
+        "category": "cup.n.01"
+      },
+      "sink.n.01_1": {
+        "name": "sink_19",
+        "category": "sink.n.01"
+      },
+      "bowl.n.01_1": {
+        "name": "bowl_62",
+        "category": "bowl.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "countertop.n.01_1": {
+        "name": "countertop_18",
+        "category": "countertop.n.01"
+      },
+      "scrub_brush.n.01_1": {
+        "name": "scrub_brush_63",
+        "category": "scrub_brush.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "countertop_18": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "bowl_62": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "cup_61": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "direct_relation": "ontop"
+                    },
+                    "plate_59": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    },
+                    "plate_60": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isStained": true
+                      },
+                      "type": "receptacle",
+                      "contains": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "sink_19": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "scrub_brush_63": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bowl_62": {
+        "name": "bowl_62",
+        "category": "bowl.n.01"
+      },
+      "countertop_18": {
+        "name": "countertop_18",
+        "category": "countertop.n.01"
+      },
+      "cup_61": {
+        "name": "cup_61",
+        "category": "cup.n.01"
+      },
+      "plate_59": {
+        "name": "plate_59",
+        "category": "plate.n.04"
+      },
+      "plate_60": {
+        "name": "plate_60",
+        "category": "plate.n.04"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "scrub_brush_63": {
+        "name": "scrub_brush_63",
+        "category": "scrub_brush.n.01"
+      },
+      "sink_19": {
+        "name": "sink_19",
+        "category": "sink.n.01"
+      }
+    }
+  }
+}

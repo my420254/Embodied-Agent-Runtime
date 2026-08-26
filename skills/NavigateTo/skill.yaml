@@ -1,0 +1,6 @@
+name: NavigateTo
+description: 移动机器人到指定的具体的物理设施或容器前方。
+prompt: prompt.md
+handler: skills.NavigateTo.handler:NavigateToSkill
+execution_domain: 底盘控制
+planner_location_param: target_location

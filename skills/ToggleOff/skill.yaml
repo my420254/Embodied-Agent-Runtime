@@ -1,0 +1,11 @@
+name: ToggleOff
+description: 触发指定电器设备开关，使其断电停止工作。
+prompt: prompt.md
+handler: skills.ToggleOff.handler:ToggleOffSkill
+execution_domain: IoT 硬件交互
+planner_target_param: target_device
+planner_location_param: target_device
+planner_requires_empty_hand: true
+planner_state_key: isToggled
+planner_state_value: false
+planner_reversible_state: true

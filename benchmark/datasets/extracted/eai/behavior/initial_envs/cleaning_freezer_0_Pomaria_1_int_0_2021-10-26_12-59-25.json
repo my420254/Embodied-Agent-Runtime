@@ -1,0 +1,246 @@
+{
+  "dataset": "behavior",
+  "case_id": "cleaning_freezer_0_Pomaria_1_int_0_2021-10-26_12-59-25",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "cleaning_freezer",
+    "task_id": 0,
+    "scene_id": "Pomaria_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "cleaning freezer",
+    "task": "cleaning_freezer",
+    "task_id": 0,
+    "scene_id": "Pomaria_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 15,
+    "room_count": 1,
+    "entity_catalog": [
+      "behavior_room",
+      "behavior_room_anchor",
+      "breakfast_table_6",
+      "burner_64",
+      "countertop_31",
+      "door_70",
+      "fridge_20",
+      "hand_towel_0",
+      "pop_0",
+      "pop_1",
+      "pop_2",
+      "room_floor_kitchen_0",
+      "sink_37",
+      "straight_chair_7",
+      "toothpaste_0"
+    ],
+    "name_mapping": {
+      "electric_refrigerator.n.01_1": {
+        "name": "fridge_20",
+        "category": "electric_refrigerator.n.01"
+      },
+      "food.n.01_1": {
+        "name": "pop_0",
+        "category": "food.n.01"
+      },
+      "food.n.01_2": {
+        "name": "pop_1",
+        "category": "food.n.01"
+      },
+      "food.n.01_3": {
+        "name": "pop_2",
+        "category": "food.n.01"
+      },
+      "cleansing_agent.n.01_1": {
+        "name": "toothpaste_0",
+        "category": "cleansing_agent.n.01"
+      },
+      "table.n.02_1": {
+        "name": "breakfast_table_6",
+        "category": "table.n.02"
+      },
+      "towel.n.01_1": {
+        "name": "hand_towel_0",
+        "category": "towel.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "sink.n.01_1": {
+        "name": "sink_37",
+        "category": "sink.n.01"
+      },
+      "countertop.n.01_1": {
+        "name": "countertop_31",
+        "category": "countertop.n.01"
+      },
+      "stove.n.01_1": {
+        "name": "burner_64",
+        "category": "stove.n.01"
+      },
+      "door.n.01_1": {
+        "name": "door_70",
+        "category": "door.n.01"
+      },
+      "chair.n.01_1": {
+        "name": "straight_chair_7",
+        "category": "chair.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "breakfast_table_6": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {
+                    "hand_towel_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    },
+                    "toothpaste_0": {
+                      "states": {},
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "burner_64": {
+                  "states": {}
+                },
+                "countertop_31": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "door_70": {
+                  "states": {}
+                },
+                "fridge_20": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isStained": true,
+                    "isOpen": false
+                  },
+                  "type": "receptacle",
+                  "contains": {
+                    "pop_0": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "pop_1": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    },
+                    "pop_2": {
+                      "states": {},
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "room_floor_kitchen_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "sink_37": {
+                  "states": {
+                    "isFilledWithLiquid": true
+                  },
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "straight_chair_7": {
+                  "states": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_kitchen_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_kitchen_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "breakfast_table_6": {
+        "name": "breakfast_table_6",
+        "category": "table.n.02"
+      },
+      "burner_64": {
+        "name": "burner_64",
+        "category": "stove.n.01"
+      },
+      "countertop_31": {
+        "name": "countertop_31",
+        "category": "countertop.n.01"
+      },
+      "door_70": {
+        "name": "door_70",
+        "category": "door.n.01"
+      },
+      "fridge_20": {
+        "name": "fridge_20",
+        "category": "electric_refrigerator.n.01"
+      },
+      "hand_towel_0": {
+        "name": "hand_towel_0",
+        "category": "towel.n.01"
+      },
+      "pop_0": {
+        "name": "pop_0",
+        "category": "food.n.01"
+      },
+      "pop_1": {
+        "name": "pop_1",
+        "category": "food.n.01"
+      },
+      "pop_2": {
+        "name": "pop_2",
+        "category": "food.n.01"
+      },
+      "room_floor_kitchen_0": {
+        "name": "room_floor_kitchen_0",
+        "category": "floor.n.01"
+      },
+      "sink_37": {
+        "name": "sink_37",
+        "category": "sink.n.01"
+      },
+      "straight_chair_7": {
+        "name": "straight_chair_7",
+        "category": "chair.n.01"
+      },
+      "toothpaste_0": {
+        "name": "toothpaste_0",
+        "category": "cleansing_agent.n.01"
+      }
+    }
+  }
+}

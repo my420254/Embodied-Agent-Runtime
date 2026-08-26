@@ -1,0 +1,160 @@
+{
+  "dataset": "behavior",
+  "case_id": "locking_every_window_0_Merom_1_int_0_2021-11-01_14-51-10",
+  "source": {
+    "kind": "igibson_behavior_native_loader",
+    "case_id_alignment": "parsed_from_case_id",
+    "task": "locking_every_window",
+    "task_id": 0,
+    "scene_id": "Merom_1_int",
+    "seed": 0,
+    "randomization": {
+      "online_sampling": false,
+      "object_randomization_freq": null,
+      "texture_randomization_freq": null,
+      "clutter": false
+    },
+    "native_dataset_entry": "benchmark/datasets/native/eai/behavior",
+    "extraction": "clean runtime scene from native BEHAVIOR/iGibson initial state"
+  },
+  "task": {
+    "task_name": "locking every window",
+    "task": "locking_every_window",
+    "task_id": 0,
+    "scene_id": "Merom_1_int"
+  },
+  "flat_initial_environment": {
+    "entity_count": 9,
+    "room_count": 1,
+    "entity_catalog": [
+      "bed_7",
+      "behavior_room",
+      "behavior_room_anchor",
+      "room_floor_living_room_0",
+      "sofa_25",
+      "window_76",
+      "window_79",
+      "window_81",
+      "window_82"
+    ],
+    "name_mapping": {
+      "window.n.01_1": {
+        "name": "window_79",
+        "category": "window.n.01"
+      },
+      "window.n.01_2": {
+        "name": "window_76",
+        "category": "window.n.01"
+      },
+      "window.n.01_3": {
+        "name": "window_82",
+        "category": "window.n.01"
+      },
+      "window.n.01_4": {
+        "name": "window_81",
+        "category": "window.n.01"
+      },
+      "bed.n.01_1": {
+        "name": "bed_7",
+        "category": "bed.n.01"
+      },
+      "sofa.n.01_1": {
+        "name": "sofa_25",
+        "category": "sofa.n.01"
+      },
+      "floor.n.01_1": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      }
+    }
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "behavior_room": {
+          "contains": {
+            "behavior_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "bed_7": {
+                  "states": {}
+                },
+                "room_floor_living_room_0": {
+                  "states": {},
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "sofa_25": {
+                  "states": {}
+                },
+                "window_76": {
+                  "states": {
+                    "isOpen": true
+                  }
+                },
+                "window_79": {
+                  "states": {
+                    "isOpen": true
+                  }
+                },
+                "window_81": {
+                  "states": {
+                    "isOpen": true
+                  }
+                },
+                "window_82": {
+                  "states": {
+                    "isOpen": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "room_floor_living_room_0",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "room_floor_living_room_0",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "bed_7": {
+        "name": "bed_7",
+        "category": "bed.n.01"
+      },
+      "room_floor_living_room_0": {
+        "name": "room_floor_living_room_0",
+        "category": "floor.n.01"
+      },
+      "sofa_25": {
+        "name": "sofa_25",
+        "category": "sofa.n.01"
+      },
+      "window_76": {
+        "name": "window_76",
+        "category": "window.n.01"
+      },
+      "window_79": {
+        "name": "window_79",
+        "category": "window.n.01"
+      },
+      "window_81": {
+        "name": "window_81",
+        "category": "window.n.01"
+      },
+      "window_82": {
+        "name": "window_82",
+        "category": "window.n.01"
+      }
+    }
+  }
+}

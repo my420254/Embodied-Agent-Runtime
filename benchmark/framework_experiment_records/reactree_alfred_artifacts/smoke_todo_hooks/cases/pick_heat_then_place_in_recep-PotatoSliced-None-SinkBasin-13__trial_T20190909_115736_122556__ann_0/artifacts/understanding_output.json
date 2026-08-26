@@ -1,0 +1,93 @@
+{
+  "schema_version": "framework_trace_v3",
+  "process_name": "understanding",
+  "payload_role": "output",
+  "is_complete": true,
+  "is_cancel_all": false,
+  "clarification_question": "",
+  "clarification_suppressed": false,
+  "relevant_item_names": [
+    "Potato (1)",
+    "SinkBasin (1)",
+    "Pan (1)",
+    "Pan (2)",
+    "StoveBurner (1)",
+    "StoveBurner (2)",
+    "StoveBurner (3)",
+    "StoveBurner (4)",
+    "StoveKnob (1)",
+    "StoveKnob (2)",
+    "StoveKnob (3)",
+    "StoveKnob (4)"
+  ],
+  "structured_task": {
+    "intent": "Place a cooked potato slice in the sink",
+    "required_item_names": {
+      "targets": {
+        "primary": [
+          "Potato (1)"
+        ],
+        "alternatives": []
+      },
+      "tools": {
+        "primary": [
+          "Pan (1)"
+        ],
+        "alternatives": []
+      },
+      "receptacles": {
+        "primary": [
+          "SinkBasin (1)"
+        ],
+        "alternatives": []
+      }
+    },
+    "final_state": {
+      "Potato (1)": {
+        "location": "SinkBasin (1)",
+        "isCooked": true
+      }
+    },
+    "goal_state": {
+      "entities": {},
+      "robot": {}
+    }
+  },
+  "understanding_final_state": {
+    "Potato (1)": {
+      "location": "SinkBasin (1)",
+      "isCooked": true
+    }
+  },
+  "entity_repair": {
+    "needed": false,
+    "invalid_names": [],
+    "valid_names": [
+      "Potato (1)",
+      "Pan (1)",
+      "Pan (2)",
+      "SinkBasin (1)",
+      "StoveBurner (1)",
+      "StoveBurner (2)",
+      "StoveBurner (3)",
+      "StoveBurner (4)",
+      "StoveKnob (1)",
+      "StoveKnob (2)",
+      "StoveKnob (3)",
+      "StoveKnob (4)"
+    ]
+  },
+  "goal_state_extract": {
+    "enabled": true,
+    "source": "llm",
+    "attempts": 1,
+    "raw": {
+      "final_state": {
+        "Potato (1)": {
+          "location": "SinkBasin (1)",
+          "isCooked": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,4890 @@
+{
+  "dataset": "virtualhome",
+  "case_id": "650_2",
+  "source": {
+    "kind": "virtualhome_original_init_graph",
+    "graph_json_key_read": "init_graph",
+    "program_lines_read": "first two non-empty natural-language lines only",
+    "native_dataset_entry": "benchmark/datasets/native/eai/virtualhome",
+    "extraction": "clean runtime scene from native VirtualHome init_graph"
+  },
+  "task": {
+    "task_name": "Wash dishes with dishwasher",
+    "instruction": "Put the dishes on dinner table in the dishwasher and wash them"
+  },
+  "flat_initial_environment": {
+    "entity_count": 297,
+    "room_count": 4,
+    "entity_catalog": [
+      "bathroom",
+      "bathroom_anchor",
+      "bathroom_cabinet",
+      "bathroom_counter",
+      "bathtub",
+      "bed",
+      "bedroom",
+      "bedroom_anchor",
+      "bench_227",
+      "bench_228",
+      "bookshelf_101",
+      "bookshelf_233",
+      "bookshelf_354",
+      "brush",
+      "ceiling_16",
+      "ceiling_17",
+      "ceiling_18",
+      "ceiling_19",
+      "ceiling_20",
+      "ceiling_21",
+      "ceiling_216",
+      "ceiling_217",
+      "ceiling_218",
+      "ceiling_219",
+      "ceiling_220",
+      "ceiling_221",
+      "ceiling_337",
+      "ceiling_338",
+      "ceiling_339",
+      "ceiling_340",
+      "ceiling_341",
+      "ceiling_342",
+      "ceiling_343",
+      "ceiling_344",
+      "ceiling_345",
+      "ceiling_87",
+      "ceiling_88",
+      "ceiling_89",
+      "ceiling_90",
+      "ceiling_91",
+      "ceiling_92",
+      "ceiling_93",
+      "ceiling_94",
+      "ceiling_95",
+      "ceilinglamp_223",
+      "ceilinglamp_224",
+      "ceilinglamp_26",
+      "ceilinglamp_349",
+      "ceilinglamp_96",
+      "chair_103",
+      "chair_106",
+      "chair_356",
+      "check",
+      "closetdrawer_116",
+      "closetdrawer_117",
+      "closetdrawer_118",
+      "closetdrawer_119",
+      "closetdrawer_120",
+      "closetdrawer_121",
+      "closetdrawer_122",
+      "closetdrawer_143",
+      "closetdrawer_146",
+      "closetdrawer_148",
+      "closetdrawer_150",
+      "closetdrawer_154",
+      "closetdrawer_158",
+      "closetdrawer_160",
+      "closetdrawer_377",
+      "closetdrawer_380",
+      "closetdrawer_382",
+      "closetdrawer_384",
+      "closetdrawer_388",
+      "closetdrawer_392",
+      "closetdrawer_394",
+      "clothes_socks",
+      "coffe_maker",
+      "computer_170",
+      "computer_417",
+      "couch",
+      "cpuscreen_171",
+      "cpuscreen_416",
+      "cupboard",
+      "curtain_181",
+      "curtain_23",
+      "curtain_24",
+      "curtain_25",
+      "curtain_39",
+      "curtain_407",
+      "curtain_408",
+      "curtain_409",
+      "deck_of_cards",
+      "desk_104",
+      "desk_357",
+      "detergent",
+      "dining_room",
+      "dining_room_anchor",
+      "dish_soap",
+      "dishwasher",
+      "door_222",
+      "door_44",
+      "doorjamb_165",
+      "doorjamb_346",
+      "doorjamb_347",
+      "doorjamb_45",
+      "drawing_174",
+      "drawing_175",
+      "drawing_176",
+      "drawing_238",
+      "drawing_239",
+      "drawing_240",
+      "drawing_241",
+      "drawing_242",
+      "drawing_243",
+      "drawing_400",
+      "drawing_402",
+      "drawing_403",
+      "drawing_404",
+      "dresser_108",
+      "dresser_123",
+      "dresser_358",
+      "dvd_player",
+      "faucet_232",
+      "faucet_43",
+      "filing_cabinet",
+      "floor_2",
+      "floor_202",
+      "floor_203",
+      "floor_204",
+      "floor_205",
+      "floor_206",
+      "floor_207",
+      "floor_208",
+      "floor_3",
+      "floor_320",
+      "floor_321",
+      "floor_322",
+      "floor_323",
+      "floor_324",
+      "floor_325",
+      "floor_326",
+      "floor_327",
+      "floor_328",
+      "floor_4",
+      "floor_5",
+      "floor_6",
+      "floor_68",
+      "floor_69",
+      "floor_7",
+      "floor_70",
+      "floor_71",
+      "floor_72",
+      "floor_73",
+      "floor_74",
+      "floor_75",
+      "floor_76",
+      "floor_77",
+      "floor_8",
+      "food_onion",
+      "freezer",
+      "hanger_109",
+      "hanger_110",
+      "hanger_111",
+      "hanger_112",
+      "hanger_113",
+      "hanger_114",
+      "hanger_115",
+      "hanger_124",
+      "hanger_126",
+      "hanger_128",
+      "hanger_130",
+      "hanger_132",
+      "hanger_134",
+      "hanger_136",
+      "hanger_138",
+      "hanger_140",
+      "hanger_141",
+      "hanger_142",
+      "hanger_359",
+      "hanger_361",
+      "hanger_363",
+      "hanger_365",
+      "hanger_367",
+      "hanger_369",
+      "hanger_372",
+      "hanger_374",
+      "hanger_375",
+      "hanger_376",
+      "home_office",
+      "home_office_anchor",
+      "keyboard_168",
+      "keyboard_415",
+      "kitchen_counter",
+      "light_169",
+      "light_245",
+      "light_411",
+      "light_64",
+      "mat_173",
+      "mat_22",
+      "mat_236",
+      "mat_237",
+      "mat_401",
+      "microphone",
+      "microwave",
+      "mop_bucket",
+      "mouse_166",
+      "mouse_413",
+      "mousepad_167",
+      "mousepad_414",
+      "nightstand_100",
+      "nightstand_102",
+      "novel",
+      "orchid_178",
+      "orchid_244",
+      "oven",
+      "pajamas",
+      "phone_2006",
+      "phone_2007",
+      "phone_247",
+      "photoframe_185",
+      "photoframe_285",
+      "photoframe_430",
+      "pillow_182",
+      "pillow_183",
+      "pillow_405",
+      "pillow_406",
+      "plate",
+      "pot",
+      "powersocket_246",
+      "powersocket_412",
+      "scrabble",
+      "shower_36",
+      "shower_38",
+      "sink_231",
+      "sink_42",
+      "stamp",
+      "stovefan",
+      "table",
+      "table_107",
+      "table_355",
+      "tablelamp_97",
+      "tablelamp_98",
+      "television_248",
+      "television_410",
+      "toaster",
+      "toilet",
+      "tooth_paste",
+      "towel_rack_31",
+      "towel_rack_32",
+      "towel_rack_33",
+      "towel_rack_34",
+      "trashcan",
+      "tray_2003",
+      "tray_296",
+      "tvstand_225",
+      "tvstand_353",
+      "wall_10",
+      "wall_11",
+      "wall_12",
+      "wall_13",
+      "wall_14",
+      "wall_15",
+      "wall_209",
+      "wall_210",
+      "wall_211",
+      "wall_212",
+      "wall_213",
+      "wall_214",
+      "wall_215",
+      "wall_329",
+      "wall_330",
+      "wall_331",
+      "wall_332",
+      "wall_333",
+      "wall_334",
+      "wall_335",
+      "wall_336",
+      "wall_78",
+      "wall_79",
+      "wall_80",
+      "wall_81",
+      "wall_82",
+      "wall_83",
+      "wall_84",
+      "wall_85",
+      "wall_9",
+      "wall_clock",
+      "walllamp_27",
+      "walllamp_28",
+      "walllamp_29",
+      "walllamp_350",
+      "walllamp_351",
+      "wallshelf_234",
+      "wallshelf_235",
+      "wallshelf_35",
+      "window_348",
+      "window_63",
+      "window_86"
+    ]
+  },
+  "runtime_initial_environment": {
+    "scene": {
+      "environment": {
+        "bathroom": {
+          "contains": {
+            "bathroom_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "floor_2": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "floor_3": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "floor_4": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "floor_5": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "floor_6": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "floor_7": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "floor_8": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "wall_9": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "ceiling_21": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [],
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "wall_10": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "ceiling_19": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [],
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "wall_11": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "ceiling_18": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [],
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "wall_12": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "bathroom_cabinet": {
+                      "states": {
+                        "isOpen": false,
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "CAN_OPEN",
+                        "CONTAINERS",
+                        "SURFACES"
+                      ],
+                      "direct_relation": "ontop",
+                      "type": "receptacle",
+                      "contains": {}
+                    }
+                  }
+                },
+                "wall_13": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "wall_14": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "wall_15": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceiling_16": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceiling_17": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceiling_20": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "mat_22": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "SURFACES",
+                    "MOVABLE",
+                    "SITTABLE",
+                    "LIEABLE"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "curtain_23": {
+                  "states": {
+                    "isOpen": false,
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [
+                    "CAN_OPEN",
+                    "COVER_OBJECT",
+                    "MOVABLE"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "curtain_24": {
+                      "states": {
+                        "isOpen": false,
+                        "isDirty": true,
+                        "isClean": false
+                      },
+                      "properties": [
+                        "CAN_OPEN",
+                        "COVER_OBJECT",
+                        "MOVABLE"
+                      ],
+                      "direct_relation": "inside",
+                      "type": "receptacle",
+                      "contains": {}
+                    }
+                  }
+                },
+                "curtain_25": {
+                  "states": {
+                    "isOpen": false,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "CAN_OPEN",
+                    "COVER_OBJECT",
+                    "MOVABLE"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "ceilinglamp_26": {
+                  "states": {
+                    "isToggled": true,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "walllamp_27": {
+                  "states": {
+                    "isToggled": true,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "walllamp_28": {
+                  "states": {
+                    "isToggled": true,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "walllamp_29": {
+                  "states": {
+                    "isToggled": true,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "bathtub": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false,
+                    "isFilledWithLiquid": true
+                  },
+                  "properties": [
+                    "SITTABLE",
+                    "LIEABLE"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "towel_rack_31": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "GRABBABLE",
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "towel_rack_32": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "GRABBABLE",
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "towel_rack_33": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "GRABBABLE",
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "towel_rack_34": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "GRABBABLE",
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "wallshelf_35": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "shower_36": {
+                  "states": {
+                    "isToggled": false,
+                    "isClean": true,
+                    "isDirty": false,
+                    "isFilledWithLiquid": true
+                  },
+                  "properties": [],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "toilet": {
+                  "states": {
+                    "isOpen": false,
+                    "isToggled": false,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "CAN_OPEN",
+                    "CONTAINERS",
+                    "SITTABLE"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "shower_38": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false,
+                    "isFilledWithLiquid": true
+                  },
+                  "properties": [],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "curtain_39": {
+                      "states": {
+                        "isOpen": true,
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "CAN_OPEN",
+                        "COVER_OBJECT",
+                        "MOVABLE"
+                      ],
+                      "direct_relation": "inside",
+                      "type": "receptacle",
+                      "contains": {}
+                    }
+                  }
+                },
+                "bathroom_counter": {
+                  "states": {
+                    "isOpen": false,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "sink_42": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false,
+                        "isFilledWithLiquid": true
+                      },
+                      "properties": [
+                        "RECIPIENT",
+                        "CONTAINERS"
+                      ],
+                      "direct_relation": "inside",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "faucet_43": {
+                      "states": {
+                        "isToggled": true,
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "HAS_SWITCH"
+                      ],
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "door_44": {
+                  "states": {
+                    "isOpen": true,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "CAN_OPEN"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "doorjamb_45": {
+                  "states": {
+                    "isOpen": true,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "window_63": {
+                  "states": {
+                    "isOpen": true,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "light_64": {
+                  "states": {
+                    "isToggled": true,
+                    "isClean": true,
+                    "isDirty": false,
+                    "isPluggedIn": true
+                  },
+                  "properties": [
+                    "HAS_PLUG",
+                    "HAS_SWITCH"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "tooth_paste": {
+                  "states": {
+                    "isOpen": false,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "MOVABLE",
+                    "CAN_OPEN",
+                    "CREAM",
+                    "POURABLE"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                }
+              }
+            }
+          }
+        },
+        "bedroom": {
+          "contains": {
+            "bedroom_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "floor_68": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "floor_69": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "floor_70": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "bed": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "SITTABLE",
+                        "SURFACES",
+                        "LIEABLE"
+                      ],
+                      "direct_relation": "ontop",
+                      "type": "receptacle",
+                      "contains": {
+                        "pillow_182": {
+                          "states": {
+                            "isClean": true,
+                            "isDirty": false
+                          },
+                          "properties": [
+                            "MOVABLE",
+                            "GRABBABLE"
+                          ],
+                          "direct_relation": "ontop"
+                        }
+                      }
+                    }
+                  }
+                },
+                "floor_71": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "floor_72": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "bookshelf_101": {
+                      "states": {
+                        "isOpen": false,
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "CAN_OPEN",
+                        "CONTAINERS",
+                        "SURFACES"
+                      ],
+                      "direct_relation": "ontop",
+                      "type": "receptacle",
+                      "contains": {
+                        "photoframe_185": {
+                          "states": {
+                            "isClean": true,
+                            "isDirty": false
+                          },
+                          "properties": [],
+                          "direct_relation": "inside"
+                        }
+                      }
+                    }
+                  }
+                },
+                "floor_73": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "table_107": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "MOVABLE",
+                        "SURFACES"
+                      ],
+                      "direct_relation": "ontop",
+                      "type": "receptacle",
+                      "contains": {}
+                    }
+                  }
+                },
+                "floor_74": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "floor_75": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "floor_76": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "floor_77": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "wall_78": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "wall_79": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "wall_80": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "wall_81": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "wall_82": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "ceiling_89": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [],
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "wall_83": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "wall_84": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "wall_85": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "ceiling_95": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [],
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "window_86": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceiling_87": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceiling_88": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceiling_90": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceiling_91": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceiling_92": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceiling_93": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceiling_94": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceilinglamp_96": {
+                  "states": {
+                    "isToggled": true,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "tablelamp_97": {
+                  "states": {
+                    "isToggled": true,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "HAS_SWITCH"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "tablelamp_98": {
+                  "states": {
+                    "isToggled": true,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "HAS_SWITCH"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "trashcan": {
+                  "states": {
+                    "isOpen": false,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "CAN_OPEN",
+                    "CONTAINERS",
+                    "MOVABLE"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "nightstand_100": {
+                  "states": {
+                    "isOpen": false,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "CAN_OPEN",
+                    "CONTAINERS",
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "nightstand_102": {
+                  "states": {
+                    "isOpen": false,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "CAN_OPEN",
+                    "CONTAINERS",
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "chair_103": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "SITTABLE",
+                    "GRABBABLE",
+                    "MOVABLE",
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "desk_104": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "mousepad_167": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false
+                      },
+                      "properties": [
+                        "MOVABLE",
+                        "SURFACES"
+                      ],
+                      "direct_relation": "ontop",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "keyboard_168": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false,
+                        "isPluggedIn": true
+                      },
+                      "properties": [
+                        "MOVABLE",
+                        "HAS_PLUG",
+                        "GRABBABLE"
+                      ],
+                      "direct_relation": "ontop"
+                    },
+                    "cpuscreen_171": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [],
+                      "direct_relation": "ontop"
+                    },
+                    "novel": {
+                      "states": {
+                        "isOpen": false,
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "GRABBABLE",
+                        "CUTTABLE",
+                        "CAN_OPEN",
+                        "MOVABLE",
+                        "READABLE",
+                        "HAS_PAPER"
+                      ],
+                      "direct_relation": "ontop",
+                      "type": "receptacle",
+                      "contains": {}
+                    }
+                  }
+                },
+                "chair_106": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "SITTABLE",
+                    "GRABBABLE",
+                    "MOVABLE",
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "dresser_108": {
+                  "states": {
+                    "isOpen": true,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "CAN_OPEN",
+                    "CONTAINERS"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "hanger_109": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "MOVABLE",
+                        "HANGABLE",
+                        "GRABBABLE"
+                      ],
+                      "direct_relation": "inside"
+                    },
+                    "hanger_110": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "MOVABLE",
+                        "HANGABLE",
+                        "GRABBABLE"
+                      ],
+                      "direct_relation": "inside"
+                    },
+                    "hanger_111": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "MOVABLE",
+                        "HANGABLE",
+                        "GRABBABLE"
+                      ],
+                      "direct_relation": "inside"
+                    },
+                    "hanger_112": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "MOVABLE",
+                        "HANGABLE",
+                        "GRABBABLE"
+                      ],
+                      "direct_relation": "inside"
+                    },
+                    "hanger_113": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "MOVABLE",
+                        "HANGABLE",
+                        "GRABBABLE"
+                      ],
+                      "direct_relation": "inside"
+                    },
+                    "hanger_114": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "MOVABLE",
+                        "HANGABLE",
+                        "GRABBABLE"
+                      ],
+                      "direct_relation": "inside"
+                    },
+                    "hanger_115": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "MOVABLE",
+                        "HANGABLE",
+                        "GRABBABLE"
+                      ],
+                      "direct_relation": "inside"
+                    },
+                    "closetdrawer_121": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [],
+                      "direct_relation": "inside",
+                      "type": "receptacle",
+                      "contains": {
+                        "closetdrawer_118": {
+                          "states": {
+                            "isClean": true,
+                            "isDirty": false
+                          },
+                          "properties": [],
+                          "direct_relation": "ontop",
+                          "type": "receptacle",
+                          "contains": {
+                            "closetdrawer_117": {
+                              "states": {
+                                "isClean": true,
+                                "isDirty": false
+                              },
+                              "properties": [],
+                              "direct_relation": "ontop"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "closetdrawer_122": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [],
+                      "direct_relation": "inside",
+                      "type": "receptacle",
+                      "contains": {
+                        "closetdrawer_120": {
+                          "states": {
+                            "isClean": true,
+                            "isDirty": false
+                          },
+                          "properties": [],
+                          "direct_relation": "ontop",
+                          "type": "receptacle",
+                          "contains": {
+                            "closetdrawer_119": {
+                              "states": {
+                                "isClean": true,
+                                "isDirty": false
+                              },
+                              "properties": [],
+                              "direct_relation": "ontop",
+                              "type": "receptacle",
+                              "contains": {
+                                "closetdrawer_116": {
+                                  "states": {
+                                    "isClean": true,
+                                    "isDirty": false
+                                  },
+                                  "properties": [],
+                                  "direct_relation": "ontop"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "clothes_socks": {
+                      "states": {
+                        "isDirty": true,
+                        "isClean": false
+                      },
+                      "properties": [
+                        "MOVABLE",
+                        "CLOTHES",
+                        "HANGABLE",
+                        "GRABBABLE"
+                      ],
+                      "direct_relation": "inside"
+                    }
+                  }
+                },
+                "dresser_123": {
+                  "states": {
+                    "isOpen": false,
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [
+                    "CAN_OPEN",
+                    "CONTAINERS"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "hanger_124": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "HANGABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "hanger_126": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "HANGABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "hanger_128": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "HANGABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "hanger_130": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "HANGABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "hanger_132": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "HANGABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "hanger_134": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "HANGABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "hanger_136": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "HANGABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "hanger_138": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "HANGABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "hanger_140": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "HANGABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "hanger_141": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "HANGABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "hanger_142": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "HANGABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "closetdrawer_146": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "closetdrawer_148": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "closetdrawer_150": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "closetdrawer_143": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [],
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "closetdrawer_158": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "closetdrawer_160": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "closetdrawer_154": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [],
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "doorjamb_165": {
+                  "states": {
+                    "isOpen": true,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "mouse_166": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "HAS_PLUG",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "light_169": {
+                  "states": {
+                    "isToggled": true,
+                    "isClean": true,
+                    "isDirty": false,
+                    "isPluggedIn": true
+                  },
+                  "properties": [
+                    "HAS_PLUG",
+                    "HAS_SWITCH"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "computer_170": {
+                  "states": {
+                    "isToggled": true,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "HAS_SWITCH",
+                    "LOOKABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "mat_173": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "SURFACES",
+                    "MOVABLE",
+                    "SITTABLE",
+                    "LIEABLE"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "drawing_174": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "MOVABLE",
+                    "CUTTABLE",
+                    "HAS_PAPER",
+                    "LOOKABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "drawing_175": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "MOVABLE",
+                    "CUTTABLE",
+                    "HAS_PAPER",
+                    "LOOKABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "drawing_176": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "MOVABLE",
+                    "CUTTABLE",
+                    "HAS_PAPER",
+                    "LOOKABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "orchid_178": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "curtain_181": {
+                  "states": {
+                    "isOpen": true,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "CAN_OPEN",
+                    "COVER_OBJECT",
+                    "MOVABLE"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "pillow_183": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                }
+              }
+            }
+          }
+        },
+        "dining_room": {
+          "contains": {
+            "dining_room_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "floor_202": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "floor_203": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "freezer": {
+                      "states": {
+                        "isOpen": false,
+                        "isToggled": false,
+                        "isClean": true,
+                        "isDirty": false,
+                        "isPluggedIn": true
+                      },
+                      "properties": [
+                        "CAN_OPEN",
+                        "CONTAINERS",
+                        "HAS_SWITCH",
+                        "HAS_PLUG"
+                      ],
+                      "direct_relation": "ontop",
+                      "type": "receptacle",
+                      "contains": {}
+                    }
+                  }
+                },
+                "floor_204": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "floor_205": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "bench_227": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "SITTABLE",
+                        "MOVABLE",
+                        "SURFACES",
+                        "LIEABLE"
+                      ],
+                      "direct_relation": "ontop",
+                      "type": "receptacle",
+                      "contains": {}
+                    }
+                  }
+                },
+                "floor_206": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "door_222": {
+                      "states": {
+                        "isOpen": true,
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "CAN_OPEN"
+                      ],
+                      "direct_relation": "ontop",
+                      "type": "receptacle",
+                      "contains": {}
+                    }
+                  }
+                },
+                "floor_207": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "floor_208": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "tvstand_225": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "SURFACES"
+                      ],
+                      "direct_relation": "ontop",
+                      "type": "receptacle",
+                      "contains": {
+                        "orchid_244": {
+                          "states": {
+                            "isClean": true,
+                            "isDirty": false
+                          },
+                          "properties": [],
+                          "direct_relation": "ontop"
+                        },
+                        "photoframe_285": {
+                          "states": {
+                            "isClean": true,
+                            "isDirty": false
+                          },
+                          "properties": [],
+                          "direct_relation": "ontop"
+                        }
+                      }
+                    }
+                  }
+                },
+                "wall_209": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "wall_210": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "wall_211": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "wall_212": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "wall_213": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "wall_214": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "wall_215": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceiling_216": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceiling_217": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceiling_218": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceiling_219": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceiling_220": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceiling_221": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceilinglamp_223": {
+                  "states": {
+                    "isToggled": true,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceilinglamp_224": {
+                  "states": {
+                    "isToggled": true,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "table": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "microphone": {
+                      "states": {
+                        "isToggled": true,
+                        "isClean": true,
+                        "isDirty": false,
+                        "isPluggedIn": true
+                      },
+                      "properties": [
+                        "MOVABLE",
+                        "HAS_PLUG",
+                        "HAS_SWITCH",
+                        "GRABBABLE"
+                      ],
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "bench_228": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "SITTABLE",
+                    "MOVABLE",
+                    "SURFACES",
+                    "LIEABLE"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "cupboard": {
+                  "states": {
+                    "isOpen": false,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "CAN_OPEN",
+                    "CONTAINERS"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "kitchen_counter": {
+                  "states": {
+                    "isOpen": false,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "sink_231": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false,
+                        "isFilledWithLiquid": true
+                      },
+                      "properties": [
+                        "RECIPIENT",
+                        "CONTAINERS"
+                      ],
+                      "direct_relation": "inside",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "faucet_232": {
+                      "states": {
+                        "isToggled": true,
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "HAS_SWITCH"
+                      ],
+                      "direct_relation": "ontop"
+                    },
+                    "coffe_maker": {
+                      "states": {
+                        "isOpen": false,
+                        "isToggled": false,
+                        "isClean": true,
+                        "isDirty": false,
+                        "isPluggedIn": true
+                      },
+                      "properties": [
+                        "CAN_OPEN",
+                        "MOVABLE",
+                        "HAS_SWITCH",
+                        "RECIPIENT",
+                        "CONTAINERS",
+                        "HAS_PLUG"
+                      ],
+                      "direct_relation": "ontop",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "toaster": {
+                      "states": {
+                        "isToggled": false,
+                        "isClean": true,
+                        "isDirty": false,
+                        "isPluggedIn": true
+                      },
+                      "properties": [
+                        "HAS_PLUG",
+                        "HAS_SWITCH",
+                        "MOVABLE"
+                      ],
+                      "direct_relation": "ontop"
+                    },
+                    "food_onion": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "MOVABLE",
+                        "CUTTABLE",
+                        "EATABLE",
+                        "GRABBABLE"
+                      ],
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "bookshelf_233": {
+                  "states": {
+                    "isOpen": false,
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [
+                    "CAN_OPEN",
+                    "CONTAINERS",
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "wallshelf_234": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "wallshelf_235": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "mat_236": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "SURFACES",
+                    "MOVABLE",
+                    "SITTABLE",
+                    "LIEABLE"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "mop_bucket": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "MOVABLE",
+                        "RECIPIENT",
+                        "GRABBABLE"
+                      ],
+                      "direct_relation": "ontop",
+                      "type": "receptacle",
+                      "contains": {}
+                    }
+                  }
+                },
+                "mat_237": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "SURFACES",
+                    "MOVABLE",
+                    "SITTABLE",
+                    "LIEABLE"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "drawing_238": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "MOVABLE",
+                    "CUTTABLE",
+                    "HAS_PAPER",
+                    "LOOKABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "drawing_239": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "MOVABLE",
+                    "CUTTABLE",
+                    "HAS_PAPER",
+                    "LOOKABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "drawing_240": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "MOVABLE",
+                    "CUTTABLE",
+                    "HAS_PAPER",
+                    "LOOKABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "drawing_241": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "MOVABLE",
+                    "CUTTABLE",
+                    "HAS_PAPER",
+                    "LOOKABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "drawing_242": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "MOVABLE",
+                    "CUTTABLE",
+                    "HAS_PAPER",
+                    "LOOKABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "drawing_243": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "MOVABLE",
+                    "CUTTABLE",
+                    "HAS_PAPER",
+                    "LOOKABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "light_245": {
+                  "states": {
+                    "isToggled": true,
+                    "isClean": true,
+                    "isDirty": false,
+                    "isPluggedIn": true
+                  },
+                  "properties": [
+                    "HAS_PLUG",
+                    "HAS_SWITCH"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "powersocket_246": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "phone_247": {
+                  "states": {
+                    "isToggled": true,
+                    "isClean": true,
+                    "isDirty": false,
+                    "isPluggedIn": true
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "HAS_PLUG",
+                    "HAS_SWITCH",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "television_248": {
+                  "states": {
+                    "isToggled": true,
+                    "isClean": true,
+                    "isDirty": false,
+                    "isPluggedIn": true
+                  },
+                  "properties": [
+                    "HAS_PLUG",
+                    "HAS_SWITCH",
+                    "LOOKABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "wall_clock": {
+                  "states": {
+                    "isToggled": true,
+                    "isClean": true,
+                    "isDirty": false,
+                    "isPluggedIn": true
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "MOVABLE",
+                    "HAS_SWITCH",
+                    "LOOKABLE",
+                    "HAS_PLUG"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "stovefan": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "oven": {
+                  "states": {
+                    "isOpen": true,
+                    "isToggled": false,
+                    "isClean": true,
+                    "isDirty": false,
+                    "isPluggedIn": true
+                  },
+                  "properties": [
+                    "CAN_OPEN",
+                    "CONTAINERS",
+                    "HAS_SWITCH",
+                    "HAS_PLUG"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "tray_296": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "MOVABLE",
+                        "GRABBABLE",
+                        "SURFACES"
+                      ],
+                      "direct_relation": "inside",
+                      "type": "receptacle",
+                      "contains": {}
+                    }
+                  }
+                },
+                "microwave": {
+                  "states": {
+                    "isOpen": false,
+                    "isToggled": true,
+                    "isClean": true,
+                    "isDirty": false,
+                    "isPluggedIn": true
+                  },
+                  "properties": [
+                    "CAN_OPEN",
+                    "CONTAINERS",
+                    "HAS_SWITCH",
+                    "HAS_PLUG"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "plate": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "GRABBABLE",
+                    "RECIPIENT",
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "dishwasher": {
+                  "states": {
+                    "isOpen": false,
+                    "isToggled": false,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "CAN_OPEN",
+                    "CONTAINERS",
+                    "HAS_SWITCH"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "pot": {
+                      "states": {
+                        "isOpen": false,
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "MOVABLE",
+                        "RECIPIENT",
+                        "CAN_OPEN",
+                        "GRABBABLE"
+                      ],
+                      "direct_relation": "inside",
+                      "type": "receptacle",
+                      "contains": {}
+                    },
+                    "detergent": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "MOVABLE",
+                        "POURABLE",
+                        "GRABBABLE"
+                      ],
+                      "direct_relation": "inside"
+                    },
+                    "tray_2003": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "MOVABLE",
+                        "GRABBABLE",
+                        "SURFACES"
+                      ],
+                      "direct_relation": "inside",
+                      "type": "receptacle",
+                      "contains": {}
+                    }
+                  }
+                },
+                "dish_soap": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "CREAM",
+                    "POURABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "deck_of_cards": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "HAS_PAPER",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "scrabble": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                }
+              }
+            }
+          }
+        },
+        "home_office": {
+          "contains": {
+            "home_office_anchor": {
+              "type": "receptacle",
+              "states": {},
+              "contains": {
+                "floor_320": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "bookshelf_354": {
+                      "states": {
+                        "isOpen": true,
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "CAN_OPEN",
+                        "CONTAINERS",
+                        "SURFACES"
+                      ],
+                      "direct_relation": "ontop",
+                      "type": "receptacle",
+                      "contains": {
+                        "stamp": {
+                          "states": {
+                            "isClean": true,
+                            "isDirty": false
+                          },
+                          "properties": [
+                            "MOVABLE",
+                            "GRABBABLE"
+                          ],
+                          "direct_relation": "ontop"
+                        }
+                      }
+                    }
+                  }
+                },
+                "floor_321": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "floor_322": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "floor_323": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "floor_324": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "floor_325": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "floor_326": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "desk_357": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "MOVABLE",
+                        "SURFACES"
+                      ],
+                      "direct_relation": "ontop",
+                      "type": "receptacle",
+                      "contains": {
+                        "keyboard_415": {
+                          "states": {
+                            "isClean": true,
+                            "isDirty": false
+                          },
+                          "properties": [
+                            "MOVABLE",
+                            "HAS_PLUG",
+                            "GRABBABLE"
+                          ],
+                          "direct_relation": "ontop"
+                        },
+                        "cpuscreen_416": {
+                          "states": {
+                            "isClean": true,
+                            "isDirty": false
+                          },
+                          "properties": [],
+                          "direct_relation": "ontop"
+                        },
+                        "check": {
+                          "states": {
+                            "isClean": true,
+                            "isDirty": false
+                          },
+                          "properties": [
+                            "MOVABLE",
+                            "HAS_PAPER",
+                            "READABLE",
+                            "GRABBABLE"
+                          ],
+                          "direct_relation": "ontop"
+                        }
+                      }
+                    }
+                  }
+                },
+                "floor_327": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "floor_328": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "wall_329": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "wall_330": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "ceiling_343": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [],
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "wall_331": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "wall_332": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "ceiling_337": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [],
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "wall_333": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "wall_334": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "ceiling_345": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [],
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "wall_335": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "wall_336": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceiling_338": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceiling_339": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceiling_340": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceiling_341": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceiling_342": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceiling_344": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "doorjamb_346": {
+                  "states": {
+                    "isOpen": true,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "doorjamb_347": {
+                  "states": {
+                    "isOpen": true,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "window_348": {
+                  "states": {
+                    "isOpen": false,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "ceilinglamp_349": {
+                  "states": {
+                    "isToggled": true,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "walllamp_350": {
+                  "states": {
+                    "isToggled": true,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "walllamp_351": {
+                  "states": {
+                    "isToggled": true,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "tvstand_353": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "television_410": {
+                      "states": {
+                        "isToggled": true,
+                        "isClean": true,
+                        "isDirty": false,
+                        "isPluggedIn": true
+                      },
+                      "properties": [
+                        "HAS_PLUG",
+                        "HAS_SWITCH",
+                        "LOOKABLE"
+                      ],
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "chair_356": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "SITTABLE",
+                    "GRABBABLE",
+                    "MOVABLE",
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "dresser_358": {
+                  "states": {
+                    "isOpen": false,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "CAN_OPEN",
+                    "CONTAINERS"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "hanger_359": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "HANGABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "hanger_361": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "HANGABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "hanger_363": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "HANGABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "hanger_365": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "HANGABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "hanger_367": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "HANGABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "hanger_369": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "HANGABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "hanger_372": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "HANGABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "hanger_374": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "HANGABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "hanger_375": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "HANGABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "hanger_376": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "HANGABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "closetdrawer_380": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "closetdrawer_382": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "closetdrawer_384": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "closetdrawer_377": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [],
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "closetdrawer_388": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "closetdrawer_392": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "closetdrawer_394": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "filing_cabinet": {
+                  "states": {
+                    "isOpen": false,
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [
+                    "CAN_OPEN",
+                    "CONTAINERS",
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "drawing_400": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "MOVABLE",
+                    "CUTTABLE",
+                    "HAS_PAPER",
+                    "LOOKABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "mat_401": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "SURFACES",
+                    "MOVABLE",
+                    "SITTABLE",
+                    "LIEABLE"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "couch": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "SITTABLE",
+                        "MOVABLE",
+                        "SURFACES",
+                        "LIEABLE"
+                      ],
+                      "direct_relation": "ontop",
+                      "type": "receptacle",
+                      "contains": {
+                        "curtain_409": {
+                          "states": {
+                            "isOpen": false,
+                            "isDirty": true,
+                            "isClean": false
+                          },
+                          "properties": [
+                            "CAN_OPEN",
+                            "COVER_OBJECT",
+                            "MOVABLE"
+                          ],
+                          "direct_relation": "ontop",
+                          "type": "receptacle",
+                          "contains": {}
+                        },
+                        "phone_2007": {
+                          "states": {
+                            "isClean": true,
+                            "isDirty": false
+                          },
+                          "properties": [
+                            "MOVABLE",
+                            "HAS_PLUG",
+                            "HAS_SWITCH",
+                            "GRABBABLE"
+                          ],
+                          "direct_relation": "ontop"
+                        }
+                      }
+                    },
+                    "table_355": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false
+                      },
+                      "properties": [
+                        "MOVABLE",
+                        "SURFACES"
+                      ],
+                      "direct_relation": "ontop",
+                      "type": "receptacle",
+                      "contains": {
+                        "dvd_player": {
+                          "states": {
+                            "isOpen": true,
+                            "isClean": true,
+                            "isDirty": false,
+                            "isPluggedIn": true
+                          },
+                          "properties": [
+                            "GRABBABLE",
+                            "SURFACES",
+                            "CAN_OPEN",
+                            "MOVABLE",
+                            "HAS_SWITCH",
+                            "HAS_PLUG"
+                          ],
+                          "direct_relation": "ontop",
+                          "type": "receptacle",
+                          "contains": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "drawing_402": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "MOVABLE",
+                    "CUTTABLE",
+                    "HAS_PAPER",
+                    "LOOKABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "drawing_403": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "MOVABLE",
+                    "CUTTABLE",
+                    "HAS_PAPER",
+                    "LOOKABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "drawing_404": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "GRABBABLE",
+                    "MOVABLE",
+                    "CUTTABLE",
+                    "HAS_PAPER",
+                    "LOOKABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "pillow_405": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "pillow_406": {
+                  "states": {
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "curtain_407": {
+                  "states": {
+                    "isOpen": false,
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [
+                    "CAN_OPEN",
+                    "COVER_OBJECT",
+                    "MOVABLE"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "curtain_408": {
+                  "states": {
+                    "isOpen": false,
+                    "isDirty": true,
+                    "isClean": false
+                  },
+                  "properties": [
+                    "CAN_OPEN",
+                    "COVER_OBJECT",
+                    "MOVABLE"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {}
+                },
+                "light_411": {
+                  "states": {
+                    "isToggled": true,
+                    "isClean": true,
+                    "isDirty": false,
+                    "isPluggedIn": true
+                  },
+                  "properties": [
+                    "HAS_PLUG",
+                    "HAS_SWITCH"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "powersocket_412": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "mousepad_414": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "SURFACES"
+                  ],
+                  "direct_relation": "inside",
+                  "type": "receptacle",
+                  "contains": {
+                    "mouse_413": {
+                      "states": {
+                        "isClean": true,
+                        "isDirty": false,
+                        "isPluggedIn": true
+                      },
+                      "properties": [
+                        "MOVABLE",
+                        "HAS_PLUG",
+                        "GRABBABLE"
+                      ],
+                      "direct_relation": "ontop"
+                    }
+                  }
+                },
+                "computer_417": {
+                  "states": {
+                    "isToggled": true,
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "HAS_SWITCH",
+                    "LOOKABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "photoframe_430": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [],
+                  "direct_relation": "inside"
+                },
+                "brush": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "phone_2006": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "HAS_PLUG",
+                    "HAS_SWITCH",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                },
+                "pajamas": {
+                  "states": {
+                    "isClean": true,
+                    "isDirty": false
+                  },
+                  "properties": [
+                    "MOVABLE",
+                    "CLOTHES",
+                    "GRABBABLE"
+                  ],
+                  "direct_relation": "inside"
+                }
+              }
+            }
+          }
+        }
+      },
+      "robot_location": "home_office_anchor",
+      "robot_inventory": null,
+      "robot_holding_items": {}
+    },
+    "env_state": {
+      "robot_location": "home_office_anchor",
+      "robot_holding": "空",
+      "robot_hands": {
+        "left": "空",
+        "right": "空"
+      },
+      "manipulator_mode": "dual_arm"
+    },
+    "object_map": {
+      "floor_2": [
+        "floor",
+        "2"
+      ],
+      "floor_3": [
+        "floor",
+        "3"
+      ],
+      "floor_4": [
+        "floor",
+        "4"
+      ],
+      "floor_5": [
+        "floor",
+        "5"
+      ],
+      "floor_6": [
+        "floor",
+        "6"
+      ],
+      "floor_7": [
+        "floor",
+        "7"
+      ],
+      "floor_8": [
+        "floor",
+        "8"
+      ],
+      "wall_9": [
+        "wall",
+        "9"
+      ],
+      "wall_10": [
+        "wall",
+        "10"
+      ],
+      "wall_11": [
+        "wall",
+        "11"
+      ],
+      "wall_12": [
+        "wall",
+        "12"
+      ],
+      "wall_13": [
+        "wall",
+        "13"
+      ],
+      "wall_14": [
+        "wall",
+        "14"
+      ],
+      "wall_15": [
+        "wall",
+        "15"
+      ],
+      "ceiling_16": [
+        "ceiling",
+        "16"
+      ],
+      "ceiling_17": [
+        "ceiling",
+        "17"
+      ],
+      "ceiling_18": [
+        "ceiling",
+        "18"
+      ],
+      "ceiling_19": [
+        "ceiling",
+        "19"
+      ],
+      "ceiling_20": [
+        "ceiling",
+        "20"
+      ],
+      "ceiling_21": [
+        "ceiling",
+        "21"
+      ],
+      "mat_22": [
+        "mat",
+        "22"
+      ],
+      "curtain_23": [
+        "curtain",
+        "23"
+      ],
+      "curtain_24": [
+        "curtain",
+        "24"
+      ],
+      "curtain_25": [
+        "curtain",
+        "25"
+      ],
+      "ceilinglamp_26": [
+        "ceilinglamp",
+        "26"
+      ],
+      "walllamp_27": [
+        "walllamp",
+        "27"
+      ],
+      "walllamp_28": [
+        "walllamp",
+        "28"
+      ],
+      "walllamp_29": [
+        "walllamp",
+        "29"
+      ],
+      "bathtub": [
+        "bathtub",
+        "30"
+      ],
+      "towel_rack_31": [
+        "towel_rack",
+        "31"
+      ],
+      "towel_rack_32": [
+        "towel_rack",
+        "32"
+      ],
+      "towel_rack_33": [
+        "towel_rack",
+        "33"
+      ],
+      "towel_rack_34": [
+        "towel_rack",
+        "34"
+      ],
+      "wallshelf_35": [
+        "wallshelf",
+        "35"
+      ],
+      "shower_36": [
+        "shower",
+        "36"
+      ],
+      "toilet": [
+        "toilet",
+        "37"
+      ],
+      "shower_38": [
+        "shower",
+        "38"
+      ],
+      "curtain_39": [
+        "curtain",
+        "39"
+      ],
+      "bathroom_cabinet": [
+        "bathroom_cabinet",
+        "40"
+      ],
+      "bathroom_counter": [
+        "bathroom_counter",
+        "41"
+      ],
+      "sink_42": [
+        "sink",
+        "42"
+      ],
+      "faucet_43": [
+        "faucet",
+        "43"
+      ],
+      "door_44": [
+        "door",
+        "44"
+      ],
+      "doorjamb_45": [
+        "doorjamb",
+        "45"
+      ],
+      "window_63": [
+        "window",
+        "63"
+      ],
+      "light_64": [
+        "light",
+        "64"
+      ],
+      "floor_68": [
+        "floor",
+        "68"
+      ],
+      "floor_69": [
+        "floor",
+        "69"
+      ],
+      "floor_70": [
+        "floor",
+        "70"
+      ],
+      "floor_71": [
+        "floor",
+        "71"
+      ],
+      "floor_72": [
+        "floor",
+        "72"
+      ],
+      "floor_73": [
+        "floor",
+        "73"
+      ],
+      "floor_74": [
+        "floor",
+        "74"
+      ],
+      "floor_75": [
+        "floor",
+        "75"
+      ],
+      "floor_76": [
+        "floor",
+        "76"
+      ],
+      "floor_77": [
+        "floor",
+        "77"
+      ],
+      "wall_78": [
+        "wall",
+        "78"
+      ],
+      "wall_79": [
+        "wall",
+        "79"
+      ],
+      "wall_80": [
+        "wall",
+        "80"
+      ],
+      "wall_81": [
+        "wall",
+        "81"
+      ],
+      "wall_82": [
+        "wall",
+        "82"
+      ],
+      "wall_83": [
+        "wall",
+        "83"
+      ],
+      "wall_84": [
+        "wall",
+        "84"
+      ],
+      "wall_85": [
+        "wall",
+        "85"
+      ],
+      "window_86": [
+        "window",
+        "86"
+      ],
+      "ceiling_87": [
+        "ceiling",
+        "87"
+      ],
+      "ceiling_88": [
+        "ceiling",
+        "88"
+      ],
+      "ceiling_89": [
+        "ceiling",
+        "89"
+      ],
+      "ceiling_90": [
+        "ceiling",
+        "90"
+      ],
+      "ceiling_91": [
+        "ceiling",
+        "91"
+      ],
+      "ceiling_92": [
+        "ceiling",
+        "92"
+      ],
+      "ceiling_93": [
+        "ceiling",
+        "93"
+      ],
+      "ceiling_94": [
+        "ceiling",
+        "94"
+      ],
+      "ceiling_95": [
+        "ceiling",
+        "95"
+      ],
+      "ceilinglamp_96": [
+        "ceilinglamp",
+        "96"
+      ],
+      "tablelamp_97": [
+        "tablelamp",
+        "97"
+      ],
+      "tablelamp_98": [
+        "tablelamp",
+        "98"
+      ],
+      "trashcan": [
+        "trashcan",
+        "99"
+      ],
+      "nightstand_100": [
+        "nightstand",
+        "100"
+      ],
+      "bookshelf_101": [
+        "bookshelf",
+        "101"
+      ],
+      "nightstand_102": [
+        "nightstand",
+        "102"
+      ],
+      "chair_103": [
+        "chair",
+        "103"
+      ],
+      "desk_104": [
+        "desk",
+        "104"
+      ],
+      "bed": [
+        "bed",
+        "105"
+      ],
+      "chair_106": [
+        "chair",
+        "106"
+      ],
+      "table_107": [
+        "table",
+        "107"
+      ],
+      "dresser_108": [
+        "dresser",
+        "108"
+      ],
+      "hanger_109": [
+        "hanger",
+        "109"
+      ],
+      "hanger_110": [
+        "hanger",
+        "110"
+      ],
+      "hanger_111": [
+        "hanger",
+        "111"
+      ],
+      "hanger_112": [
+        "hanger",
+        "112"
+      ],
+      "hanger_113": [
+        "hanger",
+        "113"
+      ],
+      "hanger_114": [
+        "hanger",
+        "114"
+      ],
+      "hanger_115": [
+        "hanger",
+        "115"
+      ],
+      "closetdrawer_116": [
+        "closetdrawer",
+        "116"
+      ],
+      "closetdrawer_117": [
+        "closetdrawer",
+        "117"
+      ],
+      "closetdrawer_118": [
+        "closetdrawer",
+        "118"
+      ],
+      "closetdrawer_119": [
+        "closetdrawer",
+        "119"
+      ],
+      "closetdrawer_120": [
+        "closetdrawer",
+        "120"
+      ],
+      "closetdrawer_121": [
+        "closetdrawer",
+        "121"
+      ],
+      "closetdrawer_122": [
+        "closetdrawer",
+        "122"
+      ],
+      "dresser_123": [
+        "dresser",
+        "123"
+      ],
+      "hanger_124": [
+        "hanger",
+        "124"
+      ],
+      "hanger_126": [
+        "hanger",
+        "126"
+      ],
+      "hanger_128": [
+        "hanger",
+        "128"
+      ],
+      "hanger_130": [
+        "hanger",
+        "130"
+      ],
+      "hanger_132": [
+        "hanger",
+        "132"
+      ],
+      "hanger_134": [
+        "hanger",
+        "134"
+      ],
+      "hanger_136": [
+        "hanger",
+        "136"
+      ],
+      "hanger_138": [
+        "hanger",
+        "138"
+      ],
+      "hanger_140": [
+        "hanger",
+        "140"
+      ],
+      "hanger_141": [
+        "hanger",
+        "141"
+      ],
+      "hanger_142": [
+        "hanger",
+        "142"
+      ],
+      "closetdrawer_143": [
+        "closetdrawer",
+        "143"
+      ],
+      "closetdrawer_146": [
+        "closetdrawer",
+        "146"
+      ],
+      "closetdrawer_148": [
+        "closetdrawer",
+        "148"
+      ],
+      "closetdrawer_150": [
+        "closetdrawer",
+        "150"
+      ],
+      "closetdrawer_154": [
+        "closetdrawer",
+        "154"
+      ],
+      "closetdrawer_158": [
+        "closetdrawer",
+        "158"
+      ],
+      "closetdrawer_160": [
+        "closetdrawer",
+        "160"
+      ],
+      "doorjamb_165": [
+        "doorjamb",
+        "165"
+      ],
+      "mouse_166": [
+        "mouse",
+        "166"
+      ],
+      "mousepad_167": [
+        "mousepad",
+        "167"
+      ],
+      "keyboard_168": [
+        "keyboard",
+        "168"
+      ],
+      "light_169": [
+        "light",
+        "169"
+      ],
+      "computer_170": [
+        "computer",
+        "170"
+      ],
+      "cpuscreen_171": [
+        "cpuscreen",
+        "171"
+      ],
+      "mat_173": [
+        "mat",
+        "173"
+      ],
+      "drawing_174": [
+        "drawing",
+        "174"
+      ],
+      "drawing_175": [
+        "drawing",
+        "175"
+      ],
+      "drawing_176": [
+        "drawing",
+        "176"
+      ],
+      "orchid_178": [
+        "orchid",
+        "178"
+      ],
+      "curtain_179": [
+        "curtain",
+        "179"
+      ],
+      "curtain_180": [
+        "curtain",
+        "180"
+      ],
+      "curtain_181": [
+        "curtain",
+        "181"
+      ],
+      "pillow_182": [
+        "pillow",
+        "182"
+      ],
+      "pillow_183": [
+        "pillow",
+        "183"
+      ],
+      "photoframe_185": [
+        "photoframe",
+        "185"
+      ],
+      "floor_202": [
+        "floor",
+        "202"
+      ],
+      "floor_203": [
+        "floor",
+        "203"
+      ],
+      "floor_204": [
+        "floor",
+        "204"
+      ],
+      "floor_205": [
+        "floor",
+        "205"
+      ],
+      "floor_206": [
+        "floor",
+        "206"
+      ],
+      "floor_207": [
+        "floor",
+        "207"
+      ],
+      "floor_208": [
+        "floor",
+        "208"
+      ],
+      "wall_209": [
+        "wall",
+        "209"
+      ],
+      "wall_210": [
+        "wall",
+        "210"
+      ],
+      "wall_211": [
+        "wall",
+        "211"
+      ],
+      "wall_212": [
+        "wall",
+        "212"
+      ],
+      "wall_213": [
+        "wall",
+        "213"
+      ],
+      "wall_214": [
+        "wall",
+        "214"
+      ],
+      "wall_215": [
+        "wall",
+        "215"
+      ],
+      "ceiling_216": [
+        "ceiling",
+        "216"
+      ],
+      "ceiling_217": [
+        "ceiling",
+        "217"
+      ],
+      "ceiling_218": [
+        "ceiling",
+        "218"
+      ],
+      "ceiling_219": [
+        "ceiling",
+        "219"
+      ],
+      "ceiling_220": [
+        "ceiling",
+        "220"
+      ],
+      "ceiling_221": [
+        "ceiling",
+        "221"
+      ],
+      "door_222": [
+        "door",
+        "222"
+      ],
+      "ceilinglamp_223": [
+        "ceilinglamp",
+        "223"
+      ],
+      "ceilinglamp_224": [
+        "ceilinglamp",
+        "224"
+      ],
+      "tvstand_225": [
+        "tvstand",
+        "225"
+      ],
+      "table": [
+        "table",
+        "226"
+      ],
+      "bench_227": [
+        "bench",
+        "227"
+      ],
+      "bench_228": [
+        "bench",
+        "228"
+      ],
+      "cupboard": [
+        "cupboard",
+        "229"
+      ],
+      "kitchen_counter": [
+        "kitchen_counter",
+        "230"
+      ],
+      "sink_231": [
+        "sink",
+        "231"
+      ],
+      "faucet_232": [
+        "faucet",
+        "232"
+      ],
+      "bookshelf_233": [
+        "bookshelf",
+        "233"
+      ],
+      "wallshelf_234": [
+        "wallshelf",
+        "234"
+      ],
+      "wallshelf_235": [
+        "wallshelf",
+        "235"
+      ],
+      "mat_236": [
+        "mat",
+        "236"
+      ],
+      "mat_237": [
+        "mat",
+        "237"
+      ],
+      "drawing_238": [
+        "drawing",
+        "238"
+      ],
+      "drawing_239": [
+        "drawing",
+        "239"
+      ],
+      "drawing_240": [
+        "drawing",
+        "240"
+      ],
+      "drawing_241": [
+        "drawing",
+        "241"
+      ],
+      "drawing_242": [
+        "drawing",
+        "242"
+      ],
+      "drawing_243": [
+        "drawing",
+        "243"
+      ],
+      "orchid_244": [
+        "orchid",
+        "244"
+      ],
+      "light_245": [
+        "light",
+        "245"
+      ],
+      "powersocket_246": [
+        "powersocket",
+        "246"
+      ],
+      "phone_247": [
+        "phone",
+        "247"
+      ],
+      "television_248": [
+        "television",
+        "248"
+      ],
+      "wall_clock": [
+        "wall_clock",
+        "249"
+      ],
+      "photoframe_285": [
+        "photoframe",
+        "285"
+      ],
+      "stovefan": [
+        "stovefan",
+        "288"
+      ],
+      "freezer": [
+        "freezer",
+        "289"
+      ],
+      "coffe_maker": [
+        "coffe_maker",
+        "290"
+      ],
+      "toaster": [
+        "toaster",
+        "292"
+      ],
+      "oven": [
+        "oven",
+        "295"
+      ],
+      "tray_296": [
+        "tray",
+        "296"
+      ],
+      "microwave": [
+        "microwave",
+        "297"
+      ],
+      "floor_320": [
+        "floor",
+        "320"
+      ],
+      "floor_321": [
+        "floor",
+        "321"
+      ],
+      "floor_322": [
+        "floor",
+        "322"
+      ],
+      "floor_323": [
+        "floor",
+        "323"
+      ],
+      "floor_324": [
+        "floor",
+        "324"
+      ],
+      "floor_325": [
+        "floor",
+        "325"
+      ],
+      "floor_326": [
+        "floor",
+        "326"
+      ],
+      "floor_327": [
+        "floor",
+        "327"
+      ],
+      "floor_328": [
+        "floor",
+        "328"
+      ],
+      "wall_329": [
+        "wall",
+        "329"
+      ],
+      "wall_330": [
+        "wall",
+        "330"
+      ],
+      "wall_331": [
+        "wall",
+        "331"
+      ],
+      "wall_332": [
+        "wall",
+        "332"
+      ],
+      "wall_333": [
+        "wall",
+        "333"
+      ],
+      "wall_334": [
+        "wall",
+        "334"
+      ],
+      "wall_335": [
+        "wall",
+        "335"
+      ],
+      "wall_336": [
+        "wall",
+        "336"
+      ],
+      "ceiling_337": [
+        "ceiling",
+        "337"
+      ],
+      "ceiling_338": [
+        "ceiling",
+        "338"
+      ],
+      "ceiling_339": [
+        "ceiling",
+        "339"
+      ],
+      "ceiling_340": [
+        "ceiling",
+        "340"
+      ],
+      "ceiling_341": [
+        "ceiling",
+        "341"
+      ],
+      "ceiling_342": [
+        "ceiling",
+        "342"
+      ],
+      "ceiling_343": [
+        "ceiling",
+        "343"
+      ],
+      "ceiling_344": [
+        "ceiling",
+        "344"
+      ],
+      "ceiling_345": [
+        "ceiling",
+        "345"
+      ],
+      "doorjamb_346": [
+        "doorjamb",
+        "346"
+      ],
+      "doorjamb_347": [
+        "doorjamb",
+        "347"
+      ],
+      "window_348": [
+        "window",
+        "348"
+      ],
+      "ceilinglamp_349": [
+        "ceilinglamp",
+        "349"
+      ],
+      "walllamp_350": [
+        "walllamp",
+        "350"
+      ],
+      "walllamp_351": [
+        "walllamp",
+        "351"
+      ],
+      "couch": [
+        "couch",
+        "352"
+      ],
+      "tvstand_353": [
+        "tvstand",
+        "353"
+      ],
+      "bookshelf_354": [
+        "bookshelf",
+        "354"
+      ],
+      "table_355": [
+        "table",
+        "355"
+      ],
+      "chair_356": [
+        "chair",
+        "356"
+      ],
+      "desk_357": [
+        "desk",
+        "357"
+      ],
+      "dresser_358": [
+        "dresser",
+        "358"
+      ],
+      "hanger_359": [
+        "hanger",
+        "359"
+      ],
+      "hanger_361": [
+        "hanger",
+        "361"
+      ],
+      "hanger_363": [
+        "hanger",
+        "363"
+      ],
+      "hanger_365": [
+        "hanger",
+        "365"
+      ],
+      "hanger_367": [
+        "hanger",
+        "367"
+      ],
+      "hanger_369": [
+        "hanger",
+        "369"
+      ],
+      "hanger_372": [
+        "hanger",
+        "372"
+      ],
+      "hanger_374": [
+        "hanger",
+        "374"
+      ],
+      "hanger_375": [
+        "hanger",
+        "375"
+      ],
+      "hanger_376": [
+        "hanger",
+        "376"
+      ],
+      "closetdrawer_377": [
+        "closetdrawer",
+        "377"
+      ],
+      "closetdrawer_380": [
+        "closetdrawer",
+        "380"
+      ],
+      "closetdrawer_382": [
+        "closetdrawer",
+        "382"
+      ],
+      "closetdrawer_384": [
+        "closetdrawer",
+        "384"
+      ],
+      "closetdrawer_388": [
+        "closetdrawer",
+        "388"
+      ],
+      "closetdrawer_392": [
+        "closetdrawer",
+        "392"
+      ],
+      "closetdrawer_394": [
+        "closetdrawer",
+        "394"
+      ],
+      "filing_cabinet": [
+        "filing_cabinet",
+        "399"
+      ],
+      "drawing_400": [
+        "drawing",
+        "400"
+      ],
+      "mat_401": [
+        "mat",
+        "401"
+      ],
+      "drawing_402": [
+        "drawing",
+        "402"
+      ],
+      "drawing_403": [
+        "drawing",
+        "403"
+      ],
+      "drawing_404": [
+        "drawing",
+        "404"
+      ],
+      "pillow_405": [
+        "pillow",
+        "405"
+      ],
+      "pillow_406": [
+        "pillow",
+        "406"
+      ],
+      "curtain_407": [
+        "curtain",
+        "407"
+      ],
+      "curtain_408": [
+        "curtain",
+        "408"
+      ],
+      "curtain_409": [
+        "curtain",
+        "409"
+      ],
+      "television_410": [
+        "television",
+        "410"
+      ],
+      "light_411": [
+        "light",
+        "411"
+      ],
+      "powersocket_412": [
+        "powersocket",
+        "412"
+      ],
+      "mouse_413": [
+        "mouse",
+        "413"
+      ],
+      "mousepad_414": [
+        "mousepad",
+        "414"
+      ],
+      "keyboard_415": [
+        "keyboard",
+        "415"
+      ],
+      "cpuscreen_416": [
+        "cpuscreen",
+        "416"
+      ],
+      "computer_417": [
+        "computer",
+        "417"
+      ],
+      "photoframe_430": [
+        "photoframe",
+        "430"
+      ],
+      "plate": [
+        "plate",
+        "1000"
+      ],
+      "dishwasher": [
+        "dishwasher",
+        "1001"
+      ],
+      "pot": [
+        "pot",
+        "1002"
+      ],
+      "dish_soap": [
+        "dish_soap",
+        "1003"
+      ],
+      "clothes_socks": [
+        "clothes_socks",
+        "2000"
+      ],
+      "detergent": [
+        "detergent",
+        "2001"
+      ],
+      "brush": [
+        "brush",
+        "2002"
+      ],
+      "tray_2003": [
+        "tray",
+        "2003"
+      ],
+      "microphone": [
+        "microphone",
+        "2004"
+      ],
+      "food_onion": [
+        "food_onion",
+        "2005"
+      ],
+      "phone_2006": [
+        "phone",
+        "2006"
+      ],
+      "phone_2007": [
+        "phone",
+        "2007"
+      ],
+      "check": [
+        "check",
+        "2008"
+      ],
+      "tooth_paste": [
+        "tooth_paste",
+        "2009"
+      ],
+      "mop_bucket": [
+        "mop_bucket",
+        "2010"
+      ],
+      "dvd_player": [
+        "dvd_player",
+        "2011"
+      ],
+      "deck_of_cards": [
+        "deck_of_cards",
+        "2012"
+      ],
+      "scrabble": [
+        "scrabble",
+        "2013"
+      ],
+      "novel": [
+        "novel",
+        "2014"
+      ],
+      "pajamas": [
+        "pajamas",
+        "2015"
+      ],
+      "stamp": [
+        "stamp",
+        "2016"
+      ]
+    }
+  }
+}

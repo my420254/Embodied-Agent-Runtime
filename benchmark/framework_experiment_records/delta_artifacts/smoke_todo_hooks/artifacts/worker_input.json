@@ -1,0 +1,54 @@
+{
+  "benchmark_name": "delta",
+  "run_root": "/data/zmy/OurAgent-he1/benchmark/delta/framework/results/delta_audit_smoke_20260806_todo_hooks",
+  "run_name": "delta_audit_smoke_20260806_todo_hooks",
+  "unit_index": 0,
+  "case": {
+    "case_id": "dining:allensville:episode-01",
+    "dataset": "delta",
+    "input": {
+      "dataset": "delta",
+      "benchmark_module": "benchmark.delta",
+      "task_id": "dining:allensville:episode-01",
+      "base_task_id": "dining:allensville",
+      "instruction": "Set up the dining table for dinner, place the tableware/cutleries and glass on the dining table. Also bring something romantic to the dining table.",
+      "domain": "dining",
+      "scene_name": "allensville",
+      "scene_graph_cache_path": "/data/zmy/OurAgent-he1/benchmark/datasets/extracted/delta/initial_envs/allensville.json",
+      "task_source": "delta_data_example_py",
+      "environment_source": "delta_data_scene_graph_py",
+      "delta_env_state": [
+        "item_on(<item_1>, <item_2>): <item_1> is on <item_2>.",
+        "item_is_dining_table(<item>): <item> is dining_table."
+      ],
+      "add_obj": null,
+      "add_act": [
+        "place_on(<agent>, <item_1>, <item_2>, <room>): For placing <item_1> on <item_2>, <agent> and <item_2> must be in <room>, <item_1> must be pickable and accessible, <item_2> must be dining_table, <agent> is loaded and has <item_1>. As result, <item_1> is on <item_2> in <room>, <agent> is not loaded and does not has <item_1> anymore."
+      ],
+      "episode": 1
+    },
+    "metadata": {
+      "domain": "dining",
+      "scene": "allensville",
+      "base_case_id": "dining:allensville",
+      "episode": 1,
+      "trial_kind": "paper_main_episode"
+    },
+    "source_path": "dining:allensville"
+  },
+  "endpoint": {
+    "index": 0,
+    "port": 18004,
+    "api_base": "http://192.168.27.250:18004/v1",
+    "api_key": "qwen-local-key",
+    "api_model": "Qwen3.5-9B",
+    "max_tokens": 4096,
+    "temperature": 0.0
+  },
+  "trace": true,
+  "trace_llm_io": true,
+  "options": {
+    "validate_binary": "",
+    "skip_val": false
+  }
+}
