@@ -5,7 +5,7 @@
 默认工作目录：
 
 ```bash
-cd /data/zmy/OurAgent-he1
+cd <PROJECT_ROOT>
 export OURAGENT_WORKSPACE_ROOT=/data/zmy
 ```
 
@@ -161,7 +161,7 @@ benchmark/framework_experiment_records/full_queue_20260806/queue.log
 启动和查看：
 
 ```bash
-cd /data/zmy/OurAgent-he1
+cd <PROJECT_ROOT>
 
 tmux new -d -s framework_full_3p6_queue_20260806 \
   'bash benchmark/framework_experiment_records/run_full_queue_20260806.sh'
@@ -321,7 +321,7 @@ ReAcTree ALFRED 8005 fine-tuned：
 也可以直接使用脚本入口：
 
 ```bash
-cd /data/zmy/OurAgent-he1
+cd <PROJECT_ROOT>
 
 benchmark/reactree/alfred/framework/code/run_18004.sh \
   --run-name reactree_alfred_seen_full_20260807_18004 \

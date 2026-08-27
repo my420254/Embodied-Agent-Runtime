@@ -99,7 +99,7 @@ sandbox 检查必须使用当前数据集自己的环境：
 本轮 2026-08-06 的手工审计和 smoke/full 启动记录在：
 
 ```text
-/data/zmy/OurAgent-he1/benchmark/framework_experiment_records
+<PROJECT_ROOT>/benchmark/framework_experiment_records
 ```
 
 该目录包含每个数据集的 smoke md、复制后的 artifacts、3.6 full 队列脚本和队列日志。

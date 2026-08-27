@@ -7,7 +7,7 @@
 从仓库根目录运行：
 
 ```bash
-cd /data/zmy/OurAgent-he1
+cd <PROJECT_ROOT>
 export OURAGENT_WORKSPACE_ROOT=/data/zmy
 unset http_proxy https_proxy HTTP_PROXY HTTPS_PROXY ALL_PROXY all_proxy
 ```

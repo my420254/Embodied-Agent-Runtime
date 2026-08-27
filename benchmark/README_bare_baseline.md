@@ -3,7 +3,7 @@
 本文只说明 `bare_baseline`，不包含 OurAgent framework 和 paper method。所有命令默认从仓库根目录运行：
 
 ```bash
-cd /data/zmy/OurAgent-he1
+cd <PROJECT_ROOT>
 export OURAGENT_WORKSPACE_ROOT=/data/zmy
 ```
 
@@ -51,7 +51,7 @@ VirtualHome 原始 342 个 id 中，`84_1`、`93_1`、`339_1`、`627_1` 缺少 n
 这些命令用于真实链路小样本核对，会调用模型和 evaluator。
 
 ```bash
-cd /data/zmy/OurAgent-he1
+cd <PROJECT_ROOT>
 
 /data/zmy/envs/ouragent/bin/python benchmark/delta/bare_baseline/code/run.py \
   --run-name smoke_real_delta_bare_20260807 \
@@ -116,7 +116,7 @@ ALFRED unseen smoke 把 `--split valid_seen` 改成 `valid_unseen`，run name �
 建议每个 full 单独放入 tmux，会话名要包含方法、数据集、模型和日期。
 
 ```bash
-cd /data/zmy/OurAgent-he1
+cd <PROJECT_ROOT>
 
 tmux new -d -s delta_bare_full_qwen35 \
   '/data/zmy/envs/ouragent/bin/python benchmark/delta/bare_baseline/code/run.py --run-name delta_bare_full_qwen35 --episodes 50 --workers 1 --ports 18004 --api-model Qwen3.5-9B --api-key qwen-local-key --reset'
