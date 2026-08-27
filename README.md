@@ -1,8 +1,52 @@
 # OurAgent-he1
 
-一个面向 ROS / 前端 / CLI 的 LangGraph 运行时。`main.py` 负责常驻监听，`scripts/run_agent.py` 负责命令行调试，`scripts/renderer.py` 负责终端渲染。
+面向具身任务、ROS 前端联调和命令行实验的 LangGraph Agent Runtime。这个仓库沉淀的是我实习阶段后期围绕“自然语言任务如何稳定进入机器人/仿真执行闭环”构建的一套工程化框架：统一文本入口、结构化理解、任务规划、任务栈管理、插单中断、失败反思、benchmark 对齐和 vLLM 并行实验。
 
-本文只说明当前仓库里已经存在、并且默认会走的能力，以及如何从命令行启动。
+它不是一个只把 prompt 串起来的 demo，而是一个更接近真实落地链路的 Agent 框架：
+
+```text
+ROS / Frontend / CLI Text
+  -> CommandBus
+  -> LangGraph Runtime
+  -> Understanding
+  -> Planning + Sandbox Audit
+  -> Task Stack / Interrupt / Resume
+  -> Execution Backend
+  -> Reflection / Replan / Benchmark Report
+```
+
+## 项目亮点
+
+- **多入口统一接入**：`main.py` 面向 ROS/前端正式联调，`scripts/run_agent.py` 面向 CLI 调试，两者最终都进入同一个 `CommandBus` 和同一个 runtime，不维护两套任务逻辑。
+- **可中断任务调度**：新任务、取消、暂停、恢复都被归一化为命令事件；执行中收到新任务时，任务管理层会压栈当前任务，先执行插单任务，再恢复原任务。
+- **LangGraph 分层编排**：用图节点拆分理解、规划、任务管理、执行、反思，避免把所有状态压进单个循环，方便定位失败层和做局部重试。
+- **执行前审计**：规划结果会经过 sandbox evaluator、state-diff audit、playbook retrieval/write 等检查，降低直接把 LLM 输出交给执行层的风险。
+- **失败反思闭环**：执行失败会保留 `failure_layer`、错误信息和中间状态，反思层可以按理解、规划、执行三类失败决定从哪一层重试。
+- **benchmark 公平对齐**：框架侧和裸基线使用同一份抽取/清洗后的数据集，避免旧实验里用 paper method 中间结果跑 bare baseline 造成口径不一致。
+- **vLLM 工程联调**：支持本地 Qwen vLLM 端点、并行 worker、端口切换和拥塞排查，能解释真实部署里“偶发指令补全/超时”的原因。
+
+## 代码导航
+
+| 模块 | 路径 | 作用 |
+| --- | --- | --- |
+| 正式入口 | `main.py` | ROS/前端联调入口，启动常驻监听和 AgentRuntimeThread |
+| CLI 入口 | `scripts/run_agent.py` | 命令行任务注入、执行调试、向已有 runtime 投递插单 |
+| 命令总线 | `adapters/command_bus.py` | 统一 new_task/cancel/pause/resume 等外部命令 |
+| ROS 文本适配 | `adapters/ros_text_command_service.py` | 接收 `genesis_msgs/srv/TextCommand` 并转发到 CommandBus |
+| Runtime | `agent_runtime/engine.py` | 常驻消费命令，驱动 LangGraph 图执行 |
+| 图编排 | `graph/` | Understanding、Planning、Task Management、Reflection 主流程 |
+| 动作技能 | `skills/` | PrimitiveTool 契约、参数校验、状态推进 |
+| 认知规划 | `cognitive/` | KG、SceneGraph、TaskGraph、BehaviorTree 等高级规划实验 |
+| benchmark | `benchmark/` | 数据集适配、实验入口、baseline/framework 对齐说明 |
+| 架构文档 | `docs/ARCHITECTURE.md` | 模块边界、数据流、后续重构约束 |
+
+## 面试官可以重点看
+
+1. `main.py`、`adapters/command_bus.py`、`agent_runtime/engine.py`：看 ROS/前端文本如何进入同一套 Agent runtime。
+2. `graph/task_management/`：看任务栈、中断、取消、恢复的工程化处理。
+3. `graph/planning/`、`skills/`：看 LLM 规划如何被技能契约和 sandbox 审计约束。
+4. `benchmark/README_index.md`、`benchmark/README_bare_baseline.md`：看 framework 和裸基线如何保持同一数据口径。
+5. `docs/ARCHITECTURE.md`：看整体架构边界，不把 benchmark、动作语义和主图编排混在一起。
 
 ## 先说结论
 
