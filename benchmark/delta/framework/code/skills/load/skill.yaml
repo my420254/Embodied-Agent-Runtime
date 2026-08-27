@@ -1,0 +1,14 @@
+name: load
+description: 把手中物品装入 loadable 容器（load；官方：item_1 须为空 loadable、item_2 须在手、robot 在其房间）。任务需要把物品装进箱子/托盘时使用。
+prompt: prompt.md
+handler: benchmark.delta.framework.code.skills.load.handler:LoadSkill
+planner_item_param: item
+planner_destination_param: loadable
+planner_action_name: load
+planner_required_fields: action,agent,item_1,item_2,room
+planner_fixed_fields: action=load;agent=robot
+planner_entity_fields: item_1,item_2
+planner_room_fields: room
+planner_context_field: domain
+planner_context_values: office
+planner_allow_extra_fields: false

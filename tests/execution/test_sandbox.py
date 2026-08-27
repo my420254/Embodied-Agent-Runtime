@@ -1,10 +1,11 @@
 from pathlib import Path
 
+import pytest
+
 from adapters.sandbox import apply_sandbox_action
 from config.settings import get_config, project_path
 from skills.loader import load_enabled_skill_names
 from skills.registry import get_skill_handlers
-from benchmark.reactree.alfred.framework.code.skills.go_to.handler import GoToSkill
 
 
 def test_each_enabled_skill_has_prompt_metadata_and_handler():
@@ -37,6 +38,10 @@ def test_apply_sandbox_action_rejects_room_level_navigation():
 
 
 def test_go_to_allows_direct_navigation_to_pickupable_instance():
+    module = pytest.importorskip(
+        "benchmark.reactree.alfred.framework.code.skills.go_to.handler",
+        reason="external ReActree ALFRED skill package is not included in the public runtime export",
+    )
     sim_env = {
         "Dresser (1)": {
             "direct_parent": "Bedroom (1)",
@@ -50,14 +55,14 @@ def test_go_to_allows_direct_navigation_to_pickupable_instance():
         },
     }
 
-    assert GoToSkill().validate(
+    assert module.GoToSkill().validate(
         sim_env,
         {"robot_location": "Bedroom (1)"},
         {"target": "CellPhone (1)"},
     ) == (True, "", "")
 
 
-def test_apply_sandbox_action_allows_redundant_idempotent_actions():
+def test_apply_sandbox_action_rejects_redundant_state_changes():
     sim_env = {
         "橱柜_1": {
             "direct_parent": "厨房",
@@ -78,20 +83,26 @@ def test_apply_sandbox_action_allows_redundant_idempotent_actions():
         "NavigateTo",
         {"target_location": "橱柜_1"},
     ) == (True, "", "")
-    assert apply_sandbox_action(
+    open_ok, open_issue, open_fix = apply_sandbox_action(
         sim_env,
         sim_robot,
         "Open",
         {"target_container": "橱柜_1"},
-    ) == (True, "", "")
+    )
+    assert open_ok is False
+    assert open_issue == "目标状态重复"
+    assert "已经处于打开状态" in open_fix
 
     sim_robot["robot_location"] = "灯_1"
-    assert apply_sandbox_action(
+    toggle_ok, toggle_issue, toggle_fix = apply_sandbox_action(
         sim_env,
         sim_robot,
         "ToggleOn",
         {"target_device": "灯_1"},
-    ) == (True, "", "")
+    )
+    assert toggle_ok is False
+    assert toggle_issue == "目标状态重复"
+    assert "已经处于开启状态" in toggle_fix
 
 
 def test_apply_sandbox_action_pickup_moves_item_to_robot_hand():

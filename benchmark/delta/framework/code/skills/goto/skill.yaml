@@ -1,0 +1,12 @@
+name: goto
+description: 在 DELTA 房间之间移动（goto；官方：from=当前房间、to=目标房间，须存在可达路径）。任务需要换房间时使用；框架会按邻接表自动展开走廊逐跳。
+prompt: prompt.md
+handler: benchmark.delta.framework.code.skills.goto.handler:GotoSkill
+planner_location_param: to
+planner_action_name: goto
+planner_required_fields: action,agent,room_1,room_2
+planner_fixed_fields: action=goto;agent=robot
+planner_room_fields: room_1,room_2
+planner_context_field: domain
+planner_context_values: clean,dining,office,pc
+planner_allow_extra_fields: false

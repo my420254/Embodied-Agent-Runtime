@@ -1,0 +1,18 @@
+name: assemble
+description: 组装 PC（assemble；官方：主板/CPU/内存/硬盘/显卡/电源须已放在组装房间，组装后 pc_assembled）。任务需要组装电脑时使用；先 drop 全部组件到房间。
+prompt: prompt.md
+handler: benchmark.delta.framework.code.skills.assemble.handler:AssembleSkill
+planner_target_param: target_pc
+planner_location_param: room
+planner_requires_empty_hand: true
+planner_effect_state_key: isAssembled
+planner_effect_state_value: true
+planner_action_name: assemble
+planner_required_fields: action,agent,room,item_1,item_2,item_3,item_4,item_5,item_6,pc
+planner_fixed_fields: action=assemble;agent=robot
+planner_entity_fields: item_1,item_2,item_3,item_4,item_5,item_6
+planner_room_fields: room
+planner_unchecked_fields: pc
+planner_context_field: domain
+planner_context_values: pc
+planner_allow_extra_fields: false

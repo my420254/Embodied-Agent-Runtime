@@ -3,16 +3,14 @@ from __future__ import annotations
 import json
 import os
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable, Dict
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 WORKSPACE_ROOT = Path(os.getenv("OURAGENT_WORKSPACE_ROOT", str(PROJECT_ROOT.parent))).resolve()
 CONFIG_FILE = "config/settings.json"
+JsonObject = Dict[str, Any]
 
-# 定义一个函数 project_path，接受可变数量的字符串参数 parts，返回一个 Path 对象，表示项目根目录下的路径。joinpath()方法用于将多个路径组件连接成一个完整的路径。
-# *parts: str 表示 parts 是一个字符串类型的可变参数，可以接受任意数量的字符串参数，并将它们作为一个元组传递给函数。不使用*时，parts 将被视为一个单独的参数，而不是多个参数。
-# 比如*parts: str，如果调用 project_path("data", "input.json")，则 parts 将是一个包含两个元素的元组 ("data", "input.json")，函数内部可以通过 parts[0] 和 parts[1] 来访问这两个参数。
-# 如果不使用*，即 parts: str，那么调用 project_path("data", "input.json") 将会导致错误，因为函数期望一个字符串参数，而不是两个。
+
 def project_path(*parts: str) -> Path:
     return PROJECT_ROOT.joinpath(*parts)
 
@@ -28,7 +26,7 @@ def _resolve_config_path(filename: str) -> Path:
     return project_path(str(path))
 
 
-def _deep_merge(base: dict, override: dict) -> dict:
+def _deep_merge(base: JsonObject, override: JsonObject) -> JsonObject:
     merged = dict(base)
     for key, value in override.items():
         current = merged.get(key)
@@ -39,29 +37,28 @@ def _deep_merge(base: dict, override: dict) -> dict:
     return merged
 
 
-def _load_json_config(filename: str) -> dict:
+def _load_json_config(filename: str) -> JsonObject:
     config_path = _resolve_config_path(filename)
     if not config_path.exists():
         raise FileNotFoundError(f"required config file not found: {config_path}")
     try:
         with config_path.open("r", encoding="utf-8") as f:
             data = json.load(f)
-    except Exception as e:
-        raise RuntimeError(f"{filename} 加载失败: {e}") from e
+    except (OSError, json.JSONDecodeError) as exc:
+        raise RuntimeError(f"{filename} 加载失败: {exc}") from exc
     if not isinstance(data, dict):
         raise ValueError(f"{filename} must contain a JSON object")
     return data
 
 
-
 def _same_config_file(left: str | Path, right: str | Path) -> bool:
     try:
         return _resolve_config_path(str(left)).resolve() == _resolve_config_path(str(right)).resolve()
-    except Exception:
+    except (OSError, RuntimeError, ValueError):
         return str(left) == str(right)
 
 
-def load_app_config(filename: str | Path | None = None) -> dict:
+def load_app_config(filename: str | Path | None = None) -> JsonObject:
     return _load_json_config(str(filename or CONFIG_FILE))
 
 
@@ -71,7 +68,7 @@ _ACTIVE_CONFIG_FILE = str(_DEFAULT_CONFIG_PATH)
 _ACTIVE_APP_CONFIG = APP_CONFIG
 
 
-def activate_config(filename: str | Path | None = None) -> dict:
+def activate_config(filename: str | Path | None = None) -> JsonObject:
     """Select the settings file used by get_config for the current process."""
     global _ACTIVE_CONFIG_FILE, _ACTIVE_APP_CONFIG
     target = str(filename or CONFIG_FILE)
@@ -89,7 +86,7 @@ def active_config_file() -> str:
     return _ACTIVE_CONFIG_FILE
 
 
-def active_app_config() -> dict:
+def active_app_config() -> JsonObject:
     return _ACTIVE_APP_CONFIG
 
 
@@ -100,27 +97,14 @@ def get_config(*keys: str, default: Any = None) -> Any:
             return default
         current = current[key]
     return current
-#这个函数 _resolve_model_setting 用于解析模型配置项的值，按照优先级从环境变量、模块配置、全局环境变量和全局配置中查找。
-#它接受多个参数，包括模块名称、环境变量后缀、模块配置键、全局环境变量名称、全局配置键以及模块和模型的配置字典。
-#函数首先尝试从环境变量中获取值，如果存在则返回；如果模块配置中存在对应键且不为 None，则返回该值；接着尝试从全局环境变量获取值，如果存在则返回；最后返回模型配置中的全局键对应的值。
-#比如对于模型配置项 "api_key"，函数会依次检查环境变量 "LANGGRAPH_JSZN_{MODULE}_API_KEY"，模块配置中的 "api_key"，全局环境变量 "LANGGRAPH_JSZN_API_KEY"，以及模型配置中的 "api_key" 键，
-#返回第一个找到的非 None 值。
-#每个参数的含义如下：
-# - module: 模块名称，用于构建环境变量名和查找模块配置。
-# - env_suffix: 环境变量后缀，用于构建环境变量名。
-# - module_key: 模块配置键，用于查找模块配置中的值。
-# - global_env_name: 全局环境变量名称，用于查找全局环境变量中的值。
-# - global_key: 全局配置键，用于查找模型配置中的值。
-# - module_cfg: 模块配置字典，包含模块特定的配置项。
-# - model_cfg: 模型配置字典，包含全局的模型配置项。
 def _resolve_model_setting(
     module: str,
     env_suffix: str,
     module_key: str,
     global_env_name: str,
     global_key: str,
-    module_cfg: dict,
-    model_cfg: dict,
+    module_cfg: JsonObject,
+    model_cfg: JsonObject,
 ) -> Any:
     module_env = os.getenv(f"LANGGRAPH_JSZN_{module.upper()}_{env_suffix}")
     if module_env is not None:
@@ -138,9 +122,9 @@ def _resolve_model_number_setting(
     env_suffix: str,
     module_key: str,
     global_env_names: list[str],
-    module_cfg: dict,
+    module_cfg: JsonObject,
     default: Any,
-    caster,
+    caster: Callable[[Any], Any],
 ) -> Any:
     env_names = [f"LANGGRAPH_JSZN_{module.upper()}_{env_suffix}", f"LANGGRAPH_JSZN_{env_suffix}", *global_env_names]
     for env_name in env_names:
@@ -179,16 +163,7 @@ def _enable_thinking_override(module: str) -> bool | None:
     return None
 
 
-# 定义一个函数 get_model_config，接受一个模块名称作为参数，返回一个字典类型的模型配置。该函数会根据模块名称从全局配置中获取对应的模块配置，并使用 _resolve_model_setting 函数解析每个配置项的值。
-# 返回的配置字典包含以下键：
-# - "base_url": 模型的 API 基础 URL。
-# - "api_key": 模型的 API 密钥。
-# - "model": 模型名称。
-# - "temperature": 模型的温度参数，默认为 0.1。
-# - "max_tokens": 模型的最大 token 数量，默认为 2048。
-# - "timeout": 模型的超时时间，默认为模块配置中的 timeout 或全局模型配置中的 timeout。
-# 如果模块配置或全局模型配置中存在 "extra_body" 键，则会将其添加到返回的配置字典中。
-def get_model_config(module: str) -> dict:
+def get_model_config(module: str) -> JsonObject:
     model_cfg = get_config("model", default={}) or {}
     module_cfg = (model_cfg.get("modules") or {}).get(module, {})
     config = {

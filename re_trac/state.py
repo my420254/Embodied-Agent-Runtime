@@ -5,7 +5,7 @@ from typing import Any
 EMPTY_FAILED_LESSONS_TEXT = "暂无相关拦截记录"
 
 
-def coerce_memory(memory: dict | None = None) -> dict[str, list[str]]:
+def coerce_memory(memory: dict | None = None) -> dict[str, Any]:
     if not isinstance(memory, dict):
         return {"failed_lessons": []}
 
@@ -37,7 +37,7 @@ def empty_checkpoint_state() -> dict[str, Any]:
     }
 
 
-def add_failed_lesson(memory: dict | None, issue: str, fix: str) -> dict[str, list[str]]:
+def add_failed_lesson(memory: dict | None, issue: str, fix: str) -> dict[str, Any]:
     memory = coerce_memory(memory)
     lesson = f"{issue} -> 修复要求: {fix}"
     if lesson not in memory["failed_lessons"]:
@@ -86,8 +86,8 @@ def planning_context(
         isinstance(feature_flags, dict)
         and feature_flags.get("checkpoint_repair") is False
     )
-    validated_steps = list(state.get("validated_steps") or []) if repair_enabled else []
-    validated_todo_actions = list(state.get("validated_todo_actions") or []) if repair_enabled else []
+    validated_steps = copy.deepcopy(state.get("validated_steps") or []) if repair_enabled else []
+    validated_todo_actions = copy.deepcopy(state.get("validated_todo_actions") or []) if repair_enabled else []
     checkpoint_env = (state.get("checkpoint_env") or {}) if repair_enabled else {}
     checkpoint_robot = (state.get("checkpoint_robot") or {}) if repair_enabled else {}
     todo_checkpoint_env = (state.get("todo_checkpoint_env") or {}) if repair_enabled else {}
@@ -96,10 +96,10 @@ def planning_context(
     return {
         "validated_steps": validated_steps,
         "validated_todo_actions": validated_todo_actions,
-        "current_env": checkpoint_env if checkpoint_env else resolved_env,
-        "current_robot": checkpoint_robot if checkpoint_robot else fallback_robot,
-        "todo_current_env": todo_checkpoint_env if todo_checkpoint_env else resolved_env,
-        "todo_current_robot": todo_checkpoint_robot if todo_checkpoint_robot else fallback_robot,
+        "current_env": copy.deepcopy(checkpoint_env if checkpoint_env else resolved_env),
+        "current_robot": copy.deepcopy(checkpoint_robot if checkpoint_robot else fallback_robot),
+        "todo_current_env": copy.deepcopy(todo_checkpoint_env if todo_checkpoint_env else resolved_env),
+        "todo_current_robot": copy.deepcopy(todo_checkpoint_robot if todo_checkpoint_robot else fallback_robot),
         "next_step_num": len(validated_steps) + 1,
         "next_todo_step_num": len(validated_todo_actions) + 1,
         "failed_lessons": format_failed_lessons(state.get("re_trac_memory")),
@@ -133,6 +133,10 @@ def build_failure_payload(
         "todo_checkpoint_env": copy.deepcopy(todo_checkpoint_env or {}),
         "todo_checkpoint_robot": copy.deepcopy(todo_checkpoint_robot or {}),
         "re_trac_state": copy.deepcopy(re_trac_state or {}),
-        "re_trac_memory": add_failed_lesson(memory, issue, fix) if record_retrac_memory else coerce_memory(),
+        "re_trac_memory": (
+            add_failed_lesson(memory, issue, fix)
+            if record_retrac_memory
+            else coerce_memory(memory)
+        ),
         "evaluator_findings": findings,
     }

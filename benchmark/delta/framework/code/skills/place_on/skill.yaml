@@ -1,0 +1,14 @@
+name: place_on
+description: 把手中物品放到表面（place_on；官方：目标须在手，item_2 须为 dining_table/surface 且目标在其房间）。任务需要把物品放到桌面/台面时使用。
+prompt: prompt.md
+handler: benchmark.delta.framework.code.skills.place_on.handler:PlaceOnSkill
+planner_item_param: item
+planner_destination_param: surface
+planner_action_name: place_on
+planner_required_fields: action,agent,item_1,item_2,room
+planner_fixed_fields: action=place_on;agent=robot
+planner_entity_fields: item_1,item_2
+planner_room_fields: room
+planner_context_field: domain
+planner_context_values: dining
+planner_allow_extra_fields: false

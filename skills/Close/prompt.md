@@ -11,6 +11,7 @@ description: 关闭指定的容器。
 
 ## 前提条件
 * **【位置前提】** 机器人的全局坐标必须已到达 `target_container` 所在位置。
+* **【前置动作】** 执行本动作前，若机器人当前位置不是 `target_container`（即机器人位置 != target_container），必须先执行 `NavigateTo(target_container)` 到达该节点；严禁在未导航到位时直接执行本动作。
 * **【状态前提】** `target_container` 当前属性必须为 `isOpen: True`。严禁关闭已关闭的容器。
 * **【单臂死锁防范】** 关门需要机械臂发力，必须保证机械臂空闲。手里有东西必须先 Put 放下。
 

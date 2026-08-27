@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import copy
+import importlib
 from typing import Any
 
 from graph.planning.config import sda_max_backtrack_depth, sda_max_subtree_actions
@@ -10,7 +11,30 @@ from graph.planning.normalizer import reindex_todo_steps
 from graph.planning.evaluation.validation.sandbox_validation_types import SandboxValidationContext, TodoValidationResult
 from graph.planning.evaluation.validation.trajectory import step_number
 from re_trac import build_failed_step_retrac_state
-from SDA import generate_adaptive_subtree, select_repair_checkpoint
+
+
+def _select_sda_repair_checkpoint(**kwargs: Any) -> dict[str, Any]:
+    module = importlib.import_module(
+        "graph.planning.evaluation.repair_strategies.sda.state_dependency"
+    )
+    return module.select_repair_checkpoint(**kwargs)
+
+
+def generate_adaptive_subtree(**kwargs: Any) -> dict[str, Any]:
+    """精简展示版不再保留 legacy 顶层 SDA 自适应子树生成器。
+
+    默认修复策略是 ReTrac，因此主流程不会进入这里。若后续要重新启用
+    `repair_strategy=sda`，应把自适应子树生成能力迁移到
+    `graph.planning.evaluation.repair_strategies.sda` 内部，而不是恢复顶层
+    `SDA/` 目录。
+    """
+
+    del kwargs
+    return {
+        "success": False,
+        "actions": [],
+        "failure_reason": "SDA adaptive subtree generator is not included in the slim interview runtime.",
+    }
 
 
 def validate_todo_steps(
@@ -70,7 +94,7 @@ def validate_todo_steps(
             sda_checkpoint = None
             if context.sda_active:
                 try:
-                    sda_checkpoint = select_repair_checkpoint(
+                    sda_checkpoint = _select_sda_repair_checkpoint(
                         todo_list=todo_list,
                         validated_steps=validated_steps,
                         failed_step=step,

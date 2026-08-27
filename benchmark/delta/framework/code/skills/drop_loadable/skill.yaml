@@ -1,0 +1,14 @@
+name: drop_loadable
+description: 放下手中空的 loadable 容器到当前房间（drop_loadable；官方：目标须为空 loadable 且在手）。任务需要把空容器放回房间时使用。
+prompt: prompt.md
+handler: benchmark.delta.framework.code.skills.drop_loadable.handler:DropLoadableSkill
+planner_item_param: item
+planner_destination_param: room
+planner_action_name: drop_loadable
+planner_required_fields: action,agent,item,room
+planner_fixed_fields: action=drop_loadable;agent=robot
+planner_entity_fields: item
+planner_room_fields: room
+planner_context_field: domain
+planner_context_values: office
+planner_allow_extra_fields: false

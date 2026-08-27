@@ -128,9 +128,12 @@
           "always_run": false
         },
         "goal_state_extract": {
-          "enabled": false,
+          "enabled": true,
           "force": false,
           "max_attempts": 2
+        },
+        "skill_closure": {
+          "always_include": ["NavigateTo", "Pickup", "Put", "Open"]
         }
       }
     }

@@ -18,7 +18,7 @@ def compact_todo_list(todo_list: list | None) -> list[dict[str, Any]]:
         if isinstance(execution, dict) and execution:
             compact_steps.append(
                 {
-                    "step": step.get("step"),
+                    "step": step.get("step") or index,
                     "skill": execution.get("skill", ""),
                     "parameters": copy.deepcopy(execution.get("parameters", {})),
                 }

@@ -449,7 +449,7 @@ def test_state_diff_compares_all_entity_states():
     assert diff["entities"][0]["after"]["states"] == {"isToggled": True}
 
 
-def test_native_retrac_prefix_is_preserved_for_suffix_planning(monkeypatch):
+def test_todo_parser_retrac_prefix_is_preserved_for_suffix_planning(monkeypatch):
     prefix = [{"step": 1, "action": "goto", "from": "living_room", "to": "lobby"}]
     failed = {"step": 2, "action": "pick", "item": "banana_peel", "room": "lobby"}
     checkpoint_env = {
@@ -467,10 +467,10 @@ def test_native_retrac_prefix_is_preserved_for_suffix_planning(monkeypatch):
         failed_step=failed,
         sim_env=checkpoint_env,
         sim_robot=checkpoint_robot,
-        validated_native_actions=prefix,
-        failed_native_step=failed,
+        validated_todo_actions=prefix,
+        failed_todo_step=failed,
     )
-    assert retrac_state["native_trajectory"]["validated_prefix"] == prefix
+    assert retrac_state["todo_trajectory"]["validated_prefix"] == prefix
 
     captured = {}
 
@@ -486,8 +486,7 @@ def test_native_retrac_prefix_is_preserved_for_suffix_planning(monkeypatch):
     monkeypatch.setattr(llm_decomposer, "build_planning_messages", fake_build_messages)
 
     state = {
-        "planning_output_mode": "native_actions",
-        "native_action_parser_path": "tests.fake_parser",
+        "todo_output_parser_path": "tests.fake_parser",
         "structured_task": {"intent": "clean room"},
         "task_input_payload": {"llm_prompt": "clean room"},
         "task_context": {},

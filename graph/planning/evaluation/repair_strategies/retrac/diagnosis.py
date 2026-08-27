@@ -47,6 +47,7 @@ def _build_prompt(context: RepairContext, steps: list[dict]) -> str:
         if context.validated_steps
         else None
     )
+    failure_robot = copy.deepcopy(context.failure_robot) if isinstance(context.failure_robot, dict) else {}
     payload = {
         "plan_intent": str(context.structured_task.get("intent", "") or ""),
         "complete_todo_list": steps,
@@ -59,6 +60,10 @@ def _build_prompt(context: RepairContext, steps: list[dict]) -> str:
             "failed_step": _step_number(context.failed_step),
             "issue_type": context.issue_type,
             "fix_advice": context.fix_advice,
+        },
+        "failure_robot_state": {
+            "robot_location": failure_robot.get("robot_location", ""),
+            "robot_holding": failure_robot.get("robot_holding", ""),
         },
     }
     return (

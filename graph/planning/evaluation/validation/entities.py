@@ -1,6 +1,5 @@
 """Pure entity-validation helpers for planning evaluation."""
 
-import copy
 from typing import Any
 
 

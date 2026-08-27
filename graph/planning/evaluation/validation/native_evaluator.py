@@ -34,7 +34,6 @@ from graph.planning.evaluation.validation.sandbox_validator import run_sandbox_v
 from graph.planning.normalizer import (
     planning_debug_events as get_planning_debug_events,
     task_context as get_task_context,
-    task_source_text as get_task_source_text,
 )
 
 
@@ -73,7 +72,6 @@ def evaluate_feasibility(state: PlanningState) -> PlanningState:
     memory = coerce_memory(state.get("re_trac_memory"))
     injected_rule_ids = state.get("injected_playbook_rule_ids", [])
     debug_events = get_planning_debug_events(state)
-    prompt_text = get_task_source_text(state)
     sandbox_enabled = evaluation_flags.is_sandbox_evaluator_enabled(state)
     state_diff_audit_enabled = is_state_diff_audit_enabled(feature_flags)
     repair_strategy = active_repair_strategy()

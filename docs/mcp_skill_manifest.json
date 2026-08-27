@@ -1,0 +1,687 @@
+{
+  "schema_version": "ouragent-mcp-skill-manifest/v1",
+  "description": "OurAgent embodied robot skills exported as MCP-compatible tool descriptors.",
+  "profile": "all",
+  "tool_count": 18,
+  "tools": [
+    {
+      "name": "Clean",
+      "description": "在指定的水源设施处清洗物品。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target_item": {
+            "type": "string",
+            "description": "target_item 参数，原始技能说明类型为 string。"
+          },
+          "water_source": {
+            "type": "string",
+            "description": "water_source 参数，原始技能说明类型为 string。"
+          }
+        },
+        "required": [
+          "target_item",
+          "water_source"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "title": "Clean",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": false
+      },
+      "metadata": {
+        "handler": "skills.Clean.handler:CleanSkill",
+        "execution_domain": "机械臂控制",
+        "planning_contract": {
+          "planner_item_param": "target_item",
+          "planner_location_param": "water_source",
+          "planner_effect_state_key": "isClean",
+          "planner_effect_state_value": "true"
+        },
+        "failure_policy": {
+          "on_validation_failure": "repair_or_replan"
+        },
+        "status": "deployed",
+        "version": "skill-profile"
+      }
+    },
+    {
+      "name": "Close",
+      "description": "关闭指定的容器。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target_container": {
+            "type": "string",
+            "description": "target_container 参数，原始技能说明类型为 string。"
+          }
+        },
+        "required": [
+          "target_container"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "title": "Close",
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": false
+      },
+      "metadata": {
+        "handler": "skills.Close.handler:CloseSkill",
+        "execution_domain": "IoT 硬件交互",
+        "planning_contract": {
+          "planner_target_param": "target_container",
+          "planner_location_param": "target_container",
+          "planner_requires_empty_hand": "true",
+          "planner_state_key": "isOpen",
+          "planner_state_value": "false",
+          "planner_access_state": "true",
+          "planner_reversible_state": "true"
+        },
+        "failure_policy": {},
+        "status": "deployed",
+        "version": "skill-profile"
+      }
+    },
+    {
+      "name": "Cool",
+      "description": "在指定的制冷设备中冷却物品。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target_item": {
+            "type": "string",
+            "description": "target_item 参数，原始技能说明类型为 string。"
+          },
+          "cooling_device": {
+            "type": "string",
+            "description": "cooling_device 参数，原始技能说明类型为 string。"
+          }
+        },
+        "required": [
+          "cooling_device",
+          "target_item"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "title": "Cool",
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": false
+      },
+      "metadata": {
+        "handler": "skills.Cool.handler:CoolSkill",
+        "execution_domain": "机械臂控制",
+        "planning_contract": {
+          "planner_item_param": "target_item",
+          "planner_device_param": "cooling_device",
+          "planner_location_param": "cooling_device",
+          "planner_requires_empty_hand": "true",
+          "planner_container_state_key": "isOpen",
+          "planner_container_state_value": "false",
+          "planner_device_state_key": "isToggled",
+          "planner_device_state_value": "true",
+          "planner_effect_state_key": "isCold",
+          "planner_effect_state_value": "true"
+        },
+        "failure_policy": {},
+        "status": "deployed",
+        "version": "skill-profile"
+      }
+    },
+    {
+      "name": "Drink",
+      "description": "饮用一个可饮用对象。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target_item": {
+            "type": "string",
+            "description": "target_item 参数，原始技能说明类型为 string。"
+          }
+        },
+        "required": [
+          "target_item"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "title": "Drink",
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": false
+      },
+      "metadata": {
+        "handler": "skills.Drink.handler:DrinkSkill",
+        "execution_domain": "感知/信息交互",
+        "planning_contract": {},
+        "failure_policy": {},
+        "status": "deployed",
+        "version": "skill-profile"
+      }
+    },
+    {
+      "name": "Heat",
+      "description": "在指定的加热设备中加热物品。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target_item": {
+            "type": "string",
+            "description": "target_item 参数，原始技能说明类型为 string。"
+          },
+          "heating_device": {
+            "type": "string",
+            "description": "heating_device 参数，原始技能说明类型为 string。"
+          }
+        },
+        "required": [
+          "heating_device",
+          "target_item"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "title": "Heat",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": false
+      },
+      "metadata": {
+        "handler": "skills.Heat.handler:HeatSkill",
+        "execution_domain": "机械臂控制",
+        "planning_contract": {
+          "planner_item_param": "target_item",
+          "planner_device_param": "heating_device",
+          "planner_location_param": "heating_device",
+          "planner_requires_empty_hand": "true",
+          "planner_container_state_key": "isOpen",
+          "planner_container_state_value": "false",
+          "planner_device_state_key": "isToggled",
+          "planner_device_state_value": "true",
+          "planner_effect_state_key": "isCooked",
+          "planner_effect_state_value": "true"
+        },
+        "failure_policy": {
+          "on_validation_failure": "repair_or_replan"
+        },
+        "status": "deployed",
+        "version": "skill-profile"
+      }
+    },
+    {
+      "name": "NavigateTo",
+      "description": "移动机器人到指定的具体的物理设施或容器前方。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target_location": {
+            "type": "string",
+            "description": "target_location 参数，原始技能说明类型为 string。"
+          }
+        },
+        "required": [
+          "target_location"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "title": "NavigateTo",
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": false
+      },
+      "metadata": {
+        "handler": "skills.NavigateTo.handler:NavigateToSkill",
+        "execution_domain": "底盘控制",
+        "planning_contract": {
+          "planner_location_param": "target_location"
+        },
+        "failure_policy": {},
+        "status": "deployed",
+        "version": "skill-profile"
+      }
+    },
+    {
+      "name": "Observe",
+      "description": "在目标对象前进行观察或注视，不改变环境物理状态。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target_object": {
+            "type": "string",
+            "description": "target_object 参数，原始技能说明类型为 string。"
+          }
+        },
+        "required": [
+          "target_object"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "title": "Observe",
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": false
+      },
+      "metadata": {
+        "handler": "skills.Observe.handler:ObserveSkill",
+        "execution_domain": "感知/信息交互",
+        "planning_contract": {},
+        "failure_policy": {},
+        "status": "deployed",
+        "version": "skill-profile"
+      }
+    },
+    {
+      "name": "Open",
+      "description": "打开指定的闭合容器。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target_container": {
+            "type": "string",
+            "description": "target_container 参数，原始技能说明类型为 string。"
+          }
+        },
+        "required": [
+          "target_container"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "title": "Open",
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": false
+      },
+      "metadata": {
+        "handler": "skills.Open.handler:OpenSkill",
+        "execution_domain": "IoT 硬件交互",
+        "planning_contract": {
+          "planner_target_param": "target_container",
+          "planner_location_param": "target_container",
+          "planner_requires_empty_hand": "true",
+          "planner_state_key": "isOpen",
+          "planner_state_value": "true",
+          "planner_access_state": "true",
+          "planner_reversible_state": "true"
+        },
+        "failure_policy": {},
+        "status": "deployed",
+        "version": "skill-profile"
+      }
+    },
+    {
+      "name": "Pickup",
+      "description": "用机械臂抓取目标物品。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target_item": {
+            "type": "string",
+            "description": "target_item 参数，原始技能说明类型为 string。"
+          }
+        },
+        "required": [
+          "target_item"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "title": "Pickup",
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": false
+      },
+      "metadata": {
+        "handler": "skills.Pickup.handler:PickupSkill",
+        "execution_domain": "机械臂控制",
+        "planning_contract": {
+          "planner_requires_empty_hand": "true",
+          "planner_item_param": "target_item"
+        },
+        "failure_policy": {},
+        "status": "deployed",
+        "version": "skill-profile"
+      }
+    },
+    {
+      "name": "Put",
+      "description": "将当前持有的物品放置到指定的物理表面或容器内。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target_item": {
+            "type": "string",
+            "description": "target_item 参数，原始技能说明类型为 string。"
+          },
+          "destination": {
+            "type": "string",
+            "description": "destination 参数，原始技能说明类型为 string。"
+          }
+        },
+        "required": [
+          "destination",
+          "target_item"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "title": "Put",
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": false
+      },
+      "metadata": {
+        "handler": "skills.Put.handler:PutSkill",
+        "execution_domain": "机械臂控制",
+        "planning_contract": {
+          "planner_item_param": "target_item",
+          "planner_destination_param": "destination"
+        },
+        "failure_policy": {},
+        "status": "deployed",
+        "version": "skill-profile"
+      }
+    },
+    {
+      "name": "Read",
+      "description": "阅读一个可读对象，例如书、屏幕或文档。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target_item": {
+            "type": "string",
+            "description": "target_item 参数，原始技能说明类型为 string。"
+          }
+        },
+        "required": [
+          "target_item"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "title": "Read",
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": false
+      },
+      "metadata": {
+        "handler": "skills.Read.handler:ReadSkill",
+        "execution_domain": "感知/信息交互",
+        "planning_contract": {},
+        "failure_policy": {},
+        "status": "deployed",
+        "version": "skill-profile"
+      }
+    },
+    {
+      "name": "Sit",
+      "description": "在指定座位或可坐对象处坐下。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target_seat": {
+            "type": "string",
+            "description": "target_seat 参数，原始技能说明类型为 string。"
+          }
+        },
+        "required": [
+          "target_seat"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "title": "Sit",
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": false
+      },
+      "metadata": {
+        "handler": "skills.Sit.handler:SitSkill",
+        "execution_domain": "感知/信息交互",
+        "planning_contract": {},
+        "failure_policy": {},
+        "status": "deployed",
+        "version": "skill-profile"
+      }
+    },
+    {
+      "name": "Sleep",
+      "description": "在指定床或可躺对象处进入睡眠状态。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target_bed": {
+            "type": "string",
+            "description": "target_bed 参数，原始技能说明类型为 string。"
+          }
+        },
+        "required": [
+          "target_bed"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "title": "Sleep",
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": false
+      },
+      "metadata": {
+        "handler": "skills.Sleep.handler:SleepSkill",
+        "execution_domain": "感知/信息交互",
+        "planning_contract": {},
+        "failure_policy": {},
+        "status": "deployed",
+        "version": "skill-profile"
+      }
+    },
+    {
+      "name": "Slice",
+      "description": "使用手中持有的锋利切割工具切割食材。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target_item": {
+            "type": "string",
+            "description": "target_item 参数，原始技能说明类型为 string。"
+          },
+          "surface": {
+            "type": "string",
+            "description": "surface 参数，原始技能说明类型为 string。"
+          }
+        },
+        "required": [
+          "surface",
+          "target_item"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "title": "Slice",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": false
+      },
+      "metadata": {
+        "handler": "skills.Slice.handler:SliceSkill",
+        "execution_domain": "机械臂控制",
+        "planning_contract": {
+          "planner_item_param": "target_item",
+          "planner_location_param": "surface",
+          "planner_effect_state_key": "isSliced",
+          "planner_effect_state_value": "true"
+        },
+        "failure_policy": {
+          "on_validation_failure": "repair_or_replan"
+        },
+        "status": "deployed",
+        "version": "skill-profile"
+      }
+    },
+    {
+      "name": "ToggleOff",
+      "description": "触发指定电器设备开关，使其断电停止工作。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target_device": {
+            "type": "string",
+            "description": "target_device 参数，原始技能说明类型为 string。"
+          }
+        },
+        "required": [
+          "target_device"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "title": "ToggleOff",
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": false
+      },
+      "metadata": {
+        "handler": "skills.ToggleOff.handler:ToggleOffSkill",
+        "execution_domain": "IoT 硬件交互",
+        "planning_contract": {
+          "planner_target_param": "target_device",
+          "planner_location_param": "target_device",
+          "planner_requires_empty_hand": "true",
+          "planner_state_key": "isToggled",
+          "planner_state_value": "false",
+          "planner_reversible_state": "true"
+        },
+        "failure_policy": {},
+        "status": "deployed",
+        "version": "skill-profile"
+      }
+    },
+    {
+      "name": "ToggleOn",
+      "description": "触发指定电器设备开关，使其通电开始工作。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target_device": {
+            "type": "string",
+            "description": "target_device 参数，原始技能说明类型为 string。"
+          }
+        },
+        "required": [
+          "target_device"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "title": "ToggleOn",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": false
+      },
+      "metadata": {
+        "handler": "skills.ToggleOn.handler:ToggleOnSkill",
+        "execution_domain": "IoT 硬件交互",
+        "planning_contract": {
+          "planner_target_param": "target_device",
+          "planner_location_param": "target_device",
+          "planner_requires_empty_hand": "true",
+          "planner_state_key": "isToggled",
+          "planner_state_value": "true",
+          "planner_reversible_state": "true"
+        },
+        "failure_policy": {
+          "on_validation_failure": "repair_or_replan"
+        },
+        "status": "deployed",
+        "version": "skill-profile"
+      }
+    },
+    {
+      "name": "Touch",
+      "description": "与目标对象发生接触，不要求抓取或状态切换。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target_object": {
+            "type": "string",
+            "description": "target_object 参数，原始技能说明类型为 string。"
+          }
+        },
+        "required": [
+          "target_object"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "title": "Touch",
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": false
+      },
+      "metadata": {
+        "handler": "skills.Touch.handler:TouchSkill",
+        "execution_domain": "感知/信息交互",
+        "planning_contract": {},
+        "failure_policy": {},
+        "status": "deployed",
+        "version": "skill-profile"
+      }
+    },
+    {
+      "name": "Type",
+      "description": "在键盘、电脑或开关类交互面上执行输入操作。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target_device": {
+            "type": "string",
+            "description": "target_device 参数，原始技能说明类型为 string。"
+          }
+        },
+        "required": [
+          "target_device"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "title": "Type",
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": false
+      },
+      "metadata": {
+        "handler": "skills.Type.handler:TypeSkill",
+        "execution_domain": "感知/信息交互",
+        "planning_contract": {},
+        "failure_policy": {},
+        "status": "deployed",
+        "version": "skill-profile"
+      }
+    }
+  ]
+}

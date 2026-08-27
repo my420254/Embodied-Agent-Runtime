@@ -40,19 +40,70 @@ def apply_execution_to_scene(scene_data: dict, execution: dict) -> tuple[dict, b
 
 
 def update_runtime_execution(execution: dict) -> tuple[bool, str]:
-    scene_data = get_runtime_session()
-    updated_scene, ok, error = apply_execution_to_scene(scene_data, execution)
+    updated_scene, ok, error = preview_runtime_execution(execution)
     if not ok:
         return False, error
-    set_runtime_session(updated_scene)
+    commit_runtime_scene(updated_scene)
     return True, ""
+
+
+def preview_runtime_execution(execution: dict) -> tuple[dict, bool, str]:
+    """Validate an action and compute its next scene without committing it."""
+    return apply_execution_to_scene(get_runtime_session(), execution)
+
+
+def commit_runtime_scene(scene_data: dict) -> None:
+    """Commit a previewed scene only after the external action succeeds."""
+    set_runtime_session(scene_data)
 
 
 def update_runtime_scene(
     action_name: str,
     target: str = "",
     location: str = "",
+    params: dict | None = None,
 ) -> tuple[bool, str]:
+    """把一次执行动作同步进运行态场景。
+
+    params 提供时优先透传完整原始参数（如 Slice 的 surface、Clean 的
+    water_source、Heat 的 heat_source），避免重建参数时丢失；否则按
+    action_name/target/location 重建最小参数集。
+    """
+    resolved_params = _merged_or_rebuilt_params(action_name, target, location, params)
+    return update_runtime_execution({"skill": action_name, "parameters": resolved_params})
+
+
+def preview_runtime_scene(
+    action_name: str,
+    target: str = "",
+    location: str = "",
+    params: dict | None = None,
+) -> tuple[dict, bool, str]:
+    resolved_params = _merged_or_rebuilt_params(action_name, target, location, params)
+    return preview_runtime_execution({"skill": action_name, "parameters": resolved_params})
+
+
+def _merged_or_rebuilt_params(
+    action_name: str,
+    target: str,
+    location: str,
+    params: dict | None,
+) -> dict:
+    if isinstance(params, dict) and params:
+        merged = {
+            str(key): value
+            for key, value in params.items()
+            if value not in (None, "", [])
+        }
+        if not any(k in merged for k in ("target_item", "target_object", "target_device", "target_container", "target_location", "target_bed", "target_seat")) and target:
+            merged["target_item"] = target
+        if not any(k in merged for k in ("destination", "target_location", "target_container", "target_bed", "target_seat")) and location:
+            merged["destination"] = location
+        return merged
+    return _rebuilt_params(action_name, target, location)
+
+
+def _rebuilt_params(action_name: str, target: str = "", location: str = "") -> dict[str, str]:
     params: dict[str, str] = {}
     if action_name == "NavigateTo":
         params["target_location"] = target or location
@@ -79,8 +130,7 @@ def update_runtime_scene(
             params["target_item"] = target
         if location:
             params.setdefault("destination", location)
-
-    return update_runtime_execution({"skill": action_name, "parameters": params})
+    return params
 
 
 def runtime_env_state() -> dict:

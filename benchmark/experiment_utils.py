@@ -1,12 +1,12 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import re
 import signal
 import subprocess
 import time
-import argparse
 import fcntl
 import socket
 import atexit
@@ -154,6 +154,59 @@ def write_json(path: str | Path, payload: Any) -> None:
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def _fingerprint_files(path: Path) -> list[Path]:
+    if path.is_file():
+        return [path]
+    if not path.is_dir():
+        return []
+    return sorted(
+        candidate
+        for candidate in path.rglob("*")
+        if candidate.is_file()
+        and "__pycache__" not in candidate.parts
+        and candidate.suffix not in {".pyc", ".pyo"}
+    )
+
+
+def content_fingerprint(paths: dict[str, str | Path] | None) -> dict[str, Any]:
+    """Build stable SHA-256 fingerprints for reproducibility-critical inputs."""
+    entries: dict[str, dict[str, Any]] = {}
+    combined = hashlib.sha256()
+    for label, raw_path in sorted((paths or {}).items()):
+        path = Path(raw_path).resolve()
+        files = _fingerprint_files(path)
+        digest = hashlib.sha256()
+        total_bytes = 0
+        for file_path in files:
+            relative = file_path.name if path.is_file() else file_path.relative_to(path).as_posix()
+            data = file_path.read_bytes()
+            file_digest = hashlib.sha256(data).hexdigest()
+            total_bytes += len(data)
+            digest.update(relative.encode("utf-8"))
+            digest.update(b"\0")
+            digest.update(file_digest.encode("ascii"))
+            digest.update(b"\n")
+        entry = {
+            "path": str(path),
+            "exists": path.exists(),
+            "kind": "file" if path.is_file() else "directory" if path.is_dir() else "missing",
+            "file_count": len(files),
+            "total_bytes": total_bytes,
+            "sha256": digest.hexdigest() if files else None,
+        }
+        entries[str(label)] = entry
+        combined.update(str(label).encode("utf-8"))
+        combined.update(b"\0")
+        combined.update(str(entry["sha256"] or "missing").encode("ascii"))
+        combined.update(b"\n")
+    return {
+        "schema_version": "content_fingerprint_v1",
+        "algorithm": "sha256",
+        "combined_sha256": combined.hexdigest(),
+        "entries": entries,
+    }
 
 
 def append_log(path: str | Path, text: str) -> None:
@@ -723,6 +776,19 @@ def resolve_endpoint_slots(
     api_model: str = "",
     api_key: str = "",
 ) -> list[dict[str, Any]]:
+    requested_model = str(api_model or "").strip()
+    if requested_model:
+        mismatches: list[str] = []
+        for port in ports:
+            configured_model = str(_endpoint_for_port(int(port)).get("model_name") or "").strip()
+            if configured_model and configured_model != requested_model:
+                mismatches.append(f"{int(port)}={configured_model}")
+        if mismatches:
+            details = ", ".join(mismatches)
+            raise SystemExit(
+                f"模型与端口配置不一致: requested={requested_model}; configured={details}. "
+                "请更正 --api-model 或 --ports，禁止用命令行标签覆盖端点真实模型。"
+            )
     return resolve_llm_endpoint_slots(
         ports,
         workers=workers,
@@ -792,6 +858,7 @@ def launch_case_workers(
     dry_run: bool,
     resume: bool = False,
     worker_timeout_s: int | None = None,
+    reproducibility_paths: dict[str, str | Path] | None = None,
 ) -> list[dict[str, Any]]:
     run_root = Path(run_root)
     experiment_timer = ExperimentTimer(
@@ -806,6 +873,19 @@ def launch_case_workers(
     )
     launch_started_epoch = time.time()
     launch_started_at = timestamp()
+    reproducibility = content_fingerprint(reproducibility_paths) if reproducibility_paths else None
+    previous_manifest = read_json(run_root / "launch_manifest.json", {})
+    reproducibility_sessions = (
+        list(previous_manifest.get("reproducibility_sessions", []))
+        if isinstance(previous_manifest, dict) and isinstance(previous_manifest.get("reproducibility_sessions"), list)
+        else []
+    )
+    if reproducibility is not None:
+        reproducibility_sessions.append({
+            "session_id": experiment_timer.session_id,
+            "started_at": launch_started_at,
+            "fingerprint": reproducibility,
+        })
     chunks = split_cases(cases, count=max(1, int(unit_count)), group_key=group_key)
     commands: list[dict[str, Any]] = []
     tasks: list[dict[str, Any]] = []
@@ -883,6 +963,9 @@ def launch_case_workers(
         }
         if extra:
             payload.update(extra)
+        if reproducibility is not None:
+            payload["reproducibility"] = reproducibility
+            payload["reproducibility_sessions"] = reproducibility_sessions
         write_json(Path(run_root) / "launch_manifest.json", payload)
 
     write_launch_manifest("dry_run" if dry_run else "running")

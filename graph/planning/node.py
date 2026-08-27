@@ -23,7 +23,7 @@ from graph.planning.llm_decomposer import run_llm_decomposition
 from graph.planning.repair import PlanningRegenerationError, regenerate_todo_list
 from graph.state import PlanningState
 from skills.action_codec import ensure_execution_shape
-from skills.registry import load_enabled_skill_prompts
+from skills.registry import load_enabled_skill_prompts, load_skill_prompts_for
 
 def _terminal_cancel_result(iters: int) -> dict:
     return {
@@ -180,10 +180,25 @@ def _regenerate_evaluation_repair(
 def _repair_skills_markdown(request: dict, skill_profile: str | None) -> str:
     if request.get("skill_contract_mode") == "compact":
         return ""
+    # 1) 优先加载被拦截动作对应 skill 的针对性 prompt（RE-TRAC 按失败 skill 给文档，
+    #    模型才知道该动作的前置/状态/持物前提，而不是全量技能表稀释注意力）
+    failed_skill = ""
+    failure = request.get("failure", {})
+    if isinstance(failure, dict):
+        failed_skill = str(failure.get("skill", "") or "").strip()
+    if failed_skill:
+        try:
+            targeted = load_skill_prompts_for([failed_skill])
+            if targeted.strip():
+                return targeted
+        except Exception:
+            pass
+    # 2) request 显式带上的技能文档
     for key in ("skills_markdown", "skill_contracts_markdown", "skill_prompts"):
         value = request.get(key)
         if isinstance(value, str):
             return value
+    # 3) 兜底：全量 enabled skill prompts
     return load_enabled_skill_prompts(skill_profile)
 
 

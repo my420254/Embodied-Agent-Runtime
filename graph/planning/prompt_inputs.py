@@ -4,7 +4,7 @@ import json
 from typing import Any
 
 from ace.playbook import load_relevant_section_rules
-from skills.registry import load_enabled_skill_prompts
+from skills.registry import load_enabled_skill_prompts, load_skill_prompts_for
 
 
 def _json_compact(value: Any) -> str:
@@ -15,7 +15,9 @@ def _json_pretty(value: Any) -> str:
     return json.dumps(value, ensure_ascii=False, indent=2, default=str)
 
 
-def _feature_enabled(feature_flags: dict | None, name: str, default: bool = True) -> bool:
+def _feature_enabled(
+    feature_flags: dict | None, name: str, default: bool = True
+) -> bool:
     if isinstance(feature_flags, dict) and name in feature_flags:
         return bool(feature_flags[name])
     return default
@@ -45,6 +47,7 @@ def build_planning_main_inputs(
     task_context: dict,
     task_source_text: str,
     names_info: dict,
+    understanding_final_state: dict | None = None,
     skill_closure: list[str] | None = None,
     failed_lessons: str,
     intent: str,
@@ -68,10 +71,17 @@ def build_planning_main_inputs(
             "navigation_contract": navigation_contract,
             "task_source_text": task_source_text or "",
             "task_environment_facts": task_environment_facts,
-            "task_context_json": _json_pretty(task_context or {"message": "无额外任务上下文"}),
-            "skills_markdown": load_enabled_skill_prompts(skill_closure),
+            "task_context_json": _json_pretty(
+                task_context or {"message": "无额外任务上下文"}
+            ),
+            "skills_markdown": (
+                load_skill_prompts_for(skill_closure) or load_enabled_skill_prompts()
+            ),
             "skill_closure_json": _json_pretty(skill_closure or []),
             "names_info_json": _json_pretty(names_info),
+            "understanding_final_state_json": _json_pretty(
+                understanding_final_state or {}
+            ),
             "playbook": playbook,
             "failed_lessons": failed_lessons,
             "intent": intent,

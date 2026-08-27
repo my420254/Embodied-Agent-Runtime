@@ -2,6 +2,7 @@ from graph.understanding import node as understanding_node
 from graph.understanding import pipeline as understanding_pipeline
 from graph.understanding.features import entity_repair, goal_state_extract
 from graph.understanding.features.normalize import normalize_structured_task
+from graph.understanding.prompt_inputs import environment_closure_json
 
 
 class FakeResponse:
@@ -15,6 +16,33 @@ class FakeLLM:
 
     def invoke(self, messages):
         return FakeResponse(self.content)
+
+
+def test_environment_closure_flattens_nested_scene_for_final_state() -> None:
+    context = {
+        "scene": {
+            "environment": {
+                "kitchen": {
+                    "contains": {
+                        "Microwave (1)": {
+                            "type": "receptacle",
+                            "states": {"isOpen": False},
+                            "contains": {
+                                "Apple (1)": {
+                                    "states": {"visible": False},
+                                    "properties": ["pickupable"],
+                                }
+                            },
+                        }
+                    }
+                }
+            }
+        }
+    }
+    closure = environment_closure_json(context)
+    assert '"name": "Apple (1)"' in closure
+    assert '"location": "Microwave (1)"' in closure
+    assert '"container_open": false' in closure
 
 
 def _state(raw_instruction: str, entities: set[str] | list[str], **overrides):
@@ -31,8 +59,12 @@ def test_analyze_instruction_normalizes_required_item_schema(monkeypatch):
     entities = {"苹果_1", "盘子_1", "水果刀_1"}
     monkeypatch.setattr(understanding_node, "load_system_rules", lambda: "")
     monkeypatch.setattr(understanding_node, "load_understanding_playbook", lambda: "")
-    monkeypatch.setattr(understanding_node, "render_prompt", lambda *args, **kwargs: "prompt")
-    monkeypatch.setattr(understanding_node, "get_understanding_llm", lambda: FakeLLM("{}"))
+    monkeypatch.setattr(
+        understanding_node, "render_prompt", lambda *args, **kwargs: "prompt"
+    )
+    monkeypatch.setattr(
+        understanding_node, "get_understanding_llm", lambda: FakeLLM("{}")
+    )
     monkeypatch.setattr(
         understanding_node,
         "parse_json_from_llm",
@@ -40,8 +72,8 @@ def test_analyze_instruction_normalizes_required_item_schema(monkeypatch):
             "is_complete": True,
             "is_cancel_all": False,
             "clarification_question": "",
-                "structured_task": {
-                    "intent": "把苹果放到盘子里",
+            "structured_task": {
+                "intent": "把苹果放到盘子里",
                 "required_item_names": {
                     "targets": ["苹果_1"],
                     "tools": {"primary": ["水果刀_1"], "alternatives": []},
@@ -56,14 +88,25 @@ def test_analyze_instruction_normalizes_required_item_schema(monkeypatch):
         },
     )
 
-    result = understanding_node.analyze_instruction(_state("把苹果放到盘子里", entities))
+    result = understanding_node.analyze_instruction(
+        _state("把苹果放到盘子里", entities)
+    )
 
     structured = result["structured_task"]
     assert structured["intent"] == "把苹果放到盘子里"
     assert "operation_type" not in structured
-    assert structured["required_item_names"]["targets"] == {"primary": ["苹果_1"], "alternatives": []}
-    assert structured["required_item_names"]["tools"] == {"primary": ["水果刀_1"], "alternatives": []}
-    assert structured["required_item_names"]["receptacles"] == {"primary": ["盘子_1"], "alternatives": []}
+    assert structured["required_item_names"]["targets"] == {
+        "primary": ["苹果_1"],
+        "alternatives": [],
+    }
+    assert structured["required_item_names"]["tools"] == {
+        "primary": ["水果刀_1"],
+        "alternatives": [],
+    }
+    assert structured["required_item_names"]["receptacles"] == {
+        "primary": ["盘子_1"],
+        "alternatives": [],
+    }
     assert "rule_triggered" not in structured["required_item_names"]
     assert structured["goal_state"] == {
         "entities": {"苹果_1": {"direct_parent": "盘子_1"}}
@@ -81,8 +124,12 @@ def test_analyze_instruction_repairs_invalid_entity_names_with_llm(monkeypatch):
     entities = {"苹果_1", "盘子_1"}
     monkeypatch.setattr(understanding_node, "load_system_rules", lambda: "")
     monkeypatch.setattr(understanding_node, "load_understanding_playbook", lambda: "")
-    monkeypatch.setattr(understanding_node, "render_prompt", lambda *args, **kwargs: "prompt")
-    monkeypatch.setattr(understanding_node, "get_understanding_llm", lambda: FakeLLM("{}"))
+    monkeypatch.setattr(
+        understanding_node, "render_prompt", lambda *args, **kwargs: "prompt"
+    )
+    monkeypatch.setattr(
+        understanding_node, "get_understanding_llm", lambda: FakeLLM("{}")
+    )
     parse_calls = {"count": 0}
 
     invalid_result = {
@@ -116,10 +163,22 @@ def test_analyze_instruction_repairs_invalid_entity_names_with_llm(monkeypatch):
             },
         },
     }
+    final_state_result = {
+        "final_state": {
+            "entities": {"苹果_1": {"direct_parent": "盘子_1"}},
+            "robot": {"holding": []},
+        }
+    }
+    skill_selection_result = {"skill_closure": ["Put"]}
 
     def fake_parse(*args, **kwargs):
         parse_calls["count"] += 1
-        return invalid_result if parse_calls["count"] == 1 else repaired_result
+        return {
+            1: invalid_result,
+            2: repaired_result,
+            3: final_state_result,
+            4: skill_selection_result,
+        }[parse_calls["count"]]
 
     monkeypatch.setattr(
         understanding_node,
@@ -127,13 +186,18 @@ def test_analyze_instruction_repairs_invalid_entity_names_with_llm(monkeypatch):
         fake_parse,
     )
 
-    result = understanding_node.analyze_instruction(_state("把苹果放到盘子里", entities))
+    result = understanding_node.analyze_instruction(
+        _state("把苹果放到盘子里", entities)
+    )
 
     assert result["is_complete"] is True
     assert result["needs_clarification"] is False
     assert result["clarification_question"] == ""
-    assert parse_calls["count"] == 2
-    assert result["structured_task"]["required_item_names"]["targets"]["primary"] == ["苹果_1"]
+    assert parse_calls["count"] == 4
+    assert result["structured_task"]["final_state"] == final_state_result["final_state"]
+    assert result["structured_task"]["required_item_names"]["targets"]["primary"] == [
+        "苹果_1"
+    ]
     assert "invalid_entity_names" not in result
     assert "dropped_invalid_entity_names" not in result
     assert result["entity_repair"]["attempts"] == 1
@@ -163,8 +227,12 @@ def test_analyze_instruction_ignores_model_operation_type(monkeypatch):
     entities = {"floor_lamp"}
     monkeypatch.setattr(understanding_node, "load_system_rules", lambda: "")
     monkeypatch.setattr(understanding_node, "load_understanding_playbook", lambda: "")
-    monkeypatch.setattr(understanding_node, "render_prompt", lambda *args, **kwargs: "prompt")
-    monkeypatch.setattr(understanding_node, "get_understanding_llm", lambda: FakeLLM("{}"))
+    monkeypatch.setattr(
+        understanding_node, "render_prompt", lambda *args, **kwargs: "prompt"
+    )
+    monkeypatch.setattr(
+        understanding_node, "get_understanding_llm", lambda: FakeLLM("{}")
+    )
     monkeypatch.setattr(
         understanding_node,
         "parse_json_from_llm",
@@ -184,7 +252,9 @@ def test_analyze_instruction_ignores_model_operation_type(monkeypatch):
         },
     )
 
-    result = understanding_node.analyze_instruction(_state("Turn on the light", entities))
+    result = understanding_node.analyze_instruction(
+        _state("Turn on the light", entities)
+    )
 
     assert "operation_type" not in result["structured_task"]
 
@@ -193,8 +263,12 @@ def test_analyze_instruction_outputs_relevant_scene_items(monkeypatch):
     entities = {"苹果_1", "盘子_1", "水果刀_1"}
     monkeypatch.setattr(understanding_node, "load_system_rules", lambda: "")
     monkeypatch.setattr(understanding_node, "load_understanding_playbook", lambda: "")
-    monkeypatch.setattr(understanding_node, "render_prompt", lambda *args, **kwargs: "prompt")
-    monkeypatch.setattr(understanding_node, "get_understanding_llm", lambda: FakeLLM("{}"))
+    monkeypatch.setattr(
+        understanding_node, "render_prompt", lambda *args, **kwargs: "prompt"
+    )
+    monkeypatch.setattr(
+        understanding_node, "get_understanding_llm", lambda: FakeLLM("{}")
+    )
     monkeypatch.setattr(
         understanding_node,
         "parse_json_from_llm",
@@ -213,7 +287,9 @@ def test_analyze_instruction_outputs_relevant_scene_items(monkeypatch):
         },
     )
 
-    result = understanding_node.analyze_instruction(_state("把苹果放到盘子里", entities))
+    result = understanding_node.analyze_instruction(
+        _state("把苹果放到盘子里", entities)
+    )
 
     assert result["relevant_item_names"] == ["苹果_1", "盘子_1"]
 
@@ -222,8 +298,12 @@ def test_analyze_instruction_outputs_relevance_ranked_items(monkeypatch):
     entities = {"牛肉_1", "菜刀_1", "砧板_1", "冰箱_1"}
     monkeypatch.setattr(understanding_node, "load_system_rules", lambda: "")
     monkeypatch.setattr(understanding_node, "load_understanding_playbook", lambda: "")
-    monkeypatch.setattr(understanding_node, "render_prompt", lambda *args, **kwargs: "prompt")
-    monkeypatch.setattr(understanding_node, "get_understanding_llm", lambda: FakeLLM("{}"))
+    monkeypatch.setattr(
+        understanding_node, "render_prompt", lambda *args, **kwargs: "prompt"
+    )
+    monkeypatch.setattr(
+        understanding_node, "get_understanding_llm", lambda: FakeLLM("{}")
+    )
     monkeypatch.setattr(
         understanding_node,
         "parse_json_from_llm",
@@ -267,8 +347,12 @@ def test_analyze_instruction_marks_clarification_needed(monkeypatch):
     entities = {"苹果_1", "盘子_1"}
     monkeypatch.setattr(understanding_node, "load_system_rules", lambda: "")
     monkeypatch.setattr(understanding_node, "load_understanding_playbook", lambda: "")
-    monkeypatch.setattr(understanding_node, "render_prompt", lambda *args, **kwargs: "prompt")
-    monkeypatch.setattr(understanding_node, "get_understanding_llm", lambda: FakeLLM("{}"))
+    monkeypatch.setattr(
+        understanding_node, "render_prompt", lambda *args, **kwargs: "prompt"
+    )
+    monkeypatch.setattr(
+        understanding_node, "get_understanding_llm", lambda: FakeLLM("{}")
+    )
     monkeypatch.setattr(
         understanding_node,
         "parse_json_from_llm",
@@ -313,8 +397,12 @@ def test_analyze_instruction_does_not_add_missing_operation_type(monkeypatch):
     entities = {"mainboard", "living_room"}
     monkeypatch.setattr(understanding_node, "load_system_rules", lambda: "")
     monkeypatch.setattr(understanding_node, "load_understanding_playbook", lambda: "")
-    monkeypatch.setattr(understanding_node, "render_prompt", lambda *args, **kwargs: "prompt")
-    monkeypatch.setattr(understanding_node, "get_understanding_llm", lambda: FakeLLM("{}"))
+    monkeypatch.setattr(
+        understanding_node, "render_prompt", lambda *args, **kwargs: "prompt"
+    )
+    monkeypatch.setattr(
+        understanding_node, "get_understanding_llm", lambda: FakeLLM("{}")
+    )
     monkeypatch.setattr(
         understanding_node,
         "parse_json_from_llm",
@@ -358,7 +446,9 @@ def test_final_state_extract_skips_incomplete_understanding(monkeypatch):
 
         @staticmethod
         def get_understanding_llm():
-            raise AssertionError("final state prompt should not run for incomplete understanding")
+            raise AssertionError(
+                "final state prompt should not run for incomplete understanding"
+            )
 
         @staticmethod
         def parse_json_from_llm(*args, **kwargs):
@@ -399,7 +489,13 @@ def test_normalize_preserves_distinct_multi_instance_targets():
                     "role": "targets",
                     "object_type": "apple",
                     "count": 5,
-                    "selected_entities": ["apple_1", "apple_2", "apple_3", "apple_4", "apple_5"],
+                    "selected_entities": [
+                        "apple_1",
+                        "apple_2",
+                        "apple_3",
+                        "apple_4",
+                        "apple_5",
+                    ],
                 }
             ],
         }
@@ -440,7 +536,13 @@ def test_entity_repair_retries_when_quantity_constraint_is_underfilled(monkeypat
                     "intent": "拿 5 个苹果",
                     "required_item_names": {
                         "targets": {
-                            "primary": ["apple_1", "apple_2", "apple_3", "apple_4", "apple_5"],
+                            "primary": [
+                                "apple_1",
+                                "apple_2",
+                                "apple_3",
+                                "apple_4",
+                                "apple_5",
+                            ],
                             "alternatives": [],
                         },
                         "tools": {"primary": [], "alternatives": []},
@@ -451,7 +553,13 @@ def test_entity_repair_retries_when_quantity_constraint_is_underfilled(monkeypat
                             "role": "targets",
                             "object_type": "apple",
                             "count": 5,
-                            "selected_entities": ["apple_1", "apple_2", "apple_3", "apple_4", "apple_5"],
+                            "selected_entities": [
+                                "apple_1",
+                                "apple_2",
+                                "apple_3",
+                                "apple_4",
+                                "apple_5",
+                            ],
                         }
                     ],
                 },

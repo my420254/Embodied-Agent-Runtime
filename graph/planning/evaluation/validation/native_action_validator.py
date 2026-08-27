@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import copy
+import importlib
 from typing import Any
 
 from config.module_loader import resolve_callable
@@ -11,7 +12,13 @@ from graph.planning.evaluation.validation.sandbox_validation_types import Sandbo
 from graph.planning.evaluation.validation.trajectory import step_number
 from graph.state import PlanningState
 from re_trac import build_failed_step_retrac_state
-from SDA import select_repair_checkpoint
+
+
+def _select_sda_repair_checkpoint(**kwargs: Any) -> dict[str, Any]:
+    module = importlib.import_module(
+        "graph.planning.evaluation.repair_strategies.sda.state_dependency"
+    )
+    return module.select_repair_checkpoint(**kwargs)
 
 
 def validate_todo_actions(
@@ -100,7 +107,7 @@ def validate_todo_actions(
             sda_validated_todo_prefix: list[dict[str, Any]] = []
             if context.sda_active:
                 try:
-                    sda_checkpoint = select_repair_checkpoint(
+                    sda_checkpoint = _select_sda_repair_checkpoint(
                         todo_list=current_audit_plan,
                         validated_steps=validated_audit_steps,
                         failed_step=audit_step,

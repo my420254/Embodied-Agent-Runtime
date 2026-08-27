@@ -15,6 +15,7 @@ class UnderstandingState(TypedDict):
     original_instruction: str # benchmark/framework 入口保留的原始任务文本；理解层 prompt 和 trace 用它防止中途改写。
     feature_flags: Dict[str, bool] # benchmark/framework 运行开关；理解层需要读取 allow_clarification 和异常是否应抛出。
     task_context: Dict[str, Any] # 外部任务源提供的紧凑上下文，例如可用实体名和原始任务定义；不承载完整场景图。
+    evaluation_context: Dict[str, Any] # 仅供确定性/官方评估使用的隔离上下文；不得进入 understanding 或 planning 的 LLM prompt。
     task_input_payload: Dict[str, Any] # benchmark 原始输入中允许暴露给 understanding 的字段子集，只用于 prompt/trace。
     environment: Dict[str, Any] # 请求级环境；理解层只用它收集可见实体名，不做实体替换或环境裁剪。
     scene: Dict[str, Any] # 可选嵌套场景输入；入口未扁平化时可直接提供给理解层收集实体名。
@@ -42,6 +43,7 @@ class PlanningState(TypedDict):
     env_state: Dict[str, Any] # 机器人局部控制状态，如当前位置、当前手持物；规划规范化和审计都要参考它。
     task_input_payload: Dict[str, Any] # 任务原始输入负载；benchmark 入口需在进入 graph 前转成这个标准字段。
     task_context: Dict[str, Any] # 任务目标上下文；显式最终态、约束或 evaluator 额外输入都放这里。
+    evaluation_context: Dict[str, Any] # 仅供确定性/官方评估使用的隔离上下文；不得进入 planning 或 repair 的 LLM prompt。
     environment_source: Dict[str, Any] # 环境来源说明，只用于审计/trace，不进入 LLM 决策。
     entity_catalog: List[str] # benchmark 解析出的实体目录；用于 prompt 和 environment grounding 的补充说明。
     understanding_stage_executed: bool # 该规划请求前是否执行过 understanding；trace/report 需要依赖这个标记。
@@ -170,6 +172,7 @@ class GlobalState(TypedDict):
     environment: Dict[str, Any] # 请求级任务环境；规划、审计、反思层都会使用同一份数据。
     task_input_payload: Dict[str, Any] # 任务原始输入负载；benchmark 入口需在进入 graph 前转成这个标准字段。
     task_context: Dict[str, Any] # 任务目标上下文，如最终状态、约束或 evaluator 额外输入。
+    evaluation_context: Dict[str, Any] # 仅供确定性/官方评估使用的隔离上下文；不得进入任何决策 LLM prompt。
     environment_source: Dict[str, Any] # 环境来源说明，只用于审计/trace。
     entity_catalog: List[str] # benchmark 解析出的实体目录。
     understanding_stage_executed: bool # 当前结果前是否实际执行过 understanding。

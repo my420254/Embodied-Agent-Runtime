@@ -1,0 +1,16 @@
+name: dispose
+description: 把手中物品扔进垃圾处理设施（dispose；官方：item_1 须在手、item_2 须为 rubbish-bin、robot 在其房间）。任务需要丢弃垃圾/不可用物品时使用。
+prompt: prompt.md
+handler: benchmark.delta.framework.code.skills.dispose.handler:DisposeSkill
+planner_item_param: item
+planner_destination_param: disposal
+planner_effect_state_key: isDisposed
+planner_effect_state_value: true
+planner_action_name: dispose
+planner_required_fields: action,agent,item_1,item_2,room
+planner_fixed_fields: action=dispose;agent=robot
+planner_entity_fields: item_1,item_2
+planner_room_fields: room
+planner_context_field: domain
+planner_context_values: clean
+planner_allow_extra_fields: false

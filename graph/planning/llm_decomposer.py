@@ -50,7 +50,9 @@ def _todo_completed_output(text: str) -> bool:
     return False
 
 
-def _todo_parser_kwargs(parser, *, state: PlanningState, prompt_text: str, current_env: dict) -> dict:
+def _todo_parser_kwargs(
+    parser, *, state: PlanningState, prompt_text: str, current_env: dict
+) -> dict:
     kwargs = {
         "env_state": current_env,
         "current_env": current_env,
@@ -61,10 +63,15 @@ def _todo_parser_kwargs(parser, *, state: PlanningState, prompt_text: str, curre
         signature = inspect.signature(parser)
     except (TypeError, ValueError):
         return {}
-    accepts_var_kw = any(param.kind == inspect.Parameter.VAR_KEYWORD for param in signature.parameters.values())
+    accepts_var_kw = any(
+        param.kind == inspect.Parameter.VAR_KEYWORD
+        for param in signature.parameters.values()
+    )
     if accepts_var_kw:
         return kwargs
-    return {name: value for name, value in kwargs.items() if name in signature.parameters}
+    return {
+        name: value for name, value in kwargs.items() if name in signature.parameters
+    }
 
 
 def _parse_todo_schema_planner_output(
@@ -88,7 +95,9 @@ def _parse_todo_schema_planner_output(
         raise ValueError("缺少 todo_output_parser，无法解析当前数据集的 todo_list")
     normalized, native_plan = parser(
         text,
-        **_todo_parser_kwargs(parser, state=state, prompt_text=prompt_text, current_env=current_env),
+        **_todo_parser_kwargs(
+            parser, state=state, prompt_text=prompt_text, current_env=current_env
+        ),
     )
     if not isinstance(native_plan, list):
         raise ValueError("todo_output_parser 必须返回动作列表")
@@ -126,10 +135,11 @@ def _strip_repeated_todo_prefix(
     if len(candidate_steps) < len(prefix):
         return copy.deepcopy(candidate_steps or [])
     if all(
-        _todo_action_signature(candidate_steps[index]) == _todo_action_signature(prefix[index])
+        _todo_action_signature(candidate_steps[index])
+        == _todo_action_signature(prefix[index])
         for index in range(len(prefix))
     ):
-        return copy.deepcopy(candidate_steps[len(prefix):])
+        return copy.deepcopy(candidate_steps[len(prefix) :])
     return copy.deepcopy(candidate_steps)
 
 
@@ -157,7 +167,11 @@ def _retrac_current_state(
     fallback_robot: dict[str, Any],
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     retrac_state = state.get("re_trac_state", {})
-    current = retrac_state.get("current_simulated_state", {}) if isinstance(retrac_state, dict) else {}
+    current = (
+        retrac_state.get("current_simulated_state", {})
+        if isinstance(retrac_state, dict)
+        else {}
+    )
     if not isinstance(current, dict):
         return fallback_env, fallback_robot
     env = current.get("environment")
@@ -223,7 +237,9 @@ def run_llm_decomposition(
     intent = str(st_task.get("intent", "") or "").strip()
     iters = int(state.get("iteration_count", 0) or 0) + 1
     feature_flags = state.get("feature_flags", {})
-    env_state = state.get("env_state", {"robot_location": "未知", "robot_holding": "空"})
+    env_state = state.get(
+        "env_state", {"robot_location": "未知", "robot_holding": "空"}
+    )
     env_state = env_state if isinstance(env_state, dict) else {}
     environment = environment_from_state(state)
     task_context = get_task_context(state)
@@ -237,12 +253,20 @@ def run_llm_decomposition(
             "feedback": "缺少任务意图，无法生成动作序列。",
         }
 
-    ambiguous_goal_entities = task_context.get("ambiguous_goal_entities", []) if isinstance(task_context, dict) else []
-    satisfied_reason = "" if ambiguous_goal_entities else task_already_satisfied(
-        st_task,
-        environment,
-        env_state,
-        task_context=task_context,
+    ambiguous_goal_entities = (
+        task_context.get("ambiguous_goal_entities", [])
+        if isinstance(task_context, dict)
+        else []
+    )
+    satisfied_reason = (
+        ""
+        if ambiguous_goal_entities
+        else task_already_satisfied(
+            st_task,
+            environment,
+            env_state,
+            task_context=task_context,
+        )
     )
     if satisfied_reason:
         return {
@@ -258,9 +282,17 @@ def run_llm_decomposition(
 
     continuation = state.get("planning_continuation", {})
     continuation = continuation if isinstance(continuation, dict) else {}
+    # retrac 的交互 sandbox 失败回路把已验证前缀写在 state 顶层（build_failure_payload
+    # 只写 validated_steps/checkpoint_env/checkpoint_robot，从不投影 planning_continuation）。
+    # 非 parser 路径此前只读 continuation，continuation 恒为空 -> 前缀恒为空 -> 每轮从头重规划。
+    # 故在 continuation 缺省时回退到顶层，与 validated_todo_actions 一直读顶层保持一致；
+    # parser/benchmark 路径另有 _todo_action_prefix_from_retrac + _retrac_current_state 兜底，不受影响。
+    continuation_validated_steps = continuation.get("validated_steps")
+    if continuation_validated_steps is None and not configured_todo_parser:
+        continuation_validated_steps = state.get("validated_steps", [])
     validated_steps = [
         copy.deepcopy(step)
-        for step in continuation.get("validated_steps", [])
+        for step in (continuation_validated_steps or [])
         if isinstance(step, dict)
     ]
     validated_todo_actions = [
@@ -272,6 +304,10 @@ def run_llm_decomposition(
         validated_todo_actions = _todo_action_prefix_from_retrac(state)
     current_robot = continuation.get("current_robot") or env_state
     current_env = continuation.get("current_env") or environment
+    if not configured_todo_parser and not continuation:
+        # 与 validated_steps 配套的断点态同样写在顶层；续写必须从断点恢复，而非退回原始场景。
+        current_robot = state.get("checkpoint_robot") or current_robot
+        current_env = state.get("checkpoint_env") or current_env
     if configured_todo_parser and not continuation:
         current_env, current_robot = _retrac_current_state(
             state,
@@ -293,7 +329,8 @@ def run_llm_decomposition(
                 )
     next_step_num = int(
         continuation.get("next_step_num")
-        or len(validated_todo_actions if configured_todo_parser else validated_steps) + 1
+        or len(validated_todo_actions if configured_todo_parser else validated_steps)
+        + 1
     )
     repair_handoff = continuation.get("repair_handoff", {})
     repair_handoff = repair_handoff if isinstance(repair_handoff, dict) else {}
@@ -311,18 +348,36 @@ def run_llm_decomposition(
         task_environment_facts=_format_task_environment_facts(current_env),
         task_context=task_context,
         task_source_text=task_source_text,
-        names_info=st_task.get("required_item_names", {}) if isinstance(st_task.get("required_item_names", {}), dict) else {},
+        names_info=st_task.get("required_item_names", {})
+        if isinstance(st_task.get("required_item_names", {}), dict)
+        else {},
+        understanding_final_state=(
+            st_task.get("final_state", {})
+            if isinstance(st_task.get("final_state", {}), dict)
+            else {}
+        ),
         skill_closure=state.get("skill_closure", []),
         failed_lessons=continuation.get("failed_lessons", EMPTY_FAILED_LESSONS_TEXT),
         intent=intent,
         feedback=str(state.get("feedback", "") or ""),
-        validated_steps=validated_todo_actions if configured_todo_parser else validated_steps,
+        validated_steps=validated_todo_actions
+        if configured_todo_parser
+        else validated_steps,
         next_step_num=next_step_num,
         repair_handoff=repair_handoff,
         feature_flags=feature_flags,
     )
 
-    call_stage = "planning_repair" if (validated_steps or validated_todo_actions or repair_handoff or state.get("feedback")) else "planning_initial"
+    call_stage = (
+        "planning_repair"
+        if (
+            validated_steps
+            or validated_todo_actions
+            or repair_handoff
+            or state.get("feedback")
+        )
+        else "planning_initial"
+    )
     with llm_trace_context(
         process_name="planning",
         prompt_name="planning.main_system",
@@ -337,24 +392,32 @@ def run_llm_decomposition(
 
     if configured_todo_parser:
         try:
-            planner_status, parsed_native_output, parsed_native_plan = _parse_todo_schema_planner_output(
-                raw_output,
-                state=state,
-                prompt_text=task_source_text,
-                current_env=current_env,
-                allow_completed=False,
+            planner_status, parsed_native_output, parsed_native_plan = (
+                _parse_todo_schema_planner_output(
+                    raw_output,
+                    state=state,
+                    prompt_text=task_source_text,
+                    current_env=current_env,
+                    allow_completed=False,
+                )
             )
             if validated_todo_actions:
                 parsed_native_plan = _strip_repeated_todo_prefix(
                     validated_todo_actions,
                     parsed_native_plan,
                 )
-            todo_list = _reindex_todo_actions(validated_todo_actions + parsed_native_plan)
+            todo_list = _reindex_todo_actions(
+                validated_todo_actions + parsed_native_plan
+            )
             raw_output = parsed_native_output
-            if planner_status == "completed" and task_context.get("ambiguous_goal_entities"):
+            if planner_status == "completed" and task_context.get(
+                "ambiguous_goal_entities"
+            ):
                 planner_status = "planned"
                 if not parsed_native_plan:
-                    parse_error_feedback = "重复类别目标未绑定具体实例，禁止空计划完成。"
+                    parse_error_feedback = (
+                        "重复类别目标未绑定具体实例，禁止空计划完成。"
+                    )
         except Exception as exc:
             if validated_todo_actions and _todo_completed_output(raw_output):
                 state_diff_audit_enabled = planning_feature_enabled(
@@ -391,7 +454,9 @@ def run_llm_decomposition(
                 step["step"] = next_step_num + index
                 filtered_new_list.append(step)
             if validated_steps:
-                filtered_new_list = strip_repeated_prefix(validated_steps, filtered_new_list)
+                filtered_new_list = strip_repeated_prefix(
+                    validated_steps, filtered_new_list
+                )
                 for index, step in enumerate(filtered_new_list):
                     step["step"] = next_step_num + index
             todo_list = _normalize_todo_list(
@@ -413,11 +478,18 @@ def run_llm_decomposition(
         "planner_status": planner_status,
         "todo_llm_output": raw_output if configured_todo_parser else "",
         "todo_parse_error": "",
+        # 透传给 decompose 输出块，供 renderer 如实显示“已锁定前 N 步 / RE-TRAC 防错记录”。
+        # planning 是子图，主图 get_state() 在子图运行中看不到其内部 validated_steps，
+        # 因此必须由本节点回吐；evaluate 会基于 todo_list 重新沙盒验证并覆盖 validated_steps，不受影响。
+        "validated_steps": [copy.deepcopy(step) for step in validated_steps],
+        "re_trac_memory": state.get("re_trac_memory", {}),
     }
     if parse_error_feedback:
         result["feedback"] = parse_error_feedback
         result["is_feasible"] = False
-        result["todo_parse_error"] = parse_error_feedback if configured_todo_parser else ""
+        result["todo_parse_error"] = (
+            parse_error_feedback if configured_todo_parser else ""
+        )
     elif not todo_list:
         if planner_status == "completed":
             result["feedback"] = "规划器判断当前任务已完成。"

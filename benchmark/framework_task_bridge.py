@@ -13,7 +13,6 @@ from config.settings import activate_config, active_config_file, get_config
 from graph.planning.config import with_planning_config
 from benchmark.reporting.trace_payloads import (
     case_input_summary as _case_input_summary,
-    compact_value as _compact_value,
     planning_input_payload as _planning_input_payload,
     planning_input_summary as _planning_input_summary,
     planning_output_payload as _planning_output_payload,
@@ -91,7 +90,9 @@ def load_benchmark_runtime_config(
 
     runtime_raw = get_config("benchmark", "runtime", default={}) or {}
     runtime = runtime_raw if isinstance(runtime_raw, dict) else {}
-    stage_raw = runtime.get("stages", {}) if isinstance(runtime.get("stages", {}), dict) else {}
+    stage_raw = (
+        runtime.get("stages", {}) if isinstance(runtime.get("stages", {}), dict) else {}
+    )
     config = BenchmarkRuntimeConfig(
         name=_runtime_name(settings_path, module_name),
         module_name=module_name,
@@ -105,8 +106,11 @@ def load_benchmark_runtime_config(
         todo_output_parser=str(runtime.get("todo_output_parser", "")),
         todo_step_adapter=str(runtime.get("todo_step_adapter", "")),
         todo_list_validator=str(runtime.get("todo_list_validator", "")),
-        allowed_input_fields=runtime.get("allowed_input_fields", {}) if isinstance(runtime.get("allowed_input_fields", {}), dict) else {},
+        allowed_input_fields=runtime.get("allowed_input_fields", {})
+        if isinstance(runtime.get("allowed_input_fields", {}), dict)
+        else {},
     )
+    _validate_benchmark_stage_boundary(config)
     _validate_benchmark_prompt_coverage(config)
     return config
 
@@ -122,7 +126,9 @@ def _benchmark_feature_flags() -> dict[str, bool]:
     raw_active = load_project_json(active_config_file(), fallback={})
     if isinstance(raw_active, dict):
         benchmark = raw_active.get("benchmark", {})
-        if isinstance(benchmark, dict) and isinstance(benchmark.get("feature_flags"), dict):
+        if isinstance(benchmark, dict) and isinstance(
+            benchmark.get("feature_flags"), dict
+        ):
             return _bool_flags(benchmark.get("feature_flags"))
     return _bool_flags(get_config("benchmark", "feature_flags", default={}) or {})
 
@@ -144,6 +150,20 @@ def _stage_enabled(mode: str) -> bool:
     return str(mode or "enabled").strip().lower() not in {"disabled", "off", "skip"}
 
 
+def _validate_benchmark_stage_boundary(config: BenchmarkRuntimeConfig) -> None:
+    """Benchmarks reuse understanding/planning, never the full execution graph."""
+    forbidden = {
+        "task_management": config.stage_config.task_management,
+        "reflection": config.stage_config.reflection,
+    }
+    enabled = [name for name, mode in forbidden.items() if _stage_enabled(mode)]
+    if enabled:
+        raise ValueError(
+            f"{config.name or 'benchmark'} enables forbidden graph stages: "
+            f"{', '.join(enabled)}; benchmark runs may use only understanding and planning"
+        )
+
+
 def _feature_enabled_in_config(feature_name: str, *, default: bool = False) -> bool:
     value = get_config("benchmark", "feature_flags", feature_name, default=None)
     if value is None:
@@ -151,23 +171,36 @@ def _feature_enabled_in_config(feature_name: str, *, default: bool = False) -> b
     return bool(value)
 
 
-def _understanding_feature_enabled(feature_name: str, *, default_setting: bool = True) -> bool:
-    enabled = get_config("understanding", "features", "enabled_features", default=[]) or []
-    if isinstance(enabled, list) and feature_name not in {str(item) for item in enabled}:
+def _understanding_feature_enabled(
+    feature_name: str, *, default_setting: bool = True
+) -> bool:
+    enabled = (
+        get_config("understanding", "features", "enabled_features", default=[]) or []
+    )
+    if isinstance(enabled, list) and feature_name not in {
+        str(item) for item in enabled
+    }:
         return False
-    settings = get_config("understanding", "features", "settings", feature_name, default={}) or {}
+    settings = (
+        get_config("understanding", "features", "settings", feature_name, default={})
+        or {}
+    )
     if not isinstance(settings, dict):
         return default_setting
     return bool(settings.get("enabled", default_setting))
 
 
-def _validate_benchmark_prompt_coverage(benchmark_config: BenchmarkRuntimeConfig) -> None:
+def _validate_benchmark_prompt_coverage(
+    benchmark_config: BenchmarkRuntimeConfig,
+) -> None:
     if not str(benchmark_config.settings_file or "").strip():
         return
     prompt_file = str(get_config("files", "prompts", default="") or "").strip()
     prompts = load_project_json(prompt_file, fallback={})
     if not isinstance(prompts, dict) or not prompts:
-        raise ValueError(f"{benchmark_config.name} benchmark prompt file is missing or empty: {prompt_file}")
+        raise ValueError(
+            f"{benchmark_config.name} benchmark prompt file is missing or empty: {prompt_file}"
+        )
 
     required: list[str] = []
     if _stage_enabled(benchmark_config.stage_config.understanding):
@@ -180,7 +213,14 @@ def _validate_benchmark_prompt_coverage(benchmark_config: BenchmarkRuntimeConfig
         required.extend(["planning.main_system", "planning.repair_user"])
         if _feature_enabled_in_config("state_diff_audit", default=False):
             required.append("planning.state_diff_audit")
-        repair_strategy = str(get_config("planning", "evaluation", "repair_strategy", default="") or "").strip().lower()
+        repair_strategy = (
+            str(
+                get_config("planning", "evaluation", "repair_strategy", default="")
+                or ""
+            )
+            .strip()
+            .lower()
+        )
         if repair_strategy == "vcr":
             required.append("planning.counterfactual_task_completion")
         if _feature_enabled_in_config("semantic_audit", default=False):
@@ -215,7 +255,9 @@ def _allowed_benchmark_fields(benchmark_config, stage: str) -> set[str] | None:
     return {str(item) for item in bucket if item}
 
 
-def _filter_case_input_payload(case_input: dict[str, Any], allowed_fields: set[str] | None) -> dict[str, Any]:
+def _filter_case_input_payload(
+    case_input: dict[str, Any], allowed_fields: set[str] | None
+) -> dict[str, Any]:
     payload: dict[str, Any] = {}
     for key, value in case_input.items():
         if allowed_fields is not None and str(key) not in allowed_fields:
@@ -232,8 +274,14 @@ def _filter_case_input_payload(case_input: dict[str, Any], allowed_fields: set[s
     return payload
 
 
-def _benchmark_primary_instruction(case_input: dict[str, Any], fallback_instruction: str) -> str:
-    instruction = case_input.get("instruction") or case_input.get("task_desc") or fallback_instruction
+def _benchmark_primary_instruction(
+    case_input: dict[str, Any], fallback_instruction: str
+) -> str:
+    instruction = (
+        case_input.get("instruction")
+        or case_input.get("task_desc")
+        or fallback_instruction
+    )
     return str(instruction or "")
 
 
@@ -289,13 +337,17 @@ def run_prepared_understanding_and_planning(
     benchmark_config = _benchmark_config_from_case_input(case_input)
     _validate_benchmark_scene(prepared, benchmark_config)
     feature_flags = _benchmark_feature_flags()
-    understanding_allowed_fields = _allowed_benchmark_fields(benchmark_config, "understanding")
+    understanding_allowed_fields = _allowed_benchmark_fields(
+        benchmark_config, "understanding"
+    )
     planning_allowed_fields = _allowed_benchmark_fields(benchmark_config, "planning")
     trace_enabled = _benchmark_trace_enabled()
     if trace_enabled and llm_trace_enabled():
         reset_llm_trace()
     normalized_case_input = {**case_input, "instruction": prepared.instruction}
-    framework_input_text = _benchmark_primary_instruction(normalized_case_input, prepared.instruction)
+    framework_input_text = _benchmark_primary_instruction(
+        normalized_case_input, prepared.instruction
+    )
     if not framework_input_text:
         raise ValueError("benchmark case is missing an instruction field")
     framework_input_text = str(framework_input_text)
@@ -321,11 +373,17 @@ def run_prepared_understanding_and_planning(
         {
             "env_state": prepared.env_state,
             "task_source_text": framework_input_text,
-            "task_input_payload": _filter_case_input_payload(normalized_case_input, understanding_allowed_fields),
+            "task_input_payload": _filter_case_input_payload(
+                normalized_case_input, understanding_allowed_fields
+            ),
             "task_context": task_context,
             "evaluation_context": evaluation_context,
             "environment": {},
             "environment_source": {},
+            # 把完整场景交给理解层：skill_closure（第二次调用）需要按实体名查任务环境闭包，
+            # 与 planning 使用同一份 build_task_environment_closure 语义，保证选 skill 与规划
+            # 看到一致的环境视图（含容器开闭、位置、descendants）。
+            "scene": prepared.scene if isinstance(prepared.scene, dict) else {},
         }
     )
     if state_overrides:
@@ -367,7 +425,8 @@ def run_prepared_understanding_and_planning(
             "is_feasible": False,
             "execution_status": "failed",
             "failure_layer": "understanding",
-            "error_feedback": understood.get("clarification_question", "") or "understanding did not produce a complete structured task",
+            "error_feedback": understood.get("clarification_question", "")
+            or "understanding did not produce a complete structured task",
         }
         if trace_enabled:
             trace["planning_input"] = {}
@@ -384,7 +443,9 @@ def run_prepared_understanding_and_planning(
         understood.get("structured_task", {}),
         prepared,
     )
-    if feature_flags.get("drop_benchmark_alternatives", False) and not feature_flags.get("entity_repair_alternatives", False):
+    if feature_flags.get(
+        "drop_benchmark_alternatives", False
+    ) and not feature_flags.get("entity_repair_alternatives", False):
         structured_task = _drop_benchmark_alternatives(structured_task)
     if structured_task is not understood.get("structured_task"):
         understood = {
@@ -393,9 +454,13 @@ def run_prepared_understanding_and_planning(
         }
         if trace_enabled:
             trace["understanding_output"] = _understanding_output_summary(understood)
-            trace["understanding_output_full"] = _understanding_output_payload(understood)
+            trace["understanding_output_full"] = _understanding_output_payload(
+                understood
+            )
 
-    environment_structured_task = copy.deepcopy(structured_task) if isinstance(structured_task, dict) else {}
+    environment_structured_task = (
+        copy.deepcopy(structured_task) if isinstance(structured_task, dict) else {}
+    )
     relevant_names = understood.get("relevant_item_names", [])
     if isinstance(relevant_names, list):
         environment_structured_task["_understanding_relevant_item_names"] = [
@@ -416,14 +481,24 @@ def run_prepared_understanding_and_planning(
     planning_state = {
         **state,
         **understood,
-        "environment": sandbox_environment if isinstance(sandbox_environment, dict) and sandbox_environment else task_environment,
+        "environment": sandbox_environment
+        if isinstance(sandbox_environment, dict) and sandbox_environment
+        else task_environment,
         "environment_source": {
-            "builder": "build_sandbox_environment" if isinstance(sandbox_environment, dict) and sandbox_environment else "build_task_environment",
+            "builder": "build_sandbox_environment"
+            if isinstance(sandbox_environment, dict) and sandbox_environment
+            else "build_task_environment",
             "benchmark": str(getattr(benchmark_config, "name", "") or ""),
         },
-        "todo_output_parser_path": str(getattr(benchmark_config, "todo_output_parser", "") or ""),
-        "todo_step_adapter_path": str(getattr(benchmark_config, "todo_step_adapter", "") or ""),
-        "todo_list_validator_path": str(getattr(benchmark_config, "todo_list_validator", "") or ""),
+        "todo_output_parser_path": str(
+            getattr(benchmark_config, "todo_output_parser", "") or ""
+        ),
+        "todo_step_adapter_path": str(
+            getattr(benchmark_config, "todo_step_adapter", "") or ""
+        ),
+        "todo_list_validator_path": str(
+            getattr(benchmark_config, "todo_list_validator", "") or ""
+        ),
         "understanding_stage_executed": True,
         "benchmark_strict_feature_flags": True,
     }

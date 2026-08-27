@@ -1,0 +1,14 @@
+name: unload
+description: 把 loadable 容器中的物品取出放到房间（unload；官方：item_1 须非空 loadable、item_2 须在其中、robot 空手在其房间）。任务需要从容器卸货时使用。
+prompt: prompt.md
+handler: benchmark.delta.framework.code.skills.unload.handler:UnloadSkill
+planner_item_param: item
+planner_destination_param: room
+planner_action_name: unload
+planner_required_fields: action,agent,item_1,item_2,room
+planner_fixed_fields: action=unload;agent=robot
+planner_entity_fields: item_1,item_2
+planner_room_fields: room
+planner_context_field: domain
+planner_context_values: office
+planner_allow_extra_fields: false

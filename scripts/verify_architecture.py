@@ -1,5 +1,4 @@
 import ast
-import sys
 from pathlib import Path
 
 
@@ -22,6 +21,8 @@ def iter_python_files(root: Path):
     for path in root.rglob("*.py"):
         if "__pycache__" in path.parts:
             continue
+        if path.is_symlink() and not path.exists():
+            continue
         yield path
 
 
@@ -30,7 +31,11 @@ def module_name(path: Path) -> str:
 
 
 def imported_roots(path: Path) -> set[str]:
-    tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
+    try:
+        text = path.read_text(encoding="utf-8")
+    except OSError:
+        return set()
+    tree = ast.parse(text, filename=str(path))
     roots = set()
     for node in ast.walk(tree):
         if isinstance(node, ast.Import):

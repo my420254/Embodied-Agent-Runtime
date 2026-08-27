@@ -25,6 +25,14 @@ class _HeatCoolSkill:
         target = params.get("target_item", "")
         device = params.get(self.device_param, "")
 
+        if not target:
+            return False, "参数缺失", "Heat 缺少必填参数 target_item（待加热物品唯一ID）"
+        if not device:
+            return False, "参数缺失", "Heat 缺少必填参数 heating_device（加热设备唯一ID（如 微波炉_1））"
+        if target not in sim_env:
+            return False, "目标不存在", f"环境中不存在 {target}"
+        if device not in sim_env:
+            return False, "设备不存在", f"环境中不存在加热设备 {device}"
         if robot_loc != device:
             return False, "前置位置依赖未满足", f"必须先导航至设施 {device}"
         if robot_hold != "空":
@@ -35,6 +43,8 @@ class _HeatCoolSkill:
             return False, "安全约束违规", "该设备舱门必须处于关闭状态"
         if sim_env.get(device, {}).get("states", {}).get("isToggled", False) is False:
             return False, "电源依赖未满足", "需调用 ToggleOn 开启该设备"
+        if sim_env[target].get("states", {}).get("isCooked") is not False:
+            return False, "目标状态重复", f"{target} 必须处于 isCooked: False 状态"
         return True, "", ""
 
 

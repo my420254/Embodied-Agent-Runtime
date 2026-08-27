@@ -11,6 +11,7 @@ from .base import FeatureContext, FeatureResult
 try:
     from langchain_core.messages import HumanMessage, SystemMessage
 except Exception:  # pragma: no cover - fallback for lean test environments
+
     class _Message:  # type: ignore[no-redef]
         def __init__(self, content: str):
             self.content = content
@@ -57,7 +58,11 @@ def _enabled(settings: dict[str, Any]) -> bool:
 
 
 def _scene_entities(context: FeatureContext) -> list[str]:
-    return [str(name) for name in context.get("scene_entities", []) if str(name or "").strip()]
+    return [
+        str(name)
+        for name in context.get("scene_entities", [])
+        if str(name or "").strip()
+    ]
 
 
 def _runtime_task_context(context: FeatureContext) -> dict[str, Any]:
@@ -96,7 +101,11 @@ def _extract_final_state(parsed: dict[str, Any]) -> Any:
     return copy.deepcopy(parsed) if parsed else {}
 
 
-def _build_prompt_inputs(context: FeatureContext, result: FeatureResult, *, feedback: str, attempt: int) -> dict[str, str]:
+def _build_prompt_inputs(
+    context: FeatureContext, result: FeatureResult, *, feedback: str, attempt: int
+) -> dict[str, str]:
+    from graph.understanding.prompt_inputs import environment_closure_json
+
     structured = _current_structured_task(result)
     selection = {
         "structured_task": structured,
@@ -106,6 +115,7 @@ def _build_prompt_inputs(context: FeatureContext, result: FeatureResult, *, feed
     return {
         "task": str(context.get("task", "")),
         "scene_entities_json": _json_pretty(_scene_entities(context)),
+        "environment_closure_json": environment_closure_json(context),
         "current_structured_task_json": _json_pretty(structured),
         "current_selection_json": _json_pretty(selection),
         "task_context_json": _json_pretty(_runtime_task_context(context)),
@@ -147,7 +157,9 @@ def run(context: FeatureContext, result: FeatureResult) -> FeatureResult:
     used_attempts = 0
     for attempt in range(1, max_attempts + 1):
         used_attempts = attempt
-        prompt_inputs = _build_prompt_inputs(context, result, feedback=feedback, attempt=attempt)
+        prompt_inputs = _build_prompt_inputs(
+            context, result, feedback=feedback, attempt=attempt
+        )
         system_prompt = node.render_prompt(PROMPT_NAME, **prompt_inputs)
         with llm_trace_context(
             process_name="understanding",
@@ -158,7 +170,9 @@ def run(context: FeatureContext, result: FeatureResult) -> FeatureResult:
             response = node.get_understanding_llm().invoke(
                 [
                     SystemMessage(content=system_prompt),
-                    HumanMessage(content="请抽取任务完成后的关键 final_state，并只返回 JSON。"),
+                    HumanMessage(
+                        content="请抽取任务完成后的关键 final_state，并只返回 JSON。"
+                    ),
                 ]
             )
         parsed = _parse_llm_json(response.content)

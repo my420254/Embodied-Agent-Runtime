@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from pathlib import Path
 from typing import Any
 
@@ -12,7 +13,14 @@ from benchmark.eai.virtualhome.framework.code.adapter import (
     to_case_payload as virtualhome_case_payload,
 )
 from benchmark.eai.virtualhome.framework.code.config import load_config as load_virtualhome_config
+from benchmark.eai.virtualhome.framework.code.translator import (
+    parse_action_goals,
+    parse_edge_goals,
+    parse_node_goals,
+    parse_objects_section,
+)
 from benchmark.datasets.clean_eai_initial_envs import clean_dataset
+from config.settings import workspace_path
 
 
 def _write_json(path: Path, payload: Any) -> None:
@@ -54,6 +62,15 @@ def build_behavior_cases() -> Path:
 
 def build_virtualhome_cases() -> Path:
     cfg = load_virtualhome_config()
+    prompt_path = Path(os.getenv("OURAGENT_EAI_OFFICIAL_PROMPT_CACHE", "").strip()) if os.getenv("OURAGENT_EAI_OFFICIAL_PROMPT_CACHE", "").strip() else workspace_path(
+        "embodied-agent-interface", "src", "virtualhome_eval", "evaluation",
+        "action_sequencing", "prompts", "helm_prompts.json",
+    )
+    prompt_rows = json.loads(prompt_path.read_text(encoding="utf-8"))
+    official_prompts = {
+        str(row.get("identifier", "")): str(row.get("llm_prompt", ""))
+        for row in prompt_rows if isinstance(row, dict) and row.get("identifier") and row.get("llm_prompt")
+    }
     problems = {
         problem.identifier: problem
         for problem in load_raw_virtualhome_problems(
@@ -67,7 +84,19 @@ def build_virtualhome_cases() -> Path:
     missing_problem_pddl: list[str] = []
     for case_id in sorted(id_to_task, key=_case_id_sort_key):
         if case_id in problems:
-            cases.append(virtualhome_case_payload(problems[case_id], scene_id=cfg.scene_id))
+            case = virtualhome_case_payload(problems[case_id], scene_id=cfg.scene_id)
+            prompt = official_prompts.get(case_id, "")
+            if not prompt:
+                raise ValueError(f"official VirtualHome action-sequencing prompt missing for {case_id}")
+            objects = parse_objects_section(prompt)
+            case["input"].update({
+                "official_relevant_objects": objects,
+                "official_node_goals": [list(goal) for goal in parse_node_goals(prompt)],
+                "official_edge_goals": [list(goal) for goal in parse_edge_goals(prompt)],
+                "official_action_goals": parse_action_goals(prompt),
+                "official_prompt_cache_path": str(prompt_path),
+            })
+            cases.append(case)
             continue
         env_path = Path(cfg.initial_envs_root) / f"{case_id}.json"
         if not env_path.exists():
@@ -87,6 +116,16 @@ def build_virtualhome_cases() -> Path:
             "initial_environment_source": "virtualhome_original_init_graph",
             "environment_source": "virtualhome_original_init_graph",
         }
+        prompt = official_prompts.get(case_id, "")
+        if not prompt:
+            raise ValueError(f"official VirtualHome action-sequencing prompt missing for {case_id}")
+        case_input.update({
+            "official_relevant_objects": parse_objects_section(prompt),
+            "official_node_goals": [list(goal) for goal in parse_node_goals(prompt)],
+            "official_edge_goals": [list(goal) for goal in parse_edge_goals(prompt)],
+            "official_action_goals": parse_action_goals(prompt),
+            "official_prompt_cache_path": str(prompt_path),
+        })
         cases.append(
             {
                 "case_id": case_id,

@@ -5,6 +5,10 @@ It never drives the graph; the engine (agent_runtime.engine) calls back into
 render_stream() with each streamed output chunk.
 """
 
+import json
+
+from config import get_config
+
 # =====================================================================
 # 打印工具 (UI 格式化)
 # 作用：在终端绘制分割线，使系统输出呈现标准的结构化监控面板风格
@@ -183,7 +187,7 @@ def render_stream(stream_generator, config, graph_app):
                     print("\n[状态] 数据流转至物理执行层")
                     print_divider("=")
                 else:
-                    print(f"  - 结果: [驳回] 计划审计未通过。")
+                    print("  - 结果: [驳回] 计划审计未通过。")
                     print(f"  - 拦截理由: {feedback}")
                     print_divider()
 
@@ -256,7 +260,7 @@ def render_stream(stream_generator, config, graph_app):
                 if status == "failed":
                     print()
                     print_divider("=")
-                    print(f"[底层调用] 硬件或工具链执行抛出异常")
+                    print("[底层调用] 硬件或工具链执行抛出异常")
                     print(f"  异常动作: {state.get('failed_action', '未知')}")
                     print(f"  错误详情: {state.get('error_feedback', '未知')}")
                     print(f"  捕获层级: {state.get('failure_layer', '未知')}")
@@ -309,7 +313,7 @@ def render_stream(stream_generator, config, graph_app):
 
             # 渲染：经验法则入库
             elif node_name == "ace_curator":
-                print(f"[经验沉淀 (Curator)] 知识库检索与更新执行完毕")
+                print("[经验沉淀 (Curator)] 知识库检索与更新执行完毕")
                 exp = state.get("extracted_experience", "")
                 if exp:
                     print(f"  - 新增记录: {exp}")
@@ -323,7 +327,7 @@ def render_stream(stream_generator, config, graph_app):
                 print_divider()
 
             elif node_name == "Inject_And_Execute":
-                print(f"\n[资源调度] 新任务分配完毕，前置任务栈状态已封存。")
+                print("\n[资源调度] 新任务分配完毕，前置任务栈状态已封存。")
                 print_divider()
 
             elif node_name in ("Retry_Execution", "Retry_Planning", "Retry_Understanding"):

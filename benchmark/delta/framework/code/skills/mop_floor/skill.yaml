@@ -1,0 +1,15 @@
+name: mop_floor
+description: 用干净拖把拖地（mop_floor；官方：须手持 clean mop 且在目标房间，拖后 floor_clean、mop 变脏）。任务需要拖地时使用；先 clean_mop 再 mop_floor。
+prompt: prompt.md
+handler: benchmark.delta.framework.code.skills.mop_floor.handler:MopFloorSkill
+planner_location_param: room
+planner_effect_state_key: floor_clean
+planner_effect_state_value: true
+planner_action_name: mop_floor
+planner_required_fields: action,agent,item,room
+planner_fixed_fields: action=mop_floor;agent=robot
+planner_entity_fields: item
+planner_room_fields: room
+planner_context_field: domain
+planner_context_values: clean
+planner_allow_extra_fields: false

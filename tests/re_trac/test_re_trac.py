@@ -1,7 +1,10 @@
 from graph.planning.evaluation.outcomes.continuation import strip_repeated_prefix
-from graph.planning.evaluation.repair_strategies.retrac.trajectory import (
+from re_trac import (
     build_failed_step_retrac_state,
+    build_failure_payload,
     build_state_diff_retrac_state,
+    compact_todo_list,
+    planning_context,
 )
 
 
@@ -65,3 +68,44 @@ def test_strip_repeated_prefix_removes_duplicated_suffix_prefix():
     assert strip_repeated_prefix(validated, candidate) == [
         {"step": 5, "execution": {"skill": "Pickup", "parameters": {"target_item": "冷冻猪肉_1"}}}
     ]
+
+
+def test_failure_payload_preserves_memory_when_recording_is_disabled():
+    memory = {"failed_lessons": ["existing"], "attempt": 2}
+
+    payload = build_failure_payload(
+        issue="new issue",
+        fix="new fix",
+        memory=memory,
+        validated_steps=[],
+        checkpoint_env={},
+        checkpoint_robot={},
+        record_retrac_memory=False,
+    )
+
+    assert payload["re_trac_memory"] == memory
+    assert payload["re_trac_memory"] is not memory
+    assert payload["re_trac_memory"]["failed_lessons"] is not memory["failed_lessons"]
+
+
+def test_compact_todo_list_assigns_missing_step_number_to_execution_step():
+    compact = compact_todo_list(
+        [{"execution": {"skill": "Open", "parameters": {"target": "fridge_1"}}}]
+    )
+
+    assert compact[0]["step"] == 1
+
+
+def test_planning_context_does_not_expose_mutable_checkpoint_state():
+    state = {
+        "validated_steps": [{"execution": {"parameters": {"target": "cup_1"}}}],
+        "checkpoint_env": {"cup_1": {"states": {"isClean": False}}},
+        "checkpoint_robot": {"robot_holding": "cup_1"},
+    }
+
+    context = planning_context(state=state, resolved_env={}, fallback_robot={})
+    context["validated_steps"][0]["execution"]["parameters"]["target"] = "plate_1"
+    context["current_env"]["cup_1"]["states"]["isClean"] = True
+
+    assert state["validated_steps"][0]["execution"]["parameters"]["target"] == "cup_1"
+    assert state["checkpoint_env"]["cup_1"]["states"]["isClean"] is False

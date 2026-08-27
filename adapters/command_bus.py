@@ -274,6 +274,119 @@ class JsonlInterruptBus:
             time.sleep(0.1)
 
 
+def _decode_redis_value(value: Any) -> Any:
+    if isinstance(value, bytes):
+        return value.decode("utf-8")
+    return value
+
+
+class RedisStreamInterruptBus:
+    """Redis Stream based CommandBus for multi-process runtime deployment.
+
+    Redis is optional. The class imports redis-py lazily so the default local
+    console path stays dependency-light.
+    """
+
+    supports_prompt_fallback = False
+
+    def __init__(
+        self,
+        redis_url: str | None = None,
+        *,
+        stream: str | None = None,
+        group: str | None = None,
+        consumer: str | None = None,
+        block_ms: int = 1000,
+        max_messages: int = 1,
+        client: Any | None = None,
+    ) -> None:
+        self.stream = stream or os.environ.get("OURAGENT_REDIS_STREAM", "ouragent:commands")
+        self.group = group or os.environ.get("OURAGENT_REDIS_GROUP", "ouragent-runtimes")
+        self.consumer = consumer or os.environ.get("OURAGENT_REDIS_CONSUMER", f"runtime-{os.getpid()}")
+        self.block_ms = max(0, int(block_ms))
+        self.max_messages = max(1, int(max_messages))
+        self.client = client or self._connect(redis_url)
+        self._ensure_group()
+
+    @staticmethod
+    def _connect(redis_url: str | None) -> Any:
+        try:
+            import redis  # type: ignore
+        except ImportError as exc:
+            raise RuntimeError(
+                "RedisStreamInterruptBus 需要安装 redis-py；"
+                "可执行 `pip install redis`，或继续使用默认 Jsonl/InMemory CommandBus。"
+            ) from exc
+        return redis.Redis.from_url(redis_url or os.environ.get("OURAGENT_REDIS_URL", "redis://localhost:6379/0"))
+
+    def _ensure_group(self) -> None:
+        try:
+            self.client.xgroup_create(self.stream, self.group, id="0", mkstream=True)
+        except Exception as exc:
+            if "BUSYGROUP" not in str(exc):
+                raise
+
+    def publish(self, command: Any) -> dict[str, Any]:
+        normalized = normalize_interrupt_command(command, source="redis")
+        payload = json.dumps(normalized, ensure_ascii=False, separators=(",", ":"))
+        message_id = self.client.xadd(self.stream, {"payload": payload})
+        metadata = dict(normalized.get("metadata") or {})
+        metadata["redis_stream_id"] = str(_decode_redis_value(message_id))
+        normalized["metadata"] = metadata
+        return normalized
+
+    def _parse_entry(self, entry: Any) -> dict[str, Any] | None:
+        try:
+            message_id, fields = entry
+        except (TypeError, ValueError):
+            return None
+        decoded_fields = {
+            str(_decode_redis_value(key)): _decode_redis_value(value)
+            for key, value in dict(fields).items()
+        }
+        raw_payload = decoded_fields.get("payload") or decoded_fields.get("command") or ""
+        try:
+            payload = json.loads(str(raw_payload))
+        except json.JSONDecodeError:
+            payload = str(raw_payload)
+        command = normalize_interrupt_command(payload, source="redis")
+        metadata = dict(command.get("metadata") or {})
+        metadata["redis_stream_id"] = str(_decode_redis_value(message_id))
+        command["metadata"] = metadata
+        return command
+
+    def poll(self) -> dict[str, Any] | None:
+        response = self.client.xreadgroup(
+            self.group,
+            self.consumer,
+            {self.stream: ">"},
+            count=self.max_messages,
+            block=0,
+        )
+        for _stream_name, entries in response or []:
+            for entry in entries:
+                command = self._parse_entry(entry)
+                if command is not None:
+                    return command
+        return None
+
+    def wait(self, timeout: float | None = None) -> dict[str, Any] | None:
+        deadline = None if timeout is None else time.monotonic() + max(timeout, 0.0)
+        while True:
+            command = self.poll()
+            if command is not None:
+                return command
+            if deadline is not None and time.monotonic() >= deadline:
+                return None
+            time.sleep(min(self.block_ms / 1000.0 if self.block_ms else 0.1, 0.5))
+
+    def ack(self, command: dict[str, Any]) -> int:
+        message_id = (command.get("metadata") or {}).get("redis_stream_id")
+        if not message_id:
+            return 0
+        return int(self.client.xack(self.stream, self.group, message_id))
+
+
 class InterruptController:
     """Small facade for code paths that want an injectable interrupt controller."""
 
@@ -323,3 +436,12 @@ def wait_for_interrupt_command(
 
 def interrupt_bus_supports_prompt() -> bool:
     return bool(getattr(_DEFAULT_INTERRUPT_BUS, "supports_prompt_fallback", False))
+
+
+def create_interrupt_bus_from_env() -> InterruptBus:
+    backend = os.environ.get("OURAGENT_COMMAND_BUS", "memory").strip().lower()
+    if backend in {"jsonl", "file"}:
+        return JsonlInterruptBus(default_interrupt_command_file())
+    if backend in {"redis", "redis-stream", "redis_stream"}:
+        return RedisStreamInterruptBus()
+    return InMemoryInterruptBus()

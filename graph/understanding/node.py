@@ -1,12 +1,15 @@
 from ace.playbook import load_section_rules
 from config.json_utils import parse_json_from_llm
 from config.llms import get_understanding_llm
-from config.project_io import load_project_json
 from config.prompts import render_prompt
+from config.project_io import load_project_json
 from config.settings import get_config
 from domain.scene import get_all_entity_names_from_scene_data
 from graph.state import UnderstandingState
 from graph.understanding.pipeline import run_understanding_pipeline
+
+# Compatibility injection surface used by pluggable understanding features.
+__all__ = ["parse_json_from_llm", "get_understanding_llm", "render_prompt"]
 
 try:
     from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
@@ -130,6 +133,7 @@ def analyze_instruction(state: UnderstandingState) -> UnderstandingState:
             "raise_feature_exceptions": bool(feature_flags.get("raise_feature_exceptions", False)),
             "original_instruction": state.get("original_instruction", raw_text),
             "task_context": task_context,
+            "environment": state.get("environment") or state.get("scene"),
         },
     )
 

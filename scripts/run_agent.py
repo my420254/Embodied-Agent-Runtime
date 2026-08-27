@@ -1,5 +1,6 @@
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -7,20 +8,15 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from adapters.command_bus import (
+from adapters.command_bus import (  # noqa: E402 - support direct script execution
     JsonlInterruptBus,
     default_interrupt_command_file,
     publish_interrupt_command,
 )
-from agent_runtime.process_registry import find_active_runtime
-from agent_runtime.engine import (
-    build_runtime_input,
-    current_runtime_env_state,
-    current_runtime_scene_context,
-    run_engine,
-)
-from config.settings import get_config
-from scripts.renderer import print_banner, print_divider, render_stream
+from agent_runtime.process_registry import find_active_runtime  # noqa: E402
+from agent_runtime.engine import run_engine  # noqa: E402
+from agent_runtime.logging_setup import configure_logging, console_mirror  # noqa: E402
+from scripts.renderer import print_banner, print_divider, render_stream  # noqa: E402
 
 # 主程序 (Terminal Shell)
 # =====================================================================
@@ -148,18 +144,20 @@ def main(argv: list[str] | None = None) -> None:
         help="即使已有执行进程，也强制启动一个新的独立 runtime 进程",
     )
     args = parser.parse_args(argv)
+    configure_logging(frontend_port=os.environ.get("GENESIS_WEB_PORT"))
     if args.send_command or args.send_command_json:
         _send_command_and_exit(args)
         raise SystemExit(0)
     if _forward_task_to_active_runtime(args):
         raise SystemExit(0)
-    run_system(
-        plan_only=not args.execute,
-        initial_instruction=args.task,
-        once=args.once,
-        command_file=args.command_file,
-        interrupt_prompt=args.interrupt_prompt and not args.no_interrupt_prompt,
-    )
+    with console_mirror():
+        run_system(
+            plan_only=not args.execute,
+            initial_instruction=args.task,
+            once=args.once,
+            command_file=args.command_file,
+            interrupt_prompt=args.interrupt_prompt and not args.no_interrupt_prompt,
+        )
 
 
 if __name__ == "__main__":

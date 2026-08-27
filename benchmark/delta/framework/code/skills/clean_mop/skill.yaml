@@ -1,0 +1,16 @@
+name: clean_mop
+description: 清洗拖把（clean_mop；官方：须手持 mop 且在 sink 房间，洗后 mop_clean）。任务需要清洁拖把时使用；拖地前先洗拖把。
+prompt: prompt.md
+handler: benchmark.delta.framework.code.skills.clean_mop.handler:CleanMopSkill
+planner_item_param: tool
+planner_location_param: water_source
+planner_effect_state_key: isClean
+planner_effect_state_value: true
+planner_action_name: clean_mop
+planner_required_fields: action,agent,item_1,item_2,room
+planner_fixed_fields: action=clean_mop;agent=robot
+planner_entity_fields: item_1,item_2
+planner_room_fields: room
+planner_context_field: domain
+planner_context_values: clean
+planner_allow_extra_fields: false

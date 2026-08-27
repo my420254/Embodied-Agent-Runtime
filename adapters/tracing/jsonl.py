@@ -50,6 +50,20 @@ class JsonlTraceRecorder:
                 records.append(record)
         return records
 
+    def read_all(self) -> list[dict[str, Any]]:
+        if not self.path.exists():
+            return []
+
+        records: list[dict[str, Any]] = []
+        for line in self.path.read_text(encoding="utf-8").splitlines():
+            try:
+                record = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            if isinstance(record, dict):
+                records.append(record)
+        return records
+
     def find_by_trace_id(self, trace_id: str) -> dict[str, Any] | None:
         if not trace_id or not self.path.exists():
             return None

@@ -1,0 +1,14 @@
+name: pick
+description: 拾取普通物品（pick；官方：目标须 accessible+pickable，机器人须在目标房间且空手）。任务需要拿取物品时使用；先 goto 到物品所在房间。
+prompt: prompt.md
+handler: benchmark.delta.framework.code.skills.pick.handler:PickSkill
+planner_item_param: item
+planner_requires_empty_hand: true
+planner_action_name: pick
+planner_required_fields: action,agent,item,room
+planner_fixed_fields: action=pick;agent=robot
+planner_entity_fields: item
+planner_room_fields: room
+planner_context_field: domain
+planner_context_values: clean,dining,office,pc
+planner_allow_extra_fields: false

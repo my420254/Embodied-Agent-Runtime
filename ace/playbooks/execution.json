@@ -19,6 +19,93 @@
       "helpful_count": 0,
       "harmful_count": 0,
       "deprecated": false
+    },
+    {
+      "id": "execution-a1ce5096b39d",
+      "source": "reflection_layer4",
+      "intent_context": "把土豆切成片",
+      "rule": "执行涉及特定表面（Surface）的操作动作（如 Slice, Place, Clean 等）时，必须确保机器人已导航至该表面节点或其直接父级容器的有效操作范围内，否则硬件层将拒绝执行。",
+      "tags": [
+        "navigation",
+        "food_cleaning",
+        "skill_validity",
+        "container_access"
+      ],
+      "status": "promoted",
+      "source_split": "unknown",
+      "source_case_id": "",
+      "counterexamples": [],
+      "neutral_count": 0,
+      "created_at": "2026-08-26T12:50:32+00:00",
+      "updated_at": "2026-08-26T12:50:32+00:00",
+      "helpful_count": 0,
+      "harmful_count": 0,
+      "deprecated": false
+    },
+    {
+      "id": "execution-65d4b4d41eb4",
+      "source": "reflection_layer4",
+      "intent_context": "把土豆切成片",
+      "rule": "执行依赖特定基础设施（如水槽、炉灶）的动作时，必须确保前置步骤包含导航至该基础设施的操作，且机器人需处于该设施的有效交互半径内。",
+      "tags": [
+        "navigation",
+        "precondition",
+        "skill_validity"
+      ],
+      "status": "promoted",
+      "source_split": "unknown",
+      "source_case_id": "",
+      "counterexamples": [],
+      "neutral_count": 0,
+      "created_at": "2026-08-26T13:04:59+00:00",
+      "updated_at": "2026-08-26T13:04:59+00:00",
+      "helpful_count": 0,
+      "harmful_count": 0,
+      "deprecated": false
+    },
+    {
+      "id": "execution-5e2f61e9a53f",
+      "source": "reflection_layer4",
+      "intent_context": "把土豆切成片",
+      "rule": "执行任何依赖特定物理表面（Surface）的交互动作（如 Slice, Place, Clean）之前，必须显式包含导航至该表面或其直接父容器的步骤，以确保机器人处于有效交互半径内。",
+      "tags": [
+        "navigation",
+        "food_cleaning",
+        "skill_validity",
+        "container_access"
+      ],
+      "status": "promoted",
+      "source_split": "unknown",
+      "source_case_id": "",
+      "counterexamples": [],
+      "neutral_count": 0,
+      "created_at": "2026-08-26T13:06:00+00:00",
+      "updated_at": "2026-08-26T13:06:00+00:00",
+      "helpful_count": 0,
+      "harmful_count": 0,
+      "deprecated": false
+    },
+    {
+      "id": "execution-a7f4965d1916",
+      "source": "reflection_layer4",
+      "intent_context": "把土豆切成片",
+      "rule": "执行 Pickup 动作时，若目标物品位于容器（Container）内部（direct_relation: inside），必须确保机器人已导航至该容器节点或其直接父级节点的有效交互范围内。若容器处于关闭状态，还需在 Pickup 前插入 Open 动作。",
+      "tags": [
+        "navigation",
+        "restoration",
+        "skill_validity",
+        "container_access"
+      ],
+      "status": "promoted",
+      "source_split": "unknown",
+      "source_case_id": "",
+      "counterexamples": [],
+      "neutral_count": 0,
+      "created_at": "2026-08-27T06:05:17+00:00",
+      "updated_at": "2026-08-27T06:05:17+00:00",
+      "helpful_count": 0,
+      "harmful_count": 0,
+      "deprecated": false
     }
   ]
 }

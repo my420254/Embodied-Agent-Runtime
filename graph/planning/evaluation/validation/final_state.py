@@ -19,7 +19,10 @@ from graph.planning.config import (
     active_repair_strategy,
     planning_feature_enabled,
 )
-from graph.planning.normalizer import task_context as get_task_context, task_source_text as get_task_source_text
+from graph.planning.normalizer import (
+    task_context as get_task_context,
+    task_source_text as get_task_source_text,
+)
 from graph.state import PlanningState
 from re_trac import (
     build_failed_step_retrac_state,
@@ -44,19 +47,30 @@ def _state_todo_action_prefix(state: PlanningState) -> list[dict[str, Any]]:
     sda_state = state.get("sda_state", {})
     if not isinstance(sda_state, dict):
         return []
-    for section, key in (("todo_trajectory", "validated_prefix"), ("trajectory", "validated_todo_prefix")):
+    for section, key in (
+        ("todo_trajectory", "validated_prefix"),
+        ("trajectory", "validated_todo_prefix"),
+    ):
         value = sda_state.get(section, {})
-        if isinstance(value, dict) and isinstance(value.get(key), list) and value.get(key):
+        if (
+            isinstance(value, dict)
+            and isinstance(value.get(key), list)
+            and value.get(key)
+        ):
             return copy.deepcopy(value[key])
     return []
 
 
-def _merge_todo_action_prefix(prefix: list[dict[str, Any]], plan: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def _merge_todo_action_prefix(
+    prefix: list[dict[str, Any]], plan: list[dict[str, Any]]
+) -> list[dict[str, Any]]:
     if not prefix:
         return copy.deepcopy(plan or [])
     if not plan:
         return copy.deepcopy(prefix)
-    if len(plan) >= len(prefix) and all(_same_todo_action(plan[index], item) for index, item in enumerate(prefix)):
+    if len(plan) >= len(prefix) and all(
+        _same_todo_action(plan[index], item) for index, item in enumerate(prefix)
+    ):
         return copy.deepcopy(plan)
     return copy.deepcopy(prefix) + copy.deepcopy(plan)
 
@@ -87,7 +101,9 @@ def final_state_context(state: PlanningState) -> dict[str, Any]:
     if not isinstance(task_context, dict):
         task_context = {}
     raw_evaluation_context = state.get("evaluation_context", {})
-    evaluation_context = raw_evaluation_context if isinstance(raw_evaluation_context, dict) else {}
+    evaluation_context = (
+        raw_evaluation_context if isinstance(raw_evaluation_context, dict) else {}
+    )
     structured_goal_state = (
         structured_task.get("goal_state")
         or structured_task.get("desired_state")
@@ -114,9 +130,13 @@ def final_state_context(state: PlanningState) -> dict[str, Any]:
         "evaluation_context": copy.deepcopy(evaluation_context),
         "structured_goal_state": copy.deepcopy(structured_goal_state),
         "structured_final_state": copy.deepcopy(structured_final_state),
-        "external_goal_state": copy.deepcopy(external_goal_state if external_goal_state is not None else {}),
+        "external_goal_state": copy.deepcopy(
+            external_goal_state if external_goal_state is not None else {}
+        ),
         "external_goal_text": external_goal_text,
-        "has_external_goal": bool(external_goal_state) or bool(structured_final_state) or bool(external_goal_text.strip()),
+        "has_external_goal": bool(external_goal_state)
+        or bool(structured_final_state)
+        or bool(external_goal_text.strip()),
     }
 
 
@@ -137,10 +157,16 @@ def build_final_state_packet(
         "evaluation_context": copy.deepcopy(context.get("evaluation_context", {})),
         "external_goal": {
             "has_external_goal": bool(context.get("has_external_goal", False)),
-            "external_goal_state": copy.deepcopy(context.get("external_goal_state", {})),
+            "external_goal_state": copy.deepcopy(
+                context.get("external_goal_state", {})
+            ),
             "external_goal_text": context.get("external_goal_text", ""),
-            "structured_goal_state": copy.deepcopy(context.get("structured_goal_state", {})),
-            "structured_final_state": copy.deepcopy(context.get("structured_final_state", {})),
+            "structured_goal_state": copy.deepcopy(
+                context.get("structured_goal_state", {})
+            ),
+            "structured_final_state": copy.deepcopy(
+                context.get("structured_final_state", {})
+            ),
         },
         "initial": {
             "environment": copy.deepcopy(initial_env),
@@ -152,21 +178,28 @@ def build_final_state_packet(
         },
         "state_diff": copy.deepcopy(state_diff),
         "trajectory": trajectory,
+        "action_plan": _state_todo_action_prefix(state) or _state_action_plan(state),
     }
 
 
 def benchmark_final_state_compare(packet: dict[str, Any]) -> dict[str, Any]:
-    module_name = str(get_config("files", "final_state_module", default="") or "").strip()
+    module_name = str(
+        get_config("files", "final_state_module", default="") or ""
+    ).strip()
     if not module_name:
         return {
             "enabled": False,
             "status": "not_configured",
             "comparer_module": "",
         }
-    module = resolve_module(module_name, required=True, label="benchmark final_state_module")
+    module = resolve_module(
+        module_name, required=True, label="benchmark final_state_module"
+    )
     compare_fn = getattr(module, "compare_final_state", None)
     if not callable(compare_fn):
-        raise AttributeError(f"{module_name}.compare_final_state is required by files.final_state_module")
+        raise AttributeError(
+            f"{module_name}.compare_final_state is required by files.final_state_module"
+        )
     result = compare_fn(copy.deepcopy(packet))
     if not isinstance(result, dict):
         raise ValueError(f"{module_name}.compare_final_state must return a JSON object")
@@ -202,11 +235,7 @@ def run_state_diff_audit(
     structured_task = state.get("structured_task", {})
     if not isinstance(structured_task, dict):
         structured_task = {}
-    todo_or_steps = (
-        simulated_steps
-        or _state_action_plan(state)
-        or []
-    )
+    todo_or_steps = simulated_steps or _state_action_plan(state) or []
     audit_context = _build_state_audit_context(
         initial_env,
         initial_robot,
@@ -215,10 +244,9 @@ def run_state_diff_audit(
         todo_or_steps if isinstance(todo_or_steps, list) else [],
         structured_task,
     )
+    # Official/gold evaluation inputs stay in the deterministic checker and
+    # reporting packet. They must never enter an LLM prompt or repair feedback.
     audit_context["task_context"] = copy.deepcopy(packet.get("task_context", {}))
-    audit_context["evaluation_context"] = copy.deepcopy(packet.get("evaluation_context", {}))
-    audit_context["external_goal"] = copy.deepcopy(packet.get("external_goal", {}))
-    audit_context["benchmark_final_state_compare"] = copy.deepcopy(benchmark_compare)
     action_plan = _state_action_plan(state)
 
     llm_result = audit_llm._run_state_diff_audit(
@@ -234,20 +262,33 @@ def run_state_diff_audit(
         raise ValueError("公共状态差异审计输出必须是 JSON 对象")
 
     parsed = copy.deepcopy(llm_result)
-    deterministic = benchmark_compare.get("deterministic_goal_check", {}) if isinstance(benchmark_compare, dict) else {}
-    if isinstance(deterministic, dict) and deterministic.get("passed") is False:
+    deterministic = (
+        benchmark_compare.get("deterministic_goal_check", {})
+        if isinstance(benchmark_compare, dict)
+        else {}
+    )
+    if (
+        isinstance(deterministic, dict)
+        and deterministic.get("passed") is True
+        and deterministic.get("authoritative_when_passed") is True
+    ):
+        parsed["is_passed"] = True
+        parsed["issue"] = ""
+        parsed["fix_advice"] = ""
+        parsed["repair_mode"] = "continue_from_current"
+        parsed["deterministic_goal_check"] = copy.deepcopy(deterministic)
+    elif isinstance(deterministic, dict) and deterministic.get("passed") is False:
         parsed["is_passed"] = False
         parsed["issue"] = "benchmark deterministic goal check failed"
-        parsed["fix_advice"] = "; ".join(
-            (
-                f"{item.get('entity')}.{item.get('field')} expected={item.get('expected')!r} actual={item.get('actual')!r}"
-                if isinstance(item, dict) else str(item)
-            )
-            for item in deterministic.get("missing", [])
+        parsed["fix_advice"] = (
+            "最终状态未满足 benchmark 的确定性目标检查；"
+            "请只依据原始任务指令、当前环境和 skill 契约重新规划。"
         )
         parsed["repair_mode"] = "reset_and_replan"
         parsed["deterministic_goal_check"] = copy.deepcopy(deterministic)
-    repair_mode = str(parsed.get("repair_mode", "continue_from_current") or "continue_from_current").strip()
+    repair_mode = str(
+        parsed.get("repair_mode", "continue_from_current") or "continue_from_current"
+    ).strip()
     if repair_mode not in {"continue_from_current", "reset_and_replan"}:
         repair_mode = "continue_from_current"
     parsed["repair_mode"] = repair_mode
@@ -255,7 +296,9 @@ def run_state_diff_audit(
     parsed["state_audit_context"] = audit_context
     parsed["llm_result"] = llm_result
     parsed["benchmark_final_state_compare"] = copy.deepcopy(benchmark_compare)
-    parsed["has_external_goal"] = bool(packet.get("external_goal", {}).get("has_external_goal", False))
+    parsed["has_external_goal"] = bool(
+        packet.get("external_goal", {}).get("has_external_goal", False)
+    )
     parsed["final_state_packet"] = packet
     parsed["state_diff"] = state_diff
     return parsed
@@ -275,8 +318,14 @@ def build_sda_state_diff_repair_state(
     reset_plan: bool,
     state_diff: dict[str, Any],
 ) -> dict[str, Any]:
-    prefix_steps = [] if reset_plan else list(validated_steps or validated_audit_steps or todo_list or [])
-    prefix_todo_actions = [] if reset_plan else list(validated_todo_actions or todo_list or [])
+    prefix_steps = (
+        []
+        if reset_plan
+        else list(validated_steps or validated_audit_steps or todo_list or [])
+    )
+    prefix_todo_actions = (
+        [] if reset_plan else list(validated_todo_actions or todo_list or [])
+    )
     next_step_num = len(prefix_todo_actions or prefix_steps) + 1
     return {
         "version": "sda_v1",
@@ -290,7 +339,9 @@ def build_sda_state_diff_repair_state(
             "audit_result": copy.deepcopy(audit_result),
         },
         "trajectory": {
-            "original_todo_list": copy.deepcopy(todo_list or validated_audit_steps or []),
+            "original_todo_list": copy.deepcopy(
+                todo_list or validated_audit_steps or []
+            ),
             "verified_prefix": copy.deepcopy(prefix_steps),
             "validated_prefix": copy.deepcopy(prefix_steps),
             "validated_todo_prefix": copy.deepcopy(prefix_todo_actions),
@@ -311,7 +362,9 @@ def build_sda_state_diff_repair_state(
             "note": "This is the sandbox state selected after final-state audit, not the real runtime scene.",
         },
         "frontier": {
-            "type": "append_state_diff_recovery" if not reset_plan else "reset_and_replan_after_state_diff_audit",
+            "type": "append_state_diff_recovery"
+            if not reset_plan
+            else "reset_and_replan_after_state_diff_audit",
             "next_step_num": next_step_num,
             "instruction": (
                 "Continue from current_simulated_state and add only the missing recovery/goal-completion suffix."
@@ -352,7 +405,10 @@ def build_state_diff_failure_payload(
     reset_plan = repair_mode == "reset_and_replan"
     step_info = {
         "step": len(todo_list or validated_steps) + 1,
-        "execution": {"skill": "FINAL_STATE_AUDIT", "parameters": {"repair_mode": repair_mode}},
+        "execution": {
+            "skill": "FINAL_STATE_AUDIT",
+            "parameters": {"repair_mode": repair_mode},
+        },
     }
     finding = build_failure_finding(step_info=step_info, issue=full_issue, fix=fix)
     if reset_plan:
@@ -378,10 +434,14 @@ def build_state_diff_failure_payload(
     else:
         checkpoint_env = copy.deepcopy(final_env)
         checkpoint_robot = copy.deepcopy(final_robot)
-        payload_validated_steps = list(validated_steps or validated_audit_steps or todo_list or [])
+        payload_validated_steps = list(
+            validated_steps or validated_audit_steps or todo_list or []
+        )
         inherited_todo_prefix = _state_todo_action_prefix(state)
         current_todo_plan = list(validated_todo_actions or todo_list or [])
-        payload_validated_todo_actions = _merge_todo_action_prefix(inherited_todo_prefix, current_todo_plan)
+        payload_validated_todo_actions = _merge_todo_action_prefix(
+            inherited_todo_prefix, current_todo_plan
+        )
         retrac_state = (
             build_state_diff_retrac_state(
                 issue_type=issue,

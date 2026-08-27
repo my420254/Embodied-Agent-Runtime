@@ -1,0 +1,14 @@
+name: pick_loadable
+description: 拾取空的 loadable 容器（pick_loadable；官方：目标须为空 loadable container）。任务需要搬运箱子/篮子等容器时使用；非空或非 loadable 物品应使用 pick。
+prompt: prompt.md
+handler: benchmark.delta.framework.code.skills.pick_loadable.handler:PickLoadableSkill
+planner_item_param: item
+planner_requires_empty_hand: true
+planner_action_name: pick_loadable
+planner_required_fields: action,agent,item,room
+planner_fixed_fields: action=pick_loadable;agent=robot
+planner_entity_fields: item
+planner_room_fields: room
+planner_context_field: domain
+planner_context_values: office
+planner_allow_extra_fields: false

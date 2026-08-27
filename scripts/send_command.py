@@ -7,7 +7,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from adapters.command_bus import (
+from adapters.command_bus import (  # noqa: E402 - support direct script execution
     JsonlInterruptBus,
     default_interrupt_command_file,
     publish_interrupt_command,

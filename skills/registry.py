@@ -1,4 +1,9 @@
-from skills.loader import get_default_profile, load_enabled_handlers, load_enabled_prompts
+from skills.loader import (
+    get_default_profile,
+    load_enabled_handlers,
+    load_enabled_prompts,
+    load_prompts_for,
+)
 
 
 def get_skill_handlers(profile: str | None = None) -> dict:
@@ -28,3 +33,8 @@ def apply_skill(
 
 def load_enabled_skill_prompts(profile: str | None = None) -> str:
     return load_enabled_prompts(profile or get_default_profile())
+
+
+def load_skill_prompts_for(names: list[str] | None) -> str:
+    """按理解层产出的 skill_closure 过滤技能说明；零命中返回 "" 以便回退全量。"""
+    return load_prompts_for(names)

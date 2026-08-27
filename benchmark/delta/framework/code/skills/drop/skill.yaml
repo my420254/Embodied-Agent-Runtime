@@ -1,0 +1,14 @@
+name: drop
+description: 放下手中普通物品到当前房间（drop；官方：目标须在手中，放下后 item_at room）。任务需要把物品放到房间地面时使用。
+prompt: prompt.md
+handler: benchmark.delta.framework.code.skills.drop.handler:DropSkill
+planner_item_param: item
+planner_destination_param: room
+planner_action_name: drop
+planner_required_fields: action,agent,item,room
+planner_fixed_fields: action=drop;agent=robot
+planner_entity_fields: item
+planner_room_fields: room
+planner_context_field: domain
+planner_context_values: clean,dining,office,pc
+planner_allow_extra_fields: false

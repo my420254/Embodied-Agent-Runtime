@@ -11,7 +11,6 @@ from config.llms import get_planning_llm
 from graph.planning.config import feature_enabled
 from graph.planning.evaluation.validation.debug_events import append_debug_event, sync_debug_event_aliases
 from graph.planning.config import REPAIR_STRATEGY_RETRAC, REPAIR_STRATEGY_SDA, active_repair_strategy
-from graph.state import PlanningState
 from re_trac import build_failure_finding, build_failure_payload, failed_lesson_occurrences
 
 

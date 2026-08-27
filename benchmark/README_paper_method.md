@@ -3,7 +3,7 @@
 本文只说明 `paper_method`，不包含 bare baseline 和 OurAgent framework。所有命令默认从仓库根目录运行：
 
 ```bash
-cd <PROJECT_ROOT>
+cd /data/zmy/OurAgent-he1
 export OURAGENT_WORKSPACE_ROOT=/data/zmy
 ```
 
@@ -50,7 +50,7 @@ EAI paper method 的输入是官方 action sequencing prompt cache，里面已�
 真实 smoke 会调用模型和论文/evaluator 代码。
 
 ```bash
-cd <PROJECT_ROOT>
+cd /data/zmy/OurAgent-he1
 
 /data/zmy/envs/ouragent/bin/python benchmark/delta/paper_method/code/run.py \
   --run-name smoke_real_delta_paper_20260807 \
@@ -105,7 +105,7 @@ cd <PROJECT_ROOT>
   --full-observable \
   --x-displays 0 \
   --eval-portion 100 \
-  --paper-override alfred.splits=<PROJECT_ROOT>/benchmark/reactree/alfred/paper_method/scratch/alfred_singleton_splits_20260807.json \
+  --paper-override alfred.splits=/data/zmy/OurAgent-he1/benchmark/reactree/alfred/paper_method/scratch/alfred_singleton_splits_20260807.json \
   --paper-override llm_agent.max_steps=20 \
   --paper-override llm_agent.max_decisions=20 \
   --reset

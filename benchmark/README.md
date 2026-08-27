@@ -1,13 +1,13 @@
 # Benchmark 统一运行说明
 
-本目录统一管理 DELTA、EAI BEHAVIOR、EAI VirtualHome、ReAcTree ALFRED 和 ReAcTree WAH。正式 framework 实验只允许从各数据集的 `framework/code/run.py` 启动；推荐使用同目录的 `run.sh` 一键入口。
+本目录统一管理 DELTA、EAI BEHAVIOR、EAI VirtualHome、ReAcTree ALFRED 和 ReAcTree WAH。正式 framework 实验只允许从各数据集的 `framework/code/run.sh` 启动；`run.sh` 再调用同目录的 `run.py`。
 
 ## 运行前提
 
 从仓库根目录运行：
 
 ```bash
-cd <PROJECT_ROOT>
+cd /data/zmy/OurAgent-he1
 export OURAGENT_WORKSPACE_ROOT=/data/zmy
 unset http_proxy https_proxy HTTP_PROXY HTTPS_PROXY ALL_PROXY all_proxy
 ```
@@ -44,39 +44,49 @@ benchmark/<paper>/<dataset>/framework/code/config/settings.json
 
 `launch_config.json` 管理 `ports`、`launch_shards`、`expected_count`、超时、仿真资源和结果名；`settings.json` 管理模型名/key、prompt、rules、skill root 和 feature flags。长期变更接口、模型、分片或仿真端口时直接修改配置文件，命令行只用于一次性覆盖。
 
-`launch_shards` 是整个实验的总分片数。每个 unit 固定绑定一个 LLM endpoint 和一个仿真资源；同一 unit 内案例串行，不同 unit 并行。ReAcTree 默认 3 个接口、5 个总分片：
+`launch_shards` 是整个实验的总分片数。正式实验固定显式传入 `--launch-shards 5`。每个 unit 固定绑定一个 LLM endpoint 和一个仿真资源；同一 unit 内案例串行，不同 unit 并行。
 
-| unit | LLM | ALFRED display | WAH port id |
-| ---: | ---: | ---: | ---: |
-| 0 | 18002 | 1200 | 700 |
-| 1 | 18003 | 1201 | 701 |
-| 2 | 18004 | 1202 | 702 |
-| 3 | 18002 | 1203 | 703 |
-| 4 | 18003 | 1204 | 704 |
+接口模型固定为：`18002/18003 = Qwen3.6-27B`，`18004 = Qwen3.5-9B`，正式命令同时显式传 `--ports` 和 `--api-model`，不得跨模型混用。单接口实验仍创建 5 个 unit；ALFRED 每个 unit 使用独立 X display，WAH 每个 unit 使用独立 Unity port。数据统一从 `benchmark/datasets/extracted` 加载。
 
-因此接口案例量为 `2:2:1`，是固定 shard 轮转，不是接口失效。当前三个端口均为 Qwen3.6-27B。ALFRED 使用 X display `1200-1204`；WAH 使用 `official_base_port=8906`、port id `700-704`（TCP `9606-9610`）。数据从 `benchmark/datasets/extracted/reactree` 加载。
+## 固定 tmux 队列
+
+统一队列控制器：
+
+```bash
+benchmark/framework_experiment_records/run_fixed_framework_queues_20260827.sh preflight
+benchmark/framework_experiment_records/run_fixed_framework_queues_20260827.sh start
+benchmark/framework_experiment_records/run_fixed_framework_queues_20260827.sh status
+```
+
+`start` 会先做纯预检，再建立三个独立 tmux session。队列固定为：
+
+- `18002 / 27B`：ALFRED seen（display 1200-1204）→ EAI BEHAVIOR → WAH official（Unity TCP 9606-9610）。
+- `18003 / 27B`：ALFRED unseen（display 1210-1214）→ EAI VirtualHome。
+- `18004 / 9B`：ALFRED seen（1220-1224）→ unseen（1230-1234）→ BEHAVIOR → VirtualHome → WAH official（9616-9620）→ DELTA。
+
+所有阶段调用数据集自己的 `run.sh`、清除代理、使用 5 shards，并带同名 `--resume`。失败阶段会停止所在接口队列，不会静默进入下一实验。每次活动 session 的真实耗时记录在 `experiment_timing.json`；`launch_manifest.json` 记录 settings、prompts、skills、extracted cases 和 framework code 的 SHA-256 指纹。
 
 ## 预检、冒烟和全量
 
 静态预检：
 
 ```bash
-benchmark/reactree/alfred/framework/code/run.sh --preflight --all-cases --eval-set valid_seen
-benchmark/reactree/wah/framework/code/run.sh --preflight
+benchmark/reactree/alfred/framework/code/run.sh --preflight --all-cases --eval-set valid_seen --launch-shards 5
+benchmark/reactree/wah/framework/code/run.sh --preflight --launch-shards 5
 ```
 
 仿真预检：
 
 ```bash
-benchmark/reactree/alfred/framework/code/run.sh --sim-preflight --limit 5 --expected-count 5
-benchmark/reactree/wah/framework/code/run.sh --sim-preflight --limit 5 --expected-count 5
+benchmark/reactree/alfred/framework/code/run.sh --sim-preflight --limit 5 --expected-count 5 --launch-shards 5
+benchmark/reactree/wah/framework/code/run.sh --sim-preflight --limit 5 --expected-count 5 --launch-shards 5
 ```
 
 端到端冒烟：
 
 ```bash
-benchmark/reactree/alfred/framework/code/run.sh --run-name smoke_alfred --limit 5 --expected-count 5
-benchmark/reactree/wah/framework/code/run.sh --run-name smoke_wah --limit 5 --expected-count 5
+benchmark/reactree/alfred/framework/code/run.sh --run-name smoke_alfred --limit 5 --expected-count 5 --launch-shards 5
+benchmark/reactree/wah/framework/code/run.sh --run-name smoke_wah --limit 5 --expected-count 5 --launch-shards 5
 ```
 
 冒烟后检查 `launch_manifest.json` 的 endpoint/unit/资源映射，以及每个 case 的 `worker_result.json`、`llm_io.json`、`official_eval.json`、`rounds/interceptions.md` 和实际 `LANGGRAPH_JSZN_*_API_BASE`。
@@ -84,12 +94,12 @@ benchmark/reactree/wah/framework/code/run.sh --run-name smoke_wah --limit 5 --ex
 配置确认后一键全量：
 
 ```bash
-benchmark/reactree/alfred/framework/code/run.sh --run-name reactree_alfred_seen --all-cases --eval-set valid_seen
-benchmark/reactree/alfred/framework/code/run.sh --run-name reactree_alfred_unseen --all-cases --eval-set valid_unseen --expected-count 821
-benchmark/reactree/wah/framework/code/run.sh --run-name reactree_wah_full
-benchmark/delta/framework/code/run.sh --run-name delta_framework_full
-benchmark/eai/behavior/framework/code/run.sh --run-name eai_behavior_framework_full
-benchmark/eai/virtualhome/framework/code/run.sh --run-name eai_virtualhome_framework_full
+benchmark/reactree/alfred/framework/code/run.sh --run-name reactree_alfred_seen --all-cases --eval-set valid_seen --launch-shards 5 --ports 18002 --api-model Qwen3.6-27B
+benchmark/reactree/alfred/framework/code/run.sh --run-name reactree_alfred_unseen --all-cases --eval-set valid_unseen --expected-count 821 --launch-shards 5 --ports 18003 --api-model Qwen3.6-27B
+benchmark/reactree/wah/framework/code/run.sh --run-name reactree_wah_full --launch-shards 5 --ports 18002 --api-model Qwen3.6-27B
+benchmark/delta/framework/code/run.sh --run-name delta_framework_full --launch-shards 5 --ports 18004 --api-model Qwen3.5-9B
+benchmark/eai/behavior/framework/code/run.sh --run-name eai_behavior_framework_full --launch-shards 5 --ports 18002 --api-model Qwen3.6-27B
+benchmark/eai/virtualhome/framework/code/run.sh --run-name eai_virtualhome_framework_full --launch-shards 5 --ports 18003 --api-model Qwen3.6-27B
 ```
 
 长任务可用 tmux，但 tmux 中仍调用 `run.sh`。中断后用同一 `run_name` 加 `--resume`；`done` 或 `evaluation_failed` 会跳过，失败/缺失结果会重跑。

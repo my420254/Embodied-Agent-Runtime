@@ -9,6 +9,8 @@ class PickupSkill:
         robot_loc = sim_robot["robot_location"]
         robot_hold = sim_robot["robot_holding"]
         target = params.get("target_item", "")
+        if not target:
+            return False, "参数缺失", "Pickup 缺少必填参数 target_item（目标物品唯一ID，如 土豆_1）"
         direct_parent = sim_env.get(target, {}).get("direct_parent", "")
         if not can_reach_item_from_location(target, robot_loc, sim_env):
             return False, "前置位置依赖未满足", f"目标在 {direct_parent}，需先导航至直接位置或其可交互父级节点"
@@ -22,3 +24,6 @@ class PickupSkill:
         target = params.get("target_item", "")
         sim_robot["robot_holding"] = target
         sim_env[target]["direct_parent"] = "robot_hand"
+        sim_env[target].pop("direct_relation", None)
+        # 物品已持在手中，不再属于任何容器路径
+        sim_env[target]["full_path"] = []

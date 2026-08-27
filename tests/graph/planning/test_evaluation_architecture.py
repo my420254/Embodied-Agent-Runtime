@@ -197,6 +197,8 @@ def test_only_registry_imports_concrete_repair_packages():
     violations = []
     allowed = REPAIR_ROOT / "registry.py"
     for path in PROJECT_ROOT.rglob("*.py"):
+        if path.is_symlink() and not path.exists():
+            continue
         if "tests" in path.parts or path == allowed:
             continue
         if any(package in path.parts for package in REPAIR_PACKAGES) and REPAIR_ROOT in path.parents:
@@ -276,9 +278,10 @@ def test_planning_runtime_does_not_import_concrete_repair_packages():
 
 
 def test_repair_runtime_directories_match_selected_integration_shape():
-    assert (PROJECT_ROOT / "SDA").exists()
+    assert not (PROJECT_ROOT / "SDA").exists()
     assert not (PROJECT_ROOT / "VCR").exists()
     assert (PROJECT_ROOT / "re_trac").exists()
+    assert (REPAIR_ROOT / "sda").exists()
 
 
 def test_repair_strategy_packages_reflect_their_execution_shape():

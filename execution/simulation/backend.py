@@ -9,13 +9,11 @@ def execute_simulated_action(item, env: dict, action_category: str, remaining: i
     env.setdefault("robot_holding", "空")
     env["changed_objects"] = {}
 
-    act_name, _, action_str, target, location = resolve_action_target(item)
+    act_name, params, action_str, target, location = resolve_action_target(item)
     if not act_name:
         return ExecutionResult(ok=True, action_str=action_str, env_state=env)
 
-    apply_env_delta(env, act_name, target, location, action_str)
-
-    scene_ok, scene_error = update_runtime_scene(act_name, target, location)
+    scene_ok, scene_error = update_runtime_scene(act_name, target, location, params)
     if not scene_ok:
         return ExecutionResult(
             ok=False,
@@ -23,6 +21,8 @@ def execute_simulated_action(item, env: dict, action_category: str, remaining: i
             env_state=env,
             error_feedback=scene_error or "运行态场景同步失败",
         )
+
+    apply_env_delta(env, act_name, target, location, action_str)
 
     print_execution_trace(action_str, env, remaining, total_remaining)
     return ExecutionResult(ok=True, action_str=action_str, env_state=env)

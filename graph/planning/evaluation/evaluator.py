@@ -54,6 +54,19 @@ def save_evaluator_finding_to_playbook(*args, **kwargs):
     return audit_llm.save_evaluator_finding_to_playbook(*args, **kwargs)
 
 
+def _failure_skill_name(failure: Any) -> str:
+    """从失败的步骤提取动作对应的 skill 名（如 RIGHT_GRASP），供修复时针对性加载该 skill 的 prompt。"""
+    try:
+        step = getattr(failure, "step", {})
+        if isinstance(step, dict):
+            execution = step.get("execution", {})
+            if isinstance(execution, dict):
+                return str(execution.get("skill", "") or "").strip()
+    except Exception:
+        pass
+    return ""
+
+
 def _dependencies(strategy_name: str) -> EvaluationDependencies:
     return EvaluationDependencies(
         apply_sandbox_action=apply_sandbox_action,
@@ -359,6 +372,7 @@ def _handle_candidate_failure(
             "step": failure.step.get("step"),
             "issue_type": failure.issue_type,
             "fix_advice": failure.fix_advice,
+            "skill": _failure_skill_name(failure),
         },
     }
     return _publish_repair_request(session, reporter, failure, request)

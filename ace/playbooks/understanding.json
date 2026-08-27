@@ -1,0 +1,62 @@
+{
+  "rules": [
+    {
+      "id": "understanding-53455c3132e1",
+      "source": "reflection_layer1",
+      "intent_context": "把土豆切成片",
+      "rule": "对于涉及‘切割’、‘切片’、‘剁碎’等物理加工动作的指令，必须强制召回并绑定‘砧板’或‘切菜板’作为必要的操作平台（receptacle/tool），并将其设为任务规划的前置约束条件，否则规划器将因缺少操作表面而失败。",
+      "tags": [
+        "precondition",
+        "skill_validity"
+      ],
+      "status": "promoted",
+      "source_split": "unknown",
+      "source_case_id": "",
+      "counterexamples": [],
+      "neutral_count": 0,
+      "created_at": "2026-08-26T13:07:36+00:00",
+      "updated_at": "2026-08-26T13:07:36+00:00",
+      "helpful_count": 0,
+      "harmful_count": 0,
+      "deprecated": false
+    },
+    {
+      "id": "understanding-a43f046e38cf",
+      "source": "reflection_layer1",
+      "intent_context": "把土豆切成片",
+      "rule": "对于涉及‘切割’、‘切片’、‘剁碎’等物理加工动作的指令，理解层必须强制召回至少两个可用的‘砧板’或‘切菜板’实体作为 receptacles 的 primary 和 alternatives 列表，以确保规划层在首选操作平台不可用时具备自动切换能力，避免因单一实体依赖导致的任务死锁。",
+      "tags": [
+        "skill_validity"
+      ],
+      "status": "promoted",
+      "source_split": "unknown",
+      "source_case_id": "",
+      "counterexamples": [],
+      "neutral_count": 0,
+      "created_at": "2026-08-26T13:23:00+00:00",
+      "updated_at": "2026-08-26T13:23:00+00:00",
+      "helpful_count": 0,
+      "harmful_count": 0,
+      "deprecated": false
+    },
+    {
+      "id": "understanding-6597e3ec457c",
+      "source": "reflection_layer1",
+      "intent_context": "把土豆切成片",
+      "rule": "对于涉及‘切割’、‘切片’、‘剁碎’等物理加工动作的指令，理解层在构建 required_item_names 时，必须为 receptacles（操作平台，如砧板）同时召回 primary 和 alternatives 列表，且 alternatives 列表不得为空，以支持规划层的容错切换机制。",
+      "tags": [
+        "skill_validity"
+      ],
+      "status": "promoted",
+      "source_split": "unknown",
+      "source_case_id": "",
+      "counterexamples": [],
+      "neutral_count": 0,
+      "created_at": "2026-08-27T06:19:46+00:00",
+      "updated_at": "2026-08-27T06:19:46+00:00",
+      "helpful_count": 0,
+      "harmful_count": 0,
+      "deprecated": false
+    }
+  ]
+}

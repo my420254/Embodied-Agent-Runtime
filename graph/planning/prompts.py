@@ -7,6 +7,7 @@ from typing import Any
 try:
     from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
 except Exception:  # pragma: no cover
+
     class _Message:  # type: ignore[no-redef]
         def __init__(self, content: str):
             self.content = content
@@ -20,6 +21,7 @@ except Exception:  # pragma: no cover
     class SystemMessage(_Message):
         pass
 
+
 from config.module_loader import call_configured_module_function
 from config.prompts import render_prompt
 
@@ -30,7 +32,9 @@ DEFAULT_PLANNING_USER_MESSAGE = "开始规划。"
 
 def _planning_main_inputs(result) -> tuple[dict[str, Any], list[str]]:
     if not isinstance(result, tuple) or len(result) != 2:
-        raise TypeError("build_planning_main_inputs must return (variables, injected_rule_ids)")
+        raise TypeError(
+            "build_planning_main_inputs must return (variables, injected_rule_ids)"
+        )
     variables, injected_rule_ids = result
     if not isinstance(variables, dict):
         raise TypeError("build_planning_main_inputs variables must be a dict")
@@ -63,7 +67,9 @@ def _todo_action_prefix_for_prompt(steps: list) -> list[dict[str, Any]]:
     for step in steps or []:
         if not isinstance(step, dict):
             continue
-        item = {key: copy.deepcopy(value) for key, value in step.items() if key != "step"}
+        item = {
+            key: copy.deepcopy(value) for key, value in step.items() if key != "step"
+        }
         if item:
             prefix.append(item)
     return prefix
@@ -99,14 +105,18 @@ def _todo_repair_handoff_for_prompt(repair_handoff: dict | None) -> dict:
             next_step = todo_trajectory.get("next_step_num")
             if next_step is not None:
                 frontier["next_step_num"] = next_step
-            frontier["instruction"] = "保留已验证前缀，只根据 current_simulated_state 生成后续 todo_list 动作。"
+            frontier["instruction"] = (
+                "保留已验证前缀，只根据 current_simulated_state 生成后续 todo_list 动作。"
+            )
     return payload
 
 
 def _json_equivalent(left: Any, right: Any) -> bool:
     """Compare checkpoint payloads without depending on dictionary order."""
     try:
-        return json.dumps(left, ensure_ascii=False, sort_keys=True, default=str) == json.dumps(
+        return json.dumps(
+            left, ensure_ascii=False, sort_keys=True, default=str
+        ) == json.dumps(
             right,
             ensure_ascii=False,
             sort_keys=True,
@@ -174,6 +184,7 @@ def build_planning_messages(
     task_context: dict,
     task_source_text: str,
     names_info: dict,
+    understanding_final_state: dict | None,
     skill_closure: list[str] | None,
     failed_lessons: str,
     intent: str,
@@ -195,6 +206,7 @@ def build_planning_messages(
             task_context=task_context,
             task_source_text=task_source_text,
             names_info=names_info,
+            understanding_final_state=understanding_final_state,
             skill_closure=skill_closure,
             failed_lessons=failed_lessons,
             intent=intent,
@@ -203,7 +215,9 @@ def build_planning_messages(
     )
 
     framework_wrapped_prefix = _steps_are_framework_wrapped(validated_steps)
-    messages = [SystemMessage(content=render_prompt("planning.main_system", **main_inputs))]
+    messages = [
+        SystemMessage(content=render_prompt("planning.main_system", **main_inputs))
+    ]
     if validated_steps:
         if not framework_wrapped_prefix:
             messages.append(
@@ -218,7 +232,10 @@ def build_planning_messages(
             messages.append(
                 AIMessage(
                     content=json.dumps(
-                        {"thought_process": "执行已验证的动作前缀...", "todo_list": validated_steps},
+                        {
+                            "thought_process": "执行已验证的动作前缀...",
+                            "todo_list": validated_steps,
+                        },
                         ensure_ascii=False,
                     )
                 )
@@ -226,7 +243,8 @@ def build_planning_messages(
     if validated_steps or str(feedback or "").strip() or repair_handoff:
         prompt_repair_handoff = (
             _todo_repair_handoff_for_prompt(repair_handoff)
-            if isinstance(repair_handoff, dict) and repair_handoff.get("todo_trajectory")
+            if isinstance(repair_handoff, dict)
+            and repair_handoff.get("todo_trajectory")
             else (repair_handoff or {})
         )
         prompt_repair_handoff = _compact_repair_handoff_for_prompt(
@@ -240,7 +258,9 @@ def build_planning_messages(
                     "planning.repair_user",
                     **_repair_inputs(
                         feedback=feedback,
-                        repair_state_json=json.dumps(prompt_repair_handoff, ensure_ascii=False, indent=2),
+                        repair_state_json=json.dumps(
+                            prompt_repair_handoff, ensure_ascii=False, indent=2
+                        ),
                         next_step_num=next_step_num,
                         feature_flags=feature_flags,
                     ),

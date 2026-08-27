@@ -15,6 +15,7 @@ IGNORED_SCENE_KEYS = {
     "robot_inventory",
 }
 
+
 # 这个函数 walk_entity_names 用于递归地收集场景树中的所有实体名称，以供理解层进行名称白名单校验。函数接受一个字典类型的场景数据作为输入，并返回一个包含所有实体名称的集合。
 def walk_entity_names(scene_data: dict) -> set:
     names = set()
@@ -38,7 +39,9 @@ def walk_entity_names(scene_data: dict) -> set:
 
 def _require_scene_file(scene_file: str | None) -> str:
     if not scene_file:
-        raise ValueError("scene_file is required; pass request-level scene data for benchmark runs")
+        raise ValueError(
+            "scene_file is required; pass request-level scene data for benchmark runs"
+        )
     return scene_file
 
 
@@ -71,9 +74,15 @@ def flatten_scene(scene_data: dict) -> dict[str, dict[str, Any]]:
                             "direct_parent": "robot_hand",
                             "direct_relation": held_value.get("direct_relation"),
                             "type": held_value.get("type"),
+                            "category": copy.deepcopy(held_value.get("category")),
                             "states": copy.deepcopy(held_value.get("states", {})),
-                            "properties": copy.deepcopy(held_value.get("properties", [])),
-                            "is_container": "contains" in held_value or held_value.get("type") == "receptacle",
+                            "properties": copy.deepcopy(
+                                held_value.get("properties", [])
+                            ),
+                            "abilities": copy.deepcopy(held_value.get("abilities", [])),
+                            "nearby": copy.deepcopy(held_value.get("nearby", [])),
+                            "is_container": "contains" in held_value
+                            or held_value.get("type") == "receptacle",
                             "full_path": [],
                         }
                         if "contains" in held_value:
@@ -97,9 +106,14 @@ def flatten_scene(scene_data: dict) -> dict[str, dict[str, Any]]:
                         "direct_parent": direct_parent,
                         "direct_relation": direct_relation,
                         "type": "room" if is_room_root else value.get("type"),
+                        "category": copy.deepcopy(value.get("category")),
                         "states": copy.deepcopy(value.get("states", {})),
                         "properties": copy.deepcopy(value.get("properties", [])),
-                        "is_container": False if is_room_root else ("contains" in value or value.get("type") == "receptacle"),
+                        "abilities": copy.deepcopy(value.get("abilities", [])),
+                        "nearby": copy.deepcopy(value.get("nearby", [])),
+                        "is_container": False
+                        if is_room_root
+                        else ("contains" in value or value.get("type") == "receptacle"),
                         "full_path": list(path),
                     }
                     if "contains" in value:
@@ -131,13 +145,17 @@ def _resolve_items_from_flat_scene(flat_house: dict, item_name_keywords: list) -
     return resolved
 
 
-def resolve_items_from_scene(item_name_keywords: list, scene_file: str | None = None) -> dict:
+def resolve_items_from_scene(
+    item_name_keywords: list, scene_file: str | None = None
+) -> dict:
     """按关键词从场景中解析相关实体，并补齐它们的父级上下文节点。"""
     flat_house = get_full_flat_scene(_require_scene_file(scene_file))
     return _resolve_items_from_flat_scene(flat_house, item_name_keywords)
 
 
-def resolve_items_from_scene_data(item_name_keywords: list, scene_data: dict | None) -> dict:
+def resolve_items_from_scene_data(
+    item_name_keywords: list, scene_data: dict | None
+) -> dict:
     """按关键词从内存场景中解析相关实体，并补齐父级上下文。"""
     if not isinstance(scene_data, dict):
         return {}
@@ -145,21 +163,35 @@ def resolve_items_from_scene_data(item_name_keywords: list, scene_data: dict | N
     return _resolve_items_from_flat_scene(flat_house, item_name_keywords)
 
 
-def flat_scene_to_tree(flat_house: dict, robot_state: dict, base_scene_file: str | None = None) -> dict:
+def flat_scene_to_tree(
+    flat_house: dict, robot_state: dict, base_scene_file: str | None = None
+) -> dict:
     """把扁平场景索引重新组装回嵌套场景树，并写入机器人当前状态。"""
     scene = load_scene(_require_scene_file(base_scene_file), fallback={})
     return flat_scene_to_tree_from_base(flat_house, robot_state, scene)
 
 
-def flat_scene_to_tree_from_base(flat_house: dict, robot_state: dict, scene: dict) -> dict:
+def flat_scene_to_tree_from_base(
+    flat_house: dict, robot_state: dict, scene: dict
+) -> dict:
     """基于给定 scene 副本重建场景树，避免回写时误切到其他 session。"""
     scene = copy.deepcopy(scene)
-    scene["robot_location"] = robot_state.get("robot_location", scene.get("robot_location"))
+    scene["robot_location"] = robot_state.get(
+        "robot_location", scene.get("robot_location")
+    )
     if isinstance(robot_state.get("robot_hands"), dict):
-        held_items = [value for value in robot_state["robot_hands"].values() if value not in {"", "空", None}]
+        held_items = [
+            value
+            for value in robot_state["robot_hands"].values()
+            if value not in {"", "空", None}
+        ]
         scene["robot_inventory"] = held_items[0] if len(held_items) == 1 else None
     else:
-        scene["robot_inventory"] = None if robot_state.get("robot_holding") == "空" else robot_state.get("robot_holding")
+        scene["robot_inventory"] = (
+            None
+            if robot_state.get("robot_holding") == "空"
+            else robot_state.get("robot_holding")
+        )
     scene["robot_holding_items"] = {}
 
     env_root = scene.get("environment", {})
@@ -170,9 +202,12 @@ def flat_scene_to_tree_from_base(flat_house: dict, robot_state: dict, scene: dic
     nodes = {
         name: {
             "type": info.get("type"),
+            "category": info.get("category"),
             "direct_relation": info.get("direct_relation"),
             "states": copy.deepcopy(info.get("states", {})),
             "properties": copy.deepcopy(info.get("properties", [])),
+            "abilities": copy.deepcopy(info.get("abilities", [])),
+            "nearby": copy.deepcopy(info.get("nearby", [])),
             "contains": {},
         }
         for name, info in flat_house.items()
@@ -184,8 +219,14 @@ def flat_scene_to_tree_from_base(flat_house: dict, robot_state: dict, scene: dic
         node = nodes[name]
         if not node.get("type"):
             node.pop("type", None)
+        if not node.get("category"):
+            node.pop("category", None)
         if not node.get("direct_relation"):
             node.pop("direct_relation", None)
+        if not node.get("abilities"):
+            node.pop("abilities", None)
+        if not node.get("nearby"):
+            node.pop("nearby", None)
         parent = info.get("direct_parent", "")
         if parent == "robot_hand":
             scene["robot_holding_items"][name] = node
@@ -193,7 +234,11 @@ def flat_scene_to_tree_from_base(flat_house: dict, robot_state: dict, scene: dic
             nodes[parent].setdefault("contains", {})[name] = node
         else:
             full_path = info.get("full_path", [])
-            room_name = parent if parent in env_root else (full_path[0] if full_path else parent)
+            room_name = (
+                parent
+                if parent in env_root
+                else (full_path[0] if full_path else parent)
+            )
             room = env_root.get(room_name)
             if isinstance(room, dict):
                 room.setdefault("contains", {})[name] = node
@@ -207,22 +252,34 @@ def is_room_level_node(node_name: str, flat_house: dict) -> bool:
     return info.get("direct_parent") == "未知环境" and not info.get("full_path")
 
 
-def is_item_accessible(item_name: str, sim_env: dict) -> bool:
-    """沿父节点向上检查容器开闭状态，判断目标物体当前是否物理可达。"""
+def blocking_closed_container(item_name: str, sim_env: dict) -> str:
+    """Return the first closed container blocking an item's INSIDE parent chain."""
     current = item_name
     while current in sim_env:
-        parent = sim_env[current].get("direct_parent", "")
+        current_info = sim_env[current]
+        parent = current_info.get("direct_parent", "")
         if parent in ("robot_hand", "未知环境", ""):
             break
 
         parent_states = sim_env.get(parent, {}).get("states", {})
-        if parent_states.get("isOpen") is False:
-            return False
+        relation = str(current_info.get("direct_relation", "") or "").strip().lower()
+        inside_closed_container = relation in {"inside", "in"} or (
+            not relation and "isOpen" in parent_states
+        )
+        if inside_closed_container and parent_states.get("isOpen") is False:
+            return str(parent)
         current = parent
-    return True
+    return ""
 
 
-def can_reach_item_from_location(item_name: str, robot_location: str, sim_env: dict) -> bool:
+def is_item_accessible(item_name: str, sim_env: dict) -> bool:
+    """Check whether a closed container blocks the item's INSIDE parent chain."""
+    return not blocking_closed_container(item_name, sim_env)
+
+
+def can_reach_item_from_location(
+    item_name: str, robot_location: str, sim_env: dict
+) -> bool:
     """判断机器人当前位置是否能直接交互该目标或其直接交互父级。"""
     if item_name not in sim_env:
         return False

@@ -838,7 +838,7 @@ def test_retrac_diagnoses_failure_and_reassembles_generated_suffix(monkeypatch):
     assert '"regenerate_start_step": 2' in prompt
     assert '"regenerate_end_step": 2' in prompt
     assert '"error_reason"' in prompt
-    assert prompt.count("NavigateTo(target_location)") == 1
+    assert "NavigateTo(target_location)" not in prompt
     assert '"retrac_state"' not in prompt
     assert '"current_simulated_state"' not in prompt
     assert '"original_todo_list"' not in prompt

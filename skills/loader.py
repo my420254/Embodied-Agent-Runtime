@@ -117,3 +117,39 @@ def load_enabled_prompts(profile: str | None = None) -> str:
         profile_name = profile or get_default_profile()
         return f"【系统警报：profile {profile_name} 未加载到任何可用技能，请检查 settings.skills.root/enabled】"
     return "\n\n".join(prompts)
+
+
+def load_prompts_for(names: list[str] | None) -> str:
+    """加载 common.md + 仅命中 names 的技能说明（与 enabled 求交集）。
+
+    - names 与 enabled 做大小写不敏感交集，按 enabled 顺序输出；
+    - 命中集合非空且至少加载到一份技能说明时，才在最前面拼上 common.md；
+    - names 为空、或与 enabled 零命中、或所有命中技能说明都读不出来时，
+      返回 ""，让调用方自行回退到全量 enabled（避免过滤后给模型空技能表）。
+    """
+    requested = [str(name).strip() for name in (names or []) if str(name).strip()]
+    if not requested:
+        return ""
+    enabled = load_enabled_skill_names()
+    requested_lower = {name.lower() for name in requested}
+    selected = [name for name in enabled if name.lower() in requested_lower]
+    if not selected:
+        return ""
+    skill_prompts: list[str] = []
+    for name in selected:
+        spec = load_skill_spec(name)
+        if spec is None:
+            continue
+        prompt_path = spec.path / spec.prompt
+        try:
+            skill_prompts.append(prompt_path.read_text(encoding="utf-8"))
+        except Exception as e:
+            skill_prompts.append(f"【系统警报：读取技能 {spec.name} 说明失败: {e}】")
+    if not skill_prompts:
+        return ""
+    prompts: list[str] = []
+    common_path = _skills_root() / "common.md"
+    if common_path.exists():
+        prompts.append(common_path.read_text(encoding="utf-8"))
+    prompts.extend(skill_prompts)
+    return "\n\n".join(prompts)

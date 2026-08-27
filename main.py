@@ -11,7 +11,9 @@ from adapters.ros_text_command_service import (
     apply_ros_domain_id,
     rclpy,
 )
+from agent_runtime.logging_setup import configure_logging, console_mirror
 from agent_runtime.service import AgentRuntimeThread
+from scripts.renderer import print_banner, print_divider, render_stream
 
 
 def _parse_main_args(argv: list[str]) -> tuple[list[str], bool, bool, Path | None]:
@@ -54,28 +56,34 @@ def main(argv=None) -> None:
     argv = list(sys.argv[1:] if argv is None else argv)
     rest, enable_agent_runtime, plan_only, command_file = _parse_main_args(argv)
 
+    configure_logging(frontend_port=os.environ.get("GENESIS_WEB_PORT"))
+
     apply_ros_domain_id()
     if rclpy is None:
         raise RuntimeError("无法导入 rclpy：请先 source ROS 环境。")
 
     runtime_thread = None
-    if enable_agent_runtime:
-        runtime_thread = AgentRuntimeThread(
-            plan_only=plan_only,
-            command_file=command_file,
-            auto_accept_feedback=True,
-        )
-        runtime_thread.start()
+    with console_mirror():
+        if enable_agent_runtime:
+            runtime_thread = AgentRuntimeThread(
+                plan_only=plan_only,
+                command_file=command_file,
+                auto_accept_feedback=True,
+                render_stream=render_stream,
+                print_banner=print_banner,
+                print_divider=print_divider,
+            )
+            runtime_thread.start()
 
-    rclpy.init(args=rest if rest else None)
-    node = TextCommandReceiver()
-    try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        node.destroy_node()
-        rclpy.shutdown()
+        rclpy.init(args=rest if rest else None)
+        node = TextCommandReceiver()
+        try:
+            rclpy.spin(node)
+        except KeyboardInterrupt:
+            pass
+        finally:
+            node.destroy_node()
+            rclpy.shutdown()
 
     del runtime_thread
     print(f"[main] 共收到 {len(RECEIVED_TEXT_COMMANDS)} 条文本指令")

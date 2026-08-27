@@ -1,0 +1,16 @@
+name: charge
+description: 给机器人充电（charge；官方：须在充电站房间且空手，充后 battery_full）。任务要求机器人充满电时使用。
+prompt: prompt.md
+handler: benchmark.delta.framework.code.skills.charge.handler:ChargeSkill
+planner_location_param: station
+planner_requires_empty_hand: true
+planner_effect_state_key: battery_full
+planner_effect_state_value: true
+planner_action_name: charge
+planner_required_fields: action,agent,item,room
+planner_fixed_fields: action=charge;agent=robot
+planner_entity_fields: item
+planner_room_fields: room
+planner_context_field: domain
+planner_context_values: clean
+planner_allow_extra_fields: false

@@ -12,6 +12,7 @@ description: 在指定的加热设备中加热物品。执行前需确保设备�
 
 ## 前提条件
 * **【位置前提】** 机器人的全局坐标必须已到达 `heating_device` 所在位置。
+* **【前置动作】** 执行本动作前，若机器人当前位置不是 `heating_device`（即机器人位置 != heating_device），必须先执行 `NavigateTo(heating_device)` 到达该节点；严禁在未导航到位时直接执行本动作。
 * **【状态前提】** `target_item` 必须为未加热状态（`isCooked: False`）。
 * **【容器前提】** `target_item` 必须已经放入 `heating_device` 内部，且设备舱门必须关闭（`isOpen: False`）。
 * **【设备电源前提】** `heating_device` 必须已通电工作（`isToggled: True`）。

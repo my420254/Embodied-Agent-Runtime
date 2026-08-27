@@ -6,11 +6,14 @@ from dataclasses import dataclass, field
 from typing import Any
 
 from graph.state import PlanningState
-from skills.planning_catalog import SkillPlanningCatalog, SkillPlanningSpec, load_planning_catalog
+from skills.planning_catalog import (
+    SkillPlanningCatalog,
+    SkillPlanningSpec,
+    load_planning_catalog,
+)
 
 
-ALFRED_INSTANCE_RE = re.compile(r"^(?P<base>.+) \((?P<index>\d+)\)$")
-ALFRED_SLICE_SUFFIX = "Sliced"
+INDEXED_ENTITY_RE = re.compile(r"^(?P<base>.+) \((?P<index>\d+)\)$")
 
 
 @dataclass
@@ -18,7 +21,6 @@ class _RuntimeNames:
     known_names: set[str]
     room_names: set[str]
     generated_names: set[str] = field(default_factory=set)
-    alfred_sliced_bases: set[str] = field(default_factory=set)
 
 
 def _is_missing(value: Any) -> bool:
@@ -48,7 +50,9 @@ def _is_room_entry(info: Any) -> bool:
         return True
     direct_parent = str(info.get("direct_parent") or "").strip().lower()
     full_path = info.get("full_path")
-    return direct_parent in {"未知环境", "unknown"} and (not isinstance(full_path, list) or not full_path)
+    return direct_parent in {"未知环境", "unknown"} and (
+        not isinstance(full_path, list) or not full_path
+    )
 
 
 def _runtime_names(current_env: Any) -> _RuntimeNames:
@@ -67,7 +71,12 @@ def _state_context_value(state: PlanningState, field_name: str) -> str:
     key = str(field_name or "").strip()
     if not key or not isinstance(state, dict):
         return ""
-    for section in ("task_context", "task_input_payload", "evaluation_context", "structured_task"):
+    for section in (
+        "task_context",
+        "task_input_payload",
+        "evaluation_context",
+        "structured_task",
+    ):
         payload = state.get(section)
         if isinstance(payload, dict):
             value = payload.get(key)
@@ -76,39 +85,31 @@ def _state_context_value(state: PlanningState, field_name: str) -> str:
     return _string_value(state.get(key))
 
 
-def _split_alfred_instance(target: str) -> tuple[str, int | None, bool]:
-    value = _string_value(target)
-    match = ALFRED_INSTANCE_RE.match(value)
-    if not match:
-        base = value.removesuffix(ALFRED_SLICE_SUFFIX).strip()
-        return base, None, base != value
-    raw_base = str(match.group("base") or "").strip()
-    sliced_base = raw_base.removesuffix(ALFRED_SLICE_SUFFIX).strip()
-    return sliced_base, int(match.group("index")), raw_base != sliced_base
-
-
-def _max_alfred_index(base: str, names: set[str]) -> int:
+def _max_index(base: str, names: set[str]) -> int:
     max_index = 0
     for name in names:
-        candidate_base, candidate_index, _semantic_sliced = _split_alfred_instance(name)
-        if candidate_base == base and candidate_index is not None:
-            max_index = max(max_index, candidate_index)
+        match = INDEXED_ENTITY_RE.fullmatch(name)
+        if match and match.group("base") == base:
+            max_index = max(max_index, int(match.group("index")))
     return max_index
 
 
-def _alfred_generated_names(target: str, names: set[str]) -> set[str]:
-    base, _index, _semantic_sliced = _split_alfred_instance(target)
-    if not base:
+def _indexed_generated_names(target: str, names: set[str], count: int) -> set[str]:
+    match = INDEXED_ENTITY_RE.fullmatch(_string_value(target))
+    if not match or count <= 0:
         return set()
-    first_index = _max_alfred_index(base, names) + 1
-    return {f"{base} ({index})" for index in range(first_index, first_index + 9)}
+    base = str(match.group("base") or "").strip()
+    first_index = _max_index(base, names) + 1
+    return {f"{base} ({index})" for index in range(first_index, first_index + count)}
 
 
 def _field_parts(value: Any, *, allow_comma_separated: bool) -> list[str]:
     if isinstance(value, list):
         return [_string_value(item) for item in value if _string_value(item)]
     if allow_comma_separated:
-        return [part.strip() for part in _string_value(value).split(",") if part.strip()]
+        return [
+            part.strip() for part in _string_value(value).split(",") if part.strip()
+        ]
     text = _string_value(value)
     return [text] if text else []
 
@@ -132,7 +133,13 @@ class _TodoContractChecker:
         return normalized
 
     def _resolve_spec(self, step: dict[str, Any], index: int) -> SkillPlanningSpec:
-        action_fields = tuple(dict.fromkeys(spec.action_field for spec in self.catalog.raw_specs if spec.action_field))
+        action_fields = tuple(
+            dict.fromkeys(
+                spec.action_field
+                for spec in self.catalog.raw_specs
+                if spec.action_field
+            )
+        )
         for field_name in action_fields:
             if field_name not in step:
                 continue
@@ -142,15 +149,25 @@ class _TodoContractChecker:
             spec = self.catalog.get_action(action_name)
             if spec is not None and spec.action_field == field_name:
                 return spec
-            available = _format_catalog({spec.action_name for spec in self.catalog.raw_specs if spec.action_name})
+            available = _format_catalog(
+                {
+                    spec.action_name
+                    for spec in self.catalog.raw_specs
+                    if spec.action_name
+                }
+            )
             raise ValueError(
                 f"todo_list step {index} uses unsupported action {action_name!r}; "
                 f"available actions: {available}"
             )
         expected = ", ".join(action_fields) or "action"
-        raise ValueError(f"todo_list step {index} missing configured action field: {expected}")
+        raise ValueError(
+            f"todo_list step {index} missing configured action field: {expected}"
+        )
 
-    def _validate_context(self, spec: SkillPlanningSpec, step: dict[str, Any], index: int) -> None:
+    def _validate_context(
+        self, spec: SkillPlanningSpec, step: dict[str, Any], index: int
+    ) -> None:
         if not spec.context_field or not spec.context_values:
             return
         current_value = _state_context_value(self.state, spec.context_field)
@@ -176,7 +193,9 @@ class _TodoContractChecker:
             allowed.add(spec.args_field)
         return {field for field in allowed if field}
 
-    def _validate_required_fields(self, spec: SkillPlanningSpec, step: dict[str, Any], index: int) -> None:
+    def _validate_required_fields(
+        self, spec: SkillPlanningSpec, step: dict[str, Any], index: int
+    ) -> None:
         missing = [
             field
             for field in spec.required_fields
@@ -184,9 +203,13 @@ class _TodoContractChecker:
         ]
         if missing:
             action_name = _string_value(step.get(spec.action_field))
-            raise ValueError(f"todo_list step {index} action {action_name!r} missing required fields: {missing}")
+            raise ValueError(
+                f"todo_list step {index} action {action_name!r} missing required fields: {missing}"
+            )
 
-    def _validate_extra_fields(self, spec: SkillPlanningSpec, step: dict[str, Any], index: int) -> None:
+    def _validate_extra_fields(
+        self, spec: SkillPlanningSpec, step: dict[str, Any], index: int
+    ) -> None:
         if spec.allow_extra_fields:
             return
         allowed = self._allowed_fields(spec)
@@ -197,7 +220,9 @@ class _TodoContractChecker:
                 f"todo_list step {index} action {action_name!r} contains unsupported fields: {sorted(extra)}"
             )
 
-    def _validate_fixed_fields(self, spec: SkillPlanningSpec, step: dict[str, Any], index: int) -> None:
+    def _validate_fixed_fields(
+        self, spec: SkillPlanningSpec, step: dict[str, Any], index: int
+    ) -> None:
         action_name = _string_value(step.get(spec.action_field))
         for field_name, expected in spec.fixed_fields:
             actual = _string_value(step.get(field_name))
@@ -207,13 +232,17 @@ class _TodoContractChecker:
                     f"must be {expected!r}, got {actual!r}"
                 )
 
-    def _validate_args(self, spec: SkillPlanningSpec, step: dict[str, Any], index: int) -> list[str]:
+    def _validate_args(
+        self, spec: SkillPlanningSpec, step: dict[str, Any], index: int
+    ) -> list[str]:
         if spec.args_arity is None:
             return []
         action_name = _string_value(step.get(spec.action_field))
         args = step.get(spec.args_field)
         if not isinstance(args, list):
-            raise ValueError(f"todo_list step {index} action {action_name!r} field {spec.args_field} must be a list")
+            raise ValueError(
+                f"todo_list step {index} action {action_name!r} field {spec.args_field} must be a list"
+            )
         normalized = [_string_value(item) for item in args]
         if len(normalized) != spec.args_arity:
             raise ValueError(
@@ -225,31 +254,40 @@ class _TodoContractChecker:
                 raise ValueError(
                     f"todo_list step {index} action {action_name!r} declares invalid entity arg index {arg_index}"
                 )
-            self._validate_entity_value(spec, normalized[arg_index], index, f"{spec.args_field}[{arg_index}]")
+            self._validate_entity_value(
+                spec, normalized[arg_index], index, f"{spec.args_field}[{arg_index}]"
+            )
         return normalized
 
-    def _validate_entity_value(self, spec: SkillPlanningSpec, value: str, index: int, field_name: str) -> None:
+    def _validate_entity_value(
+        self, spec: SkillPlanningSpec, value: str, index: int, field_name: str
+    ) -> None:
+        action_label = spec.action_name or spec.name
+        if spec.entity_pattern:
+            try:
+                matches_pattern = re.fullmatch(spec.entity_pattern, value) is not None
+            except re.error as exc:
+                raise ValueError(
+                    f"skill {spec.name!r} has invalid planner_entity_pattern: {exc}"
+                ) from exc
+            if not matches_pattern:
+                raise ValueError(
+                    f"todo_list step {index} action {action_label!r} field {field_name} "
+                    f"does not match required entity pattern {spec.entity_pattern!r}: {value!r}"
+                )
         if not self.names.known_names:
             return
-        action_label = spec.action_name or spec.name
-        if spec.entity_pattern == "alfred_instance" and not ALFRED_INSTANCE_RE.match(value):
-            raise ValueError(
-                f"todo_list step {index} action {action_label!r} field {field_name} must be a concrete "
-                f"ALFRED instance like 'Fridge (1)', got {value!r}"
-            )
         available = self.names.known_names | self.names.generated_names
         if value in available:
             return
-        if spec.entity_pattern == "alfred_instance":
-            base, _target_index, semantic_sliced = _split_alfred_instance(value)
-            if semantic_sliced and base in self.names.alfred_sliced_bases:
-                return
         raise ValueError(
             f"todo_list step {index} action {action_label!r} field {field_name} references unknown entity "
             f"{value!r}; available entities: {_format_catalog(available)}"
         )
 
-    def _validate_room_value(self, spec: SkillPlanningSpec, value: str, index: int, field_name: str) -> None:
+    def _validate_room_value(
+        self, spec: SkillPlanningSpec, value: str, index: int, field_name: str
+    ) -> None:
         if not self.names.known_names:
             return
         available_rooms = self.names.room_names or self.names.known_names
@@ -261,7 +299,9 @@ class _TodoContractChecker:
             f"{value!r}; available rooms: {_format_catalog(available_rooms)}"
         )
 
-    def _validate_named_fields(self, spec: SkillPlanningSpec, step: dict[str, Any], index: int) -> None:
+    def _validate_named_fields(
+        self, spec: SkillPlanningSpec, step: dict[str, Any], index: int
+    ) -> None:
         for field_name in spec.entity_fields:
             for value in _field_parts(
                 step.get(field_name),
@@ -269,10 +309,14 @@ class _TodoContractChecker:
             ):
                 self._validate_entity_value(spec, value, index, field_name)
         for field_name in spec.room_fields:
-            for value in _field_parts(step.get(field_name), allow_comma_separated=False):
+            for value in _field_parts(
+                step.get(field_name), allow_comma_separated=False
+            ):
                 self._validate_room_value(spec, value, index, field_name)
 
-    def _first_dynamic_source(self, spec: SkillPlanningSpec, step: dict[str, Any], args: list[str]) -> str:
+    def _first_dynamic_source(
+        self, spec: SkillPlanningSpec, step: dict[str, Any], args: list[str]
+    ) -> str:
         for field_name in spec.entity_fields:
             parts = _field_parts(
                 step.get(field_name),
@@ -284,7 +328,9 @@ class _TodoContractChecker:
             return args[0]
         return ""
 
-    def _apply_dynamic_entities(self, spec: SkillPlanningSpec, step: dict[str, Any], args: list[str]) -> None:
+    def _apply_dynamic_entities(
+        self, spec: SkillPlanningSpec, step: dict[str, Any], args: list[str]
+    ) -> None:
         rule = str(spec.dynamic_entity_rule or "").strip()
         if not rule:
             return
@@ -292,13 +338,25 @@ class _TodoContractChecker:
         if not source:
             return
         if rule == "slice_parts_from_target":
-            self.names.generated_names.update({f"{source}_part_{index}" for index in range(2)})
+            self.names.generated_names.update(
+                {f"{source}_part_{index}" for index in range(2)}
+            )
             return
-        if rule == "alfred_slice_aliases":
-            base, _target_index, _semantic_sliced = _split_alfred_instance(source)
-            if base:
-                self.names.alfred_sliced_bases.add(base)
-            self.names.generated_names.update(_alfred_generated_names(source, self.names.known_names | self.names.generated_names))
+        prefix = "indexed_same_base_copies:"
+        if rule.startswith(prefix):
+            try:
+                count = int(rule.removeprefix(prefix))
+            except ValueError as exc:
+                raise ValueError(
+                    f"skill {spec.name!r} has invalid dynamic entity rule {rule!r}"
+                ) from exc
+            self.names.generated_names.update(
+                _indexed_generated_names(
+                    source,
+                    self.names.known_names | self.names.generated_names,
+                    count,
+                )
+            )
 
     def _validate_step(self, raw_step: Any, index: int) -> dict[str, Any]:
         if not isinstance(raw_step, dict):
@@ -313,7 +371,9 @@ class _TodoContractChecker:
         self._validate_named_fields(spec, step, index)
         self._apply_dynamic_entities(spec, step, args)
 
-        normalized = {key: copy.deepcopy(value) for key, value in step.items() if key != "step"}
+        normalized = {
+            key: copy.deepcopy(value) for key, value in step.items() if key != "step"
+        }
         return {"step": index, **normalized}
 
 
@@ -329,7 +389,9 @@ def validate_todo_contract(
     catalog = skill_catalog or load_planning_catalog()
     if not catalog.raw_specs:
         return copy.deepcopy(todo_list or [])
-    checker = _TodoContractChecker(state=state, skill_catalog=catalog, current_env=current_env)
+    checker = _TodoContractChecker(
+        state=state, skill_catalog=catalog, current_env=current_env
+    )
     return checker.validate(todo_list or [])
 
 

@@ -37,13 +37,15 @@
               "states": {
                 "isSliced": false,
                 "isCooked": false,
-                "isCold": false
+                "isCold": false,
+                "isClean": false
               }
             },
             "西红柿_1": {
               "states": {
                 "isSliced": false,
-                "isRotten": false
+                "isRotten": false,
+                "isClean": false
               }
             },
             "调料架_1": {
