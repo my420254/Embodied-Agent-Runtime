@@ -61,6 +61,21 @@ flowchart LR
 | Reflection routing | 根据 `failure_layer` 决定回到理解、规划或执行层 | 失败后不是盲目从头重跑，而是按错误层局部修复 |
 | Benchmark adapter | DELTA / EAI / ReAcTree / ALFRED / WAH 数据接入隔离 | 便于和 paper method、bare LLM baseline 公平对比 |
 
+## 工程需求覆盖
+
+本项目对应的不是单轮问答，而是机器人任务系统中的“任务大脑运行时”。它把自然语言接入、任务理解、结构化规划、技能审计、任务中断、执行反馈、失败反思和 benchmark 评测组织到同一条链路里。
+
+| 真实需求 | 项目中的处理方式 |
+| --- | --- |
+| ROS / 前端 / CLI 都能下发文本任务 | 统一进入 CommandBus，再由常驻 runtime 消费 |
+| 用户执行中追加新任务 | 任务管理层将当前任务保存在 `task_stack`，新任务压栈优先处理，完成后恢复旧任务 |
+| 用户发送停止、取消、暂停、继续 | CommandBus 将自然语言或 kind 归一化为 `cancel_all/cancel_current/pause/resume` |
+| 机器人动作有副作用，不能让 LLM 随意执行 | 规划结果必须通过 skill contract、sandbox evaluator 和 state-diff audit |
+| 执行失败后要知道从哪里修 | Reflection 按 `failure_layer` 回到 understanding、planning、feasibility 或 execution |
+| 评测不能混用不同输入 | framework、paper method、bare baseline 使用同一份抽取/清洗后的 benchmark case |
+
+更完整的需求拆解、任务案例和生产化扩展见 [机器人任务大脑运行时：工程需求与落地案例](docs/ROBOT_AGENT_RUNTIME_REQUIREMENTS.md)。
+
 ## 任务生命周期
 
 ```mermaid
