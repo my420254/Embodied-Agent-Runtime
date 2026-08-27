@@ -29,6 +29,61 @@ ROS / Frontend / CLI Text
   -> Reflection / Replan / Report
 ```
 
+更完整的运行时结构如下：
+
+```mermaid
+flowchart LR
+    A[ROS2 TextCommand] --> D[CommandBus]
+    B[Vue / Web Frontend] --> D
+    C[CLI Debug Scripts] --> D
+    D --> E[Runtime Engine]
+    E --> F[Understanding]
+    F --> G[Planning]
+    G --> H[Sandbox Evaluator]
+    H --> I[Task Management]
+    I --> J[Execution Backend]
+    J --> K[State Diff / Trace]
+    K --> L[Reflection]
+    L --> F
+    I --> M[Task Stack]
+    M --> I
+```
+
+## 系统亮点
+
+| 能力 | 解决的问题 | 工程价值 |
+| --- | --- | --- |
+| 常驻 runtime | 避免每条任务都重新初始化模型、graph 和上下文 | 更适合 ROS / 前端持续接入 |
+| CommandBus | 统一 ROS、CLI、前端文本入口 | 外部系统只需要投递命令，不需要理解内部 graph |
+| 任务栈 | 新任务到来时保存旧任务状态，优先执行新任务 | 支持插单、中断、恢复和多层嵌套任务管理 |
+| Control command | `cancel_current`、`cancel_all`、`pause`、`resume` 独立于普通任务 | 可以处理停止、取消、暂停等运行时控制语义 |
+| Sandbox audit | 执行前检查技能契约、状态变化和不可行动作 | 降低 LLM 直接驱动执行层的风险 |
+| Reflection routing | 根据 `failure_layer` 决定回到理解、规划或执行层 | 失败后不是盲目从头重跑，而是按错误层局部修复 |
+| Benchmark adapter | DELTA / EAI / ReAcTree / ALFRED / WAH 数据接入隔离 | 便于和 paper method、bare LLM baseline 公平对比 |
+
+## 任务生命周期
+
+```mermaid
+stateDiagram-v2
+    [*] --> Idle
+    Idle --> Understanding: new_task
+    Understanding --> Planning: parsed intent
+    Planning --> Audit: todo_list
+    Audit --> Executing: feasible
+    Audit --> Reflection: infeasible
+    Executing --> Reflection: tool error / state mismatch
+    Reflection --> Understanding: wrong intent
+    Reflection --> Planning: plan repair
+    Reflection --> Executing: retry executable step
+    Executing --> Suspended: new_task arrives
+    Suspended --> Understanding: run inserted task
+    Suspended --> Executing: inserted task completed
+    Executing --> Idle: task completed
+    Executing --> Idle: cancel_current / cancel_all
+```
+
+这个生命周期体现了项目的核心定位：它不是一次性 prompt runner，而是面向长期运行的任务系统。任务在 graph 中有明确状态，失败有可追踪层级，中断有栈式保存和恢复逻辑。
+
 ## 目录说明
 
 | 路径 | 作用 |
