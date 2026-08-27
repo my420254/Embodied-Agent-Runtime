@@ -1,4 +1,0 @@
-[
-  {"action": "WALK", "args": ["couch"]},
-  {"action": "SIT", "args": ["couch"]}
-]

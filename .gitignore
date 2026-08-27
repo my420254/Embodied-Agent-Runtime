@@ -2,6 +2,7 @@ __pycache__/
 *.pyc
 *.pyo
 *.log
+*.lock
 .pytest_cache/
 .ruff_cache/
 .vscode/
@@ -9,6 +10,12 @@ __pycache__/
 .graphify-out/
 graphify-out/
 logs/
+benchmark/.resource_locks/
+benchmark/framework_experiment_records/
+benchmark/paper_comparison_records/
+benchmark/migration_queue_results/
+benchmark/**/results/
+benchmark/**/artifacts/
 *.sqlite
 *.sqlite-wal
 *.sqlite-shm
